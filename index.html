@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game of Different Lives</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <h1><span class="logo">🎲</span> <span id="title">Game of Different Lives</span></h1>
+</header>
+
+<main>
+  <section id="screen-select">
+    <p class="lead" id="lead"></p>
+    <div id="cards" class="cards"></div>
+        <p class="note" id="note"></p>
+  </section>
+
+  <section id="screen-game" hidden>
+    <div class="layout">
+      <div id="boardWrap"><div id="board"></div></div>
+      <aside class="hud">
+        <div class="who"><div id="avatar" class="avatar"></div><div><strong id="hName"></strong><br><small id="hYears"></small></div></div>
+        <div class="chapter"><small id="chapLabel"></small><div id="chapter"></div></div>
+        <div class="meter"><label id="hopeLabel"></label><div class="bar"><i id="hopeBar"></i></div></div>
+        <div class="meter"><label id="supLabel"></label><div id="supDots" class="dots"></div></div>
+        <div id="wheelBox">
+          <svg id="wheel" viewBox="-110 -110 220 220" aria-hidden="true"></svg>
+          <div class="pointer"></div>
+        </div>
+        <button id="spin" class="big"></button>
+        <div id="status" class="status" aria-live="polite"></div>
+        <button id="quit" class="link"></button>
+      </aside>
+    </div>
+  </section>
+
+  <section id="screen-end" hidden></section>
+</main>
+
+<div id="modal" class="modal" hidden><div class="card" role="dialog" aria-modal="true" id="modalCard"></div></div>
+
+<script src="js/core.js"></script>
+<script src="js/characters/hawking.js"></script>
+<script src="js/characters/parks.js"></script>
+<script src="js/characters/group1.js"></script>
+<script src="js/characters/group2.js"></script>
+<script src="js/characters/group3.js"></script>
+<script src="js/characters/group4.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

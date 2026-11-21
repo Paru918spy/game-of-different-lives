@@ -1,0 +1,140 @@
+/* Laverne Cox, Marsha P. Johnson, Fauja Singh, Nelson Mandela, Ludwig van Beethoven, Alan Turing.
+   Content notes: Johnson and Turing include discrimination, violence and early death. */
+GOL.add({
+  id: "cox", name: "Laverne Cox", years: "b. 1972", focus: "Gender identity", emoji: "🌟", color: "#db2777",
+  tagline: "A dancer from Alabama who became the first openly transgender person on the cover of Time and nominated for an acting Emmy.",
+  intro: "You are Laverne, a creative child in Mobile, Alabama, who loves to dance and perform. The world has a lot of opinions about who you are supposed to be.",
+  stages: ["Alabama", "New York", "Breakthrough", "Visibility"],
+  tiles: [
+    ["start", 0, "Mobile, Alabama, 1972", "Laverne is born on 29 May 1972 and raised by her mother Gloria, with her twin brother. From early on, she loves to perform, dance and play, and she feels deeply that she is a girl."],
+    ["barrier", 0, "Bullied for being different", "Other children and some adults tease and bully Laverne for not fitting what they think a boy should be. She learns to be quiet and to hide, and she has said it affected her mental health.", { need: 2, label: "Growing up without acceptance" }],
+    ["win", 0, "A mother’s love and the arts", "Her mother supports her, and she finds a home in dance and performance, attending the Alabama School of Fine Arts, where she studies dance.", { fx: { hope: 2, support: 2 } }],
+    ["info", 1, "Finding herself", "As a young adult, Laverne studies at Indiana University and then at Marymount Manhattan College in New York, where she graduates in dance. She begins her transition in her twenties and finds a community."],
+    ["barrier", 1, "Auditions and discrimination", "In the 1990s and 2000s there are almost no roles for openly trans actors and few people who are willing to cast them. Laverne faces rejection, money problems and some employers who treat her as a joke or a risk.", { need: 3, label: "Getting a chance to act" }],
+    ["win", 1, "Reality TV and activism", "In 2008, Laverne is a contestant on VH1’s “I Want to Work for Diddy,” and then a producer and host of the show “TransAmerican Love Story.” She uses visibility to teach audiences about trans lives.", { fx: { hope: 2 } }],
+    ["win", 2, "Orange Is the New Black", "In 2013 Laverne becomes Sophia Burset on the Netflix series Orange Is the New Black, a transgender woman played by a transgender actor. It is a worldwide hit.", { fx: { hope: 3, support: 1 } }],
+    ["win", 2, "History-making", "In 2014 she becomes the first openly transgender person nominated for an acting Emmy, and the first on the cover of Time (“The Transgender Tipping Point”).", { fx: { hope: 3 } }],
+    ["barrier", 3, "Fame doesn’t end prejudice", "Even as a star, Laverne still faces misgendering, threats and public debate about her identity. She stresses that many trans people, especially Black trans women, face discrimination and violence without a platform.", { need: 3, label: "Being visible and being safe" }],
+    ["choice", 3, "Use your platform?", "As a star, you can stay in the safe lane. Or you can use your platform and risk backlash.", { opts: [["Focus on your career", { hope: 0 }, "You stay out of controversy."], ["Speak up for trans people", { hope: 1, support: 1 }, "You become a spokesperson."]], reveal: "What Laverne did: she speaks out, and uses her visibility for advocacy. In 2020 she was an executive producer of the documentary Disclosure, about how trans people have been portrayed in film and TV." }],
+    ["win", 3, "Leading roles", "In 2017 she plays a lead role in the CBS legal series “Doubt,” the first openly transgender person in a series regular lead role on US network TV. She continues on stage, in film and as a producer.", { fx: { hope: 2 } }],
+    ["finish", 3, "“Be seen”", "Laverne continues acting and advocating. She says that people’s stories being told by themselves, not about them, is key to understanding."]
+  ],
+  ending: { headline: "Being seen is part of being safe", real: "Laverne Cox’s career shows how much representation matters, both in the roles and behind the camera. Her story also shows how much work is still needed so that trans people, not only celebrities, are safe and respected.", reflect: ["Why do you think it matters who plays a character?", "What can schools and workplaces do to make trans people feel respected?", "How can you support a friend whose identity is not accepted by everyone?"] },
+  sources: ["Laverne Cox official channels and interviews", "TIME, “The Transgender Tipping Point,” 29 May 2014", "Netflix documentary Disclosure (2020)", "GLAAD (glaad.org)"]
+});
+
+GOL.add({
+  id: "johnson", name: "Marsha P. Johnson", years: "1945 – 1992", focus: "Gender identity, poverty, queer rights", emoji: "🌸", color: "#9333ea",
+  tagline: "An activist who fed, housed and defended homeless queer youth long before it was popular. “Pay it no mind.”",
+  intro: "Content note: this story includes discrimination, poverty and violence. You are Marsha, who arrives in New York City with almost nothing and builds a family for people who have no one.",
+  stages: ["New Jersey", "New York", "Activism", "Later years"],
+  tiles: [
+    ["start", 0, "Elizabeth, NJ, 1945", "Marsha is born on 24 August 1945 in Elizabeth, New Jersey, one of seven children. She grows up in a church-going family and loves dressing up in flowers and bright colours."],
+    ["barrier", 0, "Harassment for being different", "Marsha is harassed for wearing girls’ clothes as a child and teenager. She graduates from high school in 1963, and moves to New York City with only a small amount of money in her pocket.", { need: 2, label: "Leaving home to be herself" }],
+    ["barrier", 1, "No home, no job", "In New York, Marsha has little money and often no place to sleep. She works odd jobs, as a waitress and in sex work, to survive, and sometimes sleeps on the street. Police and landlords often discriminate against queer people.", { need: 3, label: "Surviving without a safety net" }],
+    ["win", 1, "“Pay it no mind”", "Marsha adds “P.” to her name, which she said stood for “Pay it no mind,” her answer to nosy questions about her gender. She becomes a well-loved figure in Greenwich Village for her kindness and humour.", { fx: { hope: 2, support: 1 } }],
+    ["choice", 2, "June 1969", "At the Stonewall Inn in New York, the police raid a gay bar, as they often do. This time, people fight back. Will you stay and join them?", { opts: [["Leave, it isn’t worth the risk", { hope: 0 }, "You go home safe."], ["Stay and join the protest", { hope: 1, support: 1 }, "You become part of history."]], reveal: "What Marsha did: she took part in the Stonewall uprising that began on 28 June 1969. Accounts differ about exactly what she did that night, and the popular claim that she threw the “first brick” is disputed, but she was a prominent figure in the days of protest." }],
+    ["win", 2, "STAR House", "In 1970, Marsha and her friend Sylvia Rivera found STAR (Street Transvestite Action Revolutionaries) and open STAR House, a shelter for homeless young trans people and queer youth. They pay the rent and food with money from their own work.", { fx: { hope: 2, support: 2 } }],
+    ["barrier", 2, "Left out by the movement", "Many gay-rights groups of the time wanted to be seen as “respectable” and pushed away trans people, drag queens and sex workers. Marsha and Sylvia were often excluded even from the events they helped start.", { need: 3, label: "Fighting for a place in the movement" }],
+    ["win", 3, "Art and community", "Marsha performs in the drag troupe Hot Peaches, and in 1975 she is photographed by Andy Warhol for his series “Ladies and Gentlemen.”", { fx: { hope: 2 } }],
+    ["barrier", 3, "The AIDS crisis", "In the 1980s Marsha lives with HIV (she was diagnosed in 1990) and watches many friends die. Politicians and the media largely ignore the crisis. She becomes active with ACT UP, demanding medical care and respect.", { need: 3, label: "Caring in a crisis" }],
+    ["win", 3, "A neighbourhood saint", "Neighbours in the West Village remember Marsha as a generous person who gave food and money to others, and who had a gift for making people feel seen.", { fx: { hope: 2, support: 1 } }],
+    ["finish", 3, "July 1992", "In July 1992, shortly after the Pride march, Marsha’s body is found in the Hudson River. The police first treat it as suicide, a view her friends rejected. The case was later reopened, and her death remains officially unresolved. She is remembered as a pioneer for trans rights, and in 2019 New York announced a monument to her and Sylvia Rivera."]
+  ],
+  ending: { headline: "Kindness as activism", real: "Marsha P. Johnson’s life was marked by discrimination and danger. She is remembered for what she gave: shelter, community and courage. Historians still discuss details of her life and death, which is why we are careful about what we claim.", reflect: ["Why are the people who help others at the edge often forgotten in history?", "What did STAR House do that larger organisations did not?", "How can we protect young people who have no safe home?"] },
+  sources: ["Netflix documentary The Death and Life of Marsha P. Johnson (2017)", "New York Public Library: Marsha P. Johnson and Sylvia Rivera archives", "Trans Lives Matter / Marsha P. Johnson Institute (marshap.org)"]
+});
+
+GOL.add({
+  id: "singh", name: "Fauja Singh", years: "c. 1911 – 2025", focus: "Age", emoji: "🏃", color: "#ca8a04",
+  tagline: "He couldn’t walk until age five, and ran his first marathon at 89.",
+  intro: "You are Fauja, a farmer’s son in a village in Punjab, India. Your legs are weak and the world is small. You’re going to prove that it is never too late.",
+  stages: ["Punjab", "Loss and England", "Marathon man", "A very long life"],
+  tiles: [
+    ["start", 0, "Punjab, around 1911", "Fauja is born in a village in Punjab around 1911. (He had no birth certificate, so his exact age was never officially confirmed.) As a small boy his legs are so weak that he can’t walk until about the age of five."],
+    ["barrier", 0, "Weak legs, hard work", "Fauja is teased for his thin legs and unable to play like other children. He becomes a farmer and works the land all of his life, with little schooling and no sport.", { need: 2, label: "Growing up with a physical limit" }],
+    ["win", 0, "Family and farm", "He marries Gyan Kaur and raises a family, working hard in the fields. In his village he is well known as a modest, kind person.", { fx: { hope: 2, support: 1 } }],
+    ["barrier", 1, "Losses", "In 1992 Fauja’s wife dies, and in 1994 one of his sons dies in an accident. Overcome with grief, Fauja moves to England to live with another son. He is lonely and depressed.", { need: 3, label: "Grief and a new country" }],
+    ["win", 1, "Running to heal", "In Ilford, East London, Fauja starts running to cope with grief. At 89, he joins a running club and meets his coach Harmander Singh, a fellow Sikh, who also becomes his translator and friend.", { fx: { hope: 2, support: 2 } }],
+    ["barrier", 2, "“Too old”", "Doctors, strangers and even some friends are shocked: a man at his age should rest. Fauja ignores them and trains daily, even in cold British weather.", { need: 2, label: "Being told what age allows" }],
+    ["win", 2, "London Marathon, 2000", "In April 2000, at 89, Fauja runs his first marathon, the London Marathon. He finishes, and then goes on to run more marathons around the world, including New York and Toronto.", { fx: { hope: 3 } }],
+    ["choice", 2, "Rest, or run another?", "You’re over 90. Friends worry about your health. There’s one more marathon you could run.", { opts: [["Retire", { hope: 0 }, "You enjoy your quiet days."], ["Run again", { hope: 1, support: 1 }, "You line up at the start."]], reveal: "What Fauja did: he kept running. In 2003, aged 92, he set a Toronto marathon record for his age group, and in October 2011, at 100, he completed the Toronto Waterfront Marathon, in just over 8 hours." }],
+    ["win", 3, "100 years old", "The Guinness World Records did not recognise his 100-year-old marathon as an official record, because there is no birth certificate. But Fauja received a letter from the Queen, as well as many honours for his 100th birthday.", { fx: { hope: 2 } }],
+    ["win", 3, "Olympic torch", "In 2012 Fauja carries the Olympic torch through London at the age of 100 or so. He also appears in advertising campaigns and supports charities.", { fx: { hope: 2, support: 1 } }],
+    ["info", 3, "A message for everyone", "Fauja’s motto: walk, eat simply, be positive. He says age is only a number, but he also acknowledges that running safely matters. He ends marathon running at 101 with a 10 km race in 2013."],
+    ["finish", 3, "Home in Punjab", "Fauja Singh died on 14 July 2025 after a road accident in his home village, at about 114 years old. His story reminds us never to say “you’re too old.”"]
+  ],
+  ending: { headline: "It’s never too late, and it doesn’t have to be a miracle", real: "Fauja Singh’s story shows that stereotypes about older people are often wrong. He also had a coach, a club and a community, and ran carefully. Not every old person can or should run a marathon, but everyone deserves respect and the chance to try things they care about.", reflect: ["What stereotypes about older people do you hear around you?", "What helped him more: willpower, a coach, or community?", "What is something an older person you know could teach you?"] },
+  sources: ["Fauja Singh with Harmander Singh, news interviews (BBC, Guardian)", "Guinness World Records statement on age records", "Khushwant Singh, The Turbaned Tornado (biography)"]
+});
+
+GOL.add({
+  id: "mandela", name: "Nelson Mandela", years: "1918 – 2013", focus: "Racism, apartheid, imprisonment", emoji: "✊", color: "#166534",
+  tagline: "A lawyer who spent 27 years in prison and then led South Africa to democracy.",
+  intro: "You are Rolihlahla, a boy from a rural village in South Africa, 1918. Your teacher will give you the name Nelson. The state will give you a number.",
+  stages: ["Eastern Cape", "Lawyer and activist", "Prison", "President"],
+  tiles: [
+    ["start", 0, "Mvezo, 1918", "Mandela is born on 18 July 1918 in a village in the Eastern Cape, into the Thembu royal family. He is named Rolihlahla (“troublemaker”). At school he is given the English name Nelson."],
+    ["win", 0, "First in the family at school", "He is the first in his family to go to school and later attends the University of Fort Hare, one of the few universities open to Black Africans.", { fx: { hope: 2, support: 1 } }],
+    ["barrier", 0, "Expelled and on the run", "At Fort Hare, Mandela joins a student protest and is expelled in 1940. Back home, his guardian arranges a marriage for him. He runs away to Johannesburg.", { need: 2, label: "Starting over in a big city" }],
+    ["win", 1, "Studying law", "In Johannesburg he works as a security guard and a clerk, and studies by correspondence and at the University of the Witwatersrand, joining the African National Congress (ANC) in 1944.", { fx: { hope: 2, support: 1 } }],
+    ["barrier", 1, "Apartheid", "In 1948 the government introduces apartheid, laws to separate people by race: Black South Africans must carry passes, cannot vote, and are forced into poor areas. In 1952, Mandela and Oliver Tambo open the country’s first Black law firm.", { need: 3, label: "Practising law under unjust laws" }],
+    ["choice", 1, "Peaceful or armed struggle?", "After the 1960 Sharpeville massacre, in which police shot protestors, the ANC is banned. Nonviolent methods are being crushed. What do you do?", { opts: [["Keep to nonviolent protest", { hope: 0 }, "You hold to peaceful methods."], ["Form an armed wing for sabotage", { hope: -1, support: 1 }, "You aim at buildings, not people."]], reveal: "What Mandela did: in 1961 he helped found Umkhonto we Sizwe, whose campaign targeted installations. He was arrested in 1962. This remains debated: the apartheid government and some countries called him a terrorist, while many others saw it as a last resort." }],
+    ["barrier", 2, "Rivonia Trial, 1964", "Mandela and others are tried for sabotage. He says he is prepared to die for the ideal of a democratic and free society. In June 1964 he is sentenced to life in prison.", { need: 3, label: "Facing a life sentence" }],
+    ["barrier", 2, "Robben Island", "For 18 years he is held on Robben Island, in a small cell and doing hard labour in a lime quarry. Visits and letters are limited. He is not allowed to attend the funerals of his mother and eldest son.", { need: 3, label: "Years of confinement" }],
+    ["win", 2, "Teaching in prison", "Prisoners secretly study and discuss politics. Mandela refuses to give up his views. In 1985 he refuses an offer of release in exchange for renouncing violence, saying that only free men can negotiate.", { fx: { hope: 2, support: 2 } }],
+    ["win", 2, "Release, 1990", "After years of international pressure and protests, Mandela walks free on 11 February 1990, after 27 years in prison, aged 71.", { fx: { hope: 3, support: 1 } }],
+    ["win", 3, "Nobel Peace Prize, 1993", "Mandela negotiates the end of apartheid with President F. W. de Klerk, and they share the Nobel Peace Prize.", { fx: { hope: 2 } }],
+    ["win", 3, "President, 1994", "On 27 April 1994, South Africans of all races vote in their first democratic election. Mandela becomes president. He sets up the Truth and Reconciliation Commission and tries to bring people together, including in a famous show of unity at the 1995 Rugby World Cup.", { fx: { hope: 3, support: 1 } }],
+    ["barrier", 3, "An unfinished job", "Poverty, inequality, crime and the AIDS crisis do not disappear with apartheid. Mandela later admits his government’s failures, including on AIDS, and keeps working after leaving office in 1999.", { need: 2, label: "Building a new country" }],
+    ["finish", 3, "2013", "Nelson Mandela dies on 5 December 2013, aged 95. Leaders and ordinary people from around the world honour his life."]
+  ],
+  ending: { headline: "From prisoner to president, and it took everyone", real: "Mandela’s story is not only about one man. It is about a mass movement, worldwide pressure, and thousands who were imprisoned or died. It is also about the choice to seek reconciliation, not revenge, and about the inequality that remains.", reflect: ["What did the choice to forgive achieve, and what did it not solve?", "What laws or rules today treat groups differently?", "Why did international pressure matter?"] },
+  sources: ["Nelson Mandela, Long Walk to Freedom (1994)", "Nelson Mandela Foundation (nelsonmandela.org)", "Nobel Prize: Nelson Mandela (nobelprize.org)"]
+});
+
+GOL.add({
+  id: "beethoven", name: "Ludwig van Beethoven", years: "1770 – 1827", focus: "Deafness", emoji: "🎼", color: "#7c2d12",
+  tagline: "A composer who went deaf and wrote some of the greatest music in history.",
+  intro: "You are Ludwig, a boy from Bonn whose father wants to turn you into a child star. Music is your life. Soon, your ears will begin to betray you.",
+  stages: ["Bonn", "Vienna", "Deafness", "Late works"],
+  tiles: [
+    ["start", 0, "Bonn, 1770", "Ludwig is born in Bonn, Germany, in December 1770, into a family of court musicians. His father is strict and sometimes harsh, and pushes him to practise as a child prodigy."],
+    ["barrier", 0, "A harsh childhood", "His father drinks too much and the family has money problems. Ludwig has to become the family provider as a teenager, working as an organist and musician after his mother dies in 1787.", { need: 2, label: "Taking responsibility too young" }],
+    ["win", 1, "To Vienna", "In 1792 Beethoven moves to Vienna, then the music capital of Europe. He studies with Joseph Haydn, and quickly becomes known as a brilliant pianist and improviser.", { fx: { hope: 2, support: 1 } }],
+    ["win", 1, "Patrons and fame", "Noble patrons support him and he publishes his first works. His music is bold, emotional and new. He is a rising star.", { fx: { hope: 2 } }],
+    ["barrier", 2, "The ringing begins", "Around 1798, at 27, Beethoven notices a ringing in his ears (tinnitus), and his hearing gradually gets worse. The cause remains unknown. He is afraid to tell anyone and avoids social events.", { need: 3, label: "Hiding a growing fear" }],
+    ["barrier", 2, "Heiligenstadt, 1802", "In a letter he never sends, the “Heiligenstadt Testament,” Beethoven writes of his despair and thoughts of ending his life. But he says that art held him back: he felt he couldn’t leave the world before bringing out all that was in him.", { need: 3, label: "Finding a reason to continue" }],
+    ["win", 2, "Heroic music", "Beethoven keeps composing. His Third Symphony (“Eroica,” 1804) is groundbreaking, followed by the Fifth Symphony, with its famous four notes, and the opera Fidelio.", { fx: { hope: 3 } }],
+    ["choice", 2, "Give up the stage?", "You can’t hear the orchestra clearly. Should you stop performing and conducting?", { opts: [["Stop performing in public", { hope: -1 }, "You protect your pride."], ["Find new ways to work", { hope: 1, support: 1 }, "You adapt."]], reveal: "What Beethoven did: he stopped performing as a pianist, but kept composing, using ear trumpets, and, when he was almost totally deaf by about 1818, “conversation books” in which friends wrote their side of conversations. Some stories say he cut the legs of his piano to feel its vibrations; this is a legend, not confirmed." }],
+    ["barrier", 3, "Isolation and family trouble", "As his hearing disappears, Beethoven becomes isolated. He struggles with his health, with money, and with a long and painful legal battle for custody of his nephew Karl, who in 1826 attempts suicide.", { need: 3, label: "Loneliness and struggle" }],
+    ["win", 3, "Ninth Symphony, 1824", "Beethoven’s Ninth Symphony premieres in Vienna on 7 May 1824, with Beethoven on stage. At the end, he doesn’t hear the applause until a singer gently turns him around to see the cheering audience.", { fx: { hope: 3, support: 1 } }],
+    ["win", 3, "Late quartets", "In his last years he writes string quartets that composers still find astonishing, written entirely from his inner ear.", { fx: { hope: 2 } }],
+    ["finish", 3, "Vienna, 1827", "Beethoven dies on 26 March 1827, aged 56. Thousands of people take part in his funeral. His music is now known around the world."]
+  ],
+  ending: { headline: "Music from silence, and the tools that helped", real: "Beethoven’s deafness changed how he lived, with isolation, fear and tools to cope, but not whether he could create. His story also shows how much he depended on friends, publishers and helpers who wrote, copied and listened for him.", reflect: ["What helped Beethoven keep working?", "How does hearing loss affect friendships and work, and how can we help?", "What can sign language, subtitles and hearing tools do today that he didn’t have?"] },
+  sources: ["Jan Swafford, Beethoven: Anguish and Triumph", "Beethoven-Haus Bonn (beethoven.de)", "Heiligenstadt Testament (1802), various translations"]
+});
+
+GOL.add({
+  id: "turing", name: "Alan Turing", years: "1912 – 1954", focus: "Sexuality, discrimination", emoji: "🧮", color: "#475569",
+  tagline: "A mathematician who helped shorten the Second World War and invented the ideas behind computers, then was punished for who he loved.",
+  intro: "Content note: this story includes the persecution of gay men, and ends with Turing’s early death. You are Alan, a brilliant, shy boy in 1920s England who loves numbers and puzzles.",
+  stages: ["Youth", "Cambridge", "Bletchley Park", "Computers", "Persecution"],
+  tiles: [
+    ["start", 0, "London, 1912", "Alan is born on 23 June 1912. His parents work in colonial India, so he is raised by foster families and at boarding school."],
+    ["barrier", 0, "Different at school", "At Sherborne School, Alan is more interested in science and numbers than sports and Latin. Teachers criticise his untidy writing and his lack of interest in the classics.", { need: 2, label: "Being valued for his mind" }],
+    ["win", 0, "A friend and a reason to study", "Alan’s close friend Christopher Morcom shares his love of science. When Christopher dies of illness at 18, Alan is devastated, and he decides to keep going in science in his memory.", { fx: { hope: 1, support: 1 } }],
+    ["win", 1, "King’s College, Cambridge", "Alan studies mathematics at Cambridge and is elected a fellow at only 22. In 1936, he writes a paper describing an idea of a universal “Turing machine,” the theoretical basis of every modern computer.", { fx: { hope: 3 } }],
+    ["win", 2, "Bletchley Park", "In 1939, as war begins, Alan joins the secret codebreaking centre at Bletchley Park. He helps design the “Bombe” machine to break the German Enigma code and leads the team working on naval Enigma messages.", { fx: { hope: 3, support: 1 } }],
+    ["win", 2, "Saving lives", "The codebreakers help the Allies to protect convoys and plan operations. Historians estimate their work shortened the war by about two years and saved many lives.", { fx: { hope: 2, support: 1 } }],
+    ["barrier", 2, "A secret hero", "Because of the Official Secrets Act, Alan and thousands of others can never talk about their work. Their contribution isn’t known to the public for decades, and Alan receives only a modest official honour (an OBE in 1946).", { need: 2, label: "Doing great work in silence" }],
+    ["win", 3, "Thinking machines", "After the war Alan works on early computers in Manchester, and in 1950 he asks, “Can machines think?” His “imitation game,” now known as the Turing Test, still shapes AI research.", { fx: { hope: 2 } }],
+    ["barrier", 4, "Arrested in 1952", "In Britain at that time, sex between men is a crime. After Alan reports a burglary, the police learn about his relationship with a man, and charge him with “gross indecency.” He is convicted.", { need: 3, label: "Persecution by the law" }],
+    ["choice", 4, "Prison or treatment?", "The court gives you a choice: prison, or hormone injections intended to “cure” homosexuality. Neither is just.", { opts: [["Choose prison", { hope: -2 }, "You would lose your work."], ["Choose the hormone treatment", { hope: -2 }, "You keep your freedom and your research."]], reveal: "What Alan did: he accepted the injections for a year, in order to continue his research. He also lost his security clearance, which meant he could no longer work with government codebreakers. The law he was convicted under was unjust." }],
+    ["barrier", 4, "Isolation", "The treatment affects his body and mood. He is regarded with suspicion by officials. He continues to work in mathematics and biology, but is increasingly cut off.", { need: 3, label: "Living under suspicion" }],
+    ["finish", 4, "1954", "Alan Turing dies on 7 June 1954, aged 41, of cyanide poisoning. The inquest ruled it suicide, though some argue the evidence is not conclusive. In 2009 the British Prime Minister apologised. In 2013 he received a royal pardon, and in 2017 a law pardoned thousands of other men convicted of the same offences. Since 2021 he appears on the Bank of England £50 note."]
+  ],
+  ending: { headline: "A mind that helped win a war, and a law that failed him", real: "Alan Turing’s ideas shaped modern computing and his work helped save lives. The same country that relied on him later criminalised him because of his sexuality. His story is a reminder that prejudice costs society talent, and people their lives.", reflect: ["What did the law take from Alan, and from everyone else?", "Why was his work kept secret for so long?", "What rules still treat people unfairly because of who they love?"] },
+  sources: ["Andrew Hodges, Alan Turing: The Enigma (1983)", "Bletchley Park Trust (bletchleypark.org.uk)", "UK Government: Alan Turing pardon (2013) and Policing and Crime Act 2017", "Turing Archive, King’s College Cambridge (turing.org.uk)"]
+});
