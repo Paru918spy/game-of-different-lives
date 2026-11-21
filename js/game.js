@@ -16,17 +16,28 @@
   const view = ch => ch;
 
   /* ---------- character select ---------- */
+  const FILTERS = [["all", "All lives", null], ["disability", "Disability", /disab|blind|deaf|autism|pain|wheelchair/i],
+    ["race", "Race & racism", /race|racism|apartheid|segregation/i], ["gender", "Gender & identity", /gender|identity|sexuality|non-binary|queer/i],
+    ["age", "Age", /\bage\b/i], ["fiction", "Fictional", "f"]];
+  let filter = "all";
+  function matches(c) {
+    const f = FILTERS.find(x => x[0] === filter);
+    if (!f || !f[2]) return true;
+    return f[2] === "f" ? !!c.fictional : f[2].test(c.focus);
+  }
   function renderSelect() {
+    $("filters").innerHTML = FILTERS.map(f => `<button class="chipf${f[0] === filter ? " on" : ""}" data-f="${f[0]}">${f[1]}</button>`).join("");
+    document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { filter = b.dataset.f; renderSelect(); });
     $("title").textContent = ui().title;
     document.title = ui().title;
     $("lead").textContent = ui().lead;
         $("note").textContent = ui().note;
-    $("cards").innerHTML = GOL.characters.map(c => {
+    $("cards").innerHTML = GOL.characters.filter(matches).map(c => {
       const v = view(c);
       return `<article class="pcard" style="--c:${c.avatar.color}">
         <div class="avatar big-av">${GOL.portrait(c)}</div>
         ${c.fictional ? '<span class="tag">Fictional character</span>' : ""}<h3>${esc(v.name)}</h3><small>${esc(c.years)} · ${esc(c.focus)}</small>
-        <p>${esc(v.tagline)}</p>
+        <p>${esc(v.tagline)}</p>${c.note ? `<small class="cn">${esc(c.note)}</small>` : ""}
         <button class="big" data-play="${c.id}">${ui().play}</button></article>`;
     }).join("");
     document.querySelectorAll("[data-play]").forEach(b => b.onclick = () => start(b.dataset.play));
@@ -50,6 +61,7 @@
         <span class="n">${i + 1}</span><span class="ic">${ICON[t.type]}</span><span class="tt">${esc(t.title)}</span></div>`;
     });
     html += `<div id="pawn" class="pawn" style="background:${S.base.avatar.color}">${S.base.avatar.emoji}</div>`;
+    $("boardWrap").style.setProperty("--c", S.base.avatar.color);
     const b = $("board");
     b.style.width = BW + "px"; b.style.height = BH + "px";
     b.innerHTML = html;
@@ -164,10 +176,27 @@
       return;
     }
     apply(t.effects);
+    (SND[t.type] || SND.step)();
     let extra = "";
     if (t.gate) extra = `<div class="gate"><b>${u.gateTitle}</b><br>${esc(u.gateText(t.gate.need, t.gate.label))}</div>`;
     await modal(`${header(t, i)}<p>${esc(t.text)}</p>${chips(t.effects)}${extra}<button class="big" data-done="1">${u.gotIt}</button>`, "c-" + t.type);
   }
+
+  /* ---------- sound (WebAudio, no files) ---------- */
+  let muted = false, ac = null;
+  function tone(freqs, dur = .18, type = "sine", vol = .08) {
+    if (muted) return;
+    try {
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      freqs.forEach((f, i) => {
+        const o = ac.createOscillator(), g = ac.createGain(), t = ac.currentTime + i * dur * .8;
+        o.type = type; o.frequency.value = f; g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+        o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + dur);
+      });
+    } catch (e) { /* audio unavailable */ }
+  }
+  const SND = { step: () => tone([440], .08, "triangle"), win: () => tone([523, 659, 784], .2), barrier: () => tone([196, 147], .25, "sawtooth", .05), spin: () => tone([330, 392, 440, 523], .1, "triangle") };
+  $("mute").onclick = () => { muted = !muted; $("mute").textContent = muted ? "🔇" : "🔊"; };
 
   /* ---------- gameplay ---------- */
   function start(id) {
@@ -176,7 +205,7 @@
           turns: 0, barriers: 0, lost: 0, fails: 0, blocked: false, busy: false };
     $("screen-select").hidden = true; $("screen-end").hidden = true; $("screen-game").hidden = false;
     buildWheel(); renderBoard(); renderHud();
-    modal(`<div class="ch-head h-start"><span>🏠 ${ui().chapter}</span></div><h2>${esc(S.ch.name)}</h2><p>${esc(S.ch.intro)}</p>
+    modal(`<div class="ch-head h-start"><span>🏠 ${ui().chapter}</span></div><h2>${esc(S.ch.name)}</h2><p>${esc(S.ch.intro)}</p>${S.base.note ? `<p class="muted"><b>${esc(S.base.note)}</b></p>` : ""}
       <button class="big" data-done="1">${ui().gotIt}</button>`, "c-start").then(async () => {
       await showTile(S.ch.tiles[0], 0);
     });
@@ -186,6 +215,7 @@
     if (S.busy) return;
     S.busy = true; renderHud();
     const u = ui();
+    SND.spin();
     const r = await spinWheel();
     S.turns++;
     let steps = r;
