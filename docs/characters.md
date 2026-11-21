@@ -42,3 +42,9 @@ Fictional stories should be built from documented real-world statistics and revi
 - Parks: fine $14 ($10 + $4 costs), voter registration in 1945 on third attempt, 40,000 riders, Recy Taylor details, date of the Browder v. Gayle ruling.
 - Check all dates and quotes against primary sources; keep a `sources` list per character (already in the data files).
 - Image and quote rights.
+
+## Fact-check status (2026-11-21)
+- Web search from this environment only returns page titles, not page text, so line-by-line checking was not possible yet.
+- Confirmed by multiple news headlines: Fauja Singh died in July 2025 in a road accident aged 114.
+- Still needs a human or a session with page access: all other dates, quotes and numbers, especially the Paralympics quote (Hawking), the voter registration timeline (Parks), the Stonewall and death-investigation wording (Johnson), and the Kaepernick and Cox details.
+- Content notes are shown on the cards and intro for Marsha P. Johnson and Alan Turing; fictional stories carry a "Fictional story" label.
