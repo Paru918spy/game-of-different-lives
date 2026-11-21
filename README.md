@@ -42,3 +42,6 @@ Copy `js/characters/parks.js`, change the content, add a `<script>` line in `ind
 - Portraits: real people use emoji placeholders until licensed photos are added (Wikimedia Commons, with credit; set `photo:{file,credit,license,url}` on the character). Fictional characters use illustrations.
 - English only, by decision.
 - Later packaging for a Mac app: wrap the folder with Tauri or Electron; nothing in the code needs a server.
+
+## Photo credits
+Portraits of real people are freely licensed files from Wikimedia Commons, stored in `img/people/`. Author, license and source link for each are in `js/photos.js` and are shown on every character card and ending screen. Fictional characters use original illustrations.

@@ -27,6 +27,7 @@
         <div class="avatar big-av">${GOL.portrait(c)}</div>
         ${c.fictional ? '<span class="tag">Fictional character</span>' : ""}<h3>${esc(v.name)}</h3><small>${esc(c.years)} · ${esc(c.focus)}</small>
         <p>${esc(v.tagline)}</p>
+        ${GOL.credit(c)}
         <button class="big" data-play="${c.id}">${ui().play}</button></article>`;
     }).join("");
     document.querySelectorAll("[data-play]").forEach(b => b.onclick = () => start(b.dataset.play));
@@ -218,7 +219,7 @@
     $("screen-game").hidden = true; $("screen-end").hidden = false;
     $("screen-end").innerHTML = `<div class="endcard" style="--c:${S.base.avatar.color}">
       <div class="avatar big-av">${GOL.portrait(S.base)}</div>
-      <small>${u.endTitle}</small><h2>${esc(S.ch.name)}</h2><h3>${esc(e.headline)}</h3>
+      <small>${u.endTitle}</small><h2>${esc(S.ch.name)}</h2><h3>${esc(e.headline)}</h3>${GOL.credit(S.base)}
       <div class="stats">
         <div><b>${S.turns}</b>${u.sTurns}</div><div><b>${S.barriers}</b>${u.sBarriers}</div>
         <div><b>${S.lost}</b>${u.sLost}</div><div><b>${S.hope}/10</b>${u.sHope}</div><div><b>${S.support}/3</b>${u.sSupport}</div>

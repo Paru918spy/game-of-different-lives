@@ -56,3 +56,11 @@ GOL.portrait = function (c) {
   }
   return c.avatar.emoji;
 };
+
+/* Small credit line (author, license, source link) for a real person's photo. */
+GOL.credit = function (c) {
+  const p = c.photo; if (!p) return "";
+  const e = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+  const lic = p.licenseUrl ? `<a href="${e(p.licenseUrl)}" target="_blank" rel="noopener">${e(p.license)}</a>` : e(p.license);
+  return `<span class="credit">${p.note ? e(p.note) + " · " : "Photo: "}${e(p.author)} · ${lic} · <a href="${e(p.source)}" target="_blank" rel="noopener">Wikimedia Commons</a></span>`;
+};
