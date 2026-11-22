@@ -258,6 +258,28 @@
   /* ---------- wire up ---------- */
   $("playNow").onclick = $("playNow2").onclick = $("playNow3").onclick = () => showAbout(false); $("aboutLink").onclick = e => { e.preventDefault(); showAbout(true); };
   const TOPIC_ICON = { no: '<circle cx="12" cy="12" r="9"/><path d="M6 18L18 6"/>', rainbow: '<circle cx="12" cy="9" r="4"/><path d="M12 13v8M9 18h6M15 6l5-4M17 2h3v3"/>', globe: '<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>', chair: '<circle cx="9" cy="4" r="2"/><path d="M9 7v7h6l3 6M9 11h5"/><circle cx="9" cy="17" r="4"/>', scale: '<path d="M12 3v17M7 20h10M4 7h16M4 7l-2 7h6zM20 7l-2 7h6z"/>', hands: '<path d="M12 21C5 15 3 12 3 8.500a4.500 4.500 0 018-2.700A4.500 4.500 0 0121 8.500C21 12 19 15 12 21z"/>', circles: '<circle cx="9" cy="10" r="5"/><circle cx="15" cy="10" r="5"/><circle cx="12" cy="15" r="5"/>', ring: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="9" r="2.500"/><path d="M7 17q5-6 10 0"/>' };
+  /* ---------- topic info pages ---------- */
+  const TOPICS = {
+    discrimination: ["Discrimination", "Treating people worse than others because of a characteristic such as origin, gender, disability, age, religion or sexual orientation, without a good reason.", ["Unequal treatment", "Prejudice", "Exclusion"], "In the game: Turing, Jonas, Kaepernick"],
+    gender: ["Gender identity", "A person’s inner sense of their own gender, for example woman, man, both or neither. It can differ from the sex recorded at birth.", ["Self-determination", "Respect", "Names and pronouns"], "In the game: Cox, Sam"],
+    racism: ["Racism", "Treating people as unequal because of their origin, skin colour or culture, through prejudice and insults, but also through unfair rules and structures.", ["Prejudice", "Segregation", "Structures"], "In the game: Parks, King, Mandela, Johnson"],
+    disability: ["Disability", "A long-term physical, mental, sensory or learning impairment. Barriers in buildings, rules and attitudes are what turn it into exclusion.", ["Access", "Attitudes", "Support"], "In the game: Hawking, Keller, Heumann, Grandin, Beethoven"],
+    equal: ["Equal opportunities", "Everyone gets a fair chance at education, work and taking part in society, whatever their background. Fair does not always mean the same: some people need more support.", ["Fairness", "Access", "Support"], "In the game: Malala, Curie, Johnson"],
+    tolerance: ["Tolerance", "Respecting people, beliefs and ways of living that differ from our own, even if we do not share them. It ends where others are harmed or excluded.", ["Respect", "Openness", "Limits"], "In the game: all 21 lives"],
+    diversity: ["Diversity", "The variety of people in a society: origin, gender, age, abilities, beliefs and ways of life. Diversity is a strength when everyone has a voice.", ["Variety", "Perspectives", "Strength"], "In the game: all 21 lives"],
+    inclusion: ["Inclusion", "Everyone can take part fully from the start. Society adapts to people, not people to society.", ["Belonging", "Participation", "Accessibility"], "In the game: all 21 lives"]
+  };
+  const TKEYS = Object.keys(TOPICS);
+  function showTopic(k) {
+    const t = TOPICS[k]; if (!t) return; const i = TKEYS.indexOf(k);
+    $("screen-about").hidden = true; $("screen-home").hidden = true; $("screen-topic").hidden = false; window.scrollTo(0, 0);
+    $("tTitle").textContent = t[0]; $("tDef").textContent = t[1]; $("tKeys").innerHTML = t[2].map(x => `<span>${x}</span>`).join(""); $("tGame").textContent = t[3];
+    const ic = document.querySelector(`.tp[data-topic="${k}"] svg`); $("tIcon").innerHTML = ic ? ic.outerHTML : "";
+    $("tPrev").onclick = e => { e.preventDefault(); showTopic(TKEYS[(i + TKEYS.length - 1) % TKEYS.length]); }; $("tNext").onclick = e => { e.preventDefault(); showTopic(TKEYS[(i + 1) % TKEYS.length]); };
+  }
+  document.querySelectorAll(".tp[data-topic]").forEach(t => { t.onclick = () => showTopic(t.dataset.topic); t.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); showTopic(t.dataset.topic); } }; });
+  $("tBack").onclick = e => { e.preventDefault(); $("screen-topic").hidden = true; showAbout(true); const el = $("a-topics"); el && el.scrollIntoView(); };
+  $("tPlay").onclick = () => { $("screen-topic").hidden = true; showAbout(false); };
   document.querySelectorAll(".tp").forEach(t => { t.insertAdjacentHTML("afterbegin", `<svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round">${TOPIC_ICON[t.dataset.ic] || ""}</svg>`); });
   $("spin").onclick = spin; $("spinCv").addEventListener("click", () => spinner && spinner.skip()); $("wheelCv").addEventListener("click", () => wheel && wheel.skip()); $("spinLife").addEventListener("dblclick", () => wheel && wheel.skip()); $("spinLife").onclick = spinLife; $("quit").onclick = home;
   $("follow").onclick = () => board.setFollow(!$("follow").classList.contains("on"));
