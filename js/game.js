@@ -46,19 +46,23 @@
   let spinningLife = false;
   async function spinLife() {
     if (spinningLife) return; spinningLife = true; $("spinLife").disabled = true; $("spinLife").textContent = ui().spinning;
-    lifeIdx = Math.floor(Math.random() * order.length);
-    SND.spin(); await wheel.spin(lifeIdx, 7000);
-    SND.fanfare(); await sleep(500);
-    await reveal(GOL.characters[order[lifeIdx]]);
+    for (let again = true; again;) {
+      lifeIdx = Math.floor(Math.random() * order.length);
+      SND.spin(); await wheel.spin(lifeIdx, 7000);
+      SND.fanfare(); await sleep(500);
+      again = (await reveal(GOL.characters[order[lifeIdx]])) === "again";
+      if (again) { $("spinLife").textContent = ui().spinning; await sleep(250); }
+    }
     spinningLife = false; $("spinLife").disabled = false; $("spinLife").textContent = ui().spinLife;
   }
   async function reveal(c) {
     const tags = (c.fictional ? `<span class="tag">Fictional character</span>` : "");
-    await modal(`<div class="reveal" style="--c:${c.avatar.color}">
+    const pick = await modal(`<div class="reveal" style="--c:${c.avatar.color}">
       <div class="avatar big-av">${GOL.portrait(c)}</div>
       <small class="kick">${ui().revealKick}</small>${tags}<h2>${esc(c.name)}</h2><small>${esc(c.years)} · ${esc(c.focus)}</small>
       <p>${esc(c.tagline)}</p>${c.note ? `<p class="muted"><b>${esc(c.note)}</b></p>` : ""}${GOL.credit(c) ? `<div class="credit-row">${GOL.credit(c)}</div>` : ""}
-      <button class="big gold" data-done="1">${ui().begin}</button></div>`, "c-reveal");
+      <button class="big gold" data-done="1">${ui().begin}</button><button class="again" data-done="again">↻ ${ui().spinAgain}</button></div>`, "c-reveal");
+    if (pick === "again") return "again";
     start(c.id);
   }
 

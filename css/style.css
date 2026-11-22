@@ -138,3 +138,5 @@ button{font-family:inherit;cursor:pointer}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,rgba(220,38,38,0) 45%,rgba(220,38,38,.55) 100%);z-index:60;transition:opacity .15s}
 body.hurt::after{opacity:1}body.hurt #boardCv{animation:camShake .5s}
 @keyframes camShake{0%,100%{transform:translate(0)}20%{transform:translate(-8px,3px)}40%{transform:translate(7px,-4px)}60%{transform:translate(-5px,2px)}80%{transform:translate(4px,-2px)}}
+
+.again{display:block;margin:12px auto 0;background:none;border:2px solid #3a2410;color:#3a2410;border-radius:999px;padding:10px 20px;font:700 15px inherit;cursor:pointer}.again:hover{background:#3a24101a}

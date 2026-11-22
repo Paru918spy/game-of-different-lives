@@ -5,7 +5,7 @@ GOL.ui = {
     lead: "Walk through the real life stories of people who faced barriers, prejudice and doubt, and who made history anyway. Spin the wheel of fortune and live a life you did not choose.",
     soonTitle: "Coming soon",
     note: "Details are based on public biographies; scenes marked “Illustrative” are not about one specific person.",
-    play: "Play this life", soon: "Soon", chapter: "Chapter", hope: "Hope", support: "Support (opens bridges)",
+    play: "Play this life", soon: "Soon", chapter: "Chapter", hope: "Hope", support: "Support (opens bridges)", spinAgain: "Spin again (get a different life)",
     spin: "Spin the wheel", spinning: "Spinning…", quit: "Back to all lives",
     tile: "Space", of: "of", illustrative: "Illustrative scene",
     gateTitle: "A barrier blocks the way",
