@@ -2,7 +2,7 @@
 window.GOL = window.GOL || { characters: [] };
 GOL.ui = {
     title: "Game of Different Lives",
-    lead: "Walk through the real life stories of people who faced barriers, prejudice and doubt, and who made history anyway. Pick a life and spin the wheel.",
+    lead: "Walk through the real life stories of people who faced barriers, prejudice and doubt, and who made history anyway. Spin the wheel of fortune and live a life you did not choose.",
     soonTitle: "Coming soon",
     note: "Details are based on public biographies; scenes marked “Illustrative” are not about one specific person.",
     play: "Play this life", soon: "Soon", chapter: "Chapter", hope: "Hope", support: "Support (bonus to your spin)",
@@ -21,5 +21,15 @@ GOL.ui = {
     endTitle: "The journey ends", stats: "Your journey in numbers",
     sTurns: "Turns taken", sBarriers: "Barriers met", sLost: "Turns lost to barriers", sHope: "Final hope", sSupport: "Support gathered",
     realStory: "The real story", reflect: "Think about it", sources: "Where this comes from",
-    again: "Play another life", replay: "Play again", pickFirst: "Pick a life to begin"
+    again: "Spin for another life", replay: "Play this life again", pickFirst: "Spin the wheel to begin",
+    spinLife: "Spin the wheel of fortune", begin: "Begin this life", revealKick: "Fate has chosen",
+    how: [["Spin", "The wheel of fortune picks a life for you. You cannot choose."], ["Walk", "Roll the spinner and move your pawn along a road of real moments."], ["Cross", "Support opens bridges. Barriers can throw you back."], ["Think", "See the world through someone else’s eyes."]],
+    close: "Close", yourTurn: "Your turn. Spin the spinner.", illustrationNote: "Illustration", clickReplay: "click to read again",
+    bridge: "Bridge", bridgeTitle: "A bridge opens", bridgeClosedTitle: "A bridge, but closed", bridgeClosed: "You have no Support to cross it. Allies, mentors and friends are what make shortcuts possible. Collect Support from milestones (⭐).",
+    bridgeCross: "Cross the bridge (uses 1 Support)", bridgeWalk: "Walk the long road",
+    bridgeSkips: l => `Crossing skips: ${l.join(", ")}.`,
+    setback: "Setback", setbackTitle: "Pushed back", setbackNote: "Nobody’s road is a straight line, and some people are pushed back far more often than others. Your next spin gets +1 for persistence.", goBack: "Go back along the red path",
+    sBacks: "Setbacks", sBridges: "Bridges crossed", skippedTitle: "The shortcuts you took",
+    skippedText: l => `Your bridges let you skip: ${l.join(", ")}. In the real life story there was no bridge. Every one of these had to be faced head-on.`,
+    hint: "Drag to rotate · right-drag or Shift + drag to move · scroll to zoom · click a visited space to read it again"
 };

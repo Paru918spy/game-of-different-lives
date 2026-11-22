@@ -7,43 +7,50 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="top">
-  <h1><span class="logo">🎲</span> <span id="title">Game of Different Lives</span></h1>
-  <button id="mute" class="mute" aria-label="Sound on/off" title="Sound on/off">🔊</button>
-</header>
+<div id="confetti-bg" aria-hidden="true"></div>
 
-<main>
-  <section id="screen-select">
+<section id="screen-home">
+  <header class="brand">
+    <div class="logo" id="logo" aria-label="Game of Different Lives"></div>
     <p class="lead" id="lead"></p>
-    <div id="filters" class="filters" role="group" aria-label="Filter lives"></div>
-    <div id="cards" class="cards"></div>
-        <p class="note" id="note"></p>
-  </section>
+  </header>
+  <div class="stage">
+    <canvas id="wheelCv" aria-label="Wheel of fortune with 21 lives"></canvas>
+    <div class="spinwrap"><button id="spinLife" class="big gold"></button></div>
+  </div>
+  <ul class="how" id="how"></ul>
+  <p class="note" id="note"></p>
+</section>
 
-  <section id="screen-game" hidden>
-    <div class="layout">
-      <div id="boardWrap"><div id="board"></div></div>
-      <aside class="hud">
-        <div class="who"><div id="avatar" class="avatar"></div><div><strong id="hName"></strong><br><small id="hYears"></small></div></div>
-        <div class="chapter"><small id="chapLabel"></small><div id="chapter"></div></div>
-        <div class="meter"><label id="hopeLabel"></label><div class="bar"><i id="hopeBar"></i></div></div>
-        <div class="meter"><label id="supLabel"></label><div id="supDots" class="dots"></div></div>
-        <div id="wheelBox">
-          <svg id="wheel" viewBox="-110 -110 220 220" aria-hidden="true"></svg>
-          <div class="pointer"></div>
-        </div>
-        <button id="spin" class="big"></button>
-        <div id="status" class="status" aria-live="polite"></div>
-        <button id="quit" class="link"></button>
-      </aside>
-    </div>
-  </section>
+<section id="screen-game" hidden>
+  <canvas id="boardCv" aria-label="3D game board. Drag to rotate, scroll to zoom, right-drag to move."></canvas>
+  <div id="tip" class="tip" hidden></div>
+  <div class="hud tl">
+    <div class="who"><div id="avatar" class="avatar"></div><div><strong id="hName"></strong><br><small id="hYears"></small></div></div>
+    <div class="chapter"><small id="chapLabel"></small><div id="chapter"></div></div>
+    <div class="meter"><label id="hopeLabel"></label><div class="bar"><i id="hopeBar"></i></div></div>
+    <div class="meter"><label id="supLabel"></label><div id="supDots" class="dots"></div></div>
+  </div>
+  <div class="hud tr">
+    <button id="follow" class="ib on" title="Camera follows the pawn">🎥</button>
+    <button id="overview" class="ib" title="Overview of the whole board">🗺️</button>
+    <button id="mute" class="ib" aria-label="Sound on/off" title="Sound on/off">🔊</button>
+    <button id="quit" class="ib" title="Back to the wheel">🏠</button>
+  </div>
+  <div class="hud bl legend" id="legend"></div>
+  <div class="hud br spinbox">
+    <canvas id="spinCv" aria-label="Spinner"></canvas>
+    <button id="spin" class="big"></button>
+    <div id="status" class="status" aria-live="polite"></div>
+  </div>
+  <div class="hint" id="hint"></div>
+</section>
 
-  <section id="screen-end" hidden></section>
-</main>
+<section id="screen-end" hidden></section>
 
 <div id="modal" class="modal" hidden><div class="card" role="dialog" aria-modal="true" id="modalCard"></div></div>
 
+<script src="vendor/three.min.js"></script>
 <script src="js/core.js"></script>
 <script src="js/characters/hawking.js"></script>
 <script src="js/characters/parks.js"></script>
@@ -52,7 +59,14 @@
 <script src="js/characters/group3.js"></script>
 <script src="js/characters/group4.js"></script>
 <script src="js/photos.js"></script>
+<script src="js/thumbs.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/events.js"></script>
+<script src="js/scenery.js"></script>
 <script src="js/i18n.js"></script>
+<script src="js/gfx.js"></script>
+<script src="js/wheel3d.js"></script>
+<script src="js/board3d.js"></script>
 <script src="js/game.js"></script>
 </body>
 </html>

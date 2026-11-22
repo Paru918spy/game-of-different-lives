@@ -40,3 +40,11 @@ Each character defines their own tiles, stage names ("Childhood", "Diagnosis", "
 - Content warnings for racist violence (Rosa Parks: the Recy Taylor case is mentioned briefly and without detail).
 - Fictional characters are always labelled; invented scenes are flagged "Illustrative".
 - Review by people with lived experience before release (disability and racial-justice groups).
+
+## 3D redesign (current)
+
+- **Assignment by fate.** The select screen is gone. A 3D wheel of fortune (21 wedges, portraits, pegs, flapper, light bulbs, spin physics with ticking sound) assigns the life. The player cannot choose, so everybody experiences a life they did not pick.
+- **A board per life.** Road layout, scenery and colours are generated from the life's id, so every life looks different. The board is a real 3D scene (Three.js, bundled locally): rotate, pan and zoom with the mouse or touch; the camera follows the pawn.
+- **Bridges (shortcuts).** Defined per life in `js/routes.js`. They stand for allies, mentors, technology, a community. Crossing costs 1 Support and skips the spaces in between. Without Support the bridge stays closed, which makes privilege and help visible. The ending lists which barriers the player skipped and says that the real person had no bridge there.
+- **Setbacks (detours).** Defined per life in `js/routes.js`. Fail a barrier twice and the consequences of the real barrier push you back along a red arrow. Each setback is written in terms of that person's real life.
+- **Pictures.** Every real person has a portrait. Many events have a freely licensed Wikimedia Commons photo with credit; the others show an illustrated scene. Fictional characters use illustrations only.

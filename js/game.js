@@ -1,186 +1,14 @@
-/* Game of Different Lives: game logic (no dependencies). */
+/* Game of Different Lives: game flow. A wheel of fortune assigns a life; a 3D board tells it. */
 (function () {
   "use strict";
   const $ = id => document.getElementById(id);
   const sleep = ms => new Promise(r => setTimeout(r, ms));
-  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
-
-  const COLS = 5, CW = 180, CH = 170, TW = 150, TH = 124, BW = COLS * CW;
   const ICON = { start: "🏠", info: "📖", win: "⭐", barrier: "🚧", choice: "🔀", finish: "🏁" };
-  const TYPE_LABEL = { en: { start: "Start", info: "Story", win: "Milestone", barrier: "Barrier", choice: "Decision", finish: "Finish" } };
-
-  let S = null; // game state
+  const TYPE_LABEL = { start: "Start", info: "Story", win: "Milestone", barrier: "Barrier", choice: "Decision", finish: "Finish" };
   const ui = () => GOL.ui;
-
-  const view = ch => ch;
-
-  /* ---------- character select ---------- */
-  const FILTERS = [["all", "All lives", null], ["disability", "Disability", /disab|blind|deaf|autism|pain|wheelchair/i],
-    ["race", "Race & racism", /race|racism|apartheid|segregation/i], ["gender", "Gender & identity", /gender|identity|sexuality|non-binary|queer/i],
-    ["age", "Age", /\bage\b/i], ["fiction", "Fictional", "f"]];
-  let filter = "all";
-  function matches(c) {
-    const f = FILTERS.find(x => x[0] === filter);
-    if (!f || !f[2]) return true;
-    return f[2] === "f" ? !!c.fictional : f[2].test(c.focus);
-  }
-  function renderSelect() {
-    $("filters").innerHTML = FILTERS.map(f => `<button class="chipf${f[0] === filter ? " on" : ""}" data-f="${f[0]}">${f[1]}</button>`).join("");
-    document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { filter = b.dataset.f; renderSelect(); });
-    $("title").textContent = ui().title;
-    document.title = ui().title;
-    $("lead").textContent = ui().lead;
-        $("note").textContent = ui().note;
-    $("cards").innerHTML = GOL.characters.filter(matches).map(c => {
-      const v = view(c);
-      return `<article class="pcard" style="--c:${c.avatar.color}">
-        <div class="avatar big-av">${GOL.portrait(c)}</div>
-        ${c.fictional ? '<span class="tag">Fictional character</span>' : ""}<h3>${esc(v.name)}</h3><small>${esc(c.years)} · ${esc(c.focus)}</small>
-        <p>${esc(v.tagline)}</p>${c.note ? `<small class="cn">${esc(c.note)}</small>` : ""}
-        <button class="big" data-play="${c.id}">${ui().play}</button></article>`;
-    }).join("");
-    document.querySelectorAll("[data-play]").forEach(b => b.onclick = () => start(b.dataset.play));
-  }
-
-  /* ---------- board ---------- */
-  function pos(i) {
-    const row = Math.floor(i / COLS), c = i % COLS, col = row % 2 ? COLS - 1 - c : c;
-    return { x: col * CW + CW / 2, y: row * CH + CH / 2 };
-  }
-
-  function renderBoard() {
-    const tiles = S.ch.tiles, rows = Math.ceil(tiles.length / COLS), BH = rows * CH;
-    const pts = tiles.map((_, i) => pos(i));
-    const path = pts.map((p, i) => (i ? "L" : "M") + p.x + " " + p.y).join(" ");
-    const hues = ["#f59e0b", "#10b981", "#ef4444", "#3b82f6", "#a855f7", "#14b8a6"];
-    let html = `<svg class="road" width="${BW}" height="${BH}"><path d="${path}" class="road-edge"/><path d="${path}" class="road-line"/></svg>`;
-    tiles.forEach((t, i) => {
-      const p = pos(i);
-      html += `<div class="tile t-${t.type}" id="tile${i}" style="left:${p.x - TW / 2}px;top:${p.y - TH / 2}px;width:${TW}px;height:${TH}px;--h:${hues[t.stage % hues.length]}">
-        <span class="n">${i + 1}</span><span class="ic">${ICON[t.type]}</span><span class="tt">${esc(t.title)}</span></div>`;
-    });
-    html += `<div id="pawn" class="pawn" style="background:${S.base.avatar.color}">${S.base.avatar.emoji}</div>`;
-    $("boardWrap").style.setProperty("--c", S.base.avatar.color);
-    const b = $("board");
-    b.style.width = BW + "px"; b.style.height = BH + "px";
-    b.innerHTML = html;
-    placePawn(false);
-    fit();
-  }
-
-  function fit() {
-    if (!S) return;
-    const rows = Math.ceil(S.ch.tiles.length / COLS), BH = rows * CH;
-    const w = $("boardWrap").clientWidth || BW, s = Math.min(1, w / BW);
-    $("board").style.transform = `scale(${s})`;
-    $("boardWrap").style.height = BH * s + "px";
-  }
-  window.addEventListener("resize", fit);
-
-  function placePawn(animate = true) {
-    const p = pos(S.pos), el = $("pawn");
-    el.style.transition = animate ? "left .45s ease, top .45s ease" : "none";
-    el.style.left = p.x - 22 + "px"; el.style.top = p.y - 70 + "px";
-    document.querySelectorAll(".tile").forEach((t, i) => {
-      t.classList.toggle("visited", i < S.pos);
-      t.classList.toggle("here", i === S.pos);
-    });
-    const tile = S.ch.tiles[S.pos];
-    $("chapter").textContent = S.ch.stages[tile.stage];
-  }
-
-  /* ---------- HUD ---------- */
-  function renderHud() {
-    const u = ui();
-    $("hName").textContent = S.ch.name; $("hYears").textContent = S.base.years;
-    $("avatar").innerHTML = GOL.portrait(S.base); $("avatar").style.background = S.base.avatar.color;
-    $("chapLabel").textContent = u.chapter; $("hopeLabel").textContent = u.hope; $("supLabel").textContent = u.support;
-    $("spin").textContent = S.busy ? u.spinning : u.spin; $("spin").disabled = S.busy;
-    $("quit").textContent = u.quit;
-    $("hopeBar").style.width = S.hope * 10 + "%";
-    $("supDots").innerHTML = [0, 1, 2].map(i => `<span class="${i < S.support ? "on" : ""}"></span>`).join("");
-    const t = S.ch.tiles[S.pos];
-    $("status").textContent = S.blocked ? ui().gateText(t.gate.need, t.gate.label) : "";
-  }
-
-  /* ---------- wheel ---------- */
-  function buildWheel() {
-    const cols = ["#f59e0b", "#10b981", "#3b82f6"];
-    let h = "";
-    for (let k = 0; k < 6; k++) {
-      const a0 = k * 60 * Math.PI / 180, a1 = (k + 1) * 60 * Math.PI / 180, r = 100;
-      const x0 = r * Math.sin(a0), y0 = -r * Math.cos(a0), x1 = r * Math.sin(a1), y1 = -r * Math.cos(a1);
-      const am = (k * 60 + 30) * Math.PI / 180, tx = 66 * Math.sin(am), ty = -66 * Math.cos(am);
-      h += `<path d="M0 0 L${x0} ${y0} A${r} ${r} 0 0 1 ${x1} ${y1} Z" fill="${cols[k % 3]}" stroke="#fff" stroke-width="3"/>
-            <text x="${tx}" y="${ty}" text-anchor="middle" dominant-baseline="central" font-size="30" font-weight="800" fill="#fff">${(k % 3) + 1}</text>`;
-    }
-    h += `<circle r="12" fill="#fff" stroke="#8b5e34" stroke-width="3"/>`;
-    $("wheel").innerHTML = `<g id="wheelG" style="transform-origin:0 0;transition:transform 2s cubic-bezier(.15,.7,.1,1)">${h}</g>`;
-  }
-  let wheelRot = 0;
-  async function spinWheel() {
-    const k = Math.floor(Math.random() * 6);
-    const target = -(k * 60 + 30);
-    const delta = (((target - wheelRot) % 360) + 360) % 360;
-    wheelRot += 360 * 4 + delta;
-    $("wheelG").style.transform = `rotate(${wheelRot}deg)`;
-    await sleep(2100);
-    return (k % 3) + 1;
-  }
-
-  /* ---------- modal ---------- */
-  function modal(html, cls) {
-    return new Promise(resolve => {
-      const m = $("modal"), c = $("modalCard");
-      c.className = "card " + (cls || "");
-      c.innerHTML = html;
-      m.hidden = false;
-      const done = (v) => { m.hidden = true; resolve(v); };
-      c.querySelectorAll("[data-done]").forEach(b => b.onclick = () => done(b.dataset.done));
-      const first = c.querySelector("button"); if (first) first.focus();
-    });
-  }
-
-  function chips(e) {
-    if (!e) return "";
-    const u = ui(), out = [];
-    if (e.hope > 0) out.push(`<span class="chip up">${u.hopeUp(e.hope)}</span>`);
-    if (e.hope < 0) out.push(`<span class="chip down">${u.hopeDown(-e.hope)}</span>`);
-    if (e.support > 0) out.push(`<span class="chip up">${u.support1}</span>`);
-    return out.length ? `<div class="chips">${out.join("")}</div>` : "";
-  }
-  function apply(e) {
-    if (!e) return;
-    S.hope = clamp(S.hope + (e.hope || 0), 0, 10);
-    S.support = clamp(S.support + (e.support || 0), 0, 3);
-    renderHud();
-  }
-
-  function header(t, i) {
-    const tl = TYPE_LABEL.en[t.type];
-    return `<div class="ch-head h-${t.type}"><span>${ICON[t.type]} ${tl}</span><span>${ui().tile} ${i + 1} ${ui().of} ${S.ch.tiles.length}</span></div>
-      <h2>${esc(t.title)}</h2>${t.illustrative || S.base.fictional ? `<div class="ill">${S.base.fictional ? "Fictional story" : ui().illustrative}</div>` : ""}`;
-  }
-
-  async function showTile(t, i) {
-    const u = ui();
-    if (t.type === "choice") {
-      const pick = await modal(`${header(t, i)}<p>${esc(t.text)}</p><h4>${u.choose}</h4>
-        <div class="opts">${t.options.map((o, k) => `<button class="opt" data-done="${k}">${esc(o.label)}</button>`).join("")}</div>`, "c-choice");
-      const o = t.options[+pick];
-      apply(o.effects);
-      await modal(`${header(t, i)}<p><em>${esc(o.result)}</em></p>${chips(o.effects)}
-        <div class="real"><h4>${u.realTitle}</h4><p>${esc(t.reveal)}</p></div>
-        <button class="big" data-done="1">${u.gotIt}</button>`, "c-choice");
-      return;
-    }
-    apply(t.effects);
-    (SND[t.type] || SND.step)();
-    let extra = "";
-    if (t.gate) extra = `<div class="gate"><b>${u.gateTitle}</b><br>${esc(u.gateText(t.gate.need, t.gate.label))}</div>`;
-    await modal(`${header(t, i)}<p>${esc(t.text)}</p>${chips(t.effects)}${extra}<button class="big" data-done="1">${u.gotIt}</button>`, "c-" + t.type);
-  }
+  let S = null, board = null, spinner = null, wheel = null, wheelEntries = [], order = [], lifeIdx = -1;
 
   /* ---------- sound (WebAudio, no files) ---------- */
   let muted = false, ac = null;
@@ -188,88 +16,238 @@
     if (muted) return;
     try {
       ac = ac || new (window.AudioContext || window.webkitAudioContext)();
-      freqs.forEach((f, i) => {
-        const o = ac.createOscillator(), g = ac.createGain(), t = ac.currentTime + i * dur * .8;
-        o.type = type; o.frequency.value = f; g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
-        o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + dur);
-      });
+      freqs.forEach((f, i) => { const o = ac.createOscillator(), g = ac.createGain(), t = ac.currentTime + i * dur * .8;
+        o.type = type; o.frequency.value = f; g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(.0001, t + dur); o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + dur); });
     } catch (e) { /* audio unavailable */ }
   }
-  const SND = { step: () => tone([440], .08, "triangle"), win: () => tone([523, 659, 784], .2), barrier: () => tone([196, 147], .25, "sawtooth", .05), spin: () => tone([330, 392, 440, 523], .1, "triangle") };
+  const SND = { step: () => tone([440], .08, "triangle"), win: () => tone([523, 659, 784, 1046], .2), barrier: () => tone([196, 147], .25, "sawtooth", .05),
+    spin: () => tone([330, 392, 440, 523], .1, "triangle"), tick: () => tone([1500 + Math.random() * 300], .03, "square", .025), bridge: () => tone([392, 523, 659, 784, 988], .14, "triangle"),
+    back: () => tone([330, 262, 220, 165], .16, "sawtooth", .05), fanfare: () => tone([523, 523, 659, 784, 659, 784, 1046], .16, "triangle", .09) };
   $("mute").onclick = () => { muted = !muted; $("mute").textContent = muted ? "🔇" : "🔊"; };
 
-  /* ---------- gameplay ---------- */
-  function start(id) {
-    const base = GOL.characters.find(c => c.id === id);
-    S = { base, ch: view(base), pos: 0, hope: base.start.hope, support: base.start.support,
-          turns: 0, barriers: 0, lost: 0, fails: 0, blocked: false, busy: false };
-    $("screen-select").hidden = true; $("screen-end").hidden = true; $("screen-game").hidden = false;
-    buildWheel(); renderBoard(); renderHud();
-    modal(`<div class="ch-head h-start"><span>🏠 ${ui().chapter}</span></div><h2>${esc(S.ch.name)}</h2><p>${esc(S.ch.intro)}</p>${S.base.note ? `<p class="muted"><b>${esc(S.base.note)}</b></p>` : ""}
-      <button class="big" data-done="1">${ui().gotIt}</button>`, "c-start").then(async () => {
-      await showTile(S.ch.tiles[0], 0);
+  /* ---------- home: the wheel of fortune ---------- */
+  const PALETTE = [["#ef476f", "#b02a4d"], ["#ffa62b", "#c57400"], ["#ffd23f", "#c9a000"], ["#06c28f", "#038a65"], ["#1e9be9", "#0b63a8"], ["#7b5cd6", "#523a9e"], ["#ff7bac", "#c94a7c"]];
+  const shortName = c => c.fictional ? c.name : c.name.replace(/ Jr\.$/, "").split(" ").slice(-1)[0];
+  function buildLogo() {
+    const words = ["Game", "of", "Different", "Lives"], cols = ["#ef476f", "#ffa62b", "#ffd23f", "#06c28f", "#1e9be9", "#7b5cd6", "#ff7bac"]; let k = 0;
+    $("logo").innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[k++ % 7]};--d:${(k % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" ");
+    $("lead").textContent = ui().lead;
+    $("note").textContent = ui().note;
+    $("how").innerHTML = ui().how.map((h, i) => `<li><span class="n">${i + 1}</span><b>${h[0]}</b><small>${h[1]}</small></li>`).join("");
+    $("spinLife").textContent = ui().spinLife;
+  }
+  function initWheel() {
+    order = GOL.characters.map((_, i) => i).sort(() => Math.random() - .5);
+    wheelEntries = order.map((ci, k) => { const c = GOL.characters[ci], p = PALETTE[k % PALETTE.length]; return { label: shortName(c), color: p[0], dark: p[1], img: GOL.thumbOf(c) }; });
+    if (wheel) wheel.dispose();
+    wheel = GOL.Wheel($("wheelCv"), wheelEntries, { portraits: true });
+    wheel.onTick = SND.tick; wheel.start();
+  }
+  let spinningLife = false;
+  async function spinLife() {
+    if (spinningLife) return; spinningLife = true; $("spinLife").disabled = true; $("spinLife").textContent = ui().spinning;
+    lifeIdx = Math.floor(Math.random() * order.length);
+    SND.spin(); await wheel.spin(lifeIdx, 7000);
+    SND.fanfare(); await sleep(500);
+    await reveal(GOL.characters[order[lifeIdx]]);
+    spinningLife = false; $("spinLife").disabled = false; $("spinLife").textContent = ui().spinLife;
+  }
+  async function reveal(c) {
+    const tags = (c.fictional ? `<span class="tag">Fictional character</span>` : "");
+    await modal(`<div class="reveal" style="--c:${c.avatar.color}">
+      <div class="avatar big-av">${GOL.portrait(c)}</div>
+      <small class="kick">${ui().revealKick}</small>${tags}<h2>${esc(c.name)}</h2><small>${esc(c.years)} · ${esc(c.focus)}</small>
+      <p>${esc(c.tagline)}</p>${c.note ? `<p class="muted"><b>${esc(c.note)}</b></p>` : ""}${GOL.credit(c) ? `<div class="credit-row">${GOL.credit(c)}</div>` : ""}
+      <button class="big gold" data-done="1">${ui().begin}</button></div>`, "c-reveal");
+    start(c.id);
+  }
+
+  /* ---------- modal ---------- */
+  function modal(html, cls) {
+    return new Promise(resolve => {
+      const m = $("modal"), c = $("modalCard");
+      c.className = "card " + (cls || ""); c.innerHTML = html; m.hidden = false; c.scrollTop = 0;
+      const done = v => { m.hidden = true; resolve(v); };
+      c.querySelectorAll("[data-done]").forEach(b => b.onclick = () => done(b.dataset.done));
+      const first = c.querySelector("button"); if (first) first.focus();
     });
+  }
+  function chips(e) {
+    if (!e) return ""; const u = ui(), out = [];
+    if (e.hope > 0) out.push(`<span class="chip up">${u.hopeUp(e.hope)}</span>`);
+    if (e.hope < 0) out.push(`<span class="chip down">${u.hopeDown(-e.hope)}</span>`);
+    if (e.support > 0) out.push(`<span class="chip up">${u.support1}</span>`);
+    return out.length ? `<div class="chips">${out.join("")}</div>` : "";
+  }
+  function apply(e) { if (!e) return; S.hope = clamp(S.hope + (e.hope || 0), 0, 10); S.support = clamp(S.support + (e.support || 0), 0, 3); renderHud(); }
+
+  /* ---------- event pictures: real photo with credit, or an illustrated scene ---------- */
+  function figure(t, i) {
+    const ev = (GOL.events[S.base.id] || {})[i];
+    if (ev) {
+      const lic = ev.licenseUrl ? `<a href="${esc(ev.licenseUrl)}" target="_blank" rel="noopener">${esc(ev.license)}</a>` : esc(ev.license);
+      return `<figure class="pic photo"><img src="${esc(ev.file)}" alt="${esc(ev.alt || t.title)}" onerror="this.parentNode.outerHTML=GOL.sceneFig(${i})"><figcaption><span class="credit">${esc(ev.author)} · ${lic} · <a href="${esc(ev.source)}" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>`;
+    }
+    return `<figure class="pic scene">${GOL.scene(t, S.base.avatar.color)}<figcaption><span class="credit">${ui().illustrationNote}</span></figcaption></figure>`;
+  }
+  GOL.sceneFig = i => `<figure class="pic scene">${GOL.scene(S.ch.tiles[i], S.base.avatar.color)}</figure>`;
+  function header(t, i) {
+    return `<div class="ch-head h-${t.type}"><span>${ICON[t.type]} ${TYPE_LABEL[t.type]}</span><span>${ui().tile} ${i + 1} ${ui().of} ${S.ch.tiles.length}</span></div>`;
+  }
+  const ill = t => (t.illustrative || S.base.fictional) ? `<div class="ill">${S.base.fictional ? "Fictional story" : ui().illustrative}</div>` : "";
+
+  async function showTile(t, i, replay) {
+    const u = ui(), fig = figure(t, i);
+    if (t.type === "choice" && !replay) {
+      const pick = await modal(`${fig}<div class="body">${header(t, i)}<h2>${esc(t.title)}</h2>${ill(t)}<p>${esc(t.text)}</p><h4>${u.choose}</h4>
+        <div class="opts">${t.options.map((o, k) => `<button class="opt" data-done="${k}">${esc(o.label)}</button>`).join("")}</div></div>`, "c-choice");
+      const o = t.options[+pick]; apply(o.effects);
+      await modal(`${fig}<div class="body">${header(t, i)}<h2>${esc(t.title)}</h2><p><em>${esc(o.result)}</em></p>${chips(o.effects)}
+        <div class="real"><h4>${u.realTitle}</h4><p>${esc(t.reveal)}</p></div><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-choice");
+      return;
+    }
+    if (replay) { await modal(`${fig}<div class="body">${header(t, i)}<h2>${esc(t.title)}</h2>${ill(t)}<p>${esc(t.text)}</p>${t.reveal ? `<div class="real"><h4>${u.realTitle}</h4><p>${esc(t.reveal)}</p></div>` : ""}<button class="big" data-done="1">${u.close}</button></div>`, "c-" + t.type); return; }
+    apply(t.effects); (SND[t.type] || SND.step)();
+    if (t.type === "win" || t.type === "finish") board.celebrate(i);
+    let extra = "";
+    if (t.gate) extra = `<div class="gate"><b>${u.gateTitle}</b><br>${esc(u.gateText(t.gate.need, t.gate.label))}</div>`;
+    await modal(`${fig}<div class="body">${header(t, i)}<h2>${esc(t.title)}</h2>${ill(t)}<p>${esc(t.text)}</p>${chips(t.effects)}${extra}<button class="big" data-done="1">${u.gotIt}</button></div>`, "c-" + t.type);
+  }
+
+  /* ---------- HUD ---------- */
+  function renderHud() {
+    const u = ui(); if (!S) return;
+    $("hName").textContent = S.ch.name; $("hYears").textContent = S.base.years;
+    $("avatar").innerHTML = GOL.portrait(S.base); $("avatar").style.background = S.base.avatar.color;
+    $("chapLabel").textContent = u.chapter; $("hopeLabel").textContent = u.hope; $("supLabel").textContent = u.support;
+    $("spin").textContent = S.busy ? u.spinning : u.spin; $("spin").disabled = S.busy;
+    $("hopeBar").style.width = S.hope * 10 + "%";
+    $("supDots").innerHTML = [0, 1, 2].map(i => `<span class="${i < S.support ? "on" : ""}"></span>`).join("");
+    const t = S.ch.tiles[S.pos]; $("chapter").textContent = S.ch.stages[t.stage];
+    $("status").textContent = S.blocked ? u.gateText(t.gate.need, t.gate.label) : u.yourTurn;
+    $("quit").title = u.quit;
+    refreshBridges();
+  }
+  function refreshBridges() { S.ch.bridges.forEach((b, k) => board.setBridge(k, S.used.has(k) ? "used" : (S.support > 0 ? "open" : "closed"))); }
+  function buildLegend() {
+    $("legend").innerHTML = ["start", "win", "barrier", "choice"].map(k => `<span><i class="lg lg-${k}"></i>${TYPE_LABEL[k]}</span>`).join("") + `<span><i class="lg lg-bridge"></i>Bridge</span><span><i class="lg lg-back"></i>Setback</span>`;
+    $("hint").textContent = ui().hint;
+  }
+
+  /* ---------- gameplay ---------- */
+  async function start(id) {
+    const base = GOL.characters.find(c => c.id === id);
+    S = { base, ch: base, pos: 0, hope: base.start.hope, support: base.start.support, turns: 0, barriers: 0, lost: 0, fails: 0, bonus: 0, blocked: false, busy: false,
+          seen: new Set([0]), passed: new Set(), done: new Set(), used: new Set(), skipped: new Set(), bridges: 0, backs: 0 };
+    $("screen-home").hidden = true; $("screen-end").hidden = true; $("screen-game").hidden = false; document.body.classList.add("ingame");
+    wheel.stop();
+    if (!board) { board = GOL.Board3D($("boardCv")); board.onHover = hoverTip; board.onPick = pickTile; board.onFollow = f => $("follow").classList.toggle("on", f); board.autoFollow = true; }
+    if (!spinner) { spinner = GOL.Wheel($("spinCv"), [1, 2, 3, 1, 2, 3].map((n, i) => ({ label: String(n), color: ["#ef476f", "#1e9be9", "#06c28f"][i % 3], dark: ["#b02a4d", "#0b63a8", "#038a65"][i % 3] })), { compact: true }); spinner.onTick = SND.tick; }
+    board.build(base); board.markVisited(0); board.start(); spinner.start(); renderHud(); buildLegend();
+    await sleep(400);
+    await modal(`<div class="body"><div class="ch-head h-start"><span>🏠 ${ui().chapter}</span></div><h2>${esc(S.ch.name)}</h2><p>${esc(S.ch.intro)}</p>${S.base.note ? `<p class="muted"><b>${esc(S.base.note)}</b></p>` : ""}
+      <button class="big" data-done="1">${ui().gotIt}</button></div>`, "c-start");
+    if (!S) return;
+    await showTile(S.ch.tiles[0], 0);
   }
 
   async function spin() {
-    if (S.busy) return;
-    S.busy = true; renderHud();
-    const u = ui();
-    SND.spin();
-    const r = await spinWheel();
-    S.turns++;
-    let steps = r;
+    if (!S || S.busy) return;
+    S.busy = true; board.busy = true; renderHud();
+    const u = ui(); SND.spin();
+    const idx = GOL.force && GOL.force.length ? GOL.force.shift() - 1 : Math.floor(Math.random() * 6); await spinner.spin(idx, GOL.fast ? 300 : 2800); const r = (idx % 3) + 1;
+    S.turns++; let steps = r;
     if (S.blocked) {
-      const t = S.ch.tiles[S.pos], bonus = S.support + (S.fails >= 2 ? 1 : 0), need = t.gate.need;
+      const t = S.ch.tiles[S.pos], bonus = S.support + (S.fails >= 2 ? 1 : 0) + S.bonus, need = t.gate.need;
       if (r + bonus >= need) {
-        S.blocked = false; S.fails = 0;
-        await modal(`<h2>${u.gateTitle}</h2><p>${u.gateSpin(r, bonus, need)}</p><p><b>${u.gatePass}</b></p><button class="big" data-done="1">${u.gotIt}</button>`, "c-win");
+        S.blocked = false; S.fails = 0; S.bonus = 0; S.passed.add(S.pos); board.openGate(S.pos); SND.win();
+        await modal(`<div class="body"><h2>${u.gateTitle}</h2><p>${u.gateSpin(r, bonus, need)}</p><p><b>${u.gatePass}</b></p><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-win");
       } else {
-        S.lost++; S.fails++; S.hope = clamp(S.hope - 1, 0, 10);
-        await modal(`<h2>${u.gateTitle}</h2><p>${u.gateSpin(r, bonus, need)}</p><p><b>${u.gateFail}</b></p>
-          <p class="muted">${u.withoutBarrier}</p>${S.fails >= 2 ? `<p class="muted">${u.gatePersist}</p>` : ""}${chips({ hope: -1 })}
-          <button class="big" data-done="1">${u.gotIt}</button>`, "c-barrier");
-        S.busy = false; renderHud(); return;
+        S.lost++; S.fails++; S.hope = clamp(S.hope - 1, 0, 10); SND.barrier();
+        const k = S.ch.setbacks.findIndex(s => s.at === S.pos && !S.done.has(s.at));
+        if (S.fails >= 2 && k >= 0) { await setback(k, r, bonus, need); S.busy = false; board.busy = false; renderHud(); return; }
+        await modal(`<div class="body"><h2>${u.gateTitle}</h2><p>${u.gateSpin(r, bonus, need)}</p><p><b>${u.gateFail}</b></p>
+          <p class="muted">${u.withoutBarrier}</p>${S.fails >= 2 ? `<p class="muted">${u.gatePersist}</p>` : ""}${chips({ hope: -1 })}<button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier");
+        S.busy = false; board.busy = false; renderHud(); return;
       }
     }
     for (let n = 0; n < steps; n++) {
-      S.pos++; placePawn(); renderHud();
-      await sleep(500);
-      const t = S.ch.tiles[S.pos];
-      await showTile(t, S.pos);
-      if (t.type === "finish") return end();
-      if (t.gate) { S.blocked = true; S.barriers++; break; }
+      const from = S.pos; S.pos++; SND.step(); await board.hop(from, S.pos); renderHud();
+      const t = S.ch.tiles[S.pos], first = !S.seen.has(S.pos);
+      if (first) { S.seen.add(S.pos); board.markVisited(S.pos); await showTile(t, S.pos); }
+      if (t.type === "finish") { S.busy = false; return end(); }
+      if (t.gate && !S.passed.has(S.pos)) { S.blocked = true; if (first) S.barriers++; else await modal(`<div class="body"><h2>${u.gateTitle}</h2><p>${esc(u.gateText(t.gate.need, t.gate.label))}</p><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier"); break; }
+      const bk = S.ch.bridges.findIndex((b, k) => b.from === S.pos && !S.used.has(k));
+      if (bk >= 0) { const crossed = await offerBridge(bk); if (crossed) { if (S.pos === S.ch.tiles.length - 1) { S.busy = false; return end(); } const nt = S.ch.tiles[S.pos]; if (nt.gate && !S.passed.has(S.pos)) { S.blocked = true; S.barriers++; break; } } }
     }
-    S.busy = false; renderHud();
+    S.busy = false; board.busy = false; renderHud();
   }
 
+  async function offerBridge(k) {
+    const b = S.ch.bridges[k], u = ui(), skipped = []; for (let i = b.from + 1; i < b.to; i++) skipped.push(S.ch.tiles[i]);
+    const can = S.support > 0; board.setBridge(k, can ? "open" : "closed");
+    const list = skipped.length ? `<p class="muted">${u.bridgeSkips(skipped.map(x => x.title))}</p>` : "";
+    const pic = `<figure class="pic scene">${GOL.sceneNamed("bridge", S.base.avatar.color)}</figure>`;
+    if (!can) { await modal(`${pic}<div class="body"><div class="ch-head h-bridge"><span>🌉 ${u.bridge}</span></div><h2>${u.bridgeClosedTitle}</h2><p>${esc(b.label)}</p><p>${u.bridgeClosed}</p><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier"); return false; }
+    SND.bridge();
+    const pick = await modal(`${pic}<div class="body"><div class="ch-head h-bridge"><span>🌉 ${u.bridge}</span></div><h2>${u.bridgeTitle}</h2><p>${esc(b.label)}</p>${list}
+      <div class="opts"><button class="opt" data-done="go">${u.bridgeCross}</button><button class="opt" data-done="stay">${u.bridgeWalk}</button></div></div>`, "c-win");
+    if (pick !== "go") return false;
+    S.support = clamp(S.support - 1, 0, 3); S.used.add(k); S.bridges++; for (let i = b.from + 1; i < b.to; i++) { S.skipped.add(i); S.seen.add(i); board.markVisited(i); }
+    renderHud(); await board.cross(k); S.pos = b.to; board.arrive(b.to); board.markVisited(b.to); renderHud();
+    if (!S.seen.has(b.to)) { S.seen.add(b.to); await showTile(S.ch.tiles[b.to], b.to); }
+    return true;
+  }
+
+  async function setback(k, r, bonus, need) {
+    const sb = S.ch.setbacks[k], u = ui(); S.done.add(sb.at); S.backs++; S.bonus = 1; SND.back();
+    await modal(`<figure class="pic scene">${GOL.sceneNamed("storm", S.base.avatar.color)}</figure><div class="body"><div class="ch-head h-barrier"><span>↩️ ${u.setback}</span></div><h2>${u.setbackTitle}</h2><p>${u.gateSpin(r, bonus, need)}</p><p>${esc(sb.label)}</p>
+      <p class="muted">${u.setbackNote}</p>${chips({ hope: -1 })}<button class="big" data-done="1">${u.goBack}</button></div>`, "c-barrier");
+    await board.slideBack(k); S.pos = sb.to; S.blocked = false; S.fails = 0; board.arrive(sb.to); renderHud();
+  }
+
+  /* ---------- hover / click on tiles ---------- */
+  function hoverTip(i, x, y) {
+    const tip = $("tip");
+    if (i < 0 || !S) { tip.hidden = true; return; }
+    const t = S.ch.tiles[i], seen = S.seen.has(i);
+    tip.hidden = false; tip.style.left = x + 14 + "px"; tip.style.top = y + 14 + "px";
+    tip.innerHTML = `<b>${i + 1}. ${seen || i === 0 ? esc(t.title) : "?"}</b><small>${TYPE_LABEL[t.type]}${seen ? " · " + ui().clickReplay : ""}</small>`;
+  }
+  async function pickTile(i) { if (!S || S.busy || !S.seen.has(i) || !$("modal").hidden) return; await showTile(S.ch.tiles[i], i, true); }
+
+  /* ---------- end ---------- */
   function end() {
-    const u = ui(), e = S.ch.ending;
+    const u = ui(), e = S.ch.ending; board.stop(); spinner.stop(); document.body.classList.remove("ingame");
     $("screen-game").hidden = true; $("screen-end").hidden = false;
+    const skippedBarriers = [...S.skipped].map(i => S.ch.tiles[i]).filter(t => t.type === "barrier");
     $("screen-end").innerHTML = `<div class="endcard" style="--c:${S.base.avatar.color}">
       <div class="avatar big-av">${GOL.portrait(S.base)}</div>
       <small>${u.endTitle}</small><h2>${esc(S.ch.name)}</h2><h3>${esc(e.headline)}</h3>
       <div class="stats">
-        <div><b>${S.turns}</b>${u.sTurns}</div><div><b>${S.barriers}</b>${u.sBarriers}</div>
-        <div><b>${S.lost}</b>${u.sLost}</div><div><b>${S.hope}/10</b>${u.sHope}</div><div><b>${S.support}/3</b>${u.sSupport}</div>
+        <div><b>${S.turns}</b>${u.sTurns}</div><div><b>${S.barriers}</b>${u.sBarriers}</div><div><b>${S.lost}</b>${u.sLost}</div>
+        <div><b>${S.backs}</b>${u.sBacks}</div><div><b>${S.bridges}</b>${u.sBridges}</div><div><b>${S.hope}/10</b>${u.sHope}</div>
       </div>
+      ${skippedBarriers.length ? `<div class="real"><h4>${u.skippedTitle}</h4><p>${u.skippedText(skippedBarriers.map(t => t.title))}</p></div>` : ""}
       <h4>${u.realStory}</h4><p>${esc(e.real)}</p>
       <h4>${u.reflect}</h4><ul>${e.reflect.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
       <h4>${u.sources}</h4><ul class="src">${S.base.sources.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
-      <button class="big" id="again">${u.again}</button> <button class="link" id="replay">${u.replay}</button></div>`;
+      <button class="big gold" id="again">${u.again}</button> <button class="link" id="replay">${u.replay}</button></div>`;
     $("again").onclick = home; $("replay").onclick = () => start(S.base.id);
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); SND.fanfare();
+    for (let i = 0; i < 70; i++) { const d = document.createElement("i"); d.className = "cf"; d.style.left = Math.random() * 100 + "vw"; d.style.background = ["#ef476f", "#ffa62b", "#ffd23f", "#06c28f", "#1e9be9", "#7b5cd6"][i % 6]; d.style.animationDuration = 2.5 + Math.random() * 2.5 + "s"; d.style.animationDelay = Math.random() * 1.2 + "s"; document.body.appendChild(d); setTimeout(() => d.remove(), 7000); }
   }
-
   function home() {
-    S = null;
-    $("screen-game").hidden = true; $("screen-end").hidden = true; $("screen-select").hidden = false;
-    $("modal").hidden = true;
+    if (board) board.stop(); if (spinner) spinner.stop(); S = null; document.body.classList.remove("ingame");
+    $("screen-game").hidden = true; $("screen-end").hidden = true; $("screen-home").hidden = false; $("modal").hidden = true; $("tip").hidden = true;
+    initWheel();
   }
 
   /* ---------- wire up ---------- */
-  $("spin").onclick = spin;
-  $("quit").onclick = home;
-  renderSelect();
-  window.GOL.debug = { start, get state() { return S; } };
+  $("spin").onclick = spin; $("spinLife").onclick = spinLife; $("quit").onclick = home;
+  $("follow").onclick = () => board.setFollow(!$("follow").classList.contains("on"));
+  $("overview").onclick = () => board.overview();
+  window.addEventListener("keydown", e => { if (e.code === "Space" && !e.repeat && $("modal").hidden) { e.preventDefault(); if (S && !$("screen-game").hidden) spin(); else if (!$("screen-home").hidden) spinLife(); } });
+  buildLogo(); initWheel();
+  window.GOL.debug = { start, end, spin, showTile, offerBridge, setback, spinLife, home, get state() { return S; }, get board() { return board; }, get wheel() { return wheel; }, modal };
 })();
