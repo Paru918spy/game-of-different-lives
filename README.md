@@ -15,9 +15,9 @@ Optional, if you prefer a local server: open Terminal in the folder and run `pyt
 
 - Press **Spin the wheel of fortune**. A realistic 3D wheel assigns you one of the 21 lives. You do not get to choose.
 - The 3D board is built individually for that life. **Drag** to rotate, **right-drag or Shift+drag** to move, **scroll** to zoom. The camera follows your pawn (🎥), 🗺️ shows the whole board. Click a visited space to read it again.
-- Roll the spinner (1, 2 or 3 spaces). Every space tells part of the real story with a photo (Wikimedia Commons, with credit) or an illustration.
-- **Barrier spaces** stop you. To get past, your spin plus your **Support** must reach the number shown. Failing costs a turn and Hope.
-- **Bridges** 🌉 are shortcuts that Support makes possible (allies, mentors, technology, a community). Crossing costs 1 Support and skips the spaces between. Without Support the bridge stays closed.
+- Roll the spinner (1, 2 or 3 spaces). Every space tells part of the real story with a photo (Wikimedia Commons, with credit) or an illustration. Each life now has 19 to 29 stations (see `js/extras.js` for the added everyday and in-between stations).
+- **Barrier spaces** stop you. To get past, you must spin a **3** (same rule for every barrier). A miss costs a turn and Hope; the wheel is kept simple on purpose.
+- **Bridges** 🌉 are shortcuts that Support makes possible (allies, mentors, technology, a community). Support is only spent on bridges: crossing costs 1 Support and skips the spaces between. Without Support the bridge stays closed.
 - **Setbacks** ↩️ (red arrows): fail a barrier twice and the real-life consequences throw you back to an earlier space. Every life has its own bridges and setbacks, taken from that person's story.
 - At the end you see the real story, your stats (turns lost, setbacks, bridges crossed and which barriers your bridges skipped), questions to reflect on, and sources.
 
@@ -47,7 +47,7 @@ Copy `js/characters/parks.js`, change the content, add a `<script>` line in `ind
 
 ## Status and caveats
 
-- **Event photos:** the Wikimedia Commons image server was throttling the build environment, so `js/events.js` is still empty and events show illustrated scenes. On your own computer run `python3 -m pip install pillow && python3 tools/fetch_event_photos.py` once. It downloads about 30 vetted, freely licensed photos (with credits) into `img/events/` and fills `js/events.js`; reload the game and the photos appear in the event cards.
+- **Event photos:** 30 freely licensed Wikimedia Commons photos are committed in `img/events/` (credits in `js/events.js`); events without a photo show an illustrated scene. `tools/fetch_event_photos.py` can fetch more.
 
 - Facts come from well-documented public biographies, but **have not yet been fact-checked line by line**. See the checklist in `docs/characters.md` before publishing.
 - Pictures: every real person has a portrait and several events have photos from Wikimedia Commons. Events without a suitable freely licensed photo show an illustrated scene. Fictional characters use illustrations.

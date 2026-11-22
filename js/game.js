@@ -110,7 +110,7 @@
     apply(t.effects); (SND[t.type] || SND.step)();
     if (t.type === "win" || t.type === "finish") board.celebrate(i);
     let extra = "";
-    if (t.gate) extra = `<div class="gate"><b>${u.gateTitle}</b><br>${esc(u.gateText(t.gate.need, t.gate.label))}</div>`;
+    if (t.gate) extra = `<div class="gate"><b>${u.gateTitle}</b><br>${esc(u.gateText(3, t.gate.label))}</div>`;
     await modal(`${fig}<div class="body">${header(t, i)}<h2>${esc(t.title)}</h2>${ill(t)}<p>${esc(t.text)}</p>${chips(t.effects)}${extra}<button class="big" data-done="1">${u.gotIt}</button></div>`, "c-" + t.type);
   }
 
@@ -124,7 +124,7 @@
     $("hopeBar").style.width = S.hope * 10 + "%";
     $("supDots").innerHTML = [0, 1, 2].map(i => `<span class="${i < S.support ? "on" : ""}"></span>`).join("");
     const t = S.ch.tiles[S.pos]; $("chapter").textContent = S.ch.stages[t.stage];
-    $("status").textContent = S.blocked ? u.gateText(t.gate.need, t.gate.label) : u.yourTurn;
+    $("status").textContent = S.blocked ? u.gateText(3, t.gate.label) : u.yourTurn;
     $("quit").title = u.quit;
     refreshBridges();
   }
@@ -158,8 +158,8 @@
     const idx = GOL.force && GOL.force.length ? GOL.force.shift() - 1 : Math.floor(Math.random() * 6); await spinner.spin(idx, GOL.fast ? 300 : 2800); const r = (idx % 3) + 1;
     S.turns++; let steps = r;
     if (S.blocked) {
-      const t = S.ch.tiles[S.pos], bonus = S.support + (S.fails >= 2 ? 1 : 0) + S.bonus, need = t.gate.need;
-      if (r + bonus >= need) {
+      const t = S.ch.tiles[S.pos], bonus = 0, need = 3;
+      if (r >= need) {
         S.blocked = false; S.fails = 0; S.bonus = 0; S.passed.add(S.pos); board.openGate(S.pos); SND.win();
         await modal(`<div class="body"><h2>${u.gateTitle}</h2><p>${u.gateSpin(r, bonus, need)}</p><p><b>${u.gatePass}</b></p><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-win");
       } else {
@@ -167,7 +167,7 @@
         const k = S.ch.setbacks.findIndex(s => s.at === S.pos && !S.done.has(s.at));
         if (S.fails >= 2 && k >= 0) { await setback(k, r, bonus, need); S.busy = false; board.busy = false; renderHud(); return; }
         await modal(`<div class="body"><h2>${u.gateTitle}</h2><p>${u.gateSpin(r, bonus, need)}</p><p><b>${u.gateFail}</b></p>
-          <p class="muted">${u.withoutBarrier}</p>${S.fails >= 2 ? `<p class="muted">${u.gatePersist}</p>` : ""}${chips({ hope: -1 })}<button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier");
+          <p class="muted">${u.withoutBarrier}</p>${chips({ hope: -1 })}<button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier");
         S.busy = false; board.busy = false; renderHud(); return;
       }
     }
@@ -176,7 +176,7 @@
       const t = S.ch.tiles[S.pos], first = !S.seen.has(S.pos);
       if (first) { S.seen.add(S.pos); board.markVisited(S.pos); await showTile(t, S.pos); }
       if (t.type === "finish") { S.busy = false; return end(); }
-      if (t.gate && !S.passed.has(S.pos)) { S.blocked = true; if (first) S.barriers++; else await modal(`<div class="body"><h2>${u.gateTitle}</h2><p>${esc(u.gateText(t.gate.need, t.gate.label))}</p><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier"); break; }
+      if (t.gate && !S.passed.has(S.pos)) { S.blocked = true; if (first) S.barriers++; else await modal(`<div class="body"><h2>${u.gateTitle}</h2><p>${esc(u.gateText(3, t.gate.label))}</p><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier"); break; }
       const bk = S.ch.bridges.findIndex((b, k) => b.from === S.pos && !S.used.has(k));
       if (bk >= 0) { const crossed = await offerBridge(bk); if (crossed) { if (S.pos === S.ch.tiles.length - 1) { S.busy = false; return end(); } const nt = S.ch.tiles[S.pos]; if (nt.gate && !S.passed.has(S.pos)) { S.blocked = true; S.barriers++; break; } } }
     }
@@ -200,7 +200,7 @@
   }
 
   async function setback(k, r, bonus, need) {
-    const sb = S.ch.setbacks[k], u = ui(); S.done.add(sb.at); S.backs++; S.bonus = 1; SND.back();
+    const sb = S.ch.setbacks[k], u = ui(); S.done.add(sb.at); S.backs++; SND.back();
     await modal(`<figure class="pic scene">${GOL.sceneNamed("storm", S.base.avatar.color)}</figure><div class="body"><div class="ch-head h-barrier"><span>↩️ ${u.setback}</span></div><h2>${u.setbackTitle}</h2><p>${u.gateSpin(r, bonus, need)}</p><p>${esc(sb.label)}</p>
       <p class="muted">${u.setbackNote}</p>${chips({ hope: -1 })}<button class="big" data-done="1">${u.goBack}</button></div>`, "c-barrier");
     await board.slideBack(k); S.pos = sb.to; S.blocked = false; S.fails = 0; board.arrive(sb.to); renderHud();

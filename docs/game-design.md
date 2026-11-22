@@ -8,11 +8,11 @@ Players should feel *why* barriers matter (not just read about them) while seein
 2. Spin the wheel (1, 2 or 3). The pawn walks that many spaces along the winding board. **Every space passed shows its card**, so no part of the story is skipped.
 3. Cards:
    - ⭐ **Milestone** (green): wins, achievements; may add Hope and Support.
-   - 🚧 **Barrier** (red): stops the pawn. Needs a spin ≥ N (N = 2 or 3) plus Support to pass. Failing costs a turn and 1 Hope. Without the barrier, a typical player would just walk on, and the card says so.
+   - 🚧 **Barrier** (red): stops the pawn. Needs a spin of exactly 3 to pass (same for every barrier). Failing costs a turn and 1 Hope. Without the barrier, a typical player would just walk on, and the card says so.
    - 📖 **Story** (blue): context, people, places.
    - 🔀 **Decision** (purple): "What would you do?" Both options are playable; afterwards the card reveals what the person really did and why.
    - 🏠/🏁 start and finish.
-4. Meters: **Hope** (0–10, mood and resilience) and **Support** (0–3, bonus on barrier spins; earned from people and tools). A **persistence bonus** (+1 after two failed tries) shows that perseverance helps but should not be the only requirement.
+4. Meters: **Hope** (0–10, mood and resilience) and **Support** (0–3, spent to open bridges; earned from people and tools). A **persistence bonus** (+1 after two failed tries) shows that perseverance helps but should not be the only requirement.
 5. End screen: the real outcome, stats (turns, barriers, **turns lost to barriers**), reflection questions, sources.
 
 ## Why this design

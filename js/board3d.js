@@ -27,12 +27,12 @@ GOL.Board3D = function (cv) {
     const p = ptr.get(e.pointerId);
     if (!p) { hover(e); return; }
     const dx = e.clientX - p.x, dy = e.clientY - p.y; moved += Math.abs(dx) + Math.abs(dy); p.x = e.clientX; p.y = e.clientY; C.lastUser = performance.now();
-    if (ptr.size === 2) { const [a, b] = [...ptr.values()], d = Math.hypot(a.x - b.x, a.y - b.y); if (drag.pinch) C.gDist = Math.max(10, Math.min(130, C.gDist * drag.pinch / d)); drag.pinch = d; panBy((dx) * .5, (dy) * .5); return; }
+    if (ptr.size === 2) { const [a, b] = [...ptr.values()], d = Math.hypot(a.x - b.x, a.y - b.y); if (drag.pinch) C.gDist = Math.max(10, Math.min(190, C.gDist * drag.pinch / d)); drag.pinch = d; panBy((dx) * .5, (dy) * .5); return; }
     if (drag && drag.pan) panBy(dx, dy); else { C.gAz -= dx * .006; C.gEl = Math.max(.2, Math.min(1.45, C.gEl + dy * .005)); }
   });
   const up = e => { ptr.delete(e.pointerId); if (!ptr.size) { cv.classList.remove("grab"); if (moved < 5 && e.type === "pointerup") pick(e); drag = null; } else if (drag) drag.pinch = 0; };
   cv.addEventListener("pointerup", up); cv.addEventListener("pointercancel", up);
-  cv.addEventListener("wheel", e => { e.preventDefault(); C.gDist = Math.max(10, Math.min(130, C.gDist * Math.exp(e.deltaY * .0012))); C.lastUser = performance.now(); }, { passive: false });
+  cv.addEventListener("wheel", e => { e.preventDefault(); C.gDist = Math.max(10, Math.min(190, C.gDist * Math.exp(e.deltaY * .0012))); C.lastUser = performance.now(); }, { passive: false });
   function panBy(dx, dy) {
     const k = C.dist * .0016, r = V(Math.cos(C.az), 0, -Math.sin(C.az)), f = V(-Math.sin(C.az), 0, -Math.cos(C.az));
     C.goal.addScaledVector(r, -dx * k).addScaledVector(f, dy * k); C.goal.x = Math.max(-size.w / 2, Math.min(size.w / 2, C.goal.x)); C.goal.z = Math.max(-size.d / 2, Math.min(size.d / 2, C.goal.z)); C.follow = false; B.onFollow && B.onFollow(false);
@@ -43,7 +43,7 @@ GOL.Board3D = function (cv) {
   function pick(e) { const i = hitTile(e); if (i >= 0 && B.onPick) B.onPick(i); }
   B.setFollow = f => { C.follow = f; if (f) B.onFollow && B.onFollow(true); };
   B.overview = () => { C.follow = false; B.onFollow && B.onFollow(false); C.goal.set(0, 0, 0); C.gDist = fitDist(); C.gEl = 1.05; C.gAz = .35; };
-  const fitDist = () => Math.max(size.w / (2 * Math.tan(cam.fov * Math.PI / 360) * cam.aspect), size.d / (2 * Math.tan(cam.fov * Math.PI / 360))) * 1.08 + 8;
+  const fitDist = () => Math.max(size.w / (2 * Math.tan(cam.fov * Math.PI / 360) * cam.aspect), size.d / (2 * Math.tan(cam.fov * Math.PI / 360))) * 1.5 + 10;
 
   /* ---------- procedural textures ---------- */
   function woodTex() { const c = GFX.canvas(512, 512), g = c.getContext("2d"); g.fillStyle = "#8a5428"; g.fillRect(0, 0, 512, 512); const r = GFX.rng("wood");
