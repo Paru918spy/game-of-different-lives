@@ -3,10 +3,10 @@ GOL.Board3D = function (cv) {
   const T = GFX.T, V = (x, y, z) => new T.Vector3(x, y, z);
   const renderer = new T.WebGLRenderer({ canvas: cv, antialias: true, preserveDrawingBuffer: !!window.__GOL_SHOT });
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = T.PCFSoftShadowMap; renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = .8;
-  const scene = new T.Scene(), cam = new T.PerspectiveCamera(38, 1, .5, 400);
+  const scene = new T.Scene(), cam = new T.PerspectiveCamera(38, 1, .5, 800);
   scene.environment = GFX.env(renderer); scene.environmentIntensity = .3;
   { const c = GFX.canvas(8, 256), g = c.getContext("2d"), gr = g.createLinearGradient(0, 0, 0, 256); gr.addColorStop(0, "#6ec6ff"); gr.addColorStop(.55, "#bfe8ff"); gr.addColorStop(1, "#fff3d6"); g.fillStyle = gr; g.fillRect(0, 0, 8, 256); scene.background = GFX.tex(c); }
-  scene.fog = new T.Fog(0xcfeaff, 90, 220);
+  scene.fog = new T.Fog(0xcfeaff, 200, 520);
   scene.add(new T.HemisphereLight(0xdff1ff, 0x7a6a4a, .45));
   const sun = new T.DirectionalLight(0xfff0d0, 1.7); sun.position.set(-26, 46, 22); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -.0006; sun.shadow.normalBias = .05; scene.add(sun); scene.add(sun.target);
 
@@ -42,8 +42,8 @@ GOL.Board3D = function (cv) {
   function hover(e) { const i = hitTile(e); cv.style.cursor = i >= 0 ? "pointer" : ""; B.onHover && B.onHover(i, e.clientX, e.clientY); }
   function pick(e) { const i = hitTile(e); if (i >= 0 && B.onPick) B.onPick(i); }
   B.setFollow = f => { C.follow = f; if (f) B.onFollow && B.onFollow(true); };
-  B.overview = () => { C.follow = false; B.onFollow && B.onFollow(false); C.goal.set(0, 0, size.d * .06); C.gDist = fitDist(); C.gEl = 1.05; C.gAz = .35; };
-  const fitDist = () => Math.max(size.w / (2 * Math.tan(cam.fov * Math.PI / 360) * cam.aspect), size.d / (2 * Math.tan(cam.fov * Math.PI / 360))) * 1.3 + 6;
+  B.overview = () => { C.follow = false; B.onFollow && B.onFollow(false); C.goal.set((pts.length ? pts.reduce((a, p) => a + p.x, 0) / pts.length : 0), 0, (pts.length ? pts.reduce((a, p) => a + p.z, 0) / pts.length : 0) + 3); C.gDist = fitDist(); C.gEl = 1.05; C.gAz = .12; C.lastUser = performance.now() + 120000; };
+  const fitDist = () => { let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9; pts.forEach(p => { x0 = Math.min(x0, p.x); x1 = Math.max(x1, p.x); z0 = Math.min(z0, p.z); z1 = Math.max(z1, p.z); }); const bw = Math.min(size.w, x1 - x0 + 16), bd = Math.min(size.d, z1 - z0 + 16); return Math.max(bw / (2 * Math.tan(cam.fov * Math.PI / 360) * cam.aspect), bd / (2 * Math.tan(cam.fov * Math.PI / 360))) * 1.3 + 6; };
 
   /* ---------- procedural textures ---------- */
   function woodTex() { const c = GFX.canvas(512, 512), g = c.getContext("2d"); g.fillStyle = "#8a5428"; g.fillRect(0, 0, 512, 512); const r = GFX.rng("wood");
@@ -86,9 +86,25 @@ GOL.Board3D = function (cv) {
     while (world.children.length) { const o = world.children.pop(); o.traverse(x => { x.geometry && x.geometry.dispose && x.geometry.dispose(); }); }
     pts = []; titleLabels = []; spinners = []; tiles = ch.tiles; pads = []; gates = {}; stars = []; bridges = []; setbacks = []; confetti = []; clouds = []; trees = []; visited = new Set(); B.ch = ch;
     const r = rngf = GFX.rng(ch.id), n = tiles.length, perRow = 4 + Math.floor(r() * 3), rows = Math.ceil(n / perRow), sp = 5.6 + r() * 1.2, rg = 7.2 + r() * 1.4, amp = 1.2 + r() * 1.6, ph = r() * 3;
-    for (let i = 0; i < n; i++) { const row = Math.floor(i / perRow), c = i % perRow, cc = row % 2 ? perRow - 1 - c : c;
-      pts.push(V((cc - (perRow - 1) / 2) * sp + (r() - .5) * 1.4, 0, (row - (rows - 1) / 2) * rg + Math.sin(c * 1.3 + ph + row) * amp + (r() - .5) * 1.2)); }
-    size = { w: (perRow - 1) * sp + 24, d: (rows - 1) * rg + 22 };
+    const shape = Math.max(0, GOL.characters.findIndex(c => c.id === ch.id)) % 4; ch.shape = ["serpentine", "spiral", "wave", "ring"][shape];
+    const jit = () => (r() - .5) * 1.0;
+    if (shape === 0) {
+      for (let i = 0; i < n; i++) { const row = Math.floor(i / perRow), c = i % perRow, cc = row % 2 ? perRow - 1 - c : c;
+        pts.push(V((cc - (perRow - 1) / 2) * sp + (r() - .5) * 1.4, 0, (row - (rows - 1) / 2) * rg + Math.sin(c * 1.3 + ph + row) * amp + (r() - .5) * 1.2)); }
+      size = { w: (perRow - 1) * sp + 24, d: (rows - 1) * rg + 22 };
+    } else if (shape === 1) {
+      const k = 1.55, step = 6.2; let th = 0, rad = 8; const q = [];
+      for (let i = 0; i < n; i++) { q.push(V(Math.cos(th) * rad + jit(), 0, Math.sin(th) * rad + jit())); th += step / rad; rad = 8 + k * th; }
+      q.reverse().forEach(v => pts.push(v)); const R = rad + 3; size = { w: 2 * R + 20, d: 2 * R + 20 };
+    } else if (shape === 2) {
+      const dz = 5.4, amp2 = 8.5 + r() * 2;
+      for (let i = 0; i < n; i++) pts.push(V((i - (n - 1) / 2) * dz + jit(), 0, Math.sin(i * .62 + ph) * amp2 + jit()));
+      size = { w: (n - 1) * dz + 24, d: 2 * amp2 + 28 };
+    } else {
+      const R = Math.max(14, n * 6.2 / (2 * Math.PI * .92));
+      for (let i = 0; i < n; i++) { const a = -Math.PI / 2 + i / n * Math.PI * 2 * .92; pts.push(V(Math.cos(a) * R * 1.15 + jit(), 0, Math.sin(a) * R + jit())); }
+      size = { w: 2 * R * 1.15 + 26, d: 2 * R + 26 };
+    }
     const tint = new T.Color(ch.avatar.color), TH = THEMES[Math.max(0, GOL.characters.findIndex(c => c.id === ch.id)) % THEMES.length], grass = new T.Color(TH.g1).lerp(tint, .06), grass2 = new T.Color(TH.g2).lerp(tint, .05);
     { const c = GFX.canvas(8, 256), g = c.getContext("2d"), gr = g.createLinearGradient(0, 0, 0, 256); gr.addColorStop(0, TH.sky[0]); gr.addColorStop(.55, TH.sky[1]); gr.addColorStop(1, TH.sky[2]); g.fillStyle = gr; g.fillRect(0, 0, 8, 256); scene.background = GFX.tex(c); scene.fog.color.setHex(TH.fog); }
 

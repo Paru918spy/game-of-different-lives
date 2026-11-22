@@ -22,7 +22,7 @@ GOL.Wheel = function (cv, entries, opt = {}) {
       fx.save(); fx.translate(c, c); fx.rotate(-i * seg);
       fx.fillStyle = e.text || "#fff"; fx.textAlign = "right"; fx.textBaseline = "middle";
       if (opt.portraits) {
-        fx.font = '800 84px "Arial Rounded MT Bold","Avenir Next",Trebuchet MS,sans-serif'; fx.shadowColor = "rgba(0,0,0,.35)"; fx.shadowBlur = 6;
+        { let fs = 84; do { fx.font = '800 ' + fs + 'px "Arial Rounded MT Bold","Avenir Next",Trebuchet MS,sans-serif'; fs -= 4; } while (fs > 40 && fx.measureText(e.label).width > 420); } fx.shadowColor = "rgba(0,0,0,.35)"; fx.shadowBlur = 6;
         fx.lineWidth = 12; fx.strokeStyle = "rgba(40,20,0,.75)"; fx.lineJoin = "round"; fx.strokeText(e.label, c - 350, 0, 430); fx.fillText(e.label, c - 350, 0, 430); fx.shadowBlur = 0;
         const px = c - 215, pr = 135; fx.save(); fx.beginPath(); fx.arc(px, 0, pr, 0, 7); fx.closePath(); fx.fillStyle = "#fff"; fx.fill(); fx.clip();
         if (imgs[i]) fx.drawImage(imgs[i], px - pr, -pr, pr * 2, pr * 2); else { fx.fillStyle = "#fff6"; fx.fillRect(px - pr, -pr, pr * 2, pr * 2); }

@@ -96,6 +96,12 @@
   }
   const ill = t => (t.illustrative || S.base.fictional) ? `<div class="ill">${S.base.fictional ? "Fictional story" : ui().illustrative}</div>` : "";
 
+  const PIPS = { 1: [5], 2: [1, 9], 3: [1, 5, 9], 4: [1, 3, 7, 9], 5: [1, 3, 5, 7, 9], 6: [1, 3, 4, 6, 7, 9] };
+  const FACE = { 1: "", 2: "rotateY(-90deg)", 3: "rotateX(-90deg)", 4: "rotateX(90deg)", 5: "rotateY(90deg)", 6: "rotateY(180deg)" };
+  function diceHtml(r, need, ok) {
+    const f = k => `<div class="df f${k}">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => `<i${PIPS[k].includes(i) ? ' class="on"' : ""}></i>`).join("")}</div>`;
+    return `<div class="diceRow"><div class="dieWrap"><div class="die" style="--end:${FACE[r] || ""}">${[1, 2, 3, 4, 5, 6].map(f).join("")}</div></div><div class="needTag ${ok ? "ok" : "no"}"><span>${ok ? "🔓" : "🔒"}</span><b>need ${need}</b><small>you spun ${r}</small></div></div>`;
+  }
   async function showTile(t, i, replay) {
     const u = ui(), fig = figure(t, i);
     if (t.type === "choice" && !replay) {
@@ -161,12 +167,12 @@
       const t = S.ch.tiles[S.pos], bonus = 0, need = 3;
       if (r >= need) {
         S.blocked = false; S.fails = 0; S.bonus = 0; S.passed.add(S.pos); board.openGate(S.pos); SND.win();
-        await modal(`<div class="body"><h2>${u.gateTitle}</h2><p>${u.gateSpin(r, bonus, need)}</p><p><b>${u.gatePass}</b></p><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-win");
+        await modal(`<div class="body"><h2>${u.gateTitle}</h2>${diceHtml(r, need, true)}<p><b>${u.gatePass}</b></p><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-win");
       } else {
         S.lost++; S.fails++; S.hope = clamp(S.hope - 1, 0, 10); SND.barrier();
         const k = S.ch.setbacks.findIndex(s => s.at === S.pos && !S.done.has(s.at));
         if (S.fails >= 2 && k >= 0) { await setback(k, r, bonus, need); S.busy = false; board.busy = false; renderHud(); return; }
-        await modal(`<div class="body"><h2>${u.gateTitle}</h2><p>${u.gateSpin(r, bonus, need)}</p><p><b>${u.gateFail}</b></p>
+        await modal(`<div class="body"><h2>${u.gateTitle}</h2>${diceHtml(r, need, false)}<p><b>${u.gateFail}</b></p>
           <p class="muted">${u.withoutBarrier}</p>${chips({ hope: -1 })}<button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier");
         S.busy = false; board.busy = false; renderHud(); return;
       }
