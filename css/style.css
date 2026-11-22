@@ -199,3 +199,16 @@ html{scroll-behavior:smooth}
 [hidden]{display:none!important}
 .brand .logo{font-size:clamp(28px,4.4vw,58px);margin-top:0}
 .agrid{grid-template-columns:repeat(2,1fr)}@media(max-width:760px){.agrid{grid-template-columns:1fr}}
+
+/* richer gradients on the landing page */
+.atop{background:linear-gradient(90deg,#0f2742,#1b3a63 60%,#16506d)}
+.ahero2{background:radial-gradient(circle at 80% 20%,rgba(76,201,240,.35),transparent 45%),radial-gradient(circle at 10% 90%,rgba(139,92,246,.35),transparent 50%),linear-gradient(135deg,#0f2742,#1c3f73 55%,#17607a)}
+.abtn{background:linear-gradient(135deg,#1aa6a6,#2bb7d8);box-shadow:0 6px 16px rgba(26,166,166,.35)}.abtn:hover{background:linear-gradient(135deg,#15908f,#1f9fc0)}
+.astats{background:linear-gradient(180deg,#fff,#eef4fa)}
+.astats b{background:linear-gradient(135deg,#0f2742,#1aa6a6);-webkit-background-clip:text;background-clip:text;color:transparent}
+#screen-about{background:linear-gradient(180deg,#f4f6f9,#eaf1f8 50%,#f4f6f9)}
+.tp{background:linear-gradient(160deg,#fff,#f1f7fc)}.tp:nth-child(4n+1){border-top:3px solid #ff7ab6}.tp:nth-child(4n+2){border-top:3px solid #ffd166}.tp:nth-child(4n+3){border-top:3px solid #3ddc97}.tp:nth-child(4n){border-top:3px solid #4cc9f0}
+.goals div{background:linear-gradient(90deg,#fff,#eef6fb);border-image:linear-gradient(180deg,#1aa6a6,#4cc9f0) 1;border-left-width:5px;border-radius:0}
+.asec.alt{background:linear-gradient(135deg,#e6eef7,#dcecf4 50%,#e9e4f5)}
+.steps li{background:linear-gradient(160deg,#fff,#f3f8fc);border-top-color:transparent;border-image:linear-gradient(90deg,#ff7ab6,#ffd166,#3ddc97,#4cc9f0) 1}
+.afoot{background:linear-gradient(90deg,#fff,#f1f6fb)}
