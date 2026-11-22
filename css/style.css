@@ -223,3 +223,10 @@ html{scroll-behavior:smooth}
 .tkeys{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}.tkeys span{background:linear-gradient(135deg,#e3f6f6,#e8f0fb);color:#0f2742;border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px}
 .tgame{color:#546377;border-top:1px solid #e6ebf1;padding-top:16px;margin:0 0 20px}
 .tnav{display:flex;justify-content:space-between}.tnav a{color:#0b8f80;text-decoration:none;font-weight:600}.tnav a:hover{text-decoration:underline}
+
+.atop{padding:10px 5vw}
+.abrand{display:flex;flex-wrap:wrap;gap:0 .3em;font-size:clamp(22px,3.2vw,38px);line-height:1.1;font-weight:800;letter-spacing:.02em}
+.abrand .w{display:inline-flex}
+.abrand b{display:inline-block;color:var(--c);-webkit-text-stroke:1.5px #fff;paint-order:stroke fill;text-shadow:0 2px 0 rgba(255,255,255,.9),0 5px 10px rgba(0,0,0,.35);animation:bob 2.8s ease-in-out infinite;animation-delay:var(--d)}
+@media(max-width:600px){.abrand{font-size:20px}}
+.atop{padding:16px 5vw 14px}.abrand{letter-spacing:.04em}.abrand b{-webkit-text-stroke:1px #fff;text-shadow:0 2px 0 rgba(255,255,255,.85),0 4px 8px rgba(0,0,0,.3)}

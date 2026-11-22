@@ -31,6 +31,7 @@
   function showAbout(on) { $("screen-about").hidden = !on; $("screen-home").hidden = on; if (!on && wheel) { wheel.resize(); wheel.start(); } window.scrollTo(0, 0); }
   function buildLogo() {
     const words = ["Game", "of", "Different", "Lives"], cols = ["#ef476f", "#ffa62b", "#ffd23f", "#06c28f", "#1e9be9", "#7b5cd6", "#ff7bac"]; let k = 0;
+    document.querySelectorAll(".abrand").forEach(el => { let j = 0; el.innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[j++ % 7]};--d:${(j % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" "); el.setAttribute("aria-label", "Game of Different Lives"); });
     $("logo").innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[k++ % 7]};--d:${(k % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" ");
     $("lead").textContent = ui().lead;
     $("note").textContent = ui().note;
