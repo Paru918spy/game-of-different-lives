@@ -116,4 +116,4 @@ button{font-family:inherit;cursor:pointer}
 
 .pic img{object-position:50% 22%}.pic img,.pic svg{animation:kb 18s ease-in-out infinite alternate;transform-origin:60% 40%}.pic{overflow:hidden}
 @keyframes kb{to{transform:scale(1.08)}}
-@media(max-width:700px){.stage{height:min(46vh,400px);margin-bottom:60px}.hint{display:none}}
+@media(max-width:700px){.stage{height:min(46vh,400px);margin-bottom:60px}#spinLife{margin-bottom:34px}.hud.br .btn,.hud.br button{font-size:15px;white-space:nowrap;padding-left:10px;padding-right:10px}.hint{display:none}}
