@@ -8,8 +8,8 @@ GOL.events = {
    "author": "Martinvl",
    "license": "CC BY-SA 4.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Kings_College_Cambridge_Chapel_from_the_river.webp",
-   "title": "File:Kings College Cambridge Chapel from the river.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Kings_College_Cambridge_Chapel_from_the_river.jpg",
+   "title": "File:Kings College Cambridge Chapel from the river.jpg"
   },
   "12": {
    "file": "img/events/hawking_12.webp",
@@ -17,8 +17,8 @@ GOL.events = {
    "author": "No machine-readable author provided. Avibliz assumed (based on copyright claims).",
    "license": "CC BY-SA 3.0",
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-   "source": "https://commons.wikimedia.org/wiki/File:Stephen_Hawking_public_lecture_at_Hebrew_University_of_Jerusalem_14-12-2006.webp",
-   "title": "File:Stephen Hawking public lecture at Hebrew University of Jerusalem 14-12-2006.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Stephen_Hawking_public_lecture_at_Hebrew_University_of_Jerusalem_14-12-2006.jpg",
+   "title": "File:Stephen Hawking public lecture at Hebrew University of Jerusalem 14-12-2006.jpg"
   },
   "15": {
    "file": "img/events/hawking_15.webp",
@@ -26,8 +26,8 @@ GOL.events = {
    "author": "Jim Campbell/Aero-News Network",
    "license": "CC BY 3.0",
    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Physicist_Stephen_Hawking_in_Zero_Gravity_NASA.webp",
-   "title": "File:Physicist Stephen Hawking in Zero Gravity NASA.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Physicist_Stephen_Hawking_in_Zero_Gravity_NASA.jpg",
+   "title": "File:Physicist Stephen Hawking in Zero Gravity NASA.jpg"
   }
  },
  "parks": {
@@ -37,8 +37,8 @@ GOL.events = {
    "author": "Gene Herrick for the Associated Press; restored by Adam Cuerden",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_being_fingerprinted_by_Deputy_Sheriff_D.H._Lackey_after_being_arrested_on_February_22,_1956,_during_the_Montgomery_bus_boycott.webp",
-   "title": "File:Rosa Parks being fingerprinted by Deputy Sheriff D.H. Lackey after being arrested on February 22, 1956, during the Montgomery bus boycott.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_being_fingerprinted_by_Deputy_Sheriff_D.H._Lackey_after_being_arrested_on_February_22,_1956,_during_the_Montgomery_bus_boycott.jpg",
+   "title": "File:Rosa Parks being fingerprinted by Deputy Sheriff D.H. Lackey after being arrested on February 22, 1956, during the Montgomery bus boycott.jpg"
   },
   "12": {
    "file": "img/events/parks_12.webp",
@@ -46,8 +46,8 @@ GOL.events = {
    "author": "Rmhermen",
    "license": "CC BY-SA 3.0",
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-   "source": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_Bus.webp",
-   "title": "File:Rosa Parks Bus.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_Bus.jpg",
+   "title": "File:Rosa Parks Bus.jpg"
   },
   "18": {
    "file": "img/events/parks_18.webp",
@@ -55,8 +55,8 @@ GOL.events = {
    "author": "US Mint",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_Congressional_Gold_Medal_1999_obverse.webp",
-   "title": "File:Rosa Parks Congressional Gold Medal 1999 obverse.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_Congressional_Gold_Medal_1999_obverse.jpg",
+   "title": "File:Rosa Parks Congressional Gold Medal 1999 obverse.jpg"
   }
  },
  "wonder": {
@@ -66,8 +66,8 @@ GOL.events = {
    "author": "Blob4000 at English Wikipedia\n\nLater versions were uploaded by FuriousFreddy at en.wikipedia.",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Hitsville_USA.webp",
-   "title": "File:Hitsville USA.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Hitsville_USA.jpg",
+   "title": "File:Hitsville USA.jpg"
   },
   "9": {
    "file": "img/events/wonder_9.webp",
@@ -75,8 +75,8 @@ GOL.events = {
    "author": "Kåre Eide",
    "license": "CC0",
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-   "source": "https://commons.wikimedia.org/wiki/File:Stevie_Wonder_in_Drammenshallen_May_1981.webp",
-   "title": "File:Stevie Wonder in Drammenshallen May 1981.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Stevie_Wonder_in_Drammenshallen_May_1981.jpg",
+   "title": "File:Stevie Wonder in Drammenshallen May 1981.jpg"
   },
   "12": {
    "file": "img/events/wonder_12.webp",
@@ -84,8 +84,8 @@ GOL.events = {
    "author": "President (2009-2017 : Obama). Office of Management and Administration. Office of White House Personnel. Photography Office. (ca. 2010 - 1/20/2017)",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Stevie_Wonder_performs.webp",
-   "title": "File:Stevie Wonder performs.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Stevie_Wonder_performs.jpg",
+   "title": "File:Stevie Wonder performs.jpg"
   }
  },
  "king": {
@@ -95,8 +95,8 @@ GOL.events = {
    "author": "Montgomery Improvement Association",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Montgomery_Improvement_Association,_flyer_on_bus_desegregation,_c._1956_(NYPL).webp",
-   "title": "File:Montgomery Improvement Association, flyer on bus desegregation, c. 1956 (NYPL).webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Montgomery_Improvement_Association,_flyer_on_bus_desegregation,_c._1956_(NYPL).jpg",
+   "title": "File:Montgomery Improvement Association, flyer on bus desegregation, c. 1956 (NYPL).jpg"
   },
   "9": {
    "file": "img/events/king_9.webp",
@@ -104,8 +104,8 @@ GOL.events = {
    "author": "Unknown author",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Martin_Luther_King_Jr._addresses_a_crowd_from_the_steps_of_the_Lincoln_Memorial,_USMC-09611.webp",
-   "title": "File:Martin Luther King Jr. addresses a crowd from the steps of the Lincoln Memorial, USMC-09611.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Martin_Luther_King_Jr._addresses_a_crowd_from_the_steps_of_the_Lincoln_Memorial,_USMC-09611.jpg",
+   "title": "File:Martin Luther King Jr. addresses a crowd from the steps of the Lincoln Memorial, USMC-09611.jpg"
   },
   "10": {
    "file": "img/events/king_10.webp",
@@ -113,8 +113,8 @@ GOL.events = {
    "author": "Cecil Stoughton, White House Press Office (WHPO)",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Lyndon_Johnson_signing_Civil_Rights_Act,_July_2,_1964.webp",
-   "title": "File:Lyndon Johnson signing Civil Rights Act, July 2, 1964.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Lyndon_Johnson_signing_Civil_Rights_Act,_July_2,_1964.jpg",
+   "title": "File:Lyndon Johnson signing Civil Rights Act, July 2, 1964.jpg"
   }
  },
  "kaepernick": {
@@ -124,8 +124,8 @@ GOL.events = {
    "author": "Daniel W. Hartwig",
    "license": "CC BY 2.0",
    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Colin_Kaepernick_scrambling_vs_Packers_(cropped).webp",
-   "title": "File:Colin Kaepernick scrambling vs Packers (cropped).webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Colin_Kaepernick_scrambling_vs_Packers_(cropped).jpg",
+   "title": "File:Colin Kaepernick scrambling vs Packers (cropped).jpg"
   }
  },
  "curie": {
@@ -135,8 +135,8 @@ GOL.events = {
    "author": "AIP Emilio Segrè Visual Archives, Physics Today Collection",
    "license": "CC0",
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-   "source": "https://commons.wikimedia.org/wiki/File:Marie_and_Pierre_Curie_Converse.webp",
-   "title": "File:Marie and Pierre Curie Converse.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Marie_and_Pierre_Curie_Converse.jpg",
+   "title": "File:Marie and Pierre Curie Converse.jpg"
   },
   "11": {
    "file": "img/events/curie_11.webp",
@@ -144,8 +144,8 @@ GOL.events = {
    "author": "Unknown authorUnknown author",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Marie_Curie_-_Mobile_X-Ray-Unit.webp",
-   "title": "File:Marie Curie - Mobile X-Ray-Unit.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Marie_Curie_-_Mobile_X-Ray-Unit.jpg",
+   "title": "File:Marie Curie - Mobile X-Ray-Unit.jpg"
   }
  },
  "heumann": {
@@ -155,8 +155,8 @@ GOL.events = {
    "author": "Unknown authorUnknown author",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Camp_Jened_advertisement.webp",
-   "title": "File:Camp Jened advertisement.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Camp_Jened_advertisement.jpg",
+   "title": "File:Camp Jened advertisement.jpg"
   },
   "9": {
    "file": "img/events/heumann_9.webp",
@@ -164,8 +164,8 @@ GOL.events = {
    "author": "Photographs by William Bronston, working for the California Department of Rehabilitation. Book published by the California Department of Rehabilitation.",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Judy_Heumann.webp",
-   "title": "File:Judy Heumann.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Judy_Heumann.jpg",
+   "title": "File:Judy Heumann.jpg"
   }
  },
  "keller": {
@@ -175,8 +175,8 @@ GOL.events = {
    "author": "Miscellaneous Items in High Demand, PPOC, Library of Congress",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Helen_Keller_and_Mrs._John_A._Macy_(Anne_Sullivan)_LCCN2002706628.webp",
-   "title": "File:Helen Keller and Mrs. John A. Macy (Anne Sullivan) LCCN2002706628.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Helen_Keller_and_Mrs._John_A._Macy_(Anne_Sullivan)_LCCN2002706628.jpg",
+   "title": "File:Helen Keller and Mrs. John A. Macy (Anne Sullivan) LCCN2002706628.jpg"
   },
   "5": {
    "file": "img/events/keller_5.webp",
@@ -184,8 +184,8 @@ GOL.events = {
    "author": "ajay_suresh",
    "license": "CC BY 4.0",
    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Radcliffe_College_-_Harvard_University_(54940852751).webp",
-   "title": "File:Radcliffe College - Harvard University (54940852751).webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Radcliffe_College_-_Harvard_University_(54940852751).jpg",
+   "title": "File:Radcliffe College - Harvard University (54940852751).jpg"
   },
   "3": {
    "file": "img/events/keller_3.webp",
@@ -193,8 +193,8 @@ GOL.events = {
    "author": "Miscellaneous Items in High Demand, PPOC, Library of Congress",
    "license": "Public domain",
    "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Helen_Keller_and_Mrs._John_A._Macy_(Anne_Sullivan)_LCCN2002706628.webp",
-   "title": "File:Helen Keller and Mrs. John A. Macy (Anne Sullivan) LCCN2002706628.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Helen_Keller_and_Mrs._John_A._Macy_(Anne_Sullivan)_LCCN2002706628.jpg",
+   "title": "File:Helen Keller and Mrs. John A. Macy (Anne Sullivan) LCCN2002706628.jpg"
   }
  },
  "kahlo": {
@@ -204,8 +204,8 @@ GOL.events = {
    "author": "Rebeccananonof",
    "license": "CC0",
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-   "source": "https://commons.wikimedia.org/wiki/File:La_Casa_Azul_(The_Blue_House),_better_known_as_the_Frida_Kahlo_Museum,_located_in_the_Coyoac%C3%A1n_neighborhood_of_Mexico_City.webp",
-   "title": "File:La Casa Azul (The Blue House), better known as the Frida Kahlo Museum, located in the Coyoacán neighborhood of Mexico City.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:La_Casa_Azul_(The_Blue_House),_better_known_as_the_Frida_Kahlo_Museum,_located_in_the_Coyoac%C3%A1n_neighborhood_of_Mexico_City.jpg",
+   "title": "File:La Casa Azul (The Blue House), better known as the Frida Kahlo Museum, located in the Coyoacán neighborhood of Mexico City.jpg"
   }
  },
  "malala": {
@@ -215,8 +215,8 @@ GOL.events = {
    "author": "Hassan Ali Lutf Ullah",
    "license": "CC BY-SA 3.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Mingora,_Swat_Valley_Pakistan.webp",
-   "title": "File:Mingora, Swat Valley Pakistan.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Mingora,_Swat_Valley_Pakistan.jpg",
+   "title": "File:Mingora, Swat Valley Pakistan.jpg"
   },
   "9": {
    "file": "img/events/malala_9.webp",
@@ -224,8 +224,8 @@ GOL.events = {
    "author": "Bair175",
    "license": "CC BY-SA 4.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Malala_Yousafzai_and_Kaliash_Satyarthi_at_the_Nobel_Peace_Prize_ceremony.webp",
-   "title": "File:Malala Yousafzai and Kaliash Satyarthi at the Nobel Peace Prize ceremony.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Malala_Yousafzai_and_Kaliash_Satyarthi_at_the_Nobel_Peace_Prize_ceremony.jpg",
+   "title": "File:Malala Yousafzai and Kaliash Satyarthi at the Nobel Peace Prize ceremony.jpg"
   }
  },
  "cox": {
@@ -235,8 +235,8 @@ GOL.events = {
    "author": "Dominick D",
    "license": "CC BY-SA 2.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Cast_of_Orange_Is_The_New_Black_at_Paley_Fest.webp",
-   "title": "File:Cast of Orange Is The New Black at Paley Fest.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Cast_of_Orange_Is_The_New_Black_at_Paley_Fest.jpg",
+   "title": "File:Cast of Orange Is The New Black at Paley Fest.jpg"
   },
   "10": {
    "file": "img/events/cox_10.webp",
@@ -253,8 +253,8 @@ GOL.events = {
    "author": "Dominick D",
    "license": "CC BY-SA 2.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Laverne_Cox_at_Paley_Fest_Orange_Is_The_New_Black.webp",
-   "title": "File:Laverne Cox at Paley Fest Orange Is The New Black.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Laverne_Cox_at_Paley_Fest_Orange_Is_The_New_Black.jpg",
+   "title": "File:Laverne Cox at Paley Fest Orange Is The New Black.jpg"
   }
  },
  "johnson": {
@@ -264,8 +264,8 @@ GOL.events = {
    "author": "Rhododendrites",
    "license": "CC BY-SA 4.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Stonewall_Inn_raid_sign_pride_weekend_2016.webp",
-   "title": "File:Stonewall Inn raid sign pride weekend 2016.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Stonewall_Inn_raid_sign_pride_weekend_2016.jpg",
+   "title": "File:Stonewall Inn raid sign pride weekend 2016.jpg"
   },
   "9": {
    "file": "img/events/johnson_9.webp",
@@ -273,17 +273,8 @@ GOL.events = {
    "author": "Joe Mabel (on Flickr as Joe Mabel from Seattle, US)",
    "license": "CC BY-SA 3.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Christopher_Street_Pier_from_Hudson_01_(9434691647).webp",
-   "title": "File:Christopher Street Pier from Hudson 01 (9434691647).webp"
-  },
-  "5": {
-   "file": "img/events/johnson_5.webp",
-   "alt": "Katherine Johnson NASA",
-   "author": "Adam Cuerden",
-   "license": "Public domain",
-   "licenseUrl": "",
-   "source": "https://commons.wikimedia.org/wiki/File:Katherine_Johnson_at_NASA,_in_1966.webp",
-   "title": "File:Katherine Johnson at NASA, in 1966.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Christopher_Street_Pier_from_Hudson_01_(9434691647).jpg",
+   "title": "File:Christopher Street Pier from Hudson 01 (9434691647).jpg"
   }
  },
  "singh": {
@@ -293,8 +284,8 @@ GOL.events = {
    "author": "Chparveshtaak",
    "license": "CC BY-SA 4.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Golden_fields,_bustling_harvest_01.webp",
-   "title": "File:Golden fields, bustling harvest 01.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Golden_fields,_bustling_harvest_01.jpg",
+   "title": "File:Golden fields, bustling harvest 01.jpg"
   },
   "9": {
    "file": "img/events/singh_9.webp",
@@ -302,8 +293,8 @@ GOL.events = {
    "author": "Stanley Howe",
    "license": "CC BY-SA 2.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-   "source": "https://commons.wikimedia.org/wiki/File:London_2012_Olympic_Torch_relay_(geograph_3010092).webp",
-   "title": "File:London 2012 Olympic Torch relay (geograph 3010092).webp"
+   "source": "https://commons.wikimedia.org/wiki/File:London_2012_Olympic_Torch_relay_(geograph_3010092).jpg",
+   "title": "File:London 2012 Olympic Torch relay (geograph 3010092).jpg"
   }
  },
  "mandela": {
@@ -313,8 +304,8 @@ GOL.events = {
    "author": "This file is licensed under the Creative Commons Attribution 1.0 Generic license.Attribution: www.namastesouthafrica.com\nYou are free:\nto share – to copy, distribute and transmit the work\nto remix – to adapt the work\nUnder the following conditions:\nattribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nhttps://creativecommons.org/licenses/by/1.0CC BY 1.0 Creative Commons Attribution 1.0 truetrue",
    "license": "CC BY 3.0",
    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Nelson_Mandela%27s_prison_cell_at_Robben_Island.webp",
-   "title": "File:Nelson Mandela's prison cell at Robben Island.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Nelson_Mandela%27s_prison_cell_at_Robben_Island.jpg",
+   "title": "File:Nelson Mandela's prison cell at Robben Island.jpg"
   },
   "9": {
    "file": "img/events/mandela_9.webp",
@@ -322,8 +313,8 @@ GOL.events = {
    "author": "Charis1025",
    "license": "CC BY-SA 3.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Cape_Town_City_Hall,_Black_and_White.webp",
-   "title": "File:Cape Town City Hall, Black and White.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Cape_Town_City_Hall,_Black_and_White.jpg",
+   "title": "File:Cape Town City Hall, Black and White.jpg"
   },
   "11": {
    "file": "img/events/mandela_11.webp",
@@ -331,8 +322,8 @@ GOL.events = {
    "author": "Paul Weinberg",
    "license": "CC BY-SA 3.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Inauguration_of_President_Nelson_Mandela,_Pretoria,_1994._60_F.webp",
-   "title": "File:Inauguration of President Nelson Mandela, Pretoria, 1994. 60 F.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Inauguration_of_President_Nelson_Mandela,_Pretoria,_1994._60_F.jpg",
+   "title": "File:Inauguration of President Nelson Mandela, Pretoria, 1994. 60 F.jpg"
   }
  },
  "turing": {
@@ -342,8 +333,8 @@ GOL.events = {
    "author": "DeFacto",
    "license": "CC BY-SA 4.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Bletchley_Park_Mansion.webp",
-   "title": "File:Bletchley Park Mansion.webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Bletchley_Park_Mansion.jpg",
+   "title": "File:Bletchley Park Mansion.jpg"
   }
  },
  "beethoven": {
@@ -353,8 +344,8 @@ GOL.events = {
    "author": "Joseolgon",
    "license": "CC BY-SA 4.0",
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "https://commons.wikimedia.org/wiki/File:Beethoven_monument,_Vienna_(1).webp",
-   "title": "File:Beethoven monument, Vienna (1).webp"
+   "source": "https://commons.wikimedia.org/wiki/File:Beethoven_monument,_Vienna_(1).jpg",
+   "title": "File:Beethoven monument, Vienna (1).jpg"
   }
  }
 };

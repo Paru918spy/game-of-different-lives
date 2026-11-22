@@ -128,8 +128,18 @@
   }
 
   /* ---------- HUD ---------- */
+  let fpKey = "";
+  function showFloat() {
+    const el = $("floatPic"); if (!el) return;
+    const ev = S && !S.base.fictional ? (GOL.events[S.base.id] || {})[S.pos] : null, key = ev ? ev.file : "";
+    if (key === fpKey) return; fpKey = key;
+    if (!ev) { el.classList.remove("on"); setTimeout(() => { if (!fpKey) el.hidden = true; }, 500); return; }
+    el.hidden = false; el.classList.remove("on");
+    const im = $("fpImg"); im.onload = () => requestAnimationFrame(() => el.classList.add("on")); im.alt = ev.alt || ""; im.src = ev.file;
+    $("fpCap").innerHTML = `<b>${esc(S.ch.tiles[S.pos].title)}</b><small>${esc(ev.author.length > 40 ? ev.author.slice(0, 38) + "…" : ev.author)} · ${esc(ev.license)} · Wikimedia Commons</small>`;
+  }
   function renderHud() {
-    const u = ui(); if (!S) return;
+    const u = ui(); if (!S) return; showFloat();
     $("hName").textContent = S.ch.name; $("hYears").textContent = S.base.years;
     $("avatar").innerHTML = GOL.portrait(S.base); $("avatar").style.background = S.base.avatar.color;
     $("chapLabel").textContent = u.chapter; $("hopeLabel").textContent = u.hope; $("supLabel").textContent = u.support;
@@ -152,7 +162,7 @@
     const base = GOL.characters.find(c => c.id === id);
     S = { base, ch: base, pos: 0, hope: base.start.hope, support: base.start.support, turns: 0, barriers: 0, lost: 0, fails: 0, bonus: 0, blocked: false, busy: false,
           seen: new Set([0]), passed: new Set(), done: new Set(), used: new Set(), skipped: new Set(), bridges: 0, backs: 0 };
-    $("screen-home").hidden = true; $("screen-end").hidden = true; $("screen-game").hidden = false; document.body.classList.add("ingame");
+    $("screen-home").hidden = true; $("screen-about").hidden = true; $("screen-topic").hidden = true; $("screen-end").hidden = true; $("screen-game").hidden = false; document.body.classList.add("ingame");
     wheel.stop();
     if (!board) { board = GOL.Board3D($("boardCv")); board.onHover = hoverTip; board.onPick = pickTile; board.onFollow = f => $("follow").classList.toggle("on", f); board.autoFollow = true; }
     if (!spinner) { spinner = GOL.Wheel($("spinCv"), [1, 2, 3, 1, 2, 3].map((n, i) => ({ label: String(n), color: ["#ef476f", "#1e9be9", "#06c28f"][i % 3], dark: ["#b02a4d", "#0b63a8", "#038a65"][i % 3] })), { compact: true }); spinner.onTick = SND.tick; }
@@ -292,5 +302,5 @@
   /* FPS overlay: press F (or open index.html?fps) */
   (function () { let el = null, id = 0; const show = on => { if (!on) { el && el.remove(); el = null; clearInterval(id); return; } el = document.createElement("div"); el.style.cssText = "position:fixed;left:8px;bottom:8px;z-index:200;background:#000c;color:#9f9;font:12px/1.4 monospace;padding:6px 8px;border-radius:6px;pointer-events:none;white-space:pre"; document.body.appendChild(el); id = setInterval(() => { const P = board && board.perf; if (P && P.fps != null) el.textContent = `${P.fps} fps  frame ${P.avg} ms (worst ${P.worstS})\nslow frames/s ${P.slowS}\ndraw calls ${P.calls}  tris ${P.tris}\ngeometries ${P.geo}  textures ${P.tex}`; }, 500); };
     window.addEventListener("keydown", e => { if (e.key === "f" || e.key === "F") show(!el); }); if (/[?&]fps/.test(location.search)) show(true); })();
-  window.GOL.debug = { start, end, spin, showTile, offerBridge, setback, spinLife, home, get state() { return S; }, get board() { return board; }, get wheel() { return wheel; }, modal };
+  window.GOL.debug = { renderHud, start, end, spin, showTile, offerBridge, setback, spinLife, home, get state() { return S; }, get board() { return board; }, get wheel() { return wheel; }, modal };
 })();
