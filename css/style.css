@@ -114,6 +114,6 @@ button{font-family:inherit;cursor:pointer}
 .cf{position:fixed;top:-20px;width:10px;height:16px;z-index:60;pointer-events:none;animation:fall linear forwards}
 @keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
 
-.pic img,.pic svg{animation:kb 18s ease-in-out infinite alternate;transform-origin:60% 40%}.pic{overflow:hidden}
+.pic img{object-position:50% 22%}.pic img,.pic svg{animation:kb 18s ease-in-out infinite alternate;transform-origin:60% 40%}.pic{overflow:hidden}
 @keyframes kb{to{transform:scale(1.08)}}
 @media(max-width:700px){.stage{height:min(46vh,400px);margin-bottom:60px}.hint{display:none}}

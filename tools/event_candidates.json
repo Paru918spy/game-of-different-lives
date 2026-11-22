@@ -716,48 +716,6 @@
    }
   ]
  },
- "kahlo:5": {
-  "q": "Frida Kahlo Diego Rivera",
-  "pick": 0,
-  "cands": [
-   {
-    "rank": 1,
-    "title": "File:Frida Kahlo, by Guillermo Kahlo.jpg",
-    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg/960px-Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "lic": "Public domain",
-    "licUrl": "",
-    "author": "Guillermo Kahlo",
-    "page": "https://commons.wikimedia.org/wiki/File:Frida_Kahlo,_by_Guillermo_Kahlo.jpg"
-   },
-   {
-    "rank": 2,
-    "title": "File:Toni Frissell - Frida Kahlo, seated next to an agave.jpg",
-    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Toni_Frissell_-_Frida_Kahlo%2C_seated_next_to_an_agave.jpg/960px-Toni_Frissell_-_Frida_Kahlo%2C_seated_next_to_an_agave.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "lic": "Public domain",
-    "licUrl": "",
-    "author": "Toni Frissell / Adam Cuerden",
-    "page": "https://commons.wikimedia.org/wiki/File:Toni_Frissell_-_Frida_Kahlo,_seated_next_to_an_agave.jpg"
-   },
-   {
-    "rank": 3,
-    "title": "File:Calavera of Frida Kahlo.jpg",
-    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Calavera_of_Frida_Kahlo.jpg/960px-Calavera_of_Frida_Kahlo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "lic": "CC BY 4.0",
-    "licUrl": "https://creativecommons.org/licenses/by/4.0",
-    "author": "Tomascastelazo",
-    "page": "https://commons.wikimedia.org/wiki/File:Calavera_of_Frida_Kahlo.jpg"
-   },
-   {
-    "rank": 5,
-    "title": "File:Closeup of Frida Kahlo and Diego Rivera Sculpture.jpg",
-    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Closeup_of_Frida_Kahlo_and_Diego_Rivera_Sculpture.jpg/960px-Closeup_of_Frida_Kahlo_and_Diego_Rivera_Sculpture.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "lic": "CC BY-SA 4.0",
-    "licUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "Ines Suarez R.",
-    "page": "https://commons.wikimedia.org/wiki/File:Closeup_of_Frida_Kahlo_and_Diego_Rivera_Sculpture.jpg"
-   }
-  ]
- },
  "kahlo:12": {
   "q": "Casa Azul Coyoacan Frida Kahlo Museum",
   "pick": 1,

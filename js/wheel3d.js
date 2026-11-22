@@ -51,6 +51,7 @@ GOL.Wheel = function (cv, entries, opt = {}) {
   /* pegs */
   const pegGeo = new T.CylinderGeometry(.055, .07, .34, 12), pegs = new T.Group(); wheel.add(pegs);
   for (let i = 0; i < N; i++) { const a = (i + .5) * seg, p = new T.Mesh(pegGeo, gold); p.rotation.x = Math.PI / 2; p.position.set(Math.cos(a) * (R - .12), Math.sin(a) * (R - .12), .42); pegs.add(p); const ball = new T.Mesh(new T.SphereGeometry(.09, 12, 8), gold); ball.position.copy(p.position); ball.position.z += .17; pegs.add(ball); }
+  for (let i = 0; i < N; i++) { const a = (i + .5) * seg, d = new T.Mesh(new T.BoxGeometry(R - .75, .07, .16), gold); d.position.set(Math.cos(a) * (R + .6) / 2, Math.sin(a) * (R + .6) / 2, .31); d.rotation.z = a; wheel.add(d); }
   /* hub */
   const hub = new T.Mesh(new T.SphereGeometry(.55, 32, 16), gold); hub.scale.z = .6; hub.position.z = .45; hub.castShadow = true; wheel.add(hub);
   const cap = new T.Mesh(new T.SphereGeometry(.24, 24, 12), red); cap.scale.z = .7; cap.position.z = .74; wheel.add(cap);
@@ -63,10 +64,12 @@ GOL.Wheel = function (cv, entries, opt = {}) {
   const shp = new T.Shape(); shp.moveTo(-.2, 0); shp.lineTo(.2, 0); shp.lineTo(.07, -.95); shp.lineTo(-.07, -.95); shp.closePath();
   const flap = new T.Mesh(new T.ExtrudeGeometry(shp, { depth: .12, bevelEnabled: true, bevelSize: .03, bevelThickness: .03, bevelSegments: 3 }), red); flap.castShadow = true; flapPivot.add(flap);
   const pivBall = new T.Mesh(new T.SphereGeometry(.2, 20, 12), gold); pivBall.position.z = .08; flapPivot.add(pivBall);
+  if (!compact) { const hc = GFX.canvas(256, 256), hg = hc.getContext("2d"), gr = hg.createRadialGradient(128, 128, 10, 128, 128, 128); gr.addColorStop(0, "rgba(255,240,170,.9)"); gr.addColorStop(.5, "rgba(255,200,90,.35)"); gr.addColorStop(1, "rgba(255,200,90,0)"); hg.fillStyle = gr; hg.fillRect(0, 0, 256, 256);
+    const halo = new T.Sprite(new T.SpriteMaterial({ map: GFX.tex(hc), transparent: true, depthWrite: false, blending: T.AdditiveBlending, opacity: .4 })); halo.scale.set(10, 10, 1); halo.position.set(0, 1.35, -1.2); scene.add(halo); }
   /* stand */
   const stand = new T.Group(); scene.add(stand);
-  const legGeo = new T.BoxGeometry(.5, 3.4, .45);
-  [[-1, .3], [1, -.3]].forEach(([s, ang]) => { const l = new T.Mesh(legGeo, wood); l.position.set(s * 1.5, -1.3, -.3); l.rotation.z = s * -.32; l.castShadow = true; stand.add(l); });
+  const legGeo = new T.BoxGeometry(.75, 3.4, .6);
+  [[-1, .3], [1, -.3]].forEach(([s, ang]) => { const l = new T.Mesh(legGeo, wood); l.position.set(s * 1.5, -1.3, -.3); l.rotation.z = s * -.32; l.castShadow = true; stand.add(l); const col = new T.Mesh(new T.CylinderGeometry(.5, .5, .16, 20), gold); col.position.set(s * 1.1, -.05, -.3); col.rotation.z = Math.PI / 2; stand.add(col); });
   const baseM = new T.Mesh(new T.BoxGeometry(5.6, .5, 2.4), wood); baseM.position.set(0, -3.0, -.3); baseM.castShadow = true; baseM.receiveShadow = true; stand.add(baseM);
   const trim = new T.Mesh(new T.BoxGeometry(5.62, .14, .04), gold); trim.position.set(0, -2.95, .92); stand.add(trim); [-2.5, 2.5].forEach(x => { const f = new T.Mesh(new T.SphereGeometry(.22, 16, 10), gold); f.position.set(x, -3.2, .7); stand.add(f); });
   const floor = new T.Mesh(new T.PlaneGeometry(40, 40), new T.ShadowMaterial({ opacity: .28 })); floor.rotation.x = -Math.PI / 2; floor.position.y = -3.25; floor.receiveShadow = true; scene.add(floor);
@@ -87,7 +90,7 @@ GOL.Wheel = function (cv, entries, opt = {}) {
     },
     get spinning() { return spinning; }, winnerIndex: () => idxAt(rot),
     start() { if (running) return; running = true; clock = performance.now(); loop(); }, stop() { running = false; cancelAnimationFrame(raf); },
-    resize() { const w = cv.clientWidth, h = cv.clientHeight; if (!w || !h) return; renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); renderer.setSize(w, h, false); cam.aspect = w / h; cam.fov = w / h < .9 ? 46 : 32; cam.updateProjectionMatrix(); },
+    resize() { const w = cv.clientWidth, h = cv.clientHeight; if (!w || !h) return; renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); renderer.setSize(w, h, false); cam.aspect = w / h; cam.fov = w / h < .9 ? 46 : 36; cam.updateProjectionMatrix(); },
     renderOnce() { api.resize(); renderer.render(scene, cam); },
     dispose() { api.stop(); renderer.dispose(); }
   };

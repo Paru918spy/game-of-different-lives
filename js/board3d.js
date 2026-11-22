@@ -12,7 +12,7 @@ GOL.Board3D = function (cv) {
 
   const world = new T.Group(); scene.add(world);
   const B = { onHover: null, onPick: null, canvas: cv, ch: null, scene, world, camera: cam };
-  let titleLabels = [], pts = [], tiles = [], pads = [], gates = {}, stars = [], bridges = [], setbacks = [], pawn, pawnPort, ring, confetti = [], clouds = [], waterTex, rngf, route, trees = [], running = false, raf = 0, clock = 0, visited = new Set(), size = { w: 60, d: 40 };
+  let spinners = [], titleLabels = [], pts = [], tiles = [], pads = [], gates = {}, stars = [], bridges = [], setbacks = [], pawn, pawnPort, ring, confetti = [], clouds = [], waterTex, rngf, route, trees = [], running = false, raf = 0, clock = 0, visited = new Set(), size = { w: 60, d: 40 };
 
   /* ---------- camera controls ---------- */
   const C = { tgt: V(0, 0, 0), goal: V(0, 0, 0), az: .35, el: .95, dist: 60, gAz: .35, gEl: .95, gDist: 60, follow: true, lastUser: 0 };
@@ -72,15 +72,25 @@ GOL.Board3D = function (cv) {
   function stripeTex() { const c = GFX.canvas(128, 32), g = c.getContext("2d"); for (let i = 0; i < 8; i++) { g.fillStyle = i % 2 ? "#fff" : "#e5484d"; g.fillRect(i * 16, 0, 16, 32); } return GFX.tex(c, true); }
   const TYPE = { start: 0x4ade80, info: 0x5aa9e6, win: 0xfbbf24, barrier: 0xef4444, choice: 0xa855f7, finish: 0xf8fafc };
 
+  /* One look per life: colours and scenery change so no two boards feel the same. */
+  const THEMES = [
+    { n: "meadow", g1: 0x5aa05a, g2: 0x468a4f, leaves: [0x2f9e57, 0x3fb86a, 0x1f8a4c, 0x68c35a], sky: ["#6ec6ff", "#bfe8ff", "#fff3d6"], fog: 0xcfeaff, mtn: 0xa09486, snow: true, land: "windmill" },
+    { n: "autumn", g1: 0x9a9a45, g2: 0x7d7d3a, leaves: [0xe0782a, 0xd9a21f, 0xc2492b, 0xe8c04a], sky: ["#ffb27a", "#ffe0b0", "#fff3d6"], fog: 0xffe6c4, mtn: 0x9a7a66, snow: false, land: "barn" },
+    { n: "snow", g1: 0xe9f1f7, g2: 0xd4e3ee, leaves: [0x2f6f57, 0x3d8a6c, 0x24604b, 0x4a9a7c], sky: ["#a9c8ee", "#dcebfa", "#ffffff"], fog: 0xe3effa, mtn: 0xaab6c6, snow: true, land: "snowman", snowy: true },
+    { n: "savanna", g1: 0xc9b25a, g2: 0xb09a47, leaves: [0x6d8f3a, 0x8aa648, 0x58782f, 0xa3b85a], sky: ["#ffcf7a", "#ffe9b8", "#fff6df"], fog: 0xffeccd, mtn: 0xb07a52, snow: false, land: "rock", palm: true },
+    { n: "blossom", g1: 0x7ec27a, g2: 0x62ac6c, leaves: [0xff9ac2, 0xffb7d3, 0xf577a8, 0xffd0e2], sky: ["#a7d8ff", "#ffd9ec", "#fff3f8"], fog: 0xffe7f2, mtn: 0xb3a3b8, snow: true, land: "windmill" },
+    { n: "city", g1: 0x8fb08a, g2: 0x7aa078, leaves: [0x4e9b62, 0x62b077, 0x3c8650, 0x78c08a], sky: ["#7fb6ee", "#cfe4fa", "#f3f6fb"], fog: 0xd7e6f6, mtn: 0x8d98ab, snow: false, land: "tower", city: true }
+  ];
   /* ---------- build a board for one life ---------- */
   B.build = function (ch) {
     while (world.children.length) { const o = world.children.pop(); o.traverse(x => { x.geometry && x.geometry.dispose && x.geometry.dispose(); }); }
-    pts = []; titleLabels = []; tiles = ch.tiles; pads = []; gates = {}; stars = []; bridges = []; setbacks = []; confetti = []; clouds = []; trees = []; visited = new Set(); B.ch = ch;
+    pts = []; titleLabels = []; spinners = []; tiles = ch.tiles; pads = []; gates = {}; stars = []; bridges = []; setbacks = []; confetti = []; clouds = []; trees = []; visited = new Set(); B.ch = ch;
     const r = rngf = GFX.rng(ch.id), n = tiles.length, perRow = 4 + Math.floor(r() * 3), rows = Math.ceil(n / perRow), sp = 5.6 + r() * 1.2, rg = 7.2 + r() * 1.4, amp = 1.2 + r() * 1.6, ph = r() * 3;
     for (let i = 0; i < n; i++) { const row = Math.floor(i / perRow), c = i % perRow, cc = row % 2 ? perRow - 1 - c : c;
       pts.push(V((cc - (perRow - 1) / 2) * sp + (r() - .5) * 1.4, 0, (row - (rows - 1) / 2) * rg + Math.sin(c * 1.3 + ph + row) * amp + (r() - .5) * 1.2)); }
     size = { w: (perRow - 1) * sp + 24, d: (rows - 1) * rg + 22 };
-    const tint = new T.Color(ch.avatar.color), grass = new T.Color(0x6cc66a).lerp(tint, .18), grass2 = new T.Color(0x4fa95a).lerp(tint, .1);
+    const tint = new T.Color(ch.avatar.color), TH = THEMES[Math.max(0, GOL.characters.findIndex(c => c.id === ch.id)) % THEMES.length], grass = new T.Color(TH.g1).lerp(tint, .06), grass2 = new T.Color(TH.g2).lerp(tint, .05);
+    { const c = GFX.canvas(8, 256), g = c.getContext("2d"), gr = g.createLinearGradient(0, 0, 0, 256); gr.addColorStop(0, TH.sky[0]); gr.addColorStop(.55, TH.sky[1]); gr.addColorStop(1, TH.sky[2]); g.fillStyle = gr; g.fillRect(0, 0, 8, 256); scene.background = GFX.tex(c); scene.fog.color.setHex(TH.fog); }
 
     /* wooden frame + table */
     const wood = new T.MeshStandardMaterial({ map: woodTex(), roughness: .5, metalness: .05 });
@@ -174,11 +184,24 @@ GOL.Board3D = function (cv) {
     });
 
     /* scenery */
-    const trunkM = std(0x7a4a22), leafMs = [0x2f9e57, 0x3fb86a, 0x1f8a4c, 0x68c35a].map(c => std(new T.Color(c).lerp(tint, .1), { roughness: .8 }));
+    const trunkM = std(0x7a4a22), leafMs = TH.leaves.map(c => std(new T.Color(c), { roughness: .8 }));
     const spots = []; let tries = 0;
     while (spots.length < 130 && tries++ < 1500) { const x = (r() - .5) * (size.w - 3), z = (r() - .5) * (size.d - 3); if (dMin(x, z) > 3.6 && spots.every(s => (s.x - x) ** 2 + (s.z - z) ** 2 > 5)) spots.push({ x, z, k: r() }); }
-    spots.forEach(s => {
+    
+    function landmark(kind) {
+      const g = new T.Group(), W = std(0xffffff), RED = std(0xc0504d), WOOD = std(0x8b5a3a);
+      if (kind === "windmill") { const b = shadowed(new T.Mesh(new T.CylinderGeometry(1, 1.6, 4.4, 10), std(0xf3e6cf))); b.position.y = 2.2; const c = shadowed(new T.Mesh(new T.ConeGeometry(1.4, 1.6, 10), RED)); c.position.y = 5.2; const bl = new T.Group(); bl.position.set(0, 4.2, 1.25); for (let i = 0; i < 4; i++) { const w = shadowed(new T.Mesh(new T.BoxGeometry(.5, 3.4, .08), W)); w.position.y = 1.7; const a = new T.Group(); a.rotation.z = i * Math.PI / 2; a.add(w); bl.add(a); } g.add(b, c, bl); spinners.push(bl); }
+      else if (kind === "snowman") { [[1.1, 1.1], [.8, 2.4], [.55, 3.3]].forEach(([r2, y]) => { const m = shadowed(new T.Mesh(new T.SphereGeometry(r2, 18, 14), W)); m.position.y = y; g.add(m); }); const n = new T.Mesh(new T.ConeGeometry(.12, .6, 8), std(0xff7a1a)); n.position.set(0, 3.3, .6); n.rotation.x = Math.PI / 2; g.add(n); }
+      else if (kind === "barn") { const b = shadowed(new T.Mesh(new T.BoxGeometry(3.6, 2.4, 2.8), RED)); b.position.y = 1.2; const rf = shadowed(new T.Mesh(new T.CylinderGeometry(0, 2.5, 1.5, 4), WOOD)); rf.position.y = 3.1; rf.rotation.y = Math.PI / 4; rf.scale.z = .8; const d = new T.Mesh(new T.BoxGeometry(1.2, 1.7, .1), W); d.position.set(0, .85, 1.42); g.add(b, rf, d); }
+      else if (kind === "rock") { for (let i = 0; i < 3; i++) { const m = shadowed(new T.Mesh(new T.DodecahedronGeometry(1.2 + i * .5, 0), std(0xc98e5a, { flatShading: true }))); m.position.set(i * 1.3 - 1.3, 1 + (i === 1 ? 1.6 : 0), 0); g.add(m); } }
+      else { const b = shadowed(new T.Mesh(new T.BoxGeometry(2, 7, 2), std(0xb9c6da))); b.position.y = 3.5; const sp = shadowed(new T.Mesh(new T.ConeGeometry(1.5, 2.5, 4), RED)); sp.position.y = 8.2; sp.rotation.y = Math.PI / 4; g.add(b, sp); for (let y = 1; y < 7; y += 1.2) { const w = new T.Mesh(new T.BoxGeometry(1.2, .4, 2.05), new T.MeshStandardMaterial({ color: 0x9fd3ff, emissive: 0x3a7fb5, emissiveIntensity: .4 })); w.position.y = y; g.add(w); } }
+      return g;
+    }
+    spots.forEach((s, si) => {
       const y = heightAt(s.x, s.z), g = new T.Group(); g.position.set(s.x, y, s.z); world.add(g);
+      if (si === 3 || si === 24 || si === 55) { g.add(landmark(TH.land)); g.rotation.y = r() * 6; return; }
+      if (TH.palm && s.k < .5) { const h = 2.6 + r(), tr = shadowed(new T.Mesh(new T.CylinderGeometry(.14, .22, h, 6), trunkM)); tr.position.y = h / 2; tr.rotation.z = (r() - .5) * .3; g.add(tr); for (let l = 0; l < 6; l++) { const lf = shadowed(new T.Mesh(new T.BoxGeometry(1.8, .06, .4), leafMs[0])); lf.position.set(Math.cos(l) * .8, h + .1, Math.sin(l) * .8); lf.rotation.y = -l; lf.rotation.z = -.3; g.add(lf); } return; }
+      if (TH.city && s.k >= .62 && s.k < .9) { const hh = 2.2 + r() * 4, b = shadowed(new T.Mesh(new T.BoxGeometry(1.7, hh, 1.7), std(new T.Color().setHSL(.58 + r() * .08, .25, .72)))); b.position.y = hh / 2; g.add(b); for (let yy = .8; yy < hh - .3; yy += 1) { const w = new T.Mesh(new T.BoxGeometry(1.25, .35, 1.75), new T.MeshStandardMaterial({ color: 0x9fd3ff, emissive: 0x2d6a9f, emissiveIntensity: .25 })); w.position.y = yy; g.add(w); } return; }
       if (s.k < .62) { const h = 1.4 + r() * 1.6, tr = shadowed(new T.Mesh(new T.CylinderGeometry(.14, .2, h * .5, 6), trunkM)); tr.position.y = h * .25; g.add(tr);
         const lm = leafMs[Math.floor(r() * 4)]; for (let l = 0; l < 3; l++) { const c = shadowed(new T.Mesh(new T.ConeGeometry(1.05 - l * .25, h * .6, 8), lm)); c.position.y = h * .45 + l * h * .28; g.add(c); } g.scale.setScalar(.9 + r() * .5); trees.push(g); g.userData.ph = r() * 6; }
       else if (s.k < .74) { const rk = shadowed(new T.Mesh(new T.DodecahedronGeometry(.5 + r() * .7, 0), std(0x9aa3ad, { roughness: .9 }))); rk.position.y = .3; rk.rotation.set(r() * 3, r() * 3, 0); g.add(rk); }
@@ -186,8 +209,8 @@ GOL.Board3D = function (cv) {
       else { for (let f = 0; f < 5; f++) { const fl = new T.Mesh(new T.SphereGeometry(.14, 8, 6), std(new T.Color().setHSL(r(), .8, .6))); fl.position.set((r() - .5) * 1.4, .2, (r() - .5) * 1.4); g.add(fl); } }
     });
     /* mountains behind */
-    for (let i = 0; i < 6; i++) { const x = -size.w / 2 + (i + .5) * size.w / 6 + (r() - .5) * 6, z = -size.d / 2 - 1 - r() * 3, h = 7 + r() * 8, m = shadowed(new T.Mesh(new T.ConeGeometry(4.5 + r() * 3, h, 6), std(0xa09486, { roughness: .95, flatShading: true }))); m.position.set(x, h / 2 - .5, z); world.add(m);
-      const cap = new T.Mesh(new T.ConeGeometry((4.5) * .38, h * .3, 6), std(0xffffff, { flatShading: true })); cap.position.set(x, h - h * .15 - .5, z); world.add(cap); }
+    for (let i = 0; i < 6; i++) { const x = -size.w / 2 + (i + .5) * size.w / 6 + (r() - .5) * 6, z = -size.d / 2 - 1 - r() * 3, h = 7 + r() * 8, m = shadowed(new T.Mesh(new T.ConeGeometry(4.5 + r() * 3, h, 6), std(TH.mtn, { roughness: .95, flatShading: true }))); m.position.set(x, h / 2 - .5, z); world.add(m);
+      const cap = new T.Mesh(new T.ConeGeometry((4.5) * .38, h * .3, 6), std(0xffffff, { flatShading: true })); cap.visible = TH.snow; cap.position.set(x, h - h * .15 - .5, z); world.add(cap); }
     /* clouds */
     for (let i = 0; i < 7; i++) { const c = new T.Group(); for (let k = 0; k < 4; k++) { const s = new T.Mesh(new T.SphereGeometry(2 + r() * 1.5, 16, 12), new T.MeshStandardMaterial({ color: 0xffffff, roughness: 1, transparent: true, opacity: .93 })); s.position.set(k * 2.6 - 4, r() * .8, (r() - .5) * 2); s.scale.y = .55; c.add(s); } c.scale.setScalar(.5); c.position.set((r() - .5) * size.w * 1.6, 16 + r() * 8, -size.d / 2 - 6 - r() * 20); c.userData.v = .4 + r() * .5; world.add(c); clouds.push(c); }
     sun.shadow.camera.left = -size.w * .62; sun.shadow.camera.right = size.w * .62; sun.shadow.camera.top = size.d * .72; sun.shadow.camera.bottom = -size.d * .72; sun.shadow.camera.far = 160; sun.shadow.camera.updateProjectionMatrix();
@@ -258,6 +281,7 @@ GOL.Board3D = function (cv) {
     stars.forEach((s, i) => { s.rotation.y = t * 1.6 + i; s.position.y = 2.1 + Math.sin(t * 2 + i) * .12; });
     bridges.forEach(b => { if (b.state === "open") b.deckMat.emissiveIntensity = .5 + Math.sin(t * 5) * .45; if (b.water.map) b.water.map.offset.x = t * .05 % 1; });
     Object.values(gates).forEach(a => { const tgt = a.userData.open ? -1.25 : 0; a.rotation.z += (tgt - a.rotation.z) * Math.min(1, dt * 4); });
+    spinners.forEach(b => { b.rotation.z = t * .8; });
     trees.forEach(g => { g.rotation.z = Math.sin(t * 1.3 + g.userData.ph) * .02; });
     clouds.forEach(c => { c.position.x += c.userData.v * dt; if (c.position.x > size.w * .8) c.position.x = -size.w * .8; });
     if (pawn && !B.busy) { pawn.children[2].position.y = 1.85 + Math.sin(t * 3) * .05; }

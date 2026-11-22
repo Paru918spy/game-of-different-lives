@@ -4,7 +4,7 @@ save them to img/events/ and write js/events.js (with author, license and source
 Run from the project folder:  python3 -m pip install pillow && python3 tools/fetch_event_photos.py
 Commons throttles busy networks (HTTP 429); the script waits and retries, and can be re-run (it skips files it already has).
 Check the pictures afterwards; to change a choice edit "pick" (index into "cands") for that entry, or delete the entry."""
-import io, json, os, sys, time, urllib.request
+import io, json, os, sys, time, urllib.parse, urllib.request
 from PIL import Image
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UA = "GameOfDifferentLives/1.0 (student diversity education project)"
@@ -15,7 +15,7 @@ for key, v in C.items():
     c = v["cands"][min(v["pick"], len(v["cands"]) - 1)]; cid, idx = key.split(":")
     fn = f"img/events/{cid}_{idx}.jpg"; path = os.path.join(ROOT, fn)
     if not os.path.exists(path):
-        url = c["thumb"].replace("thumb.wikimedia.org", "upload.wikimedia.org").split("?")[0]
+        url = "https://commons.wikimedia.org/w/thumb.php?f=" + urllib.parse.quote(c["title"][5:]) + "&w=900"
         for attempt in range(8):
             try:
                 d = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=60).read()
