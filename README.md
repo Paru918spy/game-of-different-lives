@@ -47,7 +47,7 @@ Copy `js/characters/parks.js`, change the content, add a `<script>` line in `ind
 
 ## Status and caveats
 
-- **Event photos:** the Wikimedia Commons image server was throttling the build environment, so `js/events.js` is still empty and events show illustrated scenes. On your own computer run `python3 -m pip install pillow && python3 tools/fetch_event_photos.py` once. It downloads about 45 vetted, freely licensed photos (with credits) into `img/events/` and fills `js/events.js`; reload the game and the photos appear in the event cards.
+- **Event photos:** the Wikimedia Commons image server was throttling the build environment, so `js/events.js` is still empty and events show illustrated scenes. On your own computer run `python3 -m pip install pillow && python3 tools/fetch_event_photos.py` once. It downloads about 30 vetted, freely licensed photos (with credits) into `img/events/` and fills `js/events.js`; reload the game and the photos appear in the event cards.
 
 - Facts come from well-documented public biographies, but **have not yet been fact-checked line by line**. See the checklist in `docs/characters.md` before publishing.
 - Pictures: every real person has a portrait and several events have photos from Wikimedia Commons. Events without a suitable freely licensed photo show an illustrated scene. Fictional characters use illustrations.
