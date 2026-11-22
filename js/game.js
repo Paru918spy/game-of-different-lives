@@ -31,7 +31,6 @@
   function showAbout(on) { $("screen-about").hidden = !on; $("screen-home").hidden = on; if (!on && wheel) { wheel.resize(); wheel.start(); } window.scrollTo(0, 0); }
   function buildLogo() {
     const words = ["Game", "of", "Different", "Lives"], cols = ["#ef476f", "#ffa62b", "#ffd23f", "#06c28f", "#1e9be9", "#7b5cd6", "#ff7bac"]; let k = 0;
-    $("aboutLogo").innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[k++ % 7]};--d:${(k % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" "); k = 0;
     $("logo").innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[k++ % 7]};--d:${(k % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" ");
     $("lead").textContent = ui().lead;
     $("note").textContent = ui().note;
@@ -257,7 +256,9 @@
   }
 
   /* ---------- wire up ---------- */
-  $("playNow").onclick = $("playNow2").onclick = () => showAbout(false); $("aboutLink").onclick = e => { e.preventDefault(); showAbout(true); };
+  $("playNow").onclick = $("playNow2").onclick = $("playNow3").onclick = () => showAbout(false); $("aboutLink").onclick = e => { e.preventDefault(); showAbout(true); };
+  const TOPIC_ICON = { no: '<circle cx="12" cy="12" r="9"/><path d="M6 18L18 6"/>', rainbow: '<circle cx="12" cy="9" r="4"/><path d="M12 13v8M9 18h6M15 6l5-4M17 2h3v3"/>', globe: '<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>', chair: '<circle cx="9" cy="4" r="2"/><path d="M9 7v7h6l3 6M9 11h5"/><circle cx="9" cy="17" r="4"/>', scale: '<path d="M12 3v17M7 20h10M4 7h16M4 7l-2 7h6zM20 7l-2 7h6z"/>', hands: '<path d="M12 21C5 15 3 12 3 8.500a4.500 4.500 0 018-2.700A4.500 4.500 0 0121 8.500C21 12 19 15 12 21z"/>', circles: '<circle cx="9" cy="10" r="5"/><circle cx="15" cy="10" r="5"/><circle cx="12" cy="15" r="5"/>', ring: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="9" r="2.500"/><path d="M7 17q5-6 10 0"/>' };
+  document.querySelectorAll(".tp").forEach(t => { t.insertAdjacentHTML("afterbegin", `<svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round">${TOPIC_ICON[t.dataset.ic] || ""}</svg>`); });
   $("spin").onclick = spin; $("spinCv").addEventListener("click", () => spinner && spinner.skip()); $("wheelCv").addEventListener("click", () => wheel && wheel.skip()); $("spinLife").addEventListener("dblclick", () => wheel && wheel.skip()); $("spinLife").onclick = spinLife; $("quit").onclick = home;
   $("follow").onclick = () => board.setFollow(!$("follow").classList.contains("on"));
   $("overview").onclick = () => board.overview();
