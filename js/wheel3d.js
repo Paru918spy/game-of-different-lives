@@ -38,23 +38,23 @@ GOL.Wheel = function (cv, entries, opt = {}) {
   entries.forEach((e, i) => { if (e.img) GFX.loadImage(e.img, im => { if (im) { imgs[i] = im; drawFace(); } }); else if (e.svg) GFX.svgImage(e.svg, im => { imgs[i] = im; drawFace(); }); });
 
   /* materials */
-  const gold = new T.MeshPhysicalMaterial(simple ? { color: 0xa89c8a, metalness: .25, roughness: .5, envMapIntensity: .5 } : { color: 0xd9951a, metalness: 1, roughness: .28, clearcoat: .4, envMapIntensity: 1.1 });
-  const wood = new T.MeshStandardMaterial({ color: simple ? 0x6b5a4a : 0x7a3f1a, roughness: .5, metalness: .05 });
+  const gold = new T.MeshPhysicalMaterial(simple ? { color: 0xb08d3a, metalness: .7, roughness: .4, envMapIntensity: .6 } : { color: 0xd9951a, metalness: 1, roughness: .28, clearcoat: .4, envMapIntensity: 1.1 });
+  const wood = new T.MeshStandardMaterial({ color: simple ? 0x7a5636 : 0x7a3f1a, roughness: .5, metalness: .05 });
   const red = new T.MeshPhysicalMaterial({ color: 0xe11d48, roughness: .25, clearcoat: 1, metalness: .1 });
   const group = new T.Group(); scene.add(group); group.position.y = 1.35; group.rotation.x = -.06;
   const wheel = new T.Group(); group.add(wheel);
   const face = new T.Mesh(new T.CircleGeometry(R, 128), new T.MeshPhysicalMaterial({ map: faceTex, roughness: .55, clearcoat: .25, clearcoatRoughness: .3, metalness: 0, envMapIntensity: .1, color: 0xdddddd })); face.position.z = .26; face.receiveShadow = true; wheel.add(face);
   const body = new T.Mesh(new T.CylinderGeometry(R + .05, R + .05, .5, 96), wood); body.rotation.x = Math.PI / 2; body.castShadow = true; wheel.add(body);
-  const rim = new T.Mesh(new T.TorusGeometry(R + .18, .3, 24, 128), gold); rim.position.z = .2; rim.castShadow = true; wheel.add(rim);
-  const rimIn = new T.Mesh(new T.TorusGeometry(R - .02, .06, 12, 128), gold); rimIn.position.z = .3; wheel.add(rimIn);
+  const rim = new T.Mesh(new T.TorusGeometry(R + (simple ? .12 : .18), simple ? .11 : .3, simple ? 8 : 24, 128), simple ? new T.MeshStandardMaterial({ color: 0x5a3b22, roughness: .6, metalness: .05 }) : gold); rim.position.z = simple ? .3 : .2; rim.castShadow = true; wheel.add(rim);
+  const rimIn = new T.Mesh(new T.TorusGeometry(R - .02, .06, 12, 128), gold); rimIn.position.z = .3; rimIn.visible = !simple; wheel.add(rimIn);
   const glass = new T.Mesh(new T.CircleGeometry(R - .02, 96), new T.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: .1, roughness: 0, metalness: 0, clearcoat: 1, clearcoatRoughness: 0, envMapIntensity: 3, depthWrite: false })); glass.position.z = .62; glass.visible = !simple; wheel.add(glass);
   /* pegs */
   const pegGeo = new T.CylinderGeometry(.055, .07, .34, 12), pegs = new T.Group(); wheel.add(pegs);
   for (let i = 0; i < N; i++) { const a = (i + .5) * seg, p = new T.Mesh(pegGeo, gold); p.rotation.x = Math.PI / 2; p.position.set(Math.cos(a) * (R - .12), Math.sin(a) * (R - .12), .42); pegs.add(p); const ball = new T.Mesh(new T.SphereGeometry(.09, 12, 8), gold); ball.position.copy(p.position); ball.position.z += .17; pegs.add(ball); }
   for (let i = 0; i < N; i++) { const a = (i + .5) * seg, d = new T.Mesh(new T.BoxGeometry(R - .75, .07, .16), gold); d.position.set(Math.cos(a) * (R + .6) / 2, Math.sin(a) * (R + .6) / 2, .31); d.rotation.z = a; wheel.add(d); }
   /* hub */
-  const hub = new T.Mesh(new T.SphereGeometry(.55, 32, 16), gold); hub.scale.z = .6; hub.position.z = .45; hub.castShadow = true; wheel.add(hub);
-  const cap = new T.Mesh(new T.SphereGeometry(.24, 24, 12), red); cap.scale.z = .7; cap.position.z = .74; wheel.add(cap);
+  const hub = new T.Mesh(simple ? new T.CylinderGeometry(.42, .42, .22, 40) : new T.SphereGeometry(.55, 32, 16), simple ? new T.MeshStandardMaterial({ color: 0xb08d3a, metalness: .7, roughness: .4 }) : gold); if (simple) hub.rotation.x = Math.PI / 2; else hub.scale.z = .6; hub.position.z = .45; hub.castShadow = true; wheel.add(hub);
+  const cap = new T.Mesh(new T.SphereGeometry(.24, 24, 12), red); cap.scale.z = .7; cap.position.z = .74; cap.visible = !simple; wheel.add(cap);
   /* light bulbs on outer rim (fixed, not rotating) */
   const bulbs = [], NB = simple ? 0 : compact ? 24 : 36, bulbGeo = new T.SphereGeometry(.12, 14, 10);
   for (let i = 0; i < NB; i++) { const a = i / NB * Math.PI * 2, m = new T.MeshStandardMaterial({ color: 0xfff1b8, emissive: 0xffb300, emissiveIntensity: 1.2, roughness: .2 }); const b = new T.Mesh(bulbGeo, m);

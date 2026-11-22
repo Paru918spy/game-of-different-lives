@@ -28,8 +28,10 @@
   /* ---------- home: the wheel of fortune ---------- */
   const PALETTE = [["#ef476f", "#b02a4d"], ["#ffa62b", "#c57400"], ["#ffd23f", "#c9a000"], ["#06c28f", "#038a65"], ["#1e9be9", "#0b63a8"], ["#7b5cd6", "#523a9e"], ["#ff7bac", "#c94a7c"]];
   const shortName = c => c.fictional ? c.name : c.name.replace(/ Jr\.$/, "").split(" ").slice(-1)[0];
+  function showAbout(on) { $("screen-about").hidden = !on; $("screen-home").hidden = on; if (!on && wheel) { wheel.resize(); wheel.start(); } window.scrollTo(0, 0); }
   function buildLogo() {
     const words = ["Game", "of", "Different", "Lives"], cols = ["#ef476f", "#ffa62b", "#ffd23f", "#06c28f", "#1e9be9", "#7b5cd6", "#ff7bac"]; let k = 0;
+    $("aboutLogo").innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[k++ % 7]};--d:${(k % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" "); k = 0;
     $("logo").innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[k++ % 7]};--d:${(k % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" ");
     $("lead").textContent = ui().lead;
     $("note").textContent = ui().note;
@@ -255,6 +257,7 @@
   }
 
   /* ---------- wire up ---------- */
+  $("playNow").onclick = $("playNow2").onclick = () => showAbout(false); $("aboutLink").onclick = e => { e.preventDefault(); showAbout(true); };
   $("spin").onclick = spin; $("spinCv").addEventListener("click", () => spinner && spinner.skip()); $("wheelCv").addEventListener("click", () => wheel && wheel.skip()); $("spinLife").addEventListener("dblclick", () => wheel && wheel.skip()); $("spinLife").onclick = spinLife; $("quit").onclick = home;
   $("follow").onclick = () => board.setFollow(!$("follow").classList.contains("on"));
   $("overview").onclick = () => board.overview();
