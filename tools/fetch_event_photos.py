@@ -13,13 +13,13 @@ os.makedirs(os.path.join(ROOT, "img/events"), exist_ok=True)
 ev = {}
 for key, v in C.items():
     c = v["cands"][min(v["pick"], len(v["cands"]) - 1)]; cid, idx = key.split(":")
-    fn = f"img/events/{cid}_{idx}.jpg"; path = os.path.join(ROOT, fn)
+    fn = f"img/events/{cid}_{idx}.webp"; path = os.path.join(ROOT, fn)
     if not os.path.exists(path):
         url = "https://commons.wikimedia.org/w/thumb.php?f=" + urllib.parse.quote(c["title"][5:]) + "&w=900"
         for attempt in range(8):
             try:
                 d = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=60).read()
-                im = Image.open(io.BytesIO(d)).convert("RGB"); im.thumbnail((900, 900)); im.save(path, "JPEG", quality=78); print("ok", key, flush=True); break
+                im = Image.open(io.BytesIO(d)).convert("RGB"); im.thumbnail((900, 900)); im.save(path, "WEBP", quality=74, method=6); print("ok", key, flush=True); break
             except Exception as e:
                 print("retry", key, str(e)[:50], flush=True); time.sleep(30 * (attempt + 1))
         else:

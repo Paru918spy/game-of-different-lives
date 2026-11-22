@@ -88,9 +88,10 @@ GOL.Wheel = function (cv, entries, opt = {}) {
         tAnim = { from: rot, to: fin, t0: performance.now(), ms, res }; spinning = true;
       });
     },
+    skip() { if (tAnim) tAnim.t0 = performance.now() - tAnim.ms; },
     get spinning() { return spinning; }, winnerIndex: () => idxAt(rot),
     start() { if (running) return; running = true; clock = performance.now(); loop(); }, stop() { running = false; cancelAnimationFrame(raf); },
-    resize() { const w = cv.clientWidth, h = cv.clientHeight; if (!w || !h) return; renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); renderer.setSize(w, h, false); cam.aspect = w / h; cam.fov = w / h < .9 ? 46 : 36; cam.updateProjectionMatrix(); },
+    resize() { const w = cv.clientWidth, h = cv.clientHeight; if (!w || !h) return; renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5)); renderer.setSize(w, h, false); cam.aspect = w / h; cam.fov = w / h < .9 ? 46 : 36; cam.updateProjectionMatrix(); },
     renderOnce() { api.resize(); renderer.render(scene, cam); },
     dispose() { api.stop(); renderer.dispose(); }
   };
@@ -109,7 +110,8 @@ GOL.Wheel = function (cv, entries, opt = {}) {
     const t = now / 1000;
     bulbs.forEach((m, i) => { const on = spinning ? ((Math.floor(t * 14) + i) % 3 === 0) : (Math.sin(t * 2.2 + i * .7) > -.2); m.emissiveIntensity = on ? 2.2 : .25; m.color.setHex(on ? 0xfff6c9 : 0x8a7a4a); });
     if (!spinning && !tAnim && !compact) group.rotation.y = Math.sin(t * .5) * .12; else if (!compact) group.rotation.y *= .9;
-    renderer.render(scene, cam);
+    if (!spinning && Math.abs(flapV) + Math.abs(flapA) < .03 && now - (api._lr || 0) < (compact ? 500 : 40)) return;
+    api._lr = now; renderer.render(scene, cam);
   }
   api.resize(); window.addEventListener("resize", api.resize);
   return api;

@@ -2,13 +2,13 @@
 GOL.Board3D = function (cv) {
   const T = GFX.T, V = (x, y, z) => new T.Vector3(x, y, z);
   const renderer = new T.WebGLRenderer({ canvas: cv, antialias: true, preserveDrawingBuffer: !!window.__GOL_SHOT });
-  renderer.shadowMap.enabled = true; renderer.shadowMap.type = T.PCFSoftShadowMap; renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = .8;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = T.PCFShadowMap; renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = .8;
   const scene = new T.Scene(), cam = new T.PerspectiveCamera(38, 1, .5, 800);
   scene.environment = GFX.env(renderer); scene.environmentIntensity = .3;
   { const c = GFX.canvas(8, 256), g = c.getContext("2d"), gr = g.createLinearGradient(0, 0, 0, 256); gr.addColorStop(0, "#6ec6ff"); gr.addColorStop(.55, "#bfe8ff"); gr.addColorStop(1, "#fff3d6"); g.fillStyle = gr; g.fillRect(0, 0, 8, 256); scene.background = GFX.tex(c); }
   scene.fog = new T.Fog(0xcfeaff, 200, 520);
   scene.add(new T.HemisphereLight(0xdff1ff, 0x7a6a4a, .45));
-  const sun = new T.DirectionalLight(0xfff0d0, 1.7); sun.position.set(-26, 46, 22); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -.0006; sun.shadow.normalBias = .05; scene.add(sun); scene.add(sun.target);
+  const sun = new T.DirectionalLight(0xfff0d0, 1.7); sun.position.set(-26, 46, 22); sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024); sun.shadow.bias = -.0006; sun.shadow.normalBias = .05; scene.add(sun); scene.add(sun.target);
 
   const world = new T.Group(); scene.add(world);
   const B = { onHover: null, onPick: null, canvas: cv, ch: null, scene, world, camera: cam };
@@ -268,9 +268,10 @@ GOL.Board3D = function (cv) {
   B.tilePos = i => pts[i].clone();
   B.screenPos = i => { const v = pts[i].clone().setY(2); v.project(cam); const r = cv.getBoundingClientRect(); return { x: r.left + (v.x + 1) / 2 * r.width, y: r.top + (1 - v.y) / 2 * r.height }; };
   const wait = ms => new Promise(r => setTimeout(r, ms));
-  function tween(ms, fn, ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2) { return new Promise(res => { const t0 = performance.now(); (function f() { const k = Math.min(1, (performance.now() - t0) / ms); fn(ease(k), k); k < 1 ? requestAnimationFrame(f) : res(); })(); }); }
+  let tw = 0, lastR = 0, slowRun = 0, PR = Math.min(window.devicePixelRatio || 1, 1.5);
+  function tween(ms, fn, ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2) { tw++; return new Promise(res0 => { const res = () => { tw--; res0(); }; const t0 = performance.now(); (function f() { const k = Math.min(1, (performance.now() - t0) / ms); fn(ease(k), k); k < 1 ? requestAnimationFrame(f) : res(); })(); }); }
   B.hop = async (from, to) => { const a = pts[from].clone().setY(.38), b = pts[to].clone().setY(.38);
-    await tween(420, (e, k) => { pawn.position.lerpVectors(a, b, e); pawn.position.y = .38 + Math.sin(k * Math.PI) * 1.4; const s = 1 + Math.sin(k * Math.PI) * .12; pawn.scale.set(1 / s, s, 1 / s); }, t => t);
+    await tween(340, (e, k) => { pawn.position.lerpVectors(a, b, e); pawn.position.y = .38 + Math.sin(k * Math.PI) * 1.4; const s = 1 + Math.sin(k * Math.PI) * .12; pawn.scale.set(1 / s, s, 1 / s); }, t => t);
     pawn.scale.set(1, 1, 1); pawn.position.copy(b); ring.position.set(b.x, .5, b.z); B.current = to; if (C.follow) C.goal.copy(b); B.puff(b, 0xffffff, 10); };
   B.cross = async k => { const br = bridges[k], c = br.curve; await tween(1500, e => { const p = c.getPoint(e); pawn.position.set(p.x, p.y + .5, p.z); if (C.follow) C.goal.set(p.x, 0, p.z); }, t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
     const e = pts[br.to != null ? br.to : 0]; };
@@ -287,13 +288,17 @@ GOL.Board3D = function (cv) {
   B.celebrate = i => { const p = pts[i]; for (let k = 0; k < 3; k++) setTimeout(() => B.puff(p.clone().add(V((k - 1) * 1.5, 1 + k, 0)), 0, 70), k * 160); };
 
   /* ---------- loop ---------- */
-  B.resize = () => { const w = cv.clientWidth, h = cv.clientHeight; if (!w || !h) return; renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); };
+  B.resize = () => { const w = cv.clientWidth, h = cv.clientHeight; if (!w || !h) return; renderer.setPixelRatio(PR); renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); };
   B.start = () => { if (running) return; running = true; clock = performance.now(); loop(); }; B.stop = () => { running = false; cancelAnimationFrame(raf); };
   function loop() {
-    if (!running) return; raf = requestAnimationFrame(loop); B.frame();
+    if (!running) return; raf = requestAnimationFrame(loop);
+    const now = performance.now(), moving = tw > 0 || B.busy || confetti.length || ptr.size || C.tgt.distanceTo(C.goal) > .02 || Math.abs(C.az - C.gAz) > .002 || Math.abs(C.el - C.gEl) > .002 || Math.abs(C.dist - C.gDist) > .05;
+    B._active = moving; if (!moving && now - lastR < 66) return; lastR = now; B.frame();
+    if (moving && now - B.perf.t0 < 1100 && B._dtLast > .045) slowRun++; else if (moving) slowRun = Math.max(0, slowRun - 1);
+    if (slowRun > 25 && PR > 1) { PR = 1; slowRun = 0; B.resize(); }
   }
   B.frame = () => {
-    const now = performance.now(), dt = Math.min(.05, (now - clock) / 1000); clock = now; const t = now / 1000;
+    const now = performance.now(), dt = Math.min(.05, (now - clock) / 1000); B._dtLast = (now - clock) / 1000; clock = now; const t = now / 1000;
     if (!C.follow && B.autoFollow && now - C.lastUser > 6000) B.setFollow(true);
     if (C.follow && pawn) C.goal.copy(pawn.position).setY(0);
     const k = 1 - Math.pow(.0015, dt); C.tgt.lerp(C.goal, k); C.az += (C.gAz - C.az) * k; C.el += (C.gEl - C.el) * k; C.dist += (C.gDist - C.dist) * k; placeCam();
