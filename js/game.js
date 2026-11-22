@@ -88,9 +88,9 @@
       const lic = ev.licenseUrl ? `<a href="${esc(ev.licenseUrl)}" target="_blank" rel="noopener">${esc(ev.license)}</a>` : esc(ev.license);
       return `<figure class="pic photo"><img src="${esc(ev.file)}" alt="${esc(ev.alt || t.title)}" onerror="this.parentNode.outerHTML=GOL.sceneFig(${i})"><figcaption><span class="credit">${esc(ev.author)} · ${lic} · <a href="${esc(ev.source)}" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>`;
     }
-    return `<figure class="pic scene">${GOL.scene(t, S.base.avatar.color)}<figcaption><span class="credit">${ui().illustrationNote}</span></figcaption></figure>`;
+    return `<figure class="pic scene">${GOL.scene(t, S.base.avatar.color, S.ch.id)}<figcaption><span class="credit">${ui().illustrationNote}</span></figcaption></figure>`;
   }
-  GOL.sceneFig = i => `<figure class="pic scene">${GOL.scene(S.ch.tiles[i], S.base.avatar.color)}</figure>`;
+  GOL.sceneFig = i => `<figure class="pic scene">${GOL.scene(S.ch.tiles[i], S.base.avatar.color, S.ch.id)}</figure>`;
   function header(t, i) {
     return `<div class="ch-head h-${t.type}"><span>${ICON[t.type]} ${TYPE_LABEL[t.type]}</span><span>${ui().tile} ${i + 1} ${ui().of} ${S.ch.tiles.length}</span></div>`;
   }
