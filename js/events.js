@@ -186,6 +186,15 @@ GOL.events = {
    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Radcliffe_College_-_Harvard_University_(54940852751).jpg",
    "title": "File:Radcliffe College - Harvard University (54940852751).jpg"
+  },
+  "3": {
+   "file": "img/events/keller_3.jpg",
+   "alt": "Helen Keller Anne Sullivan",
+   "author": "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+   "license": "Public domain",
+   "licenseUrl": "",
+   "source": "https://commons.wikimedia.org/wiki/File:Helen_Keller_and_Mrs._John_A._Macy_(Anne_Sullivan)_LCCN2002706628.jpg",
+   "title": "File:Helen Keller and Mrs. John A. Macy (Anne Sullivan) LCCN2002706628.jpg"
   }
  },
  "kahlo": {
@@ -237,6 +246,15 @@ GOL.events = {
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Laverne_Cox_MBLGTACC_2015_(3).JPG",
    "title": "File:Laverne Cox MBLGTACC 2015 (3).JPG"
+  },
+  "7": {
+   "file": "img/events/cox_7.jpg",
+   "alt": "Laverne Cox",
+   "author": "Dominick D",
+   "license": "CC BY-SA 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Laverne_Cox_at_Paley_Fest_Orange_Is_The_New_Black.jpg",
+   "title": "File:Laverne Cox at Paley Fest Orange Is The New Black.jpg"
   }
  },
  "johnson": {
@@ -257,6 +275,15 @@ GOL.events = {
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Christopher_Street_Pier_from_Hudson_01_(9434691647).jpg",
    "title": "File:Christopher Street Pier from Hudson 01 (9434691647).jpg"
+  },
+  "5": {
+   "file": "img/events/johnson_5.jpg",
+   "alt": "Katherine Johnson NASA",
+   "author": "Adam Cuerden",
+   "license": "Public domain",
+   "licenseUrl": "",
+   "source": "https://commons.wikimedia.org/wiki/File:Katherine_Johnson_at_NASA,_in_1966.jpg",
+   "title": "File:Katherine Johnson at NASA, in 1966.jpg"
   }
  },
  "singh": {
@@ -297,6 +324,37 @@ GOL.events = {
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "source": "https://commons.wikimedia.org/wiki/File:Cape_Town_City_Hall,_Black_and_White.jpg",
    "title": "File:Cape Town City Hall, Black and White.jpg"
+  },
+  "11": {
+   "file": "img/events/mandela_11.jpg",
+   "alt": "Nelson Mandela inauguration 1994",
+   "author": "Paul Weinberg",
+   "license": "CC BY-SA 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Inauguration_of_President_Nelson_Mandela,_Pretoria,_1994._60_F.jpg",
+   "title": "File:Inauguration of President Nelson Mandela, Pretoria, 1994. 60 F.jpg"
+  }
+ },
+ "turing": {
+  "4": {
+   "file": "img/events/turing_4.jpg",
+   "alt": "Bletchley Park",
+   "author": "DeFacto",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Bletchley_Park_Mansion.jpg",
+   "title": "File:Bletchley Park Mansion.jpg"
+  }
+ },
+ "beethoven": {
+  "2": {
+   "file": "img/events/beethoven_2.jpg",
+   "alt": "Beethoven Vienna",
+   "author": "Joseolgon",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Beethoven_monument,_Vienna_(1).jpg",
+   "title": "File:Beethoven monument, Vienna (1).jpg"
   }
  }
 };
