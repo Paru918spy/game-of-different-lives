@@ -148,7 +148,7 @@ GOL.Board3D = function (cv) {
       const p = pts[i], col = TYPE[t.type], g = new T.Group(); g.position.copy(p); world.add(g);
       const pad = shadowed(new T.Mesh(new T.CylinderGeometry(1.9, 2.0, .4, 48), new T.MeshPhysicalMaterial({ color: col, roughness: .35, clearcoat: .8, emissive: col, emissiveIntensity: 0 }))); pad.position.y = .22; pad.userData.i = i; g.add(pad); pads.push(pad);
       const rim = new T.Mesh(new T.TorusGeometry(1.95, .11, 10, 56), std(0xffffff, { roughness: .3 })); rim.rotation.x = Math.PI / 2; rim.position.y = .37; g.add(rim);
-      const num = new T.Mesh(new T.CircleGeometry(1.15, 32), new T.MeshBasicMaterial({ map: numTex(i + 1, "#" + new T.Color(col).getHexString()), transparent: true })); num.rotation.x = -Math.PI / 2; num.position.set(0, .48, 1.05); g.add(num);
+      const num = new T.Mesh(new T.CircleGeometry(1.35, 32), new T.MeshBasicMaterial({ map: numTex(i + 1, "#" + new T.Color(col).getHexString()), transparent: true })); num.rotation.x = -Math.PI / 2; num.position.set(0, .48, 1.05); g.add(num);
       const tg2 = tan(i), nrm = V(-tg2.z, 0, tg2.x);
       if (t.type === "start") { const h = shadowed(new T.Mesh(new T.BoxGeometry(1.6, 1.3, 1.5), std(0xfde7c3))); h.position.set(-.1, 1.05, -.2); const rf = shadowed(new T.Mesh(new T.ConeGeometry(1.5, 1, 4), std(0xc0504d))); rf.position.set(-.1, 2.2, -.2); rf.rotation.y = Math.PI / 4; g.add(h, rf); }
       if (t.type === "finish") { const bn = new T.Mesh(new T.PlaneGeometry(4.6, 1), new T.MeshBasicMaterial({ map: checker(), side: T.DoubleSide })); bn.position.y = 3.6; g.add(bn); [-2.3, 2.3].forEach(x => { const po = shadowed(new T.Mesh(new T.CylinderGeometry(.14, .14, 4, 10), gold)); po.position.set(x, 2, 0); g.add(po); }); g.rotation.y = Math.atan2(tg2.x, tg2.z) + Math.PI / 2; const f = new T.Mesh(new T.ConeGeometry(.35, .8, 3), std(0xef4444)); f.position.y = 4.5; f.rotation.z = -Math.PI / 2; g.add(f); }
@@ -240,7 +240,7 @@ GOL.Board3D = function (cv) {
     const pspr = new T.Sprite(new T.SpriteMaterial({ map: pawnPort.t, transparent: true, depthTest: false })); pspr.scale.set(2.5, 2.5, 1); pspr.position.y = 4; pspr.renderOrder = 15; pawn.add(pspr);
     drawPawnPortrait(null, ch);
     GFX.loadImage(GOL.thumbOf(ch), im => drawPawnPortrait(im, ch));
-    B.placePawn(0); C.goal.copy(pts[0]); C.tgt.copy(pts[0]); C.gDist = C.dist = (cv.clientWidth < 600 ? 68 : 42); C.gEl = C.el = .95; C.az = C.gAz = .35; C.follow = true;
+    B.placePawn(0); C.goal.copy(pts[0]); C.tgt.copy(pts[0]); C.gDist = C.dist = (cv.clientWidth < 600 ? 92 : 42); C.gEl = C.el = .95; C.az = C.gAz = .35; C.follow = true;
     B.resize(); placeCam();
   };
   function drawPawnPortrait(im, ch) {
