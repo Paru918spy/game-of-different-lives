@@ -139,7 +139,7 @@
     $("fpCap").innerHTML = `<b>${esc(S.ch.tiles[S.pos].title)}</b><small>${esc(ev.author.length > 40 ? ev.author.slice(0, 38) + "…" : ev.author)} · ${esc(ev.license)} · Wikimedia Commons</small>`;
   }
   function renderHud() {
-    const u = ui(); if (!S) return; showFloat();
+    const u = ui(); if (!S) return; showFloat(); board && board.setMood && board.setMood(S.ch.tiles[S.pos].type);
     $("hName").textContent = S.ch.name; $("hYears").textContent = S.base.years;
     $("avatar").innerHTML = GOL.portrait(S.base); $("avatar").style.background = S.base.avatar.color;
     $("chapLabel").textContent = u.chapter; $("hopeLabel").textContent = u.hope; $("supLabel").textContent = u.support;

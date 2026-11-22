@@ -79,8 +79,13 @@ GOL.Board3D = function (cv) {
     { n: "snow", g1: 0xe9f1f7, g2: 0xd4e3ee, leaves: [0x2f6f57, 0x3d8a6c, 0x24604b, 0x4a9a7c], sky: ["#a9c8ee", "#dcebfa", "#ffffff"], fog: 0xe3effa, mtn: 0xaab6c6, snow: true, land: "snowman", snowy: true },
     { n: "savanna", g1: 0xc9b25a, g2: 0xb09a47, leaves: [0x6d8f3a, 0x8aa648, 0x58782f, 0xa3b85a], sky: ["#ffcf7a", "#ffe9b8", "#fff6df"], fog: 0xffeccd, mtn: 0xb07a52, snow: false, land: "rock", palm: true },
     { n: "blossom", g1: 0x7ec27a, g2: 0x62ac6c, leaves: [0xff9ac2, 0xffb7d3, 0xf577a8, 0xffd0e2], sky: ["#a7d8ff", "#ffd9ec", "#fff3f8"], fog: 0xffe7f2, mtn: 0xb3a3b8, snow: true, land: "windmill" },
-    { n: "city", g1: 0x8fb08a, g2: 0x7aa078, leaves: [0x4e9b62, 0x62b077, 0x3c8650, 0x78c08a], sky: ["#7fb6ee", "#cfe4fa", "#f3f6fb"], fog: 0xd7e6f6, mtn: 0x8d98ab, snow: false, land: "tower", city: true }
+    { n: "city", g1: 0x8fb08a, g2: 0x7aa078, leaves: [0x4e9b62, 0x62b077, 0x3c8650, 0x78c08a], sky: ["#7fb6ee", "#cfe4fa", "#f3f6fb"], fog: 0xd7e6f6, mtn: 0x8d98ab, snow: false, land: "tower", city: true },
+    { n: "night", g1: 0x3d6a58, g2: 0x2f5a4d, leaves: [0x1f6a55, 0x2a7d66, 0x185a48, 0x3a8f75], sky: ["#0b1433", "#26376e", "#5b6db0"], fog: 0x26376e, mtn: 0x56607e, snow: true, land: "tower", dark: true },
+    { n: "prairie", g1: 0xd2c070, g2: 0xbaa85a, leaves: [0x8aa648, 0xa3b85a, 0x6d8f3a, 0xc9b25a], sky: ["#8fd0ff", "#d7efff", "#fff6df"], fog: 0xeaf4ff, mtn: 0xb09a7a, snow: false, land: "barn" },
+    { n: "mexico", g1: 0xc98a5a, g2: 0xb5744a, leaves: [0x3f8f4a, 0xff5fa2, 0xffb347, 0x2f7d46], sky: ["#7fd0ff", "#ffe2b8", "#fff1db"], fog: 0xffe8cf, mtn: 0xb6613f, snow: false, land: "rock", palm: true },
+    { n: "valley", g1: 0x4fa068, g2: 0x3b8a58, leaves: [0x2f7d4f, 0x3f9a62, 0x1f6a42, 0x58b078], sky: ["#7cc3ff", "#d3ecff", "#ffffff"], fog: 0xe3f1ff, mtn: 0x8d96a8, snow: true, land: "windmill", tall: true }
   ];
+  const THEME_OF = { hawking: "night", johnson: "night", parks: "autumn", king: "savanna", wonder: "city", kaepernick: "city", curie: "city", heumann: "blossom", keller: "meadow", grandin: "prairie", kahlo: "mexico", malala: "valley", cox: "blossom", singh: "prairie", mandela: "savanna", beethoven: "autumn", turing: "meadow" };
   /* ---------- build a board for one life ---------- */
   B.build = function (ch) {
     while (world.children.length) { const o = world.children.pop(); o.traverse(x => { x.geometry && x.geometry.dispose && x.geometry.dispose(); }); }
@@ -105,7 +110,8 @@ GOL.Board3D = function (cv) {
       for (let i = 0; i < n; i++) { const a = -Math.PI / 2 + i / n * Math.PI * 2 * .92; pts.push(V(Math.cos(a) * R * 1.15 + jit(), 0, Math.sin(a) * R + jit())); }
       size = { w: 2 * R * 1.15 + 26, d: 2 * R + 26 };
     }
-    const tint = new T.Color(ch.avatar.color), TH = THEMES[Math.max(0, GOL.characters.findIndex(c => c.id === ch.id)) % THEMES.length], grass = new T.Color(TH.g1).lerp(tint, .06), grass2 = new T.Color(TH.g2).lerp(tint, .05);
+    const tint = new T.Color(ch.avatar.color), TH = THEMES.find(t => t.n === THEME_OF[ch.id]) || THEMES[Math.max(0, GOL.characters.findIndex(c => c.id === ch.id)) % 6], grass = new T.Color(TH.g1).lerp(tint, .06), grass2 = new T.Color(TH.g2).lerp(tint, .05);
+    baseExp = TH.dark ? .5 : .8; expGoal = baseExp; renderer.toneMappingExposure = baseExp; sun.intensity = TH.dark ? .9 : 1.7; sun.color.set(TH.dark ? 0xaec2ff : 0xfff0d0);
     { const c = GFX.canvas(8, 256), g = c.getContext("2d"), gr = g.createLinearGradient(0, 0, 0, 256); gr.addColorStop(0, TH.sky[0]); gr.addColorStop(.55, TH.sky[1]); gr.addColorStop(1, TH.sky[2]); g.fillStyle = gr; g.fillRect(0, 0, 8, 256); scene.background = GFX.tex(c); scene.fog.color.setHex(TH.fog); }
 
     /* wooden frame + table */
@@ -220,7 +226,7 @@ GOL.Board3D = function (cv) {
     }
     spots.forEach((s, si) => {
       const y = heightAt(s.x, s.z), g = new T.Group(); g.position.set(s.x, y, s.z); world.add(g);
-      if (si === 3 || si === 24 || si === 55) { const LL = { parks: "bus", hawking: "telescope", kaepernick: "stadium", curie: "labtower", beethoven: "stagehall", turing: "labtower", cox: "stagehall", heumann: "bus", king: "bus" }[ch.id]; g.add(landmark((si === 24 || si === 3) && LL ? LL : TH.land)); g.rotation.y = r() * 6; return; }
+      if (si === 3 || si === 24 || si === 55) { const LL = { parks: "bus", hawking: "telescope", kaepernick: "stadium", curie: "labtower", beethoven: "stagehall", turing: "labtower", cox: "stagehall", heumann: "bus", king: "bus", wonder: "stagehall", singh: "stadium", malala: "labtower", johnson: "stagehall", kahlo: "barn", grandin: "barn", mandela: "tower", keller: "windmill" }[ch.id]; g.add(landmark((si === 24 || si === 3) && LL ? LL : TH.land)); g.rotation.y = r() * 6; return; }
       if (TH.palm && s.k < .5) { const h = 2.6 + r(), tr = shadowed(new T.Mesh(new T.CylinderGeometry(.14, .22, h, 6), trunkM)); tr.position.y = h / 2; tr.rotation.z = (r() - .5) * .3; g.add(tr); for (let l = 0; l < 6; l++) { const lf = shadowed(new T.Mesh(new T.BoxGeometry(1.8, .06, .4), leafMs[0])); lf.position.set(Math.cos(l) * .8, h + .1, Math.sin(l) * .8); lf.rotation.y = -l; lf.rotation.z = -.3; g.add(lf); } return; }
       if (TH.city && s.k >= .62 && s.k < .9) { const hh = 2.2 + r() * 4, b = shadowed(new T.Mesh(new T.BoxGeometry(1.7, hh, 1.7), std(new T.Color().setHSL(.58 + r() * .08, .25, .72)))); b.position.y = hh / 2; g.add(b); for (let yy = .8; yy < hh - .3; yy += 1) { const w = new T.Mesh(new T.BoxGeometry(1.25, .35, 1.75), new T.MeshStandardMaterial({ color: 0x9fd3ff, emissive: 0x2d6a9f, emissiveIntensity: .25 })); w.position.y = yy; g.add(w); } return; }
       if (s.k < .62) { const h = 1.4 + r() * 1.6, tr = shadowed(new T.Mesh(new T.CylinderGeometry(.14, .2, h * .5, 6), trunkM)); tr.position.y = h * .25; g.add(tr);
@@ -260,6 +266,7 @@ GOL.Board3D = function (cv) {
 
   /* ---------- state helpers ---------- */
   B.placePawn = i => { pawn.position.copy(pts[i]).setY(.38); ring.position.set(pts[i].x, .5, pts[i].z); B.current = i; };
+  B.setMood = kind => { expGoal = baseExp + (kind === "barrier" ? -.14 : kind === "win" || kind === "finish" ? .08 : 0); };
   B.focus = i => { if (C.follow) C.goal.copy(pts[i]); };
   B.markVisited = i => { visited.add(i); const m = pads[i].material; m.emissiveIntensity = .35; };
   B.openGate = i => { if (gates[i]) gates[i].userData.open = true; };
@@ -268,7 +275,7 @@ GOL.Board3D = function (cv) {
   B.tilePos = i => pts[i].clone();
   B.screenPos = i => { const v = pts[i].clone().setY(2); v.project(cam); const r = cv.getBoundingClientRect(); return { x: r.left + (v.x + 1) / 2 * r.width, y: r.top + (1 - v.y) / 2 * r.height }; };
   const wait = ms => new Promise(r => setTimeout(r, ms));
-  let tw = 0, lastR = 0, slowRun = 0, PR = Math.min(window.devicePixelRatio || 1, 1.5);
+  let baseExp = .8, expGoal = .8, tw = 0, lastR = 0, slowRun = 0, PR = Math.min(window.devicePixelRatio || 1, 1.5);
   function tween(ms, fn, ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2) { tw++; return new Promise(res0 => { const res = () => { tw--; res0(); }; const t0 = performance.now(); (function f() { const k = Math.min(1, (performance.now() - t0) / ms); fn(ease(k), k); k < 1 ? requestAnimationFrame(f) : res(); })(); }); }
   B.hop = async (from, to) => { const a = pts[from].clone().setY(.38), b = pts[to].clone().setY(.38);
     await tween(340, (e, k) => { pawn.position.lerpVectors(a, b, e); pawn.position.y = .38 + Math.sin(k * Math.PI) * 1.4; const s = 1 + Math.sin(k * Math.PI) * .12; pawn.scale.set(1 / s, s, 1 / s); }, t => t);
@@ -299,6 +306,7 @@ GOL.Board3D = function (cv) {
   }
   B.frame = () => {
     const now = performance.now(), dt = Math.min(.05, (now - clock) / 1000); B._dtLast = (now - clock) / 1000; clock = now; const t = now / 1000;
+    if (Math.abs(renderer.toneMappingExposure - expGoal) > .003) renderer.toneMappingExposure += (expGoal - renderer.toneMappingExposure) * Math.min(1, dt * 3);
     if (!C.follow && B.autoFollow && now - C.lastUser > 6000) B.setFollow(true);
     if (C.follow && pawn) C.goal.copy(pawn.position).setY(0);
     const k = 1 - Math.pow(.0015, dt); C.tgt.lerp(C.goal, k); C.az += (C.gAz - C.az) * k; C.el += (C.gEl - C.el) * k; C.dist += (C.gDist - C.dist) * k; placeCam();
