@@ -129,7 +129,7 @@
     $("spin").textContent = S.busy ? u.spinning : u.spin; $("spin").disabled = S.busy;
     $("hopeBar").style.width = S.hope * 10 + "%";
     $("supDots").innerHTML = [0, 1, 2].map(i => `<span class="${i < S.support ? "on" : ""}"></span>`).join("");
-    const t = S.ch.tiles[S.pos]; $("chapter").textContent = S.ch.stages[t.stage];
+    const t = S.ch.tiles[S.pos]; $("chapter").innerHTML = `${S.ch.stages[t.stage]} <em class="stn">${S.pos + 1}/${S.ch.tiles.length}</em><i class="prog"><b style="width:${Math.round((S.pos + 1) / S.ch.tiles.length * 100)}%"></b></i>`;
     $("status").textContent = S.blocked ? u.gateText(3, t.gate.label) : u.yourTurn;
     $("quit").title = u.quit;
     refreshBridges();
@@ -169,7 +169,7 @@
         S.blocked = false; S.fails = 0; S.bonus = 0; S.passed.add(S.pos); board.openGate(S.pos); SND.win();
         await modal(`<div class="body"><h2>${u.gateTitle}</h2>${diceHtml(r, need, true)}<p><b>${u.gatePass}</b></p><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-win");
       } else {
-        S.lost++; S.fails++; S.hope = clamp(S.hope - 1, 0, 10); SND.barrier();
+        S.lost++; S.fails++; S.hope = clamp(S.hope - 1, 0, 10); SND.barrier(); document.body.classList.add("hurt"); setTimeout(() => document.body.classList.remove("hurt"), 700);
         const k = S.ch.setbacks.findIndex(s => s.at === S.pos && !S.done.has(s.at));
         if (S.fails >= 2 && k >= 0) { await setback(k, r, bonus, need); S.busy = false; board.busy = false; renderHud(); return; }
         await modal(`<div class="body"><h2>${u.gateTitle}</h2>${diceHtml(r, need, false)}<p><b>${u.gateFail}</b></p>
