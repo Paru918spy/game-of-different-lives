@@ -33,14 +33,15 @@
     $("logo").innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[k++ % 7]};--d:${(k % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" ");
     $("lead").textContent = ui().lead;
     $("note").textContent = ui().note;
-    $("how").innerHTML = ui().how.map((h, i) => `<li><span class="n">${i + 1}</span><b>${h[0]}</b><small>${h[1]}</small></li>`).join("");
+    $("how").innerHTML = ui().how.map((h, i) => `<li><a href="#step-${i}" data-i="${i}">${h[0]}</a></li>`).join("");
+    $("how").querySelectorAll("a").forEach(a => a.onclick = async e => { e.preventDefault(); const i = +a.dataset.i, h = ui().how[i]; if (i === 0) { $("spinLife").scrollIntoView({ behavior: "smooth", block: "center" }); $("spinLife").focus(); return; } await modal(`<div class="body"><h2>${h[0]}</h2><p>${h[1]}</p><button class="big" data-done="1">${ui().close}</button></div>`); });
     $("spinLife").textContent = ui().spinLife;
   }
   function initWheel() {
     order = GOL.characters.map((_, i) => i).sort(() => Math.random() - .5);
     wheelEntries = order.map((ci, k) => { const c = GOL.characters[ci], p = PALETTE[k % PALETTE.length]; return { label: shortName(c), color: p[0], dark: p[1], img: GOL.thumbOf(c) }; });
     if (wheel) wheel.dispose();
-    wheel = GOL.Wheel($("wheelCv"), wheelEntries, { portraits: true });
+    wheel = GOL.Wheel($("wheelCv"), wheelEntries, { portraits: true, simple: true });
     wheel.onTick = SND.tick; wheel.start();
   }
   let spinningLife = false;
@@ -259,5 +260,8 @@
   $("overview").onclick = () => board.overview();
   window.addEventListener("keydown", e => { if (e.code === "Space" && !e.repeat && $("modal").hidden) { e.preventDefault(); if (S && !$("screen-game").hidden) spin(); else if (!$("screen-home").hidden) spinLife(); } });
   buildLogo(); initWheel();
+  /* FPS overlay: press F (or open index.html?fps) */
+  (function () { let el = null, id = 0; const show = on => { if (!on) { el && el.remove(); el = null; clearInterval(id); return; } el = document.createElement("div"); el.style.cssText = "position:fixed;left:8px;bottom:8px;z-index:200;background:#000c;color:#9f9;font:12px/1.4 monospace;padding:6px 8px;border-radius:6px;pointer-events:none;white-space:pre"; document.body.appendChild(el); id = setInterval(() => { const P = board && board.perf; if (P && P.fps != null) el.textContent = `${P.fps} fps  frame ${P.avg} ms (worst ${P.worstS})\nslow frames/s ${P.slowS}\ndraw calls ${P.calls}  tris ${P.tris}\ngeometries ${P.geo}  textures ${P.tex}`; }, 500); };
+    window.addEventListener("keydown", e => { if (e.key === "f" || e.key === "F") show(!el); }); if (/[?&]fps/.test(location.search)) show(true); })();
   window.GOL.debug = { start, end, spin, showTile, offerBridge, setback, spinLife, home, get state() { return S; }, get board() { return board; }, get wheel() { return wheel; }, modal };
 })();

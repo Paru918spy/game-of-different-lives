@@ -309,7 +309,7 @@ GOL.Board3D = function (cv) {
     for (let i = confetti.length - 1; i >= 0; i--) { const c = confetti[i]; c.t += dt; const P = c.o.geometry.attributes.position;
       for (let j = 0; j < c.vel.length; j++) { c.vel[j].y -= 14 * dt; P.setXYZ(j, P.getX(j) + c.vel[j].x * dt, Math.max(0, P.getY(j) + c.vel[j].y * dt), P.getZ(j) + c.vel[j].z * dt); } P.needsUpdate = true; c.o.material.opacity = Math.max(0, 1 - c.t / 1.8);
       if (c.t > 1.8) { world.remove(c.o); c.o.geometry.dispose(); confetti.splice(i, 1); } }
-    renderer.render(scene, cam);
+    const f0 = performance.now(); renderer.render(scene, cam); const f1 = performance.now(); B.perf = B.perf || { n: 0, slow: 0, ms: 0, worst: 0, t0: f1, fps: 0 }; const P = B.perf; P.n++; P.ms += f1 - f0; if (f1 - f0 > P.worst) P.worst = f1 - f0; if (dt > .034) P.slow++; if (f1 - P.t0 >= 1000) { P.fps = Math.round(P.n * 1000 / (f1 - P.t0)); P.avg = (P.ms / P.n).toFixed(1); P.calls = renderer.info.render.calls; P.tris = renderer.info.render.triangles; P.geo = renderer.info.memory.geometries; P.tex = renderer.info.memory.textures; P.slowS = P.slow; P.worstS = P.worst.toFixed(1); P.n = 0; P.ms = 0; P.slow = 0; P.worst = 0; P.t0 = f1; }
   };
   return B;
 };
