@@ -224,7 +224,7 @@ GOL.Board3D = function (cv) {
     const pspr = new T.Sprite(new T.SpriteMaterial({ map: pawnPort.t, transparent: true, depthTest: false })); pspr.scale.set(2.5, 2.5, 1); pspr.position.y = 4; pspr.renderOrder = 15; pawn.add(pspr);
     drawPawnPortrait(null, ch);
     GFX.loadImage(GOL.thumbOf(ch), im => drawPawnPortrait(im, ch));
-    B.placePawn(0); C.goal.copy(pts[0]); C.tgt.copy(pts[0]); C.gDist = C.dist = 42; C.gEl = C.el = .95; C.az = C.gAz = .35; C.follow = true;
+    B.placePawn(0); C.goal.copy(pts[0]); C.tgt.copy(pts[0]); C.gDist = C.dist = (cv.clientWidth < 600 ? 68 : 42); C.gEl = C.el = .95; C.az = C.gAz = .35; C.follow = true;
     B.resize(); placeCam();
   };
   function drawPawnPortrait(im, ch) {
