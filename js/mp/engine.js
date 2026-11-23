@@ -197,7 +197,7 @@
         const bad = c.opts.map((o, i) => i).filter(i => !c.opts[i].ok && !c.opts[i].gone); c.opts[bad[Math.floor(rnd(S) * bad.length)]].gone = true; c.hinted = true; p.left--; p.used++;
         ev.push({ e: "adv", p: p.id, type: "hint" }); return ev;
       }
-      if (a.t === "skipq" && p.left > 0 && prof(p).advantage.type === "skip" && (c.opts || c.kind === "task") && c.kind !== "story") {
+      if (a.t === "skipq" && p.left > 0 && prof(p).advantage.type === "skip" && (c.opts || c.kind === "task") && c.kind !== "story" && !c.gate && !(c.kind === "task" && c.all)) {
         p.left--; p.used++; c.result = { i: -1, ok: true, skipped: true }; p.asked++; p.correct++; S.phase = "feedback";
         ev.push({ e: "adv", p: p.id, type: "skip" }); ev.push({ e: "answer", p: p.id, ok: true, i: -1 }); return ev;
       }

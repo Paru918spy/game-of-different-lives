@@ -20,7 +20,7 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 Free pass: count one question or action as answered right · 3 uses per game.
 
-After decades in logistics Jonas has met most problems before. Once or twice, a question counts as answered right because he has simply done it.
+After decades in logistics Jonas has met most problems before. Up to three times, a question counts as answered right because he has simply done it.
 
 ## Life stations (in the order of the road)
 

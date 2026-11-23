@@ -42,7 +42,7 @@ As a teen with braids, Colin is pushed by adults to change his hair so he looks 
 Colin shines at baseball and as a quarterback, but gets few scholarship offers to play quarterback. Only the University of Nevada offers him that place.
 
 ### 4. To the NFL  
-**Boost (+3 fields)**
+**Boost (+2 fields)**
 
 At Nevada he breaks records, and in 2011 the San Francisco 49ers draft him in the second round. In February 2013 he leads the team to Super Bowl XLVII.
 
@@ -93,7 +93,7 @@ The camp is built around practical knowledge, not slogans. Young people leave kn
 *Explanation:* The camp teaches legal rights, financial literacy and how to act in encounters with police.
 
 ### 11. “Believe in something”  
-**Boost (+2 fields)**
+**Boost (+3 fields)**
 
 In 2018 Nike makes Colin the face of a campaign: “Believe in something. Even if it means sacrificing everything.” In 2021 the series Colin in Black & White, co-created with Ava DuVernay, tells his teenage years.
 

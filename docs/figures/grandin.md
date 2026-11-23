@@ -38,7 +38,7 @@ Temple is born on 29 August 1947. As a toddler she does not speak, is easily ove
 Doctors tell her parents that she has brain damage and that an institution is the best place for her, as was common then. Her mother Eustacia refuses and looks for other options.
 
 ### 3. Speech therapy  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 With a speech therapist, daily practice and a mother who insists on manners and new experiences, Temple begins to speak at almost four.
 

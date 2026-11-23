@@ -22,7 +22,7 @@ Single Player (the original game) walks through **one life in depth**. Multiplay
 
 - **Your turn:** roll, walk, choose a route at forks (routes closed for your figure are greyed out and explain why), then the card of the field you landed on.
 - About one question card in five is a random **⚡ DOUBLE** card: right answer = walk the same number again.
-- **Balance:** `node tools/balance.js` lets bots play thousands of games. In groups of 4 every figure wins between 21 % and 29 % (fair is 25 %); alone every figure needs 13.4 to 13.7 rounds. `--tune` adjusts the strength of life-station barriers and boosts and the number of strength uses (never the story texts).
+- **Balance:** `node tools/balance.js` lets bots play thousands of games. In groups of 4 every figure wins between 20 % and 30 % (fair is 25 %); alone every figure needs 13.4 to 13.9 rounds. `--tune` adjusts the strength of life-station barriers and boosts and the number of strength uses (never the story texts).
 - First pawn on the finish wins. A game with 2 players takes about 12 to 15 rounds.
 
 ## Files

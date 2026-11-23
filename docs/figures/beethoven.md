@@ -20,7 +20,7 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 Free pass: count one question or action as answered right · 3 uses per game.
 
-Beethoven composed late works from his inner ear and planned whole structures in his head. Once or twice, a question you know well counts as answered.
+Beethoven composed late works from his inner ear and planned whole structures in his head. Up to three times, a question you know well counts as answered.
 
 ## Life stations (in the order of the road)
 
