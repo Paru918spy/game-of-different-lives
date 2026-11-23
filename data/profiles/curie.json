@@ -1,27 +1,127 @@
 {
-  "id": "curie",
-  "intro": "You are Maria Skłodowska, a top student in a Warsaw where Polish is suppressed and women may not enter university. Doors are locked by law, so you study in secret, then in Paris, and then in a leaky shed full of ore.",
-  "zones": {
-    "quiet": { "fx": "fast", "why": "Reading, thinking and long hours of focused study were her way in, from Warsaw to the Sorbonne." },
-    "sprint": { "fx": "fast", "why": "Stirring tons of ore by hand for years took stamina; later she drove X-ray cars to the front." },
-    "office": { "fx": "slow", "why": "Universities and academies kept their doors shut to women: closed lists, closed votes, long delays." },
-    "market": { "fx": "slow", "why": "In 1911 newspapers turned a crowd of readers against her as a woman and a foreigner." }
+ "id": "curie",
+ "intro": "You are Maria Skłodowska, a top student in a Warsaw where Polish is suppressed and women may not enter university. Doors are locked by law, so you study in secret, then in Paris, and then in a leaky shed full of ore.",
+ "zones": {
+  "quiet": {
+   "fx": "fast",
+   "why": "Reading, thinking and long hours of focused study were her way in, from Warsaw to the Sorbonne."
   },
-  "advantage": { "type": "hint", "uses": 2, "title": "Method and notebooks", "text": "Curie solved problems by careful measurement and by ruling out what could not be true. Use it to remove one wrong answer before you decide." },
-  "life": [
-    { "k": "info", "title": "Warsaw, 1867", "text": "Maria is born on 7 November 1867, the youngest of five children of two teachers. Poland is ruled by Russia, and Polish language and history are banned from the classroom." },
-    { "k": "barrier", "title": "Loss at ten", "text": "Her sister Zofia dies of typhus in 1876 and her mother of tuberculosis in 1878. Her father loses his post for his Polish views, so money is short for the whole family.", "move": -1 },
-    { "k": "boost", "title": "Gold medal at fifteen", "text": "Maria finishes school as the best in her class and receives a gold medal. Her parents, both teachers, had made learning the centre of the home.", "move": 1 },
-    { "k": "barrier", "title": "A university that says no", "text": "The University of Warsaw does not accept women. Maria and her sister Bronisława study at the secret \"Flying University\" and agree to take turns: Maria works first so Bronisława can study medicine in Paris.", "move": -2 },
-    { "k": "quiz", "title": "The Flying University", "text": "Teachers moved from flat to flat so that women could be taught without police noticing. Maria learned science and also taught others.", "move": 1, "q": { "q": "What was the \"Flying University\" in Warsaw?", "a": ["A secret school where women could study", "A university that taught on trains", "A school for airplane engineers"], "x": "It was an underground school for Polish women, held in private flats and moved often because Russian authorities did not allow it." } },
-    { "k": "boost", "title": "Paris, 1891", "text": "At 24 Maria enrols at the Sorbonne as \"Marie\". She lives in a cold attic and sometimes forgets to eat, but passes physics in 1893 and mathematics in 1894.", "move": 2 },
-    { "k": "info", "title": "A partner in the lab", "text": "In 1895 Marie marries the physicist Pierre Curie. They share ideas, notes and work as equals, and later write their results under both names." },
-    { "k": "quiz", "title": "Polonium and radium", "text": "In 1898 Marie and Pierre announce two new elements. She coins the word \"radioactivity\". They work in a leaky shed and process tons of ore by hand.", "move": 1, "q": { "q": "Marie named one new element after her homeland. Which?", "a": ["Polonium", "Radium", "Becquerelium"], "x": "Polonium is named for Poland, which did not exist as an independent state when she named it in 1898." } },
-    { "k": "boost", "title": "Nobel Prize, 1903", "text": "Marie and Pierre share the Nobel Prize in Physics with Henri Becquerel. She is the first woman to win a Nobel Prize. They choose not to patent their method so that other scientists can use it.", "move": 1 },
-    { "k": "barrier", "title": "Alone, then in the headlines", "text": "Pierre is killed in a street accident in 1906, and Marie takes over his chair as the first woman professor at the Sorbonne. In 1911 the French Academy rejects her narrowly and the press attacks her as a foreigner.", "move": -2 },
-    { "k": "boost", "title": "The Little Curies", "text": "In 1911 she also wins a second Nobel Prize, in Chemistry. In the First World War she equips vehicles with X-ray machines and trains women to run them, so surgeons can find bullets and shrapnel.", "move": 2 },
-    { "k": "info", "title": "A lab for the world", "text": "Marie builds the Radium Institute in Paris and trains many researchers, many of them women. Her daughter Irène wins the Chemistry Nobel in 1935. Marie dies in 1934, probably of radiation exposure." }
-  ],
-  "sources": ["js/characters/group1.js tiles for curie", "docs/characters.md row for Marie Curie", "Nobel Prize site: Marie Curie biographical", "Musée Curie"],
-  "flags": ["Check wording that the 1911 Academy vote was narrowly lost, and that the Flying University used private flats and rotating teachers.", "Dates for Pierre's 1906 chair and the first woman professor at the Sorbonne were taken from the single-player data."]
+  "sprint": {
+   "fx": "fast",
+   "why": "Stirring tons of ore by hand for years took stamina; later she drove X-ray cars to the front."
+  },
+  "office": {
+   "fx": "slow",
+   "why": "Universities and academies kept their doors shut to women: closed lists, closed votes, long delays."
+  },
+  "market": {
+   "fx": "slow",
+   "why": "In 1911 newspapers turned a crowd of readers against her as a woman and a foreigner."
+  }
+ },
+ "advantage": {
+  "type": "hint",
+  "uses": 2,
+  "title": "Method and notebooks",
+  "text": "Curie solved problems by careful measurement and by ruling out what could not be true. Use it to remove one wrong answer before you decide."
+ },
+ "life": [
+  {
+   "k": "info",
+   "title": "Warsaw, 1867",
+   "text": "Maria is born on 7 November 1867, the youngest of five children of two teachers. Poland is ruled by Russia, and Polish language and history are banned from the classroom."
+  },
+  {
+   "k": "barrier",
+   "title": "Loss at ten",
+   "text": "Her sister Zofia dies of typhus in 1876 and her mother of tuberculosis in 1878. Her father loses his post for his Polish views, so money is short for the whole family.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "Gold medal at fifteen",
+   "text": "Maria finishes school as the best in her class and receives a gold medal. Her parents, both teachers, had made learning the centre of the home.",
+   "move": 1
+  },
+  {
+   "k": "barrier",
+   "title": "A university that says no",
+   "text": "The University of Warsaw does not accept women. Maria and her sister Bronisława study at the secret \"Flying University\" and agree to take turns: Maria works first so Bronisława can study medicine in Paris.",
+   "move": -1
+  },
+  {
+   "k": "quiz",
+   "title": "The Flying University",
+   "text": "Teachers moved from flat to flat so that women could be taught without police noticing. Maria learned science and also taught others.",
+   "move": 1,
+   "q": {
+    "q": "What was the \"Flying University\" in Warsaw?",
+    "a": [
+     "A secret school where women could study",
+     "A university that taught on trains",
+     "A school for airplane engineers"
+    ],
+    "x": "It was an underground school for Polish women, held in private flats and moved often because Russian authorities did not allow it."
+   }
+  },
+  {
+   "k": "boost",
+   "title": "Paris, 1891",
+   "text": "At 24 Maria enrols at the Sorbonne as \"Marie\". She lives in a cold attic and sometimes forgets to eat, but passes physics in 1893 and mathematics in 1894.",
+   "move": 1
+  },
+  {
+   "k": "info",
+   "title": "A partner in the lab",
+   "text": "In 1895 Marie marries the physicist Pierre Curie. They share ideas, notes and work as equals, and later write their results under both names."
+  },
+  {
+   "k": "quiz",
+   "title": "Polonium and radium",
+   "text": "In 1898 Marie and Pierre announce two new elements. She coins the word \"radioactivity\". They work in a leaky shed and process tons of ore by hand.",
+   "move": 1,
+   "q": {
+    "q": "Marie named one new element after her homeland. Which?",
+    "a": [
+     "Polonium",
+     "Radium",
+     "Becquerelium"
+    ],
+    "x": "Polonium is named for Poland, which did not exist as an independent state when she named it in 1898."
+   }
+  },
+  {
+   "k": "boost",
+   "title": "Nobel Prize, 1903",
+   "text": "Marie and Pierre share the Nobel Prize in Physics with Henri Becquerel. She is the first woman to win a Nobel Prize. They choose not to patent their method so that other scientists can use it.",
+   "move": 1
+  },
+  {
+   "k": "barrier",
+   "title": "Alone, then in the headlines",
+   "text": "Pierre is killed in a street accident in 1906, and Marie takes over his chair as the first woman professor at the Sorbonne. In 1911 the French Academy rejects her narrowly and the press attacks her as a foreigner.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "The Little Curies",
+   "text": "In 1911 she also wins a second Nobel Prize, in Chemistry. In the First World War she equips vehicles with X-ray machines and trains women to run them, so surgeons can find bullets and shrapnel.",
+   "move": 2
+  },
+  {
+   "k": "info",
+   "title": "A lab for the world",
+   "text": "Marie builds the Radium Institute in Paris and trains many researchers, many of them women. Her daughter Irène wins the Chemistry Nobel in 1935. Marie dies in 1934, probably of radiation exposure."
+  }
+ ],
+ "sources": [
+  "js/characters/group1.js tiles for curie",
+  "docs/characters.md row for Marie Curie",
+  "Nobel Prize site: Marie Curie biographical",
+  "Musée Curie"
+ ],
+ "flags": [
+  "Check wording that the 1911 Academy vote was narrowly lost, and that the Flying University used private flats and rotating teachers.",
+  "Dates for Pierre's 1906 chair and the first woman professor at the Sorbonne were taken from the single-player data."
+ ]
 }

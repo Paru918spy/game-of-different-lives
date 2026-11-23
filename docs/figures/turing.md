@@ -89,7 +89,7 @@ At the University of Manchester he works on some of the first stored-program com
 *Explanation:* The Turing Test asks whether a human judge can tell a machine from a person by conversation alone. It is still discussed in AI research.
 
 ### 10. Convicted in 1952  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 Sex between men is a crime in Britain. After a burglary report, police learn of Alan's relationship with a man and he is convicted of "gross indecency". Instead of prison he must accept hormone treatment for a year.
 

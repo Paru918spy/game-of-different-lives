@@ -74,12 +74,12 @@ In 1979 Stephen takes up a famous professorship at Cambridge and keeps it for 30
 *Explanation:* The Lucasian chair of mathematics was created in 1663. Newton held it before Stephen did.
 
 ### 7. Geneva, 1985  
-**Barrier (-2 fields)**
+**Barrier (-3 fields)**
 
 Severe pneumonia during a trip to Switzerland leads to a tracheotomy, and Stephen can no longer speak. He needs round-the-clock nursing and a new way to communicate, and nobody has built one for him yet.
 
 ### 8. A voice from a computer  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 A program called Equalizer lets him choose words with a hand clicker, later with a sensor on his cheek. A speech synthesiser speaks them. He keeps its American-accented voice because it feels like his own.
 

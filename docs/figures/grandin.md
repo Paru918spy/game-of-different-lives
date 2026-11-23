@@ -33,12 +33,12 @@ Every figure must stop at the 12 life stations on the way, one after the other. 
 Temple is born on 29 August 1947. As a toddler she does not speak, is easily overwhelmed by sound and touch, and avoids eye contact. At this time autism is poorly understood.
 
 ### 2. Institution advised  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 Doctors tell her parents that she has brain damage and that an institution is the best place for her, as was common then. Her mother Eustacia refuses and looks for other options.
 
 ### 3. Speech therapy  
-**Boost (+1 fields)**
+**Boost (+2 fields)**
 
 With a speech therapist, daily practice and a mother who insists on manners and new experiences, Temple begins to speak at almost four.
 
@@ -48,7 +48,7 @@ With a speech therapist, daily practice and a mother who insists on manners and 
 Classmates call her "weird" and mock her habit of repeating herself. School is loud, with crowds and unspoken rules nobody explains, and she often has no one to sit with.
 
 ### 5. Mr. Carlock  
-**Boost (+1 fields)**
+**Boost (+2 fields)**
 
 Her science teacher notices her curiosity and gives her projects that fit her visual thinking. For the first time at school, someone builds on what she is good at.
 
@@ -71,7 +71,7 @@ On her aunt's ranch in Arizona, Temple sees cattle stand calmly in a squeeze chu
 Temple studies psychology (BA 1970), animal science (MS 1975) and later earns a PhD (1989). Her field is how cattle and other animals perceive and move through spaces.
 
 ### 8. A woman in the cattle yard  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 In the 1970s the livestock industry is mostly men who do not welcome a young woman who talks about how cows feel. She is mocked, kept out of sites and has to prove herself again and again.
 
@@ -89,7 +89,7 @@ A rancher shrugs off her ideas. So she draws and builds handling systems and wal
 *Explanation:* Her designs reduce stress and balking. Facilities in North America have used designs influenced by her work.
 
 ### 10. Thinking in Pictures  
-**Boost (+1 fields)**
+**Boost (+2 fields)**
 
 Her books Emergence: Labeled Autistic (1986) and Thinking in Pictures (1995) explain her mind. She says clearly that autistic people think in many different ways, and that her way is not the only one.
 

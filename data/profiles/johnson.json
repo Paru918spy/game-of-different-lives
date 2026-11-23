@@ -1,34 +1,123 @@
 {
-  "id": "johnson",
-  "intro": "You play a street activist in New York in the 1960s to 1990s with little money, little protection and a lot of friends. Offices and officials rarely help you. The night, the streets and the people there do. Content note: discrimination, poverty, violence and an unresolved death.",
-  "zones": {
-    "office": { "fx": "slow", "why": "Police, landlords and clerks treated her as a problem, not a citizen. Forms and counters cost time." },
-    "market": { "fx": "fast", "why": "In crowded Village streets she was known, greeted and fed by neighbours. The crowd is her ground." },
-    "tunnel": { "fx": "fast", "why": "Nightlife, bars and back rooms were where queer people could gather. She knew the dark and who to trust in it." }
+ "id": "johnson",
+ "intro": "You play a street activist in New York in the 1960s to 1990s with little money, little protection and a lot of friends. Offices and officials rarely help you. The night, the streets and the people there do. Content note: discrimination, poverty, violence and an unresolved death.",
+ "zones": {
+  "office": {
+   "fx": "slow",
+   "why": "Police, landlords and clerks treated her as a problem, not a citizen. Forms and counters cost time."
   },
-  "advantage": { "type": "shield", "uses": 2, "title": "Family you choose", "text": "Marsha's friends gave her a place to sleep and she gave the same to others. A wrong answer does not send you back." },
-  "life": [
-    { "k": "info", "title": "Elizabeth, New Jersey, 1945", "text": "Marsha is born on 24 August 1945 in Elizabeth, New Jersey, one of seven children in a churchgoing family. She loves flowers and bright clothes." },
-    { "k": "barrier", "title": "Harassed for her clothes", "text": "As a child and teenager Marsha is harassed for wearing girls' clothes. After high school in 1963 she moves to New York City with very little money in her pocket, hoping for more room to be herself.", "move": -1 },
-    { "k": "barrier", "title": "No home, no safety net", "text": "In New York Marsha often has no place to sleep. She works as a waitress and in sex work to survive. Landlords and police discriminate against queer and trans people, and there is little help for someone with no address.", "move": -2 },
-    { "k": "boost", "title": "A name and a neighbourhood", "text": "Marsha adds a \"P.\" to her name. In Greenwich Village she becomes a familiar, kind and funny figure, known for flowers in her hair and for sharing food and money with those who have less.", "move": 1 },
-    { "k": "quiz", "title": "What did the P stand for?", "text": "Marsha used the P in her name as an answer to nosy questions about her gender.", "q": { "q": "What did Marsha say the P in her name stood for?", "a": ["\"Pay it no mind\"", "\"Peace and love\"", "\"Pride\""], "x": "She used \"Pay it no mind\" as a reply to questions about her gender and identity." }, "move": 1 },
-    { "k": "info", "title": "Stonewall, June 1969", "text": "When police raid the Stonewall Inn, a gay bar in the Village, people fight back, and protests continue for days. Marsha was part of the community in those days. Accounts differ on what exactly she did, and the \"first brick\" story is disputed." },
-    { "k": "boost", "title": "STAR House, 1970", "text": "With her friend Sylvia Rivera, Marsha founds STAR, Street Transvestite Action Revolutionaries. They rent a building as a shelter for homeless trans and queer youth and pay for it with the money they earn themselves.", "move": 2 },
-    { "k": "quiz", "title": "Who founded STAR with Marsha?", "text": "Marsha did not build STAR House alone. A friend and fellow activist shared the work and the rent.", "q": { "q": "Who co-founded STAR and STAR House with Marsha?", "a": ["Sylvia Rivera", "Audre Lorde", "Harvey Milk"], "x": "Sylvia Rivera and Marsha founded STAR in 1970. Both were later left out of much of the mainstream gay rights story." }, "move": 1 },
-    { "k": "barrier", "title": "Left out by the movement", "text": "Many gay rights groups of the time wanted to look \"respectable\" and kept trans people, drag queens and sex workers at the edge. Marsha and Sylvia were pushed away from events they helped to start.", "move": -2 },
-    { "k": "boost", "title": "Stage and portraits", "text": "Marsha performs with the drag troupe Hot Peaches. In 1975 the artist Andy Warhol photographs her for his series \"Ladies and Gentlemen\". Art and performance give her income, friends and an audience.", "move": 1 },
-    { "k": "barrier", "title": "The AIDS crisis", "text": "In the 1980s many friends die of AIDS while officials and media look away. Marsha is diagnosed with HIV in 1990. She takes part in ACT UP, demanding care, research and respect for the people most affected.", "move": -2 },
-    { "k": "info", "title": "July 1992 and what remains", "text": "Marsha's body is found in the Hudson River in July 1992. Police first called it suicide; her friends did not accept that. The case was later reopened and her death remains unresolved. New York announced a monument for her and Sylvia Rivera in 2019." }
-  ],
-  "sources": [
-    "js/characters/group3.js tiles for johnson (Elizabeth NJ, move to NYC 1963, Stonewall, STAR House 1970, Hot Peaches, Warhol 1975, ACT UP, death 1992)",
-    "The Death and Life of Marsha P. Johnson (Netflix, 2017)",
-    "New York Public Library archives; Marsha P. Johnson Institute (marshap.org)"
-  ],
-  "flags": [
-    "Reopened case: police reclassified as undetermined/reopened around 2012; kept general (unresolved). Verify before adding detail.",
-    "Marsha's pronouns and identity language: she used both she and he and described herself as a transvestite and gay; text uses she as in the single-player data and focuses on gender identity.",
-    "Stonewall role and \"first brick\" claim disputed; text says so."
-  ]
+  "market": {
+   "fx": "fast",
+   "why": "In crowded Village streets she was known, greeted and fed by neighbours. The crowd is her ground."
+  },
+  "tunnel": {
+   "fx": "fast",
+   "why": "Nightlife, bars and back rooms were where queer people could gather. She knew the dark and who to trust in it."
+  }
+ },
+ "advantage": {
+  "type": "shield",
+  "uses": 2,
+  "title": "Family you choose",
+  "text": "Marsha's friends gave her a place to sleep and she gave the same to others. A wrong answer does not send you back."
+ },
+ "life": [
+  {
+   "k": "info",
+   "title": "Elizabeth, New Jersey, 1945",
+   "text": "Marsha is born on 24 August 1945 in Elizabeth, New Jersey, one of seven children in a churchgoing family. She loves flowers and bright clothes."
+  },
+  {
+   "k": "barrier",
+   "title": "Harassed for her clothes",
+   "text": "As a child and teenager Marsha is harassed for wearing girls' clothes. After high school in 1963 she moves to New York City with very little money in her pocket, hoping for more room to be herself.",
+   "move": -1
+  },
+  {
+   "k": "barrier",
+   "title": "No home, no safety net",
+   "text": "In New York Marsha often has no place to sleep. She works as a waitress and in sex work to survive. Landlords and police discriminate against queer and trans people, and there is little help for someone with no address.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "A name and a neighbourhood",
+   "text": "Marsha adds a \"P.\" to her name. In Greenwich Village she becomes a familiar, kind and funny figure, known for flowers in her hair and for sharing food and money with those who have less.",
+   "move": 2
+  },
+  {
+   "k": "quiz",
+   "title": "What did the P stand for?",
+   "text": "Marsha used the P in her name as an answer to nosy questions about her gender.",
+   "q": {
+    "q": "What did Marsha say the P in her name stood for?",
+    "a": [
+     "\"Pay it no mind\"",
+     "\"Peace and love\"",
+     "\"Pride\""
+    ],
+    "x": "She used \"Pay it no mind\" as a reply to questions about her gender and identity."
+   },
+   "move": 1
+  },
+  {
+   "k": "info",
+   "title": "Stonewall, June 1969",
+   "text": "When police raid the Stonewall Inn, a gay bar in the Village, people fight back, and protests continue for days. Marsha was part of the community in those days. Accounts differ on what exactly she did, and the \"first brick\" story is disputed."
+  },
+  {
+   "k": "boost",
+   "title": "STAR House, 1970",
+   "text": "With her friend Sylvia Rivera, Marsha founds STAR, Street Transvestite Action Revolutionaries. They rent a building as a shelter for homeless trans and queer youth and pay for it with the money they earn themselves.",
+   "move": 2
+  },
+  {
+   "k": "quiz",
+   "title": "Who founded STAR with Marsha?",
+   "text": "Marsha did not build STAR House alone. A friend and fellow activist shared the work and the rent.",
+   "q": {
+    "q": "Who co-founded STAR and STAR House with Marsha?",
+    "a": [
+     "Sylvia Rivera",
+     "Audre Lorde",
+     "Harvey Milk"
+    ],
+    "x": "Sylvia Rivera and Marsha founded STAR in 1970. Both were later left out of much of the mainstream gay rights story."
+   },
+   "move": 1
+  },
+  {
+   "k": "barrier",
+   "title": "Left out by the movement",
+   "text": "Many gay rights groups of the time wanted to look \"respectable\" and kept trans people, drag queens and sex workers at the edge. Marsha and Sylvia were pushed away from events they helped to start.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "Stage and portraits",
+   "text": "Marsha performs with the drag troupe Hot Peaches. In 1975 the artist Andy Warhol photographs her for his series \"Ladies and Gentlemen\". Art and performance give her income, friends and an audience.",
+   "move": 1
+  },
+  {
+   "k": "barrier",
+   "title": "The AIDS crisis",
+   "text": "In the 1980s many friends die of AIDS while officials and media look away. Marsha is diagnosed with HIV in 1990. She takes part in ACT UP, demanding care, research and respect for the people most affected.",
+   "move": -1
+  },
+  {
+   "k": "info",
+   "title": "July 1992 and what remains",
+   "text": "Marsha's body is found in the Hudson River in July 1992. Police first called it suicide; her friends did not accept that. The case was later reopened and her death remains unresolved. New York announced a monument for her and Sylvia Rivera in 2019."
+  }
+ ],
+ "sources": [
+  "js/characters/group3.js tiles for johnson (Elizabeth NJ, move to NYC 1963, Stonewall, STAR House 1970, Hot Peaches, Warhol 1975, ACT UP, death 1992)",
+  "The Death and Life of Marsha P. Johnson (Netflix, 2017)",
+  "New York Public Library archives; Marsha P. Johnson Institute (marshap.org)"
+ ],
+ "flags": [
+  "Reopened case: police reclassified as undetermined/reopened around 2012; kept general (unresolved). Verify before adding detail.",
+  "Marsha's pronouns and identity language: she used both she and he and described herself as a transvestite and gay; text uses she as in the single-player data and focuses on gender identity.",
+  "Stonewall role and \"first brick\" claim disputed; text says so."
+ ]
 }

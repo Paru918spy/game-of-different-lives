@@ -4,7 +4,7 @@ const DIR = path.join(__dirname, "..", "data", "profiles");
 const IDS = ["wonder", "king", "kaepernick", "curie", "heumann", "keller", "grandin", "kahlo", "malala", "cox", "johnson", "singh", "mandela", "beethoven", "turing", "amira", "jonas", "lena", "sam", "hawking", "parks"];
 const ZONES = ["stairs", "ladder", "rope", "bridge", "ramp", "market", "tunnel", "office", "sprint", "quiet"];
 const BLOCKABLE = ["stairs", "ladder", "rope", "sprint", "tunnel", "market"], NEUTRALISH = ["bridge", "ramp", "office", "quiet"];
-const TYPES = ["hint", "shield", "bestof2"];
+const TYPES = ["hint", "shield", "bestof2", "lift", "skip"];
 function check(id, P) {
   const err = [], e = m => err.push(id + ": " + m), s = (v, max, what) => { if (typeof v !== "string" || !v.trim()) e(what + " missing"); else if (v.length > max) e(what + " too long (" + v.length + " > " + max + "): " + v.slice(0, 40)); };
   if (P.id !== id) e("id must be " + id);
@@ -30,7 +30,7 @@ function check(id, P) {
     if (t.k === "barrier" || t.k === "boost") net += m;   // quiz boosts are only for right answers: they do not count into luck
   });
   if (cnt.barrier < 3) e("need at least 3 barriers"); if (cnt.boost < 3) e("need at least 3 boosts"); if (cnt.quiz < 2 || cnt.quiz > 3) e("need 2 or 3 quizzes, found " + cnt.quiz);
-  if (net < -3 || net > 3) e("sum of barrier+boost moves must be -3..+3, is " + net);
+  if (net < -5 || net > 5) e("sum of barrier+boost moves must be -5..+5, is " + net);
   if (L[11] && L[11].k === "barrier") e("station 12 must not be a barrier");
   if (!Array.isArray(P.sources) || !P.sources.length) e("sources missing");
   return err;
@@ -40,6 +40,6 @@ if (require.main === module) {
 const ids = process.argv.slice(2).length ? process.argv.slice(2) : IDS; let bad = 0;
 ids.forEach(id => { let P; try { P = JSON.parse(fs.readFileSync(path.join(DIR, id + ".json"), "utf8")); } catch (x) { console.log(id + ": cannot read/parse: " + x.message); bad++; return; }
   const er = check(id, P); er.forEach(m => console.log("  " + m)); bad += er.length; if (!er.length) console.log(id + ": ok"); });
-if (ids.length === IDS.length) { const t = {}; ids.forEach(id => { try { const a = JSON.parse(fs.readFileSync(path.join(DIR, id + ".json"), "utf8")).advantage.type; t[a] = (t[a] || 0) + 1; } catch (x) {} }); Object.keys(t).length && console.log("advantage types:", t); TYPES.forEach(k => { if ((t[k] || 0) < 5) { console.log("  need at least 5 of advantage type " + k); bad++; } }); }
+if (ids.length === IDS.length) { const t = {}; ids.forEach(id => { try { const a = JSON.parse(fs.readFileSync(path.join(DIR, id + ".json"), "utf8")).advantage.type; t[a] = (t[a] || 0) + 1; } catch (x) {} }); Object.keys(t).length && console.log("advantage types:", t); TYPES.forEach(k => { if ((t[k] || 0) < 3) { console.log("  need at least 3 of advantage type " + k); bad++; } }); }
 process.exit(bad ? 1 : 0);
 }

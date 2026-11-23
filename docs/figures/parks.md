@@ -38,7 +38,7 @@ Rosa is born on 4 February 1913 in Tuskegee, Alabama, and grows up in Pine Level
 In rural Alabama white children ride buses to school while Black children walk. The Black school has a shorter year and fewer resources. Rosa later recalls deciding that this did not have to be the way it was.
 
 ### 3. Miss White’s school  
-**Boost (+1 fields)**
+**Boost (+3 fields)**
 
 At 11 Rosa attends the Montgomery Industrial School for Girls, run by white northern women who teach Black girls that they deserve respect. She takes the lesson to heart.
 
@@ -66,12 +66,12 @@ In 1932 Rosa marries Raymond Parks, a barber who secretly raises money for the d
 In 1943 bus driver James F. Blake orders Rosa to board at the back after paying at the front, and drives away as she steps off. She avoids his bus for years, and she will meet him again.
 
 ### 7. NAACP secretary  
-**Boost (+1 fields)**
+**Boost (+2 fields)**
 
 In 1943 Rosa joins the Montgomery NAACP and becomes its secretary, the only woman in the room. She types, files and records injustices, and in 1944 investigates the Recy Taylor case with the NAACP.
 
 ### 8. Trying to register to vote  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 Literacy tests, a poll tax and intimidation keep Black citizens from voting. Rosa is rejected on her first two attempts. On her third, in 1945, she is registered, after paying years of back taxes.
 
@@ -89,12 +89,12 @@ Months before December 1955, a teenager in Montgomery had refused to give up her
 *Explanation:* Claudette Colvin was arrested in March 1955 and later became one of the plaintiffs in Browder v. Gayle.
 
 ### 10. Arrest and fallout  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 On 1 December 1955 Rosa stays seated and is arrested and fined $14. She loses her department-store job and Raymond is forced out of his. Threats follow, and the community helps with the bills.
 
 ### 11. The Montgomery Bus Boycott  
-**Boost (+2 fields)**
+**Boost (+3 fields)**
 
 Led by the Women’s Political Council and the Montgomery Improvement Association, about 40,000 Black riders walk, carpool or take taxis for 381 days until the buses are desegregated. The Supreme Court upholds that ruling in Browder v. Gayle.
 

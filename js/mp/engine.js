@@ -197,6 +197,10 @@
         const bad = c.opts.map((o, i) => i).filter(i => !c.opts[i].ok && !c.opts[i].gone); c.opts[bad[Math.floor(rnd(S) * bad.length)]].gone = true; c.hinted = true; p.left--; p.used++;
         ev.push({ e: "adv", p: p.id, type: "hint" }); return ev;
       }
+      if (a.t === "skipq" && p.left > 0 && prof(p).advantage.type === "skip" && (c.opts || c.kind === "task") && c.kind !== "story") {
+        p.left--; p.used++; c.result = { i: -1, ok: true, skipped: true }; p.asked++; p.correct++; S.phase = "feedback";
+        ev.push({ e: "adv", p: p.id, type: "skip" }); ev.push({ e: "answer", p: p.id, ok: true, i: -1 }); return ev;
+      }
       if (a.t === "answer" && c.opts) {
         const o = c.opts[a.i]; if (!o || o.gone) return ev;
         c.result = { i: a.i, ok: o.ok }; p.asked++; o.ok ? p.correct++ : p.wrong++;
@@ -223,7 +227,8 @@
       let d = 1 + Math.floor(rnd(S) * 6), d2 = null;
       if (a.best && p.left > 0 && prof(p).advantage.type === "bestof2") { d2 = 1 + Math.floor(rnd(S) * 6); p.left--; p.used++; }
       S.dice = d2 ? Math.max(d, d2) : d; S.bonus = false;
-      ev.push({ e: "roll", p: p.id, v: S.dice, d1: d, d2 });
+      if (a.lift && p.left > 0 && prof(p).advantage.type === "lift") { S.dice += 2; p.left--; p.used++; }
+      ev.push({ e: "roll", p: p.id, v: S.dice, d1: d, d2, lift: !!(a.lift && S.dice > Math.max(d, d2 || 0)) });
       walk(S, S.dice, ev);
     } else if (S.phase === "fork" && a.t === "choose" && S.fork.allowed.includes(a.node)) {
       const n = S.fork.remaining; S.phase = "roll"; S.fork = null;

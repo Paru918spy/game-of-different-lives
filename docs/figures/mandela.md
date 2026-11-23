@@ -17,11 +17,11 @@ The shared board has ten kinds of routes. For Nelson, these differ from the norm
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
-## Advantage: Standing firm
+## Advantage: Standing together
 
-Shield: a wrong answer does not send you back · 2 uses per game.
+Lift: add 2 to your roll after rolling · 2 uses per game.
 
-Mandela kept his convictions through setbacks, a treason trial, the Rivonia verdict and years in prison. A wrong answer does not push you back.
+Mandela's movement, lawyers and supporters carried him through the treason trial and the Rivonia verdict. After rolling, add 2 to your result.
 
 ## Life stations (in the order of the road)
 
@@ -33,12 +33,12 @@ Every figure must stop at the 12 life stations on the way, one after the other. 
 Rolihlahla Mandela is born on 18 July 1918 in a village in the Eastern Cape, into a Thembu royal household. A teacher later gives him the English name Nelson, as mission schools often did.
 
 ### 2. Mission school and Fort Hare  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 He is the first in his family to attend school. He goes on to Fort Hare, one of the few universities open to Black South Africans, and meets future leaders such as Oliver Tambo there.
 
 ### 3. Expelled, then on the run  
-**Barrier (-1 fields)**
+**Barrier (-3 fields)**
 
 In 1940 he is expelled from Fort Hare after joining a student protest. His guardian arranges a marriage for him, and he leaves for Johannesburg, where he works as a mine guard and a law clerk.
 
@@ -71,7 +71,7 @@ From 1952 banning orders restrict where he can go and whom he can meet. In 1956 
 Content note: violence. In March 1960 police shoot at a pass-law protest in Sharpeville and 69 people die. The ANC is banned. Mandela goes underground in 1961 and helps start the armed wing Umkhonto we Sizwe.
 
 ### 8. Rivonia Trial, 1964  
-**Barrier (-2 fields)**
+**Barrier (-3 fields)**
 
 Arrested in 1962, Mandela is tried for sabotage with other leaders. He tells the court he is prepared to die for a free, democratic society. In June 1964 the judge sentences him to life in prison.
 
@@ -94,7 +94,7 @@ Mandela is released on 11 February 1990 after international pressure and unrest 
 *Explanation:* He was imprisoned from 1962 until 1990, 27 years in all. He was 71 when he walked out.
 
 ### 11. 1994: everyone votes  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 He negotiates with President F. W. de Klerk, and the two share the 1993 Nobel Peace Prize. On 27 April 1994 all South Africans vote for the first time, and Mandela becomes president.
 

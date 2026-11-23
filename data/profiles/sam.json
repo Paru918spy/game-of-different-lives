@@ -1,32 +1,121 @@
 {
-  "id": "sam",
-  "intro": "You are Sam, a fictional 15-year-old in Germany who goes by they/them. Playing this life means noticing how many forms, rooms and routines assume only two choices, and how much a single person who gets it right can change.",
-  "zones": {
-    "bridge": { "fx": "fast", "why": "Noor, a teacher and a youth group: people who say \"I've got you\" carry Sam across." },
-    "office": { "fx": "slow", "why": "Forms with two boxes and registers with the old name: every counter needs explaining." },
-    "market": { "fx": "slow", "why": "Crowded places mean stares, whispers and a choice of two changing rooms, so Sam stays careful." }
+ "id": "sam",
+ "intro": "You are Sam, a fictional 15-year-old in Germany who goes by they/them. Playing this life means noticing how many forms, rooms and routines assume only two choices, and how much a single person who gets it right can change.",
+ "zones": {
+  "bridge": {
+   "fx": "fast",
+   "why": "Noor, a teacher and a youth group: people who say \"I've got you\" carry Sam across."
   },
-  "advantage": { "type": "bestof2", "uses": 2, "title": "Not just two options", "text": "Sam lives with a world that offers two boxes, and finds there are more choices. Twice, roll two dice and take the higher one." },
-  "life": [
-    { "k": "info", "title": "Sam (fictional character)", "text": "Sam is a fictional character. Sam was named Samuel at birth, and \"boy\" never quite fitted, nor did \"girl\". At 15 Sam has chosen the name Sam and the pronouns they/them, and has told a few close friends." },
-    { "k": "barrier", "title": "Two boxes only", "move": -1, "text": "School forms say \"male\" or \"female\". Teams and changing rooms split in two. The class register still lists the old name, and substitute teachers read it out loud." },
-    { "k": "boost", "title": "Mr Okafor and Noor", "move": 2, "text": "A teacher, Mr Okafor, asks Sam privately which name to use and then simply uses it. Sam's friend Noor says, \"I've got you\", and sits next to Sam at lunch." },
-    { "k": "barrier", "title": "Jokes in the hallway", "move": -2, "text": "A few classmates whisper and make jokes. Sam skips PE and eats lunch in the library. It is not the identity that is hard, but the reactions of other people." },
-    { "k": "info", "title": "A letter to the family", "text": "Telling the family is Sam's own decision, and nobody should be forced to do it. Sam writes a letter for their parents. They are shocked at first, then start to ask questions and read." },
-    { "k": "quiz", "title": "What helps young people", "move": 2, "text": "Sam looks up what researchers have found about LGBTQ+ young people and wellbeing, and finds that what family and friends do makes a big difference.", "q": { "q": "Which factor is among the strongest for the wellbeing of LGBTQ+ young people?", "a": ["Being accepted by family and friends", "Keeping the identity secret", "Avoiding school events"], "x": "Studies such as those of the Trevor Project find that acceptance and support, using the right name and pronouns, are linked with better mental health." } },
-    { "k": "barrier", "title": "\"It's just a phase\"", "move": -1, "text": "Sam's grandfather says it is only a phase. That stings. Sam's mother calmly keeps using Sam's name in front of him, and does not let the subject drop." },
-    { "k": "boost", "title": "A youth group", "move": 2, "text": "Sam finds a local youth group for queer young people. Nobody has to explain themselves there, and Sam laughs more than in months. Some members become close friends." },
-    { "k": "quiz", "title": "A third entry in the law", "move": 2, "text": "Sam learns that Germany's Federal Constitutional Court ruled in 2017 that the civil register must allow more than \"male\" and \"female\". The law changed in 2018.", "q": { "q": "Which option did Germany add to civil records in 2018?", "a": ["A third entry, \"divers\"", "A ban on gender entries", "An entry for under-18s only"], "x": "Since 2018 the German civil register allows \"divers\" as a third entry, after a ruling in 2017. Many forms and systems are still not updated." } },
-    { "k": "barrier", "title": "Forms and offices", "move": -1, "text": "At 18 Sam wants documents that match who they are. Many forms still have two options, and every office needs it explained again. Sam learns which rules apply and brings a friend to appointments." },
-    { "k": "boost", "title": "An apprenticeship that listens", "move": 2, "text": "In a bike repair apprenticeship, the boss asks about pronouns, puts the right name on the staff list and trains the team. Sam says that it sounds small, but changed how every day feels." },
-    { "k": "info", "title": "Just Sam", "text": "Sam fixes bikes, bakes and plays music. Sam would like to be seen as a person with a name, not as a box. Sometimes Sam is asked to speak at schools, and most questions are \"How can I support my friend?\"" }
-  ],
-  "sources": [
-    "js/characters/group4.js tiles for Sam (fictional character, invented scenes)",
-    "Federal Constitutional Court of Germany, 2017 ruling on a third gender entry; 2018 introduction of \"divers\"",
-    "Trevor Project research on acceptance and wellbeing"
-  ],
-  "flags": [
-    "Fictional: station 1 says so. Please check whether the 2024 German Self-Determination Act (name and gender-entry changes by declaration) should be mentioned in station 10; it was left out to stay close to the single-player data."
-  ]
+  "office": {
+   "fx": "slow",
+   "why": "Forms with two boxes and registers with the old name: every counter needs explaining."
+  },
+  "market": {
+   "fx": "slow",
+   "why": "Crowded places mean stares, whispers and a choice of two changing rooms, so Sam stays careful."
+  }
+ },
+ "advantage": {
+  "type": "lift",
+  "uses": 2,
+  "title": "Allies in the room",
+  "text": "Sam's friends and a supportive team make the difference when a form or a classroom only offers two boxes. After rolling, add 2 to your result."
+ },
+ "life": [
+  {
+   "k": "info",
+   "title": "Sam (fictional character)",
+   "text": "Sam is a fictional character. Sam was named Samuel at birth, and \"boy\" never quite fitted, nor did \"girl\". At 15 Sam has chosen the name Sam and the pronouns they/them, and has told a few close friends."
+  },
+  {
+   "k": "barrier",
+   "title": "Two boxes only",
+   "move": -1,
+   "text": "School forms say \"male\" or \"female\". Teams and changing rooms split in two. The class register still lists the old name, and substitute teachers read it out loud."
+  },
+  {
+   "k": "boost",
+   "title": "Mr Okafor and Noor",
+   "move": 1,
+   "text": "A teacher, Mr Okafor, asks Sam privately which name to use and then simply uses it. Sam's friend Noor says, \"I've got you\", and sits next to Sam at lunch."
+  },
+  {
+   "k": "barrier",
+   "title": "Jokes in the hallway",
+   "move": -1,
+   "text": "A few classmates whisper and make jokes. Sam skips PE and eats lunch in the library. It is not the identity that is hard, but the reactions of other people."
+  },
+  {
+   "k": "info",
+   "title": "A letter to the family",
+   "text": "Telling the family is Sam's own decision, and nobody should be forced to do it. Sam writes a letter for their parents. They are shocked at first, then start to ask questions and read."
+  },
+  {
+   "k": "quiz",
+   "title": "What helps young people",
+   "move": 2,
+   "text": "Sam looks up what researchers have found about LGBTQ+ young people and wellbeing, and finds that what family and friends do makes a big difference.",
+   "q": {
+    "q": "Which factor is among the strongest for the wellbeing of LGBTQ+ young people?",
+    "a": [
+     "Being accepted by family and friends",
+     "Keeping the identity secret",
+     "Avoiding school events"
+    ],
+    "x": "Studies such as those of the Trevor Project find that acceptance and support, using the right name and pronouns, are linked with better mental health."
+   }
+  },
+  {
+   "k": "barrier",
+   "title": "\"It's just a phase\"",
+   "move": -1,
+   "text": "Sam's grandfather says it is only a phase. That stings. Sam's mother calmly keeps using Sam's name in front of him, and does not let the subject drop."
+  },
+  {
+   "k": "boost",
+   "title": "A youth group",
+   "move": 1,
+   "text": "Sam finds a local youth group for queer young people. Nobody has to explain themselves there, and Sam laughs more than in months. Some members become close friends."
+  },
+  {
+   "k": "quiz",
+   "title": "A third entry in the law",
+   "move": 2,
+   "text": "Sam learns that Germany's Federal Constitutional Court ruled in 2017 that the civil register must allow more than \"male\" and \"female\". The law changed in 2018.",
+   "q": {
+    "q": "Which option did Germany add to civil records in 2018?",
+    "a": [
+     "A third entry, \"divers\"",
+     "A ban on gender entries",
+     "An entry for under-18s only"
+    ],
+    "x": "Since 2018 the German civil register allows \"divers\" as a third entry, after a ruling in 2017. Many forms and systems are still not updated."
+   }
+  },
+  {
+   "k": "barrier",
+   "title": "Forms and offices",
+   "move": -1,
+   "text": "At 18 Sam wants documents that match who they are. Many forms still have two options, and every office needs it explained again. Sam learns which rules apply and brings a friend to appointments."
+  },
+  {
+   "k": "boost",
+   "title": "An apprenticeship that listens",
+   "move": 2,
+   "text": "In a bike repair apprenticeship, the boss asks about pronouns, puts the right name on the staff list and trains the team. Sam says that it sounds small, but changed how every day feels."
+  },
+  {
+   "k": "info",
+   "title": "Just Sam",
+   "text": "Sam fixes bikes, bakes and plays music. Sam would like to be seen as a person with a name, not as a box. Sometimes Sam is asked to speak at schools, and most questions are \"How can I support my friend?\""
+  }
+ ],
+ "sources": [
+  "js/characters/group4.js tiles for Sam (fictional character, invented scenes)",
+  "Federal Constitutional Court of Germany, 2017 ruling on a third gender entry; 2018 introduction of \"divers\"",
+  "Trevor Project research on acceptance and wellbeing"
+ ],
+ "flags": [
+  "Fictional: station 1 says so. Please check whether the 2024 German Self-Determination Act (name and gender-entry changes by declaration) should be mentioned in station 10; it was left out to stay close to the single-player data."
+ ]
 }

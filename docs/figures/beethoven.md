@@ -18,9 +18,9 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Advantage: The inner ear
 
-Hint: remove one wrong answer before answering · 3 uses per game.
+Free pass: count one question or action as answered right · 3 uses per game.
 
-Beethoven wrote late works from his inner ear and planned long structures in his head. That close analysis lets you strike out one wrong answer.
+Beethoven composed late works from his inner ear and planned whole structures in his head. Once or twice, a question you know well counts as answered.
 
 ## Life stations (in the order of the road)
 
@@ -32,7 +32,7 @@ Every figure must stop at the 12 life stations on the way, one after the other. 
 Ludwig is baptised in Bonn on 17 December 1770 into a family of court musicians. His father Johann trains him hard on the keyboard, hoping to present him as a child prodigy.
 
 ### 2. A household to hold together  
-**Barrier (-1 fields)**
+**Barrier (-2 fields)**
 
 Johann drinks, and money is short. After Ludwig's mother dies in 1787 he plays and works as an organist, and he soon becomes the main provider for his younger brothers.
 
@@ -83,12 +83,12 @@ By about 1818 he can hardly hear speech at all.
 *Explanation:* Friends wrote their half of the conversation in notebooks; he answered aloud. Many of these books survive and show his daily life, and he also tried ear trumpets.
 
 ### 9. Walls, courts and debt  
-**Barrier (-2 fields)**
+**Barrier (-3 fields)**
 
 Concert halls and salons were designed only for listening. Beethoven also fights for custody of his nephew Karl through the courts from 1815 to 1820, with strained money and health. Few friends can talk with him easily.
 
 ### 10. The Ninth, 1824  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 The Ninth Symphony, with its choral Ode to Joy, premieres in Vienna on 7 May 1824. At the end a singer turns Beethoven around so he can see the audience cheering and waving, since he cannot hear the applause.
 

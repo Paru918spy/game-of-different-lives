@@ -17,7 +17,7 @@
   const ICON = { who: "?", fact: "i", tf: "✓✗", words: "Aa", task: "★", story: "♥", fwd: "»", back: "«", again: "↻", gate: "!", life: "★" };
   const ZN = () => MP.Board.ZONES, PR = () => MP.Profiles;
   const prof = p => p && p.char && PR()[p.char];
-  const ADVICON = { hint: "💡", shield: "🛡", bestof2: "🎲" };
+  const ADVICON = { hint: "💡", shield: "🛡", bestof2: "🎲", lift: "🚀", skip: "🎟" };
   const shortName = c => c.name.replace(/ Jr\.$/, "").split(" ").pop();
   const clone = o => JSON.parse(JSON.stringify(o));
 
@@ -121,7 +121,7 @@
       else if (e.e === "wheelTurn") { scene.setActive(e.p); renderPlayers(); }
       else if (e.e === "fx") { SND[e.kind === "back" ? "wrong" : "bridge"](); banner(`${e.kind === "fwd" ? "» " + esc(e.text) + ` Move ${e.n} more!` : e.kind === "back" ? "« " + esc(e.text) + ` Back ${e.n}.` : "↻ " + esc(e.text)}`, 1700); await sleep(1000); }
       else if (e.e === "life") { if (e.move) { e.move > 0 ? SND.bridge() : SND.wrong(); banner(e.move > 0 ? `★ Boost! ${e.move} more field${e.move > 1 ? "s" : ""}` : `🚧 Barrier! Back ${-e.move} field${e.move < -1 ? "s" : ""}`, 1500); await sleep(800); } }
-      else if (e.e === "adv") { SND.right(); banner(e.type === "hint" ? "💡 Hint: one wrong answer is gone" : "🛡 Shield: you stay!", 1300); renderPlayers(); }
+      else if (e.e === "adv") { SND.right(); banner(e.type === "hint" ? "💡 Hint: one wrong answer is gone" : e.type === "skip" ? "🎟 Free pass: counted as right!" : "🛡 Shield: you stay!", 1300); renderPlayers(); }
       else if (e.e === "gateFail") { SND.wrong(); banner("⛔ The checkpoint stays closed. The rest of your roll is lost.", 1700); await sleep(700); }
       else if (e.e === "double") { SND.bridge(); banner(`⚡ DOUBLE! Move ${e.n} more field${e.n > 1 ? "s" : ""}`, 1500); await sleep(900); }
       else if (e.e === "turn") { scene.setActive(e.p); SND.turn(); renderPlayers(); banner(turnText(V.players[e.p]), 1500); await sleep(650); }
@@ -183,11 +183,12 @@
       const who = c.all ? "👥 Everyone joins in" : "🙋 " + esc(p.name) + " does it";
       body = `<div class="mp-task"><div class="tic">${c.icon}</div><h2>${esc(c.q)}</h2><span class="mp-who">${who}</span><p>${esc(c.d)}</p>${c.sec && !fb ? `<button class="mp-timer" id="mpTimer" data-s="${c.sec}">⏱ Start ${c.sec}s timer</button>` : ""}</div>` + (fb
         ? `<div class="mp-result ${res.ok ? "ok" : "no"}">${res.ok ? "Great, you did it!" : "No problem. Maybe next time."}${res.ok && c.r ? `<span>💭 Talk about it: ${esc(c.r)}</span>` : ""}</div>${res.ok && c.p ? portrait(c.p) : ""}${primary("mpNext", nextLabel(c, res))}`
-        : (my ? `<p class="mp-small">Do it for real. The others decide if it counts. A good try is enough!</p><div class="mp-btns"><button class="big mp-primary" id="mpDone">We did it ✔</button><button class="mp-skip" id="mpSkip">Skip (go back)</button></div>` : waitNote(p)));
+        : (my ? `<p class="mp-small">Do it for real. The others decide if it counts. A good try is enough!</p><div class="mp-btns"><button class="big mp-primary" id="mpDone">We did it ✔</button><button class="mp-skip" id="mpSkip">Skip (go back)</button></div>${pf && pf.advantage.type === "skip" && p.left > 0 ? `<button class="mp-adv" id="mpSkipQ">🎟 ${esc(pf.advantage.title)} (${p.left} left): count this as done</button>` : ""}` : waitNote(p)));
     } else {
       const opts = c.opts.map((o, i) => { let cls = "mp-opt"; if (o.gone) cls += " gone"; else if (fb) { if (o.ok) cls += " right"; else if (res.i === i) cls += " wrong"; else cls += " dim"; }
         return `<button class="${cls}" data-i="${i}" ${fb || !my || o.gone ? "disabled" : ""}><span class="k">${i + 1}</span>${esc(o.text)}</button>`; }).join("");
       body = (c.gate ? `<div class="mp-note bar"><b>⛔ Checkpoint</b><p>Answer right to pass. Wrong: you stay here and the rest of your roll is lost.</p></div>` : "") + (c.kind === "who" ? `<p class="mp-clue">“${esc(c.clue)}”</p><p class="mp-q">Who am I?</p>` : `<p class="mp-q">${esc(c.q)}</p>`) + `<div class="mp-opts ${c.kind === "tf" ? "two" : ""}">${opts}</div>`;
+      if (!fb && my && pf && pf.advantage.type === "skip" && p.left > 0 && !c.gate_) body += `<button class="mp-adv" id="mpSkipQ">🎟 ${esc(pf.advantage.title)} (${p.left} left): count this as answered right</button>`;
       if (!fb && my && pf && pf.advantage.type === "hint" && p.left > 0 && c.opts.length === 3 && !c.hinted) body += `<button class="mp-adv" id="mpHint">💡 Use my hint (${p.left} left): remove one wrong answer</button>`;
       if (!fb && !my) body += waitNote(p);
       if (fb) {
@@ -204,6 +205,7 @@
     w.hidden = false; const cb = card.querySelector(".mp-cbody"); if (cb) cb.scrollTop = 0; scene.setShift(window.innerWidth >= 1000 ? window.innerWidth * .2 : 0);
     card.querySelectorAll(".mp-opt").forEach(b => b.onclick = () => submit({ t: "answer", i: +b.dataset.i }));
     const n = $("mpNext"); if (n) n.onclick = () => submit({ t: "next" });
+    const sk = $("mpSkipQ"); if (sk) sk.onclick = () => submit({ t: "skipq" });
     const hb = $("mpHint"); if (hb) hb.onclick = () => submit({ t: "hint" });
     const sb = $("mpShield"); if (sb) sb.onclick = () => submit({ t: "next", shield: true });
     clearInterval(timerId); const tm = $("mpTimer");
@@ -221,15 +223,15 @@
   function renderRoll() {
     const p = V.players[V.turn], d = $("mpDock"), my = mine();
     const pf = prof(p), two = my && pf && pf.advantage.type === "bestof2" && p.left > 0;
-    d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">${my ? "Roll the die and move!" : "is about to roll…"}</span></div>${dieHTML(6)}${my ? `<button class="big gold mp-primary" id="mpRoll">Roll 🎲</button>` : ""}${two ? `<button class="mp-adv" id="mpRoll2">🎲🎲 ${esc(pf.advantage.title)}: roll two, keep the higher (${p.left} left)</button>` : ""}`;
-    d.hidden = false; const r = $("mpRoll"); if (r) r.onclick = () => submit({ t: "roll" }); const r2 = $("mpRoll2"); if (r2) r2.onclick = () => submit({ t: "roll", best: true });
+    d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">${my ? "Roll the die and move!" : "is about to roll…"}</span></div>${dieHTML(6)}${my ? `<button class="big gold mp-primary" id="mpRoll">Roll 🎲</button>` : ""}${my && pf && pf.advantage.type === "lift" && p.left > 0 ? `<button class="mp-adv" id="mpRoll2">🚀 ${esc(pf.advantage.title)}: roll and add 2 (${p.left} left)</button>` : ""}${two ? `<button class="mp-adv" id="mpRoll2">🎲🎲 ${esc(pf.advantage.title)}: roll two, keep the higher (${p.left} left)</button>` : ""}`;
+    d.hidden = false; const r = $("mpRoll"); if (r) r.onclick = () => submit({ t: "roll" }); const r2 = $("mpRoll2"); if (r2) r2.onclick = () => submit({ t: "roll", best: two, lift: !two });
   }
   async function showRoll(e) {
     const p = V.players[e.p], d = $("mpDock");
     d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">rolls…</span></div>${dieHTML(6)}`; d.hidden = false;
     const die = $("mpDie"); die.classList.add("tumble");
     for (let i = 0; i < 9; i++) { die.innerHTML = pips(1 + Math.floor(Math.random() * 6)); SND.roll(); await sleep(85 + i * 12); }
-    die.classList.remove("tumble"); die.innerHTML = pips(e.v); die.classList.add("land"); SND.right(); d.querySelector(".dk-m").textContent = e.d2 ? `${e.d1} and ${e.d2}: you keep ${e.v}!` : `${e.v} step${e.v > 1 ? "s" : ""}!`;
+    die.classList.remove("tumble"); die.innerHTML = pips(e.v); die.classList.add("land"); SND.right(); d.querySelector(".dk-m").textContent = e.lift ? `${e.d1} + 2 = ${e.v}!` : e.d2 ? `${e.d1} and ${e.d2}: you keep ${e.v}!` : `${e.v} step${e.v > 1 ? "s" : ""}!`;
     await sleep(450);
   }
 
@@ -344,7 +346,7 @@
           showHostLobby(); sendLobby();
         } else if (m.t === "act" && G && G.phase !== "over") {
           const pid = lobby.findIndex(p => p.peer === peer);
-          if (pid >= 0 && pid === G.turn && m.a && ["answer", "task", "next", "roll", "choose", "spin", "hint"].includes(m.a.t)) commit(m.a);
+          if (pid >= 0 && pid === G.turn && m.a && ["answer", "task", "next", "roll", "choose", "spin", "hint", "skipq"].includes(m.a.t)) commit(m.a);
         }
       },
       onLeave: peer => {

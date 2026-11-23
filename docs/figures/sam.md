@@ -16,11 +16,11 @@ The shared board has ten kinds of routes. For Sam, these differ from the normal 
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
-## Advantage: Not just two options
+## Advantage: Allies in the room
 
-Second chance: roll two dice, take the higher · 2 uses per game.
+Lift: add 2 to your roll after rolling · 2 uses per game.
 
-Sam lives with a world that offers two boxes, and finds there are more choices. Twice, roll two dice and take the higher one.
+Sam's friends and a supportive team make the difference when a form or a classroom only offers two boxes. After rolling, add 2 to your result.
 
 ## Life stations (in the order of the road)
 
@@ -37,12 +37,12 @@ Sam is a fictional character. Sam was named Samuel at birth, and "boy" never qui
 School forms say "male" or "female". Teams and changing rooms split in two. The class register still lists the old name, and substitute teachers read it out loud.
 
 ### 3. Mr Okafor and Noor  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 A teacher, Mr Okafor, asks Sam privately which name to use and then simply uses it. Sam's friend Noor says, "I've got you", and sits next to Sam at lunch.
 
 ### 4. Jokes in the hallway  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 A few classmates whisper and make jokes. Sam skips PE and eats lunch in the library. It is not the identity that is hard, but the reactions of other people.
 
@@ -70,7 +70,7 @@ Sam looks up what researchers have found about LGBTQ+ young people and wellbeing
 Sam's grandfather says it is only a phase. That stings. Sam's mother calmly keeps using Sam's name in front of him, and does not let the subject drop.
 
 ### 8. A youth group  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 Sam finds a local youth group for queer young people. Nobody has to explain themselves there, and Sam laughs more than in months. Some members become close friends.
 

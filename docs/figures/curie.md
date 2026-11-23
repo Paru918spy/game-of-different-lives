@@ -43,7 +43,7 @@ Her sister Zofia dies of typhus in 1876 and her mother of tuberculosis in 1878. 
 Maria finishes school as the best in her class and receives a gold medal. Her parents, both teachers, had made learning the centre of the home.
 
 ### 4. A university that says no  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 The University of Warsaw does not accept women. Maria and her sister Bronisława study at the secret "Flying University" and agree to take turns: Maria works first so Bronisława can study medicine in Paris.
 
@@ -61,7 +61,7 @@ Teachers moved from flat to flat so that women could be taught without police no
 *Explanation:* It was an underground school for Polish women, held in private flats and moved often because Russian authorities did not allow it.
 
 ### 6. Paris, 1891  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 At 24 Maria enrols at the Sorbonne as "Marie". She lives in a cold attic and sometimes forgets to eat, but passes physics in 1893 and mathematics in 1894.
 
@@ -89,7 +89,7 @@ In 1898 Marie and Pierre announce two new elements. She coins the word "radioact
 Marie and Pierre share the Nobel Prize in Physics with Henri Becquerel. She is the first woman to win a Nobel Prize. They choose not to patent their method so that other scientists can use it.
 
 ### 10. Alone, then in the headlines  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 Pierre is killed in a street accident in 1906, and Marie takes over his chair as the first woman professor at the Sorbonne. In 1911 the French Academy rejects her narrowly and the press attacks her as a foreigner.
 

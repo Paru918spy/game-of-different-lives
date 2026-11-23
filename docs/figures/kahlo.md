@@ -37,17 +37,17 @@ Frida is born on 6 July 1907 in Coyoacán, near Mexico City, to a German-born ph
 Frida gets polio at six. After months in bed her right leg stays thinner. Children call her "peg-leg Frida". Her father pushes her to swim and box, which builds the strength others said she would not have.
 
 ### 3. A girl among boys at the Prep School  
-**Boost (+1 fields)**
+**Boost (+3 fields)**
 
 Frida is one of very few girls at the National Preparatory School, where she studies hoping to become a doctor. She joins a clever, rebellious group of friends and learns to argue and laugh loudly.
 
 ### 4. 17 September 1925  
-**Barrier (-3 fields)**
+**Barrier (-1 fields)**
 
 Aged 18, Frida's bus collides with a streetcar. A metal rail injures her badly: spine, pelvis, leg and more. Medicine in 1925 offers long bed rest and corsets. The plan to become a doctor ends. Over her life she has over thirty operations.
 
 ### 5. An easel above the bed  
-**Boost (+2 fields)**
+**Boost (+3 fields)**
 
 Her mother has an easel made that can be used lying down, and a mirror fixed above the bed. Frida paints her first self-portraits there. She says she paints herself because she is the subject she knows best.
 
@@ -70,7 +70,7 @@ In bed, with a mirror above her, Frida had to choose what to paint. Many of her 
 Frida shows her paintings to the muralist Diego Rivera and marries him in 1929. She wears Tehuana dresses and fills her art with Mexican folk art and plants. Her style is her own, not a European copy or what a "woman painter" should do.
 
 ### 8. Henry Ford Hospital, 1932  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 In Detroit Frida loses a pregnancy in a hospital that offers little comfort. She paints it, honestly and without decoration. Women's bodies and grief were rarely shown in art then, and critics found it shocking.
 
@@ -88,7 +88,7 @@ In 1938 Frida has her first solo show in New York. The following year, in Paris,
 *Explanation:* The Louvre bought her self-portrait "The Frame" in 1939. It was a milestone for Mexican art.
 
 ### 10. Los Fridos  
-**Boost (+2 fields)**
+**Boost (+3 fields)**
 
 In the 1940s Frida teaches at an art school in Mexico City. When her health makes the trip hard, she teaches in her own garden. Her students, known as "Los Fridos", paint with her and share her view of art.
 

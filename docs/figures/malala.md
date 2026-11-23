@@ -38,7 +38,7 @@ Malala is born on 12 July 1997 in Mingora, in the Swat Valley, Pakistan. Her fat
 In many families in the region girls are expected to leave school early. Malala's parents insist she and her brothers study the same. Debating and public speaking in her father's school give her confidence.
 
 ### 3. Girls banned from school  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 From 2007 the Pakistani Taliban take control in parts of Swat. They ban music and television and destroy schools. In January 2009 they announce that girls may no longer attend school. Malala is eleven.
 
@@ -66,7 +66,7 @@ Malala's blog for BBC Urdu was published under a name to keep her safe.
 After the army pushes the Taliban back, Malala keeps campaigning. In 2011 she receives Pakistan's first National Youth Peace Prize, and she and her father speak up for schools that were destroyed.
 
 ### 7. 9 October 2012  
-**Barrier (-3 fields)**
+**Barrier (-1 fields)**
 
 A gunman boards Malala's school bus and shoots her because she speaks for girls' education. She is 15. She is flown to Birmingham, UK, for surgery and long recovery. Her friends on the bus are also hurt. Content note: violence.
 

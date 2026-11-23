@@ -33,7 +33,7 @@ Every figure must stop at the 12 life stations on the way, one after the other. 
 Judy is born on 18 December 1947 to German-Jewish parents who had escaped the Nazis. At 18 months she gets polio and begins to use a wheelchair. She grows up in Brooklyn, New York.
 
 ### 2. "A fire hazard"  
-**Barrier (-2 fields)**
+**Barrier (-3 fields)**
 
 In 1953 her local school refuses to let her attend kindergarten: a wheelchair, it says, is a fire hazard. Her mother Ilse fights the decision, but for years Judy only gets a few hours of home teaching.
 
@@ -61,7 +61,7 @@ In 1970 New York City refuses Judy a teaching licence because she cannot walk. S
 In 1970 Judy helps found Disabled in Action, a group led by disabled people. Later she moves to Berkeley, California, a centre of the independent living movement, where disabled people run their own services.
 
 ### 6. A law on paper only  
-**Barrier (-1 fields)**
+**Barrier (-3 fields)**
 
 Section 504 of the Rehabilitation Act (1973) bans discrimination by programmes that get government money. But the government keeps delaying the rules that would make it real, and nothing changes in schools or buildings.
 
@@ -79,7 +79,7 @@ Activists across the US demand that the 504 rules be signed. In San Francisco ab
 *Explanation:* The sit-in lasted 26 days, the longest occupation of a US federal building at the time. Food came from groups such as the Black Panthers, and a delegation went to Washington.
 
 ### 8. Section 504 is signed  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 The 504 regulations are signed. They become the first national civil rights protection for disabled people in the US and the base for the Americans with Disabilities Act of 1990.
 
@@ -89,7 +89,7 @@ The 504 regulations are signed. They become the first national civil rights prot
 In 1993 Judy becomes Assistant Secretary in the US Department of Education, responsible for special education and rehabilitation. Later she advises the World Bank and the State Department on disability rights worldwide.
 
 ### 10. Still not accessible  
-**Barrier (-1 fields)**
+**Barrier (-2 fields)**
 
 Even as a senior official Judy meets inaccessible planes, buildings and meeting rooms. She keeps saying that barriers come from choices society makes, not from a person's body.
 

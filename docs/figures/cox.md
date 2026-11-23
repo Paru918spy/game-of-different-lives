@@ -19,9 +19,9 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Advantage: Chosen family
 
-Shield: a wrong answer does not send you back · 2 uses per game.
+Lift: add 2 to your roll after rolling · 2 uses per game.
 
-Laverne has described how her mother, friends and community held her up after rejection and insults. Three times, a wrong answer does not push you back.
+Laverne has described how her mother, friends and community lifted her after rejection and insults. After rolling, add 2 to your result.
 
 ## Life stations (in the order of the road)
 
@@ -33,12 +33,12 @@ Every figure must stop at the 12 life stations on the way, one after the other. 
 Laverne is born on 29 May 1972 and raised by her mother, Gloria, together with her twin brother. She loves to dance and perform, and knows from early on that she is a girl.
 
 ### 2. Told to fit a role  
-**Barrier (-2 fields)**
+**Barrier (-3 fields)**
 
 Classmates and some adults bully Laverne for not acting the way they expect a boy to act. She learns to hide, and has spoken openly about how hard this was for her mental health.
 
 ### 3. Dance and a home in the arts  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 Her mother backs her. Laverne attends the Alabama School of Fine Arts, where she studies dance and finds a place where creative kids are taken seriously.
 
@@ -56,7 +56,7 @@ Laverne studies at Indiana University and then graduates from Marymount Manhatta
 *Explanation:* Laverne trained as a dancer at the Alabama School of Fine Arts and graduated in dance from Marymount Manhattan College.
 
 ### 5. No roles, many closed doors  
-**Barrier (-2 fields)**
+**Barrier (-3 fields)**
 
 In the 1990s and 2000s there are almost no parts for openly trans actors. Casting people reject her, money is tight, and some employers treat her as a risk or a joke.
 
@@ -66,7 +66,7 @@ In the 1990s and 2000s there are almost no parts for openly trans actors. Castin
 In 2008 she appears on the reality show I Want to Work for Diddy and then produces and hosts TransAmerican Love Story. She starts using television to explain trans lives to people who have never met a trans person.
 
 ### 7. Sophia Burset  
-**Boost (+3 fields)**
+**Boost (+1 fields)**
 
 In 2013 she plays Sophia Burset in Orange Is the New Black, a trans woman played by a trans actress. The Netflix series is a worldwide success and brings many more people to her work.
 
@@ -89,7 +89,7 @@ In 2014 Time puts Laverne on its cover for the story "The Transgender Tipping Po
 Even as a star, Laverne is misgendered, threatened online and drawn into public debates about her identity. She points out that many trans women, especially Black trans women, face this with no platform and no protection.
 
 ### 10. Disclosure  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 She uses her platform on purpose. In 2020 she is an executive producer of the documentary Disclosure, in which trans people look at how film and television have portrayed them for a century.
 

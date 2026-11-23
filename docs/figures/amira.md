@@ -16,11 +16,11 @@ The shared board has ten kinds of routes. For Amira, these differ from the norma
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
-## Advantage: Two tries
+## Advantage: A helping hand
 
-Second chance: roll two dice, take the higher · 3 uses per game.
+Lift: add 2 to your roll after rolling · 2 uses per game.
 
-Amira learned to look for a second route when the first one closed: new school, new language, new rules. Roll two dice and take the higher one.
+Neighbours, a teacher and a language buddy opened doors for Amira in a new country. After rolling, add 2 to your result.
 
 ## Life stations (in the order of the road)
 
@@ -32,7 +32,7 @@ Every figure must stop at the 12 life stations on the way, one after the other. 
 Amira is an invented character, based on what many refugees report. She is 16, loves maths and football. Her father teaches, her mother is a nurse. Then war reaches her city and damages the school and the hospital.
 
 ### 2. Leaving everything  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 Her family decides to leave. They can only take what they can carry. Amira says goodbye to friends, her grandmother and her school books.
 
@@ -70,7 +70,7 @@ In Germany her father drives a delivery van. Her mother cannot work as a nurse. 
 In class Amira understands little. She is quick at home, but here some classmates see only a girl who cannot speak. A few tease her scarf.
 
 ### 8. A teacher and Jana  
-**Boost (+2 fields)**
+**Boost (+3 fields)**
 
 A teacher stays after class to practise German with her. A classmate, Jana, invites her to football. Amira starts to feel she belongs somewhere.
 
@@ -98,7 +98,7 @@ A counsellor suggests a shorter, practical path. Amira wants to study medicine. 
 With extra tutoring and a mentor, Amira insists on the Abitur and passes it. Her parents are proud, and she is accepted to study medicine.
 
 ### 12. Interpreting at the clinic  
-**Boost (+1 fields)**
+**Boost (+2 fields)**
 
 Amira volunteers as an interpreter for new arrivals. She knows how it feels to have nobody who understands you. She now feels at home in two places.
 

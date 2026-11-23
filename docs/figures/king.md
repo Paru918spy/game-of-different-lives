@@ -37,12 +37,12 @@ Born on 15 January 1929 as Michael King Jr. into a family of pastors; his father
 As a small child, Martin is told his white friend can no longer play with him. His parents explain that racism exists, and that he must never think he is “less”.
 
 ### 3. The bus ride home  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 At 14, after winning a speech contest, Martin rides home by bus. The driver orders him and his teacher to give up their seats to white passengers, and they stand for about 90 miles. He later calls it the angriest night of his life.
 
 ### 4. College at 15  
-**Boost (+1 fields)**
+**Boost (+2 fields)**
 
 Martin enters Morehouse College at 15. His teachers show him that faith and the fight for justice belong together.
 
@@ -65,7 +65,7 @@ In seminary and graduate school, Martin studies how others have resisted injusti
 In December 1955 the 26-year-old pastor is chosen to lead the Montgomery Improvement Association. For 381 days thousands of people refuse the buses, and the segregation law falls.
 
 ### 7. Bomb at the front door  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 On 30 January 1956 a bomb explodes at the King home while Coretta and their baby are inside. No one is hurt. Martin asks the angry crowd outside not to answer violence with violence.
 

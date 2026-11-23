@@ -18,9 +18,9 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Advantage: Fingers on the page
 
-Hint: remove one wrong answer before answering · 3 uses per game.
+Free pass: count one question or action as answered right · 3 uses per game.
 
-Helen read braille, studied several languages and read widely all her life. Careful reading lets her rule out one wrong answer.
+Helen read braille, studied several languages and read widely all her life. On a question you know, count it as answered right.
 
 ## Life stations (in the order of the road)
 
@@ -32,12 +32,12 @@ Every figure must stop at the 12 life stations on the way, one after the other. 
 Helen Keller is born on 27 June 1880. At 19 months an illness leaves her deaf and blind. Her family has no way to share language with a toddler who senses everything through touch and smell.
 
 ### 2. A home without a shared language  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 Helen makes up around sixty home signs, but nobody can teach her more. Frustration grows, and some relatives suggest an institution. In the 1880s the South has almost no education for deaf-blind children.
 
 ### 3. The water pump, 1887  
-**Boost (+2 fields)**
+**Boost (+3 fields)**
 
 Anne Sullivan, a teacher from the Perkins School who is partly blind herself, arrives in March 1887. On 5 April, with water running over one hand and a word spelled into the other, Helen grasps that things have names.
 
@@ -98,7 +98,7 @@ With Anne and later Polly Thomson, Helen lectures in more than 30 countries. She
 After almost 50 years together, Anne Sullivan dies. Helen loses her teacher, interpreter and closest friend in a world with very few trained deaf-blind interpreters. Polly Thomson and others carry on the daily work.
 
 ### 12. 1968 and what lasts  
-**Boost (+1 fields)**
+**Boost (+2 fields)**
 
 President Johnson gives Helen the Presidential Medal of Freedom in 1964. She dies on 1 June 1968, aged 87. The full record shows a campaigner as well as a famous student, and the organisations she backed still run.
 

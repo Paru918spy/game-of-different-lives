@@ -6,7 +6,7 @@ Single Player (the original game) walks through **one life in depth**. Multiplay
 
 - 2 to 6 players sit around a table in the colour of their pawn. At the start **everybody spins the wheel of lives** and becomes one of the 21 figures (nobody gets the same one).
 - The board has **101 fields**: a main road with **12 life stations** and **6 forks**. Each fork offers three routes of different kinds: stairs, tree ladders, rope bridge, stone bridge, long ramp, busy market, dark tunnel, town hall, race track, quiet lane. Short cuts are shorter but have more checkpoints and setbacks.
-- **Figures differ.** Every figure has a few routes that are *slow* (a field costs 2 steps), *fast* (a field costs half a step) or *closed*, and one **strength card** with 2 or 3 uses: 💡 *hint* (remove a wrong answer), 🛡 *shield* (a wrong answer does not send you back), 🎲 *second chance* (roll two dice, keep the higher). Everything is in `docs/figures/<id>.md`.
+- **Figures differ.** Every figure has a few routes that are *slow* (a field costs 2 steps), *fast* (a field costs half a step) or *closed*, and one **strength card** with 2 or 3 uses: 💡 *hint* (remove a wrong answer), 🛡 *shield* (a wrong answer does not send you back), 🎲 *second chance* (roll two dice, keep the higher), 🚀 *lift* (add 2 to your roll), 🎟 *free pass* (count a question as right). Everything is in `docs/figures/<id>.md`.
 - **Fields** (colour of the tile):
 
 | Field | What happens |
@@ -22,6 +22,7 @@ Single Player (the original game) walks through **one life in depth**. Multiplay
 
 - **Your turn:** roll, walk, choose a route at forks (routes closed for your figure are greyed out and explain why), then the card of the field you landed on.
 - About one question card in five is a random **⚡ DOUBLE** card: right answer = walk the same number again.
+- **Balance:** `node tools/balance.js` lets bots play thousands of games. In groups of 4 every figure wins between 21 % and 29 % (fair is 25 %); alone every figure needs 13.4 to 13.7 rounds. `--tune` adjusts the strength of life-station barriers and boosts and the number of strength uses (never the story texts).
 - First pawn on the finish wins. A game with 2 players takes about 12 to 15 rounds.
 
 ## Files

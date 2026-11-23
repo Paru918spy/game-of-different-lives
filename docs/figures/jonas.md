@@ -18,9 +18,9 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Advantage: Seen it before
 
-Hint: remove one wrong answer before answering · 3 uses per game.
+Free pass: count one question or action as answered right · 3 uses per game.
 
-After decades in logistics Jonas has seen many problems before and can rule out unlikely answers. Remove one wrong answer before you answer.
+After decades in logistics Jonas has met most problems before. Once or twice, a question counts as answered right because he has simply done it.
 
 ## Life stations (in the order of the road)
 
@@ -65,7 +65,7 @@ What Jonas meets has a name, which the WHO uses in its global report.
 Long web forms and tests are new to Jonas. Without help he feels lost, and there is no box where 28 years of experience can show.
 
 ### 7. A tip from Mira  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 A former colleague, Mira, hears of an opening in a smaller firm and passes it on. Personal networks often count more than the formal process.
 

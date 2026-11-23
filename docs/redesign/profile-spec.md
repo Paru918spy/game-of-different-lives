@@ -47,8 +47,8 @@ Check your file with `node tools/profiles-check.js <id>`. Game text is **English
 * `why` is at most 150 characters, concrete, and says what happens ("Steep steps, no lift: the long way round costs time").
 
 ### advantage
-* `type` is one of: `hint` (before answering, remove one wrong answer), `shield` (a wrong answer does not send you back, you stay), `bestof2` (roll two dice and take the higher one).
-* `uses` is 2 or 3. Pick the type that fits the life best (e.g. a figure known for research: `hint`; for resilience/community: `shield`; for training/stamina: `bestof2`). Not everyone should get the same type: across the 21 figures the three types must each appear at least 5 times.
+* `type` is one of: `hint` (before answering, remove one wrong answer), `shield` (a wrong answer does not send you back, you stay), `bestof2` (roll two dice and take the higher one), `lift` (add 2 to your roll after rolling), `skip` (count one question or action as answered right).
+* `uses` is 2 or 3. Pick the type that fits the life best (e.g. a figure known for research: `hint`; for resilience/community: `shield`; for training/stamina: `bestof2`). Across the 21 figures every type appears at least 3 times. `uses` and the life-station `move` values are tuned by `node tools/balance.js --tune` so that all figures have a similar chance to win; do not change them by hand without re-running it.
 
 ### life (exactly 12 stations, in the order of the life: childhood first, legacy last)
 Each station: `k`, `title` (max 40 chars), `text` (max 300 chars), optional `move`, and for quizzes `q`.
@@ -56,7 +56,7 @@ Each station: `k`, `title` (max 40 chars), `text` (max 300 chars), optional `mov
 * `boost`: help, a win, a tool, a community. `move` is +1, +2 or +3 (pawn walks that many extra fields).
 * `info`: part of the story without a game effect. No `move`.
 * `quiz`: a question the player can answer from the story so far or general knowledge. `q` = `{ "q": "...", "a": ["RIGHT answer", "wrong 1", "wrong 2"], "x": "1-2 sentence explanation" }`. `move` is +1..+3 and is only given for a right answer.
-* Required mix: at least 3 `barrier`, at least 3 `boost`, 2 or 3 `quiz`, the rest `info`. The sum of all `move` values must be between -3 and +3 (fair luck). Station 12 should be about legacy or what changed and must not be a barrier.
+* Required mix: at least 3 `barrier`, at least 3 `boost`, 2 or 3 `quiz`, the rest `info`. The sum of all `move` values must be between -5 and +5 (set by the balance tool). Station 12 should be about legacy or what changed and must not be a barrier.
 * The 12 stations should show the real, specific story (names, years, places where well documented). Barriers must be *external* (laws, attitudes, missing access, discrimination), not "the person's body is the problem". Wins must be earned or supported by real context, not "inspiration porn".
 
 ## Writing rules

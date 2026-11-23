@@ -19,9 +19,9 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Advantage: Plan B ready
 
-Second chance: roll two dice, take the higher · 3 uses per game.
+Lift: add 2 to your roll after rolling · 2 uses per game.
 
-Lena always has a second route in mind, from an alternative entrance to a different site visit. Roll two dice and take the higher one.
+Lena's team and her habit of planning an alternative entrance move her forward. After rolling, add 2 to your result.
 
 ## Life stations (in the order of the road)
 
@@ -33,7 +33,7 @@ Every figure must stop at the 12 life stations on the way, one after the other. 
 Lena is an invented character. She is 12, uses a wheelchair after a spinal injury as a child, and loves drawing houses and bridges. The old market square is cobbled, and many shops have steps.
 
 ### 2. Which school?  
-**Barrier (-2 fields)**
+**Barrier (-3 fields)**
 
 The nearest school has no lift. The special school is an hour away by bus. Her parents fight for months to get a place at the local school with a ramp and support.
 
@@ -61,7 +61,7 @@ Lena notices that step-free access helps more people than just wheelchair users.
 *Explanation:* Step-free design helps parents, older people, cyclists and delivery staff. Many accessible features are useful for everyone.
 
 ### 6. Forms for university  
-**Barrier (-1 fields)**
+**Barrier (-3 fields)**
 
 Lena applies to study architecture. Some lecture halls and studios are not accessible. Support and technical aids mean many forms and months of waiting.
 
@@ -84,7 +84,7 @@ A professor asks whether she can do site visits. She answers with a plan: site p
 *Explanation:* The barrier is the missing access, not the person. Flexible solutions and adapted workplaces help everyone.
 
 ### 9. Her degree  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 Lena graduates with a design for an accessible community centre. Her professor calls it the best of the year.
 
@@ -94,7 +94,7 @@ Lena graduates with a design for an accessible community centre. Her professor c
 At job interviews Lena is asked about her "limitations" and the cost of adapting the office. Several offices have no step-free entrance.
 
 ### 11. An inclusive firm  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 A mid-sized firm hires Lena and adapts her workspace within two weeks. Wider doors and lower lift buttons help the whole team.
 

@@ -17,11 +17,11 @@ The shared board has ten kinds of routes. For Stevie, these differ from the norm
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
-## Advantage: Two takes
+## Advantage: Perfect pitch for facts
 
-Second chance: roll two dice, take the higher · 3 uses per game.
+Free pass: count one question or action as answered right · 3 uses per game.
 
-In the studio Stevie records another take and keeps the better one. Roll two dice and use the higher result, up to three times.
+Stevie learned songs and arrangements by ear and remembers them. A question about something you know by heart counts as answered right.
 
 ## Life stations (in the order of the road)
 
@@ -71,7 +71,7 @@ In 1971, at 21, Stevie refuses to sign the same kind of contract again. He negot
 *Explanation:* He gained artistic control: he chose the songs, played most instruments himself and explored synthesizers.
 
 ### 8. The classic albums  
-**Boost (+2 fields)**
+**Boost (+1 fields)**
 
 With control he makes Music of My Mind, Talking Book and Innervisions, playing most instruments himself and exploring synthesizers. His songs speak about racism and poverty.
 

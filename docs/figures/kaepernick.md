@@ -42,7 +42,7 @@ As a teen with braids, Colin is pushed by adults to change his hair so he looks 
 Colin shines at baseball and as a quarterback, but gets few scholarship offers to play quarterback. Only the University of Nevada offers him that place.
 
 ### 4. To the NFL  
-**Boost (+2 fields)**
+**Boost (+3 fields)**
 
 At Nevada he breaks records, and in 2011 the San Francisco 49ers draft him in the second round. In February 2013 he leads the team to Super Bowl XLVII.
 
@@ -65,17 +65,17 @@ Colin first sits during the anthem in an August 2016 preseason game. After talki
 *Explanation:* Boyer, a former Green Beret, suggested kneeling as a respectful gesture. The protest spread to other players and divided the country.
 
 ### 7. Backlash  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 Colin is booed, receives death threats and is called unpatriotic by many. Others, including many players and veterans, support him. He leaves the 49ers after 2016.
 
 ### 8. No team calls  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 In 2017 Colin is a free agent, but no NFL team signs him, and he has not played in the league since. He files a grievance accusing the league of collusion, which is settled in 2019.
 
 ### 9. Know Your Rights Camp  
-**Boost (+2 fields)**
+**Boost (+3 fields)**
 
 Colin donates large sums and founds a camp for young people that teaches their legal rights, financial literacy and how to handle police encounters.
 
@@ -93,7 +93,7 @@ The camp is built around practical knowledge, not slogans. Young people leave kn
 *Explanation:* The camp teaches legal rights, financial literacy and how to act in encounters with police.
 
 ### 11. “Believe in something”  
-**Boost (+1 fields)**
+**Boost (+2 fields)**
 
 In 2018 Nike makes Colin the face of a campaign: “Believe in something. Even if it means sacrificing everything.” In 2021 the series Colin in Black & White, co-created with Ava DuVernay, tells his teenage years.
 

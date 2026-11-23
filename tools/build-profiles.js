@@ -4,7 +4,7 @@ const root = path.join(__dirname, ".."), { check, IDS } = require("./profiles-ch
 global.window = global; ["core", "characters/hawking", "characters/parks", "characters/group1", "characters/group2", "characters/group3", "characters/group4"].forEach(f => require(path.join(root, "js", f + ".js")));
 const Board = require(path.join(root, "js/mp/board.js"));
 const ZN = Board.ZONES, FX = { slow: "slow (each field costs 2 steps)", fast: "fast (each field costs half a step)", block: "blocked (this route cannot be taken)" };
-const ADV = { hint: "Hint: remove one wrong answer before answering", shield: "Shield: a wrong answer does not send you back", bestof2: "Second chance: roll two dice, take the higher" };
+const ADV = { hint: "Hint: remove one wrong answer before answering", shield: "Shield: a wrong answer does not send you back", bestof2: "Second chance: roll two dice, take the higher", lift: "Lift: add 2 to your roll after rolling", skip: "Free pass: count one question or action as answered right" };
 const KIND = { barrier: "Barrier", boost: "Boost", info: "Story", quiz: "Question" };
 const out = {}; let bad = 0; fs.mkdirSync(path.join(root, "docs/figures"), { recursive: true });
 IDS.forEach(id => {

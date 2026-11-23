@@ -37,12 +37,12 @@ Marsha is born on 24 August 1945 in Elizabeth, New Jersey, one of seven children
 As a child and teenager Marsha is harassed for wearing girls' clothes. After high school in 1963 she moves to New York City with very little money in her pocket, hoping for more room to be herself.
 
 ### 3. No home, no safety net  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 In New York Marsha often has no place to sleep. She works as a waitress and in sex work to survive. Landlords and police discriminate against queer and trans people, and there is little help for someone with no address.
 
 ### 4. A name and a neighbourhood  
-**Boost (+1 fields)**
+**Boost (+2 fields)**
 
 Marsha adds a "P." to her name. In Greenwich Village she becomes a familiar, kind and funny figure, known for flowers in her hair and for sharing food and money with those who have less.
 
@@ -83,7 +83,7 @@ Marsha did not build STAR House alone. A friend and fellow activist shared the w
 *Explanation:* Sylvia Rivera and Marsha founded STAR in 1970. Both were later left out of much of the mainstream gay rights story.
 
 ### 9. Left out by the movement  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 Many gay rights groups of the time wanted to look "respectable" and kept trans people, drag queens and sex workers at the edge. Marsha and Sylvia were pushed away from events they helped to start.
 
@@ -93,7 +93,7 @@ Many gay rights groups of the time wanted to look "respectable" and kept trans p
 Marsha performs with the drag troupe Hot Peaches. In 1975 the artist Andy Warhol photographs her for his series "Ladies and Gentlemen". Art and performance give her income, friends and an audience.
 
 ### 11. The AIDS crisis  
-**Barrier (-2 fields)**
+**Barrier (-1 fields)**
 
 In the 1980s many friends die of AIDS while officials and media look away. Marsha is diagnosed with HIV in 1990. She takes part in ACT UP, demanding care, research and respect for the people most affected.
 
