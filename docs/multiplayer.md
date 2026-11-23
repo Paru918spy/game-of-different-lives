@@ -38,6 +38,7 @@ Single Player (the original game) walks through **one life in depth**. Multiplay
 | `js/mp/scene.js` | Three.js view: board, pawns, hop animation, camera, fork markers |
 | `js/mp/game.js` | UI: setup, cards, die, end screen, glue to the engine, online lobby |
 | `js/mp/net.js` | Online play (PeerJS wrapper) |
+| `vendor/qrcode.js` | QR codes (MIT, drawn locally): host room and mode screen. `img/qr-play.png` is a printable QR for the public site |
 | `css/mp.css` | Styles |
 
 ### Add or change questions

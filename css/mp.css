@@ -149,3 +149,7 @@
 .mp-timer:disabled{opacity:.9;cursor:default;box-shadow:none}.mp-timer.up{background:#ef476f;animation:pop .5s}
 .mp-double{background:#3a2410;color:#ffd84d;font-weight:900;text-align:center;padding:6px 12px;font-size:15px;letter-spacing:.2px;animation:pop .6s}
 .mp-x2{color:#c25a12}
+.qrimg{background:#fff;border-radius:14px;padding:6px;line-height:0;box-shadow:0 4px 12px rgba(60,30,0,.2)}.qrimg svg{width:100%;height:auto;display:block}
+.qrbox{display:flex;flex-direction:column;align-items:center;gap:6px;margin:10px 0}.qrbox .qrimg{width:180px}.qrbox p{margin:0;font-size:14px;opacity:.75;text-align:center}
+.qrshare{display:flex;align-items:center;gap:18px;max-width:520px;margin:30px auto 0;background:#fffdf6;border:4px solid #fff;border-radius:22px;padding:14px 18px;box-shadow:0 8px 22px rgba(60,30,0,.18);text-align:left}
+.qrshare .qrimg{width:104px;flex:none}.qrshare b{font-size:20px}.qrshare p{margin:4px 0 0;font-size:15px;line-height:1.4;opacity:.8}

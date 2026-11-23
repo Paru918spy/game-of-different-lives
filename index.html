@@ -74,6 +74,7 @@
       <button class="modecard mc-multi" id="modeMulti"><span class="mc-art" aria-hidden="true">♟️</span><b>Multiplayer</b>
         <span class="mc-sub">2 to 6 players · one shared board</span><span class="mc-text">Race along branching paths with your own pawn. Answer questions about 17 real people, test your everyday behaviour and try real-life action cards to move forward.</span><i class="mc-go">Play together</i></button>
     </div>
+    <aside class="qrshare"><div class="qrimg" id="qrSite" role="img" aria-label="QR code for the game website"></div><div><b>Play on your phone</b><p>Scan the code to open the game. Friends can join your multiplayer game the same way.</p></div></aside>
   </main>
 </section>
 
@@ -101,6 +102,7 @@
       <div id="hostRoom" hidden>
         <p class="setupsub">Tell your friends to open this page, choose “Join with code” and type:</p>
         <div class="roomcode" id="roomCode" aria-live="polite">·····</div>
+        <div class="qrbox"><div class="qrimg" id="qrHost" role="img" aria-label="QR code to join this game"></div><p>Or scan with a phone camera to join straight away</p></div>
         <div class="roomlink"><button class="mp-skip" id="copyLink">Copy invite link</button><span id="copyMsg" aria-live="polite"></span></div>
         <div class="lobby" id="hostLobby"></div>
         <div class="setupgo"><button class="big gold" id="hostGo" disabled>Start the game</button><br><button class="mp-skip" id="hostCancel">Cancel</button></div>
@@ -172,6 +174,7 @@
 <div id="modal" class="modal" hidden><div class="card" role="dialog" aria-modal="true" id="modalCard"></div></div>
 
 <script src="vendor/three.min.js"></script>
+<script src="vendor/qrcode.js"></script>
 <script src="js/core.js"></script>
 <script src="js/characters/hawking.js"></script>
 <script src="js/characters/parks.js"></script>

@@ -263,7 +263,7 @@
     $("hostCreate").disabled = true; $("hostErr").hidden = true;
     const name = $("hostName").value.trim() || "Player 1"; lobby = [{ name, host: true, peer: null }];
     net = MP.Net.host({
-      onReady: code => { $("hostForm").hidden = true; $("hostRoom").hidden = false; $("roomCode").textContent = code; showHostLobby(); },
+      onReady: code => { $("hostForm").hidden = true; $("hostRoom").hidden = false; $("roomCode").textContent = code; drawQR($("qrHost"), `${siteUrl()}?join=${code}`); showHostLobby(); },
       onError: e => netErr("host", e.message),
       onMessage: (peer, m) => {
         if (m.t === "hello") {
@@ -285,8 +285,15 @@
     });
   };
   $("hostCancel").onclick = () => { if (net) net.close(); net = null; resetLobby(); };
+  /* QR codes are drawn locally (vendor/qrcode.js), no external service. On file:// or localhost the public address is used. */
+  const PUBLIC_URL = "https://paru918spy.github.io/game-of-different-lives/";
+  const siteUrl = () => /^https?:$/.test(location.protocol) && !/^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname) ? location.origin + location.pathname : PUBLIC_URL;
+  function drawQR(el, text) {
+    try { const q = window.qrcode(0, "M"); q.addData(text); q.make(); el.innerHTML = q.createSvgTag({ cellSize: 6, margin: 2, scalable: true }); el.title = text; } catch (e) { el.textContent = text; }
+  }
+  drawQR($("qrSite"), siteUrl());
   $("copyLink").onclick = async () => {
-    const link = location.protocol.startsWith("http") ? `${location.origin}${location.pathname}?join=${$("roomCode").textContent}` : $("roomCode").textContent;
+    const link = `${siteUrl()}?join=${$("roomCode").textContent}`;
     try { await navigator.clipboard.writeText(link); $("copyMsg").textContent = " Copied!"; } catch (e) { $("copyMsg").textContent = " " + link; }
   };
   function hostStart() {
