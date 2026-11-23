@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Game of Different Lives</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mp.css">
 </head>
 <body>
 <div id="confetti-bg" aria-hidden="true"></div>
@@ -47,7 +48,7 @@
 </section>
 
 <section id="screen-home" hidden>
-  <nav class="sidenav" aria-label="How it works"><a id="aboutLink" class="aboutlink" href="#about">About the game</a><ol id="how"></ol></nav>
+  <nav class="sidenav" aria-label="How it works"><a id="aboutLink" class="aboutlink" href="#about">About the game</a><a id="modeLink" class="aboutlink" href="#mode">Change game mode</a><ol id="how"></ol></nav>
   <div class="homemain">
   <header class="brand">
     <div class="logo" id="logo" aria-label="Game of Different Lives"></div>
@@ -59,6 +60,86 @@
   </div>
   <p class="note" id="note"></p>
   </div>
+</section>
+
+
+<section id="screen-mode" hidden>
+  <header class="atop"><div class="abrand">Game of Different Lives</div><nav><a href="#" id="modeAbout">← About the game</a></nav></header>
+  <main class="modemain">
+    <p class="eyebrow">Choose how you want to play</p>
+    <h1>Two ways to explore</h1>
+    <div class="modecards">
+      <button class="modecard mc-single" id="modeSingle"><span class="mc-art" aria-hidden="true">🎡</span><b>Single Player</b>
+        <span class="mc-sub">Live one life</span><span class="mc-text">Spin the wheel and walk through the real story of one person, with every barrier, bridge and turning point.</span><i class="mc-go">Play alone</i></button>
+      <button class="modecard mc-multi" id="modeMulti"><span class="mc-art" aria-hidden="true">♟️</span><b>Multiplayer</b>
+        <span class="mc-sub">2 to 6 players · one shared board</span><span class="mc-text">Race along branching paths with your own pawn. Answer easy questions and do small tasks about 17 real people to move forward.</span><i class="mc-go">Play together</i></button>
+    </div>
+  </main>
+</section>
+
+<section id="screen-mpsetup" hidden>
+  <header class="atop"><div class="abrand">Game of Different Lives</div><nav><a href="#" id="setupBack">← Game mode</a></nav></header>
+  <main class="setupmain">
+    <p class="eyebrow">Multiplayer</p><h1>Who is playing?</h1>
+    <div class="tabs" role="tablist" aria-label="Where do you play?">
+      <button class="tab on" role="tab" data-pane="local" aria-selected="true"><span>📱</span>One device</button>
+      <button class="tab" role="tab" data-pane="host" aria-selected="false"><span>🌐</span>Host online game</button>
+      <button class="tab" role="tab" data-pane="join" aria-selected="false"><span>🔑</span>Join with code</button>
+    </div>
+    <div class="pane" id="pane-local">
+      <p class="setupsub">Everybody takes turns on this device. Pick 2 to 6 players, give them names and colours.</p>
+      <div class="countrow" role="group" aria-label="Number of players"><span>Players</span><div id="mpCount"></div></div>
+      <div id="mpNames" class="pnames"></div>
+      <div class="setupgo"><button class="big gold" id="mpStart">Start the game</button></div>
+    </div>
+    <div class="pane" id="pane-host" hidden>
+      <div id="hostForm">
+        <p class="setupsub">Everybody plays on their own phone, tablet or computer. You create a game and share a short code.</p>
+        <label class="pn solo"><span class="pchip" style="--c:#ef476f;--d:#b02a4d"><i></i></span><input id="hostName" maxlength="14" value="Player 1" aria-label="Your name"></label>
+        <div class="setupgo"><button class="big gold" id="hostCreate">Create game</button></div>
+      </div>
+      <div id="hostRoom" hidden>
+        <p class="setupsub">Tell your friends to open this page, choose “Join with code” and type:</p>
+        <div class="roomcode" id="roomCode" aria-live="polite">·····</div>
+        <div class="roomlink"><button class="mp-skip" id="copyLink">Copy invite link</button><span id="copyMsg" aria-live="polite"></span></div>
+        <div class="lobby" id="hostLobby"></div>
+        <div class="setupgo"><button class="big gold" id="hostGo" disabled>Start the game</button><br><button class="mp-skip" id="hostCancel">Cancel</button></div>
+      </div>
+      <p class="neterr" id="hostErr" role="alert" hidden></p>
+    </div>
+    <div class="pane" id="pane-join" hidden>
+      <div id="joinForm">
+        <p class="setupsub">Ask the host for the 5-letter code.</p>
+        <label class="pn solo"><span class="pchip" style="--c:#1e9be9;--d:#0b63a8"><i></i></span><input id="joinName" maxlength="14" value="Player" aria-label="Your name"></label>
+        <input id="joinCode" class="codein" maxlength="5" placeholder="CODE" autocapitalize="characters" autocomplete="off" aria-label="Game code">
+        <div class="setupgo"><button class="big gold" id="joinGo">Join game</button></div>
+      </div>
+      <div id="joinRoom" hidden><p class="setupsub" id="joinStatus">Connected! Waiting for the host to start the game…</p><div class="lobby" id="joinLobby"></div><div class="setupgo"><button class="mp-skip" id="joinCancel">Leave</button></div></div>
+      <p class="neterr" id="joinErr" role="alert" hidden></p>
+    </div>
+    <details class="howto"><summary>How does it work?</summary>
+      <ol><li>On your turn you get a card for the colour of your field: a question about a person, or a small task.</li>
+      <li>Answer right (or do the task) and you roll the die and move. Wrong: stay, learn the answer, next player.</li>
+      <li>Paths split. Choose your way: a longer trail with a bridge, or a short cut full of challenges.</li>
+      <li>Reach the finish first to win.</li></ol></details>
+  </main>
+</section>
+
+<section id="screen-mp" hidden>
+  <canvas id="mpCv" aria-label="3D multiplayer board. Drag to rotate, scroll to zoom."></canvas>
+  <div class="hud tl mp-players" id="mpPlayers" aria-label="Players"></div>
+  <div class="hud tr">
+    <button id="mpFollow" class="ib on" title="Camera follows the pawn" aria-label="Follow camera">🎥</button>
+    <button id="mpOverview" class="ib" title="Overview of the whole board" aria-label="Overview">🗺️</button>
+    <button id="mpMute" class="ib" aria-label="Sound on/off" title="Sound on/off">🔊</button>
+    <button id="mpQuit" class="ib" title="Back to the menu" aria-label="Quit">🏠</button>
+  </div>
+  <div class="mp-legend" id="mpLegend"></div>
+  <div class="mp-banner" id="mpBanner" hidden></div>
+  <div class="mp-dock" id="mpDock" hidden></div>
+  <div class="mp-fork" id="mpFork" hidden></div>
+  <div class="mp-cardwrap" id="mpCardWrap" hidden><div class="mp-card" id="mpCard" role="dialog" aria-modal="false"></div></div>
+  <div class="mp-end" id="mpEnd" hidden></div>
 </section>
 
 <section id="screen-game" hidden>
@@ -109,5 +190,11 @@
 <script src="js/wheel3d.js"></script>
 <script src="js/board3d.js"></script>
 <script src="js/game.js"></script>
+<script src="js/mp/board.js"></script>
+<script src="js/mp/questions.js"></script>
+<script src="js/mp/engine.js"></script>
+<script src="js/mp/scene.js"></script>
+<script src="js/mp/net.js"></script>
+<script src="js/mp/game.js"></script>
 </body>
 </html>
