@@ -1,0 +1,122 @@
+{
+ "id": "king",
+ "intro": "You grow up in a close, church-centred family in segregated Atlanta, and you learn to speak to a crowd. Your tools are words, organising and a movement of thousands; your opponents are laws, threats and an FBI that watches you.",
+ "zones": {
+  "market": {
+   "fx": "fast",
+   "why": "Mass meetings and packed churches: you speak to crowds and the crowd carries you forward."
+  },
+  "quiet": {
+   "fx": "fast",
+   "why": "Reading, sermons and writing, such as the Letter from Birmingham Jail, are where your ideas take shape."
+  },
+  "tunnel": {
+   "fx": "slow",
+   "why": "Hidden surveillance and secret rules: you never know who is listening, and every step costs more care."
+  }
+ },
+ "advantage": {
+  "type": "shield",
+  "uses": 3,
+  "title": "Staying power",
+  "text": "The movement held after bombings, arrests and setbacks. A wrong step does not send you back: others pick up the work and you stay in place."
+ },
+ "life": [
+  {
+   "k": "info",
+   "title": "Atlanta, 1929",
+   "text": "Born on 15 January 1929 as Michael King Jr. into a family of pastors; his father later changes both their names to Martin. The home is comfortable, but outside it segregation laws shape every part of life."
+  },
+  {
+   "k": "barrier",
+   "title": "“You can’t play with us”",
+   "text": "As a small child, Martin is told his white friend can no longer play with him. His parents explain that racism exists, and that he must never think he is “less”.",
+   "move": -1
+  },
+  {
+   "k": "barrier",
+   "title": "The bus ride home",
+   "text": "At 14, after winning a speech contest, Martin rides home by bus. The driver orders him and his teacher to give up their seats to white passengers, and they stand for about 90 miles. He later calls it the angriest night of his life.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "College at 15",
+   "text": "Martin enters Morehouse College at 15. His teachers show him that faith and the fight for justice belong together.",
+   "move": 2
+  },
+  {
+   "k": "quiz",
+   "title": "Learning from Gandhi",
+   "text": "In seminary and graduate school, Martin studies how others have resisted injustice. One leader from India shapes his ideas of peaceful protest.",
+   "q": {
+    "q": "Whose nonviolent resistance inspired King’s approach?",
+    "a": [
+     "Mahatma Gandhi",
+     "Napoleon",
+     "Winston Churchill"
+    ],
+    "x": "Gandhi led nonviolent campaigns against British rule in India. King adapted these ideas for the American civil rights movement."
+   },
+   "move": 1
+  },
+  {
+   "k": "boost",
+   "title": "Montgomery Bus Boycott",
+   "text": "In December 1955 the 26-year-old pastor is chosen to lead the Montgomery Improvement Association. For 381 days thousands of people refuse the buses, and the segregation law falls.",
+   "move": 2
+  },
+  {
+   "k": "barrier",
+   "title": "Bomb at the front door",
+   "text": "On 30 January 1956 a bomb explodes at the King home while Coretta and their baby are inside. No one is hurt. Martin asks the angry crowd outside not to answer violence with violence.",
+   "move": -1
+  },
+  {
+   "k": "barrier",
+   "title": "Jail in Birmingham",
+   "text": "In April 1963 Martin is arrested during protests against segregation in Birmingham, Alabama. From his cell he writes a letter explaining why waiting for justice is not an option.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "“I Have a Dream”",
+   "text": "On 28 August 1963 about 250,000 people gather in Washington for jobs and freedom. Martin gives his famous speech at the Lincoln Memorial, one voice among many organisers and speakers.",
+   "move": 2
+  },
+  {
+   "k": "quiz",
+   "title": "Laws change",
+   "text": "The Civil Rights Act of 1964 bans segregation in public places and discrimination at work. After the marches in Selma, another law follows. At 35 Martin receives the Nobel Peace Prize.",
+   "q": {
+    "q": "Which 1965 law protected the right to vote?",
+    "a": [
+     "The Voting Rights Act",
+     "The Emancipation Proclamation",
+     "The Civil Rights Act of 1964"
+    ],
+    "x": "The Voting Rights Act of 1965 followed the Selma marches and targeted barriers like literacy tests that kept Black citizens from voting."
+   },
+   "move": 1
+  },
+  {
+   "k": "barrier",
+   "title": "A harder fight",
+   "text": "Martin speaks out against the Vietnam War and for poor people of every race. Many allies and politicians turn away, and the FBI watches him and tries to damage his name.",
+   "move": -1
+  },
+  {
+   "k": "info",
+   "title": "Memphis, 1968 and after",
+   "text": "Martin goes to Memphis to support striking sanitation workers. On 4 April 1968 he is assassinated, aged 39. Since 1986 the US marks Martin Luther King Jr. Day, and the movement’s laws still protect millions."
+  }
+ ],
+ "sources": [
+  "js/characters/group1.js (king tiles)",
+  "King Institute, Stanford (kinginstitute.stanford.edu)",
+  "Nobel Prize: Martin Luther King Jr. biography"
+ ],
+ "flags": [
+  "Ages and dates follow the single-player tiles; 90-mile bus ride and 'angriest night' wording from King's own recollection as cited there."
+ ]
+}

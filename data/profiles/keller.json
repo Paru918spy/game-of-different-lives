@@ -1,0 +1,124 @@
+{
+ "id": "keller",
+ "intro": "You live through touch: letters spelled into your palm, raised dots under your fingertips, a teacher's hand in yours. The world is slow to learn your language, but you read, write and argue more than almost anyone around you.",
+ "zones": {
+  "tunnel": {
+   "fx": "fast",
+   "why": "Dim light is not the obstacle it is for others: Helen moves by touch and with a guide's hand, so a dark tunnel costs her no extra time."
+  },
+  "market": {
+   "fx": "slow",
+   "why": "In a crowd every exchange needs a hand-spelled interpreter, so keeping up with the flow takes longer."
+  },
+  "office": {
+   "fx": "slow",
+   "why": "Officials and editors doubt that a deaf-blind woman can hold her own political views, so every decision takes longer."
+  }
+ },
+ "advantage": {
+  "type": "skip",
+  "uses": 3,
+  "title": "Fingers on the page",
+  "text": "Helen read braille, studied several languages and read widely all her life. On a question you know, count it as answered right."
+ },
+ "life": [
+  {
+   "k": "info",
+   "title": "Tuscumbia, Alabama, 1880",
+   "text": "Helen Keller is born on 27 June 1880. At 19 months an illness leaves her deaf and blind. Her family has no way to share language with a toddler who senses everything through touch and smell."
+  },
+  {
+   "k": "barrier",
+   "title": "A home without a shared language",
+   "text": "Helen makes up around sixty home signs, but nobody can teach her more. Frustration grows, and some relatives suggest an institution. In the 1880s the South has almost no education for deaf-blind children.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "The water pump, 1887",
+   "text": "Anne Sullivan, a teacher from the Perkins School who is partly blind herself, arrives in March 1887. On 5 April, with water running over one hand and a word spelled into the other, Helen grasps that things have names.",
+   "move": 3
+  },
+  {
+   "k": "quiz",
+   "title": "Learning words",
+   "text": "Helen now learns quickly, from the manual alphabet to braille and later speech.",
+   "q": {
+    "q": "How did Anne Sullivan first teach Helen words?",
+    "a": [
+     "By spelling the words into her palm",
+     "By drawing pictures for her",
+     "By speaking loudly close to her ear"
+    ],
+    "x": "Anne used the manual alphabet, spelling words with her fingers into Helen's hand while Helen touched the objects they named."
+   },
+   "move": 1
+  },
+  {
+   "k": "barrier",
+   "title": "The Frost King, 1892",
+   "text": "At 11, Helen writes a story that closely resembles one by another author. She is questioned by a panel of men at Perkins without Anne present. She had absorbed the tale through hand-spelling and did not remember it.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "Radcliffe College, 1904",
+   "text": "Helen graduates cum laude from Radcliffe. Anne spells lectures into her hand, and few textbooks exist in braille, so she often depends on helpers. She is the first deaf-blind person in the US to earn a bachelor's degree.",
+   "move": 1
+  },
+  {
+   "k": "info",
+   "title": "A writer with opinions",
+   "text": "She publishes The Story of My Life in 1903 and goes on to write books and essays. She joins the Socialist Party in 1909 and writes about poverty, factory work and why women need the vote."
+  },
+  {
+   "k": "barrier",
+   "title": "Praised, but not believed",
+   "text": "Newspapers loved her as a symbol, but once she took political positions some editors claimed her ideas came from the people around her. Her reply was that people had praised her until she disagreed with them.",
+   "move": -1
+  },
+  {
+   "k": "quiz",
+   "title": "Beyond the headlines",
+   "text": "Helen wanted fairness for ordinary people, not only fame.",
+   "q": {
+    "q": "Which organisation did Helen Keller help found in 1920?",
+    "a": [
+     "The American Civil Liberties Union",
+     "The American Red Cross",
+     "The Perkins School for the Blind"
+    ],
+    "x": "Helen was a co-founder of the ACLU, which defends people's rights, including freedom of speech. She also supported workers' unions and the NAACP."
+   },
+   "move": 1
+  },
+  {
+   "k": "boost",
+   "title": "Across the world",
+   "text": "With Anne and later Polly Thomson, Helen lectures in more than 30 countries. She raises money for blind and deaf people and visits soldiers who lost sight in war, helping to open schools and services.",
+   "move": 2
+  },
+  {
+   "k": "barrier",
+   "title": "Anne dies, 1936",
+   "text": "After almost 50 years together, Anne Sullivan dies. Helen loses her teacher, interpreter and closest friend in a world with very few trained deaf-blind interpreters. Polly Thomson and others carry on the daily work.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "1968 and what lasts",
+   "text": "President Johnson gives Helen the Presidential Medal of Freedom in 1964. She dies on 1 June 1968, aged 87. The full record shows a campaigner as well as a famous student, and the organisations she backed still run.",
+   "move": 2
+  }
+ ],
+ "sources": [
+  "js/characters/group2.js keller tiles (Tuscumbia, Anne Sullivan, Frost King, Radcliffe, socialism and suffrage, ACLU 1920, travels, Anne's death 1936, Medal of Freedom 1964)",
+  "Helen Keller, The Story of My Life (1903)",
+  "American Foundation for the Blind Helen Keller Archive"
+ ],
+ "flags": [
+  "'About sixty home signs' is the commonly cited figure for Helen's pre-Sullivan signs; check against Perkins/AFB.",
+  "The Perkins panel at the Frost King inquiry was without Anne Sullivan present (as widely reported); verify before use.",
+  "'More than 30 countries' matches the single-player tile; Keller's own count is often given as 35."
+ ]
+}

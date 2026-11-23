@@ -2,40 +2,40 @@
 
 Single Player (the original game) walks through **one life in depth**. Multiplayer is the opposite: neutral coloured pawns race over **one big shared board** and answer questions, judge statements and try real-life actions about the **17 real people** and the barriers they faced. The 4 fictional characters are not used here.
 
-## Rules
+## Rules (version 2: shared table, 21 figures)
 
-- 2 to 6 players, each with a pawn in their own colour (3D, hops from field to field).
-- The board has **69 fields** and **three forks**:
-  - fork 1: Sunny Trail (north), Short Cut (middle), River Trail (south)
-  - fork 2: Sunny Trail or River Trail
-  - fork 3: Sunny Trail, Short Cut or River Trail
-  - The two long trails each carry a **bridge field** (move 3 more). The Short Cut is shorter but full of challenge fields. Shortest way: 42 fields, longest: 45.
-- The colour of the field you stand on decides your card:
+- 2 to 6 players sit around a table in the colour of their pawn. At the start **everybody spins the wheel of lives** and becomes one of the 21 figures (nobody gets the same one).
+- The board has **101 fields**: a main road with **12 life stations** and **6 forks**. Each fork offers three routes of different kinds: stairs, tree ladders, rope bridge, stone bridge, long ramp, busy market, dark tunnel, town hall, race track, quiet lane. Short cuts are shorter but have more checkpoints and setbacks.
+- **Figures differ.** Every figure has a few routes that are *slow* (a field costs 2 steps), *fast* (a field costs half a step) or *closed*, and one **strength card** with 2 or 3 uses: 💡 *hint* (remove a wrong answer), 🛡 *shield* (a wrong answer does not send you back), 🎲 *second chance* (roll two dice, keep the higher), 🚀 *lift* (add 2 to your roll), 🎟 *free pass* (count a question as right). Everything is in `docs/figures/<id>.md`.
+- **Fields** (colour of the tile):
 
-| Colour | Field | Card |
-| --- | --- | --- |
-| blue `?` | Who am I? | A clue about a person, pick one of 3 names |
-| orange `i` | Life & Barriers | Multiple choice about a life story |
-| green `T/F` | True or False? | A statement about a person |
-| purple `Aa` | Words Matter | Everyday situations about respectful language and behaviour, with tempting wrong answers (not tied to one person) |
-| red star | Action! | A real-life action with an optional timer: do something doable but challenging to feel a different perspective (honour system, can be skipped) |
-| teal heart | Story Stop | No question: meet a person (photo, a milestone and a barrier from the Single Player data) |
-| gold arch | Bridge | Lands you 3 fields further, automatically |
+| Field | What happens |
+| --- | --- |
+| Who am I? / Life & Barriers / True or False? / Words Matter | Question card. Right: stay. Wrong: back to the last safe field (turn start or last stop) |
+| Action! | A real-life action, honour system |
+| Story Stop | Meet a person, no question |
+| » Tailwind | move 2 or 3 extra fields |
+| « Setback | move 2 or 3 fields back |
+| ↻ Roll again | roll once more |
+| Checkpoint | You must stop and answer. Right: go on with the rest of your roll. Wrong: stay, the rest of the roll is lost |
+| Life station 1 to 12 | You must stop once. Your figure's story: barrier (back 1 to 3), boost (forward 1 to 3), story, or a question for a bonus |
 
-- **Your turn:** roll the die (1 to 6) and the pawn walks at once. At a fork you choose the branch (buttons, or click a glowing field). Then you get the card of the field you landed on.
-- **Right answer (or action done):** the pawn stays on the field and the next player rolls.
-- **Double cards:** about one question or action card in five is a random **⚡ DOUBLE** card, announced at the top of the card. Answer right and the pawn moves ahead again by the same number as the die (a 4 means 4 more fields, no second card). A wrong answer gets nothing extra.
-- **Wrong answer (or skipped action):** you see the right answer with a short explanation and the person's portrait, the pawn walks back along its path to the field where the turn started, and the next player is up. Every explanation tells a bit more of the person's life story. Questions are medium to hard; the wrong answers sound plausible.
-- First pawn on the finish wins. A game with 2 players takes about 12 rounds (roughly 15 to 20 minutes).
+- **Your turn:** roll, walk, choose a route at forks (routes closed for your figure are greyed out and explain why), then the card of the field you landed on.
+- About one question card in five is a random **⚡ DOUBLE** card: right answer = walk the same number again.
+- **Balance:** `node tools/balance.js` lets bots play thousands of games. In groups of 4 every figure wins between 20 % and 30 % (fair is 25 %); alone every figure needs 13.4 to 13.9 rounds. `--tune` adjusts the strength of life-station barriers and boosts and the number of strength uses (never the story texts).
+- First pawn on the finish wins. A game with 2 players takes about 12 to 15 rounds.
 
 ## Files
 
 | File | Purpose |
 | --- | --- |
-| `js/mp/board.js` | The board as a graph (nodes, forks, field types). Pure data, tested in Node |
+| `js/mp/board.js` | The board as a graph (101 nodes, 6 forks, 10 route kinds, life stations). Pure data, tested in Node |
+| `js/mp/profiles.js` | GENERATED from `data/profiles/*.json` by `node tools/build-profiles.js`. Per figure: route effects, strength card, 12 life stations |
+| `data/profiles/<id>.json` | Source of truth for one figure. Spec: `docs/redesign/profile-spec.md`. Check with `node tools/profiles-check.js` |
+| `docs/figures/<id>.md` | One readable page per figure (generated) |
 | `js/mp/questions.js` | Question bank: 17 who-am-I (3 clues each, wrong names come from the same theme), 68 life questions, 99 true/false (12 of them about everyday behaviour), 28 words, 24 action cards. Facts follow `js/characters/*.js` |
-| `js/mp/engine.js` | Game rules. Serialisable state and `dispatch(action) -> events`. No DOM, no 3D |
-| `js/mp/scene.js` | Three.js view: board, pawns, hop animation, camera, fork markers |
+| `js/mp/engine.js` | Game rules (phases wheel, roll, fork, card, feedback, over). Serialisable state and `dispatch(action) -> events`. No DOM, no 3D |
+| `js/mp/scene.js` | Three.js view: room, table, seated players, board with route scenery, pawns, camera (zoom and pan limited), fork markers |
 | `js/mp/game.js` | UI: setup, cards, die, end screen, glue to the engine, online lobby |
 | `js/mp/net.js` | Online play (PeerJS wrapper) |
 | `vendor/qrcode.js` | QR codes (MIT, drawn locally): host room and mode screen. `img/qr-play.png` is a printable QR for the public site |

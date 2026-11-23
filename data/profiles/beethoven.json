@@ -1,0 +1,125 @@
+{
+ "id": "beethoven",
+ "intro": "Music is your language, and you hear it more and more from the inside. You live in Vienna among patrons, publishers and friends, in a world built for listeners, and you have to rework how you compose, talk and earn a living.",
+ "zones": {
+  "quiet": {
+   "fx": "fast",
+   "why": "Alone at the desk with the score you hear in your head: composing is where your skill is strongest."
+  },
+  "bridge": {
+   "fx": "fast",
+   "why": "Patrons, publishers and friends such as Lichnowsky carry you across gaps that would stop you alone."
+  },
+  "rope": {
+   "fx": "slow",
+   "why": "Money, health and a court case over Karl make the ground unsteady, and every step needs caution."
+  }
+ },
+ "advantage": {
+  "type": "skip",
+  "uses": 3,
+  "title": "The inner ear",
+  "text": "Beethoven composed late works from his inner ear and planned whole structures in his head. Up to three times, a question you know well counts as answered."
+ },
+ "life": [
+  {
+   "k": "info",
+   "title": "Bonn, 1770",
+   "text": "Ludwig is baptised in Bonn on 17 December 1770 into a family of court musicians. His father Johann trains him hard on the keyboard, hoping to present him as a child prodigy."
+  },
+  {
+   "k": "barrier",
+   "title": "A household to hold together",
+   "text": "Johann drinks, and money is short. After Ludwig's mother dies in 1787 he plays and works as an organist, and he soon becomes the main provider for his younger brothers.",
+   "move": -2
+  },
+  {
+   "k": "boost",
+   "title": "To Vienna, 1792",
+   "text": "Ludwig moves to Vienna, studies with Joseph Haydn and is soon admired as a pianist and improviser. Nobles such as Prince Lichnowsky give him rooms, money and a stage.",
+   "move": 1
+  },
+  {
+   "k": "quiz",
+   "title": "The first sign",
+   "text": "Success is arriving when something starts to change.",
+   "q": {
+    "q": "What did Beethoven first notice around 1798?",
+    "a": [
+     "A ringing in his ears (tinnitus)",
+     "Pain in his hands",
+     "Trouble reading music"
+    ],
+    "x": "Around 1798, aged 27, he began to hear ringing and buzzing in his ears. His hearing then faded over the following years."
+   },
+   "move": 1
+  },
+  {
+   "k": "barrier",
+   "title": "Hiding it from patrons",
+   "text": "He fears that a musician who cannot hear will lose patrons, pupils and concerts. So he keeps quiet and avoids parties, which makes him look unfriendly. Nobody around him has any tools for deafness.",
+   "move": -1
+  },
+  {
+   "k": "info",
+   "title": "The Heiligenstadt letter, 1802",
+   "text": "Content note: despair. In a letter to his brothers that he never sent, Ludwig writes about shame, isolation and thoughts of dying. He says his art held him back, and he went on to compose for 25 more years."
+  },
+  {
+   "k": "boost",
+   "title": "A new, bolder sound",
+   "text": "He writes the Third Symphony (the Eroica, 1804), the Fifth with its four-note opening, and the opera Fidelio. Publishers and patrons keep paying for music that sounds like nothing before it.",
+   "move": 1
+  },
+  {
+   "k": "quiz",
+   "title": "New ways to talk",
+   "text": "By about 1818 he can hardly hear speech at all.",
+   "q": {
+    "q": "How did visitors talk with the almost-deaf Beethoven?",
+    "a": [
+     "They wrote in his conversation books",
+     "They used sign language",
+     "They spoke into a speaking tube"
+    ],
+    "x": "Friends wrote their half of the conversation in notebooks; he answered aloud. Many of these books survive and show his daily life, and he also tried ear trumpets."
+   },
+   "move": 1
+  },
+  {
+   "k": "barrier",
+   "title": "Walls, courts and debt",
+   "text": "Concert halls and salons were designed only for listening. Beethoven also fights for custody of his nephew Karl through the courts from 1815 to 1820, with strained money and health. Few friends can talk with him easily.",
+   "move": -3
+  },
+  {
+   "k": "boost",
+   "title": "The Ninth, 1824",
+   "text": "The Ninth Symphony, with its choral Ode to Joy, premieres in Vienna on 7 May 1824. At the end a singer turns Beethoven around so he can see the audience cheering and waving, since he cannot hear the applause.",
+   "move": 1
+  },
+  {
+   "k": "boost",
+   "title": "The late quartets",
+   "text": "In his last years he writes string quartets that surprise later composers. They come from what he calls his inner hearing, with friends and copyists who put the score into readable form.",
+   "move": 1
+  },
+  {
+   "k": "info",
+   "title": "Vienna, 1827",
+   "text": "Beethoven dies on 26 March 1827, aged 56. Many thousands of people line the streets for his funeral. Today he is played everywhere, and the Ode to Joy melody of his Ninth is the anthem of the European Union."
+  }
+ ],
+ "sources": [
+  "js/characters/group3.js beethoven tiles (Bonn, Vienna, tinnitus around 1798, Heiligenstadt 1802, Eroica, conversation books, Karl custody, Ninth 1824, death 1827)",
+  "Beethoven-Haus Bonn (beethoven.de)",
+  "Jan Swafford, Beethoven: Anguish and Triumph"
+ ],
+ "flags": [
+  "Birth date is not documented; only the baptism on 17 December 1770 is, so the text says baptised.",
+  "Custody fight dates (1815 to 1820) are widely cited; check precise end date.",
+  "Funeral crowd is often given as 10,000 to 20,000; text says 'many thousands'.",
+  "The Ninth is the source of the EU anthem melody (arranged by Karajan); text simplifies this.",
+  "The Heiligenstadt Testament was addressed to his brothers and never sent, which is the standard account."
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "id": "parks",
+ "intro": "You are an organiser long before the famous bus. You type the minutes, investigate cases, pay the poll tax and walk when needed. Most of your barriers are rules written to keep you out, and most of your wins are carried by other people.",
+ "zones": {
+  "bridge": {
+   "fx": "fast",
+   "why": "Allies carry you: the NAACP, the Women’s Political Council, neighbours who run the carpools."
+  },
+  "sprint": {
+   "fx": "fast",
+   "why": "For 381 days thousands walk miles to work instead of riding the buses, and you know how to keep going."
+  },
+  "office": {
+   "fx": "slow",
+   "why": "Literacy tests, a poll tax and forms made to fail you: every counter is a trap."
+  },
+  "rope": {
+   "fx": "slow",
+   "why": "Threats, a lost job and an unsteady income: after December 1955 every step feels risky."
+  }
+ },
+ "advantage": {
+  "type": "shield",
+  "uses": 3,
+  "title": "A community behind you",
+  "text": "When the family lost their jobs, people in the community covered the bills. A wrong answer does not send you back; others hold the line with you."
+ },
+ "life": [
+  {
+   "k": "info",
+   "title": "Tuskegee, 1913",
+   "text": "Rosa is born on 4 February 1913 in Tuskegee, Alabama, and grows up in Pine Level with her grandparents, her mother and her little brother. Her grandfather keeps watch at night during Ku Klux Klan threats."
+  },
+  {
+   "k": "barrier",
+   "title": "No bus for Black children",
+   "text": "In rural Alabama white children ride buses to school while Black children walk. The Black school has a shorter year and fewer resources. Rosa later recalls deciding that this did not have to be the way it was.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "Miss White’s school",
+   "text": "At 11 Rosa attends the Montgomery Industrial School for Girls, run by white northern women who teach Black girls that they deserve respect. She takes the lesson to heart.",
+   "move": 3
+  },
+  {
+   "k": "barrier",
+   "title": "Leaving school to care",
+   "text": "At 16 Rosa leaves school to care for her ill grandmother, and later her mother. She works as a domestic worker and seamstress, as women of her time were expected to put family first.",
+   "move": -1
+  },
+  {
+   "k": "quiz",
+   "title": "Raymond Parks",
+   "text": "In 1932 Rosa marries Raymond Parks, a barber who secretly raises money for the defence of young Black men falsely accused in a famous Alabama case. He encourages her to finish her diploma, and she graduates in 1933.",
+   "q": {
+    "q": "Whose legal defence did Raymond Parks help to fund?",
+    "a": [
+     "The Scottsboro Boys",
+     "The Wright brothers",
+     "The Little Rock Nine"
+    ],
+    "x": "The Scottsboro Boys were nine Black teenagers falsely accused in Alabama in 1931. Raymond Parks worked in secret to raise money for their defence."
+   },
+   "move": 1
+  },
+  {
+   "k": "barrier",
+   "title": "The driver who threw her off",
+   "text": "In 1943 bus driver James F. Blake orders Rosa to board at the back after paying at the front, and drives away as she steps off. She avoids his bus for years, and she will meet him again.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "NAACP secretary",
+   "text": "In 1943 Rosa joins the Montgomery NAACP and becomes its secretary, the only woman in the room. She types, files and records injustices, and in 1944 investigates the Recy Taylor case with the NAACP.",
+   "move": 2
+  },
+  {
+   "k": "barrier",
+   "title": "Trying to register to vote",
+   "text": "Literacy tests, a poll tax and intimidation keep Black citizens from voting. Rosa is rejected on her first two attempts. On her third, in 1945, she is registered, after paying years of back taxes.",
+   "move": -1
+  },
+  {
+   "k": "quiz",
+   "title": "Not the first to refuse",
+   "text": "Months before December 1955, a teenager in Montgomery had refused to give up her seat. Activists prepared the ground, and Rosa knew them.",
+   "q": {
+    "q": "Which 15-year-old refused to give up her bus seat in Montgomery before Rosa?",
+    "a": [
+     "Claudette Colvin",
+     "Recy Taylor",
+     "Coretta Scott"
+    ],
+    "x": "Claudette Colvin was arrested in March 1955 and later became one of the plaintiffs in Browder v. Gayle."
+   },
+   "move": 1
+  },
+  {
+   "k": "barrier",
+   "title": "Arrest and fallout",
+   "text": "On 1 December 1955 Rosa stays seated and is arrested and fined $14. She loses her department-store job and Raymond is forced out of his. Threats follow, and the community helps with the bills.",
+   "move": -1
+  },
+  {
+   "k": "boost",
+   "title": "The Montgomery Bus Boycott",
+   "text": "Led by the Women’s Political Council and the Montgomery Improvement Association, about 40,000 Black riders walk, carpool or take taxis for 381 days until the buses are desegregated. The Supreme Court upholds that ruling in Browder v. Gayle.",
+   "move": 3
+  },
+  {
+   "k": "info",
+   "title": "Detroit and the long work",
+   "text": "After 1957 the family moves to Detroit, where racism and unemployment follow. From 1965 Rosa works 23 years for Congressman John Conyers and later founds a youth institute with Elaine Eason Steele. She dies on 24 October 2005, aged 92."
+  }
+ ],
+ "sources": [
+  "js/characters/parks.js (all tiles)",
+  "Rosa Parks with Jim Haskins, Rosa Parks: My Story (1992)",
+  "Library of Congress: Rosa Parks Papers",
+  "Danielle McGuire, At the Dark End of the Street"
+ ],
+ "flags": [
+  "Raymond Parks and Scottsboro: widely documented, but 1931 date and 'nine teenagers' should be re-checked.",
+  "Claudette Colvin arrest in March 1955 and age 15 should be re-checked against a primary source."
+ ]
+}
