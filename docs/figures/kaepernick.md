@@ -2,7 +2,7 @@
 
 *b. 1987 · Race, adoption, protest*
 
-You are the quarterback everyone watches, and often the only Black kid in the room: adopted into a white family, drilled in training, noticed first for your arm and your looks. When you decide to speak, the whole league can hear it.
+You are the quarterback everyone watches, and often the only Black kid in the room: adopted into a white family, drilled in training, valued for your arm while people assume things about you. When you decide to speak, the whole league can hear it.
 
 ## Routes (zones)
 

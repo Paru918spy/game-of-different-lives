@@ -10,8 +10,8 @@ The shared board has ten kinds of routes. For Helen, these differ from the norma
 
 | Route | Effect | Why |
 | --- | --- | --- |
-| 🕳 Dark tunnel | fast (each field costs half a step) | Darkness changes nothing for you. You know the way by touch and by your guide's hand while others slow down. |
-| 🎪 Busy market | slow (each field costs 2 steps) | Crowds and noise carry no signal for you. Every exchange needs a hand-spelled interpreter, and you cannot easily follow the flow. |
+| 🕳 Dark tunnel | fast (each field costs half a step) | Dim light is not the obstacle it is for others: Helen moves by touch and with a guide's hand, so a dark tunnel costs her no extra time. |
+| 🎪 Busy market | slow (each field costs 2 steps) | In a crowd every exchange needs a hand-spelled interpreter, so keeping up with the flow takes longer. |
 | 🏛 Town hall | slow (each field costs 2 steps) | Officials and editors doubt that a deaf-blind woman can hold her own political views, so every decision takes longer. |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.

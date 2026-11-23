@@ -4,11 +4,11 @@
  "zones": {
   "tunnel": {
    "fx": "fast",
-   "why": "Darkness changes nothing for you. You know the way by touch and by your guide's hand while others slow down."
+   "why": "Dim light is not the obstacle it is for others: Helen moves by touch and with a guide's hand, so a dark tunnel costs her no extra time."
   },
   "market": {
    "fx": "slow",
-   "why": "Crowds and noise carry no signal for you. Every exchange needs a hand-spelled interpreter, and you cannot easily follow the flow."
+   "why": "In a crowd every exchange needs a hand-spelled interpreter, so keeping up with the flow takes longer."
   },
   "office": {
    "fx": "slow",
