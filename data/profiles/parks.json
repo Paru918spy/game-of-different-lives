@@ -31,8 +31,8 @@
  "advantage": {
   "type": "shield",
   "uses": 3,
-  "title": "A community behind you",
-  "text": "When the family lost their jobs, people in the community covered the bills. A wrong answer does not send you back; others hold the line with you.",
+  "title": "Friends who stood by",
+  "text": "After the family lost their jobs, friends in the NAACP and the church stood by the Parks family. A wrong answer does not send you back; others hold the line with you.",
   "ev": "e4"
  },
  "life": [
@@ -162,7 +162,7 @@
   }
  ],
  "balance": {
-  "comp": 38
+  "comp": 39
  },
  "look": {
   "skin": "#7a5238",

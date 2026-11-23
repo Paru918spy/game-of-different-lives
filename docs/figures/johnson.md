@@ -11,7 +11,7 @@ Every effect on the board points to one of these events. If there is no document
 - **e1** (1963): Marsha moved to New York from New Jersey as a teenager with little money and slept in the streets and with friends. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
 - **e2** (1960s to 1980s): Police arrested and harassed trans women and drag performers for how they dressed; Marsha was arrested many times. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
 - **e3** (1960s to 1970s): Trans women faced almost total job discrimination; Marsha worked as a waitress and in survival sex work. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
-- **e4** (1970): With Sylvia Rivera she founded STAR and opened a house for homeless trans youth. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
+- **e4** (1970): In 1970 she and Sylvia Rivera founded STAR; a house for homeless trans youth followed in 1971. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
 - **e5** (1975): She performed with the Hot Peaches troupe and was photographed by Andy Warhol. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
 
 ## Routes (zones)
@@ -29,7 +29,7 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Game balance (not part of the story)
 
-19 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+20 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Family you choose
 

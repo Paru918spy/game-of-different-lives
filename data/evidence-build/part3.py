@@ -18,8 +18,8 @@ D3["mandela"] = dict(
  evidence=[
   dict(id="e1", y="1948 to 1952", ev="Apartheid laws (pass laws, group areas, the 1950 Suppression of Communism Act) limited where he lived and spoke; he was banned in 1952.", src=1),
   dict(id="e2", y="1960 to 1964", ev="At Sharpeville in 1960 police killed 69 protesters; in 1964 he faced a possible death sentence at the Rivonia trial.", src=2),
-  dict(id="e3", y="1964 to 1990", ev="He spent 27 years in prison, 18 on Robben Island, with very few visits and letters.", src=1),
-  dict(id="e4", y="1952", ev="With Oliver Tambo he opened South Africa's first Black law firm, and he built the ANC's network.", src=1),
+  dict(id="e3", y="1962 to 1990", ev="After his arrest in 1962 he spent 27 years in prison, 18 on Robben Island, with very few visits and letters.", src=1),
+  dict(id="e4", y="1952", ev="With Oliver Tambo he opened the first Black-run law practice in Johannesburg, and he built the ANC's network.", src=1),
   dict(id="e5", y="1940s to 1989", ev="He studied at Fort Hare and later for a law degree by correspondence, even in prison.", src=1)],
  zones=dict(office=["slow","e1","Law: apartheid laws and banning orders decided where he could live, speak and work."],
   rope=["slow","e2","Safety: Sharpeville, arrest and a trial that could end in the death sentence."],
@@ -46,7 +46,7 @@ D3["sam"] = dict(
  add_sources=[],
  evidence=[
   dict(id="e1", y="2017 to 2018", ev="Germany's Federal Constitutional Court ruled in 2017 that civil status must allow a third entry; 'divers' was introduced in 2018. Before that, forms offered two boxes.", src=1),
-  dict(id="e2", y="research", ev="Young people who are accepted by at least one adult report much lower rates of attempted suicide (Trevor Project).", src=2),
+  dict(id="e2", y="research", ev="Young LGBTQ people with at least one accepting adult report better mental health (Trevor Project, a US study).", src=2),
   dict(id="e3", y="research", ev="Trans and non-binary young people report more bullying and exclusion at school (Trevor Project).", src=2),
   dict(id="e4", y="typical case", ev="School routines such as sports teams, toilets and trips are often split into two groups.", src=2)],
  zones=dict(office=["slow","e1","Forms and law: for years the paperwork had only two boxes."],
@@ -63,8 +63,7 @@ D3["singh"] = dict(
   dict(id="e3", y="2000s", ev="He had no birth certificate, so Guinness World Records could not certify his age records.", src=3),
   dict(id="e4", y="1992 onwards", ev="After family losses he moved to Ilford in London, where a Sikh running coach and a club took him in.", src=2),
   dict(id="e5", y="2000", ev="He ran the London Marathon for the first time at around 89, and finished marathons until 101.", src=2)],
- zones=dict(stairs=["slow","e1","Legs: weak legs as a child and hills and steps in old age."],
-  ladder=["slow","e2","School: a farm childhood with almost no schooling."],
+ zones=dict(stairs=["slow","e1","Legs: weak legs as a child kept him from walking until about five."],
   office=["slow","e3","Papers: no birth certificate, so records could not be certified."],
   bridge=["fast","e4","Coach and club: the Sikh community and his coach in Ilford took him in."],
   sprint=["fast","e5","Running: marathons from about 89 years old."]),
@@ -89,11 +88,11 @@ D3["turing"] = dict(
 D3["wonder"] = dict(
  add_sources=[],
  evidence=[
-  dict(id="e1", y="1950s", ev="Born premature and blind, he went to the Michigan School for the Blind, where options were set by others.", src=2),
+  dict(id="e1", y="1950s", ev="Born premature and blind, he went to the Michigan School for the Blind, one of the separate schools that blind children were sent to at the time.", src=2),
   dict(id="e2", y="1961 to 1971", ev="Signed to Motown at 11; his contract held his earnings in trust until 21, and at 21 he renegotiated and gained creative control.", src=2),
   dict(id="e3", y="1960s", ev="Motown's Berry Gordy, mentor Clarence Paul and his family supported his career.", src=2),
   dict(id="e4", y="1972 to 1976", ev="He recorded a run of classic albums, playing many instruments himself.", src=2)],
- zones=dict(ladder=["slow","e1","School: for years others decided where and how he learned."],
+ zones=dict(ladder=["slow","e1","School: blind children of his time were taught in separate schools for the blind."],
   office=["slow","e2","Contracts: until 21 others controlled his contract and money."],
   market=["slow","e2","Business: his earnings and his songs were not his to control."],
   bridge=["fast","e3","Support: his family, Clarence Paul and Motown backed him."],

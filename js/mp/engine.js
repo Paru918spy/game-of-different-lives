@@ -228,8 +228,8 @@
       if (a.best && p.left > 0 && prof(p).advantage.type === "bestof2") { d2 = 1 + Math.floor(rnd(S) * 6); p.left--; p.used++; }
       S.dice = d2 ? Math.max(d, d2) : d; S.bonus = false;
       if (a.lift && p.left > 0 && prof(p).advantage.type === "lift") { S.dice += 2; p.left--; p.used++; }
-      /* game balance (not part of the story): each point of "comp" adds one step, at most 3 per roll */
-      const cu = Math.max(0, Math.min(3, p.comp, a.comp | 0)); if (cu) { S.dice += cu; p.comp -= cu; }
+      /* game balance (not part of the story): each point of "comp" adds one step, applied automatically, at most 3 per roll */
+      const cu = Math.max(0, Math.min(3, p.comp)); if (cu) { S.dice += cu; p.comp -= cu; }
       ev.push({ e: "roll", p: p.id, v: S.dice, d1: d, d2, lift: !!(a.lift && S.dice > Math.max(d, d2 || 0)), comp: cu });
       walk(S, S.dice, ev);
     } else if (S.phase === "fork" && a.t === "choose" && S.fork.allowed.includes(a.node)) {

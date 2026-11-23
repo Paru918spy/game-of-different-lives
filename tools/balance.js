@@ -26,7 +26,7 @@ function play(P, figs, seed) {
       } else if (c.kind === "task") { if (!right && adv === "skip" && p.left > 0 && !c.all) E.dispatch(S, { t: "skipq" }); else E.dispatch(S, { t: "task", done: right }); }
       else E.dispatch(S, { t: "next" }); }
     else if (S.phase === "feedback") E.dispatch(S, { t: "next", shield: !S.card.result.ok && adv === "shield" && p.left > 0 });
-    else if (S.phase === "roll") E.dispatch(S, { t: "roll", best: adv === "bestof2" && p.left > 0, lift: adv === "lift" && p.left > 0, comp: 3 });
+    else if (S.phase === "roll") E.dispatch(S, { t: "roll", best: adv === "bestof2" && p.left > 0, lift: adv === "lift" && p.left > 0 });
     else if (S.phase === "fork") { const zf = P[p.char].zones, d = dist(p.char); const o = S.fork.allowed.slice().sort((a, b) => (B.cost(board.nodes[a], zf) + d.minOf(a)) - (B.cost(board.nodes[b], zf) + d.minOf(b))); E.dispatch(S, { t: "choose", node: o[0] }); }
   }
   return S;

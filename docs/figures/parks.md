@@ -29,13 +29,13 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Game balance (not part of the story)
 
-38 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+39 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
-## Advantage: A community behind you
+## Advantage: Friends who stood by
 
 Shield: a wrong answer does not send you back · 3 uses per game.
 
-When the family lost their jobs, people in the community covered the bills. A wrong answer does not send you back; others hold the line with you.
+After the family lost their jobs, friends in the NAACP and the church stood by the Parks family. A wrong answer does not send you back; others hold the line with you.
 
 ## Life stations (in the order of the road)
 

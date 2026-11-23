@@ -15,7 +15,7 @@ D["amira"] = dict(
   sprint=["fast","e4","Sport club: football needs no shared language, and clubs are a common first home for refugee children."],
   bridge=["fast","e5","Teachers, neighbours and volunteers open doors for newly arrived families."]),
  adv_ev="e5",
- look=dict(skin="#d9a679",hair="#3b2a20",hairStyle="headscarf",top="#3a8f85",bottom="#3b4a6b",outfit="casual",prop="football"))
+ look=dict(skin="#d9a679",hair="#3b2a20",hairStyle="headscarf",top="#3a8f85",bottom="#3b4a6b",outfit="casual",prop="none"))
 D["beethoven"] = dict(
  add_sources=[],
  evidence=[
@@ -31,13 +31,13 @@ D["beethoven"] = dict(
   bridge=["fast","e5","Patrons: Archduke Rudolph, Lobkowitz and Kinsky guaranteed his income in 1809."],
   quiet=["fast","e6","Inner ear: he sketched at home and composed the late works from imagination."]),
  adv_ev="e6",
- look=dict(skin="#e8c7a0",hair="#7a7a7a",hairStyle="wild",top="#2f5d46",bottom="#c9b99a",outfit="coat",prop="score"))
+ look=dict(skin="#e8c7a0",hair="#7a7a7a",hairStyle="short",top="#2f5d46",bottom="#c9b99a",outfit="coat",prop="score"))
 D["cox"] = dict(
  add_sources=[],
  evidence=[
   dict(id="e1", y="childhood and adult life", ev="Laverne Cox has told TIME and other outlets that she was bullied as a child and harassed on the street as an adult; violence against trans women is a real risk.", src=1),
   dict(id="e2", y="1980s to 1990s", ev="She trained in dance at the Alabama School of Fine Arts, then studied in New York (Marymount Manhattan College).", src=0),
-  dict(id="e3", y="1990s to 2012", ev="For many years there were few roles written for trans women; she auditioned, taught and worked until Orange Is the New Black (2013).", src=1),
+  dict(id="e3", y="1990s to 2012", ev="For many years there were few roles written for trans women; she kept auditioning and working other jobs until Orange Is the New Black (2013).", src=1),
   dict(id="e4", y="1970s onwards", ev="Her mother and her twin brother raised and backed her; friends and the trans community lifted her after insults.", src=1),
   dict(id="e5", y="2020", ev="The documentary Disclosure, which she produced and appears in, collects trans voices about how media shaped their lives.", src=2)],
  zones=dict(rope=["slow","e1","Safety: harassment and violence against trans women, which she has described."],
@@ -53,13 +53,12 @@ D["curie"] = dict(
   dict(id="e2", y="1880s", ev="She joined the secret Flying University in Warsaw, where Polish women studied in private flats.", src=3),
   dict(id="e3", y="1891 to 1894", ev="She enrolled at the Sorbonne in Paris in 1891 and earned degrees in physics and mathematics.", src=2),
   dict(id="e4", y="1898 to 1902", ev="With Pierre she processed tonnes of pitchblende in a leaky shed to isolate radium.", src=3),
-  dict(id="e5", y="1911", ev="The French Academy of Sciences narrowly voted against her membership; no woman was admitted until 1962.", src=3),
+  dict(id="e5", y="1911", ev="The French Academy of Sciences narrowly voted against her membership in 1911; it elected its first woman full member only in 1979.", src=3),
   dict(id="e6", y="1911", ev="A press campaign around the Langevin affair attacked her, often with xenophobic and sexist language.", src=2),
   dict(id="e7", y="1903", ev="Pierre made sure she was named with him for the Nobel Prize in Physics after the first nomination left her out.", src=2)],
  zones=dict(ladder=["slow","e1","Education: in Russian-ruled Warsaw women were barred from university and Polish was banned."],
   office=["slow","e5","Institutions: the Academy of Sciences refused to admit her by a narrow vote."],
   market=["slow","e6","Press and public: in 1911 newspapers attacked her with sexist and xenophobic language."],
-  quiet=["fast","e4","Lab work: the leaky shed with Pierre is where radium was found."],
   bridge=["fast","e7","Partnership: Pierre insisted that she be named with him for the Nobel Prize."]),
  adv_ev="e4",
  look=dict(skin="#f0d2b0",hair="#7a5b3a",hairStyle="bun",top="#2c2c34",bottom="#2c2c34",outfit="labcoat",prop="flask"))

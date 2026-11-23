@@ -27,7 +27,7 @@
   "type": "bestof2",
   "uses": 2,
   "title": "Second push",
-  "text": "Judy never won with one attempt. She tried again in court, in protest and in Washington until the rules changed. Roll two dice and take the higher one.",
+  "text": "Judy kept going: she sued over her teaching licence in 1970 and led the 1977 sit-in. Roll two dice and take the higher one.",
   "ev": "e5"
  },
  "life": [
@@ -130,7 +130,7 @@
  "evidence": [
   {
    "id": "e1",
-   "y": "1949",
+   "y": "about 1952",
    "ev": "Her Brooklyn school principal refused to let her in because a wheelchair was 'a fire hazard'; she had home lessons for years.",
    "src": 1
   },
@@ -160,7 +160,7 @@
   }
  ],
  "balance": {
-  "comp": 40
+  "comp": 39
  },
  "look": {
   "skin": "#f0cfa8",

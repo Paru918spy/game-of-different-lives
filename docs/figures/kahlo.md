@@ -10,7 +10,7 @@ Every effect on the board points to one of these events. If there is no document
 
 - **e1** (1913): At six she had polio; her right leg stayed thinner, and children teased her. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
 - **e2** (1925): On 17 September 1925 a tram hit her bus; she broke her spine, pelvis and leg, and had many operations over her life. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
-- **e3** (1953): Her right leg was amputated below the knee after gangrene. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
+- **e3** (1953): Her right leg was amputated below the knee in 1953 after gangrene; afterwards she used crutches, a wheelchair and a prosthetic boot. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
 - **e4** (1925 to 1926): During recovery her family built an easel above the bed with a mirror, and she started painting self-portraits. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
 - **e5** (1930s to 1940s): Diego Rivera, friends and her students (Los Fridos) supported her; the Louvre bought a painting in 1939. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
 
@@ -20,8 +20,8 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 2 steps) | Steps and distance: the accident left her in constant pain and walking was hard. | e2 |
-| 🏁 Race track | Sport, stamina and competition | slow (each field costs 2 steps) | Stamina: pain, many operations and the amputation limited what her body could do. | e3 |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 2 steps) | Steps: after the 1953 amputation she used crutches, a wheelchair and a prosthetic boot. | e3 |
+| 🏁 Race track | Sport, stamina and competition | slow (each field costs 2 steps) | Stamina: after the 1925 accident, pain and many operations limited her body. | e2 |
 | 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs half a step) | Work in bed: the easel above her bed and the mirror made her art possible. | e4 |
 | 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Friends and students (Los Fridos) supported her work and her days. | e5 |
 

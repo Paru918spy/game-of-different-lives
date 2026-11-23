@@ -31,7 +31,7 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Game balance (not part of the story)
 
-17 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+18 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: The inner ear
 

@@ -17,11 +17,6 @@
    "ev": "e6",
    "why": "Press and public: in 1911 newspapers attacked her with sexist and xenophobic language."
   },
-  "quiet": {
-   "fx": "fast",
-   "ev": "e4",
-   "why": "Lab work: the leaky shed with Pierre is where radium was found."
-  },
   "bridge": {
    "fx": "fast",
    "ev": "e7",
@@ -162,7 +157,7 @@
   {
    "id": "e5",
    "y": "1911",
-   "ev": "The French Academy of Sciences narrowly voted against her membership; no woman was admitted until 1962.",
+   "ev": "The French Academy of Sciences narrowly voted against her membership in 1911; it elected its first woman full member only in 1979.",
    "src": 3
   },
   {
@@ -179,7 +174,7 @@
   }
  ],
  "balance": {
-  "comp": 11
+  "comp": 20
  },
  "look": {
   "skin": "#f0d2b0",

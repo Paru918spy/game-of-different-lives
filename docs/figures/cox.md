@@ -10,7 +10,7 @@ Every effect on the board points to one of these events. If there is no document
 
 - **e1** (childhood and adult life): Laverne Cox has told TIME and other outlets that she was bullied as a child and harassed on the street as an adult; violence against trans women is a real risk. *Source: TIME cover story "The Transgender Tipping Point" (29 May 2014)*
 - **e2** (1980s to 1990s): She trained in dance at the Alabama School of Fine Arts, then studied in New York (Marymount Manhattan College). *Source: js/characters/group3.js tiles for Laverne Cox (Mobile, Alabama School of Fine Arts, Marymount Manhattan, Orange Is the New Black, Time cover 2014, Emmy nomination, Doubt 2017, Disclosure 2020)*
-- **e3** (1990s to 2012): For many years there were few roles written for trans women; she auditioned, taught and worked until Orange Is the New Black (2013). *Source: TIME cover story "The Transgender Tipping Point" (29 May 2014)*
+- **e3** (1990s to 2012): For many years there were few roles written for trans women; she kept auditioning and working other jobs until Orange Is the New Black (2013). *Source: TIME cover story "The Transgender Tipping Point" (29 May 2014)*
 - **e4** (1970s onwards): Her mother and her twin brother raised and backed her; friends and the trans community lifted her after insults. *Source: TIME cover story "The Transgender Tipping Point" (29 May 2014)*
 - **e5** (2020): The documentary Disclosure, which she produced and appears in, collects trans voices about how media shaped their lives. *Source: Netflix documentary Disclosure (2020)*
 

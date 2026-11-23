@@ -20,8 +20,7 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 2 steps) | Legs: weak legs as a child and hills and steps in old age. | e1 |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: a farm childhood with almost no schooling. | e2 |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 2 steps) | Legs: weak legs as a child kept him from walking until about five. | e1 |
 | 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Papers: no birth certificate, so records could not be certified. | e3 |
 | 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Coach and club: the Sikh community and his coach in Ilford took him in. | e4 |
 | 🏁 Race track | Sport, stamina and competition | fast (each field costs half a step) | Running: marathons from about 89 years old. | e5 |
@@ -30,7 +29,7 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Game balance (not part of the story)
 
-20 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+16 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Steady training
 

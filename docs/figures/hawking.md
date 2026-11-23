@@ -9,7 +9,7 @@ You are Stephen, a physicist in Cambridge whose work takes place in your head an
 Every effect on the board points to one of these events. If there is no documented event, there is no effect.
 
 - **e1** (1963 to 1964): At 21 he was diagnosed with motor neurone disease (ALS) and told he might have about two years. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
-- **e2** (late 1960s to 1970s): He moved from sticks to a wheelchair; many Cambridge buildings of the time were not step-free, so colleagues and students helped him in. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
+- **e2** (late 1960s to 1970s): He moved from sticks to a wheelchair; many Cambridge buildings of the time were not step-free, so he often depended on help to get in. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
 - **e3** (1985): After pneumonia and a tracheotomy he lost his voice; he first used a spelling card, later a computer with a synthesiser. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
 - **e4** (1960s to 2018): His wife, nurses, students and colleagues made his daily life and work possible. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
 - **e5** (1970s): As writing equations became impossible, he trained himself to hold geometry and equations in his head. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
@@ -20,8 +20,8 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🪜 Stairway | Physical access: buildings, transport, mobility | blocked (this route cannot be taken) | Steps and old buildings: with a wheelchair many Cambridge buildings of his time were closed to him. | e2 |
-| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | Voice: after 1985 every sentence had to be spelled out, so talks are slow and others speak over you. | e3 |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 2 steps) | Steps and old buildings: in a wheelchair he often depended on help to get into buildings. | e2 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | Voice: after 1985 every sentence had to be spelled out, so every talk takes much longer. | e3 |
 | 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Carers, students and colleagues made his daily life and research possible. | e4 |
 | 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs half a step) | Thinking in his head: he trained himself to see equations without paper. | e5 |
 

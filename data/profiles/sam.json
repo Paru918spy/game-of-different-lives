@@ -137,7 +137,7 @@
   {
    "id": "e2",
    "y": "research",
-   "ev": "Young people who are accepted by at least one adult report much lower rates of attempted suicide (Trevor Project).",
+   "ev": "Young LGBTQ people with at least one accepting adult report better mental health (Trevor Project, a US study).",
    "src": 2
   },
   {
@@ -154,7 +154,7 @@
   }
  ],
  "balance": {
-  "comp": 21
+  "comp": 22
  },
  "look": {
   "skin": "#e8c7a0",

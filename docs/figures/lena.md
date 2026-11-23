@@ -11,7 +11,7 @@ Every effect on the board points to one of these events. If there is no document
 - **e1** (2009 and today): Germany ratified the UN disability rights convention in 2009, yet many buildings and stations are still not step-free. *Source: UN Convention on the Rights of Persons with Disabilities*
 - **e2** (today): Many pupils with disabilities in Germany still attend special schools instead of mainstream classes (inclusion studies). *Source: Aktion Mensch: inclusion studies*
 - **e3** (today): Applications for support and for university exam adjustments take many forms and long waits. *Source: Aktion Mensch: inclusion studies*
-- **e4** (today): Disabled applicants are invited to fewer interviews than others with the same skills (Aktion Mensch studies). *Source: Aktion Mensch: inclusion studies*
+- **e4** (today): Disabled applicants are invited to fewer interviews than others with the same skills (German inclusion studies). *Source: Aktion Mensch: inclusion studies*
 - **e5** (today): Standard DIN 18040 sets rules for barrier-free building; architects who know it design accessible places. *Source: DIN 18040: German standard for accessible construction*
 - **e6** (typical case): Friends, one supportive teacher and an inclusive employer change what disabled people can do. *Source: Aktion Mensch: inclusion studies*
 
@@ -31,7 +31,7 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Game balance (not part of the story)
 
-16 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+15 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Plan B ready
 

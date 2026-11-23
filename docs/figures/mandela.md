@@ -10,8 +10,8 @@ Every effect on the board points to one of these events. If there is no document
 
 - **e1** (1948 to 1952): Apartheid laws (pass laws, group areas, the 1950 Suppression of Communism Act) limited where he lived and spoke; he was banned in 1952. *Source: Nelson Mandela, Long Walk to Freedom (1994)*
 - **e2** (1960 to 1964): At Sharpeville in 1960 police killed 69 protesters; in 1964 he faced a possible death sentence at the Rivonia trial. *Source: Nelson Mandela Foundation (nelsonmandela.org)*
-- **e3** (1964 to 1990): He spent 27 years in prison, 18 on Robben Island, with very few visits and letters. *Source: Nelson Mandela, Long Walk to Freedom (1994)*
-- **e4** (1952): With Oliver Tambo he opened South Africa's first Black law firm, and he built the ANC's network. *Source: Nelson Mandela, Long Walk to Freedom (1994)*
+- **e3** (1962 to 1990): After his arrest in 1962 he spent 27 years in prison, 18 on Robben Island, with very few visits and letters. *Source: Nelson Mandela, Long Walk to Freedom (1994)*
+- **e4** (1952): With Oliver Tambo he opened the first Black-run law practice in Johannesburg, and he built the ANC's network. *Source: Nelson Mandela, Long Walk to Freedom (1994)*
 - **e5** (1940s to 1989): He studied at Fort Hare and later for a law degree by correspondence, even in prison. *Source: Nelson Mandela, Long Walk to Freedom (1994)*
 
 ## Routes (zones)
@@ -30,7 +30,7 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Game balance (not part of the story)
 
-15 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+14 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Standing together
 

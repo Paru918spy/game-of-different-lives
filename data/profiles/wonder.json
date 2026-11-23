@@ -5,7 +5,7 @@
   "ladder": {
    "fx": "slow",
    "ev": "e1",
-   "why": "School: for years others decided where and how he learned."
+   "why": "School: blind children of his time were taught in separate schools for the blind."
   },
   "office": {
    "fx": "slow",
@@ -31,8 +31,8 @@
  "advantage": {
   "type": "skip",
   "uses": 3,
-  "title": "Perfect pitch for facts",
-  "text": "Stevie learned songs and arrangements by ear and remembers them. A question about something you know by heart counts as answered right.",
+  "title": "Learning by ear",
+  "text": "Stevie learned songs and arrangements by ear and played many instruments himself. On a question you know by heart, count it as answered right.",
   "ev": "e4"
  },
  "life": [
@@ -139,7 +139,7 @@
   {
    "id": "e1",
    "y": "1950s",
-   "ev": "Born premature and blind, he went to the Michigan School for the Blind, where options were set by others.",
+   "ev": "Born premature and blind, he went to the Michigan School for the Blind, one of the separate schools that blind children were sent to at the time.",
    "src": 2
   },
   {

@@ -74,3 +74,5 @@ Each station: `k`, `title` (max 40 chars), `text` (max 300 chars), optional `mov
 - `advantage.ev` names the evidence that the strength is based on.
 - `balance.comp` (0 to 40) = game-balance steps, at most 3 per roll. They are tuned by `node tools/balance.js --tune` so that every figure has about the same chance to win (fair = 25 % with four players). Balance never touches stories, zones or life-station texts. The UI labels it "Game balance, not part of the story".
 - `look` = appearance of the figure at the table (skin, hair, hairStyle, top, bottom, outfit, prop), used by `js/mp/scene.js` to seat the figure the player drew.
+
+Legend note: `fast` means a documented strength or documented support in that area of life (for example allies, a mentor, a trained sport). `slow` and `block` mean a documented barrier, never a personal weakness.

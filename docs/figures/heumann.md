@@ -8,7 +8,7 @@ You are Judy, a wheelchair user from Brooklyn who grew up in the 1950s, when sch
 
 Every effect on the board points to one of these events. If there is no documented event, there is no effect.
 
-- **e1** (1949): Her Brooklyn school principal refused to let her in because a wheelchair was 'a fire hazard'; she had home lessons for years. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
+- **e1** (about 1952): Her Brooklyn school principal refused to let her in because a wheelchair was 'a fire hazard'; she had home lessons for years. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
 - **e2** (1950s to 1970s): Steps, buses without lifts and inaccessible buildings and planes limited where she could go, and strangers often had to carry her. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
 - **e3** (1970): New York's Board of Education refused her a teaching licence; she sued and became the first wheelchair user to teach there. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
 - **e4** (1960s): At Camp Jened in the Catskills she met other disabled teenagers and found a community. *Source: Crip Camp (2020)*
@@ -29,13 +29,13 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Game balance (not part of the story)
 
-40 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+39 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Second push
 
 Second chance: roll two dice, take the higher · 2 uses per game.
 
-Judy never won with one attempt. She tried again in court, in protest and in Washington until the rules changed. Roll two dice and take the higher one.
+Judy kept going: she sued over her teaching licence in 1970 and led the 1977 sit-in. Roll two dice and take the higher one.
 
 ## Life stations (in the order of the road)
 

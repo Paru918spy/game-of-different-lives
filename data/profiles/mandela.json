@@ -150,14 +150,14 @@
   },
   {
    "id": "e3",
-   "y": "1964 to 1990",
-   "ev": "He spent 27 years in prison, 18 on Robben Island, with very few visits and letters.",
+   "y": "1962 to 1990",
+   "ev": "After his arrest in 1962 he spent 27 years in prison, 18 on Robben Island, with very few visits and letters.",
    "src": 1
   },
   {
    "id": "e4",
    "y": "1952",
-   "ev": "With Oliver Tambo he opened South Africa's first Black law firm, and he built the ANC's network.",
+   "ev": "With Oliver Tambo he opened the first Black-run law practice in Johannesburg, and he built the ANC's network.",
    "src": 1
   },
   {
@@ -168,7 +168,7 @@
   }
  ],
  "balance": {
-  "comp": 15
+  "comp": 14
  },
  "look": {
   "skin": "#5a3a28",

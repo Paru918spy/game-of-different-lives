@@ -3,14 +3,14 @@
  "intro": "You are Stephen, a physicist in Cambridge whose work takes place in your head and on a blackboard, and whose way to the lecture hall is full of stairs. People around you make a lot of your work possible, and some do not wait to hear you finish a sentence.",
  "zones": {
   "stairs": {
-   "fx": "block",
+   "fx": "slow",
    "ev": "e2",
-   "why": "Steps and old buildings: with a wheelchair many Cambridge buildings of his time were closed to him."
+   "why": "Steps and old buildings: in a wheelchair he often depended on help to get into buildings."
   },
   "tunnel": {
    "fx": "slow",
    "ev": "e3",
-   "why": "Voice: after 1985 every sentence had to be spelled out, so talks are slow and others speak over you."
+   "why": "Voice: after 1985 every sentence had to be spelled out, so every talk takes much longer."
   },
   "bridge": {
    "fx": "fast",
@@ -137,7 +137,7 @@
   {
    "id": "e2",
    "y": "late 1960s to 1970s",
-   "ev": "He moved from sticks to a wheelchair; many Cambridge buildings of the time were not step-free, so colleagues and students helped him in.",
+   "ev": "He moved from sticks to a wheelchair; many Cambridge buildings of the time were not step-free, so he often depended on help to get in.",
    "src": 2
   },
   {

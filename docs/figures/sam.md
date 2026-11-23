@@ -9,7 +9,7 @@ You are Sam, a fictional 15-year-old in Germany who goes by they/them. Playing t
 Every effect on the board points to one of these events. If there is no documented event, there is no effect.
 
 - **e1** (2017 to 2018): Germany's Federal Constitutional Court ruled in 2017 that civil status must allow a third entry; 'divers' was introduced in 2018. Before that, forms offered two boxes. *Source: Federal Constitutional Court of Germany, 2017 ruling on a third gender entry; 2018 introduction of "divers"*
-- **e2** (research): Young people who are accepted by at least one adult report much lower rates of attempted suicide (Trevor Project). *Source: Trevor Project research on acceptance and wellbeing*
+- **e2** (research): Young LGBTQ people with at least one accepting adult report better mental health (Trevor Project, a US study). *Source: Trevor Project research on acceptance and wellbeing*
 - **e3** (research): Trans and non-binary young people report more bullying and exclusion at school (Trevor Project). *Source: Trevor Project research on acceptance and wellbeing*
 - **e4** (typical case): School routines such as sports teams, toilets and trips are often split into two groups. *Source: Trevor Project research on acceptance and wellbeing*
 
@@ -28,7 +28,7 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 ## Game balance (not part of the story)
 
-21 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+22 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Allies in the room
 

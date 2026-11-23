@@ -8,7 +8,7 @@ You are Stevland Morris from Detroit, blind since birth, with a head full of mel
 
 Every effect on the board points to one of these events. If there is no documented event, there is no effect.
 
-- **e1** (1950s): Born premature and blind, he went to the Michigan School for the Blind, where options were set by others. *Source: Rock & Roll Hall of Fame: Stevie Wonder*
+- **e1** (1950s): Born premature and blind, he went to the Michigan School for the Blind, one of the separate schools that blind children were sent to at the time. *Source: Rock & Roll Hall of Fame: Stevie Wonder*
 - **e2** (1961 to 1971): Signed to Motown at 11; his contract held his earnings in trust until 21, and at 21 he renegotiated and gained creative control. *Source: Rock & Roll Hall of Fame: Stevie Wonder*
 - **e3** (1960s): Motown's Berry Gordy, mentor Clarence Paul and his family supported his career. *Source: Rock & Roll Hall of Fame: Stevie Wonder*
 - **e4** (1972 to 1976): He recorded a run of classic albums, playing many instruments himself. *Source: Rock & Roll Hall of Fame: Stevie Wonder*
@@ -19,7 +19,7 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: for years others decided where and how he learned. | e1 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: blind children of his time were taught in separate schools for the blind. | e1 |
 | 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Contracts: until 21 others controlled his contract and money. | e2 |
 | 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Business: his earnings and his songs were not his to control. | e2 |
 | 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Support: his family, Clarence Paul and Motown backed him. | e3 |
@@ -31,11 +31,11 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 11 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
-## Advantage: Perfect pitch for facts
+## Advantage: Learning by ear
 
 Free pass: count one question or action as answered right · 3 uses per game.
 
-Stevie learned songs and arrangements by ear and remembers them. A question about something you know by heart counts as answered right.
+Stevie learned songs and arrangements by ear and played many instruments himself. On a question you know by heart, count it as answered right.
 
 ## Life stations (in the order of the road)
 

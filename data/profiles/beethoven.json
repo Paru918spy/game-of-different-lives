@@ -175,12 +175,12 @@
   }
  ],
  "balance": {
-  "comp": 17
+  "comp": 18
  },
  "look": {
   "skin": "#e8c7a0",
   "hair": "#7a7a7a",
-  "hairStyle": "wild",
+  "hairStyle": "short",
   "top": "#2f5d46",
   "bottom": "#c9b99a",
   "outfit": "coat",

@@ -5,12 +5,7 @@
   "stairs": {
    "fx": "slow",
    "ev": "e1",
-   "why": "Legs: weak legs as a child and hills and steps in old age."
-  },
-  "ladder": {
-   "fx": "slow",
-   "ev": "e2",
-   "why": "School: a farm childhood with almost no schooling."
+   "why": "Legs: weak legs as a child kept him from walking until about five."
   },
   "office": {
    "fx": "slow",
@@ -169,7 +164,7 @@
   }
  ],
  "balance": {
-  "comp": 20
+  "comp": 16
  },
  "look": {
   "skin": "#b8845a",

@@ -4,13 +4,13 @@
  "zones": {
   "stairs": {
    "fx": "slow",
-   "ev": "e2",
-   "why": "Steps and distance: the accident left her in constant pain and walking was hard."
+   "ev": "e3",
+   "why": "Steps: after the 1953 amputation she used crutches, a wheelchair and a prosthetic boot."
   },
   "sprint": {
    "fx": "slow",
-   "ev": "e3",
-   "why": "Stamina: pain, many operations and the amputation limited what her body could do."
+   "ev": "e2",
+   "why": "Stamina: after the 1925 accident, pain and many operations limited her body."
   },
   "quiet": {
    "fx": "fast",
@@ -145,7 +145,7 @@
   {
    "id": "e3",
    "y": "1953",
-   "ev": "Her right leg was amputated below the knee after gangrene.",
+   "ev": "Her right leg was amputated below the knee in 1953 after gangrene; afterwards she used crutches, a wheelchair and a prosthetic boot.",
    "src": 1
   },
   {

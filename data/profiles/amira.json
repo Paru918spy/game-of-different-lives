@@ -168,7 +168,7 @@
   }
  ],
  "balance": {
-  "comp": 21
+  "comp": 22
  },
  "look": {
   "skin": "#d9a679",
@@ -177,6 +177,6 @@
   "top": "#3a8f85",
   "bottom": "#3b4a6b",
   "outfit": "casual",
-  "prop": "football"
+  "prop": "none"
  }
 }

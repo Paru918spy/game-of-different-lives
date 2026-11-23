@@ -153,7 +153,7 @@
   {
    "id": "e4",
    "y": "today",
-   "ev": "Disabled applicants are invited to fewer interviews than others with the same skills (Aktion Mensch studies).",
+   "ev": "Disabled applicants are invited to fewer interviews than others with the same skills (German inclusion studies).",
    "src": 2
   },
   {
@@ -170,7 +170,7 @@
   }
  ],
  "balance": {
-  "comp": 16
+  "comp": 15
  },
  "look": {
   "skin": "#f0d2b0",
