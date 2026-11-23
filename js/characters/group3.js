@@ -24,9 +24,9 @@ GOL.add({
 });
 
 GOL.add({
-  id: "johnson", name: "Marsha P. Johnson", years: "1945 – 1992", focus: "Gender identity, poverty, queer rights", emoji: "🌸", color: "#9333ea",
+  id: "johnson", note: "Content note: discrimination, poverty, violence and an unresolved death.", name: "Marsha P. Johnson", years: "1945 – 1992", focus: "Gender identity, poverty, queer rights", emoji: "🌸", color: "#9333ea",
   tagline: "An activist who fed, housed and defended homeless queer youth long before it was popular. “Pay it no mind.”",
-  intro: "Content note: this story includes discrimination, poverty and violence. You are Marsha, who arrives in New York City with almost nothing and builds a family for people who have no one.",
+  intro: "You are Marsha, who arrives in New York City with almost nothing and builds a family for people who have no one.",
   stages: ["New Jersey", "New York", "Activism", "Later years"],
   tiles: [
     ["start", 0, "Elizabeth, NJ, 1945", "Marsha is born on 24 August 1945 in Elizabeth, New Jersey, one of seven children. She grows up in a church-going family and loves dressing up in flowers and bright colours."],
@@ -117,9 +117,9 @@ GOL.add({
 });
 
 GOL.add({
-  id: "turing", name: "Alan Turing", years: "1912 – 1954", focus: "Sexuality, discrimination", emoji: "🧮", color: "#475569",
+  id: "turing", note: "Content note: persecution of gay men and an early death. Suggested for older players.", name: "Alan Turing", years: "1912 – 1954", focus: "Sexuality, discrimination", emoji: "🧮", color: "#475569",
   tagline: "A mathematician who helped shorten the Second World War and invented the ideas behind computers, then was punished for who he loved.",
-  intro: "Content note: this story includes the persecution of gay men, and ends with Turing’s early death. You are Alan, a brilliant, shy boy in 1920s England who loves numbers and puzzles.",
+  intro: "You are Alan, a brilliant, shy boy in 1920s England who loves numbers and puzzles.",
   stages: ["Youth", "Cambridge", "Bletchley Park", "Computers", "Persecution"],
   tiles: [
     ["start", 0, "London, 1912", "Alan is born on 23 June 1912. His parents work in colonial India, so he is raised by foster families and at boarding school."],

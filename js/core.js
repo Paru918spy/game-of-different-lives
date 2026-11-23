@@ -39,7 +39,7 @@ GOL.illus = function (o) {
   const beard = o.beard ? `<path d="M32 52 Q50 82 68 52 Q60 70 50 70 Q40 70 32 52Z" fill="${o.beard}"/>` : "";
   const chair = o.chair ? `<g stroke="#555" stroke-width="4" fill="none"><circle cx="22" cy="90" r="14"/><circle cx="78" cy="90" r="14"/></g>` : "";
   const hijabFace = st === "hijab" ? `<ellipse cx="50" cy="48" rx="19" ry="23" fill="${skin}"/>` : `<ellipse cx="50" cy="46" rx="21" ry="25" fill="${skin}"/>`;
-  return `<svg viewBox="0 0 100 100" role="img" aria-label="${o.label || "Illustrated portrait"}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="${o.label || "Illustrated portrait"}">
     <rect width="100" height="100" fill="${bg}"/>${chair}
     <path d="M10 100 Q14 72 50 70 Q86 72 90 100Z" fill="${shirt}"/>
     <rect x="43" y="62" width="14" height="14" rx="4" fill="${skin}"/>${back}${hijabFace}${front}${beard}
@@ -55,4 +55,12 @@ GOL.portrait = function (c) {
     return `<img src="${c.photo.file}" alt="Photo of ${c.name}" onerror="this.outerHTML='${emoji}'">`;
   }
   return c.avatar.emoji;
+};
+
+/* Small credit line (author, license, source link) for a real person's photo. */
+GOL.credit = function (c) {
+  const p = c.photo; if (!p) return "";
+  const e = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+  const lic = p.licenseUrl ? `<a href="${e(p.licenseUrl)}" target="_blank" rel="noopener">${e(p.license)}</a>` : e(p.license);
+  return `<span class="credit">${p.note ? e(p.note) + " · " : "Photo: "}${e(p.author)} · ${lic} · <a href="${e(p.source)}" target="_blank" rel="noopener">Wikimedia Commons</a></span>`;
 };
