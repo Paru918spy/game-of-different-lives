@@ -26,27 +26,33 @@ function play(P, figs, seed) {
       } else if (c.kind === "task") { if (!right && adv === "skip" && p.left > 0 && !c.all) E.dispatch(S, { t: "skipq" }); else E.dispatch(S, { t: "task", done: right }); }
       else E.dispatch(S, { t: "next" }); }
     else if (S.phase === "feedback") E.dispatch(S, { t: "next", shield: !S.card.result.ok && adv === "shield" && p.left > 0 });
-    else if (S.phase === "roll") E.dispatch(S, { t: "roll", best: adv === "bestof2" && p.left > 0, lift: adv === "lift" && p.left > 0 });
+    else if (S.phase === "roll") E.dispatch(S, { t: "roll", best: adv === "bestof2" && p.left > 0, lift: adv === "lift" && p.left > 0, comp: 3 });
     else if (S.phase === "fork") { const zf = P[p.char].zones, d = dist(p.char); const o = S.fork.allowed.slice().sort((a, b) => (B.cost(board.nodes[a], zf) + d.minOf(a)) - (B.cost(board.nodes[b], zf) + d.minOf(b))); E.dispatch(S, { t: "choose", node: o[0] }); }
   }
   return S;
 }
 function solo(P, N) { const out = {}; IDS.forEach(id => { let t = 0; for (let g = 0; g < N; g++) t += play(P, [id], g + 1).round; out[id] = t / N; }); return out; }
-function group(P, N) { const w = {}, n = {}; IDS.forEach(i => { w[i] = 0; n[i] = 0; });
+function group(P, N) { rngState = 777; const w = {}, n = {}; IDS.forEach(i => { w[i] = 0; n[i] = 0; });
   for (let g = 0; g < N; g++) { const pool = IDS.slice(); const figs = []; while (figs.length < 4) figs.push(pool.splice(Math.floor(rand() * pool.length), 1)[0]);
     const S = play(P, figs, 1000 + g); figs.forEach(f => n[f]++); w[S.players[S.winner].char]++; }
   const o = {}; IDS.forEach(i => o[i] = w[i] / Math.max(1, n[i])); return o; }
 const fmt = (o, d) => Object.entries(o).sort((a, b) => a[1] - b[1]).map(([k, v]) => k + " " + v.toFixed(d)).join(", ");
+/* --tune adjusts ONLY balance.comp (game-balance steps, 0..14), never story texts, zones or life-station moves.
+   Each figure gets the number of extra steps that brings its group win rate towards 25 %. */
 if (process.argv.includes("--tune")) {
-  for (let it = 0; it < 40; it++) {
-    const P = load(), r = solo(P, 500), m = Object.values(r).reduce((a, b) => a + b) / 21, sd = Math.max(...Object.values(r)) - Math.min(...Object.values(r));
-    console.log(`round ${it}: mean ${m.toFixed(2)}, spread ${sd.toFixed(2)}`); let changed = 0;
-    IDS.forEach(id => { const d = r[id] - m; if (Math.abs(d) < .3) return; const L = P[id].life, up = d > 0;
-      const net = L.reduce((a, t) => a + ((t.k === "barrier" || t.k === "boost") ? t.move : 0), 0);
-      const order = up ? [t => t.k === "barrier" && t.move < -1 ? 1 : 0, t => t.k === "boost" && t.move < 3 ? 1 : 0] : [t => t.k === "boost" && t.move > 1 ? -1 : 0, t => t.k === "barrier" && t.move > -3 ? -1 : 0];
-      if ((up && net >= 5) || (!up && net <= -5)) return;
-      for (const f of order) { const cand = L.map((t, i) => [t, i]).filter(x => f(x[0])); if (cand.length) { const [t] = cand[Math.floor(rand() * cand.length)]; t.move += f(t); changed++; fs.writeFileSync(file(id), JSON.stringify(P[id], null, 1)); break; } } });
-    if (!changed) break;
+  const GN = +(process.argv[process.argv.indexOf("--tune") + 1]) || 4000;
+  { /* pass 1: solo speed. Every figure gets the steps it needs to be as fast as the fastest figure with no compensation */
+    for (let it = 0; it < 6; it++) {
+      const P = load(); IDS.forEach(id => { P[id].balance.comp = it ? P[id].balance.comp : 0; }); const r = solo(P, 300), best = Math.min(...Object.values(r)); let ch = 0;
+      IDS.forEach(id => { const d = r[id] - best; if (Math.abs(d) < .15) return; const nc = Math.max(0, Math.min(40, P[id].balance.comp + Math.round(d * 3.3))); if (nc !== P[id].balance.comp) { P[id].balance.comp = nc; ch++; } fs.writeFileSync(file(id), JSON.stringify(P[id], null, 1)); });
+      console.log(`solo pass ${it}: spread ${(Math.max(...Object.values(r)) - best).toFixed(2)} rounds`); if (!ch) break;
+    }
+  }
+  for (let it = 0; it < 16; it++) { /* pass 2: group win rate */
+    const P = load(), g = group(P, GN); let changed = 0, worst = 0;
+    IDS.forEach(id => { const d = g[id] - .25; worst = Math.max(worst, Math.abs(d)); if (Math.abs(d) < .015) return; const c = P[id].balance.comp;
+      const step = Math.abs(d) > .05 ? 2 : 1, nc = Math.max(0, Math.min(40, c + (d < 0 ? step : -step))); if (nc !== c) { P[id].balance.comp = nc; fs.writeFileSync(file(id), JSON.stringify(P[id], null, 1)); changed++; } });
+    console.log(`group round ${it}: worst deviation ${(worst * 100).toFixed(1)} points, ${changed} figures changed`); if (!changed) break;
   }
 }
 const P = load(); const r = solo(P, 800), g = group(P, 12000);

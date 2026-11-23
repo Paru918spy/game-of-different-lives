@@ -2,28 +2,38 @@
  "id": "grandin",
  "intro": "You are Temple, an autistic girl in 1950s America who thinks in pictures and is hurt by sudden noise. Teachers and doctors expect little. Animals, machines and a few people who listen show you where you can do real work.",
  "zones": {
-  "market": {
-   "fx": "slow",
-   "why": "Loud crowds, sudden sounds and unspoken social rules make this street exhausting to cross."
-  },
   "office": {
    "fx": "slow",
-   "why": "Forms and meetings run on unwritten rules. Temple asks for things in writing and drawn out."
+   "ev": "e1",
+   "why": "Medical authority: doctors advised an institution, and others decided about her."
+  },
+  "tunnel": {
+   "fx": "slow",
+   "ev": "e2",
+   "why": "Noise and teasing: sudden sounds hurt, and many classmates stayed away or mocked her."
+  },
+  "market": {
+   "fx": "slow",
+   "ev": "e4",
+   "why": "Workplace: the cattle industry was a closed men's world for a woman who is also autistic."
   },
   "ladder": {
    "fx": "fast",
-   "why": "Climbing fences and walkways is how Temple inspects cattle yards from an animal's viewpoint."
+   "ev": "e3",
+   "why": "A teacher who saw her talent: Mr Carlock channelled her fixations into school projects."
   },
-  "tunnel": {
+  "bridge": {
    "fx": "fast",
-   "why": "Walking narrow chutes herself shows her how animals see and where they balk."
+   "ev": "e5",
+   "why": "Mother, aunt and mentors gave her chances and patient time."
   }
  },
  "advantage": {
   "type": "hint",
   "uses": 3,
   "title": "Picture it",
-  "text": "Temple pictures a problem in detail, like a film, and spots what does not fit. Remove one wrong answer before you decide."
+  "text": "Temple pictures a problem in detail, like a film, and spots what does not fit. Remove one wrong answer before you decide.",
+  "ev": "e6"
  },
  "life": [
   {
@@ -120,5 +130,55 @@
  ],
  "flags": [
   "Exact age for the squeeze machine (18) and the mid-century 'institution' advice come from the single-player data."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1950",
+   "ev": "Without speech at three, she was seen by doctors who advised an institution; her mother refused and arranged speech therapy.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "childhood and school",
+   "ev": "Sudden sounds such as school bells hurt her; she was teased at school and called names for how she spoke.",
+   "src": 1
+  },
+  {
+   "id": "e3",
+   "y": "1960s",
+   "ev": "At Hampshire Country School her science teacher Mr Carlock turned her fixations into projects, which led to college.",
+   "src": 1
+  },
+  {
+   "id": "e4",
+   "y": "1970s",
+   "ev": "She entered the male-dominated livestock industry and was kept out of some feedlot meetings and harassed by cowboys.",
+   "src": 1
+  },
+  {
+   "id": "e5",
+   "y": "1960s",
+   "ev": "Her aunt's ranch in Arizona, her mother and later mentors gave her room to find her path.",
+   "src": 1
+  },
+  {
+   "id": "e6",
+   "y": "1970s",
+   "ev": "She designed curved cattle chutes by picturing animals' view; her squeeze machine came from the same insight.",
+   "src": 1
+  }
+ ],
+ "balance": {
+  "comp": 15
+ },
+ "look": {
+  "skin": "#f0cfa8",
+  "hair": "#8a6b3c",
+  "hairStyle": "short",
+  "top": "#a63a3a",
+  "bottom": "#2b3f66",
+  "outfit": "western",
+  "prop": "none"
+ }
 }

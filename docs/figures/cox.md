@@ -4,18 +4,32 @@
 
 You are Laverne Cox: a dancer first, then an actor, producer and advocate. Playing this life means moving between stages where you are celebrated and rooms where gatekeepers and strangers decide who you are allowed to be.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (childhood and adult life): Laverne Cox has told TIME and other outlets that she was bullied as a child and harassed on the street as an adult; violence against trans women is a real risk. *Source: TIME cover story "The Transgender Tipping Point" (29 May 2014)*
+- **e2** (1980s to 1990s): She trained in dance at the Alabama School of Fine Arts, then studied in New York (Marymount Manhattan College). *Source: js/characters/group3.js tiles for Laverne Cox (Mobile, Alabama School of Fine Arts, Marymount Manhattan, Orange Is the New Black, Time cover 2014, Emmy nomination, Doubt 2017, Disclosure 2020)*
+- **e3** (1990s to 2012): For many years there were few roles written for trans women; she auditioned, taught and worked until Orange Is the New Black (2013). *Source: TIME cover story "The Transgender Tipping Point" (29 May 2014)*
+- **e4** (1970s onwards): Her mother and her twin brother raised and backed her; friends and the trans community lifted her after insults. *Source: TIME cover story "The Transgender Tipping Point" (29 May 2014)*
+- **e5** (2020): The documentary Disclosure, which she produced and appears in, collects trans voices about how media shaped their lives. *Source: Netflix documentary Disclosure (2020)*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Laverne, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Laverne, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🪢 Rope bridge | fast (each field costs half a step) | Years of dance training: balance and body control make the swaying bridge feel like a stage. |
-| 🌉 Stone bridge | fast (each field costs half a step) | Her mother, friends and other trans artists carry her across, like the bridge itself. |
-| 🏛 Town hall | slow (each field costs 2 steps) | Casting offices and paperwork: gatekeepers who would not cast or name her correctly cost time. |
-| 🎪 Busy market | slow (each field costs 2 steps) | In public, stares, misgendering and harassment turn a crowded street into hard work. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 2 steps) | Safety: harassment and violence against trans women, which she has described. | e1 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Casting: for years there were almost no roles for trans actresses. | e3 |
+| 🌳 Tree ladders | Education and training | fast (each field costs half a step) | Arts school and college: dance training opened a way into New York. | e2 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Her mother, twin brother and community held her up after rejection. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+16 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Chosen family
 

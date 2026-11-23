@@ -2,24 +2,38 @@
  "id": "beethoven",
  "intro": "Music is your language, and you hear it more and more from the inside. You live in Vienna among patrons, publishers and friends, in a world built for listeners, and you have to rework how you compose, talk and earn a living.",
  "zones": {
-  "quiet": {
-   "fx": "fast",
-   "why": "Alone at the desk with the score you hear in your head: composing is where your skill is strongest."
+  "tunnel": {
+   "fx": "slow",
+   "ev": "e2",
+   "why": "Communication: from about 1818 every talk goes through paper and the conversation books."
+  },
+  "market": {
+   "fx": "slow",
+   "ev": "e3",
+   "why": "Stage and public life: after 1814 deafness ended his career as a performing pianist."
+  },
+  "office": {
+   "fx": "slow",
+   "ev": "e4",
+   "why": "Courts: the guardianship fight over his nephew took years of hearings."
   },
   "bridge": {
    "fx": "fast",
-   "why": "Patrons, publishers and friends such as Lichnowsky carry you across gaps that would stop you alone."
+   "ev": "e5",
+   "why": "Patrons: Archduke Rudolph, Lobkowitz and Kinsky guaranteed his income in 1809."
   },
-  "rope": {
-   "fx": "slow",
-   "why": "Money, health and a court case over Karl make the ground unsteady, and every step needs caution."
+  "quiet": {
+   "fx": "fast",
+   "ev": "e6",
+   "why": "Inner ear: he sketched at home and composed the late works from imagination."
   }
  },
  "advantage": {
   "type": "skip",
   "uses": 3,
   "title": "The inner ear",
-  "text": "Beethoven composed late works from his inner ear and planned whole structures in his head. Up to three times, a question you know well counts as answered."
+  "text": "Beethoven composed late works from his inner ear and planned whole structures in his head. Up to three times, a question you know well counts as answered.",
+  "ev": "e6"
  },
  "life": [
   {
@@ -121,5 +135,55 @@
   "Funeral crowd is often given as 10,000 to 20,000; text says 'many thousands'.",
   "The Ninth is the source of the EU anthem melody (arranged by Karajan); text simplifies this.",
   "The Heiligenstadt Testament was addressed to his brothers and never sent, which is the standard account."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1802",
+   "ev": "In the Heiligenstadt Testament he wrote that his hearing had been failing for years and that it had pushed him to withdraw from people.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "from about 1818",
+   "ev": "He used conversation books: visitors wrote their side of a talk, he answered aloud.",
+   "src": 1
+  },
+  {
+   "id": "e3",
+   "y": "1814",
+   "ev": "His last public appearance as a pianist in a new work was in 1814; after that his hearing no longer let him perform on stage.",
+   "src": 2
+  },
+  {
+   "id": "e4",
+   "y": "1815 to 1820",
+   "ev": "After his brother died he fought in the Vienna courts for guardianship of his nephew Karl, a case that cost him years and money.",
+   "src": 2
+  },
+  {
+   "id": "e5",
+   "y": "1809",
+   "ev": "Archduke Rudolph and two princes promised him a yearly income so he would stay in Vienna and keep composing.",
+   "src": 2
+  },
+  {
+   "id": "e6",
+   "y": "1824 to 1826",
+   "ev": "He kept sketchbooks and heard music in his head; the late quartets and the Ninth were written deaf.",
+   "src": 1
+  }
+ ],
+ "balance": {
+  "comp": 17
+ },
+ "look": {
+  "skin": "#e8c7a0",
+  "hair": "#7a7a7a",
+  "hairStyle": "wild",
+  "top": "#2f5d46",
+  "bottom": "#c9b99a",
+  "outfit": "coat",
+  "prop": "score"
+ }
 }

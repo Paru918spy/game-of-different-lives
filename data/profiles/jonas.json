@@ -2,24 +2,38 @@
  "id": "jonas",
  "intro": "You play a 58-year-old logistics manager who is suddenly job-hunting after 28 years. The hard part is not what he can do but what employers assume about his age. His experience and his network are real assets.",
  "zones": {
+  "market": {
+   "fx": "slow",
+   "ev": "e1",
+   "why": "Work: ageist assumptions decide before your skills are read."
+  },
+  "office": {
+   "fx": "slow",
+   "ev": "e2",
+   "why": "Law: age discrimination is banned, but very hard to prove."
+  },
   "tunnel": {
    "fx": "slow",
-   "why": "Online filters and silent rejections: you never learn why your application vanished."
+   "ev": "e3",
+   "why": "Digital hiring: portals and tests are built for younger applicants."
   },
-  "quiet": {
-   "fx": "fast",
-   "why": "28 years of judgement: Jonas reads a situation and a plan calmly and quickly."
+  "ladder": {
+   "fx": "slow",
+   "ev": "e4",
+   "why": "Further training: older workers are less often offered courses."
   },
   "bridge": {
    "fx": "fast",
-   "why": "Old colleagues and mentors carry him: Mira's tip and Aylin's help matter more than any form."
+   "ev": "e5",
+   "why": "A network across generations: tips and skill swaps with colleagues."
   }
  },
  "advantage": {
   "type": "skip",
   "uses": 3,
   "title": "Seen it before",
-  "text": "After decades in logistics Jonas has met most problems before. Up to three times, a question counts as answered right because he has simply done it."
+  "text": "After decades in logistics Jonas has met most problems before. Up to three times, a question counts as answered right because he has simply done it.",
+  "ev": "e6"
  },
  "life": [
   {
@@ -115,5 +129,55 @@
   "WHO Global report on ageism (2021)",
   "OECD: Working Better with Age",
   "Federal Anti-Discrimination Agency, Germany"
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "2021",
+   "ev": "The WHO reports that about one in two people hold ageist attitudes, and that ageism harms people's chances at work.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "2006",
+   "ev": "Germany's General Equal Treatment Act bans age discrimination in hiring, but applicants rarely can prove it.",
+   "src": 3
+  },
+  {
+   "id": "e3",
+   "y": "2010s",
+   "ev": "Online application portals, tests and video interviews are harder for older applicants (OECD, Working Better with Age).",
+   "src": 2
+  },
+  {
+   "id": "e4",
+   "y": "2010s",
+   "ev": "Workers over 55 take part in further training less often, and are less often offered it (OECD).",
+   "src": 2
+  },
+  {
+   "id": "e5",
+   "y": "2010s",
+   "ev": "Mixed-age teams share knowledge both ways; older workers often hold the networks and know-how.",
+   "src": 2
+  },
+  {
+   "id": "e6",
+   "y": "2010s",
+   "ev": "Long experience lets older professionals solve familiar problems faster (OECD).",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 40
+ },
+ "look": {
+  "skin": "#e8c7a0",
+  "hair": "#9a9a9a",
+  "hairStyle": "short",
+  "top": "#3f6fb0",
+  "bottom": "#2f3440",
+  "outfit": "shirt-tie",
+  "prop": "none"
+ }
 }

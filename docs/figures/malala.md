@@ -4,18 +4,32 @@
 
 You play a student whose right to go to school is taken by decree, then defended by family, teachers and strangers on the other side of the world. Rules and checkpoints slow you down, and the people who stand with you speed you up.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (2009): In January 2009 the Taliban in Swat ordered that girls must stop going to school. *Source: Malala Yousafzai with Christina Lamb, I Am Malala (2013)*
+- **e2** (2009): She wrote a BBC Urdu diary under the name Gul Makai about life under the ban. *Source: Malala Yousafzai with Christina Lamb, I Am Malala (2013)*
+- **e3** (2012): On 9 October 2012 a gunman shot her on her school bus; she was treated in Birmingham, UK. *Source: nobelprize.org: Malala Yousafzai*
+- **e4** (1997 onwards): Her father Ziauddin ran the school and backed her; teachers, classmates and strangers around the world stood with her. *Source: Malala Yousafzai with Christina Lamb, I Am Malala (2013)*
+- **e5** (2013 to 2014): She spoke at the United Nations in July 2013 and won the Nobel Peace Prize in 2014, aged 17. *Source: nobelprize.org: Malala Yousafzai*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Malala, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Malala, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🏛 Town hall | slow (each field costs 2 steps) | Under the Taliban edicts girls' schooling is forbidden by decree. Permits and rules cost time. |
-| 🎪 Busy market | slow (each field costs 2 steps) | Busy public places carry real danger for a girl with a public voice. Moving through them is slow. |
-| 🕳 Dark tunnel | slow (each field costs 2 steps) | In 2009 nobody knew which rule would be announced next. Moving without knowing costs steps. |
-| 🌉 Stone bridge | fast (each field costs half a step) | Her father, teachers, journalists and strangers abroad carry her across what she could not cross alone. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🌳 Tree ladders | Education and training | blocked (this route cannot be taken) | School: the Taliban closed the way to school for girls in Swat. | e1 |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 2 steps) | Safety: she was shot for speaking up about education. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Family and teachers: her father's school and her classmates stood with her. | e4 |
+| 🎪 Busy market | Work, money, media and public life | fast (each field costs half a step) | Platform: the BBC diary, the UN and the Nobel Prize gave her a worldwide audience. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+10 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Stay in school
 

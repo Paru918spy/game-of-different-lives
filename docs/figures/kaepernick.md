@@ -4,23 +4,37 @@
 
 You are the quarterback everyone watches, and often the only Black kid in the room: adopted into a white family, drilled in training, valued for your arm while people assume things about you. When you decide to speak, the whole league can hear it.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (2013): He was quarterback of the 49ers in the Super Bowl XLVII, a game he led to the final minutes. *Source: Press coverage of the 2016 protest and 2019 settlement*
+- **e2** (2016): After he sat and then knelt during the anthem to protest police violence, he faced boos, burned jerseys and threats. *Source: Press coverage of the 2016 protest and 2019 settlement*
+- **e3** (2017 to 2019): No NFL team signed him after the 2016 season; his collusion grievance was settled in 2019. *Source: Press coverage of the 2016 protest and 2019 settlement*
+- **e4** (2016): He founded the Know Your Rights Camp for young people. *Source: Know Your Rights Camp (knowyourrightscamp.com)*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Colin, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Colin, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🏁 Race track | fast (each field costs half a step) | Years of drills, speed and conditioning: you build your life around training, and running a long track is your home ground. |
-| 🎪 Busy market | slow (each field costs 2 steps) | Crowds, boos and cameras: public attention turns every step into a debate, and it costs time. |
-| 🏛 Town hall | slow (each field costs 2 steps) | League rules, front offices and lawyers: no team calls, and a grievance takes years to settle. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 2 steps) | Backlash: boos, burned jerseys and threats after the kneeling protest. | e2 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Work: after 2016 no team signed him, though he was still good enough to play. | e3 |
+| 🏁 Race track | Sport, stamina and competition | fast (each field costs half a step) | Sport: at the top of his game he led a team to the Super Bowl. | e1 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Community: the Know Your Rights Camp and fellow players stood with him. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+16 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Training camp
 
 Second chance: roll two dice, take the higher · 3 uses per game.
 
-Athletes prepare for the big moment and pick their best play. Roll two dice and keep the higher one, like choosing the best snap of a drill.
+Elite training: he reached the Super Bowl in 2013 through years of drilled preparation. Roll two dice and keep the higher one.
 
 ## Life stations (in the order of the road)
 

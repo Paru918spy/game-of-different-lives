@@ -2,28 +2,33 @@
  "id": "malala",
  "intro": "You play a student whose right to go to school is taken by decree, then defended by family, teachers and strangers on the other side of the world. Rules and checkpoints slow you down, and the people who stand with you speed you up.",
  "zones": {
-  "office": {
-   "fx": "slow",
-   "why": "Under the Taliban edicts girls' schooling is forbidden by decree. Permits and rules cost time."
+  "ladder": {
+   "fx": "block",
+   "ev": "e1",
+   "why": "School: the Taliban closed the way to school for girls in Swat."
   },
-  "market": {
+  "rope": {
    "fx": "slow",
-   "why": "Busy public places carry real danger for a girl with a public voice. Moving through them is slow."
-  },
-  "tunnel": {
-   "fx": "slow",
-   "why": "In 2009 nobody knew which rule would be announced next. Moving without knowing costs steps."
+   "ev": "e3",
+   "why": "Safety: she was shot for speaking up about education."
   },
   "bridge": {
    "fx": "fast",
-   "why": "Her father, teachers, journalists and strangers abroad carry her across what she could not cross alone."
+   "ev": "e4",
+   "why": "Family and teachers: her father's school and her classmates stood with her."
+  },
+  "market": {
+   "fx": "fast",
+   "ev": "e5",
+   "why": "Platform: the BBC diary, the UN and the Nobel Prize gave her a worldwide audience."
   }
  },
  "advantage": {
   "type": "shield",
   "uses": 2,
   "title": "Stay in school",
-  "text": "Malala was knocked back, but her family, school and supporters kept her learning. A wrong answer does not send you back."
+  "text": "Malala was knocked back, but her family, school and supporters kept her learning. A wrong answer does not send you back.",
+  "ev": "e4"
  },
  "life": [
   {
@@ -124,5 +129,49 @@
   "Station 6: name of the 2011 award (National Youth Peace Prize, Pakistan) taken from the single-player data; official title may be National Peace Award for Youth.",
   "Malala Fund focus countries (Pakistan, Afghanistan, Nigeria) listed from memory; check current fund pages.",
   "Gul Makai meaning given as cornflower; this is a Pashto folk heroine name, check wording."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "2009",
+   "ev": "In January 2009 the Taliban in Swat ordered that girls must stop going to school.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "2009",
+   "ev": "She wrote a BBC Urdu diary under the name Gul Makai about life under the ban.",
+   "src": 1
+  },
+  {
+   "id": "e3",
+   "y": "2012",
+   "ev": "On 9 October 2012 a gunman shot her on her school bus; she was treated in Birmingham, UK.",
+   "src": 2
+  },
+  {
+   "id": "e4",
+   "y": "1997 onwards",
+   "ev": "Her father Ziauddin ran the school and backed her; teachers, classmates and strangers around the world stood with her.",
+   "src": 1
+  },
+  {
+   "id": "e5",
+   "y": "2013 to 2014",
+   "ev": "She spoke at the United Nations in July 2013 and won the Nobel Peace Prize in 2014, aged 17.",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 10
+ },
+ "look": {
+  "skin": "#d9a679",
+  "hair": "#2a1d16",
+  "hairStyle": "headscarf",
+  "top": "#e8a6c6",
+  "bottom": "#4a6fa5",
+  "outfit": "casual",
+  "prop": "book"
+ }
 }

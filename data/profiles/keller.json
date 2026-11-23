@@ -3,23 +3,32 @@
  "intro": "You live through touch: letters spelled into your palm, raised dots under your fingertips, a teacher's hand in yours. The world is slow to learn your language, but you read, write and argue more than almost anyone around you.",
  "zones": {
   "tunnel": {
-   "fx": "fast",
-   "why": "Dim light is not the obstacle it is for others: Helen moves by touch and with a guide's hand, so a dark tunnel costs her no extra time."
+   "fx": "slow",
+   "ev": "e1",
+   "why": "Silence and darkness: before words she could not share what she knew."
   },
   "market": {
    "fx": "slow",
-   "why": "In a crowd every exchange needs a hand-spelled interpreter, so keeping up with the flow takes longer."
+   "ev": "e4",
+   "why": "Public voice: editors said her opinions came from her disability."
   },
-  "office": {
-   "fx": "slow",
-   "why": "Officials and editors doubt that a deaf-blind woman can hold her own political views, so every decision takes longer."
+  "bridge": {
+   "fx": "fast",
+   "ev": "e2",
+   "why": "A teacher: Anne Sullivan opened language and the world for her."
+  },
+  "ladder": {
+   "fx": "fast",
+   "ev": "e3",
+   "why": "College: with Anne at her side she graduated from Radcliffe with honours."
   }
  },
  "advantage": {
   "type": "skip",
   "uses": 3,
   "title": "Fingers on the page",
-  "text": "Helen read braille, studied several languages and read widely all her life. On a question you know, count it as answered right."
+  "text": "Helen read braille, studied several languages and read widely all her life. On a question you know, count it as answered right.",
+  "ev": "e3"
  },
  "life": [
   {
@@ -120,5 +129,49 @@
   "'About sixty home signs' is the commonly cited figure for Helen's pre-Sullivan signs; check against Perkins/AFB.",
   "The Perkins panel at the Frost King inquiry was without Anne Sullivan present (as widely reported); verify before use.",
   "'More than 30 countries' matches the single-player tile; Keller's own count is often given as 35."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1882 to 1887",
+   "ev": "After an illness at 19 months she was deaf and blind; for years she had no shared language with her family, only home signs.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "1887",
+   "ev": "Anne Sullivan taught her the word 'water' at the pump and then many more words by finger-spelling.",
+   "src": 1
+  },
+  {
+   "id": "e3",
+   "y": "1904",
+   "ev": "She graduated from Radcliffe College with honours, the first deaf-blind person to earn a BA.",
+   "src": 1
+  },
+  {
+   "id": "e4",
+   "y": "1912",
+   "ev": "When she wrote about socialism, newspaper editors dismissed her views as products of her disability.",
+   "src": 2
+  },
+  {
+   "id": "e5",
+   "y": "1892",
+   "ev": "After her story 'The Frost King' was accused of plagiarism, she faced an inquiry that left her afraid to write.",
+   "src": 1
+  }
+ ],
+ "balance": {
+  "comp": 13
+ },
+ "look": {
+  "skin": "#f0d2b0",
+  "hair": "#7a5b3a",
+  "hairStyle": "updo",
+  "top": "#f5f0e6",
+  "bottom": "#4a5a7a",
+  "outfit": "dress",
+  "prop": "book"
+ }
 }

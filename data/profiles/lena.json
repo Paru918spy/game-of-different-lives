@@ -4,26 +4,36 @@
  "zones": {
   "stairs": {
    "fx": "block",
-   "why": "No lift, no ramp: a staircase is a wall. She cannot take this shortcut and must find another way."
+   "ev": "e1",
+   "why": "Steps: many buildings and stations are still closed to wheelchair users."
   },
-  "rope": {
+  "ladder": {
    "fx": "slow",
-   "why": "Cobbles and uneven ground jolt a wheelchair. Every metre costs more effort and time."
+   "ev": "e2",
+   "why": "School: many disabled pupils are steered to special schools."
+  },
+  "market": {
+   "fx": "slow",
+   "ev": "e4",
+   "why": "Work: disabled applicants are invited to fewer interviews."
   },
   "ramp": {
    "fx": "fast",
-   "why": "Lena knows every step-free route in town and uses it without a detour."
+   "ev": "e5",
+   "why": "Accessible design: the ramp route is the one built for you, and you know how it works."
   },
-  "quiet": {
+  "bridge": {
    "fx": "fast",
-   "why": "Drawing and designing are where she shines. Her best ideas come when she can focus on a plan."
+   "ev": "e6",
+   "why": "Allies: friends, a teacher and an inclusive employer."
   }
  },
  "advantage": {
   "type": "lift",
   "uses": 2,
   "title": "Plan B ready",
-  "text": "Lena's team and her habit of planning an alternative entrance move her forward. After rolling, add 2 to your result."
+  "text": "Lena's team and her habit of planning an alternative entrance move her forward. After rolling, add 2 to your result.",
+  "ev": "e6"
  },
  "life": [
   {
@@ -118,6 +128,57 @@
  "sources": [
   "Fictional character: js/characters/group4.js (Lena) and docs/characters.md",
   "UN Convention on the Rights of Persons with Disabilities",
-  "Aktion Mensch: inclusion studies"
- ]
+  "Aktion Mensch: inclusion studies",
+  "DIN 18040: German standard for accessible construction"
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "2009 and today",
+   "ev": "Germany ratified the UN disability rights convention in 2009, yet many buildings and stations are still not step-free.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "today",
+   "ev": "Many pupils with disabilities in Germany still attend special schools instead of mainstream classes (inclusion studies).",
+   "src": 2
+  },
+  {
+   "id": "e3",
+   "y": "today",
+   "ev": "Applications for support and for university exam adjustments take many forms and long waits.",
+   "src": 2
+  },
+  {
+   "id": "e4",
+   "y": "today",
+   "ev": "Disabled applicants are invited to fewer interviews than others with the same skills (Aktion Mensch studies).",
+   "src": 2
+  },
+  {
+   "id": "e5",
+   "y": "today",
+   "ev": "Standard DIN 18040 sets rules for barrier-free building; architects who know it design accessible places.",
+   "src": 3
+  },
+  {
+   "id": "e6",
+   "y": "typical case",
+   "ev": "Friends, one supportive teacher and an inclusive employer change what disabled people can do.",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 16
+ },
+ "look": {
+  "skin": "#f0d2b0",
+  "hair": "#8a5a2a",
+  "hairStyle": "ponytail",
+  "top": "#e07a3a",
+  "bottom": "#33384a",
+  "outfit": "wheelchair",
+  "prop": "none"
+ }
 }

@@ -180,3 +180,9 @@
 .fk-b{flex-wrap:wrap}
 .pfig{display:block;font-size:12px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:700px){.reveal2{flex-direction:column;text-align:center}.reveal2 .big-av{width:110px;height:110px}}
+
+/* documented evidence lines and game balance */
+.zl .evl{display:block;margin-top:2px;font-size:.78em;color:#5b4a38;line-height:1.35}
+.zl .evl i{color:#7a6a58}
+.mp-comp{background:#eef5ff;border:2px dashed #6a8fd1;color:#223a66}
+.mp-comp.on{background:#d6e6ff;border-style:solid}

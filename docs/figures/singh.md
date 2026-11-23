@@ -4,18 +4,33 @@
 
 You are Fauja, a farmer's son in a Punjab village around 1911, with legs too weak to walk until you are five. Your running starts in your late 80s in East London, far from home, with a club and a coach who speaks your language.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (around 1911 to 1916): He could not walk until about five because his legs were weak. *Source: Khushwant Singh, The Turbaned Tornado*
+- **e2** (childhood): He was a farmer's son in a Punjab village with almost no schooling. *Source: Khushwant Singh, The Turbaned Tornado*
+- **e3** (2000s): He had no birth certificate, so Guinness World Records could not certify his age records. *Source: Guinness World Records statement on age records*
+- **e4** (1992 onwards): After family losses he moved to Ilford in London, where a Sikh running coach and a club took him in. *Source: BBC and Guardian interviews*
+- **e5** (2000): He ran the London Marathon for the first time at around 89, and finished marathons until 101. *Source: BBC and Guardian interviews*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Fauja, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Fauja, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🏁 Race track | fast (each field costs half a step) | Daily training of a long-distance runner: slow, steady kilometres, built up over years. |
-| 🎪 Busy market | fast (each field costs half a step) | Sikh community, club mates and cheering crowds at marathons meant he was never running alone. |
-| 🏛 Town hall | slow (each field costs 2 steps) | No birth certificate, so records and officials would not confirm his age, however many people saw him run. |
-| 🪜 Stairway | slow (each field costs 2 steps) | Weak legs from early childhood and later age: steep steps cost more energy, so he took them with care. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 2 steps) | Legs: weak legs as a child and hills and steps in old age. | e1 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: a farm childhood with almost no schooling. | e2 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Papers: no birth certificate, so records could not be certified. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Coach and club: the Sikh community and his coach in Ilford took him in. | e4 |
+| 🏁 Race track | Sport, stamina and competition | fast (each field costs half a step) | Running: marathons from about 89 years old. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+20 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Steady training
 

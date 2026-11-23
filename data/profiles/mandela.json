@@ -2,28 +2,38 @@
  "id": "mandela",
  "intro": "You are a lawyer and organiser in a country whose laws were written to keep you out. Your strength is in numbers, discipline and patience, in a movement that outlasts any one arrest.",
  "zones": {
-  "sprint": {
-   "fx": "fast",
-   "why": "Daily training, from boxing in Johannesburg to exercise in a cell, built the stamina for a very long road."
-  },
-  "market": {
-   "fx": "fast",
-   "why": "Rallies, township streets and a people's movement carry you: in the crowd you are one of thousands."
-  },
   "office": {
    "fx": "slow",
-   "why": "Pass laws, banning orders and apartheid courts: every permit, form and hearing was built to stop you."
+   "ev": "e1",
+   "why": "Law: apartheid laws and banning orders decided where he could live, speak and work."
+  },
+  "rope": {
+   "fx": "slow",
+   "ev": "e2",
+   "why": "Safety: Sharpeville, arrest and a trial that could end in the death sentence."
   },
   "tunnel": {
    "fx": "slow",
-   "why": "Underground in 1961 you move by night and in disguise, without knowing who is watching or what comes next."
+   "ev": "e3",
+   "why": "Prison: 27 years apart, with very few visits and letters."
+  },
+  "bridge": {
+   "fx": "fast",
+   "ev": "e4",
+   "why": "Movement: the ANC, Oliver Tambo and many allies."
+  },
+  "ladder": {
+   "fx": "fast",
+   "ev": "e5",
+   "why": "Study: Fort Hare, then a law degree by correspondence."
   }
  },
  "advantage": {
   "type": "lift",
   "uses": 2,
   "title": "Standing together",
-  "text": "Mandela's movement, lawyers and supporters carried him through the treason trial and the Rivonia verdict. After rolling, add 2 to your result."
+  "text": "Mandela's movement, lawyers and supporters carried him through the treason trial and the Rivonia verdict. After rolling, add 2 to your result.",
+  "ev": "e4"
  },
  "life": [
   {
@@ -124,5 +134,49 @@
   "Treason Trial: 156 accused, all acquitted by March 1961; he was first banned in 1952.",
   "Boxing is mentioned in the zone text only generally ('boxing in Johannesburg'); documented in his autobiography.",
   "'Mine guard' at Crown Mines is in his autobiography; check if used elsewhere."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1948 to 1952",
+   "ev": "Apartheid laws (pass laws, group areas, the 1950 Suppression of Communism Act) limited where he lived and spoke; he was banned in 1952.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "1960 to 1964",
+   "ev": "At Sharpeville in 1960 police killed 69 protesters; in 1964 he faced a possible death sentence at the Rivonia trial.",
+   "src": 2
+  },
+  {
+   "id": "e3",
+   "y": "1964 to 1990",
+   "ev": "He spent 27 years in prison, 18 on Robben Island, with very few visits and letters.",
+   "src": 1
+  },
+  {
+   "id": "e4",
+   "y": "1952",
+   "ev": "With Oliver Tambo he opened South Africa's first Black law firm, and he built the ANC's network.",
+   "src": 1
+  },
+  {
+   "id": "e5",
+   "y": "1940s to 1989",
+   "ev": "He studied at Fort Hare and later for a law degree by correspondence, even in prison.",
+   "src": 1
+  }
+ ],
+ "balance": {
+  "comp": 15
+ },
+ "look": {
+  "skin": "#5a3a28",
+  "hair": "#cfcfcf",
+  "hairStyle": "short",
+  "top": "#d9822b",
+  "bottom": "#2c3a2c",
+  "outfit": "shirt",
+  "prop": "none"
+ }
 }

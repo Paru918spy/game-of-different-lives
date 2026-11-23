@@ -4,17 +4,33 @@
 
 You play a 16-year-old who loves maths and football and has to rebuild her life in a new country. Much of the way is paperwork and waiting that nobody asked her to carry. Her languages, her team spirit and the people who open doors count for a lot.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (typical case): Refugees in Germany often wait months or years for residence decisions, and foreign diplomas have to pass a recognition procedure before they count. *Source: Federal Recognition Act (Anerkennungsgesetz) 2012, anerkennung-in-deutschland.de*
+- **e2** (typical case): Newly arrived pupils often sit in class before they speak German; this isolates them even when they are strong in maths or sport. *Source: OECD: Education in Germany, students with a migrant background*
+- **e3** (typical case): At the same performance level, pupils with a migrant background are placed in lower school tracks more often (OECD, German school studies). *Source: OECD: Education in Germany, students with a migrant background*
+- **e4** (typical case): Sports clubs are one of the most common first places where refugee children find friends; the DOSB has run integration programmes since 1989. *Source: DOSB programme 'Integration durch Sport' (dosb.de)*
+- **e5** (typical case): Teachers, volunteers and neighbours are one of the most important factors for refugee children arriving in a new country (UNHCR). *Source: UNHCR reports on refugee education*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Amira, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Amira, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🏛 Town hall | slow (each field costs 2 steps) | Residence papers and unrecognised diplomas: every counter means long waiting and another form. |
-| 🕳 Dark tunnel | slow (each field costs 2 steps) | New country, unwritten rules: nobody explains how things work, so you feel your way in the dark. |
-| 🏁 Race track | fast (each field costs half a step) | Amira plays football. On the track she is among equals, and the game needs no shared language. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Papers and recognition: foreign diplomas and residence status are decided slowly, whatever your effort. | e1 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | Arriving without the language: for a while you understand little, and few people understand you. | e2 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School tracks: pupils with a migrant background more often land on lower tracks at equal marks. | e3 |
+| 🏁 Race track | Sport, stamina and competition | fast (each field costs half a step) | Sport club: football needs no shared language, and clubs are a common first home for refugee children. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Teachers, neighbours and volunteers open doors for newly arrived families. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+21 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: A helping hand
 
@@ -107,6 +123,8 @@ Amira volunteers as an interpreter for new arrivals. She knows how it feels to h
 - Fictional character: js/characters/group4.js (Amira) and docs/characters.md
 - UNHCR reports on refugee education
 - OECD: Education in Germany, students with a migrant background
+- Federal Recognition Act (Anerkennungsgesetz) 2012, anerkennung-in-deutschland.de
+- DOSB programme 'Integration durch Sport' (dosb.de)
 
 ## To check
 

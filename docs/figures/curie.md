@@ -4,18 +4,35 @@
 
 You are Maria Skłodowska, a top student in a Warsaw where Polish is suppressed and women may not enter university. Doors are locked by law, so you study in secret, then in Paris, and then in a leaky shed full of ore.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1880s): Warsaw was under Russian rule: Polish was suppressed in schools, and women could not attend university. *Source: Musée Curie*
+- **e2** (1880s): She joined the secret Flying University in Warsaw, where Polish women studied in private flats. *Source: Musée Curie*
+- **e3** (1891 to 1894): She enrolled at the Sorbonne in Paris in 1891 and earned degrees in physics and mathematics. *Source: Nobel Prize site: Marie Curie biographical*
+- **e4** (1898 to 1902): With Pierre she processed tonnes of pitchblende in a leaky shed to isolate radium. *Source: Musée Curie*
+- **e5** (1911): The French Academy of Sciences narrowly voted against her membership; no woman was admitted until 1962. *Source: Musée Curie*
+- **e6** (1911): A press campaign around the Langevin affair attacked her, often with xenophobic and sexist language. *Source: Nobel Prize site: Marie Curie biographical*
+- **e7** (1903): Pierre made sure she was named with him for the Nobel Prize in Physics after the first nomination left her out. *Source: Nobel Prize site: Marie Curie biographical*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Marie, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Marie, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🌳 Quiet lane | fast (each field costs half a step) | Reading, thinking and long hours of focused study were her way in, from Warsaw to the Sorbonne. |
-| 🏁 Race track | fast (each field costs half a step) | Stirring tons of ore by hand for years took stamina; later she drove X-ray cars to the front. |
-| 🏛 Town hall | slow (each field costs 2 steps) | Universities and academies kept their doors shut to women: closed lists, closed votes, long delays. |
-| 🎪 Busy market | slow (each field costs 2 steps) | In 1911 newspapers turned a crowd of readers against her as a woman and a foreigner. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | Education: in Russian-ruled Warsaw women were barred from university and Polish was banned. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Institutions: the Academy of Sciences refused to admit her by a narrow vote. | e5 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Press and public: in 1911 newspapers attacked her with sexist and xenophobic language. | e6 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs half a step) | Lab work: the leaky shed with Pierre is where radium was found. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Partnership: Pierre insisted that she be named with him for the Nobel Prize. | e7 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+11 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Method and notebooks
 

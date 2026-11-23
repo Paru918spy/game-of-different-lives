@@ -4,17 +4,31 @@
 
 You are Sam, a fictional 15-year-old in Germany who goes by they/them. Playing this life means noticing how many forms, rooms and routines assume only two choices, and how much a single person who gets it right can change.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (2017 to 2018): Germany's Federal Constitutional Court ruled in 2017 that civil status must allow a third entry; 'divers' was introduced in 2018. Before that, forms offered two boxes. *Source: Federal Constitutional Court of Germany, 2017 ruling on a third gender entry; 2018 introduction of "divers"*
+- **e2** (research): Young people who are accepted by at least one adult report much lower rates of attempted suicide (Trevor Project). *Source: Trevor Project research on acceptance and wellbeing*
+- **e3** (research): Trans and non-binary young people report more bullying and exclusion at school (Trevor Project). *Source: Trevor Project research on acceptance and wellbeing*
+- **e4** (typical case): School routines such as sports teams, toilets and trips are often split into two groups. *Source: Trevor Project research on acceptance and wellbeing*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Sam, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Sam, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🌉 Stone bridge | fast (each field costs half a step) | Noor, a teacher and a youth group: people who say "I've got you" carry Sam across. |
-| 🏛 Town hall | slow (each field costs 2 steps) | Forms with two boxes and registers with the old name: every counter needs explaining. |
-| 🎪 Busy market | slow (each field costs 2 steps) | Crowded places mean stares, whispers and a choice of two changing rooms, so Sam stays careful. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Forms and law: for years the paperwork had only two boxes. | e1 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | School climate: jokes and exclusion at school isolate. | e3 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School routines: sports, toilets and trips are split in two groups. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | One adult who gets it: acceptance changes a young person's chances a lot. | e2 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+21 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Allies in the room
 

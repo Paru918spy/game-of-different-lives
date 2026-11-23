@@ -80,3 +80,9 @@ Recommended path: ship the built-in version, watch whether classes hit connectio
 2. Open `http://localhost:8080` in two browser windows (or two devices in the same Wi-Fi: `http://<your-ip>:8080`), Play, Multiplayer.
 3. Window 1: **Host online game**, Create game. Window 2: **Join with code**.
 4. Without internet access to `0.peerjs.com` you can run your own broker for the test: `npm i peer` and `npx peerjs --port 9000`, then add `?peerhost=localhost&peerport=9000` to both URLs.
+
+## Realism, balance and figures at the table (v3)
+
+- Every slowdown or speed-up on the board comes from a documented event of the drawn person (see `docs/figures/<id>.md`, section "Documented events"). The zone legend is fixed for all figures.
+- Fairness is a separate, openly named rule: "Game balance" steps (⚖). They are not part of the story.
+- Each player sits at the table as the person they drew (outfit, hair, accessories such as the wheelchair or the football helmet), once the wheel has chosen.

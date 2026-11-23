@@ -4,17 +4,32 @@
 
 You play a painter whose world is shaped by a body in pain and by hospital rooms. Long stretches of stillness cost you on the board, but a quiet corner and a mirror are where your best work happens. Every step you take is chosen, not rushed.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1913): At six she had polio; her right leg stayed thinner, and children teased her. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
+- **e2** (1925): On 17 September 1925 a tram hit her bus; she broke her spine, pelvis and leg, and had many operations over her life. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
+- **e3** (1953): Her right leg was amputated below the knee after gangrene. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
+- **e4** (1925 to 1926): During recovery her family built an easel above the bed with a mirror, and she started painting self-portraits. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
+- **e5** (1930s to 1940s): Diego Rivera, friends and her students (Los Fridos) supported her; the Louvre bought a painting in 1939. *Source: Hayden Herrera, Frida: A Biography of Frida Kahlo*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Frida, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Frida, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🪜 Stairway | slow (each field costs 2 steps) | Steep steps, no handrail for a weak leg and a damaged spine: the long way round takes time. |
-| 🏁 Race track | slow (each field costs 2 steps) | A long run needs a body that is not in daily pain. Pacing costs steps. |
-| 🌳 Quiet lane | fast (each field costs half a step) | Hours alone with an easel and a mirror: sustained focus is where Frida works at her best. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 2 steps) | Steps and distance: the accident left her in constant pain and walking was hard. | e2 |
+| 🏁 Race track | Sport, stamina and competition | slow (each field costs 2 steps) | Stamina: pain, many operations and the amputation limited what her body could do. | e3 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs half a step) | Work in bed: the easel above her bed and the mirror made her art possible. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Friends and students (Los Fridos) supported her work and her days. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+12 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Back to the easel
 

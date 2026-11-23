@@ -2,28 +2,38 @@
  "id": "parks",
  "intro": "You are an organiser long before the famous bus. You type the minutes, investigate cases, pay the poll tax and walk when needed. Most of your barriers are rules written to keep you out, and most of your wins are carried by other people.",
  "zones": {
-  "bridge": {
-   "fx": "fast",
-   "why": "Allies carry you: the NAACP, the Women’s Political Council, neighbours who run the carpools."
-  },
-  "sprint": {
-   "fx": "fast",
-   "why": "For 381 days thousands walk miles to work instead of riding the buses, and you know how to keep going."
+  "ladder": {
+   "fx": "slow",
+   "ev": "e1",
+   "why": "School: no bus for Black children, and she left school to care for her family."
   },
   "office": {
    "fx": "slow",
-   "why": "Literacy tests, a poll tax and forms made to fail you: every counter is a trap."
+   "ev": "e2",
+   "why": "Voting: she was refused registration twice because of a test and a tax."
   },
   "rope": {
    "fx": "slow",
-   "why": "Threats, a lost job and an unsteady income: after December 1955 every step feels risky."
+   "ev": "e3",
+   "why": "Safety: threatening calls after the bus arrest."
+  },
+  "market": {
+   "fx": "slow",
+   "ev": "e3",
+   "why": "Work: she lost her job and could not find work in Montgomery."
+  },
+  "bridge": {
+   "fx": "fast",
+   "ev": "e4",
+   "why": "Community: NAACP friends and carpools carried the boycott."
   }
  },
  "advantage": {
   "type": "shield",
   "uses": 3,
   "title": "A community behind you",
-  "text": "When the family lost their jobs, people in the community covered the bills. A wrong answer does not send you back; others hold the line with you."
+  "text": "When the family lost their jobs, people in the community covered the bills. A wrong answer does not send you back; others hold the line with you.",
+  "ev": "e4"
  },
  "life": [
   {
@@ -124,5 +134,43 @@
  "flags": [
   "Raymond Parks and Scottsboro: widely documented, but 1931 date and 'nine teenagers' should be re-checked.",
   "Claudette Colvin arrest in March 1955 and age 15 should be re-checked against a primary source."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1920s to 1933",
+   "ev": "Black children had no school bus and walked to school; Rosa left school to care for her grandmother and mother and finished later.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "1943 to 1945",
+   "ev": "She was refused when she tried to register to vote twice; a poll tax and a literacy test were used to keep Black people off the rolls.",
+   "src": 1
+  },
+  {
+   "id": "e3",
+   "y": "1955 to 1957",
+   "ev": "After the boycott she lost her job, got threatening calls and moved to Detroit in 1957.",
+   "src": 1
+  },
+  {
+   "id": "e4",
+   "y": "1943 to 1956",
+   "ev": "She was secretary of the Montgomery NAACP; community carpools kept the 381-day boycott going.",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 38
+ },
+ "look": {
+  "skin": "#7a5238",
+  "hair": "#555555",
+  "hairStyle": "bun",
+  "top": "#b89a6a",
+  "bottom": "#3a3a44",
+  "outfit": "coat",
+  "prop": "bag"
+ }
 }

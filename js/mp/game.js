@@ -22,7 +22,7 @@
   const clone = o => JSON.parse(JSON.stringify(o));
 
   /* G: authoritative state (local or host). V: what is shown on this screen. mode: local | host | guest. me: my player id online. */
-  let G = null, V = null, board = null, dist = null, scene = null, mode = "local", me = null, net = null, lobby = [];
+  let useComp = false, G = null, V = null, board = null, dist = null, scene = null, mode = "local", me = null, net = null, lobby = [];
   let queue = [], playing = false, count = 2, names = [], muted = false, ac = null, ended = false;
 
   /* ---------- sound ---------- */
@@ -223,15 +223,15 @@
   function renderRoll() {
     const p = V.players[V.turn], d = $("mpDock"), my = mine();
     const pf = prof(p), two = my && pf && pf.advantage.type === "bestof2" && p.left > 0;
-    d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">${my ? "Roll the die and move!" : "is about to roll…"}</span></div>${dieHTML(6)}${my ? `<button class="big gold mp-primary" id="mpRoll">Roll 🎲</button>` : ""}${my && pf && pf.advantage.type === "lift" && p.left > 0 ? `<button class="mp-adv" id="mpRoll2">🚀 ${esc(pf.advantage.title)}: roll and add 2 (${p.left} left)</button>` : ""}${two ? `<button class="mp-adv" id="mpRoll2">🎲🎲 ${esc(pf.advantage.title)}: roll two, keep the higher (${p.left} left)</button>` : ""}`;
-    d.hidden = false; const r = $("mpRoll"); if (r) r.onclick = () => submit({ t: "roll" }); const r2 = $("mpRoll2"); if (r2) r2.onclick = () => submit({ t: "roll", best: two, lift: !two });
+    d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">${my ? "Roll the die and move!" : "is about to roll…"}</span></div>${dieHTML(6)}${my ? `<button class="big gold mp-primary" id="mpRoll">Roll 🎲</button>` : ""}${my && pf && pf.advantage.type === "lift" && p.left > 0 ? `<button class="mp-adv" id="mpRoll2">🚀 ${esc(pf.advantage.title)}: roll and add 2 (${p.left} left)</button>` : ""}${two ? `<button class="mp-adv" id="mpRoll2">🎲🎲 ${esc(pf.advantage.title)}: roll two, keep the higher (${p.left} left)</button>` : ""}${my && p.comp > 0 ? `<button class="mp-adv mp-comp${useComp ? " on" : ""}" id="mpComp" title="Game balance, not part of the story: it evens out the winning chances of all figures.">⚖ Game balance: add ${Math.min(3, p.comp)} step${Math.min(3, p.comp) > 1 ? "s" : ""} to this roll (${p.comp} left) ${useComp ? "· ON" : "· off"}</button>` : ""}`;
+    d.hidden = false; const r = $("mpRoll"); const cp = () => (useComp ? 3 : 0); if (r) r.onclick = () => { const c = cp(); useComp = false; submit({ t: "roll", comp: c }); }; const r2 = $("mpRoll2"); if (r2) r2.onclick = () => { const c = cp(); useComp = false; submit({ t: "roll", best: two, lift: !two, comp: c }); }; const cb = $("mpComp"); if (cb) cb.onclick = () => { useComp = !useComp; cb.classList.toggle("on", useComp); cb.textContent = cb.textContent.replace(/· (ON|off)$/, useComp ? "· ON" : "· off"); };
   }
   async function showRoll(e) {
     const p = V.players[e.p], d = $("mpDock");
     d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">rolls…</span></div>${dieHTML(6)}`; d.hidden = false;
     const die = $("mpDie"); die.classList.add("tumble");
     for (let i = 0; i < 9; i++) { die.innerHTML = pips(1 + Math.floor(Math.random() * 6)); SND.roll(); await sleep(85 + i * 12); }
-    die.classList.remove("tumble"); die.innerHTML = pips(e.v); die.classList.add("land"); SND.right(); d.querySelector(".dk-m").textContent = e.lift ? `${e.d1} + 2 = ${e.v}!` : e.d2 ? `${e.d1} and ${e.d2}: you keep ${e.v}!` : `${e.v} step${e.v > 1 ? "s" : ""}!`;
+    die.classList.remove("tumble"); die.innerHTML = pips(e.v); die.classList.add("land"); SND.right(); d.querySelector(".dk-m").textContent = e.lift && e.comp ? `${e.d1} + 2 + ${e.comp} = ${e.v}!` : e.comp && !e.d2 ? `${e.d1} + ${e.comp} (game balance) = ${e.v}!` : e.lift ? `${e.d1} + 2 = ${e.v}!` : e.d2 ? `${e.d1} and ${e.d2}: you keep ${e.v}!` : `${e.v} step${e.v > 1 ? "s" : ""}!`;
     await sleep(450);
   }
 
@@ -268,12 +268,13 @@
     SND.roll(); await wheel.spin(wheelOrder.findIndex(x => x.id === e.char), FAST ? 300 : 4200); SND.win();
     const pf = PR()[e.char], rev = $("mpWheelRev"); rev.style.setProperty("--c", c.avatar.color);
     rev.innerHTML = `<div class="reveal2" style="--c:${c.avatar.color}"><div class="avatar big-av">${GOL.portrait(c)}</div><div class="rtxt"><small class="kick">${esc(pl.name)} becomes</small><h2>${esc(c.name)}</h2><small>${esc(c.years)} · ${esc(c.focus)}</small>${c.fictional ? `<span class="tag">Fictional character</span>` : ""}
-      <p>${esc(pf.intro)}</p>${zoneChips(pf)}<p class="advline">${ADVICON[pf.advantage.type]} <b>${esc(pf.advantage.title)}</b> · ${pf.advantage.uses}×: ${esc(pf.advantage.text)}</p>${c.note ? `<p class="muted"><b>${esc(c.note)}</b></p>` : ""}<button class="big gold" id="mpRevOk">Let’s go!</button></div></div>`;
-    rev.hidden = false; w.classList.add("rev"); scene.setLabel(e.p, pl.name, shortName(c));
+      <p>${esc(pf.intro)}</p>${zoneChips(pf)}<p class="advline">${ADVICON[pf.advantage.type]} <b>${esc(pf.advantage.title)}</b> · ${pf.advantage.uses}×: ${esc(pf.advantage.text)}</p>${(pf.balance || {}).comp ? `<p class="advline">⚖ <b>Game balance</b> · ${pf.balance.comp} extra steps (a game rule, not part of the story, so every figure has the same chance to win)</p>` : ""}${c.note ? `<p class="muted"><b>${esc(c.note)}</b></p>` : ""}<button class="big gold" id="mpRevOk">Let’s go!</button></div></div>`;
+    rev.hidden = false; w.classList.add("rev"); scene.setLabel(e.p, pl.name, shortName(c)); scene.setFigure(e.p, pf.look);
     await new Promise(res => { const t = setTimeout(res, FAST ? 200 : 9000); $("mpRevOk").onclick = () => { clearTimeout(t); res(); }; });
     rev.hidden = true; w.classList.remove("rev"); if (e.order.filter(Boolean).length === V.players.length) w.hidden = true;
   }
-  function labelSeats() { V.players.forEach(p => { if (p.char) scene.setLabel(p.id, p.name, shortName(char(p.char))); }); }
+  function labelSeats() { V.players.forEach(p => { if (p.char) { scene.setLabel(p.id, p.name, shortName(char(p.char))); scene.setFigure(p.id, PR()[p.char].look); } }); }
+  function evLine(pf, id) { const e = (pf.evidence || []).find(x => x.id === id); return e ? `<small class="evl">Documented (${esc(e.y)}): ${esc(e.ev)} <i>Source: ${esc(pf.sources[e.src])}</i></small>` : ""; }
   function zoneChips(pf) {
     const Z = ZN(), t = { fast: "⚡", slow: "🐢", block: "⛔" };
     return `<div class="zchips">${Object.keys(pf.zones).map(z => `<span class="zc fx-${pf.zones[z].fx}" title="${esc(pf.zones[z].why)}">${t[pf.zones[z].fx]} ${Z[z].icon} ${Z[z].label}</span>`).join("")}</div>`;
@@ -284,8 +285,8 @@
     const K = { barrier: "🚧", boost: "⭐", info: "📖", quiz: "❓" }, Z = ZN(), fxw = { fast: "fast", slow: "slow", block: "closed" };
     const I = $("mpInfo"); I.hidden = false;
     I.innerHTML = `<div class="mp-infocard" style="--c:${c.avatar.color}"><button class="mp-x" id="mpInfoX" aria-label="Close">✕</button><div class="reveal2" style="box-shadow:none;border:0;padding:0"><div class="avatar big-av">${GOL.portrait(c)}</div><div class="rtxt"><small class="kick">${esc(p.name)} plays</small><h2>${esc(c.name)}</h2><small>${esc(c.years)} · ${esc(c.focus)}</small><p>${esc(pf.intro)}</p></div></div>
-      <h3>Routes that are different for you</h3><ul class="zl">${Object.keys(pf.zones).map(z => `<li class="fx-${pf.zones[z].fx}"><b>${Z[z].icon} ${Z[z].label}: ${fxw[pf.zones[z].fx]}.</b> ${esc(pf.zones[z].why)}</li>`).join("")}</ul>
-      <h3>Your strength</h3><p>${ADVICON[pf.advantage.type]} <b>${esc(pf.advantage.title)}</b> · ${p.left} of ${pf.advantage.uses} left. ${esc(pf.advantage.text)}</p>
+      <h3>Routes that are different for you</h3><ul class="zl">${Object.keys(pf.zones).map(z => `<li class="fx-${pf.zones[z].fx}"><b>${Z[z].icon} ${Z[z].label} (${esc(Z[z].domain)}): ${fxw[pf.zones[z].fx]}.</b> ${esc(pf.zones[z].why)}${evLine(pf, pf.zones[z].ev)}</li>`).join("")}</ul>
+      <h3>Your strength</h3><p>${ADVICON[pf.advantage.type]} <b>${esc(pf.advantage.title)}</b> · ${p.left} of ${pf.advantage.uses} left. ${esc(pf.advantage.text)}</p>${p.comp !== undefined && (pf.balance || {}).comp ? `<h3>Game balance</h3><p>⚖ ${p.comp} of ${pf.balance.comp} balance steps left. <small>This is a game rule, not part of the story: every figure has the same chance to win, so figures with many documented barriers get extra steps to spend (up to 3 on a roll).</small></p>` : ""}
       <h3>Your 12 life stations</h3><ol class="ll">${pf.life.map((t, i) => { const done = p.seen && Object.keys(p.seen).some(id => board.nodes[id] && board.nodes[id].life === i + 1); return `<li class="${done ? "done" : ""}">${done ? `${K[t.k]} <b>${esc(t.title)}</b>` : `<span>Station ${i + 1}: not reached yet</span>`}</li>`; }).join("")}</ol></div>`;
     $("mpInfoX").onclick = () => I.hidden = true;
   }

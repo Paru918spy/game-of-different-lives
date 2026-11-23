@@ -4,18 +4,32 @@
 
 You are Judy, a wheelchair user from Brooklyn who grew up in the 1950s, when schools could simply say no. Steps and locked doors are everywhere, but so are the rules, forms and crowds of people that you will learn to use better than most.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1949): Her Brooklyn school principal refused to let her in because a wheelchair was 'a fire hazard'; she had home lessons for years. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
+- **e2** (1950s to 1970s): Steps, buses without lifts and inaccessible buildings and planes limited where she could go, and strangers often had to carry her. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
+- **e3** (1970): New York's Board of Education refused her a teaching licence; she sued and became the first wheelchair user to teach there. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
+- **e4** (1960s): At Camp Jened in the Catskills she met other disabled teenagers and found a community. *Source: Crip Camp (2020)*
+- **e5** (1977): She led the 25-day sit-in in San Francisco that forced the government to sign the Section 504 rules; Black Panthers brought food. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Judy, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Judy, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🪜 Stairway | blocked (this route cannot be taken) | Steep steps and no lift: a wheelchair cannot take this stretch at all. |
-| 🌳 Tree ladders | blocked (this route cannot be taken) | A tree-house ladder is not usable from a wheelchair. The building, not Judy, left her out. |
-| 🏛 Town hall | fast (each field costs half a step) | Judy learned the rules and regulations better than the officials, and used them to win. |
-| 🎪 Busy market | fast (each field costs half a step) | Among organised crowds of allies, as at the 1977 sit-in, Judy found support and momentum. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | blocked (this route cannot be taken) | Steps and transport: buses, buildings and planes were built without wheelchair access. | e2 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: she was refused entry as 'a fire hazard' and taught at home for years. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Licences and rules: New York refused her teaching licence until she sued. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Allies: other disabled activists, even the Black Panthers, stood with her in 1977. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+40 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Second push
 

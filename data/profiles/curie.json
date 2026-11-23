@@ -2,28 +2,38 @@
  "id": "curie",
  "intro": "You are Maria Skłodowska, a top student in a Warsaw where Polish is suppressed and women may not enter university. Doors are locked by law, so you study in secret, then in Paris, and then in a leaky shed full of ore.",
  "zones": {
-  "quiet": {
-   "fx": "fast",
-   "why": "Reading, thinking and long hours of focused study were her way in, from Warsaw to the Sorbonne."
-  },
-  "sprint": {
-   "fx": "fast",
-   "why": "Stirring tons of ore by hand for years took stamina; later she drove X-ray cars to the front."
+  "ladder": {
+   "fx": "slow",
+   "ev": "e1",
+   "why": "Education: in Russian-ruled Warsaw women were barred from university and Polish was banned."
   },
   "office": {
    "fx": "slow",
-   "why": "Universities and academies kept their doors shut to women: closed lists, closed votes, long delays."
+   "ev": "e5",
+   "why": "Institutions: the Academy of Sciences refused to admit her by a narrow vote."
   },
   "market": {
    "fx": "slow",
-   "why": "In 1911 newspapers turned a crowd of readers against her as a woman and a foreigner."
+   "ev": "e6",
+   "why": "Press and public: in 1911 newspapers attacked her with sexist and xenophobic language."
+  },
+  "quiet": {
+   "fx": "fast",
+   "ev": "e4",
+   "why": "Lab work: the leaky shed with Pierre is where radium was found."
+  },
+  "bridge": {
+   "fx": "fast",
+   "ev": "e7",
+   "why": "Partnership: Pierre insisted that she be named with him for the Nobel Prize."
   }
  },
  "advantage": {
   "type": "hint",
   "uses": 2,
   "title": "Method and notebooks",
-  "text": "Curie solved problems by careful measurement and by ruling out what could not be true. Use it to remove one wrong answer before you decide."
+  "text": "Curie solved problems by careful measurement and by ruling out what could not be true. Use it to remove one wrong answer before you decide.",
+  "ev": "e4"
  },
  "life": [
   {
@@ -123,5 +133,61 @@
  "flags": [
   "Check wording that the 1911 Academy vote was narrowly lost, and that the Flying University used private flats and rotating teachers.",
   "Dates for Pierre's 1906 chair and the first woman professor at the Sorbonne were taken from the single-player data."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1880s",
+   "ev": "Warsaw was under Russian rule: Polish was suppressed in schools, and women could not attend university.",
+   "src": 3
+  },
+  {
+   "id": "e2",
+   "y": "1880s",
+   "ev": "She joined the secret Flying University in Warsaw, where Polish women studied in private flats.",
+   "src": 3
+  },
+  {
+   "id": "e3",
+   "y": "1891 to 1894",
+   "ev": "She enrolled at the Sorbonne in Paris in 1891 and earned degrees in physics and mathematics.",
+   "src": 2
+  },
+  {
+   "id": "e4",
+   "y": "1898 to 1902",
+   "ev": "With Pierre she processed tonnes of pitchblende in a leaky shed to isolate radium.",
+   "src": 3
+  },
+  {
+   "id": "e5",
+   "y": "1911",
+   "ev": "The French Academy of Sciences narrowly voted against her membership; no woman was admitted until 1962.",
+   "src": 3
+  },
+  {
+   "id": "e6",
+   "y": "1911",
+   "ev": "A press campaign around the Langevin affair attacked her, often with xenophobic and sexist language.",
+   "src": 2
+  },
+  {
+   "id": "e7",
+   "y": "1903",
+   "ev": "Pierre made sure she was named with him for the Nobel Prize in Physics after the first nomination left her out.",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 11
+ },
+ "look": {
+  "skin": "#f0d2b0",
+  "hair": "#7a5b3a",
+  "hairStyle": "bun",
+  "top": "#2c2c34",
+  "bottom": "#2c2c34",
+  "outfit": "labcoat",
+  "prop": "flask"
+ }
 }

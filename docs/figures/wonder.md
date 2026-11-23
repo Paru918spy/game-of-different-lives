@@ -4,18 +4,32 @@
 
 You are Stevland Morris from Detroit, blind since birth, with a head full of melodies. School, travel and contracts all assume someone else knows best, and you spend years winning the right to decide for yourself.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1950s): Born premature and blind, he went to the Michigan School for the Blind, where options were set by others. *Source: Rock & Roll Hall of Fame: Stevie Wonder*
+- **e2** (1961 to 1971): Signed to Motown at 11; his contract held his earnings in trust until 21, and at 21 he renegotiated and gained creative control. *Source: Rock & Roll Hall of Fame: Stevie Wonder*
+- **e3** (1960s): Motown's Berry Gordy, mentor Clarence Paul and his family supported his career. *Source: Rock & Roll Hall of Fame: Stevie Wonder*
+- **e4** (1972 to 1976): He recorded a run of classic albums, playing many instruments himself. *Source: Rock & Roll Hall of Fame: Stevie Wonder*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Stevie, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Stevie, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🕳 Dark tunnel | fast (each field costs half a step) | No light needed: a dark passage is just another place to listen and keep going. |
-| 🌉 Stone bridge | fast (each field costs half a step) | His mother, Motown colleagues and friends carried him over each gap: a mentor, a tutor, a campaign. |
-| 🏛 Town hall | slow (each field costs 2 steps) | Contracts, trusts and signatures: others held the pen until he turned 21 and renegotiated. |
-| 🎪 Busy market | slow (each field costs 2 steps) | Loud crowds and no guide make it hard to hear and find a way; access is a matter of design. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: for years others decided where and how he learned. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Contracts: until 21 others controlled his contract and money. | e2 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Business: his earnings and his songs were not his to control. | e2 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Support: his family, Clarence Paul and Motown backed him. | e3 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs half a step) | Studio: he played many instruments himself on his classic albums. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+11 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Perfect pitch for facts
 

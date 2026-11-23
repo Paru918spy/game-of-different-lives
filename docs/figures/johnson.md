@@ -4,17 +4,32 @@
 
 You play a street activist in New York in the 1960s to 1990s with little money, little protection and a lot of friends. Offices and officials rarely help you. The night, the streets and the people there do. Content note: discrimination, poverty, violence and an unresolved death.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1963): Marsha moved to New York from New Jersey as a teenager with little money and slept in the streets and with friends. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
+- **e2** (1960s to 1980s): Police arrested and harassed trans women and drag performers for how they dressed; Marsha was arrested many times. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
+- **e3** (1960s to 1970s): Trans women faced almost total job discrimination; Marsha worked as a waitress and in survival sex work. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
+- **e4** (1970): With Sylvia Rivera she founded STAR and opened a house for homeless trans youth. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
+- **e5** (1975): She performed with the Hot Peaches troupe and was photographed by Andy Warhol. *Source: New York Public Library archives; Marsha P. Johnson Institute (marshap.org)*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Marsha, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Marsha, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🏛 Town hall | slow (each field costs 2 steps) | Police, landlords and clerks treated her as a problem, not a citizen. Forms and counters cost time. |
-| 🎪 Busy market | fast (each field costs half a step) | In crowded Village streets she was known, greeted and fed by neighbours. The crowd is her ground. |
-| 🕳 Dark tunnel | fast (each field costs half a step) | Nightlife, bars and back rooms were where queer people could gather. She knew the dark and who to trust in it. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 2 steps) | Safety: street harassment and police violence against trans women. | e2 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Police and courts: repeated arrests for how she dressed and lived. | e2 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Work: job doors closed to trans women, leaving survival work. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Chosen family: STAR gave shelter to homeless trans youth, and Marsha shared what she had. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+19 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Family you choose
 
