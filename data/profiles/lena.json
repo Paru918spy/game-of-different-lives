@@ -1,0 +1,26 @@
+{
+  "id": "lena",
+  "intro": "You play a young woman who uses a wheelchair and wants to be an architect in a small German town. Steps, cobblestones and forms stand in her way, and her eye for space and design is a real skill. Playing her means seeing how much of the world is built for one kind of body.",
+  "zones": {
+    "stairs": { "fx": "block", "why": "No lift, no ramp: a staircase is a wall. She cannot take this shortcut and must find another way." },
+    "rope": { "fx": "slow", "why": "Cobbles and uneven ground jolt a wheelchair. Every metre costs more effort and time." },
+    "ramp": { "fx": "fast", "why": "Lena knows every step-free route in town and uses it without a detour." },
+    "quiet": { "fx": "fast", "why": "Drawing and designing are where she shines. Her best ideas come when she can focus on a plan." }
+  },
+  "advantage": { "type": "bestof2", "uses": 3, "title": "Plan B ready", "text": "Lena always has a second route in mind, from an alternative entrance to a different site visit. Roll two dice and take the higher one." },
+  "life": [
+    { "k": "info", "title": "A small town (fictional)", "text": "Lena is an invented character. She is 12, uses a wheelchair after a spinal injury as a child, and loves drawing houses and bridges. The old market square is cobbled, and many shops have steps." },
+    { "k": "barrier", "title": "Which school?", "text": "The nearest school has no lift. The special school is an hour away by bus. Her parents fight for months to get a place at the local school with a ramp and support.", "move": -2 },
+    { "k": "boost", "title": "Friends and Ms Berger", "text": "At her new school classmates quickly stop noticing the chair. Her teacher, Ms Berger, makes sure class trips go to places Lena can reach.", "move": 1 },
+    { "k": "barrier", "title": "Left out of the trip", "text": "In year 9 the trip goes to a hostel with no lift. Lena is told she can \"stay home or be carried\". Her friends refuse to go until the plans change.", "move": -1 },
+    { "k": "quiz", "title": "Who else uses a ramp?", "text": "Lena notices that step-free access helps more people than just wheelchair users.", "move": 1, "q": { "q": "Which group also benefits from a step-free entrance?", "a": ["Parents with prams and people with heavy luggage", "Nobody else", "Only people who run marathons"], "x": "Step-free design helps parents, older people, cyclists and delivery staff. Many accessible features are useful for everyone." } },
+    { "k": "barrier", "title": "Forms for university", "text": "Lena applies to study architecture. Some lecture halls and studios are not accessible. Support and technical aids mean many forms and months of waiting.", "move": -1 },
+    { "k": "boost", "title": "A flat of her own", "text": "After 40 viewings, many landlords saying \"it isn't suitable\" before she even visits, Lena finds a small accessible flat near the university.", "move": 1 },
+    { "k": "quiz", "title": "The professor's question", "text": "A professor asks whether she can do site visits. She answers with a plan: site photos, drones, a partner on site.", "move": 1, "q": { "q": "What is the main problem on an inaccessible building site?", "a": ["Missing ramps and step-free access", "The wheelchair itself", "Lena's ability to draw"], "x": "The barrier is the missing access, not the person. Flexible solutions and adapted workplaces help everyone." } },
+    { "k": "boost", "title": "Her degree", "text": "Lena graduates with a design for an accessible community centre. Her professor calls it the best of the year.", "move": 2 },
+    { "k": "barrier", "title": "Interviews", "text": "At job interviews Lena is asked about her \"limitations\" and the cost of adapting the office. Several offices have no step-free entrance.", "move": -2 },
+    { "k": "boost", "title": "An inclusive firm", "text": "A mid-sized firm hires Lena and adapts her workspace within two weeks. Wider doors and lower lift buttons help the whole team.", "move": 2 },
+    { "k": "info", "title": "Designing for everyone", "text": "Lena helps plan a market square with level paths, then opens her own studio for accessible design. She says: \"I'm not stuck in a wheelchair. I'm stuck with stairs.\"" }
+  ],
+  "sources": ["Fictional character: js/characters/group4.js (Lena) and docs/characters.md", "UN Convention on the Rights of Persons with Disabilities", "Aktion Mensch: inclusion studies"]
+}

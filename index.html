@@ -72,7 +72,7 @@
       <button class="modecard mc-single" id="modeSingle"><span class="mc-art" aria-hidden="true">🎡</span><b>Single Player</b>
         <span class="mc-sub">Live one life</span><span class="mc-text">Spin the wheel and walk through the real story of one person, with every barrier, bridge and turning point.</span><i class="mc-go">Play alone</i></button>
       <button class="modecard mc-multi" id="modeMulti"><span class="mc-art" aria-hidden="true">♟️</span><b>Multiplayer</b>
-        <span class="mc-sub">2 to 6 players · one shared board</span><span class="mc-text">Race along branching paths with your own pawn. Answer questions about 17 real people, test your everyday behaviour and try real-life action cards to move forward.</span><i class="mc-go">Play together</i></button>
+        <span class="mc-sub">2 to 6 players · one shared board</span><span class="mc-text">Spin the wheel and become one of 21 figures at a shared table. Every figure has its own strengths and barriers on a board with bridges, ladders, stairs and short cuts. Answer questions and race to the finish.</span><i class="mc-go">Play together</i></button>
     </div>
     <aside class="qrshare"><div class="qrimg" id="qrSite" role="img" aria-label="QR code for the game website"></div><div><b>Play on your phone</b><p>Scan the code to open the game. Friends can join your multiplayer game the same way.</p></div></aside>
   </main>
@@ -120,9 +120,10 @@
       <p class="neterr" id="joinErr" role="alert" hidden></p>
     </div>
     <details class="howto"><summary>How does it work?</summary>
-      <ol><li>On your turn roll the die and walk. The colour of the field you land on decides your card: a question about a person, or a real-life action.</li>
-      <li>Answer right (or do the action) and you stay on the field. Wrong: your pawn goes back to where your turn started. On a ⚡ DOUBLE card a right answer moves you ahead again.</li>
-      <li>Paths split. Choose your way: a longer trail with a bridge, or a short cut full of challenges.</li>
+      <ol><li>Everybody spins the wheel and becomes one of 21 figures. Each figure has its own life, strengths and barriers.</li>
+      <li>On your turn roll the die and walk. At forks pick a route: stairs, ladders, rope bridges, markets, tunnels, town halls… Some are slow or closed for your figure, some are fast.</li>
+      <li>The field you land on gives a question, an action or a push forward or back. Right answer: stay. Wrong: back to your last safe field.</li>
+      <li>12 life stations tell your figure’s story and move you. Checkpoints only let you pass with a right answer.</li>
       <li>Reach the finish first to win.</li></ol></details>
   </main>
 </section>
@@ -131,6 +132,7 @@
   <canvas id="mpCv" aria-label="3D multiplayer board. Drag to rotate, scroll to zoom."></canvas>
   <div class="hud tl mp-players" id="mpPlayers" aria-label="Players"></div>
   <div class="hud tr">
+    <button id="mpFigure" class="ib" title="My figure: routes, strength and life stations" aria-label="My figure">📖</button>
     <button id="mpFollow" class="ib on" title="Camera follows the pawn" aria-label="Follow camera">🎥</button>
     <button id="mpOverview" class="ib" title="Overview of the whole board" aria-label="Overview">🗺️</button>
     <button id="mpMute" class="ib" aria-label="Sound on/off" title="Sound on/off">🔊</button>
@@ -142,6 +144,10 @@
   <div class="mp-fork" id="mpFork" hidden></div>
   <div class="mp-cardwrap" id="mpCardWrap" hidden><div class="mp-card" id="mpCard" role="dialog" aria-modal="false"></div></div>
   <div class="mp-end" id="mpEnd" hidden></div>
+  <div class="mp-wheelwrap" id="mpWheel" hidden><div class="mp-wheelbox"><p class="eyebrow">Wheel of lives</p><h2 id="mpWheelTitle"></h2>
+    <div class="wstage"><canvas id="mpWheelCv" aria-label="Wheel with the 21 figures"></canvas></div><div id="mpWheelAct" class="mp-wact"></div></div>
+    <div class="mp-wheelrev" id="mpWheelRev" hidden></div></div>
+  <div class="mp-info" id="mpInfo" hidden></div>
 </section>
 
 <section id="screen-game" hidden>
@@ -195,6 +201,7 @@
 <script src="js/game.js"></script>
 <script src="js/mp/board.js"></script>
 <script src="js/mp/questions.js"></script>
+<script src="js/mp/profiles.js"></script>
 <script src="js/mp/engine.js"></script>
 <script src="js/mp/scene.js"></script>
 <script src="js/mp/net.js"></script>

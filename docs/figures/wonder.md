@@ -1,0 +1,117 @@
+# Stevie Wonder
+
+*b. 1950 · Blindness, race*
+
+You are Stevland Morris from Detroit, blind since birth, with a head full of melodies. School, travel and contracts all assume someone else knows best, and you spend years winning the right to decide for yourself.
+
+## Routes (zones)
+
+The shared board has ten kinds of routes. For Stevie, these differ from the normal rule (one field = one step):
+
+| Route | Effect | Why |
+| --- | --- | --- |
+| 🕳 Dark tunnel | fast (each field costs half a step) | No light needed: a dark passage is just another place to listen and keep going. |
+| 🌉 Stone bridge | fast (each field costs half a step) | His mother, Motown colleagues and friends carried him over each gap: a mentor, a tutor, a campaign. |
+| 🏛 Town hall | slow (each field costs 2 steps) | Contracts, trusts and signatures: others held the pen until he turned 21 and renegotiated. |
+| 🎪 Busy market | slow (each field costs 2 steps) | Loud crowds and no guide make it hard to hear and find a way; access is a matter of design. |
+
+All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Advantage: Two takes
+
+Second chance: roll two dice, take the higher · 3 uses per game.
+
+In the studio Stevie records another take and keeps the better one. Roll two dice and use the higher result, up to three times.
+
+## Life stations (in the order of the road)
+
+Every figure must stop at the 12 life stations on the way, one after the other. Effects: barrier = move back, boost = move forward; a question gives its bonus only for a right answer.
+
+### 1. Saginaw, 1950  
+**Story**
+
+Stevie is born six weeks early. In the incubator, too much oxygen harms his eyes (retinopathy of prematurity) and he is blind. His mother Lula Mae soon moves the family to Detroit.
+
+### 2. Decided for him  
+**Barrier (-1 fields)**
+
+Many adults expect a blind child to have a small life. School, travel and play need extra planning, and people often decide for him what he is able to do.
+
+### 3. Music everywhere  
+**Boost (+1 fields)**
+
+He teaches himself harmonica, piano and drums as a small child and sings in the church choir. Later he attends the Michigan School for the Blind.
+
+### 4. Discovered at eleven  
+**Boost (+2 fields)**
+
+Ronnie White of The Miracles brings him to Motown. Founder Berry Gordy signs him as "Little Stevie Wonder". A tutor goes along, and his mother reads his contracts.
+
+### 5. Number one at 13  
+**Story**
+
+"Fingertips" (1963), recorded live, reaches number one. It is the first live album to top the US chart. Much of his money is held in trust until he turns 21.
+
+### 6. Whose songs?  
+**Barrier (-1 fields)**
+
+As a teenager, Stevie's songs are chosen for him by the label. What he wants to say about racism, poverty and love is not what the company expects from a pop star.
+
+### 7. Turning 21  
+**Question (+1 fields if right)**
+
+In 1971, at 21, Stevie refuses to sign the same kind of contract again. He negotiates a new deal, against the company's expectations.
+
+*Question:* What did Stevie win in his new contract at 21?
+
+- ✔ Control over his own music
+- A permanent seat on the board
+- A ban on touring
+
+*Explanation:* He gained artistic control: he chose the songs, played most instruments himself and explored synthesizers.
+
+### 8. The classic albums  
+**Boost (+2 fields)**
+
+With control he makes Music of My Mind, Talking Book and Innervisions, playing most instruments himself and exploring synthesizers. His songs speak about racism and poverty.
+
+### 9. August 1973: the crash  
+**Barrier (-2 fields)**
+
+A car crash in North Carolina leaves him in a coma for days. He survives, but loses most of his sense of smell. Doctors fear he may not make music again.
+
+### 10. Songs in the Key of Life  
+**Boost (+1 fields)**
+
+His 1976 double album is a worldwide success. Over his career he wins 25 Grammy Awards, including three for Album of the Year.
+
+### 11. A song for a holiday  
+**Question (+1 fields if right)**
+
+He writes "Happy Birthday" (1980) for Dr. Martin Luther King Jr. and campaigns for a national holiday. In 1981 he leads a rally in Washington, and in 1983 the law is signed.
+
+*Question:* Which holiday did Stevie's campaign help create in the USA?
+
+- ✔ Martin Luther King Jr. Day
+- Thanksgiving
+- Independence Day
+
+*Explanation:* The holiday was signed into law in 1983 and first observed in 1986.
+
+### 12. Speaking up worldwide  
+**Story**
+
+He speaks out against apartheid, and his music is banned in South Africa. He becomes a UN Messenger of Peace in 2009 and supports the Marrakesh Treaty, which gives blind readers more access to books.
+
+## Sources
+
+- js/characters/group1.js tiles for wonder
+- docs/characters.md row for Stevie Wonder
+- Rock & Roll Hall of Fame: Stevie Wonder
+- Martin Luther King Jr. Research & Education Institute
+- UN Messenger of Peace profile
+
+## To check
+
+- Check that he campaigned for the Marrakesh Treaty (adopted 2013); the single-player data says he later supported it.
+- The market zone is an access argument (noise and no guide); a human may want to confirm that framing.

@@ -1,0 +1,25 @@
+{
+  "id": "jonas",
+  "intro": "You play a 58-year-old logistics manager who is suddenly job-hunting after 28 years. The hard part is not what he can do but what employers assume about his age. His experience and his network are real assets.",
+  "zones": {
+    "tunnel": { "fx": "slow", "why": "Online filters and silent rejections: you never learn why your application vanished." },
+    "quiet": { "fx": "fast", "why": "28 years of judgement: Jonas reads a situation and a plan calmly and quickly." },
+    "bridge": { "fx": "fast", "why": "Old colleagues and mentors carry him: Mira's tip and Aylin's help matter more than any form." }
+  },
+  "advantage": { "type": "hint", "uses": 3, "title": "Seen it before", "text": "After decades in logistics Jonas has seen many problems before and can rule out unlikely answers. Remove one wrong answer before you answer." },
+  "life": [
+    { "k": "info", "title": "Monday morning (fictional)", "text": "Jonas is an invented character. He is 58, a logistics manager with 28 years in one company, well liked and reliable. Then his company is taken over." },
+    { "k": "barrier", "title": "Redundancy", "text": "Jonas is told his position is being cut as part of a restructuring. Younger, cheaper staff stay. He has done nothing wrong.", "move": -2 },
+    { "k": "info", "title": "The first search", "text": "He sends dozens of applications. Many get no reply. At interviews he is asked how he feels about reporting to someone younger." },
+    { "k": "barrier", "title": "\"Overqualified\"", "text": "Employers assume older workers cost more, adapt less or leave sooner. Jonas has the skills, but the stereotype reaches the desk before he does.", "move": -1 },
+    { "k": "quiz", "title": "A word for it", "text": "What Jonas meets has a name, which the WHO uses in its global report.", "move": 1, "q": { "q": "What is prejudice or discrimination based on age called?", "a": ["Ageism", "Seniority", "Agility"], "x": "Ageism means stereotypes and unfair treatment because of age. The WHO's 2021 global report treats it as a widespread problem." } },
+    { "k": "barrier", "title": "Online forms and tests", "text": "Long web forms and tests are new to Jonas. Without help he feels lost, and there is no box where 28 years of experience can show.", "move": -1 },
+    { "k": "boost", "title": "A tip from Mira", "text": "A former colleague, Mira, hears of an opening in a smaller firm and passes it on. Personal networks often count more than the formal process.", "move": 2 },
+    { "k": "barrier", "title": "The oldest in class", "text": "Jonas retrains for a new field. Some classmates are friendly. Others assume he will not keep up. Having to prove himself again wears him down.", "move": -1 },
+    { "k": "boost", "title": "Swapping skills with Aylin", "text": "A young classmate, Aylin, shows him new software. He shows her how to lead a team. Both of them leave the course better off.", "move": 1 },
+    { "k": "quiz", "title": "Mixed-age teams", "text": "Jonas's next team has people from many age groups.", "move": 1, "q": { "q": "What does research usually say about teams of mixed ages?", "a": ["They work well, since each age group brings different strengths", "They always work worse", "Only the youngest members matter"], "x": "Studies suggest age-diverse teams do well, because experience and fresh ideas complement each other." } },
+    { "k": "boost", "title": "A new role", "text": "A company hires Jonas as an operations coordinator. His new manager says his experience is exactly what the team has been missing.", "move": 2 },
+    { "k": "info", "title": "Not too old", "text": "Jonas now trains younger colleagues. He says: \"Nobody warned me that you can be treated as too old long before you feel old.\" He backs hiring that looks at skills, not birth years." }
+  ],
+  "sources": ["Fictional character: js/characters/group4.js (Jonas) and docs/characters.md", "WHO Global report on ageism (2021)", "OECD: Working Better with Age", "Federal Anti-Discrimination Agency, Germany"]
+}

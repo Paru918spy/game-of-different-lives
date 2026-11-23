@@ -1,0 +1,27 @@
+{
+  "id": "mandela",
+  "intro": "You are a lawyer and organiser in a country whose laws were written to keep you out. Your strength is in numbers, discipline and patience, in a movement that outlasts any one arrest.",
+  "zones": {
+    "sprint": { "fx": "fast", "why": "Daily training, from boxing in Johannesburg to exercise in a cell, built the stamina for a very long road." },
+    "market": { "fx": "fast", "why": "Rallies, township streets and a people's movement carry you: in the crowd you are one of thousands." },
+    "office": { "fx": "slow", "why": "Pass laws, banning orders and apartheid courts: every permit, form and hearing was built to stop you." },
+    "tunnel": { "fx": "slow", "why": "Underground in 1961 you move by night and in disguise, without knowing who is watching or what comes next." }
+  },
+  "advantage": { "type": "shield", "uses": 2, "title": "Standing firm", "text": "Mandela kept his convictions through setbacks, a treason trial, the Rivonia verdict and years in prison. A wrong answer does not push you back." },
+  "life": [
+    { "k": "info", "title": "Mvezo, 1918", "text": "Rolihlahla Mandela is born on 18 July 1918 in a village in the Eastern Cape, into a Thembu royal household. A teacher later gives him the English name Nelson, as mission schools often did." },
+    { "k": "boost", "title": "Mission school and Fort Hare", "text": "He is the first in his family to attend school. He goes on to Fort Hare, one of the few universities open to Black South Africans, and meets future leaders such as Oliver Tambo there.", "move": 2 },
+    { "k": "barrier", "title": "Expelled, then on the run", "text": "In 1940 he is expelled from Fort Hare after joining a student protest. His guardian arranges a marriage for him, and he leaves for Johannesburg, where he works as a mine guard and a law clerk.", "move": -1 },
+    { "k": "quiz", "title": "1948: a new system", "text": "The National Party wins power and turns segregation into the law of the land.", "q": { "q": "What did apartheid, introduced in 1948, mean in practice?", "a": ["Laws separated people by race and limited Black people's rights", "A system for sharing land equally between all", "A rule that everyone had to learn one language"], "x": "Apartheid sorted people by race. It decided where they lived, worked and studied, and Black South Africans could not vote and had to carry passes." }, "move": 1 },
+    { "k": "boost", "title": "A law firm of their own, 1952", "text": "After articles with a firm, Mandela qualifies as an attorney. With Oliver Tambo he opens a Black-run law practice in Johannesburg, where clients can get advice that the system rarely offered them.", "move": 1 },
+    { "k": "barrier", "title": "Banned and put on trial", "text": "From 1952 banning orders restrict where he can go and whom he can meet. In 1956 he is one of 156 people charged with treason. The trial runs for years and ends with all being found not guilty in 1961.", "move": -2 },
+    { "k": "info", "title": "Sharpeville and the underground", "text": "Content note: violence. In March 1960 police shoot at a pass-law protest in Sharpeville and 69 people die. The ANC is banned. Mandela goes underground in 1961 and helps start the armed wing Umkhonto we Sizwe." },
+    { "k": "barrier", "title": "Rivonia Trial, 1964", "text": "Arrested in 1962, Mandela is tried for sabotage with other leaders. He tells the court he is prepared to die for a free, democratic society. In June 1964 the judge sentences him to life in prison.", "move": -2 },
+    { "k": "boost", "title": "The university on Robben Island", "text": "Over 18 years on Robben Island, then at two more prisons, the prisoners study, teach and debate. Mandela keeps up daily exercise and, in 1985, refuses release on condition that he give up the fight.", "move": 1 },
+    { "k": "quiz", "title": "Counting the years", "text": "Mandela is released on 11 February 1990 after international pressure and unrest inside the country.", "q": { "q": "How long did Nelson Mandela spend in prison?", "a": ["27 years", "10 years", "40 years"], "x": "He was imprisoned from 1962 until 1990, 27 years in all. He was 71 when he walked out." }, "move": 1 },
+    { "k": "boost", "title": "1994: everyone votes", "text": "He negotiates with President F. W. de Klerk, and the two share the 1993 Nobel Peace Prize. On 27 April 1994 all South Africans vote for the first time, and Mandela becomes president.", "move": 2 },
+    { "k": "info", "title": "A promise still being kept", "text": "Mandela steps down in 1999 and dies on 5 December 2013, aged 95. Poverty and deep inequality remain after apartheid, and he admits his government's failures, including its slow response to AIDS." }
+  ],
+  "sources": ["js/characters/group3.js mandela tiles (Mvezo, Fort Hare, apartheid 1948, law firm 1952, Sharpeville, Rivonia, Robben Island, release 1990, Nobel 1993, presidency 1994)", "Nelson Mandela, Long Walk to Freedom (1994)", "Nelson Mandela Foundation (nelsonmandela.org)"],
+  "flags": ["Sharpeville death toll is given as 69 by most sources.", "Treason Trial: 156 accused, all acquitted by March 1961; he was first banned in 1952.", "Boxing is mentioned in the zone text only generally ('boxing in Johannesburg'); documented in his autobiography.", "'Mine guard' at Crown Mines is in his autobiography; check if used elsewhere."]
+}
