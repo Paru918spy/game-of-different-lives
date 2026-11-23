@@ -11,8 +11,13 @@ if (board.nodes.length > 70) fail("board has more than 70 fields: " + board.node
 const reach = new Set(); (function dfs(i) { if (reach.has(i)) return; reach.add(i); board.nodes[i].next.forEach(dfs); })(board.start);
 if (reach.size !== board.nodes.length) fail("unreachable fields");
 if (board.nodes[board.finish].next.length) fail("finish has exits");
-Q.who.concat(Q.fact, Q.tf).forEach(q => { if (!chars.find(c => c.id === q.p)) fail("unknown person " + q.p); });
+Q.who.concat(Q.fact, Q.tf).forEach(q => { if (q.p !== null && !chars.find(c => c.id === q.p)) fail("unknown person " + q.p); });
 Q.fact.concat(Q.words).forEach(q => { if (q.a.length !== 3 || new Set(q.a).size !== 3) fail("bad answers: " + q.q); });
+Q.tf.forEach(q => { if (typeof q.v !== "boolean" || !q.s || !q.x) fail("bad true/false: " + q.s); });
+Q.who.forEach(q => { if (q.c.length < 2 || !q.x) fail("who-am-I needs clues and explanation: " + q.p); });
+Q.fact.concat(Q.words).forEach(q => { if (!q.x || q.x.length > 330) fail("missing or too long explanation: " + q.q); });
+Q.tasks.forEach(t => { if (!t.t || !t.d || !t.icon || !t.r || (t.sec && (t.sec < 10 || t.sec > 120)) || (t.p && !chars.find(c => c.id === t.p))) fail("bad action card: " + t.t); });
+const dup = Q.fact.concat(Q.words).map(q => q.q).concat(Q.tf.map(q => q.s)); if (new Set(dup).size !== dup.length) fail("duplicate question text");
 const covered = new Set(Q.who.map(q => q.p)); chars.forEach(c => { if (!covered.has(c.id)) fail("no who-am-I for " + c.id); });
 console.log("board:", board.nodes.length, "fields, shortest way", B.distances(board).min, "longest", B.distances(board).max);
 console.log("questions:", Object.fromEntries(Object.entries(Q).map(([k, v]) => [k, v.length])));

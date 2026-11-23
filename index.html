@@ -72,8 +72,9 @@
       <button class="modecard mc-single" id="modeSingle"><span class="mc-art" aria-hidden="true">🎡</span><b>Single Player</b>
         <span class="mc-sub">Live one life</span><span class="mc-text">Spin the wheel and walk through the real story of one person, with every barrier, bridge and turning point.</span><i class="mc-go">Play alone</i></button>
       <button class="modecard mc-multi" id="modeMulti"><span class="mc-art" aria-hidden="true">♟️</span><b>Multiplayer</b>
-        <span class="mc-sub">2 to 6 players · one shared board</span><span class="mc-text">Race along branching paths with your own pawn. Answer easy questions and do small tasks about 17 real people to move forward.</span><i class="mc-go">Play together</i></button>
+        <span class="mc-sub">2 to 6 players · one shared board</span><span class="mc-text">Race along branching paths with your own pawn. Answer questions about 17 real people, test your everyday behaviour and try real-life action cards to move forward.</span><i class="mc-go">Play together</i></button>
     </div>
+    <aside class="qrshare"><div class="qrimg" id="qrSite" role="img" aria-label="QR code for the game website"></div><div><b>Play on your phone</b><p>Scan the code to open the game. Friends can join your multiplayer game the same way.</p></div></aside>
   </main>
 </section>
 
@@ -101,6 +102,7 @@
       <div id="hostRoom" hidden>
         <p class="setupsub">Tell your friends to open this page, choose “Join with code” and type:</p>
         <div class="roomcode" id="roomCode" aria-live="polite">·····</div>
+        <div class="qrbox"><div class="qrimg" id="qrHost" role="img" aria-label="QR code to join this game"></div><p>Or scan with a phone camera to join straight away</p></div>
         <div class="roomlink"><button class="mp-skip" id="copyLink">Copy invite link</button><span id="copyMsg" aria-live="polite"></span></div>
         <div class="lobby" id="hostLobby"></div>
         <div class="setupgo"><button class="big gold" id="hostGo" disabled>Start the game</button><br><button class="mp-skip" id="hostCancel">Cancel</button></div>
@@ -118,8 +120,8 @@
       <p class="neterr" id="joinErr" role="alert" hidden></p>
     </div>
     <details class="howto"><summary>How does it work?</summary>
-      <ol><li>On your turn you get a card for the colour of your field: a question about a person, or a small task.</li>
-      <li>Answer right (or do the task) and you roll the die and move. Wrong: stay, learn the answer, next player.</li>
+      <ol><li>On your turn roll the die and walk. The colour of the field you land on decides your card: a question about a person, or a real-life action.</li>
+      <li>Answer right (or do the action) and you stay on the field. Wrong: your pawn goes back to where your turn started. On a ⚡ DOUBLE card a right answer moves you ahead again.</li>
       <li>Paths split. Choose your way: a longer trail with a bridge, or a short cut full of challenges.</li>
       <li>Reach the finish first to win.</li></ol></details>
   </main>
@@ -172,6 +174,7 @@
 <div id="modal" class="modal" hidden><div class="card" role="dialog" aria-modal="true" id="modalCard"></div></div>
 
 <script src="vendor/three.min.js"></script>
+<script src="vendor/qrcode.js"></script>
 <script src="js/core.js"></script>
 <script src="js/characters/hawking.js"></script>
 <script src="js/characters/parks.js"></script>

@@ -1,6 +1,6 @@
 # Multiplayer mode
 
-Single Player (the original game) walks through **one life in depth**. Multiplayer is the opposite: neutral coloured pawns race over **one big shared board** and answer easy questions and do small tasks about the **17 real people** and the barriers they faced. The 4 fictional characters are not used here.
+Single Player (the original game) walks through **one life in depth**. Multiplayer is the opposite: neutral coloured pawns race over **one big shared board** and answer questions, judge statements and try real-life actions about the **17 real people** and the barriers they faced. The 4 fictional characters are not used here.
 
 ## Rules
 
@@ -17,13 +17,15 @@ Single Player (the original game) walks through **one life in depth**. Multiplay
 | blue `?` | Who am I? | A clue about a person, pick one of 3 names |
 | orange `i` | Life & Barriers | Multiple choice about a life story |
 | green `T/F` | True or False? | A statement about a person |
-| purple `Aa` | Words Matter | Respectful language and behaviour (not tied to one person) |
-| red star | Challenge | A small task for the group (honour system, can be skipped) |
+| purple `Aa` | Words Matter | Everyday situations about respectful language and behaviour, with tempting wrong answers (not tied to one person) |
+| red star | Action! | A real-life action with an optional timer: do something doable but challenging to feel a different perspective (honour system, can be skipped) |
 | teal heart | Story Stop | No question: meet a person (photo, a milestone and a barrier from the Single Player data) |
 | gold arch | Bridge | Lands you 3 fields further, automatically |
 
-- **Right answer (or task done):** roll the die (1 to 6) and walk. At a fork you choose the branch (buttons, or click a glowing field).
-- **Wrong answer:** you stay, see the right answer with a short explanation and the person's portrait, the next player is up. Questions are meant to be easy.
+- **Your turn:** roll the die (1 to 6) and the pawn walks at once. At a fork you choose the branch (buttons, or click a glowing field). Then you get the card of the field you landed on.
+- **Right answer (or action done):** the pawn stays on the field and the next player rolls.
+- **Double cards:** about one question or action card in five is a random **⚡ DOUBLE** card, announced at the top of the card. Answer right and the pawn moves ahead again by the same number as the die (a 4 means 4 more fields, no second card). A wrong answer gets nothing extra.
+- **Wrong answer (or skipped action):** you see the right answer with a short explanation and the person's portrait, the pawn walks back along its path to the field where the turn started, and the next player is up. Every explanation tells a bit more of the person's life story. Questions are medium to hard; the wrong answers sound plausible.
 - First pawn on the finish wins. A game with 2 players takes about 12 rounds (roughly 15 to 20 minutes).
 
 ## Files
@@ -31,15 +33,16 @@ Single Player (the original game) walks through **one life in depth**. Multiplay
 | File | Purpose |
 | --- | --- |
 | `js/mp/board.js` | The board as a graph (nodes, forks, field types). Pure data, tested in Node |
-| `js/mp/questions.js` | Question bank: 17 who-am-I (2 clues each), 46 life questions, 48 true/false, 12 words, 14 tasks. Facts follow `js/characters/*.js` |
+| `js/mp/questions.js` | Question bank: 17 who-am-I (3 clues each, wrong names come from the same theme), 68 life questions, 99 true/false (12 of them about everyday behaviour), 28 words, 24 action cards. Facts follow `js/characters/*.js` |
 | `js/mp/engine.js` | Game rules. Serialisable state and `dispatch(action) -> events`. No DOM, no 3D |
 | `js/mp/scene.js` | Three.js view: board, pawns, hop animation, camera, fork markers |
 | `js/mp/game.js` | UI: setup, cards, die, end screen, glue to the engine, online lobby |
 | `js/mp/net.js` | Online play (PeerJS wrapper) |
+| `vendor/qrcode.js` | QR codes (MIT, drawn locally): host room and mode screen. `img/qr-play.png` is a printable QR for the public site |
 | `css/mp.css` | Styles |
 
 ### Add or change questions
-Edit `js/mp/questions.js`. In `fact` and `words` the **first** answer is the right one (the order is shuffled when a card is drawn). `p` is the id of a real character from `js/characters/`. Keep them easy and keep the explanation (`x`) short and kind. To change the board, edit the chains in `js/mp/board.js` (`CHAINS`, `BRIDGES`, `RHYTHM`).
+Edit `js/mp/questions.js`. In `fact` and `words` the **first** answer is the right one (the order is shuffled when a card is drawn). `p` is the id of a real character from `js/characters/`. Keep them accurate (check `js/characters/`), make the wrong answers believable and keep the explanation (`x`) to one to three kind sentences with a piece of the life story. For action cards: `sec` is an optional timer, `all` means everybody joins, `r` is the question to talk about afterwards, `p` the person it is inspired by. Actions must be safe, doable with pen and paper and skippable. To change the board, edit the chains in `js/mp/board.js` (`CHAINS`, `BRIDGES`, `RHYTHM`).
 
 ### Run the rule tests (Node, no browser)
 The engine plays complete games with a random bot, run `node tools/mp-sim.js` (it also checks the question bank against the character data). Useful numbers: 2 players need about 12 to 17 rounds depending on how many answers are right.
