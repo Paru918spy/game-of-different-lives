@@ -4,10 +4,11 @@
    while other devices send their actions over the network (see docs/multiplayer.md).
 
    Turn flow
-     card      the current player stands on a field and gets a card of that field's category
-     feedback  after the answer: right/wrong + explanation
-     roll      (only after a right answer or a story card) the player rolls 1-6
-     fork      the player walks and has to choose a branch
+     roll      the player rolls 1-6 and the pawn walks at once
+     fork      while walking the player has to choose a branch
+     card      the pawn has landed: a card of that field's category (question, statement, action, story)
+     feedback  after the answer: right/wrong + explanation. Right: the pawn stays (a DOUBLE card moves it the same number of
+               steps again). Wrong: the pawn walks back to where the turn started. Then the next player rolls.
      over      somebody reached the finish                                                    */
 (function (root) {
   const MP = root.MP = root.MP || {};
@@ -22,7 +23,7 @@
     tf: { label: "True or False?", color: "#06c28f", dark: "#038a65", hint: "Is the statement true?" },
     words: { label: "Words Matter", color: "#7b5cd6", dark: "#523a9e", hint: "Respectful words and behaviour" },
     task: { label: "Action!", color: "#ef476f", dark: "#b02a4d", hint: "Try it for real, then roll" },
-    story: { label: "Story Stop", color: "#0fb5a0", dark: "#077567", hint: "Meet a person. No question, just roll!" },
+    story: { label: "Story Stop", color: "#0fb5a0", dark: "#077567", hint: "Meet a person. No question, you can stay!" },
     bridge: { label: "Bridge", color: "#f6b93b", dark: "#b97b0a", hint: "A helping hand: move 3 fields forward" },
     start: { label: "Start", color: "#fff6e0", dark: "#c9a66b", hint: "" },
     finish: { label: "Finish", color: "#fff6e0", dark: "#c9a66b", hint: "" }
@@ -42,11 +43,10 @@
     const S = {
       v: 1, rng: (opts.seed == null ? Math.floor(Math.random() * 2 ** 31) : opts.seed) | 0,
       players: opts.names.map((n, i) => ({ id: i, name: n, color: i, pos: board.start, correct: 0, wrong: 0, asked: 0, steps: 0, bridges: 0 })),
-      turn: 0, round: 1, phase: "card", card: null, dice: null, fork: null, winner: null, log: [],
+      turn: 0, round: 1, phase: "roll", card: null, dice: null, fork: null, winner: null, log: [], path: [], bonus: false,
       decks: {}, storyDeck: []
     };
     S._board = board; S._Q = Q; S._chars = opts.chars;       // non-serialised helpers (re-attach with attach())
-    S.card = drawCard(S, board.nodes[board.start].type);
     return S;
   }
   function attach(S, board, Q, chars) { S._board = board; S._Q = Q; S._chars = chars; return S; }
@@ -118,21 +118,27 @@
     land(S, ev);
   }
   function step(S, to, ev) {
-    const p = S.players[S.turn]; ev.push({ e: "step", p: p.id, from: p.pos, to }); p.pos = to; p.steps++;
+    const p = S.players[S.turn]; ev.push({ e: "step", p: p.id, from: p.pos, to }); S.path.push(p.pos); p.pos = to; p.steps++;
   }
   function land(S, ev) {
     const B = S._board, p = S.players[S.turn], node = B.nodes[p.pos];
     S.fork = null;
     if (p.pos === B.finish) { S.phase = "over"; S.winner = p.id; ev.push({ e: "win", p: p.id }); return; }
     if (node.type === "bridge") { p.bridges++; ev.push({ e: "bridge", p: p.id, node: p.pos }); walk(S, BRIDGE_STEPS, ev); return; }
-    endTurn(S, ev);
+    if (S.bonus) { S.bonus = false; endTurn(S, ev); return; }            // DOUBLE bonus walk: no second card
+    S.card = drawCard(S, node.type); S.phase = "card"; ev.push({ e: "card", p: p.id, node: p.pos });
+  }
+  /* wrong answer: walk back along the way just taken */
+  function walkBack(S, ev) {
+    const p = S.players[S.turn];
+    while (S.path.length) { const to = S.path.pop(); ev.push({ e: "step", p: p.id, from: p.pos, to, back: true }); p.pos = to; }
+    ev.push({ e: "back", p: p.id });
   }
   function endTurn(S, ev) {
     S.turn = (S.turn + 1) % S.players.length; if (S.turn === 0) S.round++;
-    S.dice = null; S.fork = null; S.mult = 1;
+    S.dice = null; S.fork = null; S.path = []; S.bonus = false; S.card = null;
     const p = S.players[S.turn];
-    S.card = drawCard(S, S._board.nodes[p.pos].type);
-    S.phase = "card"; ev.push({ e: "turn", p: p.id });
+    S.phase = "roll"; ev.push({ e: "turn", p: p.id });
   }
 
   /* ---------- actions ---------- */
@@ -150,13 +156,16 @@
       } else if (a.t === "task" && c.kind === "task") {
         c.result = { ok: !!a.done }; p.asked++; a.done ? p.correct++ : p.wrong++;
         S.phase = "feedback"; ev.push({ e: "answer", p: p.id, ok: !!a.done });
-      } else if (a.t === "next" && c.kind === "story") { S.phase = "roll"; ev.push({ e: "story", p: p.id }); }
+      } else if (a.t === "next" && c.kind === "story") { ev.push({ e: "story", p: p.id }); endTurn(S, ev); }
     } else if (S.phase === "feedback" && a.t === "next") {
-      if (S.card.result.ok) { S.phase = "roll"; S.mult = S.card.double ? 2 : 1; ev.push({ e: "next", p: p.id }); } else endTurn(S, ev);
+      if (S.card.result.ok) {
+        ev.push({ e: "next", p: p.id });
+        if (S.card.double && S.dice) { S.bonus = true; ev.push({ e: "double", p: p.id, n: S.dice }); walk(S, S.dice, ev); } else endTurn(S, ev);
+      } else { walkBack(S, ev); endTurn(S, ev); }
     } else if (S.phase === "roll" && a.t === "roll") {
-      S.dice = 1 + Math.floor(rnd(S) * 6); const m = S.mult || 1; S.mult = 1;
-      ev.push({ e: "roll", p: p.id, v: S.dice, mult: m });
-      walk(S, S.dice * m, ev);
+      S.dice = 1 + Math.floor(rnd(S) * 6); S.path = [];
+      ev.push({ e: "roll", p: p.id, v: S.dice });
+      walk(S, S.dice, ev);
     } else if (S.phase === "fork" && a.t === "choose" && S.fork.options.includes(a.node)) {
       const n = S.fork.remaining; S.phase = "roll"; S.fork = null;
       step(S, a.node, ev); S.fork = null;

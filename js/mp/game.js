@@ -112,6 +112,8 @@
       if (e.e === "answer") { e.ok ? SND.right() : SND.wrong(); renderPlayers(); }
       else if (e.e === "roll") await showRoll(e);
       else if (e.e === "step") { SND.hop(); await scene.move(e.p, e.from, e.to); }
+      else if (e.e === "back") { banner("↩ Not quite: back to where you started", 1500); await sleep(500); }
+      else if (e.e === "double") { SND.bridge(); banner(`⚡ DOUBLE! Move ${e.n} more field${e.n > 1 ? "s" : ""}`, 1500); await sleep(900); }
       else if (e.e === "bridge") { SND.bridge(); banner("🌉 Bridge! Move 3 more fields", 1400); await sleep(900); }
       else if (e.e === "turn") { scene.setActive(e.p); SND.turn(); renderPlayers(); banner(turnText(V.players[e.p]), 1500); await sleep(650); }
       else if (e.e === "win") { SND.win(); renderPlayers(); await scene.celebrate(e.p); showEnd(); }
@@ -146,6 +148,7 @@
   function portrait(id) { const c = char(id); if (!c) return ""; return `<figure class="mp-port"><div class="pic">${GOL.portrait(c)}</div><figcaption><b>${esc(c.name)}</b><small>${esc(c.years)} · ${esc(c.focus)}</small></figcaption></figure>`; }
 
   let timerId = 0;
+  const nextLabel = (c, res) => res.ok ? (c.double ? "⚡ Move ahead again!" : "Stay here · Next player") : "↩ Back to my old field";
   function renderCard() {
     const c = V.card, p = V.players[V.turn], cat = E.CATEGORY[c.kind], fb = V.phase === "feedback", res = c.result, my = mine();
     const primary = (id, label) => my ? `<button class="big mp-primary" id="${id}">${label}</button>` : waitNote(p);
@@ -154,12 +157,12 @@
       const ch = char(c.p);
       body = `<div class="mp-story"><div class="pic">${GOL.portrait(ch)}</div><div><h2>${esc(c.q)}</h2><p class="yrs">${esc(c.years)} · ${esc(c.focus)}</p><p class="tag">${esc(c.tagline)}</p></div></div>
         ${c.win ? `<div class="mp-note ok"><b>⭐ ${esc(c.win.title)}</b><p>${esc(c.win.text)}</p></div>` : ""}${c.barrier ? `<div class="mp-note bar"><b>🚧 ${esc(c.barrier.title)}</b><p>${esc(c.barrier.text)}</p></div>` : ""}
-        <p class="mp-small">Story stop: no question. Roll the die and keep going!</p>${primary("mpNext", "Roll the die 🎲")}`;
+        <p class="mp-small">Story stop: no question. You can stay on this field!</p>${primary("mpNext", "Next player")}`;
     } else if (c.kind === "task") {
       const who = c.all ? "👥 Everyone joins in" : "🙋 " + esc(p.name) + " does it";
       body = `<div class="mp-task"><div class="tic">${c.icon}</div><h2>${esc(c.q)}</h2><span class="mp-who">${who}</span><p>${esc(c.d)}</p>${c.sec && !fb ? `<button class="mp-timer" id="mpTimer" data-s="${c.sec}">⏱ Start ${c.sec}s timer</button>` : ""}</div>` + (fb
-        ? `<div class="mp-result ${res.ok ? "ok" : "no"}">${res.ok ? "Great, you did it!" : "No problem. Maybe next time."}${res.ok && c.r ? `<span>💭 Talk about it: ${esc(c.r)}</span>` : ""}</div>${res.ok && c.p ? portrait(c.p) : ""}${primary("mpNext", res.ok ? "Roll the die 🎲" : "Next player")}`
-        : (my ? `<p class="mp-small">Do it for real. The others decide if it counts. A good try is enough!</p><div class="mp-btns"><button class="big mp-primary" id="mpDone">We did it ✔</button><button class="mp-skip" id="mpSkip">Skip (stay here)</button></div>` : waitNote(p)));
+        ? `<div class="mp-result ${res.ok ? "ok" : "no"}">${res.ok ? "Great, you did it!" : "No problem. Maybe next time."}${res.ok && c.r ? `<span>💭 Talk about it: ${esc(c.r)}</span>` : ""}</div>${res.ok && c.p ? portrait(c.p) : ""}${primary("mpNext", nextLabel(c, res))}`
+        : (my ? `<p class="mp-small">Do it for real. The others decide if it counts. A good try is enough!</p><div class="mp-btns"><button class="big mp-primary" id="mpDone">We did it ✔</button><button class="mp-skip" id="mpSkip">Skip (go back)</button></div>` : waitNote(p)));
     } else {
       const opts = c.opts.map((o, i) => { let cls = "mp-opt"; if (fb) { if (o.ok) cls += " right"; else if (res.i === i) cls += " wrong"; else cls += " dim"; }
         return `<button class="${cls}" data-i="${i}" ${fb || !my ? "disabled" : ""}><span class="k">${i + 1}</span>${esc(o.text)}</button>`; }).join("");
@@ -168,12 +171,12 @@
       if (fb) {
         body += `<div class="mp-result ${res.ok ? "ok" : "no"}">${res.ok ? "✔ Right!" : "✖ Not quite."}${c.x ? ` <span>${esc(c.x)}</span>` : ""}</div>`;
         if (c.reveal) body += portrait(c.reveal);
-        body += primary("mpNext", res.ok ? "Roll the die 🎲" : "Next player");
+        body += primary("mpNext", nextLabel(c, res));
       }
     }
     const w = $("mpCardWrap"), card = $("mpCard");
     card.className = "mp-card k-" + c.kind + (fb ? " fb" : ""); card.style.setProperty("--c", cat.color); card.style.setProperty("--d", cat.dark);
-    const dbBadge = c.double && !fb ? `<div class="mp-double">⚡ DOUBLE card! Answer right (or do it) and you walk twice as far.</div>` : "";
+    const dbBadge = c.double && !fb ? `<div class="mp-double">⚡ DOUBLE card! Answer right (or do it) and you move ahead again by the same number of steps. Wrong: you go back.</div>` : "";
     card.innerHTML = dbBadge + `<div class="mp-chead"><span class="ci">${ICON[c.kind] || ""}</span><div><b>${cat.label}</b><small>${esc(cat.hint)}</small></div>${chip(p)}</div><div class="mp-cbody">${body}</div>`;
     w.hidden = false; scene.setShift(window.innerWidth >= 1000 ? window.innerWidth * .2 : 0);
     card.querySelectorAll(".mp-opt").forEach(b => b.onclick = () => submit({ t: "answer", i: +b.dataset.i }));
@@ -192,8 +195,7 @@
   const dieHTML = n => `<div class="mpdie" id="mpDie" aria-label="Die showing ${n}">${pips(n)}</div>`;
   function renderRoll() {
     const p = V.players[V.turn], d = $("mpDock"), my = mine();
-    const dbl = V.mult === 2 ? ` <b class="mp-x2">⚡ DOUBLE: ×2 steps</b>` : "";
-    d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">${my ? "Roll the die and move!" : "is about to roll…"}${dbl}</span></div>${dieHTML(6)}${my ? `<button class="big gold mp-primary" id="mpRoll">Roll 🎲</button>` : ""}`;
+    d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">${my ? "Roll the die and move!" : "is about to roll…"}</span></div>${dieHTML(6)}${my ? `<button class="big gold mp-primary" id="mpRoll">Roll 🎲</button>` : ""}`;
     d.hidden = false; const r = $("mpRoll"); if (r) r.onclick = () => submit({ t: "roll" });
   }
   async function showRoll(e) {
@@ -201,7 +203,7 @@
     d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">rolls…</span></div>${dieHTML(6)}`; d.hidden = false;
     const die = $("mpDie"); die.classList.add("tumble");
     for (let i = 0; i < 9; i++) { die.innerHTML = pips(1 + Math.floor(Math.random() * 6)); SND.roll(); await sleep(85 + i * 12); }
-    die.classList.remove("tumble"); die.innerHTML = pips(e.v); die.classList.add("land"); SND.right(); const tot = e.v * (e.mult || 1); d.querySelector(".dk-m").textContent = e.mult > 1 ? `${e.v} × 2 = ${tot} steps! ⚡` : `${e.v} step${e.v > 1 ? "s" : ""}!`;
+    die.classList.remove("tumble"); die.innerHTML = pips(e.v); die.classList.add("land"); SND.right(); d.querySelector(".dk-m").textContent = `${e.v} step${e.v > 1 ? "s" : ""}!`;
     await sleep(450);
   }
 
