@@ -11,7 +11,14 @@ No install, no server, no build step.
 
 Optional, if you prefer a local server: open Terminal in the folder and run `python3 -m http.server 8000`, then go to http://localhost:8000.
 
-## How to play
+## Game modes
+
+Press **Play** and choose:
+
+- **Single Player** (the walk through one life, described below)
+- **Multiplayer** (2 to 6 pawns on one shared board with forks, quiz cards and tasks about the 17 real people). It runs on one device or online between devices. See [docs/multiplayer.md](docs/multiplayer.md).
+
+## How to play (Single Player)
 
 - Press **Spin the wheel of fortune**. A realistic 3D wheel assigns you one of the 21 lives. You do not get to choose.
 - The 3D board is built individually for that life. **Drag** to rotate, **right-drag or Shift+drag** to move, **scroll** to zoom. The camera follows your pawn (🎥), 🗺️ shows the whole board. Click a visited space to read it again.
@@ -37,6 +44,9 @@ js/scenery.js         illustrated fallback scenes for events without a photo
 js/thumbs.js          small embedded portraits (WebGL cannot read file:// images)
 js/i18n.js            UI strings (English only)
 js/characters/*.js    one file per playable life (content)
+js/mp/                Multiplayer: board graph, question bank, engine, 3D scene, UI, online (PeerJS) - see docs/multiplayer.md
+css/mp.css            Multiplayer styles
+vendor/peerjs.min.js  PeerJS 1.5.5 (MIT), only loaded for online play
 js/core.js            authoring helper + portrait/illustration code
 docs/                 design proposal, research notes, fact-check list
 ```
