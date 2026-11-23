@@ -173,7 +173,8 @@
     }
     const w = $("mpCardWrap"), card = $("mpCard");
     card.className = "mp-card k-" + c.kind + (fb ? " fb" : ""); card.style.setProperty("--c", cat.color); card.style.setProperty("--d", cat.dark);
-    card.innerHTML = `<div class="mp-chead"><span class="ci">${ICON[c.kind] || ""}</span><div><b>${cat.label}</b><small>${esc(cat.hint)}</small></div>${chip(p)}</div><div class="mp-cbody">${body}</div>`;
+    const dbBadge = c.double && !fb ? `<div class="mp-double">⚡ DOUBLE card! Answer right (or do it) and you walk twice as far.</div>` : "";
+    card.innerHTML = dbBadge + `<div class="mp-chead"><span class="ci">${ICON[c.kind] || ""}</span><div><b>${cat.label}</b><small>${esc(cat.hint)}</small></div>${chip(p)}</div><div class="mp-cbody">${body}</div>`;
     w.hidden = false; scene.setShift(window.innerWidth >= 1000 ? window.innerWidth * .2 : 0);
     card.querySelectorAll(".mp-opt").forEach(b => b.onclick = () => submit({ t: "answer", i: +b.dataset.i }));
     const n = $("mpNext"); if (n) n.onclick = () => submit({ t: "next" });
@@ -191,7 +192,8 @@
   const dieHTML = n => `<div class="mpdie" id="mpDie" aria-label="Die showing ${n}">${pips(n)}</div>`;
   function renderRoll() {
     const p = V.players[V.turn], d = $("mpDock"), my = mine();
-    d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">${my ? "Roll the die and move!" : "is about to roll…"}</span></div>${dieHTML(6)}${my ? `<button class="big gold mp-primary" id="mpRoll">Roll 🎲</button>` : ""}`;
+    const dbl = V.mult === 2 ? ` <b class="mp-x2">⚡ DOUBLE: ×2 steps</b>` : "";
+    d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">${my ? "Roll the die and move!" : "is about to roll…"}${dbl}</span></div>${dieHTML(6)}${my ? `<button class="big gold mp-primary" id="mpRoll">Roll 🎲</button>` : ""}`;
     d.hidden = false; const r = $("mpRoll"); if (r) r.onclick = () => submit({ t: "roll" });
   }
   async function showRoll(e) {
@@ -199,7 +201,7 @@
     d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">rolls…</span></div>${dieHTML(6)}`; d.hidden = false;
     const die = $("mpDie"); die.classList.add("tumble");
     for (let i = 0; i < 9; i++) { die.innerHTML = pips(1 + Math.floor(Math.random() * 6)); SND.roll(); await sleep(85 + i * 12); }
-    die.classList.remove("tumble"); die.innerHTML = pips(e.v); die.classList.add("land"); SND.right(); d.querySelector(".dk-m").textContent = `${e.v} step${e.v > 1 ? "s" : ""}!`;
+    die.classList.remove("tumble"); die.innerHTML = pips(e.v); die.classList.add("land"); SND.right(); const tot = e.v * (e.mult || 1); d.querySelector(".dk-m").textContent = e.mult > 1 ? `${e.v} × 2 = ${tot} steps! ⚡` : `${e.v} step${e.v > 1 ? "s" : ""}!`;
     await sleep(450);
   }
 

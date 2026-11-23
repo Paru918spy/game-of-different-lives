@@ -147,3 +147,5 @@
 .mp-task .mp-who{display:inline-block;margin:2px 0 4px;padding:3px 12px;border-radius:999px;background:#ffe3e0;color:#b02a4d;font-weight:800;font-size:14px}
 .mp-timer{margin:8px auto 0;display:block;font:800 18px var(--font);color:#fff;background:#3a2410;border:0;border-radius:999px;padding:9px 22px;cursor:pointer;box-shadow:0 4px 0 #1b0f06}
 .mp-timer:disabled{opacity:.9;cursor:default;box-shadow:none}.mp-timer.up{background:#ef476f;animation:pop .5s}
+.mp-double{background:#3a2410;color:#ffd84d;font-weight:900;text-align:center;padding:6px 12px;font-size:15px;letter-spacing:.2px;animation:pop .6s}
+.mp-x2{color:#c25a12}

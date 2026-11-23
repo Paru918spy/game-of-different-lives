@@ -23,6 +23,7 @@ Single Player (the original game) walks through **one life in depth**. Multiplay
 | gold arch | Bridge | Lands you 3 fields further, automatically |
 
 - **Right answer (or task done):** roll the die (1 to 6) and walk. At a fork you choose the branch (buttons, or click a glowing field).
+- **Double cards:** about one question or action card in five is a random **⚡ DOUBLE** card, announced at the top of the card. Answer right and your roll counts twice (e.g. a 4 means 8 fields). Wrong answers get nothing extra.
 - **Wrong answer:** you stay, see the right answer with a short explanation and the person's portrait, the next player is up. Every explanation tells a bit more of the person's life story. Questions are medium to hard; the wrong answers sound plausible.
 - First pawn on the finish wins. A game with 2 players takes about 12 rounds (roughly 15 to 20 minutes).
 

@@ -60,7 +60,14 @@
   }
   function realNames(S) { return S._chars.map(c => ({ id: c.id, name: c.name })); }
 
+  /* About one question or action card in five is a DOUBLE card (random): answer right and you walk twice as far. */
+  const DOUBLE_CHANCE = 0.2;
   function drawCard(S, type) {
+    const c = drawCard0(S, type);
+    if (c.kind !== "story") c.double = rnd(S) < DOUBLE_CHANCE;
+    return c;
+  }
+  function drawCard0(S, type) {
     const Q = S._Q;
     if (type === "start") type = "who";
     if (type === "finish" || type === "bridge") type = "story";
@@ -122,7 +129,7 @@
   }
   function endTurn(S, ev) {
     S.turn = (S.turn + 1) % S.players.length; if (S.turn === 0) S.round++;
-    S.dice = null; S.fork = null;
+    S.dice = null; S.fork = null; S.mult = 1;
     const p = S.players[S.turn];
     S.card = drawCard(S, S._board.nodes[p.pos].type);
     S.phase = "card"; ev.push({ e: "turn", p: p.id });
@@ -145,10 +152,11 @@
         S.phase = "feedback"; ev.push({ e: "answer", p: p.id, ok: !!a.done });
       } else if (a.t === "next" && c.kind === "story") { S.phase = "roll"; ev.push({ e: "story", p: p.id }); }
     } else if (S.phase === "feedback" && a.t === "next") {
-      if (S.card.result.ok) { S.phase = "roll"; ev.push({ e: "next", p: p.id }); } else endTurn(S, ev);
+      if (S.card.result.ok) { S.phase = "roll"; S.mult = S.card.double ? 2 : 1; ev.push({ e: "next", p: p.id }); } else endTurn(S, ev);
     } else if (S.phase === "roll" && a.t === "roll") {
-      S.dice = 1 + Math.floor(rnd(S) * 6); ev.push({ e: "roll", p: p.id, v: S.dice });
-      walk(S, S.dice, ev);
+      S.dice = 1 + Math.floor(rnd(S) * 6); const m = S.mult || 1; S.mult = 1;
+      ev.push({ e: "roll", p: p.id, v: S.dice, mult: m });
+      walk(S, S.dice * m, ev);
     } else if (S.phase === "fork" && a.t === "choose" && S.fork.options.includes(a.node)) {
       const n = S.fork.remaining; S.phase = "roll"; S.fork = null;
       step(S, a.node, ev); S.fork = null;
