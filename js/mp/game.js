@@ -145,6 +145,7 @@
 
   function portrait(id) { const c = char(id); if (!c) return ""; return `<figure class="mp-port"><div class="pic">${GOL.portrait(c)}</div><figcaption><b>${esc(c.name)}</b><small>${esc(c.years)} · ${esc(c.focus)}</small></figcaption></figure>`; }
 
+  let timerId = 0;
   function renderCard() {
     const c = V.card, p = V.players[V.turn], cat = E.CATEGORY[c.kind], fb = V.phase === "feedback", res = c.result, my = mine();
     const primary = (id, label) => my ? `<button class="big mp-primary" id="${id}">${label}</button>` : waitNote(p);
@@ -155,9 +156,10 @@
         ${c.win ? `<div class="mp-note ok"><b>⭐ ${esc(c.win.title)}</b><p>${esc(c.win.text)}</p></div>` : ""}${c.barrier ? `<div class="mp-note bar"><b>🚧 ${esc(c.barrier.title)}</b><p>${esc(c.barrier.text)}</p></div>` : ""}
         <p class="mp-small">Story stop: no question. Roll the die and keep going!</p>${primary("mpNext", "Roll the die 🎲")}`;
     } else if (c.kind === "task") {
-      body = `<div class="mp-task"><div class="tic">${c.icon}</div><h2>${esc(c.q)}</h2><p>${esc(c.d)}</p></div>` + (fb
-        ? `<div class="mp-result ${res.ok ? "ok" : "no"}">${res.ok ? "Great, you did it!" : "No problem. Maybe next time."}</div>${primary("mpNext", res.ok ? "Roll the die 🎲" : "Next player")}`
-        : (my ? `<p class="mp-small">Do the task together. The others decide if it is done.</p><div class="mp-btns"><button class="big mp-primary" id="mpDone">We did it ✔</button><button class="mp-skip" id="mpSkip">Skip (stay here)</button></div>` : waitNote(p)));
+      const who = c.all ? "👥 Everyone joins in" : "🙋 " + esc(p.name) + " does it";
+      body = `<div class="mp-task"><div class="tic">${c.icon}</div><h2>${esc(c.q)}</h2><span class="mp-who">${who}</span><p>${esc(c.d)}</p>${c.sec && !fb ? `<button class="mp-timer" id="mpTimer" data-s="${c.sec}">⏱ Start ${c.sec}s timer</button>` : ""}</div>` + (fb
+        ? `<div class="mp-result ${res.ok ? "ok" : "no"}">${res.ok ? "Great, you did it!" : "No problem. Maybe next time."}${res.ok && c.r ? `<span>💭 Talk about it: ${esc(c.r)}</span>` : ""}</div>${res.ok && c.p ? portrait(c.p) : ""}${primary("mpNext", res.ok ? "Roll the die 🎲" : "Next player")}`
+        : (my ? `<p class="mp-small">Do it for real. The others decide if it counts. A good try is enough!</p><div class="mp-btns"><button class="big mp-primary" id="mpDone">We did it ✔</button><button class="mp-skip" id="mpSkip">Skip (stay here)</button></div>` : waitNote(p)));
     } else {
       const opts = c.opts.map((o, i) => { let cls = "mp-opt"; if (fb) { if (o.ok) cls += " right"; else if (res.i === i) cls += " wrong"; else cls += " dim"; }
         return `<button class="${cls}" data-i="${i}" ${fb || !my ? "disabled" : ""}><span class="k">${i + 1}</span>${esc(o.text)}</button>`; }).join("");
@@ -175,6 +177,11 @@
     w.hidden = false; scene.setShift(window.innerWidth >= 1000 ? window.innerWidth * .2 : 0);
     card.querySelectorAll(".mp-opt").forEach(b => b.onclick = () => submit({ t: "answer", i: +b.dataset.i }));
     const n = $("mpNext"); if (n) n.onclick = () => submit({ t: "next" });
+    clearInterval(timerId); const tm = $("mpTimer");
+    if (tm) tm.onclick = () => {
+      let left = +tm.dataset.s; tm.disabled = true; tm.textContent = "⏱ " + left + "s";
+      timerId = setInterval(() => { left--; const t = $("mpTimer"); if (!t) return clearInterval(timerId); if (left <= 0) { clearInterval(timerId); t.textContent = "⏰ Time is up!"; t.classList.add("up"); } else t.textContent = "⏱ " + left + "s"; }, 1000);
+    };
     const d = $("mpDone"); if (d) d.onclick = () => submit({ t: "task", done: true });
     const s = $("mpSkip"); if (s) s.onclick = () => submit({ t: "task", done: false });
   }

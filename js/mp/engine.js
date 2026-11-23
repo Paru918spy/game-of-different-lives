@@ -21,7 +21,7 @@
     fact: { label: "Life & Barriers", color: "#ff8a3d", dark: "#c25a12", hint: "A question about a life story" },
     tf: { label: "True or False?", color: "#06c28f", dark: "#038a65", hint: "Is the statement true?" },
     words: { label: "Words Matter", color: "#7b5cd6", dark: "#523a9e", hint: "Respectful words and behaviour" },
-    task: { label: "Challenge", color: "#ef476f", dark: "#b02a4d", hint: "Do a small task together" },
+    task: { label: "Action!", color: "#ef476f", dark: "#b02a4d", hint: "Try it for real, then roll" },
     story: { label: "Story Stop", color: "#0fb5a0", dark: "#077567", hint: "Meet a person. No question, just roll!" },
     bridge: { label: "Bridge", color: "#f6b93b", dark: "#b97b0a", hint: "A helping hand: move 3 fields forward" },
     start: { label: "Start", color: "#fff6e0", dark: "#c9a66b", hint: "" },
@@ -67,9 +67,13 @@
     if (type === "who") {
       const q = Q.who[deckDraw(S, "who", Q.who.length)];
       const clue = q.c[Math.floor(rnd(S) * q.c.length)];
-      const others = shuffle(S, realNames(S).filter(c => c.id !== q.p)).slice(0, 2);
+      /* wrong names come from the same theme (e.g. other scientists), so guessing is harder */
+      const G = Q.groups || {}, near = new Set();
+      Object.keys(G).forEach(k => { if (G[k].includes(q.p)) G[k].forEach(id => near.add(id)); });
+      const all = realNames(S).filter(c => c.id !== q.p), close = shuffle(S, all.filter(c => near.has(c.id))), far = shuffle(S, all.filter(c => !near.has(c.id)));
+      const others = close.concat(far).slice(0, 2);
       const opts = shuffle(S, [{ text: charById(S, q.p).name, ok: true }].concat(others.map(o => ({ text: o.name, ok: false }))));
-      return { kind: "who", p: q.p, q: "Who am I?", clue, opts, x: null, reveal: q.p };
+      return { kind: "who", p: q.p, q: "Who am I?", clue, opts, x: q.x || null, reveal: q.p };
     }
     if (type === "fact" || type === "words") {
       const arr = Q[type], q = arr[deckDraw(S, type, arr.length)];
@@ -82,7 +86,7 @@
     }
     if (type === "task") {
       const q = Q.tasks[deckDraw(S, "task", Q.tasks.length)];
-      return { kind: "task", q: q.t, icon: q.icon, d: q.d };
+      return { kind: "task", q: q.t, icon: q.icon, d: q.d, sec: q.sec || 0, all: !!q.all, r: q.r || null, p: q.p || null };
     }
     /* story */
     if (!S.storyDeck.length) S.storyDeck = shuffle(S, S._chars.map(c => c.id));

@@ -24,7 +24,10 @@
   /* Which chain gets a bridge (reward) field, and where (index inside the chain, 0-based). */
   const BRIDGES = { n1: 3, s1: 2, n2: 2, s2: 3, n3: 1, s3: 2, c3: 4, c4: 3 };
   /* Category rhythm, rotated per chain so neighbouring branches differ. */
-  const RHYTHM = ["who", "tf", "fact", "words", "tf", "fact", "task", "who", "fact", "tf", "words", "fact"];
+  const RHYTHM = ["who", "tf", "fact", "words", "tf", "task", "fact", "tf", "who", "words", "tf", "fact"];
+  /* Hand-tuned fields ("chain:index" -> type): more Words Matter, Action and True/False fields spread over the whole board. */
+  const OVERRIDE = { "c1:1": "words", "c2:2": "task", "n2:0": "words", "s2:1": "task", "c3:5": "words", "c4:6": "task",
+                     "c4:7": "tf", "n2:5": "tf", "s1:3": "tf", "c3:3": "tf" };
   const BRANCH_NAME = { north: "Sunny Trail", south: "River Trail", short: "Short Cut" };
 
   function polylineSample(pts, count) {
@@ -70,6 +73,7 @@
       s.pts.forEach((p, k) => {
         let type = RHYTHM[(ci * 5 + k) % RHYTHM.length];
         if (c.theme === "short") type = (k % 2 === 0) ? "task" : (k === 1 ? "tf" : "who");   // the short cut is full of tasks
+        if (OVERRIDE[c.id + ":" + k]) type = OVERRIDE[c.id + ":" + k];
         if (BRIDGES[c.id] === k) type = "bridge";
         const n = add({ x: p[0], z: p[1], type, chain: c.id, theme: c.theme, k });
         ids.push(n.id);
