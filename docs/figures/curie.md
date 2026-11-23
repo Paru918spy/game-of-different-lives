@@ -33,11 +33,11 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 20 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
-## Advantage: Method and notebooks
+## Advantage: Step by step
 
 Hint: remove one wrong answer before answering · 2 uses per game.
 
-Curie solved problems by careful measurement and by ruling out what could not be true. Use it to remove one wrong answer before you decide.
+Radium was found by processing tonnes of pitchblende step by step. Use it to remove one wrong answer before you decide.
 
 ## Life stations (in the order of the road)
 

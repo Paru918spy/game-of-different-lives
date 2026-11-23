@@ -26,8 +26,8 @@
  "advantage": {
   "type": "hint",
   "uses": 2,
-  "title": "Method and notebooks",
-  "text": "Curie solved problems by careful measurement and by ruling out what could not be true. Use it to remove one wrong answer before you decide.",
+  "title": "Step by step",
+  "text": "Radium was found by processing tonnes of pitchblende step by step. Use it to remove one wrong answer before you decide.",
   "ev": "e4"
  },
  "life": [

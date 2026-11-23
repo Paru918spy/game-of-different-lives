@@ -33,11 +33,11 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 18 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
-## Advantage: Logic first
+## Advantage: Cutting to the core
 
 Hint: remove one wrong answer before answering · 2 uses per game.
 
-Turing solved problems by cutting a puzzle down until only the right case remained. Twice, one wrong answer is removed before you choose.
+His 1936 paper reduced a huge question to a precise one. Twice, one wrong answer is removed before you choose.
 
 ## Life stations (in the order of the road)
 

@@ -31,8 +31,8 @@
  "advantage": {
   "type": "hint",
   "uses": 2,
-  "title": "Logic first",
-  "text": "Turing solved problems by cutting a puzzle down until only the right case remained. Twice, one wrong answer is removed before you choose.",
+  "title": "Cutting to the core",
+  "text": "His 1936 paper reduced a huge question to a precise one. Twice, one wrong answer is removed before you choose.",
   "ev": "e5"
  },
  "life": [

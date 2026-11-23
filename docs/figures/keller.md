@@ -31,11 +31,11 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 15 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
-## Advantage: Fingers on the page
+## Advantage: A teacher at her side
 
 Free pass: count one question or action as answered right · 3 uses per game.
 
-Helen read braille, studied several languages and read widely all her life. On a question you know, count it as answered right.
+At Radcliffe Anne Sullivan spelled the lectures into Helen's hand, and she graduated with honours. On a question you know, count it as answered right.
 
 ## Life stations (in the order of the road)
 

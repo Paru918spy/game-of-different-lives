@@ -26,8 +26,8 @@
  "advantage": {
   "type": "bestof2",
   "uses": 2,
-  "title": "Steady training",
-  "text": "Years of daily running meant Fauja could choose his pace and push when it counted. Roll two dice and take the higher one, twice in your game.",
+  "title": "Daily training",
+  "text": "He trained daily and ran marathons from about 89 years on. Roll two dice and take the higher one, twice in your game.",
   "ev": "e5"
  },
  "life": [
@@ -159,7 +159,7 @@
   {
    "id": "e5",
    "y": "2000",
-   "ev": "He ran the London Marathon for the first time at around 89, and finished marathons until 101.",
+   "ev": "He ran the London Marathon for the first time at around 89, and finished marathons until he was about 100.",
    "src": 2
   }
  ],

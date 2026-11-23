@@ -12,7 +12,7 @@ Every effect on the board points to one of these events. If there is no document
 - **e2** (1950s to 1970s): Steps, buses without lifts and inaccessible buildings and planes limited where she could go, and strangers often had to carry her. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
 - **e3** (1970): New York's Board of Education refused her a teaching licence; she sued and became the first wheelchair user to teach there. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
 - **e4** (1960s): At Camp Jened in the Catskills she met other disabled teenagers and found a community. *Source: Crip Camp (2020)*
-- **e5** (1977): She led the 25-day sit-in in San Francisco that forced the government to sign the Section 504 rules; Black Panthers brought food. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
+- **e5** (1977): She led the sit-in in San Francisco (about 25 days) that forced the government to sign the Section 504 rules; Black Panthers brought food. *Source: Judith Heumann with Kristen Joiner, Being Heumann (2020)*
 
 ## Routes (zones)
 

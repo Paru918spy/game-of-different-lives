@@ -12,7 +12,7 @@ Every effect on the board points to one of these events. If there is no document
 - **e2** (childhood): He was a farmer's son in a Punjab village with almost no schooling. *Source: Khushwant Singh, The Turbaned Tornado*
 - **e3** (2000s): He had no birth certificate, so Guinness World Records could not certify his age records. *Source: Guinness World Records statement on age records*
 - **e4** (1992 onwards): After family losses he moved to Ilford in London, where a Sikh running coach and a club took him in. *Source: BBC and Guardian interviews*
-- **e5** (2000): He ran the London Marathon for the first time at around 89, and finished marathons until 101. *Source: BBC and Guardian interviews*
+- **e5** (2000): He ran the London Marathon for the first time at around 89, and finished marathons until he was about 100. *Source: BBC and Guardian interviews*
 
 ## Routes (zones)
 
@@ -31,11 +31,11 @@ All other routes work normally. The stone bridge, the long ramp, the quiet lane 
 
 16 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
-## Advantage: Steady training
+## Advantage: Daily training
 
 Second chance: roll two dice, take the higher · 2 uses per game.
 
-Years of daily running meant Fauja could choose his pace and push when it counted. Roll two dice and take the higher one, twice in your game.
+He trained daily and ran marathons from about 89 years on. Roll two dice and take the higher one, twice in your game.
 
 ## Life stations (in the order of the road)
 
