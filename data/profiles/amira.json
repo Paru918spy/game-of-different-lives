@@ -172,8 +172,8 @@
   },
   "look": {
     "skin": "#e0ae80",
-    "hair": "#2a1d16",
-    "hairStyle": "headscarf",
+    "hair": "#7c3aed",
+    "hairStyle": "panel",
     "scarf": "#7c3aed",
     "top": "#e8963a",
     "bottom": "#3b4a6b",
@@ -198,6 +198,10 @@
       "c2": "#e8963a"
     },
     "prop": "none",
-    "mouthW": 1.35
+    "mouthW": 1.35,
+    "hairPanel": {
+      "type": "drape",
+      "c": "#7c3aed"
+    }
   }
 }

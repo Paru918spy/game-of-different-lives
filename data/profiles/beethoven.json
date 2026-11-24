@@ -180,7 +180,7 @@
   "look": {
     "skin": "#e2c3a3",
     "hair": "#8b8b88",
-    "hairStyle": "mane",
+    "hairStyle": "panel",
     "top": "#1f2a44",
     "bottom": "#3a3a44",
     "outfit": "coat",
@@ -212,6 +212,9 @@
       "px": -0.5,
       "d": 0.2,
       "t": 1.4
+    },
+    "hairPanel": {
+      "type": "mane"
     }
   }
 }

@@ -168,7 +168,7 @@
   "look": {
     "skin": "#efdcc8",
     "hair": "#5a4030",
-    "hairStyle": "softupdo",
+    "hairStyle": "panel",
     "top": "#f3efe6",
     "bottom": "#4a5a7a",
     "outfit": "dress",
@@ -192,6 +192,9 @@
       "c1": "#f6f1e6"
     },
     "prop": "book",
-    "lashes": true
+    "lashes": true,
+    "hairPanel": {
+      "type": "updo"
+    }
   }
 }

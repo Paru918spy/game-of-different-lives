@@ -167,8 +167,8 @@
   },
   "look": {
     "skin": "#cf9f78",
-    "hair": "#1c1612",
-    "hairStyle": "headscarf",
+    "hair": "#f7f2e8",
+    "hairStyle": "panel",
     "scarf": "#ffffff",
     "top": "#e8ecef",
     "bottom": "#4a6fa5",
@@ -196,6 +196,11 @@
     "prop": "book",
     "trim": null,
     "eyeOpen": 1.1,
-    "shawl": true
+    "shawl": true,
+    "hairPanel": {
+      "type": "drape",
+      "c": "#f7f2e8",
+      "trim": "#d8bf7a"
+    }
   }
 }

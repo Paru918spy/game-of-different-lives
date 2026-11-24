@@ -94,5 +94,33 @@
     const sh = g.createLinearGradient(0, 0, 512, 0); sh.addColorStop(0, "rgba(0,0,0,.28)"); sh.addColorStop(.3, "rgba(0,0,0,0)"); sh.addColorStop(.7, "rgba(0,0,0,0)"); sh.addColorStop(1, "rgba(0,0,0,.28)"); g.fillStyle = sh; g.fillRect(0, 0, 512, 512);
     return c;
   }
-  MP.Avatars = { paintFace, paintTorso, mix };
+
+  /* Hair silhouette panel: a flat painted cut-out standing behind the head. Canvas covers head units x -11..11, y -15..7 (22 x 22). */
+  function paintHair(L) {
+    const H = L.hairPanel || {}, c = cv(512), g = c.getContext("2d"), U = 512 / 22, hx = x => (x + 11) * U, hy = y => (7 - y) * U, base = H.c || L.hair, dk = mix(base, "#000000", .35), lt = mix(base, "#ffffff", .28), ty = H.type;
+    const fillClip = (draw, strands) => {
+      g.save(); g.beginPath(); draw(); const gr = g.createLinearGradient(0, 0, 512, 0); gr.addColorStop(0, mix(base, "#000000", .22)); gr.addColorStop(.5, base); gr.addColorStop(1, mix(base, "#000000", .22)); g.fillStyle = gr; g.fill(); g.clip(); if (strands) strands(); g.restore(); g.beginPath(); draw(); g.strokeStyle = dk; g.lineWidth = 3; g.stroke();
+    };
+    const wavy = (x0, y0, y1, amp, col, n) => { g.strokeStyle = col; g.lineWidth = 2.2; g.beginPath(); for (let i = 0; i <= n; i++) { const y = y0 + (y1 - y0) * i / n; g.lineTo(hx(x0 + Math.sin(i * 1.4 + x0) * amp), hy(y)); } g.stroke(); };
+    if (ty === "longwave") {
+      fillClip(() => { g.moveTo(hx(-5.4), hy(2.5)); g.bezierCurveTo(hx(-6.6), hy(7.6), hx(6.6), hy(7.6), hx(5.4), hy(2.5)); for (let i = 0; i <= 6; i++) g.lineTo(hx(6.4 + (i % 2 ? .9 : -.1)), hy(1 - i * 2.4)); g.lineTo(hx(-6.4), hy(-14)); for (let i = 6; i >= 0; i--) g.lineTo(hx(-6.4 - (i % 2 ? .9 : -.1)), hy(1 - i * 2.4)); g.closePath(); },
+        () => { for (let k = -7; k <= 7; k += .9) wavy(k * .95, 6, -14, .5, k % 2 ? lt : dk, 14); });
+    } else if (ty === "mane") {
+      fillClip(() => { const n = 18; for (let i = 0; i <= n; i++) { const a = Math.PI * (.02 + .96 * i / n), r = 5.6 + (i % 2 ? 1.7 : .3) + Math.sin(i * 2.3) * .6; g.lineTo(hx(Math.cos(a) * r * 1.0), hy(1.5 + Math.sin(a) * r * .95)); } g.lineTo(hx(-7.3), hy(-3.5)); g.lineTo(hx(-5.6), hy(-4)); g.lineTo(hx(5.6), hy(-4)); g.lineTo(hx(7.3), hy(-3.5)); g.closePath(); },
+        () => { for (let i = 0; i < 40; i++) { const a = Math.PI * i / 39; g.strokeStyle = i % 2 ? lt : dk; g.lineWidth = 2.4; g.beginPath(); g.moveTo(hx(Math.cos(a) * 3.5), hy(1.5 + Math.sin(a) * 3.5)); g.quadraticCurveTo(hx(Math.cos(a + .25) * 6), hy(1.5 + Math.sin(a + .25) * 6), hx(Math.cos(a + .1) * 7.4), hy(1.5 + Math.sin(a + .1) * 7.2)); g.stroke(); } });
+    } else if (ty === "updo") {
+      fillClip(() => { g.moveTo(hx(-5.5), hy(-1.5)); g.bezierCurveTo(hx(-7.2), hy(3), hx(-4), hy(5.6), hx(0), hy(5.5)); g.bezierCurveTo(hx(4), hy(5.6), hx(7.2), hy(3), hx(5.5), hy(-1.5)); g.lineTo(hx(4.8), hy(-3.2)); g.lineTo(hx(-4.8), hy(-3.2)); g.closePath(); },
+        () => { for (let k = -6; k <= 6; k += .8) wavy(k, 6.5, -3, .35, k % 2 ? lt : dk, 8); });
+      g.fillStyle = base; g.beginPath(); g.arc(hx(0), hy(4.2), 2.6 * U, 0, 7); g.fill(); g.strokeStyle = dk; g.lineWidth = 3; g.stroke(); g.strokeStyle = lt; g.lineWidth = 2.2; for (let i = 0; i < 5; i++) { g.beginPath(); g.arc(hx(0), hy(4.2), (.6 + i * .45) * U, 3.4 + i, 5.6 + i); g.stroke(); }
+    } else if (ty === "drape") {
+      const sc = H.c || "#ffffff";
+      g.save(); g.beginPath(); g.moveTo(hx(-5.4), hy(1)); g.bezierCurveTo(hx(-7.2), hy(8.6), hx(7.2), hy(8.6), hx(5.4), hy(1)); g.bezierCurveTo(hx(6.2), hy(-4), hx(8.6), hy(-8), hx(9.6), hy(-14)); g.lineTo(hx(-9.6), hy(-14)); g.bezierCurveTo(hx(-8.6), hy(-8), hx(-6.2), hy(-4), hx(-5.4), hy(1)); g.closePath();
+      const gr = g.createLinearGradient(0, 0, 512, 0); gr.addColorStop(0, mix(sc, "#000000", .16)); gr.addColorStop(.5, mix(sc, "#ffffff", .08)); gr.addColorStop(1, mix(sc, "#000000", .16)); g.fillStyle = gr; g.fill(); g.clip();
+      g.strokeStyle = mix(sc, "#000000", .14); g.lineWidth = 3; for (let k = -9; k <= 9; k += 1.5) { g.beginPath(); g.moveTo(hx(k * .6), hy(6)); g.quadraticCurveTo(hx(k * .9 + 1), hy(-4), hx(k * 1.05), hy(-14)); g.stroke(); }
+      if (H.trim) { g.fillStyle = H.trim; for (let i = 0; i < 26; i++) { const x = ((i * 53) % 150) / 10 - 7.5, y = -2 - ((i * 37) % 110) / 10; g.fillRect(hx(x), hy(y), 7, 7); } g.strokeStyle = H.trim; g.lineWidth = 4; g.beginPath(); g.moveTo(hx(-9.4), hy(-13.2)); g.lineTo(hx(9.4), hy(-13.2)); g.stroke(); }
+      g.restore(); g.beginPath(); g.moveTo(hx(-5.4), hy(1)); g.bezierCurveTo(hx(-7.2), hy(8.6), hx(7.2), hy(8.6), hx(5.4), hy(1)); g.strokeStyle = mix(sc, "#000000", .3); g.lineWidth = 3; g.stroke();
+    }
+    return c;
+  }
+  MP.Avatars = { paintFace, paintTorso, paintHair, mix };
 })(typeof window !== "undefined" ? window : global);
