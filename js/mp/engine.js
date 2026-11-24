@@ -18,18 +18,16 @@
   /* Five field types for the player. Several internal kinds share one group (same colour, one legend entry), so the rules and balance stay as they were. */
   const GROUPS = {
     quiz: { label: "Quiz", color: "#1e9be9", dark: "#0b63a8", icon: "❓", hint: "Answer a question about people and respect" },
-    task: { label: "Action", color: "#ef476f", dark: "#b02a4d", icon: "🎬", hint: "Try it for real, then roll" },
     life: { label: "Life station", color: "#e0a82e", dark: "#9a6d0a", icon: "📖", hint: "A moment from a life story" },
     gate: { label: "Hurdle", color: "#4f5d95", dark: "#2f3a66", icon: "🚧", hint: "Answer right to go on" },
     luck: { label: "Luck", color: "#ff8a3d", dark: "#c25a12", icon: "🍀", hint: "A bit of luck, good or bad" }
   };
-  const GROUP_OF = { who: "quiz", fact: "quiz", tf: "quiz", words: "quiz", task: "task", story: "life", life: "life", gate: "gate", fwd: "luck", back: "luck", again: "luck" };
+  const GROUP_OF = { who: "quiz", fact: "quiz", tf: "quiz", words: "quiz", story: "life", life: "life", gate: "gate", fwd: "luck", back: "luck", again: "luck" };
   const CATEGORY = {
     who: { label: "Who am I?", hint: "Guess the person from the clue" },
     fact: { label: "Life & Barriers", hint: "A question about a life story" },
     tf: { label: "True or False?", hint: "Is the statement true?" },
     words: { label: "Words Matter", hint: "Respectful words and behaviour" },
-    task: { label: "Action!", hint: "Try it for real, then roll" },
     story: { label: "Story Stop", hint: "Meet a person. No question, you can stay!" },
     fwd: { label: "Tailwind", hint: "Move extra fields forward" },
     back: { label: "Setback", hint: "Move back" },
@@ -106,10 +104,6 @@
     if (type === "tf") {
       const q = Q.tf[deckDraw(S, "tf", Q.tf.length)];
       return { kind: "tf", p: q.p, q: q.s, opts: [{ text: "True", ok: q.v }, { text: "False", ok: !q.v }], x: q.x, reveal: q.p };
-    }
-    if (type === "task") {
-      const q = Q.tasks[deckDraw(S, "task", Q.tasks.length)];
-      return { kind: "task", q: q.t, icon: q.icon, d: q.d, sec: q.sec || 0, all: !!q.all, r: q.r || null, p: q.p || null };
     }
     /* story */
     if (!S.storyDeck.length) S.storyDeck = shuffle(S, S._chars.map(c => c.id));
@@ -188,7 +182,7 @@
   }
 
   /* ---------- actions ---------- */
-  /* {t:"spin"} | {t:"roll", best?} | {t:"choose", node} | {t:"answer", i} | {t:"hint"} | {t:"task", done} | {t:"next", shield?} | {t:"skip"} */
+  /* {t:"spin"} | {t:"roll", best?} | {t:"choose", node} | {t:"answer", i} | {t:"hint"} | {t:"next", shield?} | {t:"skip"} */
   function dispatch(S, a) {
     const ev = [], p = cur(S);
     if (S.phase === "over") return ev;
@@ -207,7 +201,7 @@
         const bad = c.opts.map((o, i) => i).filter(i => !c.opts[i].ok && !c.opts[i].gone); c.opts[bad[Math.floor(rnd(S) * bad.length)]].gone = true; c.hinted = true; p.left--; p.used++;
         ev.push({ e: "adv", p: p.id, type: "hint" }); return ev;
       }
-      if (a.t === "skipq" && p.left > 0 && prof(p).advantage.type === "skip" && (c.opts || c.kind === "task") && c.kind !== "story" && !c.gate && !(c.kind === "task" && c.all)) {
+      if (a.t === "skipq" && p.left > 0 && prof(p).advantage.type === "skip" && c.opts && c.kind !== "story" && !c.gate) {
         p.left--; p.used++; c.result = { i: -1, ok: true, skipped: true }; p.asked++; p.correct++; S.phase = "feedback";
         ev.push({ e: "adv", p: p.id, type: "skip" }); ev.push({ e: "answer", p: p.id, ok: true, i: -1 }); return ev;
       }
@@ -215,9 +209,6 @@
         const o = c.opts[a.i]; if (!o || o.gone) return ev;
         c.result = { i: a.i, ok: o.ok }; p.asked++; o.ok ? p.correct++ : p.wrong++;
         S.phase = "feedback"; ev.push({ e: "answer", p: p.id, ok: o.ok, i: a.i });
-      } else if (a.t === "task" && c.kind === "task") {
-        c.result = { ok: !!a.done }; p.asked++; a.done ? p.correct++ : p.wrong++;
-        S.phase = "feedback"; ev.push({ e: "answer", p: p.id, ok: !!a.done });
       } else if (a.t === "next" && c.kind === "story") { ev.push({ e: "story", p: p.id }); endTurn(S, ev); }
       else if (a.t === "next" && c.kind === "life" && !c.opts) {
         ev.push({ e: "life", p: p.id, k: c.k, move: c.move });

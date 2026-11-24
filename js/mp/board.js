@@ -1,7 +1,7 @@
 /* Multiplayer board v2: ~100 fields, 6 forks (each fork 3 routes of different kinds) between 12 life stations.
    Pure data + layout (no THREE here, so it can be unit-tested in Node).
    Node: { id, x, y, z, type, zone, chain, sec, k, n, next:[ids], prev:[ids], life? }
-   Field types: who | fact | tf | words | task | story | fwd | back | again | gate | life | start | finish
+   Field types: who | fact | tf | words | story | fwd | back | again | gate | life | start | finish
    Zones (kind of stretch): stairs ladder rope bridge ramp market tunnel office sprint quiet (null on the main road)
    The main road is the same for everybody. The figure you play decides which routes are slow, fast or blocked (see profiles). */
 (function (root) {
@@ -65,15 +65,15 @@
     stairs: ["q", "gate", "back2", "q", "q"],
     ladder: ["gate", "q", "back3", "q"],
     rope: ["q", "back2", "gate", "q"],
-    sprint: ["task", "fwd2", "q", "task", "fwd3"],
+    sprint: ["q", "fwd2", "q", "q", "fwd3"],
     tunnel: ["who", "tf", "again", "q"],
-    market: ["words", "task", "tf", "fwd2", "words"],
+    market: ["words", "tf", "tf", "fwd2", "words"],
     office: ["gate", "fact", "gate", "words"],
     quiet: ["who", "story", "tf", "again", "fact", "fwd2"],
     bridge: ["fact", "story", "fwd2", "tf", "words", "fwd3"],
     ramp: ["tf", "story", "fwd2", "words", "fact", "fwd2"]
   };
-  const ROAD = ["q", "story", "q", "task", "q", "q", "words", "q"];   // main road fields
+  const ROAD = ["q", "story", "q", "q", "q", "q", "words", "q"];   // main road fields
   const ELEV = {                                                   // height profile along a route (t from 0 to 1)
     stairs: t => 2.4 * Math.sin(Math.PI * t), ladder: t => 3.4 * Math.min(1, t * 5, (1 - t) * 5), rope: t => .9 - .55 * Math.sin(Math.PI * t),
     bridge: t => 1.3 * Math.pow(Math.sin(Math.PI * t), .7), ramp: t => 1.0 * Math.sin(Math.PI * t)

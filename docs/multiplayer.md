@@ -12,7 +12,6 @@ Single Player (the original game) walks through **one life in depth**. Multiplay
 | Field | What happens |
 | --- | --- |
 | ❓ Quiz (Who am I? / Life & Barriers / True or False? / Words Matter) | Question card. Right: stay. Wrong: back to the last safe field (turn start or last stop) |
-| 🎬 Action | A real-life action, honour system |
 | 📖 Life station 1 to 12 (and story stops) | You must stop once. Your figure's story: barrier (back 1 to 3), boost (forward 1 to 3), story, or a question for a bonus. Story stops only tell about a person |
 | 🚧 Hurdle | You must stop and answer. Right: go on with the rest of your roll. Wrong: stay, the rest of the roll is lost |
 | 🍀 Luck (tailwind / setback / roll again) | Move 2 or 3 fields forward, 2 or 3 back, or roll once more |
