@@ -165,12 +165,48 @@
   "comp": 18
  },
  "look": {
-  "skin": "#7a5238",
-  "hair": "#1a1410",
-  "hairStyle": "braids",
-  "top": "#26262e",
-  "bottom": "#26262e",
-  "outfit": "suit",
+  "skin": "#6b4329",
+  "hair": "#161616",
+  "hairStyle": "braidcap",
+  "top": "#111111",
+  "bottom": "#111111",
+  "outfit": "casual",
+  "eyes": "#2a1810",
+  "brow": {
+   "c": "#161616",
+   "t": 1.0,
+   "a": 0.7
+  },
+  "mouth": "smile",
+  "nose": 1.05,
+  "mouthW": 1.4,
+  "glasses": {
+   "type": "sun",
+   "c": "#0a0a0a"
+  },
+  "beard": [
+   {
+    "style": "mustache",
+    "c": "#161616",
+    "a": 0.7
+   },
+   {
+    "style": "goatee",
+    "c": "#161616",
+    "a": 0.5
+   }
+  ],
+  "earrings": "#d4af37",
+  "face": {
+   "w": 1.02,
+   "h": 1.1
+  },
+  "torso": {
+   "kind": "pattern",
+   "c1": "#111111",
+   "c2": "#17d6b0",
+   "c3": "#ff4f9a"
+  },
   "prop": "none"
  }
 }

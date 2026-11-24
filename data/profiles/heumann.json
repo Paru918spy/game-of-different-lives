@@ -164,12 +164,40 @@
   "comp": 24
  },
  "look": {
-  "skin": "#f0cfa8",
-  "hair": "#4a3322",
-  "hairStyle": "long",
-  "top": "#3f8f5a",
+  "skin": "#c8987a",
+  "hair": "#2a2420",
+  "hairStyle": "short",
+  "top": "#c0262d",
   "bottom": "#33384a",
   "outfit": "wheelchair",
-  "prop": "glasses"
+  "eyes": "#3a2414",
+  "brow": {
+   "c": "#2a2420",
+   "t": 1.1,
+   "a": 0.8
+  },
+  "mouth": "grin",
+  "lipstick": "#b0405a",
+  "lashes": true,
+  "wrinkles": 0.4,
+  "nose": 1.0,
+  "mouthW": 1.45,
+  "glasses": {
+   "type": "rect",
+   "c": "#1c1c20",
+   "t": 0.24
+  },
+  "earrings": "#d4af37",
+  "face": {
+   "w": 1.04,
+   "h": 1.06
+  },
+  "torso": {
+   "kind": "blazer",
+   "c1": "#c0262d",
+   "c2": "#1f1f24",
+   "c3": "#d4af37"
+  },
+  "prop": "none"
  }
 }

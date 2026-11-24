@@ -166,12 +166,32 @@
   "comp": 26
  },
  "look": {
-  "skin": "#7a5238",
-  "hair": "#555555",
-  "hairStyle": "bun",
-  "top": "#b89a6a",
+  "skin": "#7d5c46",
+  "hair": "#251f1b",
+  "hairStyle": "updo",
+  "top": "#8a7d6a",
   "bottom": "#3a3a44",
   "outfit": "coat",
+  "eyes": "#2a1810",
+  "brow": {
+   "c": "#251f1b",
+   "t": 1.0,
+   "a": 0.7
+  },
+  "mouth": "smile",
+  "wrinkles": 0.2,
+  "nose": 1.0,
+  "mouthW": 1.1,
+  "face": {
+   "w": 1.0,
+   "h": 1.08
+  },
+  "torso": {
+   "kind": "coat",
+   "c1": "#8a7d6a",
+   "c2": "#f0ece4",
+   "c3": "#5a4a3a"
+  },
   "prop": "bag"
  }
 }

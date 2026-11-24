@@ -165,12 +165,42 @@
   "comp": 15
  },
  "look": {
-  "skin": "#c89a73",
-  "hair": "#1a1410",
-  "hairStyle": "braids",
-  "top": "#c0392b",
+  "skin": "#c8976f",
+  "hair": "#17120e",
+  "hairStyle": "centerbraid",
+  "top": "#b3262e",
   "bottom": "#1f8a5b",
   "outfit": "dress",
+  "eyes": "#2a1810",
+  "brow": {
+   "c": "#17120e",
+   "t": 1.9,
+   "a": 0.2,
+   "y": -0.15
+  },
+  "mouth": "neutral",
+  "lipstick": "#a1252f",
+  "wrinkles": 0.1,
+  "nose": 1.0,
+  "mouthW": 1.1,
+  "beard": [
+   {
+    "style": "mustache",
+    "c": "#3a2a20",
+    "a": 0.3
+   }
+  ],
+  "earrings": "#d4af37",
+  "face": {
+   "w": 0.98,
+   "h": 1.1
+  },
+  "torso": {
+   "kind": "tehuana",
+   "c1": "#b3262e",
+   "c2": "#1f8a5b",
+   "c3": "#ffd23f"
+  },
   "prop": "flowers"
  }
 }

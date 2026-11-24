@@ -159,12 +159,50 @@
   "comp": 19
  },
  "look": {
-  "skin": "#9a6a4a",
-  "hair": "#1a1410",
-  "hairStyle": "afro",
-  "top": "#c8102e",
+  "skin": "#b3794e",
+  "hair": "#141210",
+  "hairStyle": "helmet",
+  "top": "#b3112f",
   "bottom": "#e5d9a8",
   "outfit": "football",
-  "prop": "helmet"
+  "eyes": "#2a1810",
+  "brow": {
+   "c": "#141210",
+   "t": 1.1,
+   "a": 0.7
+  },
+  "mouth": "grin",
+  "nose": 1.0,
+  "mouthW": 1.55,
+  "beard": [
+   {
+    "style": "stubble",
+    "c": "#141210",
+    "a": 1
+   },
+   {
+    "style": "mustache",
+    "c": "#141210",
+    "a": 0.85
+   },
+   {
+    "style": "goatee",
+    "c": "#141210",
+    "a": 0.7
+   }
+  ],
+  "face": {
+   "w": 1.0,
+   "h": 1.1
+  },
+  "torso": {
+   "kind": "jersey",
+   "c1": "#b3112f",
+   "c2": "#ffffff",
+   "c3": "#b3995d",
+   "stripe": "#d4af37",
+   "number": "7"
+  },
+  "prop": "none"
  }
 }

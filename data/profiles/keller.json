@@ -166,12 +166,31 @@
   "comp": 17
  },
  "look": {
-  "skin": "#f0d2b0",
-  "hair": "#7a5b3a",
+  "skin": "#efd7c2",
+  "hair": "#47372d",
   "hairStyle": "updo",
-  "top": "#f5f0e6",
+  "top": "#f3efe6",
   "bottom": "#4a5a7a",
   "outfit": "dress",
+  "eyes": "#8a9aa8",
+  "eyeOpen": 0.55,
+  "brow": {
+   "c": "#47372d",
+   "t": 0.8,
+   "a": 0.6
+  },
+  "mouth": "neutral",
+  "nose": 1.0,
+  "mouthW": 1.0,
+  "blush": "#e0a898",
+  "face": {
+   "w": 0.96,
+   "h": 1.1
+  },
+  "torso": {
+   "kind": "lace",
+   "c1": "#f3efe6"
+  },
   "prop": "book"
  }
 }

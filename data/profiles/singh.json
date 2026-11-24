@@ -168,12 +168,38 @@
   "comp": 19
  },
  "look": {
-  "skin": "#b8845a",
-  "hair": "#f0f0f0",
+  "skin": "#b9824f",
+  "hair": "#e8e8e4",
   "hairStyle": "turban",
+  "hat": "#9ea3a8",
   "top": "#f2c230",
   "bottom": "#2b3f66",
-  "outfit": "runner",
-  "prop": "beard"
+  "outfit": "casual",
+  "eyes": "#2a1810",
+  "brow": {
+   "c": "#e0e0dc",
+   "t": 1.5,
+   "a": 0.3
+  },
+  "mouth": "serious",
+  "wrinkles": 0.95,
+  "nose": 1.15,
+  "beardVolume": "#e8e8e4",
+  "beard": [
+   {
+    "style": "full",
+    "c": "#e8e8e4"
+   }
+  ],
+  "face": {
+   "w": 1.02,
+   "h": 1.08
+  },
+  "torso": {
+   "kind": "shirt",
+   "c1": "#f2c230",
+   "c2": "#fff3c4"
+  },
+  "prop": "none"
  }
 }

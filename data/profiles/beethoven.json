@@ -178,12 +178,34 @@
   "comp": 21
  },
  "look": {
-  "skin": "#e8c7a0",
-  "hair": "#7a7a7a",
-  "hairStyle": "short",
-  "top": "#2f5d46",
-  "bottom": "#c9b99a",
+  "skin": "#e2c3a3",
+  "hair": "#8b8b88",
+  "hairStyle": "wild",
+  "top": "#1f2a44",
+  "bottom": "#3a3a44",
   "outfit": "coat",
+  "eyes": "#5a5f66",
+  "brow": {
+   "c": "#4a4540",
+   "t": 1.5,
+   "a": -0.4,
+   "y": -0.1
+  },
+  "mouth": "serious",
+  "wrinkles": 0.6,
+  "nose": 1.2,
+  "mouthW": 1.0,
+  "blush": "#d8957f",
+  "face": {
+   "w": 1.04,
+   "h": 1.06
+  },
+  "torso": {
+   "kind": "cravat",
+   "c1": "#1f2a44",
+   "c2": "#f4f1ea",
+   "c3": "#a3222a"
+  },
   "prop": "score"
  }
 }
