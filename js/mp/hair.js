@@ -31,8 +31,8 @@
     lowbun: { vol: .5, hl: .5, hlSide: .05, back: -.25, bun: { y: -1.3, z: -4.2, r: 2.6 } },
     roll: { vol: .55, hl: .5, hlSide: .05, back: -.2, bun: { y: 4.6, z: -1.2, r: 2.4 } },
     pomp: { vol: .6, hl: .55, hlSide: .1, back: -.25, quiff: 1.1, bun: { y: -1.6, z: -4.1, r: 2.3 } },
-    drape: { vol: .6, hl: .5, hlSide: -.15, back: -1, hang: 12.5, flare: 1.0, wave: .25, cloth: 1 },
-    headscarf: { vol: .6, hl: .5, hlSide: -.15, back: -1, hang: 12.5, flare: 1.0, wave: .25, cloth: 1 }
+    drape: { vol: .6, hl: .62, hlSide: -.15, back: -1, hang: 12.5, flare: 1.0, wave: .25, cloth: 1 },
+    headscarf: { vol: .6, hl: .62, hlSide: -.15, back: -1, hang: 12.5, flare: 1.0, wave: .25, cloth: 1 }
   };
 
   function specFor(look) {

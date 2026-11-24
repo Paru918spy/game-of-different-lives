@@ -218,11 +218,11 @@
     },
     "age": 0.8,
     "hairSpec": {
-      "vol": 0.75,
+      "vol": 0.55,
       "hl": 0.5,
       "hlSide": 0.0,
       "back": -1,
-      "noise": 0.3,
+      "noise": 0.25,
       "freq": 14,
       "hang": 3.2,
       "flare": 0.5,
