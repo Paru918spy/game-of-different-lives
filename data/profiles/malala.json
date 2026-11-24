@@ -201,6 +201,12 @@
       "type": "drape",
       "c": "#f7f2e8",
       "trim": "#d8bf7a"
-    }
+    },
+    "jaw": {
+      "sq": 0.1,
+      "cheek": 0.5
+    },
+    "wing": true,
+    "eyeTilt": 0.08
   }
 }

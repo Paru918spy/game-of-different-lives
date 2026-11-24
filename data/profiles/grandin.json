@@ -209,8 +209,12 @@
     },
     "hairPanel": {
       "type": "crop",
-      "vol": 0.7,
-      "messy": true
-    }
+      "vol": 0.9
+    },
+    "jaw": {
+      "sq": 0.4,
+      "hollow": 0.4
+    },
+    "age": 0.8
   }
 }

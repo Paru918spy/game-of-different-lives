@@ -215,6 +215,12 @@
     },
     "hairPanel": {
       "type": "mane"
-    }
+    },
+    "jaw": {
+      "sq": 0.5,
+      "hollow": 0.5
+    },
+    "age": 0.6,
+    "eyeTilt": -0.08
   }
 }
