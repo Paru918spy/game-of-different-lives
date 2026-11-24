@@ -254,3 +254,5 @@ html{scroll-behavior:smooth}
   text-shadow:none;
   filter:drop-shadow(0 3px 0 rgba(255,255,255,.9)) drop-shadow(0 7px 6px rgba(0,0,0,.2));
 }
+
+.manuallink{text-align:center;margin:18px 0 0}.manuallink a{display:inline-block;font-weight:800;color:#3a2410;background:#fffdf6;border:3px solid #fff;border-radius:999px;padding:10px 20px;text-decoration:none;box-shadow:0 5px 14px rgba(120,70,10,.18)}.manuallink a:hover{background:#ffe9a8}
