@@ -170,14 +170,14 @@
   "hair": "#1c1612",
   "hairStyle": "headscarf",
   "scarf": "#efe6d6",
-  "top": "#7a3a5a",
+  "top": "#e8ecef",
   "bottom": "#4a6fa5",
   "outfit": "casual",
   "eyes": "#2a1810",
   "brow": {
-   "c": "#2a1d16",
+   "c": "#1c1612",
    "t": 1.0,
-   "a": 1.0
+   "a": 0.5
   },
   "mouth": "neutral",
   "lashes": true,
@@ -190,11 +190,12 @@
   },
   "torso": {
    "kind": "shirt",
-   "c1": "#7a3a5a",
-   "c2": "#e9c6d4"
+   "c1": "#e8ecef",
+   "c2": "#b8c2c8"
   },
   "prop": "book",
   "trim": "#e8d9a8",
-  "eyeOpen": 1.1
+  "eyeOpen": 1.1,
+  "shawl": true
  }
 }

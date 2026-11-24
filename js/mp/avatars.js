@@ -40,11 +40,11 @@
     const bw = L.brow || { c: L.hair, t: 1, a: 1 };
     [-1, 1].forEach(s => { const bt = .13 * (bw.t || 1) + .05, y0 = ey + 1.0 + (bw.y || 0); curve([s * .75, y0 - .05], [s * 1.8, y0 + .35 * (bw.a == null ? 1 : bw.a)], [s * 2.8, y0 - .15], bt * 2.1, bw.c || L.hair, .95); });
     /* mouth */
-    const my = -1.95, mw = L.mouthW || 1.25, lips = L.lips || mix(skin, "#a0403a", .45), mt = L.mouth || "smile";
+    const my = -1.95, mw = (L.mouthW || 1.25) * 1.2, lips = L.lips || mix(skin, "#a0403a", .45), mt = L.mouth || "smile";
     if (mt === "grin") { g.fillStyle = "#5a1f1f"; g.beginPath(); g.moveTo(X(-mw), Y(my + .2)); g.quadraticCurveTo(X(0), Y(my - 2.3), X(mw), Y(my + .2)); g.quadraticCurveTo(X(0), Y(my + .6), X(-mw), Y(my + .2)); g.fill();
       g.fillStyle = "#fbfaf5"; g.beginPath(); g.moveTo(X(-mw * .85), Y(my + .15)); g.quadraticCurveTo(X(0), Y(my - 1.5), X(mw * .88), Y(my + .15)); g.quadraticCurveTo(X(0), Y(my + .5), X(-mw * .88), Y(my + .15)); g.fill();
       curve([-mw, my + .2], [0, my - 1.35], [mw, my + .2], .14, lips, .9); }
-    else if (mt === "smile") { curve([-mw, my + .15], [0, my - .75], [mw, my + .15], .24, lips); curve([-mw * .8, my + .08], [0, my + .15], [mw * .8, my + .08], .08, dark, .6); }
+    else if (mt === "smile") { curve([-mw * 1.1, my + .3], [0, my - 1.1], [mw * 1.1, my + .3], .3, lips); curve([-mw * .8, my + .08], [0, my + .15], [mw * .8, my + .08], .08, dark, .6); }
     else if (mt === "smirk") { curve([-mw, my], [0, my - .3], [mw, my + .3], .24, lips); }
     else { curve([-mw, my], [0, my - .12], [mw, my], .26, lips); curve([-mw * .8, my + .05], [0, my + .12], [mw * .8, my + .05], .06, dark, .5); }
     if (L.lipstick) { curve([-mw, my + .1], [0, my - .35], [mw, my + .1], .38, L.lipstick, .9); }

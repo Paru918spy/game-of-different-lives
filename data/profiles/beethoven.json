@@ -187,12 +187,12 @@
   "eyes": "#5a5f66",
   "brow": {
    "c": "#4a4540",
-   "t": 1.7,
-   "a": -0.6,
-   "y": -0.15
+   "t": 1.8,
+   "a": -0.8,
+   "y": -0.2
   },
   "mouth": "serious",
-  "wrinkles": 0.6,
+  "wrinkles": 0.8,
   "nose": 1.2,
   "mouthW": 1.0,
   "blush": "#d8957f",

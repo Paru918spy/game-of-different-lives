@@ -185,7 +185,7 @@
    "t": 1.1,
    "a": 0.5
   },
-  "mouth": "neutral",
+  "mouth": "smile",
   "wrinkles": 0.5,
   "nose": 1.05,
   "mouthW": 1.15,
@@ -196,7 +196,7 @@
   },
   "torso": {
    "kind": "western",
-   "c1": "#c0392b",
+   "c1": "#b02a1f",
    "c2": "#f5f5f5",
    "c3": "#111111"
   },

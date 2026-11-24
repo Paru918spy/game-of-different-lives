@@ -171,11 +171,11 @@
   "outfit": "wheelchair",
   "eyes": "#5a4a38",
   "brow": {
-   "c": "#5c4630",
-   "t": 0.9,
-   "a": 0.6
+   "c": "#6a5238",
+   "t": 0.7,
+   "a": 0.8
   },
-  "mouth": "smirk",
+  "mouth": "grin",
   "wrinkles": 0.35,
   "nose": 0.95,
   "mouthW": 1.7,

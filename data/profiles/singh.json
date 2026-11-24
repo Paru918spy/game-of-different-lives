@@ -172,7 +172,7 @@
   "hair": "#e8e8e4",
   "hairStyle": "turban",
   "hat": "#9ea3a8",
-  "top": "#f2c230",
+  "top": "#7b7e82",
   "bottom": "#2b3f66",
   "outfit": "casual",
   "eyes": "#2a1810",
@@ -197,8 +197,8 @@
   },
   "torso": {
    "kind": "shirt",
-   "c1": "#f2c230",
-   "c2": "#fff3c4"
+   "c1": "#7b7e82",
+   "c2": "#d8d8d4"
   },
   "prop": "none"
  }

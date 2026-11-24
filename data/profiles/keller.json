@@ -173,13 +173,13 @@
   "bottom": "#4a5a7a",
   "outfit": "dress",
   "eyes": "#8a9aa8",
-  "eyeOpen": 0.2,
+  "eyeOpen": 0.6,
   "brow": {
    "c": "#47372d",
    "t": 0.8,
    "a": 0.6
   },
-  "mouth": "neutral",
+  "mouth": "smile",
   "nose": 1.0,
   "mouthW": 1.0,
   "blush": "#e0a898",
@@ -189,7 +189,7 @@
   },
   "torso": {
    "kind": "lace",
-   "c1": "#f3efe6"
+   "c1": "#f6f1e6"
   },
   "prop": "book"
  }

@@ -181,7 +181,7 @@
   "lashes": true,
   "wrinkles": 0.4,
   "nose": 1.0,
-  "mouthW": 1.6,
+  "mouthW": 1.75,
   "glasses": {
    "type": "rect",
    "c": "#5a1f33",

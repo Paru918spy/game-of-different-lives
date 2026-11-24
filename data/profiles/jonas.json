@@ -184,14 +184,14 @@
    "t": 1.0,
    "a": 0.5
   },
-  "mouth": "smile",
+  "mouth": "grin",
   "wrinkles": 0.45,
   "nose": 1.05,
   "beard": [
    {
     "style": "short",
-    "c": "#c9ced4",
-    "a": 0.95
+    "c": "#e6e8ec",
+    "a": 1
    }
   ],
   "glasses": {
