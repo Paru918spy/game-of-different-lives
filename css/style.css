@@ -256,3 +256,17 @@ html{scroll-behavior:smooth}
 }
 
 .manuallink{text-align:center;margin:18px 0 0}.manuallink a{display:inline-block;font-weight:800;color:#3a2410;background:#fffdf6;border:3px solid #fff;border-radius:999px;padding:10px 20px;text-decoration:none;box-shadow:0 5px 14px rgba(120,70,10,.18)}.manuallink a:hover{background:#ffe9a8}
+
+/* barrier panel: what blocks, what it takes, what the person did */
+.gate{background:#fff1f2;border:2px solid #ef4444;border-radius:14px;padding:10px 14px;margin:12px 0;font-size:15px;text-align:left}
+.gate-t{font-weight:800;color:#b91c1c;margin-bottom:4px}
+.gate dl{margin:0}.gate dt{font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#b91c1c;margin-top:8px}
+.gate dt.gate-r{color:#047857}.gate dd{margin:2px 0 0}
+.gate dt.gate-r+dd{background:#eefaf3;border-left:5px solid #06c28f;border-radius:8px;padding:6px 10px}
+/* collapsible legend */
+.hud.bl.legend{display:block;max-width:300px;padding:6px 10px}
+.lgtoggle{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;background:none;border:0;font:inherit;font-weight:800;cursor:pointer;padding:4px 2px}
+.lgbody{display:grid;gap:6px;margin-top:6px}.lgbody[hidden]{display:none}
+.lgrow{display:grid;grid-template-columns:18px auto;column-gap:8px;align-items:center;line-height:1.2}
+.lgrow small{grid-column:2;color:#6b5a48;font-size:12px}
+.lg-hope{background:linear-gradient(90deg,#ff6b6b,#06c28f);border-radius:4px}.lg-sup{background:#f6b93b}
