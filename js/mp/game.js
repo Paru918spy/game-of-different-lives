@@ -165,7 +165,7 @@
     const primary = (id, label) => my ? `<button class="big mp-primary" id="${id}">${label}</button>` : waitNote(p);
     const pf = prof(p); let body = "";
     if (c.kind === "life") {
-      const ch = char(c.p), tagk = { barrier: ["🚧 Barrier", "bar"], boost: ["⭐ Boost", "ok"], info: ["📖 Your story", ""], quiz: ["❓ Question", ""] }[c.k];
+      const ch = char(c.p), tagk = { barrier: ["🚧 Barrier", "warn"], boost: ["⭐ Boost", "ok"], info: ["📖 Your story", ""], quiz: ["❓ Question", ""] }[c.k];
       body = `<div class="mp-story"><div class="pic">${GOL.portrait(ch)}</div><div><h2>${esc(c.title)}</h2><p class="yrs">${esc(ch.name)} · station ${c.lk} of 12</p></div></div>
         <div class="mp-note ${tagk[1]}"><b>${tagk[0]}${c.move && c.k !== "quiz" ? ` · ${c.move > 0 ? "+" : ""}${c.move} field${Math.abs(c.move) > 1 ? "s" : ""}` : ""}</b><p>${esc(c.text)}</p></div>`;
       if (c.opts) {
@@ -177,7 +177,7 @@
     } else if (c.kind === "story") {
       const ch = char(c.p);
       body = `<div class="mp-story"><div class="pic">${GOL.portrait(ch)}</div><div><h2>${esc(c.q)}</h2><p class="yrs">${esc(c.years)} · ${esc(c.focus)}</p><p class="tag">${esc(c.tagline)}</p></div></div>
-        ${c.win ? `<div class="mp-note ok"><b>⭐ ${esc(c.win.title)}</b><p>${esc(c.win.text)}</p></div>` : ""}${c.barrier ? `<div class="mp-note bar"><b>🚧 ${esc(c.barrier.title)}</b><p>${esc(c.barrier.text)}</p></div>` : ""}
+        ${c.win ? `<div class="mp-note ok"><b>⭐ ${esc(c.win.title)}</b><p>${esc(c.win.text)}</p></div>` : ""}${c.barrier ? `<div class="mp-note warn"><b>🚧 ${esc(c.barrier.title)}</b><p>${esc(c.barrier.text)}</p></div>` : ""}
         <p class="mp-small">Story stop: no question. You can stay on this field!</p>${primary("mpNext", "Next player")}`;
     } else if (c.kind === "task") {
       const who = c.all ? "👥 Everyone joins in" : "🙋 " + esc(p.name) + " does it";
@@ -187,7 +187,7 @@
     } else {
       const opts = c.opts.map((o, i) => { let cls = "mp-opt"; if (o.gone) cls += " gone"; else if (fb) { if (o.ok) cls += " right"; else if (res.i === i) cls += " wrong"; else cls += " dim"; }
         return `<button class="${cls}" data-i="${i}" ${fb || !my || o.gone ? "disabled" : ""}><span class="k">${i + 1}</span>${esc(o.text)}</button>`; }).join("");
-      body = (c.gate ? `<div class="mp-note bar"><b>⛔ Checkpoint</b><p>Answer right to pass. Wrong: you stay here and the rest of your roll is lost.</p></div>` : "") + (c.kind === "who" ? `<p class="mp-clue">“${esc(c.clue)}”</p><p class="mp-q">Who am I?</p>` : `<p class="mp-q">${esc(c.q)}</p>`) + `<div class="mp-opts ${c.kind === "tf" ? "two" : ""}">${opts}</div>`;
+      body = (c.gate ? `<div class="mp-note warn"><b>⛔ Checkpoint</b><p>Answer right to pass. Wrong: you stay here and the rest of your roll is lost.</p></div>` : "") + (c.kind === "who" ? `<p class="mp-clue">“${esc(c.clue)}”</p><p class="mp-q">Who am I?</p>` : `<p class="mp-q">${esc(c.q)}</p>`) + `<div class="mp-opts ${c.kind === "tf" ? "two" : ""}">${opts}</div>`;
       if (!fb && my && pf && pf.advantage.type === "skip" && p.left > 0 && !c.gate) body += `<button class="mp-adv" id="mpSkipQ">🎟 ${esc(pf.advantage.title)} (${p.left} left): count this as answered right</button>`;
       if (!fb && my && pf && pf.advantage.type === "hint" && p.left > 0 && c.opts.length === 3 && !c.hinted) body += `<button class="mp-adv" id="mpHint">💡 Use my hint (${p.left} left): remove one wrong answer</button>`;
       if (!fb && !my) body += waitNote(p);

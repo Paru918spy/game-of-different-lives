@@ -100,7 +100,7 @@
 .mp-story{display:flex;gap:16px;align-items:center;margin-bottom:10px}.mp-story .pic{width:96px;height:96px}
 .mp-story h2{margin:0;font-size:26px}.mp-story .yrs{margin:2px 0;opacity:.7;font-size:14px}.mp-story .tag{margin:4px 0 0;font-size:16px;line-height:1.4}
 .mp-note{border-radius:16px;padding:10px 14px;margin:10px 0;font-size:15px;line-height:1.45}.mp-note p{margin:3px 0 0}
-.mp-note.ok{background:#fff3c4}.mp-note.bar{background:#ffe3e0}
+.mp-note.ok{background:#fff3c4}.mp-note.warn{background:#ffe3e0;border-left:6px solid #ef476f}.mp-note.ok{border-left:6px solid #f6b93b}.mp-note b{display:block;font-size:14px;text-transform:uppercase;letter-spacing:.05em}
 .mp-small{font-size:14px;opacity:.7;margin:10px 0 0}
 .mp-task{text-align:center}.mp-task .tic{font-size:64px;line-height:1.1}.mp-task h2{margin:4px 0 6px;font-size:28px}.mp-task p{font-size:18px;line-height:1.5;margin:6px 0}
 .mp-btns{display:flex;flex-direction:column;gap:6px;align-items:stretch}.mp-btns .big{margin-top:12px}
@@ -186,4 +186,17 @@
 .zl .evl i{color:#7a6a58}
 .mp-comp{background:#eef5ff;border:2px dashed #6a8fd1;color:#223a66}
 .mp-comp.on{background:#d6e6ff;border-style:solid}
+
+/* card layout: buttons stay reachable, card never covers the player list on phones */
+.mp-cbody>.big.mp-primary{position:sticky;bottom:-22px;margin-top:14px;z-index:2;box-shadow:0 -16px 14px -4px #fffdf6,0 5px 0 rgba(0,0,0,.2)}
+.mp-cbody>.mp-btns{position:sticky;bottom:-22px;background:linear-gradient(180deg,#fffdf600,#fffdf6 18%);padding-top:10px;margin-top:10px;z-index:2}
+.mp-cbody>.mp-btns{margin-bottom:-4px}
+.mp-cbody{overscroll-behavior:contain;overflow-wrap:anywhere}
+.mp-task .tic{font-size:52px}.mp-who{display:inline-block}
+@media(max-width:700px){
+  .mp-cardwrap{align-items:end;padding:8px;padding-top:112px}
+  .mp-card{max-height:calc(100dvh - 124px)}
+  .mp-cbody{padding:14px 16px 20px}.mp-cbody>.big.mp-primary,.mp-cbody>.mp-btns{bottom:-18px}
+  .mp-story h2{font-size:21px}.mp-story .pic{width:72px;height:72px}.mp-task h2{font-size:23px}.mp-task p{font-size:16px}.mp-task .tic{font-size:42px}
+}
 .joinprog{max-width:520px;margin:14px auto 0;text-align:center;font-weight:700;color:#5a4a3a}
