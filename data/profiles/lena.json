@@ -1,204 +1,208 @@
 {
- "id": "lena",
- "intro": "You play a young woman who uses a wheelchair and wants to be an architect in a small German town. Steps, cobblestones and forms stand in her way, and her eye for space and design is a real skill. Playing her means seeing how much of the world is built for one kind of body.",
- "zones": {
-  "stairs": {
-   "fx": "block",
-   "ev": "e1",
-   "why": "Steps: many buildings and stations are still closed to wheelchair users."
+  "id": "lena",
+  "intro": "You play a young woman who uses a wheelchair and wants to be an architect in a small German town. Steps, cobblestones and forms stand in her way, and her eye for space and design is a real skill. Playing her means seeing how much of the world is built for one kind of body.",
+  "zones": {
+    "stairs": {
+      "fx": "block",
+      "ev": "e1",
+      "why": "Steps: many buildings and stations are still closed to wheelchair users."
+    },
+    "ladder": {
+      "fx": "slow",
+      "ev": "e2",
+      "why": "School: many disabled pupils are steered to special schools."
+    },
+    "market": {
+      "fx": "slow",
+      "ev": "e4",
+      "why": "Work: disabled applicants are invited to fewer interviews."
+    },
+    "ramp": {
+      "fx": "fast",
+      "ev": "e5",
+      "why": "Accessible design: the ramp route is the one built for you, and you know how it works."
+    },
+    "bridge": {
+      "fx": "fast",
+      "ev": "e6",
+      "why": "Allies: friends, a teacher and an inclusive employer."
+    }
   },
-  "ladder": {
-   "fx": "slow",
-   "ev": "e2",
-   "why": "School: many disabled pupils are steered to special schools."
+  "advantage": {
+    "type": "lift",
+    "uses": 2,
+    "title": "Plan B ready",
+    "text": "Lena's team and her habit of planning an alternative entrance move her forward. After rolling, add 2 to your result.",
+    "ev": "e6"
   },
-  "market": {
-   "fx": "slow",
-   "ev": "e4",
-   "why": "Work: disabled applicants are invited to fewer interviews."
+  "life": [
+    {
+      "k": "info",
+      "title": "A small town (fictional)",
+      "text": "Lena is an invented character. She is 12, uses a wheelchair after a spinal injury as a child, and loves drawing houses and bridges. The old market square is cobbled, and many shops have steps."
+    },
+    {
+      "k": "barrier",
+      "title": "Which school?",
+      "text": "The nearest school has no lift. The special school is an hour away by bus. Her parents fight for months to get a place at the local school with a ramp and support.",
+      "move": -3
+    },
+    {
+      "k": "boost",
+      "title": "Friends and Ms Berger",
+      "text": "At her new school classmates quickly stop noticing the chair. Her teacher, Ms Berger, makes sure class trips go to places Lena can reach.",
+      "move": 1
+    },
+    {
+      "k": "barrier",
+      "title": "Left out of the trip",
+      "text": "In year 9 the trip goes to a hostel with no lift. Lena is told she can \"stay home or be carried\". Her friends refuse to go until the plans change.",
+      "move": -1
+    },
+    {
+      "k": "quiz",
+      "title": "Who else uses a ramp?",
+      "text": "Lena notices that step-free access helps more people than just wheelchair users.",
+      "move": 1,
+      "q": {
+        "q": "Which group also benefits from a step-free entrance?",
+        "a": [
+          "Parents with prams and people with heavy luggage",
+          "Nobody else",
+          "Only people who run marathons"
+        ],
+        "x": "Step-free design helps parents, older people, cyclists and delivery staff. Many accessible features are useful for everyone."
+      }
+    },
+    {
+      "k": "barrier",
+      "title": "Forms for university",
+      "text": "Lena applies to study architecture. Some lecture halls and studios are not accessible. Support and technical aids mean many forms and months of waiting.",
+      "move": -3
+    },
+    {
+      "k": "boost",
+      "title": "A flat of her own",
+      "text": "After 40 viewings, many landlords saying \"it isn't suitable\" before she even visits, Lena finds a small accessible flat near the university.",
+      "move": 1
+    },
+    {
+      "k": "quiz",
+      "title": "The professor's question",
+      "text": "A professor asks whether she can do site visits. She answers with a plan: site photos, drones, a partner on site.",
+      "move": 1,
+      "q": {
+        "q": "What is the main problem on an inaccessible building site?",
+        "a": [
+          "Missing ramps and step-free access",
+          "The wheelchair itself",
+          "Lena's ability to draw"
+        ],
+        "x": "The barrier is the missing access, not the person. Flexible solutions and adapted workplaces help everyone."
+      }
+    },
+    {
+      "k": "boost",
+      "title": "Her degree",
+      "text": "Lena graduates with a design for an accessible community centre. Her professor calls it the best of the year.",
+      "move": 1
+    },
+    {
+      "k": "barrier",
+      "title": "Interviews",
+      "text": "At job interviews Lena is asked about her \"limitations\" and the cost of adapting the office. Several offices have no step-free entrance.",
+      "move": -2
+    },
+    {
+      "k": "boost",
+      "title": "An inclusive firm",
+      "text": "A mid-sized firm hires Lena and adapts her workspace within two weeks. Wider doors and lower lift buttons help the whole team.",
+      "move": 1
+    },
+    {
+      "k": "info",
+      "title": "Designing for everyone",
+      "text": "Lena helps plan a market square with level paths, then opens her own studio for accessible design. She says: \"I'm not stuck in a wheelchair. I'm stuck with stairs.\""
+    }
+  ],
+  "sources": [
+    "Fictional character: js/characters/group4.js (Lena) and docs/characters.md",
+    "UN Convention on the Rights of Persons with Disabilities",
+    "Aktion Mensch: inclusion studies",
+    "DIN 18040: German standard for accessible construction"
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "y": "2009 and today",
+      "ev": "Germany ratified the UN disability rights convention in 2009, yet many buildings and stations are still not step-free.",
+      "src": 1
+    },
+    {
+      "id": "e2",
+      "y": "today",
+      "ev": "Many pupils with disabilities in Germany still attend special schools instead of mainstream classes (inclusion studies).",
+      "src": 2
+    },
+    {
+      "id": "e3",
+      "y": "today",
+      "ev": "Applications for support and for university exam adjustments take many forms and long waits.",
+      "src": 2
+    },
+    {
+      "id": "e4",
+      "y": "today",
+      "ev": "Disabled applicants are invited to fewer interviews than others with the same skills (German inclusion studies).",
+      "src": 2
+    },
+    {
+      "id": "e5",
+      "y": "today",
+      "ev": "Standard DIN 18040 sets rules for barrier-free building; architects who know it design accessible places.",
+      "src": 3
+    },
+    {
+      "id": "e6",
+      "y": "typical case",
+      "ev": "Friends, one supportive teacher and an inclusive employer change what disabled people can do.",
+      "src": 2
+    }
+  ],
+  "balance": {
+    "comp": 21
   },
-  "ramp": {
-   "fx": "fast",
-   "ev": "e5",
-   "why": "Accessible design: the ramp route is the one built for you, and you know how it works."
-  },
-  "bridge": {
-   "fx": "fast",
-   "ev": "e6",
-   "why": "Allies: friends, a teacher and an inclusive employer."
+  "look": {
+    "skin": "#f0c8a0",
+    "hair": "#7a4b25",
+    "hairStyle": "long",
+    "top": "#2563eb",
+    "bottom": "#33384a",
+    "outfit": "wheelchair",
+    "eyes": "#4a3a2a",
+    "brow": {
+      "c": "#6a4220",
+      "t": 0.9,
+      "a": 0.9
+    },
+    "mouth": "grin",
+    "lashes": true,
+    "blush": "#ee9a88",
+    "nose": 0.9,
+    "face": {
+      "w": 0.97,
+      "h": 1.08
+    },
+    "torso": {
+      "kind": "shirt",
+      "c1": "#2563eb",
+      "c2": "#e8f0ff"
+    },
+    "prop": "none",
+    "mouthW": 1.3,
+    "jaw": {
+      "sq": 0.1,
+      "cheek": 0.4
+    }
   }
- },
- "advantage": {
-  "type": "lift",
-  "uses": 2,
-  "title": "Plan B ready",
-  "text": "Lena's team and her habit of planning an alternative entrance move her forward. After rolling, add 2 to your result.",
-  "ev": "e6"
- },
- "life": [
-  {
-   "k": "info",
-   "title": "A small town (fictional)",
-   "text": "Lena is an invented character. She is 12, uses a wheelchair after a spinal injury as a child, and loves drawing houses and bridges. The old market square is cobbled, and many shops have steps."
-  },
-  {
-   "k": "barrier",
-   "title": "Which school?",
-   "text": "The nearest school has no lift. The special school is an hour away by bus. Her parents fight for months to get a place at the local school with a ramp and support.",
-   "move": -3
-  },
-  {
-   "k": "boost",
-   "title": "Friends and Ms Berger",
-   "text": "At her new school classmates quickly stop noticing the chair. Her teacher, Ms Berger, makes sure class trips go to places Lena can reach.",
-   "move": 1
-  },
-  {
-   "k": "barrier",
-   "title": "Left out of the trip",
-   "text": "In year 9 the trip goes to a hostel with no lift. Lena is told she can \"stay home or be carried\". Her friends refuse to go until the plans change.",
-   "move": -1
-  },
-  {
-   "k": "quiz",
-   "title": "Who else uses a ramp?",
-   "text": "Lena notices that step-free access helps more people than just wheelchair users.",
-   "move": 1,
-   "q": {
-    "q": "Which group also benefits from a step-free entrance?",
-    "a": [
-     "Parents with prams and people with heavy luggage",
-     "Nobody else",
-     "Only people who run marathons"
-    ],
-    "x": "Step-free design helps parents, older people, cyclists and delivery staff. Many accessible features are useful for everyone."
-   }
-  },
-  {
-   "k": "barrier",
-   "title": "Forms for university",
-   "text": "Lena applies to study architecture. Some lecture halls and studios are not accessible. Support and technical aids mean many forms and months of waiting.",
-   "move": -3
-  },
-  {
-   "k": "boost",
-   "title": "A flat of her own",
-   "text": "After 40 viewings, many landlords saying \"it isn't suitable\" before she even visits, Lena finds a small accessible flat near the university.",
-   "move": 1
-  },
-  {
-   "k": "quiz",
-   "title": "The professor's question",
-   "text": "A professor asks whether she can do site visits. She answers with a plan: site photos, drones, a partner on site.",
-   "move": 1,
-   "q": {
-    "q": "What is the main problem on an inaccessible building site?",
-    "a": [
-     "Missing ramps and step-free access",
-     "The wheelchair itself",
-     "Lena's ability to draw"
-    ],
-    "x": "The barrier is the missing access, not the person. Flexible solutions and adapted workplaces help everyone."
-   }
-  },
-  {
-   "k": "boost",
-   "title": "Her degree",
-   "text": "Lena graduates with a design for an accessible community centre. Her professor calls it the best of the year.",
-   "move": 1
-  },
-  {
-   "k": "barrier",
-   "title": "Interviews",
-   "text": "At job interviews Lena is asked about her \"limitations\" and the cost of adapting the office. Several offices have no step-free entrance.",
-   "move": -2
-  },
-  {
-   "k": "boost",
-   "title": "An inclusive firm",
-   "text": "A mid-sized firm hires Lena and adapts her workspace within two weeks. Wider doors and lower lift buttons help the whole team.",
-   "move": 1
-  },
-  {
-   "k": "info",
-   "title": "Designing for everyone",
-   "text": "Lena helps plan a market square with level paths, then opens her own studio for accessible design. She says: \"I'm not stuck in a wheelchair. I'm stuck with stairs.\""
-  }
- ],
- "sources": [
-  "Fictional character: js/characters/group4.js (Lena) and docs/characters.md",
-  "UN Convention on the Rights of Persons with Disabilities",
-  "Aktion Mensch: inclusion studies",
-  "DIN 18040: German standard for accessible construction"
- ],
- "evidence": [
-  {
-   "id": "e1",
-   "y": "2009 and today",
-   "ev": "Germany ratified the UN disability rights convention in 2009, yet many buildings and stations are still not step-free.",
-   "src": 1
-  },
-  {
-   "id": "e2",
-   "y": "today",
-   "ev": "Many pupils with disabilities in Germany still attend special schools instead of mainstream classes (inclusion studies).",
-   "src": 2
-  },
-  {
-   "id": "e3",
-   "y": "today",
-   "ev": "Applications for support and for university exam adjustments take many forms and long waits.",
-   "src": 2
-  },
-  {
-   "id": "e4",
-   "y": "today",
-   "ev": "Disabled applicants are invited to fewer interviews than others with the same skills (German inclusion studies).",
-   "src": 2
-  },
-  {
-   "id": "e5",
-   "y": "today",
-   "ev": "Standard DIN 18040 sets rules for barrier-free building; architects who know it design accessible places.",
-   "src": 3
-  },
-  {
-   "id": "e6",
-   "y": "typical case",
-   "ev": "Friends, one supportive teacher and an inclusive employer change what disabled people can do.",
-   "src": 2
-  }
- ],
- "balance": {
-  "comp": 21
- },
- "look": {
-  "skin": "#f0c8a0",
-  "hair": "#7a4b25",
-  "hairStyle": "long",
-  "top": "#2563eb",
-  "bottom": "#33384a",
-  "outfit": "wheelchair",
-  "eyes": "#4a3a2a",
-  "brow": {
-   "c": "#6a4220",
-   "t": 0.9,
-   "a": 0.9
-  },
-  "mouth": "grin",
-  "lashes": true,
-  "blush": "#ee9a88",
-  "nose": 0.9,
-  "face": {
-   "w": 0.97,
-   "h": 1.08
-  },
-  "torso": {
-   "kind": "shirt",
-   "c1": "#2563eb",
-   "c2": "#e8f0ff"
-  },
-  "prop": "none",
-  "mouthW": 1.3
- }
 }

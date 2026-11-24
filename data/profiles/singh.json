@@ -200,6 +200,11 @@
       "c1": "#7b7e82",
       "c2": "#d8d8d4"
     },
-    "prop": "none"
+    "prop": "none",
+    "jaw": {
+      "sq": 0.3,
+      "hollow": 1
+    },
+    "age": 1
   }
 }

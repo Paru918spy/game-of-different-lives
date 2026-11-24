@@ -25,6 +25,13 @@
     /* blush and cheek shading */
     if (L.blush) [-1, 1].forEach(s => ell(s * 2.6, -.9, 1.2, .8, L.blush, .35));
     [-1, 1].forEach(s => ell(s * 3.7, -.4, .9, 2.2, dark, .12));
+    const ey0 = () => (L.eyeY == null ? .5 : L.eyeY);
+    /* face structure: jaw, chin, cheekbones, hollows, bags (individual per person) */
+    { const jw = L.jaw || {}, sq = jw.sq == null ? .3 : jw.sq, ag = L.age || 0, ch = jw.chin == null ? 0 : jw.chin;
+      [-1, 1].forEach(s => { g.fillStyle = dark; g.globalAlpha = .1 + sq * .22; g.beginPath(); g.moveTo(X(s * 4.5), Y(-.6)); g.quadraticCurveTo(X(s * (4.4 - sq * .4), -0), Y(-3.5 - sq * .4), X(s * 2.6), Y(-4.6)); g.lineTo(X(s * 4.5), Y(-4.8)); g.closePath(); g.fill(); g.globalAlpha = 1;
+        ell(s * 3.3, .2, 1.1, .5, light, .22 + (jw.cheek || 0) * .2);
+        if (ag > 0) { ell(s * 2.9, -1.9, .9, 1.3, dark, .12 * ag + (jw.hollow || 0) * .1); curve([s * .95, ey0() - .7], [s * 1.7, ey0() - 1.05], [s * 2.5, ey0() - .75], .1, dark, .45 * ag); curve([s * 1.5, -.5], [s * 2.0, -1.3], [s * 2.4, -2.3], .09, dark, .32 * ag); curve([s * 1.6, -2.6], [s * 2.3, -3.4], [s * 2.2, -4.1], .08, dark, .3 * ag); } });
+      if (ch) ell(0, -4.1, 1.2, .5, light, .25 + ch * .15); }
     /* age: forehead lines, eye bags, folds */
     if (wr > 0) { for (let i = 0; i < 3; i++) curve([-2 + i * .1, 2.5 + i * .55], [0, 2.7 + i * .55 + wr * .2], [2 - i * .1, 2.5 + i * .55], .1 + wr * .05, dark, wr * .5);
       [-1, 1].forEach(s => { curve([s * 1.0, -.1], [s * 1.7, -.4], [s * 2.5, -.1], .1, dark, wr * .5); curve([s * 1.2, -.9], [s * 1.6, -2.2], [s * 1.3, -3.1], .12, dark, wr * .55); curve([s * 2.9, .6], [s * 3.3, .4], [s * 3.5, 0], .08, dark, wr * .5); curve([s * 2.9, .4], [s * 3.4, .1], [s * 3.6, -.4], .08, dark, wr * .4); }); }
@@ -39,7 +46,7 @@
       const x = s * 1.7; if (L.shadow) ell(x, ey + .35, 1.15 * ew, .75, L.shadow, .45);
       g.save(); g.beginPath(); g.ellipse(X(x), Y(ey), 1.0 * ew * S, .52 * (L.eyeOpen || 1) * S, 0, 0, 7); g.clip();
       g.fillStyle = "#f6f2ec"; g.fillRect(0, 0, 512, 512); ell(x + s * -.05, ey, .46 * ew, .46, L.eyes || "#3a2a1a"); ell(x - s * .05, ey, .22, .22, "#0a0a0a"); ell(x + .15, ey + .18, .1, .1, "#ffffff", .9); g.restore();
-      line([[x - 1.0 * ew, ey + .05], [x - .4 * ew, ey + .5 * (L.eyeOpen || 1)], [x + .5 * ew, ey + .55 * (L.eyeOpen || 1)], [x + 1.0 * ew, ey + .1]], .16, "#1a1210", .95);
+      { const tl = (L.eyeTilt || 0); line([[x - s * 1.0 * ew, ey + .05], [x - s * .4 * ew, ey + .5 * (L.eyeOpen || 1)], [x + s * .5 * ew, ey + .55 * (L.eyeOpen || 1)], [x + s * 1.0 * ew, ey + .1 + tl]], .16, "#1a1210", .95); if (L.wing) line([[x + s * 1.0 * ew, ey + .1 + tl], [x + s * 1.4 * ew, ey + .3 + tl]], .1, "#1a1210"); }
       if (L.lashes) line([[x + s * 1.0 * ew, ey + .1], [x + s * 1.3 * ew, ey + .35]], .12, "#1a1210");
       curve([x - 1.0 * ew, ey - .1], [x, ey - .62 * (L.eyeOpen || 1)], [x + 1.0 * ew, ey - .1], .07, dark, .6);
     });

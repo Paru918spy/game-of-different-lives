@@ -195,6 +195,11 @@
     "lashes": true,
     "hairPanel": {
       "type": "updo"
-    }
+    },
+    "jaw": {
+      "sq": 0.1,
+      "cheek": 0.4
+    },
+    "age": 0.15
   }
 }

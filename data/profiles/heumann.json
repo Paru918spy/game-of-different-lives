@@ -201,6 +201,11 @@
     "prop": "none",
     "hairPanel": {
       "type": "longwave"
-    }
+    },
+    "jaw": {
+      "sq": 0.25,
+      "cheek": 0.6
+    },
+    "age": 0.5
   }
 }

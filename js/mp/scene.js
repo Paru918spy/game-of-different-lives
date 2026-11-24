@@ -346,7 +346,7 @@
       head.add(new THREE.Mesh(new THREE.SphereGeometry(4.4, 36, 28), skin));
       const R = 4.46, fg = new THREE.SphereGeometry(R, 56, 40, Math.PI / 2 - 1.05, 2.1, .38, 2.45), pos = fg.attributes.position, uv = fg.attributes.uv;
       for (let i = 0; i < pos.count; i++) uv.setXY(i, pos.getX(i) / (2 * R) + .5, pos.getY(i) / (2 * R) + .5);
-      head.add(new THREE.Mesh(fg, (() => { const ft = tex(A.paintFace(look)); return new THREE.MeshStandardMaterial({ map: ft, emissiveMap: ft, emissive: 0xffffff, emissiveIntensity: .32, roughness: .75 }); })()));
+      { const fm = new THREE.Mesh(fg, (() => { const ft = tex(A.paintFace(look)); return new THREE.MeshStandardMaterial({ map: ft, emissiveMap: ft, emissive: 0xffffff, emissiveIntensity: .32, roughness: .75 }); })()); fm.userData.noOutline = true; head.add(fm); }
       [-1, 1].forEach(s => { const e = new THREE.Mesh(new THREE.SphereGeometry(1, 12, 10), skin); e.position.set(s * 4.35, -.2, .2); e.scale.set(.55, 1.1, .8); head.add(e); if (look.earrings) { const r = new THREE.Mesh(new THREE.SphereGeometry(.55, 8, 6), mt(look.earrings, { metalness: .8, roughness: .3 })); r.position.set(s * 4.5, -1.7, .3); head.add(r); } });
       /* hair (children of head so it follows its shape) */
       const hadd = (geo, m, x, y, z, rx) => { const o = new THREE.Mesh(geo, m || hairM); o.position.set(x, y, z); if (rx) o.rotation.x = rx; head.add(o); return o; };
@@ -402,6 +402,9 @@
       const mk = new THREE.Mesh(new THREE.ConeGeometry(2.2, 4, 4), new THREE.MeshStandardMaterial({ color: 0xffd23f, emissive: 0xffa800, emissiveIntensity: .6 })); mk.rotation.x = Math.PI; mk.position.y = 30; mk.visible = false; wrap.add(mk);
       /* player colour: a sash across the chest */
       const sash = add(new THREE.TorusGeometry(5.1, .55, 6, 24, Math.PI), mt(hex, { roughness: .35 }), 0, 1.6, 0); sash.rotation.z = Math.PI; sash.scale.set(1, .5, .8); sash.position.y = 1.0; sash.visible = cloth !== "football";
+      /* toon outline: a slightly larger back-face copy of every solid part */
+      { const om = new THREE.MeshBasicMaterial({ color: 0x24160f, side: THREE.BackSide }), list = []; wrap.traverse(o => { if (o.isMesh && !o.userData.noOutline && o.geometry.type !== "PlaneGeometry" && o.geometry.type !== "RingGeometry" && !(o.material && o.material.transparent)) list.push(o); });
+        list.forEach(o => { const ol = new THREE.Mesh(o.geometry, om); ol.scale.setScalar(o.geometry.type === "CylinderGeometry" && o.geometry.parameters.openEnded ? 1.0 : 1.06); ol.userData.noOutline = true; ol.castShadow = false; o.add(ol); }); }
       wrap.position.y = 0; g.add(wrap); wrap.position.y = 1.5; g.userData = { body: wrap, marker: mk, baseY: 0 }; return g;
     }
     function setFigure(pid, look) {

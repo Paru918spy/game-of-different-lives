@@ -202,6 +202,13 @@
     "hairPanel": {
       "type": "longwave",
       "c": "#e0b567"
-    }
+    },
+    "jaw": {
+      "sq": 0.38,
+      "cheek": 0.8,
+      "chin": 0.3
+    },
+    "wing": true,
+    "eyeTilt": 0.12
   }
 }

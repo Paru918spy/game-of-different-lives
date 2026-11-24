@@ -202,6 +202,11 @@
     "hairPanel": {
       "type": "drape",
       "c": "#7c3aed"
-    }
+    },
+    "jaw": {
+      "sq": 0.1,
+      "cheek": 0.3
+    },
+    "eyeTilt": 0.05
   }
 }

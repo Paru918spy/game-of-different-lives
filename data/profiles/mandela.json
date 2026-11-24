@@ -208,6 +208,12 @@
     "hairPanel": {
       "type": "crop",
       "vol": 0.2
-    }
+    },
+    "jaw": {
+      "sq": 0.4,
+      "cheek": 0.6,
+      "hollow": 0.4
+    },
+    "age": 0.85
   }
 }

@@ -1,212 +1,217 @@
 {
- "id": "wonder",
- "intro": "You are Stevland Morris from Detroit, blind since birth, with a head full of melodies. School, travel and contracts all assume someone else knows best, and you spend years winning the right to decide for yourself.",
- "zones": {
-  "ladder": {
-   "fx": "slow",
-   "ev": "e1",
-   "why": "School: blind children of his time were taught in separate schools for the blind."
+  "id": "wonder",
+  "intro": "You are Stevland Morris from Detroit, blind since birth, with a head full of melodies. School, travel and contracts all assume someone else knows best, and you spend years winning the right to decide for yourself.",
+  "zones": {
+    "ladder": {
+      "fx": "slow",
+      "ev": "e1",
+      "why": "School: blind children of his time were taught in separate schools for the blind."
+    },
+    "office": {
+      "fx": "slow",
+      "ev": "e2",
+      "why": "Contracts: until 21 others controlled his contract and money."
+    },
+    "market": {
+      "fx": "slow",
+      "ev": "e2",
+      "why": "Business: his earnings and his songs were not his to control."
+    },
+    "bridge": {
+      "fx": "fast",
+      "ev": "e3",
+      "why": "Support: his family, Clarence Paul and Motown backed him."
+    },
+    "quiet": {
+      "fx": "fast",
+      "ev": "e4",
+      "why": "Studio: he played many instruments himself on his classic albums."
+    }
   },
-  "office": {
-   "fx": "slow",
-   "ev": "e2",
-   "why": "Contracts: until 21 others controlled his contract and money."
+  "advantage": {
+    "type": "skip",
+    "uses": 3,
+    "title": "Learning by ear",
+    "text": "Stevie learned songs and arrangements by ear and played many instruments himself. On a question you know by heart, count it as answered right.",
+    "ev": "e4"
   },
-  "market": {
-   "fx": "slow",
-   "ev": "e2",
-   "why": "Business: his earnings and his songs were not his to control."
-  },
-  "bridge": {
-   "fx": "fast",
-   "ev": "e3",
-   "why": "Support: his family, Clarence Paul and Motown backed him."
-  },
-  "quiet": {
-   "fx": "fast",
-   "ev": "e4",
-   "why": "Studio: he played many instruments himself on his classic albums."
-  }
- },
- "advantage": {
-  "type": "skip",
-  "uses": 3,
-  "title": "Learning by ear",
-  "text": "Stevie learned songs and arrangements by ear and played many instruments himself. On a question you know by heart, count it as answered right.",
-  "ev": "e4"
- },
- "life": [
-  {
-   "k": "info",
-   "title": "Saginaw, 1950",
-   "text": "Stevie is born six weeks early. In the incubator, too much oxygen harms his eyes (retinopathy of prematurity) and he is blind. His mother Lula Mae soon moves the family to Detroit."
-  },
-  {
-   "k": "barrier",
-   "title": "Decided for him",
-   "text": "Many adults expect a blind child to have a small life. School, travel and play need extra planning, and people often decide for him what he is able to do.",
-   "move": -1
-  },
-  {
-   "k": "boost",
-   "title": "Music everywhere",
-   "text": "He teaches himself harmonica, piano and drums as a small child and sings in the church choir. Later he attends the Michigan School for the Blind.",
-   "move": 1
-  },
-  {
-   "k": "boost",
-   "title": "Discovered at eleven",
-   "text": "Ronnie White of The Miracles brings him to Motown. Founder Berry Gordy signs him as \"Little Stevie Wonder\". A tutor goes along, and his mother reads his contracts.",
-   "move": 2
-  },
-  {
-   "k": "info",
-   "title": "Number one at 13",
-   "text": "\"Fingertips\" (1963), recorded live, reaches number one. It is the first live album to top the US chart. Much of his money is held in trust until he turns 21."
-  },
-  {
-   "k": "barrier",
-   "title": "Whose songs?",
-   "text": "As a teenager, Stevie's songs are chosen for him by the label. What he wants to say about racism, poverty and love is not what the company expects from a pop star.",
-   "move": -1
-  },
-  {
-   "k": "quiz",
-   "title": "Turning 21",
-   "text": "In 1971, at 21, Stevie refuses to sign the same kind of contract again. He negotiates a new deal, against the company's expectations.",
-   "move": 1,
-   "q": {
-    "q": "What did Stevie win in his new contract at 21?",
-    "a": [
-     "Control over his own music",
-     "A permanent seat on the board",
-     "A ban on touring"
-    ],
-    "x": "He gained artistic control: he chose the songs, played most instruments himself and explored synthesizers."
-   }
-  },
-  {
-   "k": "boost",
-   "title": "The classic albums",
-   "text": "With control he makes Music of My Mind, Talking Book and Innervisions, playing most instruments himself and exploring synthesizers. His songs speak about racism and poverty.",
-   "move": 1
-  },
-  {
-   "k": "barrier",
-   "title": "August 1973: the crash",
-   "text": "A car crash in North Carolina leaves him in a coma for days. He survives, but loses most of his sense of smell. Doctors fear he may not make music again.",
-   "move": -2
-  },
-  {
-   "k": "boost",
-   "title": "Songs in the Key of Life",
-   "text": "His 1976 double album is a worldwide success. Over his career he wins 25 Grammy Awards, including three for Album of the Year.",
-   "move": 1
-  },
-  {
-   "k": "quiz",
-   "title": "A song for a holiday",
-   "text": "He writes \"Happy Birthday\" (1980) for Dr. Martin Luther King Jr. and campaigns for a national holiday. In 1981 he leads a rally in Washington, and in 1983 the law is signed.",
-   "move": 1,
-   "q": {
-    "q": "Which holiday did Stevie's campaign help create in the USA?",
-    "a": [
-     "Martin Luther King Jr. Day",
-     "Thanksgiving",
-     "Independence Day"
-    ],
-    "x": "The holiday was signed into law in 1983 and first observed in 1986."
-   }
-  },
-  {
-   "k": "info",
-   "title": "Speaking up worldwide",
-   "text": "He speaks out against apartheid, and his music is banned in South Africa. He becomes a UN Messenger of Peace in 2009 and supports the Marrakesh Treaty, which gives blind readers more access to books."
-  }
- ],
- "sources": [
-  "js/characters/group1.js tiles for wonder",
-  "docs/characters.md row for Stevie Wonder",
-  "Rock & Roll Hall of Fame: Stevie Wonder",
-  "Martin Luther King Jr. Research & Education Institute",
-  "UN Messenger of Peace profile"
- ],
- "flags": [
-  "Check that he campaigned for the Marrakesh Treaty (adopted 2013); the single-player data says he later supported it.",
-  "The market zone is an access argument (noise and no guide); a human may want to confirm that framing."
- ],
- "evidence": [
-  {
-   "id": "e1",
-   "y": "1950s",
-   "ev": "Born premature and blind, he went to the Michigan School for the Blind, one of the separate schools that blind children were sent to at the time.",
-   "src": 2
-  },
-  {
-   "id": "e2",
-   "y": "1961 to 1971",
-   "ev": "Signed to Motown at 11; his contract held his earnings in trust until 21, and at 21 he renegotiated and gained creative control.",
-   "src": 2
-  },
-  {
-   "id": "e3",
-   "y": "1960s",
-   "ev": "Motown's Berry Gordy, mentor Clarence Paul and his family supported his career.",
-   "src": 2
-  },
-  {
-   "id": "e4",
-   "y": "1972 to 1976",
-   "ev": "He recorded a run of classic albums, playing many instruments himself.",
-   "src": 2
-  }
- ],
- "balance": {
-  "comp": 18
- },
- "look": {
-  "skin": "#6d4a35",
-  "hair": "#161616",
-  "hairStyle": "braidcap",
-  "top": "#111111",
-  "bottom": "#111111",
-  "outfit": "casual",
-  "eyes": "#2a1810",
-  "brow": {
-   "c": "#161616",
-   "t": 1.0,
-   "a": 0.7
-  },
-  "mouth": "grin",
-  "nose": 1.05,
-  "mouthW": 1.4,
-  "glasses": {
-   "type": "sun",
-   "c": "#0a0a0a"
-  },
-  "beard": [
-   {
-    "style": "mustache",
-    "c": "#161616",
-    "a": 0.7
-   },
-   {
-    "style": "goatee",
-    "c": "#161616",
-    "a": 0.5
-   }
+  "life": [
+    {
+      "k": "info",
+      "title": "Saginaw, 1950",
+      "text": "Stevie is born six weeks early. In the incubator, too much oxygen harms his eyes (retinopathy of prematurity) and he is blind. His mother Lula Mae soon moves the family to Detroit."
+    },
+    {
+      "k": "barrier",
+      "title": "Decided for him",
+      "text": "Many adults expect a blind child to have a small life. School, travel and play need extra planning, and people often decide for him what he is able to do.",
+      "move": -1
+    },
+    {
+      "k": "boost",
+      "title": "Music everywhere",
+      "text": "He teaches himself harmonica, piano and drums as a small child and sings in the church choir. Later he attends the Michigan School for the Blind.",
+      "move": 1
+    },
+    {
+      "k": "boost",
+      "title": "Discovered at eleven",
+      "text": "Ronnie White of The Miracles brings him to Motown. Founder Berry Gordy signs him as \"Little Stevie Wonder\". A tutor goes along, and his mother reads his contracts.",
+      "move": 2
+    },
+    {
+      "k": "info",
+      "title": "Number one at 13",
+      "text": "\"Fingertips\" (1963), recorded live, reaches number one. It is the first live album to top the US chart. Much of his money is held in trust until he turns 21."
+    },
+    {
+      "k": "barrier",
+      "title": "Whose songs?",
+      "text": "As a teenager, Stevie's songs are chosen for him by the label. What he wants to say about racism, poverty and love is not what the company expects from a pop star.",
+      "move": -1
+    },
+    {
+      "k": "quiz",
+      "title": "Turning 21",
+      "text": "In 1971, at 21, Stevie refuses to sign the same kind of contract again. He negotiates a new deal, against the company's expectations.",
+      "move": 1,
+      "q": {
+        "q": "What did Stevie win in his new contract at 21?",
+        "a": [
+          "Control over his own music",
+          "A permanent seat on the board",
+          "A ban on touring"
+        ],
+        "x": "He gained artistic control: he chose the songs, played most instruments himself and explored synthesizers."
+      }
+    },
+    {
+      "k": "boost",
+      "title": "The classic albums",
+      "text": "With control he makes Music of My Mind, Talking Book and Innervisions, playing most instruments himself and exploring synthesizers. His songs speak about racism and poverty.",
+      "move": 1
+    },
+    {
+      "k": "barrier",
+      "title": "August 1973: the crash",
+      "text": "A car crash in North Carolina leaves him in a coma for days. He survives, but loses most of his sense of smell. Doctors fear he may not make music again.",
+      "move": -2
+    },
+    {
+      "k": "boost",
+      "title": "Songs in the Key of Life",
+      "text": "His 1976 double album is a worldwide success. Over his career he wins 25 Grammy Awards, including three for Album of the Year.",
+      "move": 1
+    },
+    {
+      "k": "quiz",
+      "title": "A song for a holiday",
+      "text": "He writes \"Happy Birthday\" (1980) for Dr. Martin Luther King Jr. and campaigns for a national holiday. In 1981 he leads a rally in Washington, and in 1983 the law is signed.",
+      "move": 1,
+      "q": {
+        "q": "Which holiday did Stevie's campaign help create in the USA?",
+        "a": [
+          "Martin Luther King Jr. Day",
+          "Thanksgiving",
+          "Independence Day"
+        ],
+        "x": "The holiday was signed into law in 1983 and first observed in 1986."
+      }
+    },
+    {
+      "k": "info",
+      "title": "Speaking up worldwide",
+      "text": "He speaks out against apartheid, and his music is banned in South Africa. He becomes a UN Messenger of Peace in 2009 and supports the Marrakesh Treaty, which gives blind readers more access to books."
+    }
   ],
-  "earrings": "#d4af37",
-  "face": {
-   "w": 1.02,
-   "h": 1.1
+  "sources": [
+    "js/characters/group1.js tiles for wonder",
+    "docs/characters.md row for Stevie Wonder",
+    "Rock & Roll Hall of Fame: Stevie Wonder",
+    "Martin Luther King Jr. Research & Education Institute",
+    "UN Messenger of Peace profile"
+  ],
+  "flags": [
+    "Check that he campaigned for the Marrakesh Treaty (adopted 2013); the single-player data says he later supported it.",
+    "The market zone is an access argument (noise and no guide); a human may want to confirm that framing."
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "y": "1950s",
+      "ev": "Born premature and blind, he went to the Michigan School for the Blind, one of the separate schools that blind children were sent to at the time.",
+      "src": 2
+    },
+    {
+      "id": "e2",
+      "y": "1961 to 1971",
+      "ev": "Signed to Motown at 11; his contract held his earnings in trust until 21, and at 21 he renegotiated and gained creative control.",
+      "src": 2
+    },
+    {
+      "id": "e3",
+      "y": "1960s",
+      "ev": "Motown's Berry Gordy, mentor Clarence Paul and his family supported his career.",
+      "src": 2
+    },
+    {
+      "id": "e4",
+      "y": "1972 to 1976",
+      "ev": "He recorded a run of classic albums, playing many instruments himself.",
+      "src": 2
+    }
+  ],
+  "balance": {
+    "comp": 18
   },
-  "torso": {
-   "kind": "pattern",
-   "c1": "#161616",
-   "c2": "#17d6b0",
-   "c3": "#ffd23f"
-  },
-  "prop": "none"
- }
+  "look": {
+    "skin": "#6d4a35",
+    "hair": "#161616",
+    "hairStyle": "braidcap",
+    "top": "#111111",
+    "bottom": "#111111",
+    "outfit": "casual",
+    "eyes": "#2a1810",
+    "brow": {
+      "c": "#161616",
+      "t": 1.0,
+      "a": 0.7
+    },
+    "mouth": "grin",
+    "nose": 1.05,
+    "mouthW": 1.4,
+    "glasses": {
+      "type": "sun",
+      "c": "#0a0a0a"
+    },
+    "beard": [
+      {
+        "style": "mustache",
+        "c": "#161616",
+        "a": 0.7
+      },
+      {
+        "style": "goatee",
+        "c": "#161616",
+        "a": 0.5
+      }
+    ],
+    "earrings": "#d4af37",
+    "face": {
+      "w": 1.02,
+      "h": 1.1
+    },
+    "torso": {
+      "kind": "pattern",
+      "c1": "#161616",
+      "c2": "#17d6b0",
+      "c3": "#ffd23f"
+    },
+    "prop": "none",
+    "jaw": {
+      "sq": 0.3,
+      "cheek": 0.5
+    },
+    "age": 0.5
+  }
 }
