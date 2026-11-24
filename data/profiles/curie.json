@@ -123,7 +123,8 @@
   "js/characters/group1.js tiles for curie",
   "docs/characters.md row for Marie Curie",
   "Nobel Prize site: Marie Curie biographical",
-  "Musée Curie"
+  "Musée Curie",
+  "PBS NewsHour: The day Marie Curie got snubbed by the French science world (checked)"
  ],
  "flags": [
   "Check wording that the 1911 Academy vote was narrowly lost, and that the Flying University used private flats and rotating teachers.",
@@ -157,8 +158,8 @@
   {
    "id": "e5",
    "y": "1911",
-   "ev": "The French Academy of Sciences narrowly voted against her membership in 1911; it elected its first woman full member only in 1979.",
-   "src": 3
+   "ev": "The French Academy of Sciences rejected her membership in January 1911 by a narrow vote; it elected its first woman member only in 1962.",
+   "src": 4
   },
   {
    "id": "e6",
@@ -174,7 +175,7 @@
   }
  ],
  "balance": {
-  "comp": 20
+  "comp": 19
  },
  "look": {
   "skin": "#f0d2b0",

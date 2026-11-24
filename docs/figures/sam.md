@@ -19,16 +19,16 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Forms and law: for years the paperwork had only two boxes. | e1 |
-| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | School climate: jokes and exclusion at school isolate. | e3 |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School routines: sports, toilets and trips are split in two groups. | e4 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | One adult who gets it: acceptance changes a young person's chances a lot. | e2 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Forms and law: for years the paperwork had only two boxes. | e1 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | School climate: jokes and exclusion at school isolate. | e3 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | School routines: sports, toilets and trips are split in two groups. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | One adult who gets it: acceptance changes a young person's chances a lot. | e2 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-22 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+20 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Allies in the room
 

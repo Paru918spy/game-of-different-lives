@@ -21,17 +21,17 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Law: a 1952 conviction for being gay ended his security clearance and his career. | e1 |
-| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | Secrecy: the Official Secrets Act forced him to stay silent about his work. | e3 |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: Sherborne wanted Latin, not mathematics. | e4 |
-| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs half a step) | Study and thought: Cambridge gave him time to work out what computing means. | e5 |
-| 🏁 Race track | Sport, stamina and competition | fast (each field costs half a step) | Running: he ran a marathon in 2h46 and trained with a club. | e6 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Law: a 1952 conviction for being gay ended his security clearance and his career. | e1 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Secrecy: the Official Secrets Act forced him to stay silent about his work. | e3 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | School: Sherborne wanted Latin, not mathematics. | e4 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs 0.75 steps) | Study and thought: Cambridge gave him time to work out what computing means. | e5 |
+| 🏁 Race track | Sport, stamina and competition | fast (each field costs 0.75 steps) | Running: he ran a marathon in 2h46 and trained with a club. | e6 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-18 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+24 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Cutting to the core
 

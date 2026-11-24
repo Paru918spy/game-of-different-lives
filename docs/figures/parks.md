@@ -19,17 +19,17 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: no bus for Black children, and she left school to care for her family. | e1 |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Voting: she was refused registration twice because of a test and a tax. | e2 |
-| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 2 steps) | Safety: threatening calls after the bus arrest. | e3 |
-| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Work: she lost her job and could not find work in Montgomery. | e3 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Community: NAACP friends and carpools carried the boycott. | e4 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | School: no bus for Black children, and she left school to care for her family. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Voting: she was refused registration twice because of a test and a tax. | e2 |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 1.5 steps) | Safety: threatening calls after the bus arrest. | e3 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Work: she lost her job and could not find work in Montgomery. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Community: NAACP friends and carpools carried the boycott. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-39 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+26 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Friends who stood by
 
@@ -123,6 +123,7 @@ After 1957 the family moves to Detroit, where racism and unemployment follow. Fr
 - Rosa Parks with Jim Haskins, Rosa Parks: My Story (1992)
 - Library of Congress: Rosa Parks Papers
 - Danielle McGuire, At the Dark End of the Street
+- TIME and Encyclopedia.com: voter registration attempts 1943 to 1945 (checked)
 
 ## To check
 

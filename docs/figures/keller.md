@@ -20,16 +20,16 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | Silence and darkness: before words she could not share what she knew. | e1 |
-| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Public voice: editors said her opinions came from her disability. | e4 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | A teacher: Anne Sullivan opened language and the world for her. | e2 |
-| 🌳 Tree ladders | Education and training | fast (each field costs half a step) | College: with Anne at her side she graduated from Radcliffe with honours. | e3 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Silence and darkness: before words she could not share what she knew. | e1 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Public voice: editors said her opinions came from her disability. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | A teacher: Anne Sullivan opened language and the world for her. | e2 |
+| 🌳 Tree ladders | Education and training | fast (each field costs 0.75 steps) | College: with Anne at her side she graduated from Radcliffe with honours. | e3 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-15 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+17 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: A teacher at her side
 

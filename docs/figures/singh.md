@@ -20,16 +20,16 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 2 steps) | Legs: weak legs as a child kept him from walking until about five. | e1 |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Papers: no birth certificate, so records could not be certified. | e3 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Coach and club: the Sikh community and his coach in Ilford took him in. | e4 |
-| 🏁 Race track | Sport, stamina and competition | fast (each field costs half a step) | Running: marathons from about 89 years old. | e5 |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 1.5 steps) | Legs: weak legs as a child kept him from walking until about five. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Papers: no birth certificate, so records could not be certified. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Coach and club: the Sikh community and his coach in Ilford took him in. | e4 |
+| 🏁 Race track | Sport, stamina and competition | fast (each field costs 0.75 steps) | Running: marathons from about 89 years old. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-16 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+19 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Daily training
 
@@ -124,6 +124,7 @@ Fauja Singh dies on 14 July 2025 after a road accident in his home village, at a
 - BBC and Guardian interviews
 - Guinness World Records statement on age records
 - Khushwant Singh, The Turbaned Tornado
+- Olympics.com / NPR: first marathon London 2000, Toronto 2011 at about 100 (age unverified; checked)
 
 ## To check
 

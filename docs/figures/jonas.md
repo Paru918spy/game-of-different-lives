@@ -21,17 +21,17 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Work: ageist assumptions decide before your skills are read. | e1 |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Law: age discrimination is banned, but very hard to prove. | e2 |
-| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | Digital hiring: portals and tests are built for younger applicants. | e3 |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | Further training: older workers are less often offered courses. | e4 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | A network across generations: tips and skill swaps with colleagues. | e5 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Work: ageist assumptions decide before your skills are read. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Law: age discrimination is banned, but very hard to prove. | e2 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Digital hiring: portals and tests are built for younger applicants. | e3 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | Further training: older workers are less often offered courses. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | A network across generations: tips and skill swaps with colleagues. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-40 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+27 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Seen it before
 

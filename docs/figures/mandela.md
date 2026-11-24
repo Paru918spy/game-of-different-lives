@@ -20,17 +20,17 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Law: apartheid laws and banning orders decided where he could live, speak and work. | e1 |
-| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 2 steps) | Safety: Sharpeville, arrest and a trial that could end in the death sentence. | e2 |
-| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | Prison: 27 years apart, with very few visits and letters. | e3 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Movement: the ANC, Oliver Tambo and many allies. | e4 |
-| 🌳 Tree ladders | Education and training | fast (each field costs half a step) | Study: Fort Hare, then a law degree by correspondence. | e5 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Law: apartheid laws and banning orders decided where he could live, speak and work. | e1 |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 1.5 steps) | Safety: Sharpeville, arrest and a trial that could end in the death sentence. | e2 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Prison: 27 years apart, with very few visits and letters. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Movement: the ANC, Oliver Tambo and many allies. | e4 |
+| 🌳 Tree ladders | Education and training | fast (each field costs 0.75 steps) | Study: Fort Hare, then a law degree by correspondence. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-14 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+19 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Standing together
 
@@ -123,6 +123,7 @@ Mandela steps down in 1999 and dies on 5 December 2013, aged 95. Poverty and dee
 - js/characters/group3.js mandela tiles (Mvezo, Fort Hare, apartheid 1948, law firm 1952, Sharpeville, Rivonia, Robben Island, release 1990, Nobel 1993, presidency 1994)
 - Nelson Mandela, Long Walk to Freedom (1994)
 - Nelson Mandela Foundation (nelsonmandela.org)
+- UCT and South Africa tourism: Mandela and Tambo law firm, Chancellor House, 1952 (checked)
 
 ## To check
 

@@ -19,17 +19,17 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: blind children of his time were taught in separate schools for the blind. | e1 |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Contracts: until 21 others controlled his contract and money. | e2 |
-| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Business: his earnings and his songs were not his to control. | e2 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Support: his family, Clarence Paul and Motown backed him. | e3 |
-| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs half a step) | Studio: he played many instruments himself on his classic albums. | e4 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | School: blind children of his time were taught in separate schools for the blind. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Contracts: until 21 others controlled his contract and money. | e2 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Business: his earnings and his songs were not his to control. | e2 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Support: his family, Clarence Paul and Motown backed him. | e3 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs 0.75 steps) | Studio: he played many instruments himself on his classic albums. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-11 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+18 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Learning by ear
 

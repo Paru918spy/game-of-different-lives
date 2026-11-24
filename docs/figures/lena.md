@@ -22,16 +22,16 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
 | 🪜 Stairway | Physical access: buildings, transport, mobility | blocked (this route cannot be taken) | Steps: many buildings and stations are still closed to wheelchair users. | e1 |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: many disabled pupils are steered to special schools. | e2 |
-| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Work: disabled applicants are invited to fewer interviews. | e4 |
-| ↗ Long ramp | Aids and accessible design | fast (each field costs half a step) | Accessible design: the ramp route is the one built for you, and you know how it works. | e5 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Allies: friends, a teacher and an inclusive employer. | e6 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | School: many disabled pupils are steered to special schools. | e2 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Work: disabled applicants are invited to fewer interviews. | e4 |
+| ↗ Long ramp | Aids and accessible design | fast (each field costs 0.75 steps) | Accessible design: the ramp route is the one built for you, and you know how it works. | e5 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Allies: friends, a teacher and an inclusive employer. | e6 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-15 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+21 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Plan B ready
 

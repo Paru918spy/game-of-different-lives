@@ -19,16 +19,16 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Law: segregation laws decided where he could sit, eat and learn. | e1 |
-| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 2 steps) | Safety: a bomb at home, a stabbing, jail and FBI surveillance. | e2 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Church and family: a community that carried the movement. | e3 |
-| 🌳 Tree ladders | Education and training | fast (each field costs half a step) | Education: Morehouse at 15 and a doctorate opened a path for his voice. | e4 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Law: segregation laws decided where he could sit, eat and learn. | e1 |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 1.5 steps) | Safety: a bomb at home, a stabbing, jail and FBI surveillance. | e2 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Church and family: a community that carried the movement. | e3 |
+| 🌳 Tree ladders | Education and training | fast (each field costs 0.75 steps) | Education: Morehouse at 15 and a doctorate opened a path for his voice. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-21 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+26 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Staying power
 

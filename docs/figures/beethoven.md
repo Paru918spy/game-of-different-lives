@@ -21,17 +21,17 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | Communication: from about 1818 every talk goes through paper and the conversation books. | e2 |
-| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Stage and public life: after 1814 deafness ended his career as a performing pianist. | e3 |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Courts: the guardianship fight over his nephew took years of hearings. | e4 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Patrons: Archduke Rudolph, Lobkowitz and Kinsky guaranteed his income in 1809. | e5 |
-| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs half a step) | Inner ear: he sketched at home and composed the late works from imagination. | e6 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Communication: from about 1818 every talk goes through paper and the conversation books. | e2 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Stage and public life: after 1814 deafness ended his career as a performing pianist. | e3 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Courts: the guardianship fight over his nephew took years of hearings. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Patrons: Archduke Rudolph, Lobkowitz and Kinsky guaranteed his income in 1809. | e5 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs 0.75 steps) | Inner ear: he sketched at home and composed the late works from imagination. | e6 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-18 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+21 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: The inner ear
 

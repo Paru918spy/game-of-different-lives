@@ -122,7 +122,8 @@
   "js/characters/group2.js (heumann)",
   "Judith Heumann with Kristen Joiner, Being Heumann (2020)",
   "Crip Camp (2020)",
-  "docs/characters.md"
+  "docs/characters.md",
+  "Judith Heumann (born Dec 1947): school refusal at about age five, no school until nine (womenshistory.org, Britannica; checked)"
  ],
  "flags": [
   "Crip Camp is about Camp Jened; Judy appears in it. Exact count of 'about 150' occupants and the first wheelchair-using NYC teacher claim are from the single-player data and widely reported; a human may want to confirm."
@@ -160,7 +161,7 @@
   }
  ],
  "balance": {
-  "comp": 39
+  "comp": 24
  },
  "look": {
   "skin": "#f0cfa8",

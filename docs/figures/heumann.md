@@ -21,15 +21,15 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
 | 🪜 Stairway | Physical access: buildings, transport, mobility | blocked (this route cannot be taken) | Steps and transport: buses, buildings and planes were built without wheelchair access. | e2 |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School: she was refused entry as 'a fire hazard' and taught at home for years. | e1 |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Licences and rules: New York refused her teaching licence until she sued. | e3 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Allies: other disabled activists, even the Black Panthers, stood with her in 1977. | e5 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | School: she was refused entry as 'a fire hazard' and taught at home for years. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Licences and rules: New York refused her teaching licence until she sued. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Allies: other disabled activists, even the Black Panthers, stood with her in 1977. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-39 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+24 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Second push
 
@@ -123,6 +123,7 @@ Judy Heumann dies on 4 March 2023, aged 75. Her principle lives on: disabled peo
 - Judith Heumann with Kristen Joiner, Being Heumann (2020)
 - Crip Camp (2020)
 - docs/characters.md
+- Judith Heumann (born Dec 1947): school refusal at about age five, no school until nine (womenshistory.org, Britannica; checked)
 
 ## To check
 

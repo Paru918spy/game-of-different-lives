@@ -12,7 +12,7 @@ Every effect on the board points to one of these events. If there is no document
 - **e2** (1880s): She joined the secret Flying University in Warsaw, where Polish women studied in private flats. *Source: Musée Curie*
 - **e3** (1891 to 1894): She enrolled at the Sorbonne in Paris in 1891 and earned degrees in physics and mathematics. *Source: Nobel Prize site: Marie Curie biographical*
 - **e4** (1898 to 1902): With Pierre she processed tonnes of pitchblende in a leaky shed to isolate radium. *Source: Musée Curie*
-- **e5** (1911): The French Academy of Sciences narrowly voted against her membership in 1911; it elected its first woman full member only in 1979. *Source: Musée Curie*
+- **e5** (1911): The French Academy of Sciences rejected her membership in January 1911 by a narrow vote; it elected its first woman member only in 1962. *Source: PBS NewsHour: The day Marie Curie got snubbed by the French science world (checked)*
 - **e6** (1911): A press campaign around the Langevin affair attacked her, often with xenophobic and sexist language. *Source: Nobel Prize site: Marie Curie biographical*
 - **e7** (1903): Pierre made sure she was named with him for the Nobel Prize in Physics after the first nomination left her out. *Source: Nobel Prize site: Marie Curie biographical*
 
@@ -22,16 +22,16 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | Education: in Russian-ruled Warsaw women were barred from university and Polish was banned. | e1 |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Institutions: the Academy of Sciences refused to admit her by a narrow vote. | e5 |
-| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Press and public: in 1911 newspapers attacked her with sexist and xenophobic language. | e6 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Partnership: Pierre insisted that she be named with him for the Nobel Prize. | e7 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | Education: in Russian-ruled Warsaw women were barred from university and Polish was banned. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Institutions: the Academy of Sciences refused to admit her by a narrow vote. | e5 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Press and public: in 1911 newspapers attacked her with sexist and xenophobic language. | e6 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Partnership: Pierre insisted that she be named with him for the Nobel Prize. | e7 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-20 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+19 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Step by step
 
@@ -125,6 +125,7 @@ Marie builds the Radium Institute in Paris and trains many researchers, many of 
 - docs/characters.md row for Marie Curie
 - Nobel Prize site: Marie Curie biographical
 - Musée Curie
+- PBS NewsHour: The day Marie Curie got snubbed by the French science world (checked)
 
 ## To check
 

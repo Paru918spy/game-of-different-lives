@@ -129,7 +129,8 @@
   "js/characters/parks.js (all tiles)",
   "Rosa Parks with Jim Haskins, Rosa Parks: My Story (1992)",
   "Library of Congress: Rosa Parks Papers",
-  "Danielle McGuire, At the Dark End of the Street"
+  "Danielle McGuire, At the Dark End of the Street",
+  "TIME and Encyclopedia.com: voter registration attempts 1943 to 1945 (checked)"
  ],
  "flags": [
   "Raymond Parks and Scottsboro: widely documented, but 1931 date and 'nine teenagers' should be re-checked.",
@@ -162,7 +163,7 @@
   }
  ],
  "balance": {
-  "comp": 39
+  "comp": 26
  },
  "look": {
   "skin": "#7a5238",

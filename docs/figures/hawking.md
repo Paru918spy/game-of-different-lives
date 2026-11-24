@@ -20,16 +20,16 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 2 steps) | Steps and old buildings: in a wheelchair he often depended on help to get into buildings. | e2 |
-| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | Voice: after 1985 every sentence had to be spelled out, so every talk takes much longer. | e3 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Carers, students and colleagues made his daily life and research possible. | e4 |
-| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs half a step) | Thinking in his head: he trained himself to see equations without paper. | e5 |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 1.5 steps) | Steps and old buildings: in a wheelchair he often depended on help to get into buildings. | e2 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Voice: after 1985 every sentence had to be spelled out, so every talk takes much longer. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Carers, students and colleagues made his daily life and research possible. | e4 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs 0.75 steps) | Thinking in his head: he trained himself to see equations without paper. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-20 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+23 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Right question
 

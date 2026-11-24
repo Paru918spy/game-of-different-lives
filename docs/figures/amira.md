@@ -20,17 +20,17 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 2 steps) | Papers and recognition: foreign diplomas and residence status are decided slowly, whatever your effort. | e1 |
-| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 2 steps) | Arriving without the language: for a while you understand little, and few people understand you. | e2 |
-| 🌳 Tree ladders | Education and training | slow (each field costs 2 steps) | School tracks: pupils with a migrant background more often land on lower tracks at equal marks. | e3 |
-| 🏁 Race track | Sport, stamina and competition | fast (each field costs half a step) | Sport club: football needs no shared language, and clubs are a common first home for refugee children. | e4 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Teachers, neighbours and volunteers open doors for newly arrived families. | e5 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Papers and recognition: foreign diplomas and residence status are decided slowly, whatever your effort. | e1 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Arriving without the language: for a while you understand little, and few people understand you. | e2 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | School tracks: pupils with a migrant background more often land on lower tracks at equal marks. | e3 |
+| 🏁 Race track | Sport, stamina and competition | fast (each field costs 0.75 steps) | Sport club: football needs no shared language, and clubs are a common first home for refugee children. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Teachers, neighbours and volunteers open doors for newly arrived families. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-22 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+21 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: A helping hand
 

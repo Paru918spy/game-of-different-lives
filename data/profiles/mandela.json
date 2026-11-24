@@ -127,7 +127,8 @@
  "sources": [
   "js/characters/group3.js mandela tiles (Mvezo, Fort Hare, apartheid 1948, law firm 1952, Sharpeville, Rivonia, Robben Island, release 1990, Nobel 1993, presidency 1994)",
   "Nelson Mandela, Long Walk to Freedom (1994)",
-  "Nelson Mandela Foundation (nelsonmandela.org)"
+  "Nelson Mandela Foundation (nelsonmandela.org)",
+  "UCT and South Africa tourism: Mandela and Tambo law firm, Chancellor House, 1952 (checked)"
  ],
  "flags": [
   "Sharpeville death toll is given as 69 by most sources.",
@@ -168,7 +169,7 @@
   }
  ],
  "balance": {
-  "comp": 14
+  "comp": 19
  },
  "look": {
   "skin": "#5a3a28",

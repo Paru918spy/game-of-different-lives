@@ -146,8 +146,8 @@
     return { nodes, start: by.S, finish: by.F, chains, sections, junctions: by, life, width: 76, height: 48 };
   }
 
-  /* Cost of a node in "steps" for a figure: zone effects from its profile. fast = .5, slow = 2, normal = 1. */
-  const COST = { fast: .5, slow: 2 };
+  /* Cost of a node in "steps" for a figure: zone effects from its profile. fast = .75, slow = 1.5, normal = 1. */
+  const COST = { fast: .75, slow: 1.5 };
   function cost(node, zfx) { const f = node.zone && zfx && zfx[node.zone]; return f && f.fx && COST[f.fx] || 1; }
   const blocked = (zone, zfx) => !!(zone && zfx && zfx[zone] && zfx[zone].fx === "block");
 

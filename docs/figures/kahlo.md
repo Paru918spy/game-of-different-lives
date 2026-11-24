@@ -20,16 +20,16 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 2 steps) | Steps: after the 1953 amputation she used crutches, a wheelchair and a prosthetic boot. | e3 |
-| 🏁 Race track | Sport, stamina and competition | slow (each field costs 2 steps) | Stamina: after the 1925 accident, pain and many operations limited her body. | e2 |
-| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs half a step) | Work in bed: the easel above her bed and the mirror made her art possible. | e4 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Friends and students (Los Fridos) supported her work and her days. | e5 |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 1.5 steps) | Steps: after the 1953 amputation she used crutches, a wheelchair and a prosthetic boot. | e3 |
+| 🏁 Race track | Sport, stamina and competition | slow (each field costs 1.5 steps) | Stamina: after the 1925 accident, pain and many operations limited her body. | e2 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs 0.75 steps) | Work in bed: the easel above her bed and the mirror made her art possible. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Friends and students (Los Fridos) supported her work and her days. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-12 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+15 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Back to the easel
 

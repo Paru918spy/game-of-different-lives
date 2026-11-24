@@ -6,7 +6,7 @@
      card      the pawn stopped: question / action / story / checkpoint / life station / ... of that field
      feedback  right or wrong with explanation. Right: stay. Wrong: back to the last safe field (turn start or last stop).
      over      somebody reached the finish
-   Walking: every field costs 1 step. A figure's zone effects change that (slow 2, fast 0.5, block = route cannot be chosen).
+   Walking: every field costs 1 step. A figure's zone effects change that (slow 1.5, fast 0.75, block = route cannot be chosen).
    Life stations and checkpoints stop the pawn once per player, the rest of the roll is kept.                                        */
 (function (root) {
   const MP = root.MP = root.MP || {};

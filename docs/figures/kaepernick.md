@@ -19,16 +19,16 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 2 steps) | Backlash: boos, burned jerseys and threats after the kneeling protest. | e2 |
-| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Work: after 2016 no team signed him, though he was still good enough to play. | e3 |
-| 🏁 Race track | Sport, stamina and competition | fast (each field costs half a step) | Sport: at the top of his game he led a team to the Super Bowl. | e1 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Community: the Know Your Rights Camp and fellow players stood with him. | e4 |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 1.5 steps) | Backlash: boos, burned jerseys and threats after the kneeling protest. | e2 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Work: after 2016 no team signed him, though he was still good enough to play. | e3 |
+| 🏁 Race track | Sport, stamina and competition | fast (each field costs 0.75 steps) | Sport: at the top of his game he led a team to the Super Bowl. | e1 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Community: the Know Your Rights Camp and fellow players stood with him. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-15 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+19 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Training camp
 

@@ -124,7 +124,8 @@
   "docs/characters.md row for Fauja Singh",
   "BBC and Guardian interviews",
   "Guinness World Records statement on age records",
-  "Khushwant Singh, The Turbaned Tornado"
+  "Khushwant Singh, The Turbaned Tornado",
+  "Olympics.com / NPR: first marathon London 2000, Toronto 2011 at about 100 (age unverified; checked)"
  ],
  "flags": [
   "Age is unverified (no birth certificate), stated in station 1 and 9.",
@@ -164,7 +165,7 @@
   }
  ],
  "balance": {
-  "comp": 16
+  "comp": 19
  },
  "look": {
   "skin": "#b8845a",

@@ -20,16 +20,16 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
-| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 2 steps) | Safety: harassment and violence against trans women, which she has described. | e1 |
-| 🎪 Busy market | Work, money, media and public life | slow (each field costs 2 steps) | Casting: for years there were almost no roles for trans actresses. | e3 |
-| 🌳 Tree ladders | Education and training | fast (each field costs half a step) | Arts school and college: dance training opened a way into New York. | e2 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Her mother, twin brother and community held her up after rejection. | e4 |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 1.5 steps) | Safety: harassment and violence against trans women, which she has described. | e1 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Casting: for years there were almost no roles for trans actresses. | e3 |
+| 🌳 Tree ladders | Education and training | fast (each field costs 0.75 steps) | Arts school and college: dance training opened a way into New York. | e2 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Her mother, twin brother and community held her up after rejection. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-16 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+20 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Chosen family
 

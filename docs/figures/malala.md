@@ -21,15 +21,15 @@ The legend is the same for every figure: each route kind is one area of life. Fo
 | Route | Area of life | Effect | Why | Event |
 | --- | --- | --- | --- | --- |
 | 🌳 Tree ladders | Education and training | blocked (this route cannot be taken) | School: the Taliban closed the way to school for girls in Swat. | e1 |
-| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 2 steps) | Safety: she was shot for speaking up about education. | e3 |
-| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs half a step) | Family and teachers: her father's school and her classmates stood with her. | e4 |
-| 🎪 Busy market | Work, money, media and public life | fast (each field costs half a step) | Platform: the BBC diary, the UN and the Nobel Prize gave her a worldwide audience. | e5 |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 1.5 steps) | Safety: she was shot for speaking up about education. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Family and teachers: her father's school and her classmates stood with her. | e4 |
+| 🎪 Busy market | Work, money, media and public life | fast (each field costs 0.75 steps) | Platform: the BBC diary, the UN and the Nobel Prize gave her a worldwide audience. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
 ## Game balance (not part of the story)
 
-10 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+17 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Stay in school
 
