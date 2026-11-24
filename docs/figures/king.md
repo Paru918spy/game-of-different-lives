@@ -4,17 +4,31 @@
 
 You grow up in a close, church-centred family in segregated Atlanta, and you learn to speak to a crowd. Your tools are words, organising and a movement of thousands; your opponents are laws, threats and an FBI that watches you.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1929 to 1944): Segregation laws shaped his childhood in Atlanta; on a bus ride at 15 he was made to stand for about 90 miles. *Source: King Institute, Stanford (kinginstitute.stanford.edu)*
+- **e2** (1956 to 1968): His house was bombed in 1956, he was stabbed in 1958, jailed in Birmingham in 1963 and watched by the FBI. *Source: King Institute, Stanford (kinginstitute.stanford.edu)*
+- **e3** (1940s to 1950s): His family and the Ebenezer Baptist Church were a strong base for him. *Source: King Institute, Stanford (kinginstitute.stanford.edu)*
+- **e4** (1944 to 1955): He entered Morehouse College at 15 and earned a doctorate at Boston University in 1955. *Source: Nobel Prize: Martin Luther King Jr. biography*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Martin, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Martin, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🎪 Busy market | fast (each field costs half a step) | Mass meetings and packed churches: you speak to crowds and the crowd carries you forward. |
-| 🌳 Quiet lane | fast (each field costs half a step) | Reading, sermons and writing, such as the Letter from Birmingham Jail, are where your ideas take shape. |
-| 🕳 Dark tunnel | slow (each field costs 2 steps) | Hidden surveillance and secret rules: you never know who is listening, and every step costs more care. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Law: segregation laws decided where he could sit, eat and learn. | e1 |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 1.5 steps) | Safety: a bomb at home, a stabbing, jail and FBI surveillance. | e2 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Church and family: a community that carried the movement. | e3 |
+| 🌳 Tree ladders | Education and training | fast (each field costs 0.75 steps) | Education: Morehouse at 15 and a doctorate opened a path for his voice. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+26 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Staying power
 

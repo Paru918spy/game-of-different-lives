@@ -4,17 +4,34 @@
 
 Music is your language, and you hear it more and more from the inside. You live in Vienna among patrons, publishers and friends, in a world built for listeners, and you have to rework how you compose, talk and earn a living.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1802): In the Heiligenstadt Testament he wrote that his hearing had been failing for years and that it had pushed him to withdraw from people. *Source: Beethoven-Haus Bonn (beethoven.de)*
+- **e2** (from about 1818): He used conversation books: visitors wrote their side of a talk, he answered aloud. *Source: Beethoven-Haus Bonn (beethoven.de)*
+- **e3** (1814): His last public appearance as a pianist in a new work was in 1814; after that his hearing no longer let him perform on stage. *Source: Jan Swafford, Beethoven: Anguish and Triumph*
+- **e4** (1815 to 1820): After his brother died he fought in the Vienna courts for guardianship of his nephew Karl, a case that cost him years and money. *Source: Jan Swafford, Beethoven: Anguish and Triumph*
+- **e5** (1809): Archduke Rudolph and two princes promised him a yearly income so he would stay in Vienna and keep composing. *Source: Jan Swafford, Beethoven: Anguish and Triumph*
+- **e6** (1824 to 1826): He kept sketchbooks and heard music in his head; the late quartets and the Ninth were written deaf. *Source: Beethoven-Haus Bonn (beethoven.de)*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Ludwig, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Ludwig, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🌳 Quiet lane | fast (each field costs half a step) | Alone at the desk with the score you hear in your head: composing is where your skill is strongest. |
-| 🌉 Stone bridge | fast (each field costs half a step) | Patrons, publishers and friends such as Lichnowsky carry you across gaps that would stop you alone. |
-| 🪢 Rope bridge | slow (each field costs 2 steps) | Money, health and a court case over Karl make the ground unsteady, and every step needs caution. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Communication: from about 1818 every talk goes through paper and the conversation books. | e2 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Stage and public life: after 1814 deafness ended his career as a performing pianist. | e3 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Courts: the guardianship fight over his nephew took years of hearings. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Patrons: Archduke Rudolph, Lobkowitz and Kinsky guaranteed his income in 1809. | e5 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs 0.75 steps) | Inner ear: he sketched at home and composed the late works from imagination. | e6 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+21 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: The inner ear
 

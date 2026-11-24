@@ -4,26 +4,31 @@
  "zones": {
   "stairs": {
    "fx": "block",
-   "why": "Steep steps and no lift: a wheelchair cannot take this stretch at all."
+   "ev": "e2",
+   "why": "Steps and transport: buses, buildings and planes were built without wheelchair access."
   },
   "ladder": {
-   "fx": "block",
-   "why": "A tree-house ladder is not usable from a wheelchair. The building, not Judy, left her out."
+   "fx": "slow",
+   "ev": "e1",
+   "why": "School: she was refused entry as 'a fire hazard' and taught at home for years."
   },
   "office": {
-   "fx": "fast",
-   "why": "Judy learned the rules and regulations better than the officials, and used them to win."
+   "fx": "slow",
+   "ev": "e3",
+   "why": "Licences and rules: New York refused her teaching licence until she sued."
   },
-  "market": {
+  "bridge": {
    "fx": "fast",
-   "why": "Among organised crowds of allies, as at the 1977 sit-in, Judy found support and momentum."
+   "ev": "e5",
+   "why": "Allies: other disabled activists, even the Black Panthers, stood with her in 1977."
   }
  },
  "advantage": {
   "type": "bestof2",
   "uses": 2,
   "title": "Second push",
-  "text": "Judy never won with one attempt. She tried again in court, in protest and in Washington until the rules changed. Roll two dice and take the higher one."
+  "text": "Judy kept going: she sued over her teaching licence in 1970 and led the 1977 sit-in. Roll two dice and take the higher one.",
+  "ev": "e5"
  },
  "life": [
   {
@@ -117,9 +122,54 @@
   "js/characters/group2.js (heumann)",
   "Judith Heumann with Kristen Joiner, Being Heumann (2020)",
   "Crip Camp (2020)",
-  "docs/characters.md"
+  "docs/characters.md",
+  "Judith Heumann (born Dec 1947): school refusal at about age five, no school until nine (womenshistory.org, Britannica; checked)"
  ],
  "flags": [
   "Crip Camp is about Camp Jened; Judy appears in it. Exact count of 'about 150' occupants and the first wheelchair-using NYC teacher claim are from the single-player data and widely reported; a human may want to confirm."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "about 1952",
+   "ev": "Her Brooklyn school principal refused to let her in because a wheelchair was 'a fire hazard'; she had home lessons for years.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "1950s to 1970s",
+   "ev": "Steps, buses without lifts and inaccessible buildings and planes limited where she could go, and strangers often had to carry her.",
+   "src": 1
+  },
+  {
+   "id": "e3",
+   "y": "1970",
+   "ev": "New York's Board of Education refused her a teaching licence; she sued and became the first wheelchair user to teach there.",
+   "src": 1
+  },
+  {
+   "id": "e4",
+   "y": "1960s",
+   "ev": "At Camp Jened in the Catskills she met other disabled teenagers and found a community.",
+   "src": 2
+  },
+  {
+   "id": "e5",
+   "y": "1977",
+   "ev": "She led the sit-in in San Francisco (about 25 days) that forced the government to sign the Section 504 rules; Black Panthers brought food.",
+   "src": 1
+  }
+ ],
+ "balance": {
+  "comp": 24
+ },
+ "look": {
+  "skin": "#f0cfa8",
+  "hair": "#4a3322",
+  "hairStyle": "long",
+  "top": "#3f8f5a",
+  "bottom": "#33384a",
+  "outfit": "wheelchair",
+  "prop": "glasses"
+ }
 }

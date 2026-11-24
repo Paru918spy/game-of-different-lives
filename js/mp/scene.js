@@ -324,6 +324,82 @@
       const mk = new THREE.Mesh(new THREE.ConeGeometry(2.2, 4, 4), new THREE.MeshStandardMaterial({ color: 0xffd23f, emissive: 0xffa800, emissiveIntensity: .6 })); mk.rotation.x = Math.PI; mk.position.y = 1 + 1.4 * 12 + 9; mk.visible = false; body.add(mk);
       g.add(body); g.userData = { body, marker: mk, baseY: 0 }; return g;
     }
+    /* ---------- seated figure that looks like the drawn person (data: profile.look) ---------- */
+    function avatarFigure(hex, look) {
+      const g = new THREE.Group(), wood = M(0x8b5a2b), mt = (c, o) => new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: .6 }, o || {}));
+      const skin = mt(look.skin), hair = mt(look.hair), top = mt(look.top), bot = mt(look.bottom), cloth = look.outfit, hs = look.outfit === "football" ? "none" : look.hairStyle;
+      const add = (geo, m, x, y, z, parent) => { const o = new THREE.Mesh(geo, m); o.position.set(x, y, z); (parent || body).add(o); return o; };
+      const chair = new THREE.Group(); chair.add(new THREE.Mesh(new THREE.BoxGeometry(17, 1.6, 17), mt(hex, { roughness: .4 })));
+      const bk = new THREE.Mesh(new THREE.BoxGeometry(17, 15, 1.4), mt(hex, { roughness: .4 })); bk.position.set(0, 8, -8.2); chair.add(bk);
+      [[-7, -7], [7, -7], [-7, 7], [7, 7]].forEach(l => { const c = new THREE.Mesh(new THREE.CylinderGeometry(.9, .9, 19, 8), wood); c.position.set(l[0], -9.8, l[1]); chair.add(c); });
+      g.add(chair);
+      const body = new THREE.Group(); body.position.y = .8;
+      /* torso, neck, head */
+      const torso = add(new THREE.CylinderGeometry(4.6, 5.2, 11, 18), top, 0, 5.8, 0); torso.scale.z = .72;
+      add(new THREE.CylinderGeometry(1.5, 1.7, 2, 12), skin, 0, 12, 0.3);
+      const HY = 16.2; add(new THREE.SphereGeometry(4.4, 24, 18), skin, 0, HY, .4);
+      [-1, 1].forEach(s => { add(new THREE.SphereGeometry(.78, 10, 8), mt(0xffffff), s * 1.7, HY + .6, 4.35); add(new THREE.SphereGeometry(.42, 8, 6), mt(0x1b1b1b), s * 1.7, HY + .6, 4.95); add(new THREE.SphereGeometry(.9, 8, 6), skin, s * 4.35, HY, .2); });
+      add(new THREE.SphereGeometry(.55, 8, 6), skin, 0, HY - .5, 4.75);
+      const sm = new THREE.Mesh(new THREE.TorusGeometry(1.3, .2, 6, 12, Math.PI), mt(0x6b2a2a)); sm.position.set(0, HY - 1.7, 4.45); sm.rotation.z = Math.PI; body.add(sm);
+      /* legs on the chair (shins hang down) */
+      const shin = cloth === "runner" ? skin : bot;
+      [-1, 1].forEach(s => { const th = beamLocal(body, [s * 2.7, 1.9, 0], [s * 2.7, 1.9, 9.5], 3.4, bot); const sh = beamLocal(body, [s * 2.7, 1.9, 9.5], [s * 2.7, -6.5, 10], 3, shin); add(new THREE.BoxGeometry(3.4, 1.6, 5), mt(cloth === "football" ? 0xf2f2f2 : 0x2a2420), s * 2.7, -7.2, 11.4); });
+      /* skirt for dresses and coats */
+      if (cloth === "dress" || cloth === "coat") add(new THREE.CylinderGeometry(4.6, 8.4, 9, 20, 1, true), cloth === "dress" ? top : bot, 0, 2.6, 2.8).scale.set(1, 1, 1.35);
+      /* arms */
+      [-1, 1].forEach(s => { beamLocal(body, [s * 5.8, 10.5, 0], [s * 5.4, 6, 8], 2.8, top); beamLocal(body, [s * 5.4, 6, 8], [s * 3.6, 8.6, 15], 2.4, top); add(new THREE.SphereGeometry(1.7, 10, 8), skin, s * 3.6, 8.6, 15.4); });
+      /* hair */
+      const cap = (r, y, z, phi, th) => { const o = add(new THREE.SphereGeometry(r, 22, 14, 0, Math.PI * 2, 0, th || 1.55), hair, 0, y, z); return o; };
+      if (hs === "short") cap(4.65, HY + .2, -.2);
+      else if (hs === "long") { cap(4.7, HY + .3, -.2); add(new THREE.BoxGeometry(9.4, 9, 2.4), hair, 0, HY - 3.6, -3.4); }
+      else if (hs === "ponytail") { cap(4.65, HY + .2, -.2); beamLocal(body, [0, HY + 1, -4.4], [0, HY - 5, -6.4], 2.2, hair); }
+      else if (hs === "bun") { cap(4.65, HY + .2, -.2); add(new THREE.SphereGeometry(2.2, 12, 10), hair, 0, HY + 4.8, -2.4); }
+      else if (hs === "updo") { cap(4.7, HY + .3, -.2); add(new THREE.SphereGeometry(3, 14, 10), hair, 0, HY + 4.4, -1.6); }
+      else if (hs === "wild") { cap(4.9, HY + .3, -.3); for (let i = 0; i < 9; i++) { const a = i / 9 * Math.PI * 2; add(new THREE.SphereGeometry(1.9, 10, 8), hair, Math.cos(a) * 4.4, HY + 2.5 + (i % 2) * 1.5, Math.sin(a) * 3.8 - .6); } }
+      else if (hs === "afro") add(new THREE.SphereGeometry(6.1, 20, 16), hair, 0, HY + 1.8, -1.2);
+      else if (hs === "braids") { cap(4.65, HY + .2, -.2); [-1, 1].forEach(s => [0, 1, 2].forEach(i => beamLocal(body, [s * (3.9 - i * .3), HY - 1 - i * .2, -1.6 - i * 1.2], [s * (4.6 - i * .3), HY - 8, -2.4 - i * 1.2], 1.3, hair))); }
+      else if (hs === "flowers") { cap(4.65, HY + .2, -.2); ["#ff4f9a", "#ffd23f", "#ff7a3d", "#7be0a0", "#ff4f9a", "#b57bff"].forEach((c, i) => { const a = i / 6 * Math.PI * 2; add(new THREE.SphereGeometry(1.2, 8, 6), mt(c), Math.cos(a) * 4, HY + 3.4, Math.sin(a) * 3.6 - .2); }); }
+      else if (hs === "headscarf") { const o = add(new THREE.SphereGeometry(5, 22, 16, 0, Math.PI * 2, 0, 1.9), mt(look.scarf || look.top), 0, HY + .1, -.5); add(new THREE.CylinderGeometry(3.2, 5.2, 5, 16, 1, true), mt(look.scarf || look.top), 0, HY - 3.6, -1.8).scale.z = .8; }
+      else if (hs === "turban") { const tc = mt(look.hat || "#e07a1f"); add(new THREE.SphereGeometry(5.2, 22, 16, 0, Math.PI * 2, 0, 1.75), tc, 0, HY + .9, -.3); const t = add(new THREE.TorusGeometry(4.5, 1.5, 8, 22), tc, 0, HY + 1.8, -.3); t.rotation.x = Math.PI / 2; t.scale.set(1, 1, 1.15); }
+      /* outfits and accessories */
+      if (cloth === "football") {
+        const gold = mt(0xd4af37, { roughness: .35 }), red = mt(0xc8102e, { roughness: .4 });
+        add(new THREE.SphereGeometry(5.2, 22, 16, 0, Math.PI * 2, 0, 1.85), gold, 0, HY + .5, -.2);
+        const st = add(new THREE.BoxGeometry(1.1, .5, 10), red, 0, HY + 5.6, -.2); st.rotation.x = 0;
+        const fm = add(new THREE.TorusGeometry(3.4, .28, 6, 16, Math.PI), mt(0xdddddd), 0, HY - 1.6, 4.7); fm.rotation.z = Math.PI; fm.rotation.x = .25; add(new THREE.BoxGeometry(5.6, .3, .3), mt(0xdddddd), 0, HY - .2, 5.3);
+        [-1, 1].forEach(s => add(new THREE.SphereGeometry(3, 12, 10), top, s * 5.6, 10.8, 0).scale.set(1, .8, 1));
+        const c = document.createElement("canvas"); c.width = c.height = 128; const x = c.getContext("2d"); x.fillStyle = "rgba(0,0,0,0)"; x.fillRect(0, 0, 128, 128); x.fillStyle = "#ffffff"; x.font = "900 96px Arial"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(look.number || "7", 64, 70);
+        const tx = new THREE.CanvasTexture(c); const nb = new THREE.Mesh(new THREE.PlaneGeometry(5, 5), new THREE.MeshBasicMaterial({ map: tx, transparent: true })); nb.position.set(0, 7, 3.9); body.add(nb);
+      }
+      if (cloth === "western") {
+        const br = mt(0x6b4a2a); add(new THREE.CylinderGeometry(8, 8.4, .8, 24), br, 0, HY + 3.4, 0); add(new THREE.CylinderGeometry(4.4, 5, 4.4, 20), br, 0, HY + 5.8, 0);
+        add(new THREE.CylinderGeometry(4.5, 4.5, .9, 20), mt(0x2a1a0e), 0, HY + 4.4, 0);
+      }
+      if (cloth === "suit" || cloth === "shirt-tie") {
+        add(new THREE.BoxGeometry(2.6, 10, .4), mt(0xf5f5f5), 0, 6.2, 3.45); add(new THREE.BoxGeometry(1.1, 8, .5), mt(cloth === "suit" ? 0x8a1f2b : 0x23408e), 0, 5.6, 3.7);
+      }
+      if (cloth === "coat") add(new THREE.BoxGeometry(2.4, 2, .5), mt(0xf5f5f5), 0, 11, 3.4);
+      if (cloth === "labcoat") add(new THREE.BoxGeometry(2.4, 10.5, .4), mt(0x2c2c34), 0, 6, 3.5);
+      if (cloth === "hoodie") { const h = add(new THREE.TorusGeometry(3.7, 1.5, 8, 18), top, 0, 11.6, -.8); h.rotation.x = Math.PI / 2.4; }
+      if (cloth === "runner") { add(new THREE.BoxGeometry(7, 2, .4), mt(0xffffff), 0, 6, 3.5); add(new THREE.CylinderGeometry(4.7, 5.3, 2.4, 18), bot, 0, 1.2, 0).scale.z = .76; }
+      if (cloth === "wheelchair") { [-1, 1].forEach(s => { const w = new THREE.Mesh(new THREE.TorusGeometry(9.5, .9, 8, 32), mt(0x2a2a2a)); w.position.set(s * 10.4, 5.5, -.5); w.rotation.y = Math.PI / 2; g.add(w); const hr = new THREE.Mesh(new THREE.TorusGeometry(7.6, .35, 6, 28), mt(0xbfbfbf)); hr.position.set(s * 11.5, 5.5, -.5); hr.rotation.y = Math.PI / 2; g.add(hr); add(new THREE.BoxGeometry(1, 1, 18), mt(0x8a8f99), s * 8.6, 4.2, 0, g); add(new THREE.BoxGeometry(1, 11, 1), mt(0x8a8f99), s * 8.6, 10, -8.2, g); add(new THREE.SphereGeometry(1.6, 8, 6), mt(0x2a2a2a), s * 6.2, -4.6, 13, g); }); add(new THREE.BoxGeometry(17, .8, 1), mt(0x8a8f99), 0, 15.5, -8.4, g); }
+      if (look.prop === "glasses" || look.prop === "sunglasses") { const m = mt(look.prop === "sunglasses" ? 0x0a0a0a : 0x222222, { roughness: .3 }); [-1, 1].forEach(s => { const r = look.prop === "sunglasses" ? add(new THREE.CylinderGeometry(1.5, 1.5, .4, 14), m, s * 1.9, HY + .6, 4.9) : add(new THREE.TorusGeometry(1.4, .18, 6, 16), m, s * 1.9, HY + .6, 4.9); r.rotation.x = Math.PI / 2; if (look.prop !== "sunglasses") r.rotation.x = 0; }); add(new THREE.BoxGeometry(1.2, .22, .22), m, 0, HY + .7, 4.95); }
+      if (look.prop === "beard") add(new THREE.SphereGeometry(3.1, 14, 10), mt(look.hair), 0, HY - 2.7, 2.4).scale.set(1.15, 1.2, 1);
+      if (look.prop === "football") add(new THREE.SphereGeometry(3.2, 14, 10), mt(0x8b4a1c), 6.5, 10, 16.5).scale.set(1, .8, 1.35);
+      if (look.prop === "book" || look.prop === "score") add(new THREE.BoxGeometry(6, 1.2, 8), mt(look.prop === "score" ? 0xf4efe0 : 0x2c5ea8), -6.5, 8, 16.5);
+      if (look.prop === "flask") { add(new THREE.CylinderGeometry(2.4, 2.4, 3.4, 12), mt(0x4cc3b0, { transparent: true, opacity: .8 }), 6.5, 9.6, 16.5); add(new THREE.CylinderGeometry(.8, .8, 3, 8), mt(0x4cc3b0, { transparent: true, opacity: .8 }), 6.5, 12.6, 16.5); }
+      if (look.prop === "bag") add(new THREE.BoxGeometry(5.6, 4, 2.4), mt(0x5a3a22), 7, 8.8, 15.8);
+      if (look.prop === "flowers") { const fl = mt("#ff4f9a"); [-1, 1].forEach(s => add(new THREE.SphereGeometry(1.3, 8, 6), fl, s * 3.8, HY + 3.2, 1.2)); }
+      const mk = new THREE.Mesh(new THREE.ConeGeometry(2.2, 4, 4), new THREE.MeshStandardMaterial({ color: 0xffd23f, emissive: 0xffa800, emissiveIntensity: .6 })); mk.rotation.x = Math.PI; mk.position.y = HY + 13; mk.visible = false; body.add(mk);
+      /* player colour: a sash across the chest so the colour of the pawn is still clear */
+      const sash = add(new THREE.TorusGeometry(5.1, .6, 6, 24, Math.PI), mt(hex, { roughness: .35 }), 0, 8.6, 0); sash.rotation.z = Math.PI; sash.scale.set(1, .5, .8); sash.visible = cloth !== "football";
+      g.add(body); g.userData = { body, marker: mk, baseY: 0 }; return g;
+    }
+    function setFigure(pid, look) {
+      const s = S.seats[pid]; if (!s || !look) return; const vis = s.g.userData.marker.visible, hex = parseInt(s.color.slice(1), 16);
+      root.remove(s.g); const f = avatarFigure(hex, look); f.position.set(s.x, FLOOR + 21, s.z); f.rotation.y = s.face; f.userData.marker.visible = vis;
+      f.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } }); root.add(f); s.g = f;
+    }
     function beamLocal(parent, a, b, w, material) { const m = new THREE.Mesh(new THREE.CylinderGeometry(w / 2, w / 2, Math.hypot(b[0] - a[0], b[1] - a[1], b[2] - a[2]), 8), material); m.position.set((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2); m.rotation.x = Math.PI / 2; parent.add(m); return m; }
     function seatLabel(text, sub, color) {
       const c = document.createElement("canvas"); c.width = 640; c.height = 200; const g = c.getContext("2d");
@@ -432,6 +508,7 @@
       const cp = Math.cos(c.pitch), sp = Math.sin(c.pitch);
       camera.position.set(c.tx + Math.sin(c.yaw) * cp * c.dist, sp * c.dist, c.tz + Math.cos(c.yaw) * cp * c.dist);
       camera.lookAt(c.tx, 0.2, c.tz);
+      if (S.peekSeat != null && S.seats[S.peekSeat]) { const st = S.seats[S.peekSeat]; camera.position.set(st.x + Math.sin(st.face) * 62 + 10, FLOOR + 78, st.z + Math.cos(st.face) * 52); camera.lookAt(st.x, FLOOR + 33, st.z); }
       S.curShift = lerp(S.curShift || 0, S.shift || 0, k);
       const W = canvas.clientWidth || 1, H = canvas.clientHeight || 1;
       if (Math.abs(S.curShift) > .5) camera.setViewOffset(W, H, S.curShift, 0, W, H); else if (camera.view && camera.view.enabled) camera.clearViewOffset();
@@ -488,8 +565,9 @@
     function stop() { cancelAnimationFrame(raf); S.dead = true; }
 
     return {
-      build, setPlayers, setLabel, place, move, setActive, celebrate, pulse, showFork, clearFork, hoverFork, resize, start, stop,
+      build, setPlayers, setLabel, setFigure, place, move, setActive, celebrate, pulse, showFork, clearFork, hoverFork, resize, start, stop,
       mode: m => { setMode(m); }, get currentMode() { return S.mode; },
+      peek: pid => { S.peekSeat = pid == null ? null : pid; },
       focus: id => { const n = S.board.nodes[id]; S.cam.gtx = n.x; S.cam.gtz = n.z; },
       setSpeed: v => { S.speed = v; }, setShift: px => { S.shift = px; },
       snap: (n) => { for (let i = 0; i < (n || 1); i++) frame(0.05); }, state: S, renderer, camera

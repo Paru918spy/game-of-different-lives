@@ -2,28 +2,33 @@
  "id": "hawking",
  "intro": "You are Stephen, a physicist in Cambridge whose work takes place in your head and on a blackboard, and whose way to the lecture hall is full of stairs. People around you make a lot of your work possible, and some do not wait to hear you finish a sentence.",
  "zones": {
-  "ladder": {
-   "fx": "block",
-   "why": "A wheelchair user cannot climb a tree-house ladder. The way up was built for others."
-  },
-  "market": {
+  "stairs": {
    "fx": "slow",
-   "why": "Noisy crowds talk over a man who speaks through a synthesiser. Getting heard takes extra time."
+   "ev": "e2",
+   "why": "Steps and old buildings: in a wheelchair he often depended on help to get into buildings."
   },
-  "quiet": {
-   "fx": "fast",
-   "why": "Long, calm hours of thinking and equations were where Stephen worked best."
+  "tunnel": {
+   "fx": "slow",
+   "ev": "e3",
+   "why": "Voice: after 1985 every sentence had to be spelled out, so every talk takes much longer."
   },
   "bridge": {
    "fx": "fast",
-   "why": "Colleagues, students, nurses and family carried the work forward, like a bridge."
+   "ev": "e4",
+   "why": "Carers, students and colleagues made his daily life and research possible."
+  },
+  "quiet": {
+   "fx": "fast",
+   "ev": "e5",
+   "why": "Thinking in his head: he trained himself to see equations without paper."
   }
  },
  "advantage": {
   "type": "hint",
   "uses": 2,
   "title": "Right question",
-  "text": "Stephen's strength was asking the right question and narrowing a huge problem down. Remove one wrong answer before you choose."
+  "text": "Stephen's strength was asking the right question and narrowing a huge problem down. Remove one wrong answer before you choose.",
+  "ev": "e5"
  },
  "life": [
   {
@@ -121,5 +126,49 @@
  "flags": [
   "Paralympics 2012 speech wording is paraphrased; docs/characters.md says to verify the exact quote.",
   "Station 'Spoken over' is a general experience, not a dated event; marked as such in the text."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1963 to 1964",
+   "ev": "At 21 he was diagnosed with motor neurone disease (ALS) and told he might have about two years.",
+   "src": 2
+  },
+  {
+   "id": "e2",
+   "y": "late 1960s to 1970s",
+   "ev": "He moved from sticks to a wheelchair; many Cambridge buildings of the time were not step-free, so he often depended on help to get in.",
+   "src": 2
+  },
+  {
+   "id": "e3",
+   "y": "1985",
+   "ev": "After pneumonia and a tracheotomy he lost his voice; he first used a spelling card, later a computer with a synthesiser.",
+   "src": 2
+  },
+  {
+   "id": "e4",
+   "y": "1960s to 2018",
+   "ev": "His wife, nurses, students and colleagues made his daily life and work possible.",
+   "src": 2
+  },
+  {
+   "id": "e5",
+   "y": "1970s",
+   "ev": "As writing equations became impossible, he trained himself to hold geometry and equations in his head.",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 23
+ },
+ "look": {
+  "skin": "#f0cfa8",
+  "hair": "#5a4630",
+  "hairStyle": "short",
+  "top": "#6f7b88",
+  "bottom": "#2f3440",
+  "outfit": "wheelchair",
+  "prop": "glasses"
+ }
 }

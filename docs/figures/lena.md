@@ -4,18 +4,34 @@
 
 You play a young woman who uses a wheelchair and wants to be an architect in a small German town. Steps, cobblestones and forms stand in her way, and her eye for space and design is a real skill. Playing her means seeing how much of the world is built for one kind of body.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (2009 and today): Germany ratified the UN disability rights convention in 2009, yet many buildings and stations are still not step-free. *Source: UN Convention on the Rights of Persons with Disabilities*
+- **e2** (today): Many pupils with disabilities in Germany still attend special schools instead of mainstream classes (inclusion studies). *Source: Aktion Mensch: inclusion studies*
+- **e3** (today): Applications for support and for university exam adjustments take many forms and long waits. *Source: Aktion Mensch: inclusion studies*
+- **e4** (today): Disabled applicants are invited to fewer interviews than others with the same skills (German inclusion studies). *Source: Aktion Mensch: inclusion studies*
+- **e5** (today): Standard DIN 18040 sets rules for barrier-free building; architects who know it design accessible places. *Source: DIN 18040: German standard for accessible construction*
+- **e6** (typical case): Friends, one supportive teacher and an inclusive employer change what disabled people can do. *Source: Aktion Mensch: inclusion studies*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Lena, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Lena, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🪜 Stairway | blocked (this route cannot be taken) | No lift, no ramp: a staircase is a wall. She cannot take this shortcut and must find another way. |
-| 🪢 Rope bridge | slow (each field costs 2 steps) | Cobbles and uneven ground jolt a wheelchair. Every metre costs more effort and time. |
-| ↗ Long ramp | fast (each field costs half a step) | Lena knows every step-free route in town and uses it without a detour. |
-| 🌳 Quiet lane | fast (each field costs half a step) | Drawing and designing are where she shines. Her best ideas come when she can focus on a plan. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | blocked (this route cannot be taken) | Steps: many buildings and stations are still closed to wheelchair users. | e1 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | School: many disabled pupils are steered to special schools. | e2 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Work: disabled applicants are invited to fewer interviews. | e4 |
+| ↗ Long ramp | Aids and accessible design | fast (each field costs 0.75 steps) | Accessible design: the ramp route is the one built for you, and you know how it works. | e5 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Allies: friends, a teacher and an inclusive employer. | e6 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+21 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Plan B ready
 
@@ -108,3 +124,4 @@ Lena helps plan a market square with level paths, then opens her own studio for 
 - Fictional character: js/characters/group4.js (Lena) and docs/characters.md
 - UN Convention on the Rights of Persons with Disabilities
 - Aktion Mensch: inclusion studies
+- DIN 18040: German standard for accessible construction

@@ -4,18 +4,32 @@
 
 You are Stephen, a physicist in Cambridge whose work takes place in your head and on a blackboard, and whose way to the lecture hall is full of stairs. People around you make a lot of your work possible, and some do not wait to hear you finish a sentence.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1963 to 1964): At 21 he was diagnosed with motor neurone disease (ALS) and told he might have about two years. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
+- **e2** (late 1960s to 1970s): He moved from sticks to a wheelchair; many Cambridge buildings of the time were not step-free, so he often depended on help to get in. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
+- **e3** (1985): After pneumonia and a tracheotomy he lost his voice; he first used a spelling card, later a computer with a synthesiser. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
+- **e4** (1960s to 2018): His wife, nurses, students and colleagues made his daily life and work possible. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
+- **e5** (1970s): As writing equations became impossible, he trained himself to hold geometry and equations in his head. *Source: Stephen Hawking, A Brief History of Time (1988) and My Brief History (2013)*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Stephen, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Stephen, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🌳 Tree ladders | blocked (this route cannot be taken) | A wheelchair user cannot climb a tree-house ladder. The way up was built for others. |
-| 🎪 Busy market | slow (each field costs 2 steps) | Noisy crowds talk over a man who speaks through a synthesiser. Getting heard takes extra time. |
-| 🌳 Quiet lane | fast (each field costs half a step) | Long, calm hours of thinking and equations were where Stephen worked best. |
-| 🌉 Stone bridge | fast (each field costs half a step) | Colleagues, students, nurses and family carried the work forward, like a bridge. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🪜 Stairway | Physical access: buildings, transport, mobility | slow (each field costs 1.5 steps) | Steps and old buildings: in a wheelchair he often depended on help to get into buildings. | e2 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Voice: after 1985 every sentence had to be spelled out, so every talk takes much longer. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Carers, students and colleagues made his daily life and research possible. | e4 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs 0.75 steps) | Thinking in his head: he trained himself to see equations without paper. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+23 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Right question
 

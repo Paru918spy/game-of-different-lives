@@ -2,28 +2,38 @@
  "id": "wonder",
  "intro": "You are Stevland Morris from Detroit, blind since birth, with a head full of melodies. School, travel and contracts all assume someone else knows best, and you spend years winning the right to decide for yourself.",
  "zones": {
-  "tunnel": {
-   "fx": "fast",
-   "why": "No light needed: a dark passage is just another place to listen and keep going."
-  },
-  "bridge": {
-   "fx": "fast",
-   "why": "His mother, Motown colleagues and friends carried him over each gap: a mentor, a tutor, a campaign."
+  "ladder": {
+   "fx": "slow",
+   "ev": "e1",
+   "why": "School: blind children of his time were taught in separate schools for the blind."
   },
   "office": {
    "fx": "slow",
-   "why": "Contracts, trusts and signatures: others held the pen until he turned 21 and renegotiated."
+   "ev": "e2",
+   "why": "Contracts: until 21 others controlled his contract and money."
   },
   "market": {
    "fx": "slow",
-   "why": "Loud crowds and no guide make it hard to hear and find a way; access is a matter of design."
+   "ev": "e2",
+   "why": "Business: his earnings and his songs were not his to control."
+  },
+  "bridge": {
+   "fx": "fast",
+   "ev": "e3",
+   "why": "Support: his family, Clarence Paul and Motown backed him."
+  },
+  "quiet": {
+   "fx": "fast",
+   "ev": "e4",
+   "why": "Studio: he played many instruments himself on his classic albums."
   }
  },
  "advantage": {
   "type": "skip",
   "uses": 3,
-  "title": "Perfect pitch for facts",
-  "text": "Stevie learned songs and arrangements by ear and remembers them. A question about something you know by heart counts as answered right."
+  "title": "Learning by ear",
+  "text": "Stevie learned songs and arrangements by ear and played many instruments himself. On a question you know by heart, count it as answered right.",
+  "ev": "e4"
  },
  "life": [
   {
@@ -124,5 +134,43 @@
  "flags": [
   "Check that he campaigned for the Marrakesh Treaty (adopted 2013); the single-player data says he later supported it.",
   "The market zone is an access argument (noise and no guide); a human may want to confirm that framing."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1950s",
+   "ev": "Born premature and blind, he went to the Michigan School for the Blind, one of the separate schools that blind children were sent to at the time.",
+   "src": 2
+  },
+  {
+   "id": "e2",
+   "y": "1961 to 1971",
+   "ev": "Signed to Motown at 11; his contract held his earnings in trust until 21, and at 21 he renegotiated and gained creative control.",
+   "src": 2
+  },
+  {
+   "id": "e3",
+   "y": "1960s",
+   "ev": "Motown's Berry Gordy, mentor Clarence Paul and his family supported his career.",
+   "src": 2
+  },
+  {
+   "id": "e4",
+   "y": "1972 to 1976",
+   "ev": "He recorded a run of classic albums, playing many instruments himself.",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 18
+ },
+ "look": {
+  "skin": "#7a5238",
+  "hair": "#1a1410",
+  "hairStyle": "braids",
+  "top": "#26262e",
+  "bottom": "#26262e",
+  "outfit": "suit",
+  "prop": "none"
+ }
 }

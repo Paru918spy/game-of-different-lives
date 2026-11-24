@@ -65,3 +65,14 @@ Each station: `k`, `title` (max 40 chars), `text` (max 300 chars), optional `mov
 * Respectful language: say what the person is/does, not what they "suffer from"; use the words the person or their community uses (e.g. "wheelchair user", "Deaf", "autistic", "non-binary", "trans woman"). No pity, no "despite", no "brave" for just living. Strengths are real skills, strategies, communities and tools, not superpowers.
 * Sensitive topics (violence, persecution, death): content-note level only, no graphic detail. Keep station texts understandable for 12 years and up.
 * No copying between figures: every figure has its own tone, zones and station order.
+
+## v3: documented events, fixed legend, game balance
+
+- `evidence[]` (4 to 14): `{ id, y, ev, src }`. Each entry is one documented event or one well-documented practice, and `src` is an index into `sources`.
+- `zones[z]` = `{ fx, ev, why }`. `ev` must name an evidence entry. **No documented event, no effect.** A figure has no `fast` route unless a documented support or strength justifies it.
+- Fixed zone legend (same for every figure): stairs = physical access, ladder = education, rope = safety, bridge = allies and support, ramp = aids and accessible design, market = work, money and public life, tunnel = isolation and communication, office = laws and authorities, sprint = sport and stamina, quiet = calm and creative work.
+- `advantage.ev` names the evidence that the strength is based on.
+- `balance.comp` (0 to 40) = game-balance steps, at most 3 per roll. They are tuned by `node tools/balance.js --tune` so that every figure has about the same chance to win (fair = 25 % with four players). Balance never touches stories, zones or life-station texts. The UI labels it "Game balance, not part of the story".
+- `look` = appearance of the figure at the table (skin, hair, hairStyle, top, bottom, outfit, prop), used by `js/mp/scene.js` to seat the figure the player drew.
+
+Legend note: `fast` means a documented strength or documented support in that area of life (for example allies, a mentor, a trained sport). `slow` and `block` mean a documented barrier, never a personal weakness.

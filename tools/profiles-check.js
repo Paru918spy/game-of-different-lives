@@ -12,9 +12,14 @@ function check(id, P) {
   const z = P.zones || {}, zk = Object.keys(z);
   if (zk.length < 2 || zk.length > 5) e("zones: 2 to 5 entries, found " + zk.length);
   zk.forEach(k => { if (!ZONES.includes(k)) e("unknown zone " + k); const f = z[k] && z[k].fx; if (!["slow", "fast", "block"].includes(f)) e("zone " + k + ": bad fx"); if (f === "block" && !BLOCKABLE.includes(k)) e("zone " + k + " cannot be blocked"); s(z[k] && z[k].why, 150, "zone " + k + " why"); });
-  if (!zk.some(k => z[k].fx === "fast")) e("zones: need at least one fast");
+  const EV = Array.isArray(P.evidence) ? P.evidence : [], evIds = new Set(EV.map(x => x.id));
+  if (EV.length < 4 || EV.length > 14) e("evidence: 4 to 14 documented events, found " + EV.length);
+  EV.forEach(x => { s(x.id, 12, "evidence id"); s(x.y, 24, "evidence " + x.id + " year"); s(x.ev, 260, "evidence " + x.id + " text"); if (!Number.isInteger(x.src) || !P.sources || x.src < 0 || x.src >= P.sources.length) e("evidence " + x.id + ": src must index sources"); });
+  zk.forEach(k => { if (!evIds.has(z[k].ev)) e("zone " + k + ": ev must name an evidence entry (no documented event, no effect)"); });
+  if (P.advantage && !evIds.has(P.advantage.ev)) e("advantage.ev must name an evidence entry");
+  if (!P.balance || !Number.isInteger(P.balance.comp) || P.balance.comp < 0 || P.balance.comp > 40) e("balance.comp must be an integer 0..40");
+  const lk = P.look || {}; ["skin", "hair", "top", "bottom"].forEach(k => { if (!/^#[0-9a-f]{6}$/i.test(lk[k] || "")) e("look." + k + " must be a #rrggbb colour"); }); if (!lk.hairStyle || !lk.outfit) e("look.hairStyle and look.outfit needed");
   if (!zk.some(k => z[k].fx === "slow" || z[k].fx === "block")) e("zones: need at least one slow or block");
-  if (zk.filter(k => NEUTRALISH.includes(k)).length > 2) e("zones: at most 2 of bridge/ramp/office/quiet");
   const a = P.advantage || {}; if (!TYPES.includes(a.type)) e("advantage.type"); if (![2, 3].includes(a.uses)) e("advantage.uses must be 2 or 3"); s(a.title, 40, "advantage.title"); s(a.text, 260, "advantage.text");
   const L = P.life || []; if (L.length !== 12) e("life needs exactly 12 stations, found " + L.length);
   let net = 0, cnt = { barrier: 0, boost: 0, info: 0, quiz: 0 };

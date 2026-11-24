@@ -4,18 +4,33 @@
 
 You are a lawyer and organiser in a country whose laws were written to keep you out. Your strength is in numbers, discipline and patience, in a movement that outlasts any one arrest.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1948 to 1952): Apartheid laws (pass laws, group areas, the 1950 Suppression of Communism Act) limited where he lived and spoke; he was banned in 1952. *Source: Nelson Mandela, Long Walk to Freedom (1994)*
+- **e2** (1960 to 1964): At Sharpeville in 1960 police killed 69 protesters; in 1964 he faced a possible death sentence at the Rivonia trial. *Source: Nelson Mandela Foundation (nelsonmandela.org)*
+- **e3** (1962 to 1990): After his arrest in 1962 he spent 27 years in prison, 18 on Robben Island, with very few visits and letters. *Source: Nelson Mandela, Long Walk to Freedom (1994)*
+- **e4** (1952): With Oliver Tambo he opened the first Black-run law practice in Johannesburg, and he built the ANC's network. *Source: Nelson Mandela, Long Walk to Freedom (1994)*
+- **e5** (1940s to 1989): He studied at Fort Hare and later for a law degree by correspondence, even in prison. *Source: Nelson Mandela, Long Walk to Freedom (1994)*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Nelson, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Nelson, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🏁 Race track | fast (each field costs half a step) | Daily training, from boxing in Johannesburg to exercise in a cell, built the stamina for a very long road. |
-| 🎪 Busy market | fast (each field costs half a step) | Rallies, township streets and a people's movement carry you: in the crowd you are one of thousands. |
-| 🏛 Town hall | slow (each field costs 2 steps) | Pass laws, banning orders and apartheid courts: every permit, form and hearing was built to stop you. |
-| 🕳 Dark tunnel | slow (each field costs 2 steps) | Underground in 1961 you move by night and in disguise, without knowing who is watching or what comes next. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Law: apartheid laws and banning orders decided where he could live, speak and work. | e1 |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 1.5 steps) | Safety: Sharpeville, arrest and a trial that could end in the death sentence. | e2 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Prison: 27 years apart, with very few visits and letters. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Movement: the ANC, Oliver Tambo and many allies. | e4 |
+| 🌳 Tree ladders | Education and training | fast (each field costs 0.75 steps) | Study: Fort Hare, then a law degree by correspondence. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+19 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Standing together
 
@@ -108,6 +123,7 @@ Mandela steps down in 1999 and dies on 5 December 2013, aged 95. Poverty and dee
 - js/characters/group3.js mandela tiles (Mvezo, Fort Hare, apartheid 1948, law firm 1952, Sharpeville, Rivonia, Robben Island, release 1990, Nobel 1993, presidency 1994)
 - Nelson Mandela, Long Walk to Freedom (1994)
 - Nelson Mandela Foundation (nelsonmandela.org)
+- UCT and South Africa tourism: Mandela and Tambo law firm, Chancellor House, 1952 (checked)
 
 ## To check
 

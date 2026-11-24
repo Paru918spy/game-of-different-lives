@@ -4,17 +4,34 @@
 
 You play a 58-year-old logistics manager who is suddenly job-hunting after 28 years. The hard part is not what he can do but what employers assume about his age. His experience and his network are real assets.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (2021): The WHO reports that about one in two people hold ageist attitudes, and that ageism harms people's chances at work. *Source: WHO Global report on ageism (2021)*
+- **e2** (2006): Germany's General Equal Treatment Act bans age discrimination in hiring, but applicants rarely can prove it. *Source: Federal Anti-Discrimination Agency, Germany*
+- **e3** (2010s): Online application portals, tests and video interviews are harder for older applicants (OECD, Working Better with Age). *Source: OECD: Working Better with Age*
+- **e4** (2010s): Workers over 55 take part in further training less often, and are less often offered it (OECD). *Source: OECD: Working Better with Age*
+- **e5** (2010s): Mixed-age teams share knowledge both ways; older workers often hold the networks and know-how. *Source: OECD: Working Better with Age*
+- **e6** (2010s): Long experience lets older professionals solve familiar problems faster (OECD). *Source: OECD: Working Better with Age*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Jonas, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Jonas, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🕳 Dark tunnel | slow (each field costs 2 steps) | Online filters and silent rejections: you never learn why your application vanished. |
-| 🌳 Quiet lane | fast (each field costs half a step) | 28 years of judgement: Jonas reads a situation and a plan calmly and quickly. |
-| 🌉 Stone bridge | fast (each field costs half a step) | Old colleagues and mentors carry him: Mira's tip and Aylin's help matter more than any form. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Work: ageist assumptions decide before your skills are read. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Law: age discrimination is banned, but very hard to prove. | e2 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Digital hiring: portals and tests are built for younger applicants. | e3 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | Further training: older workers are less often offered courses. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | A network across generations: tips and skill swaps with colleagues. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+27 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Seen it before
 

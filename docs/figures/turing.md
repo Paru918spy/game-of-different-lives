@@ -4,24 +4,40 @@
 
 You are Alan Turing, a mathematician with a stubborn habit of asking what can be computed at all. Content note: this life ends with persecution under an unjust law and an early death; the text stays factual and non-graphic.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1952): He was convicted of 'gross indecency' under a law that made gay sex a crime; he accepted hormone treatment instead of prison. *Source: UK Government apology (2009), royal pardon (2013), Policing and Crime Act 2017 (the Turing law)*
+- **e2** (1952): His security clearance was withdrawn, so he lost his work for the secret service. *Source: Bletchley Park Trust; Andrew Hodges, Alan Turing: The Enigma*
+- **e3** (1939 to 1945): His wartime codebreaking at Bletchley Park was covered by the Official Secrets Act, so he could not tell anyone. *Source: Bletchley Park Trust; Andrew Hodges, Alan Turing: The Enigma*
+- **e4** (1926): At Sherborne School the headmaster wanted classics and Latin; he preferred science. *Source: Bletchley Park Trust; Andrew Hodges, Alan Turing: The Enigma*
+- **e5** (1935 to 1936): He was elected fellow of King's College, Cambridge, and wrote 'On Computable Numbers' in 1936. *Source: Bletchley Park Trust; Andrew Hodges, Alan Turing: The Enigma*
+- **e6** (1947 to 1948): He ran a marathon in 2 hours 46 minutes and trained with Walton Athletic Club. *Source: Bletchley Park Trust; Andrew Hodges, Alan Turing: The Enigma*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Alan, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Alan, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🌳 Quiet lane | fast (each field costs half a step) | Long, undisturbed thinking is where his best ideas happen. |
-| 🕳 Dark tunnel | fast (each field costs half a step) | Cracking codes means working in the dark, searching for patterns others cannot see. |
-| 🏁 Race track | fast (each field costs half a step) | He is a serious long-distance runner, fast enough to be considered for the 1948 Olympics. |
-| 🏛 Town hall | slow (each field costs 2 steps) | Courts, secrecy rules and security clearance: officials decide what he may work on. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Law: a 1952 conviction for being gay ended his security clearance and his career. | e1 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Secrecy: the Official Secrets Act forced him to stay silent about his work. | e3 |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | School: Sherborne wanted Latin, not mathematics. | e4 |
+| 🌳 Quiet lane | Calm and focus: study, craft, creative work | fast (each field costs 0.75 steps) | Study and thought: Cambridge gave him time to work out what computing means. | e5 |
+| 🏁 Race track | Sport, stamina and competition | fast (each field costs 0.75 steps) | Running: he ran a marathon in 2h46 and trained with a club. | e6 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
-## Advantage: Logic first
+## Game balance (not part of the story)
+
+24 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+
+## Advantage: Cutting to the core
 
 Hint: remove one wrong answer before answering · 2 uses per game.
 
-Turing solved problems by cutting a puzzle down until only the right case remained. Twice, one wrong answer is removed before you choose.
+His 1936 paper reduced a huge question to a precise one. Twice, one wrong answer is removed before you choose.
 
 ## Life stations (in the order of the road)
 

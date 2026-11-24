@@ -4,22 +4,31 @@
  "zones": {
   "stairs": {
    "fx": "slow",
-   "why": "Steep steps, no handrail for a weak leg and a damaged spine: the long way round takes time."
+   "ev": "e3",
+   "why": "Steps: after the 1953 amputation she used crutches, a wheelchair and a prosthetic boot."
   },
   "sprint": {
    "fx": "slow",
-   "why": "A long run needs a body that is not in daily pain. Pacing costs steps."
+   "ev": "e2",
+   "why": "Stamina: after the 1925 accident, pain and many operations limited her body."
   },
   "quiet": {
    "fx": "fast",
-   "why": "Hours alone with an easel and a mirror: sustained focus is where Frida works at her best."
+   "ev": "e4",
+   "why": "Work in bed: the easel above her bed and the mirror made her art possible."
+  },
+  "bridge": {
+   "fx": "fast",
+   "ev": "e5",
+   "why": "Friends and students (Los Fridos) supported her work and her days."
   }
  },
  "advantage": {
   "type": "shield",
   "uses": 3,
   "title": "Back to the easel",
-  "text": "After setbacks Frida kept returning to work, from bed, in a corset, after surgery. A wrong answer does not send you back."
+  "text": "After setbacks Frida kept returning to work, from bed, in a corset, after surgery. A wrong answer does not send you back.",
+  "ev": "e4"
  },
  "life": [
   {
@@ -119,5 +128,49 @@
   "Louvre purchase: widely reported as the first work by a 20th-century Mexican artist bought by the museum (The Frame, 1939); the wording in the quiz says first by a Mexican artist, as in the single-player data.",
   "Casa Azul museum opening year given as 1958 from memory.",
   "Share of self-portraits (about a third) is approximate."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1913",
+   "ev": "At six she had polio; her right leg stayed thinner, and children teased her.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "1925",
+   "ev": "On 17 September 1925 a tram hit her bus; she broke her spine, pelvis and leg, and had many operations over her life.",
+   "src": 1
+  },
+  {
+   "id": "e3",
+   "y": "1953",
+   "ev": "Her right leg was amputated below the knee in 1953 after gangrene; afterwards she used crutches, a wheelchair and a prosthetic boot.",
+   "src": 1
+  },
+  {
+   "id": "e4",
+   "y": "1925 to 1926",
+   "ev": "During recovery her family built an easel above the bed with a mirror, and she started painting self-portraits.",
+   "src": 1
+  },
+  {
+   "id": "e5",
+   "y": "1930s to 1940s",
+   "ev": "Diego Rivera, friends and her students (Los Fridos) supported her; the Louvre bought a painting in 1939.",
+   "src": 1
+  }
+ ],
+ "balance": {
+  "comp": 15
+ },
+ "look": {
+  "skin": "#c89a73",
+  "hair": "#1a1410",
+  "hairStyle": "braids",
+  "top": "#c0392b",
+  "bottom": "#1f8a5b",
+  "outfit": "dress",
+  "prop": "flowers"
+ }
 }

@@ -4,18 +4,34 @@
 
 You are Temple, an autistic girl in 1950s America who thinks in pictures and is hurt by sudden noise. Teachers and doctors expect little. Animals, machines and a few people who listen show you where you can do real work.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1950): Without speech at three, she was seen by doctors who advised an institution; her mother refused and arranged speech therapy. *Source: Temple Grandin, Thinking in Pictures (1995), Emergence: Labeled Autistic (1986)*
+- **e2** (childhood and school): Sudden sounds such as school bells hurt her; she was teased at school and called names for how she spoke. *Source: Temple Grandin, Thinking in Pictures (1995), Emergence: Labeled Autistic (1986)*
+- **e3** (1960s): At Hampshire Country School her science teacher Mr Carlock turned her fixations into projects, which led to college. *Source: Temple Grandin, Thinking in Pictures (1995), Emergence: Labeled Autistic (1986)*
+- **e4** (1970s): She entered the male-dominated livestock industry and was kept out of some feedlot meetings and harassed by cowboys. *Source: Temple Grandin, Thinking in Pictures (1995), Emergence: Labeled Autistic (1986)*
+- **e5** (1960s): Her aunt's ranch in Arizona, her mother and later mentors gave her room to find her path. *Source: Temple Grandin, Thinking in Pictures (1995), Emergence: Labeled Autistic (1986)*
+- **e6** (1970s): She designed curved cattle chutes by picturing animals' view; her squeeze machine came from the same insight. *Source: Temple Grandin, Thinking in Pictures (1995), Emergence: Labeled Autistic (1986)*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Temple, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Temple, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🎪 Busy market | slow (each field costs 2 steps) | Loud crowds, sudden sounds and unspoken social rules make this street exhausting to cross. |
-| 🏛 Town hall | slow (each field costs 2 steps) | Forms and meetings run on unwritten rules. Temple asks for things in writing and drawn out. |
-| 🌳 Tree ladders | fast (each field costs half a step) | Climbing fences and walkways is how Temple inspects cattle yards from an animal's viewpoint. |
-| 🕳 Dark tunnel | fast (each field costs half a step) | Walking narrow chutes herself shows her how animals see and where they balk. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Medical authority: doctors advised an institution, and others decided about her. | e1 |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Noise and teasing: sudden sounds hurt, and many classmates stayed away or mocked her. | e2 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Workplace: the cattle industry was a closed men's world for a woman who is also autistic. | e4 |
+| 🌳 Tree ladders | Education and training | fast (each field costs 0.75 steps) | A teacher who saw her talent: Mr Carlock channelled her fixations into school projects. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Mother, aunt and mentors gave her chances and patient time. | e5 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
+
+## Game balance (not part of the story)
+
+18 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
 
 ## Advantage: Picture it
 

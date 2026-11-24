@@ -2,24 +2,33 @@
  "id": "johnson",
  "intro": "You play a street activist in New York in the 1960s to 1990s with little money, little protection and a lot of friends. Offices and officials rarely help you. The night, the streets and the people there do. Content note: discrimination, poverty, violence and an unresolved death.",
  "zones": {
+  "rope": {
+   "fx": "slow",
+   "ev": "e2",
+   "why": "Safety: street harassment and police violence against trans women."
+  },
   "office": {
    "fx": "slow",
-   "why": "Police, landlords and clerks treated her as a problem, not a citizen. Forms and counters cost time."
+   "ev": "e2",
+   "why": "Police and courts: repeated arrests for how she dressed and lived."
   },
   "market": {
-   "fx": "fast",
-   "why": "In crowded Village streets she was known, greeted and fed by neighbours. The crowd is her ground."
+   "fx": "slow",
+   "ev": "e3",
+   "why": "Work: job doors closed to trans women, leaving survival work."
   },
-  "tunnel": {
+  "bridge": {
    "fx": "fast",
-   "why": "Nightlife, bars and back rooms were where queer people could gather. She knew the dark and who to trust in it."
+   "ev": "e4",
+   "why": "Chosen family: STAR gave shelter to homeless trans youth, and Marsha shared what she had."
   }
  },
  "advantage": {
   "type": "shield",
   "uses": 2,
   "title": "Family you choose",
-  "text": "Marsha's friends gave her a place to sleep and she gave the same to others. A wrong answer does not send you back."
+  "text": "Marsha's friends gave her a place to sleep and she gave the same to others. A wrong answer does not send you back.",
+  "ev": "e4"
  },
  "life": [
   {
@@ -119,5 +128,49 @@
   "Reopened case: police reclassified as undetermined/reopened around 2012; kept general (unresolved). Verify before adding detail.",
   "Marsha's pronouns and identity language: she used both she and he and described herself as a transvestite and gay; text uses she as in the single-player data and focuses on gender identity.",
   "Stonewall role and \"first brick\" claim disputed; text says so."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1963",
+   "ev": "Marsha moved to New York from New Jersey as a teenager with little money and slept in the streets and with friends.",
+   "src": 2
+  },
+  {
+   "id": "e2",
+   "y": "1960s to 1980s",
+   "ev": "Police arrested and harassed trans women and drag performers for how they dressed; Marsha was arrested many times.",
+   "src": 2
+  },
+  {
+   "id": "e3",
+   "y": "1960s to 1970s",
+   "ev": "Trans women faced almost total job discrimination; Marsha worked as a waitress and in survival sex work.",
+   "src": 2
+  },
+  {
+   "id": "e4",
+   "y": "1970",
+   "ev": "In 1970 she and Sylvia Rivera founded STAR and rented a house for homeless trans youth (from November 1970).",
+   "src": 2
+  },
+  {
+   "id": "e5",
+   "y": "1975",
+   "ev": "She performed with the Hot Peaches troupe and was photographed by Andy Warhol.",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 26
+ },
+ "look": {
+  "skin": "#6b4a33",
+  "hair": "#1a1410",
+  "hairStyle": "flowers",
+  "top": "#e0509a",
+  "bottom": "#7a4acf",
+  "outfit": "dress",
+  "prop": "none"
+ }
 }

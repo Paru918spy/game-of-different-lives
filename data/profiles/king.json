@@ -2,24 +2,33 @@
  "id": "king",
  "intro": "You grow up in a close, church-centred family in segregated Atlanta, and you learn to speak to a crowd. Your tools are words, organising and a movement of thousands; your opponents are laws, threats and an FBI that watches you.",
  "zones": {
-  "market": {
-   "fx": "fast",
-   "why": "Mass meetings and packed churches: you speak to crowds and the crowd carries you forward."
-  },
-  "quiet": {
-   "fx": "fast",
-   "why": "Reading, sermons and writing, such as the Letter from Birmingham Jail, are where your ideas take shape."
-  },
-  "tunnel": {
+  "office": {
    "fx": "slow",
-   "why": "Hidden surveillance and secret rules: you never know who is listening, and every step costs more care."
+   "ev": "e1",
+   "why": "Law: segregation laws decided where he could sit, eat and learn."
+  },
+  "rope": {
+   "fx": "slow",
+   "ev": "e2",
+   "why": "Safety: a bomb at home, a stabbing, jail and FBI surveillance."
+  },
+  "bridge": {
+   "fx": "fast",
+   "ev": "e3",
+   "why": "Church and family: a community that carried the movement."
+  },
+  "ladder": {
+   "fx": "fast",
+   "ev": "e4",
+   "why": "Education: Morehouse at 15 and a doctorate opened a path for his voice."
   }
  },
  "advantage": {
   "type": "shield",
   "uses": 3,
   "title": "Staying power",
-  "text": "The movement held after bombings, arrests and setbacks. A wrong step does not send you back: others pick up the work and you stay in place."
+  "text": "The movement held after bombings, arrests and setbacks. A wrong step does not send you back: others pick up the work and you stay in place.",
+  "ev": "e2"
  },
  "life": [
   {
@@ -118,5 +127,43 @@
  ],
  "flags": [
   "Ages and dates follow the single-player tiles; 90-mile bus ride and 'angriest night' wording from King's own recollection as cited there."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1929 to 1944",
+   "ev": "Segregation laws shaped his childhood in Atlanta; on a bus ride at 15 he was made to stand for about 90 miles.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "1956 to 1968",
+   "ev": "His house was bombed in 1956, he was stabbed in 1958, jailed in Birmingham in 1963 and watched by the FBI.",
+   "src": 1
+  },
+  {
+   "id": "e3",
+   "y": "1940s to 1950s",
+   "ev": "His family and the Ebenezer Baptist Church were a strong base for him.",
+   "src": 1
+  },
+  {
+   "id": "e4",
+   "y": "1944 to 1955",
+   "ev": "He entered Morehouse College at 15 and earned a doctorate at Boston University in 1955.",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 26
+ },
+ "look": {
+  "skin": "#6b4a33",
+  "hair": "#1a1410",
+  "hairStyle": "short",
+  "top": "#26262e",
+  "bottom": "#26262e",
+  "outfit": "suit",
+  "prop": "none"
+ }
 }

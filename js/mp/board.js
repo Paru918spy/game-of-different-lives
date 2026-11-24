@@ -7,18 +7,21 @@
 (function (root) {
   const MP = root.MP = root.MP || {};
 
+  /* Fixed legend: every route kind means the same area of life for EVERY figure. A figure is only slowed, sped up or
+     blocked on a route if that figure's documented life shows it (see data/profiles/<id>.json: evidence + zones[].ev). */
   const ZONES = {
-    stairs: { label: "Stairway", icon: "🪜", color: "#c9a66b", hint: "Steep steps over the hill: a short cut" },
-    ladder: { label: "Tree ladders", icon: "🌳", color: "#8b5a2b", hint: "Ladders up and over: the shortest cut" },
-    rope: { label: "Rope bridge", icon: "🪢", color: "#b8864b", hint: "A swaying rope bridge over the gorge" },
-    bridge: { label: "Stone bridge", icon: "🌉", color: "#9aa7b8", hint: "A solid bridge over the river" },
-    ramp: { label: "Long ramp", icon: "↗", color: "#7fb069", hint: "A long, gentle way round" },
-    market: { label: "Busy market", icon: "🎪", color: "#ef476f", hint: "Loud, crowded and full of people" },
-    tunnel: { label: "Dark tunnel", icon: "🕳", color: "#4b4f66", hint: "A tunnel through the hill, very dim" },
-    office: { label: "Town hall", icon: "🏛", color: "#6c7ae0", hint: "Counters, forms and gatekeepers" },
-    sprint: { label: "Race track", icon: "🏁", color: "#e76f51", hint: "A long straight track: stamina counts" },
-    quiet: { label: "Quiet lane", icon: "🌳", color: "#3aa17e", hint: "A calm lane with benches and shade" }
+    stairs: { label: "Stairway", icon: "🪜", color: "#c9a66b", hint: "Buildings and transport: can you get in?", domain: "Physical access: buildings, transport, mobility" },
+    ladder: { label: "Tree ladders", icon: "🌳", color: "#8b5a2b", hint: "Schools and training: the way up", domain: "Education and training" },
+    rope: { label: "Rope bridge", icon: "🪢", color: "#b8864b", hint: "A shaky way: threats and violence", domain: "Safety: threats, harassment, violence" },
+    bridge: { label: "Stone bridge", icon: "🌉", color: "#9aa7b8", hint: "Allies, family, community and mentors", domain: "Support: allies, family, community, mentors" },
+    ramp: { label: "Long ramp", icon: "↗", color: "#7fb069", hint: "Adapted ways: aids and accessible design", domain: "Aids and accessible design" },
+    market: { label: "Busy market", icon: "🎪", color: "#ef476f", hint: "Work, money and the public eye", domain: "Work, money, media and public life" },
+    tunnel: { label: "Dark tunnel", icon: "🕳", color: "#4b4f66", hint: "Isolation and communication barriers", domain: "Isolation, silence and communication barriers" },
+    office: { label: "Town hall", icon: "🏛", color: "#6c7ae0", hint: "Laws, papers and authorities", domain: "Laws, papers, courts and authorities" },
+    sprint: { label: "Race track", icon: "🏁", color: "#e76f51", hint: "Sport, stamina and competition", domain: "Sport, stamina and competition" },
+    quiet: { label: "Quiet lane", icon: "🌳", color: "#3aa17e", hint: "Calm and focus: study, craft, think", domain: "Calm and focus: study, craft, creative work" }
   };
+
 
   /* ---- layout ----------------------------------------------------------------------------------------------- */
   /* Junctions: [x, z]. "a" = fork (split), "b" = where the routes meet again. Every junction is a life station. */
@@ -143,8 +146,8 @@
     return { nodes, start: by.S, finish: by.F, chains, sections, junctions: by, life, width: 76, height: 48 };
   }
 
-  /* Cost of a node in "steps" for a figure: zone effects from its profile. fast = .5, slow = 2, normal = 1. */
-  const COST = { fast: .5, slow: 2 };
+  /* Cost of a node in "steps" for a figure: zone effects from its profile. fast = .75, slow = 1.5, normal = 1. */
+  const COST = { fast: .75, slow: 1.5 };
   function cost(node, zfx) { const f = node.zone && zfx && zfx[node.zone]; return f && f.fx && COST[f.fx] || 1; }
   const blocked = (zone, zfx) => !!(zone && zfx && zfx[zone] && zfx[zone].fx === "block");
 

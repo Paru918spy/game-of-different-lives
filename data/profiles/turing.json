@@ -2,28 +2,38 @@
  "id": "turing",
  "intro": "You are Alan Turing, a mathematician with a stubborn habit of asking what can be computed at all. Content note: this life ends with persecution under an unjust law and an early death; the text stays factual and non-graphic.",
  "zones": {
-  "quiet": {
-   "fx": "fast",
-   "why": "Long, undisturbed thinking is where his best ideas happen."
+  "office": {
+   "fx": "slow",
+   "ev": "e1",
+   "why": "Law: a 1952 conviction for being gay ended his security clearance and his career."
   },
   "tunnel": {
+   "fx": "slow",
+   "ev": "e3",
+   "why": "Secrecy: the Official Secrets Act forced him to stay silent about his work."
+  },
+  "ladder": {
+   "fx": "slow",
+   "ev": "e4",
+   "why": "School: Sherborne wanted Latin, not mathematics."
+  },
+  "quiet": {
    "fx": "fast",
-   "why": "Cracking codes means working in the dark, searching for patterns others cannot see."
+   "ev": "e5",
+   "why": "Study and thought: Cambridge gave him time to work out what computing means."
   },
   "sprint": {
    "fx": "fast",
-   "why": "He is a serious long-distance runner, fast enough to be considered for the 1948 Olympics."
-  },
-  "office": {
-   "fx": "slow",
-   "why": "Courts, secrecy rules and security clearance: officials decide what he may work on."
+   "ev": "e6",
+   "why": "Running: he ran a marathon in 2h46 and trained with a club."
   }
  },
  "advantage": {
   "type": "hint",
   "uses": 2,
-  "title": "Logic first",
-  "text": "Turing solved problems by cutting a puzzle down until only the right case remained. Twice, one wrong answer is removed before you choose."
+  "title": "Cutting to the core",
+  "text": "His 1936 paper reduced a huge question to a precise one. Twice, one wrong answer is removed before you choose.",
+  "ev": "e5"
  },
  "life": [
   {
@@ -123,5 +133,55 @@
   "Please check: Turing's marathon time and the 1948 Olympic trial claim (he ran about 2h46 in 1947 and was considered for the 1948 Olympic team before an injury).",
   "Please check: wording that he ran to meetings (documented by biographers) and the OBE year 1946.",
   "Cause of death is deliberately not described; the 1954 inquest verdict is not mentioned. Review whether this level of detail suits age 12."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "1952",
+   "ev": "He was convicted of 'gross indecency' under a law that made gay sex a crime; he accepted hormone treatment instead of prison.",
+   "src": 2
+  },
+  {
+   "id": "e2",
+   "y": "1952",
+   "ev": "His security clearance was withdrawn, so he lost his work for the secret service.",
+   "src": 1
+  },
+  {
+   "id": "e3",
+   "y": "1939 to 1945",
+   "ev": "His wartime codebreaking at Bletchley Park was covered by the Official Secrets Act, so he could not tell anyone.",
+   "src": 1
+  },
+  {
+   "id": "e4",
+   "y": "1926",
+   "ev": "At Sherborne School the headmaster wanted classics and Latin; he preferred science.",
+   "src": 1
+  },
+  {
+   "id": "e5",
+   "y": "1935 to 1936",
+   "ev": "He was elected fellow of King's College, Cambridge, and wrote 'On Computable Numbers' in 1936.",
+   "src": 1
+  },
+  {
+   "id": "e6",
+   "y": "1947 to 1948",
+   "ev": "He ran a marathon in 2 hours 46 minutes and trained with Walton Athletic Club.",
+   "src": 1
+  }
+ ],
+ "balance": {
+  "comp": 24
+ },
+ "look": {
+  "skin": "#f0d2b0",
+  "hair": "#2a2018",
+  "hairStyle": "short",
+  "top": "#555a66",
+  "bottom": "#3a3a44",
+  "outfit": "suit",
+  "prop": "none"
+ }
 }

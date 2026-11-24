@@ -3,27 +3,32 @@
  "intro": "You are Laverne Cox: a dancer first, then an actor, producer and advocate. Playing this life means moving between stages where you are celebrated and rooms where gatekeepers and strangers decide who you are allowed to be.",
  "zones": {
   "rope": {
-   "fx": "fast",
-   "why": "Years of dance training: balance and body control make the swaying bridge feel like a stage."
-  },
-  "bridge": {
-   "fx": "fast",
-   "why": "Her mother, friends and other trans artists carry her across, like the bridge itself."
-  },
-  "office": {
    "fx": "slow",
-   "why": "Casting offices and paperwork: gatekeepers who would not cast or name her correctly cost time."
+   "ev": "e1",
+   "why": "Safety: harassment and violence against trans women, which she has described."
   },
   "market": {
    "fx": "slow",
-   "why": "In public, stares, misgendering and harassment turn a crowded street into hard work."
+   "ev": "e3",
+   "why": "Casting: for years there were almost no roles for trans actresses."
+  },
+  "ladder": {
+   "fx": "fast",
+   "ev": "e2",
+   "why": "Arts school and college: dance training opened a way into New York."
+  },
+  "bridge": {
+   "fx": "fast",
+   "ev": "e4",
+   "why": "Her mother, twin brother and community held her up after rejection."
   }
  },
  "advantage": {
   "type": "lift",
   "uses": 2,
   "title": "Chosen family",
-  "text": "Laverne has described how her mother, friends and community lifted her after rejection and insults. After rolling, add 2 to your result."
+  "text": "Laverne has described how her mother, friends and community lifted her after rejection and insults. After rolling, add 2 to your result.",
+  "ev": "e4"
  },
  "life": [
   {
@@ -121,5 +126,49 @@
  "flags": [
   "Please check: the Doubt (CBS, 2017) claim \"first openly trans actor in a leading series role on US network TV\" as phrased in the single-player data.",
   "Please check: the Indiana University detail and the graduation wording for Marymount Manhattan."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "childhood and adult life",
+   "ev": "Laverne Cox has told TIME and other outlets that she was bullied as a child and harassed on the street as an adult; violence against trans women is a real risk.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "1980s to 1990s",
+   "ev": "She trained in dance at the Alabama School of Fine Arts, then studied in New York (Marymount Manhattan College).",
+   "src": 0
+  },
+  {
+   "id": "e3",
+   "y": "1990s to 2012",
+   "ev": "For many years there were few roles written for trans women; she kept auditioning and working other jobs until Orange Is the New Black (2013).",
+   "src": 1
+  },
+  {
+   "id": "e4",
+   "y": "1970s onwards",
+   "ev": "Her mother and her twin brother raised and backed her; friends and the trans community lifted her after insults.",
+   "src": 1
+  },
+  {
+   "id": "e5",
+   "y": "2020",
+   "ev": "The documentary Disclosure, which she produced and appears in, collects trans voices about how media shaped their lives.",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 20
+ },
+ "look": {
+  "skin": "#8a5a3c",
+  "hair": "#1a1410",
+  "hairStyle": "long",
+  "top": "#c0392b",
+  "bottom": "#c0392b",
+  "outfit": "dress",
+  "prop": "none"
+ }
 }

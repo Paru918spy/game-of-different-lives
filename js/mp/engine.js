@@ -6,7 +6,7 @@
      card      the pawn stopped: question / action / story / checkpoint / life station / ... of that field
      feedback  right or wrong with explanation. Right: stay. Wrong: back to the last safe field (turn start or last stop).
      over      somebody reached the finish
-   Walking: every field costs 1 step. A figure's zone effects change that (slow 2, fast 0.5, block = route cannot be chosen).
+   Walking: every field costs 1 step. A figure's zone effects change that (slow 1.5, fast 0.75, block = route cannot be chosen).
    Life stations and checkpoints stop the pawn once per player, the rest of the roll is kept.                                        */
 (function (root) {
   const MP = root.MP = root.MP || {};
@@ -47,7 +47,7 @@
     const board = opts.board, Q = opts.questions, PR = opts.profiles || MP.Profiles;
     const S = {
       v: 2, rng: (opts.seed == null ? Math.floor(Math.random() * 2 ** 31) : opts.seed) | 0,
-      players: opts.names.map((n, i) => ({ id: i, name: n, color: i, char: null, pos: board.start, trail: [], seen: {}, left: 0, correct: 0, wrong: 0, asked: 0, steps: 0, life: 0, used: 0 })),
+      players: opts.names.map((n, i) => ({ id: i, name: n, color: i, char: null, pos: board.start, trail: [], seen: {}, left: 0, correct: 0, wrong: 0, asked: 0, steps: 0, life: 0, used: 0, comp: 0 })),
       turn: 0, round: 1, phase: "wheel", card: null, dice: null, fork: null, winner: null, path: [], bonus: false, rem: 0, anchor: { len: 0 },
       decks: {}, storyDeck: [], pool: []
     };
@@ -184,7 +184,7 @@
     if (S.phase === "over") return ev;
     if (S.phase === "wheel") {
       if (a.t !== "spin" && a.t !== "skip") return ev;
-      const id = S.pool.shift(), pr = MP.Profiles[id]; p.char = id; p.left = pr.advantage.uses;
+      const id = S.pool.shift(), pr = MP.Profiles[id]; p.char = id; p.left = pr.advantage.uses; p.comp = (pr.balance && pr.balance.comp) || 0;
       ev.push({ e: "assign", p: p.id, char: id, order: S.players.map(q => q.char) });
       if (S.turn < S.players.length - 1) { S.turn++; ev.push({ e: "wheelTurn", p: S.turn }); }
       else { S.turn = 0; S.phase = "roll"; S.anchor = { len: 0 }; ev.push({ e: "turn", p: 0 }); }
@@ -227,8 +227,10 @@
       let d = 1 + Math.floor(rnd(S) * 6), d2 = null;
       if (a.best && p.left > 0 && prof(p).advantage.type === "bestof2") { d2 = 1 + Math.floor(rnd(S) * 6); p.left--; p.used++; }
       S.dice = d2 ? Math.max(d, d2) : d; S.bonus = false;
-      if (a.lift && p.left > 0 && prof(p).advantage.type === "lift") { S.dice += 2; p.left--; p.used++; }
-      ev.push({ e: "roll", p: p.id, v: S.dice, d1: d, d2, lift: !!(a.lift && S.dice > Math.max(d, d2 || 0)) });
+      let liftUsed = false; if (a.lift && p.left > 0 && prof(p).advantage.type === "lift") { S.dice += 2; p.left--; p.used++; liftUsed = true; }
+      /* game balance (not part of the story): each point of "comp" adds one step, applied automatically, at most 3 per roll */
+      const cu = Math.max(0, Math.min(3, p.comp)); if (cu) { S.dice += cu; p.comp -= cu; }
+      ev.push({ e: "roll", p: p.id, v: S.dice, d1: d, d2, lift: liftUsed, comp: cu });
       walk(S, S.dice, ev);
     } else if (S.phase === "fork" && a.t === "choose" && S.fork.allowed.includes(a.node)) {
       const n = S.fork.remaining; S.phase = "roll"; S.fork = null;

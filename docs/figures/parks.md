@@ -4,24 +4,38 @@
 
 You are an organiser long before the famous bus. You type the minutes, investigate cases, pay the poll tax and walk when needed. Most of your barriers are rules written to keep you out, and most of your wins are carried by other people.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1920s to 1933): Black children had no school bus and walked to school; Rosa left school to care for her grandmother and mother and finished later. *Source: Rosa Parks with Jim Haskins, Rosa Parks: My Story (1992)*
+- **e2** (1943 to 1945): She was refused when she tried to register to vote twice; a poll tax and a literacy test were used to keep Black people off the rolls. *Source: Rosa Parks with Jim Haskins, Rosa Parks: My Story (1992)*
+- **e3** (1955 to 1957): After the boycott she lost her job, got threatening calls and moved to Detroit in 1957. *Source: Rosa Parks with Jim Haskins, Rosa Parks: My Story (1992)*
+- **e4** (1943 to 1956): She was secretary of the Montgomery NAACP; community carpools kept the 381-day boycott going. *Source: Library of Congress: Rosa Parks Papers*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Rosa, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Rosa, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🌉 Stone bridge | fast (each field costs half a step) | Allies carry you: the NAACP, the Women’s Political Council, neighbours who run the carpools. |
-| 🏁 Race track | fast (each field costs half a step) | For 381 days thousands walk miles to work instead of riding the buses, and you know how to keep going. |
-| 🏛 Town hall | slow (each field costs 2 steps) | Literacy tests, a poll tax and forms made to fail you: every counter is a trap. |
-| 🪢 Rope bridge | slow (each field costs 2 steps) | Threats, a lost job and an unsteady income: after December 1955 every step feels risky. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🌳 Tree ladders | Education and training | slow (each field costs 1.5 steps) | School: no bus for Black children, and she left school to care for her family. | e1 |
+| 🏛 Town hall | Laws, papers, courts and authorities | slow (each field costs 1.5 steps) | Voting: she was refused registration twice because of a test and a tax. | e2 |
+| 🪢 Rope bridge | Safety: threats, harassment, violence | slow (each field costs 1.5 steps) | Safety: threatening calls after the bus arrest. | e3 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Work: she lost her job and could not find work in Montgomery. | e3 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | Community: NAACP friends and carpools carried the boycott. | e4 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
-## Advantage: A community behind you
+## Game balance (not part of the story)
+
+26 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+
+## Advantage: Friends who stood by
 
 Shield: a wrong answer does not send you back · 3 uses per game.
 
-When the family lost their jobs, people in the community covered the bills. A wrong answer does not send you back; others hold the line with you.
+After the family lost their jobs, friends in the NAACP and the church stood by the Parks family. A wrong answer does not send you back; others hold the line with you.
 
 ## Life stations (in the order of the road)
 
@@ -109,6 +123,7 @@ After 1957 the family moves to Detroit, where racism and unemployment follow. Fr
 - Rosa Parks with Jim Haskins, Rosa Parks: My Story (1992)
 - Library of Congress: Rosa Parks Papers
 - Danielle McGuire, At the Dark End of the Street
+- TIME and Encyclopedia.com: voter registration attempts 1943 to 1945 (checked)
 
 ## To check
 

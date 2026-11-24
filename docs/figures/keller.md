@@ -4,23 +4,38 @@
 
 You live through touch: letters spelled into your palm, raised dots under your fingertips, a teacher's hand in yours. The world is slow to learn your language, but you read, write and argue more than almost anyone around you.
 
+## Documented events (what the game is based on)
+
+Every effect on the board points to one of these events. If there is no documented event, there is no effect.
+
+- **e1** (1882 to 1887): After an illness at 19 months she was deaf and blind; for years she had no shared language with her family, only home signs. *Source: Helen Keller, The Story of My Life (1903)*
+- **e2** (1887): Anne Sullivan taught her the word 'water' at the pump and then many more words by finger-spelling. *Source: Helen Keller, The Story of My Life (1903)*
+- **e3** (1904): She graduated from Radcliffe College with honours, the first deaf-blind person to earn a BA. *Source: Helen Keller, The Story of My Life (1903)*
+- **e4** (1912): When she wrote about socialism, newspaper editors dismissed her views as products of her disability. *Source: American Foundation for the Blind Helen Keller Archive*
+- **e5** (1892): After her story 'The Frost King' was accused of plagiarism, she faced an inquiry that left her afraid to write. *Source: Helen Keller, The Story of My Life (1903)*
+
 ## Routes (zones)
 
-The shared board has ten kinds of routes. For Helen, these differ from the normal rule (one field = one step):
+The legend is the same for every figure: each route kind is one area of life. For Helen, these differ from the normal rule (one field = one step):
 
-| Route | Effect | Why |
-| --- | --- | --- |
-| 🕳 Dark tunnel | fast (each field costs half a step) | Dim light is not the obstacle it is for others: Helen moves by touch and with a guide's hand, so a dark tunnel costs her no extra time. |
-| 🎪 Busy market | slow (each field costs 2 steps) | In a crowd every exchange needs a hand-spelled interpreter, so keeping up with the flow takes longer. |
-| 🏛 Town hall | slow (each field costs 2 steps) | Officials and editors doubt that a deaf-blind woman can hold her own political views, so every decision takes longer. |
+| Route | Area of life | Effect | Why | Event |
+| --- | --- | --- | --- | --- |
+| 🕳 Dark tunnel | Isolation, silence and communication barriers | slow (each field costs 1.5 steps) | Silence and darkness: before words she could not share what she knew. | e1 |
+| 🎪 Busy market | Work, money, media and public life | slow (each field costs 1.5 steps) | Public voice: editors said her opinions came from her disability. | e4 |
+| 🌉 Stone bridge | Support: allies, family, community, mentors | fast (each field costs 0.75 steps) | A teacher: Anne Sullivan opened language and the world for her. | e2 |
+| 🌳 Tree ladders | Education and training | fast (each field costs 0.75 steps) | College: with Anne at her side she graduated from Radcliffe with honours. | e3 |
 
 All other routes work normally. The stone bridge, the long ramp, the quiet lane and the town hall can never be blocked, so there is always a way.
 
-## Advantage: Fingers on the page
+## Game balance (not part of the story)
+
+17 balance steps (up to 3 per roll). They exist only so that every figure has about the same chance to win; they are not a claim about this person's life.
+
+## Advantage: A teacher at her side
 
 Free pass: count one question or action as answered right · 3 uses per game.
 
-Helen read braille, studied several languages and read widely all her life. On a question you know, count it as answered right.
+At Radcliffe Anne Sullivan spelled the lectures into Helen's hand, and she graduated with honours. On a question you know, count it as answered right.
 
 ## Life stations (in the order of the road)
 

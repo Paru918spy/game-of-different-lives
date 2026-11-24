@@ -2,24 +2,33 @@
  "id": "sam",
  "intro": "You are Sam, a fictional 15-year-old in Germany who goes by they/them. Playing this life means noticing how many forms, rooms and routines assume only two choices, and how much a single person who gets it right can change.",
  "zones": {
-  "bridge": {
-   "fx": "fast",
-   "why": "Noor, a teacher and a youth group: people who say \"I've got you\" carry Sam across."
-  },
   "office": {
    "fx": "slow",
-   "why": "Forms with two boxes and registers with the old name: every counter needs explaining."
+   "ev": "e1",
+   "why": "Forms and law: for years the paperwork had only two boxes."
   },
-  "market": {
+  "tunnel": {
    "fx": "slow",
-   "why": "Crowded places mean stares, whispers and a choice of two changing rooms, so Sam stays careful."
+   "ev": "e3",
+   "why": "School climate: jokes and exclusion at school isolate."
+  },
+  "ladder": {
+   "fx": "slow",
+   "ev": "e4",
+   "why": "School routines: sports, toilets and trips are split in two groups."
+  },
+  "bridge": {
+   "fx": "fast",
+   "ev": "e2",
+   "why": "One adult who gets it: acceptance changes a young person's chances a lot."
   }
  },
  "advantage": {
   "type": "lift",
   "uses": 2,
   "title": "Allies in the room",
-  "text": "Sam's friends and a supportive team make the difference when a form or a classroom only offers two boxes. After rolling, add 2 to your result."
+  "text": "Sam's friends and a supportive team make the difference when a form or a classroom only offers two boxes. After rolling, add 2 to your result.",
+  "ev": "e2"
  },
  "life": [
   {
@@ -117,5 +126,43 @@
  ],
  "flags": [
   "Fictional: station 1 says so. Please check whether the 2024 German Self-Determination Act (name and gender-entry changes by declaration) should be mentioned in station 10; it was left out to stay close to the single-player data."
- ]
+ ],
+ "evidence": [
+  {
+   "id": "e1",
+   "y": "2017 to 2018",
+   "ev": "Germany's Federal Constitutional Court ruled in 2017 that civil status must allow a third entry; 'divers' was introduced in 2018. Before that, forms offered two boxes.",
+   "src": 1
+  },
+  {
+   "id": "e2",
+   "y": "research",
+   "ev": "Young LGBTQ people with at least one accepting adult report better mental health (Trevor Project, a US study).",
+   "src": 2
+  },
+  {
+   "id": "e3",
+   "y": "research",
+   "ev": "Trans and non-binary young people report more bullying and exclusion at school (Trevor Project).",
+   "src": 2
+  },
+  {
+   "id": "e4",
+   "y": "typical case",
+   "ev": "School routines such as sports teams, toilets and trips are often split into two groups.",
+   "src": 2
+  }
+ ],
+ "balance": {
+  "comp": 20
+ },
+ "look": {
+  "skin": "#e8c7a0",
+  "hair": "#6b4acf",
+  "hairStyle": "short",
+  "top": "#3aa39a",
+  "bottom": "#33384a",
+  "outfit": "hoodie",
+  "prop": "none"
+ }
 }
