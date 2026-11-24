@@ -254,3 +254,18 @@ html{scroll-behavior:smooth}
   text-shadow:none;
   filter:drop-shadow(0 3px 0 rgba(255,255,255,.9)) drop-shadow(0 7px 6px rgba(0,0,0,.2));
 }
+
+/* ---- cards: always fit the screen, label stays visible, button stays reachable ---- */
+.card:has(>.body){display:flex;flex-direction:column;overflow:hidden;max-height:min(94vh,860px)}
+.card:has(>.body)>.pic{flex:none}
+.card:has(>.body)>.pic img,.card:has(>.body)>.pic svg{aspect-ratio:auto;height:clamp(110px,26vh,260px)}
+.card>.body{overflow:auto;min-height:0;flex:1 1 auto;overscroll-behavior:contain}
+.card>.body>.big{position:sticky;bottom:-24px;z-index:2;box-shadow:0 -14px 14px -6px var(--paper),0 4px 0 rgba(0,0,0,.18)}
+.ch-head{font-size:13px;padding:8px 14px;gap:10px;align-items:center;border:2px solid rgba(0,0,0,.08);margin-bottom:6px}
+.ch-head span:first-child{font-size:14px;letter-spacing:.09em}
+.ch-head span{white-space:nowrap}
+.h-barrier{background:#fecaca;box-shadow:inset 6px 0 0 #dc2626}.h-win{box-shadow:inset 6px 0 0 #f59e0b}.h-choice{box-shadow:inset 6px 0 0 #9333ea}.h-info{box-shadow:inset 6px 0 0 #3b82f6}.h-start,.h-finish{box-shadow:inset 6px 0 0 #16a34a}.h-bridge{box-shadow:inset 6px 0 0 #ea580c}
+.ch-head span:first-child{padding-left:6px}
+.gate{overflow-wrap:anywhere}
+.card h2,.card p,.opt{overflow-wrap:anywhere;hyphens:auto}
+@media(max-width:700px){.modal{padding:8px}.card{border-width:3px;border-radius:22px}.card .body{padding:14px 16px 18px}.card>.body>.big{bottom:-18px}.card h2{font-size:22px}.card p{font-size:15px}.card:has(>.body)>.pic img,.card:has(>.body)>.pic svg{height:clamp(90px,22vh,180px)}.ch-head{font-size:12px;padding:7px 10px}}
