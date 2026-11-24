@@ -168,18 +168,18 @@
   "look": {
     "skin": "#efdcc8",
     "hair": "#5a4030",
-    "hairStyle": "updo",
+    "hairStyle": "panel",
     "top": "#f3efe6",
     "bottom": "#4a5a7a",
     "outfit": "dress",
     "eyes": "#8a9aa8",
-    "eyeOpen": 0.6,
+    "eyeOpen": 0.3,
     "brow": {
       "c": "#5a4030",
       "t": 0.65,
       "a": 0.8
     },
-    "mouth": "smile",
+    "mouth": "neutral",
     "nose": 1.0,
     "mouthW": 1.0,
     "blush": "#e0a898",
@@ -192,12 +192,9 @@
       "c1": "#f6f1e6"
     },
     "prop": "book",
-    "hp": {
-      "y": 2.9,
-      "px": -0.8,
-      "d": 0.6,
-      "t": 0.4
-    },
-    "lashes": true
+    "lashes": true,
+    "hairPanel": {
+      "type": "updo"
+    }
   }
 }

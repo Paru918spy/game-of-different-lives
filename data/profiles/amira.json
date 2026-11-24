@@ -1,204 +1,207 @@
 {
- "id": "amira",
- "intro": "You play a 16-year-old who loves maths and football and has to rebuild her life in a new country. Much of the way is paperwork and waiting that nobody asked her to carry. Her languages, her team spirit and the people who open doors count for a lot.",
- "zones": {
-  "office": {
-   "fx": "slow",
-   "ev": "e1",
-   "why": "Papers and recognition: foreign diplomas and residence status are decided slowly, whatever your effort."
+  "id": "amira",
+  "intro": "You play a 16-year-old who loves maths and football and has to rebuild her life in a new country. Much of the way is paperwork and waiting that nobody asked her to carry. Her languages, her team spirit and the people who open doors count for a lot.",
+  "zones": {
+    "office": {
+      "fx": "slow",
+      "ev": "e1",
+      "why": "Papers and recognition: foreign diplomas and residence status are decided slowly, whatever your effort."
+    },
+    "tunnel": {
+      "fx": "slow",
+      "ev": "e2",
+      "why": "Arriving without the language: for a while you understand little, and few people understand you."
+    },
+    "ladder": {
+      "fx": "slow",
+      "ev": "e3",
+      "why": "School tracks: pupils with a migrant background more often land on lower tracks at equal marks."
+    },
+    "sprint": {
+      "fx": "fast",
+      "ev": "e4",
+      "why": "Sport club: football needs no shared language, and clubs are a common first home for refugee children."
+    },
+    "bridge": {
+      "fx": "fast",
+      "ev": "e5",
+      "why": "Teachers, neighbours and volunteers open doors for newly arrived families."
+    }
   },
-  "tunnel": {
-   "fx": "slow",
-   "ev": "e2",
-   "why": "Arriving without the language: for a while you understand little, and few people understand you."
+  "advantage": {
+    "type": "lift",
+    "uses": 2,
+    "title": "A helping hand",
+    "text": "Neighbours, a teacher and a language buddy opened doors for Amira in a new country. After rolling, add 2 to your result.",
+    "ev": "e5"
   },
-  "ladder": {
-   "fx": "slow",
-   "ev": "e3",
-   "why": "School tracks: pupils with a migrant background more often land on lower tracks at equal marks."
+  "life": [
+    {
+      "k": "info",
+      "title": "Home (fictional)",
+      "text": "Amira is an invented character, based on what many refugees report. She is 16, loves maths and football. Her father teaches, her mother is a nurse. Then war reaches her city and damages the school and the hospital."
+    },
+    {
+      "k": "barrier",
+      "title": "Leaving everything",
+      "text": "Her family decides to leave. They can only take what they can carry. Amira says goodbye to friends, her grandmother and her school books.",
+      "move": -1
+    },
+    {
+      "k": "barrier",
+      "title": "Months on the road",
+      "text": "The journey takes months and depends on strangers, closed borders and long waits. Amira keeps her little brother calm by telling him stories.",
+      "move": -1
+    },
+    {
+      "k": "boost",
+      "title": "Kindness at a border camp",
+      "text": "A volunteer doctor treats her brother. A teacher gives Amira a notebook, so she can keep doing maths. Small acts of help carry a family a long way.",
+      "move": 1
+    },
+    {
+      "k": "info",
+      "title": "Arrival in Germany",
+      "text": "The family lives in a shared accommodation and waits for months for papers and a school place. Everything is new: the language, the food, the rules, the weather."
+    },
+    {
+      "k": "quiz",
+      "title": "Why can't her parents work?",
+      "text": "In Germany her father drives a delivery van. Her mother cannot work as a nurse. Why?",
+      "move": 1,
+      "q": {
+        "q": "Why can Amira's parents not work as a teacher and a nurse?",
+        "a": [
+          "Their foreign qualifications are not recognised yet",
+          "They do not want to work",
+          "Refugees are never allowed to work"
+        ],
+        "x": "Recognising foreign diplomas is slow and complicated in many countries. The skills are there, the system is the barrier."
+      }
+    },
+    {
+      "k": "barrier",
+      "title": "A language she doesn't speak yet",
+      "text": "In class Amira understands little. She is quick at home, but here some classmates see only a girl who cannot speak. A few tease her scarf.",
+      "move": -1
+    },
+    {
+      "k": "boost",
+      "title": "A teacher and Jana",
+      "text": "A teacher stays after class to practise German with her. A classmate, Jana, invites her to football. Amira starts to feel she belongs somewhere.",
+      "move": 3
+    },
+    {
+      "k": "barrier",
+      "title": "Waiting for a decision",
+      "text": "The family waits years for a decision on their status. Plans for study, work and travel stay on hold, because the rules decide, not effort.",
+      "move": -1
+    },
+    {
+      "k": "quiz",
+      "title": "Which school track?",
+      "text": "A counsellor suggests a shorter, practical path. Amira wants to study medicine. Studies look at this pattern.",
+      "move": 1,
+      "q": {
+        "q": "What do studies find about pupils from migrant families with the same grades?",
+        "a": [
+          "They are more often advised to take lower school tracks",
+          "They are always advised to take the highest track",
+          "Their track advice is identical to everyone else's"
+        ],
+        "x": "Research on school recommendations in Germany shows a bias against migrant families. Mentors and teachers can help push back."
+      }
+    },
+    {
+      "k": "boost",
+      "title": "Her Abitur",
+      "text": "With extra tutoring and a mentor, Amira insists on the Abitur and passes it. Her parents are proud, and she is accepted to study medicine.",
+      "move": 2
+    },
+    {
+      "k": "boost",
+      "title": "Interpreting at the clinic",
+      "text": "Amira volunteers as an interpreter for new arrivals. She knows how it feels to have nobody who understands you. She now feels at home in two places.",
+      "move": 2
+    }
+  ],
+  "sources": [
+    "Fictional character: js/characters/group4.js (Amira) and docs/characters.md",
+    "UNHCR reports on refugee education",
+    "OECD: Education in Germany, students with a migrant background",
+    "Federal Recognition Act (Anerkennungsgesetz) 2012, anerkennung-in-deutschland.de",
+    "DOSB programme 'Integration durch Sport' (dosb.de)"
+  ],
+  "flags": [
+    "The track-advice quiz states a widely reported finding about Germany; check the exact wording against an OECD/IQB source."
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "y": "typical case",
+      "ev": "Refugees in Germany often wait months or years for residence decisions, and foreign diplomas have to pass a recognition procedure before they count.",
+      "src": 3
+    },
+    {
+      "id": "e2",
+      "y": "typical case",
+      "ev": "Newly arrived pupils often sit in class before they speak German; this isolates them even when they are strong in maths or sport.",
+      "src": 2
+    },
+    {
+      "id": "e3",
+      "y": "typical case",
+      "ev": "At the same performance level, pupils with a migrant background are placed in lower school tracks more often (OECD, German school studies).",
+      "src": 2
+    },
+    {
+      "id": "e4",
+      "y": "typical case",
+      "ev": "Sports clubs are one of the most common first places where refugee children find friends; the DOSB has run integration programmes since 1989.",
+      "src": 4
+    },
+    {
+      "id": "e5",
+      "y": "typical case",
+      "ev": "Teachers, volunteers and neighbours are one of the most important factors for refugee children arriving in a new country (UNHCR).",
+      "src": 1
+    }
+  ],
+  "balance": {
+    "comp": 21
   },
-  "sprint": {
-   "fx": "fast",
-   "ev": "e4",
-   "why": "Sport club: football needs no shared language, and clubs are a common first home for refugee children."
-  },
-  "bridge": {
-   "fx": "fast",
-   "ev": "e5",
-   "why": "Teachers, neighbours and volunteers open doors for newly arrived families."
+  "look": {
+    "skin": "#e0ae80",
+    "hair": "#7c3aed",
+    "hairStyle": "panel",
+    "scarf": "#7c3aed",
+    "top": "#f59e0b",
+    "bottom": "#3b4a6b",
+    "outfit": "casual",
+    "eyes": "#3a2414",
+    "brow": {
+      "c": "#2a1d16",
+      "t": 1.1,
+      "a": 0.9
+    },
+    "mouth": "smile",
+    "lashes": true,
+    "blush": "#e58a7a",
+    "nose": 0.95,
+    "face": {
+      "w": 0.97,
+      "h": 1.08
+    },
+    "torso": {
+      "kind": "shirt",
+      "c1": "#f59e0b",
+      "c2": "#f59e0b"
+    },
+    "prop": "none",
+    "mouthW": 1.35,
+    "hairPanel": {
+      "type": "drape",
+      "c": "#7c3aed"
+    }
   }
- },
- "advantage": {
-  "type": "lift",
-  "uses": 2,
-  "title": "A helping hand",
-  "text": "Neighbours, a teacher and a language buddy opened doors for Amira in a new country. After rolling, add 2 to your result.",
-  "ev": "e5"
- },
- "life": [
-  {
-   "k": "info",
-   "title": "Home (fictional)",
-   "text": "Amira is an invented character, based on what many refugees report. She is 16, loves maths and football. Her father teaches, her mother is a nurse. Then war reaches her city and damages the school and the hospital."
-  },
-  {
-   "k": "barrier",
-   "title": "Leaving everything",
-   "text": "Her family decides to leave. They can only take what they can carry. Amira says goodbye to friends, her grandmother and her school books.",
-   "move": -1
-  },
-  {
-   "k": "barrier",
-   "title": "Months on the road",
-   "text": "The journey takes months and depends on strangers, closed borders and long waits. Amira keeps her little brother calm by telling him stories.",
-   "move": -1
-  },
-  {
-   "k": "boost",
-   "title": "Kindness at a border camp",
-   "text": "A volunteer doctor treats her brother. A teacher gives Amira a notebook, so she can keep doing maths. Small acts of help carry a family a long way.",
-   "move": 1
-  },
-  {
-   "k": "info",
-   "title": "Arrival in Germany",
-   "text": "The family lives in a shared accommodation and waits for months for papers and a school place. Everything is new: the language, the food, the rules, the weather."
-  },
-  {
-   "k": "quiz",
-   "title": "Why can't her parents work?",
-   "text": "In Germany her father drives a delivery van. Her mother cannot work as a nurse. Why?",
-   "move": 1,
-   "q": {
-    "q": "Why can Amira's parents not work as a teacher and a nurse?",
-    "a": [
-     "Their foreign qualifications are not recognised yet",
-     "They do not want to work",
-     "Refugees are never allowed to work"
-    ],
-    "x": "Recognising foreign diplomas is slow and complicated in many countries. The skills are there, the system is the barrier."
-   }
-  },
-  {
-   "k": "barrier",
-   "title": "A language she doesn't speak yet",
-   "text": "In class Amira understands little. She is quick at home, but here some classmates see only a girl who cannot speak. A few tease her scarf.",
-   "move": -1
-  },
-  {
-   "k": "boost",
-   "title": "A teacher and Jana",
-   "text": "A teacher stays after class to practise German with her. A classmate, Jana, invites her to football. Amira starts to feel she belongs somewhere.",
-   "move": 3
-  },
-  {
-   "k": "barrier",
-   "title": "Waiting for a decision",
-   "text": "The family waits years for a decision on their status. Plans for study, work and travel stay on hold, because the rules decide, not effort.",
-   "move": -1
-  },
-  {
-   "k": "quiz",
-   "title": "Which school track?",
-   "text": "A counsellor suggests a shorter, practical path. Amira wants to study medicine. Studies look at this pattern.",
-   "move": 1,
-   "q": {
-    "q": "What do studies find about pupils from migrant families with the same grades?",
-    "a": [
-     "They are more often advised to take lower school tracks",
-     "They are always advised to take the highest track",
-     "Their track advice is identical to everyone else's"
-    ],
-    "x": "Research on school recommendations in Germany shows a bias against migrant families. Mentors and teachers can help push back."
-   }
-  },
-  {
-   "k": "boost",
-   "title": "Her Abitur",
-   "text": "With extra tutoring and a mentor, Amira insists on the Abitur and passes it. Her parents are proud, and she is accepted to study medicine.",
-   "move": 2
-  },
-  {
-   "k": "boost",
-   "title": "Interpreting at the clinic",
-   "text": "Amira volunteers as an interpreter for new arrivals. She knows how it feels to have nobody who understands you. She now feels at home in two places.",
-   "move": 2
-  }
- ],
- "sources": [
-  "Fictional character: js/characters/group4.js (Amira) and docs/characters.md",
-  "UNHCR reports on refugee education",
-  "OECD: Education in Germany, students with a migrant background",
-  "Federal Recognition Act (Anerkennungsgesetz) 2012, anerkennung-in-deutschland.de",
-  "DOSB programme 'Integration durch Sport' (dosb.de)"
- ],
- "flags": [
-  "The track-advice quiz states a widely reported finding about Germany; check the exact wording against an OECD/IQB source."
- ],
- "evidence": [
-  {
-   "id": "e1",
-   "y": "typical case",
-   "ev": "Refugees in Germany often wait months or years for residence decisions, and foreign diplomas have to pass a recognition procedure before they count.",
-   "src": 3
-  },
-  {
-   "id": "e2",
-   "y": "typical case",
-   "ev": "Newly arrived pupils often sit in class before they speak German; this isolates them even when they are strong in maths or sport.",
-   "src": 2
-  },
-  {
-   "id": "e3",
-   "y": "typical case",
-   "ev": "At the same performance level, pupils with a migrant background are placed in lower school tracks more often (OECD, German school studies).",
-   "src": 2
-  },
-  {
-   "id": "e4",
-   "y": "typical case",
-   "ev": "Sports clubs are one of the most common first places where refugee children find friends; the DOSB has run integration programmes since 1989.",
-   "src": 4
-  },
-  {
-   "id": "e5",
-   "y": "typical case",
-   "ev": "Teachers, volunteers and neighbours are one of the most important factors for refugee children arriving in a new country (UNHCR).",
-   "src": 1
-  }
- ],
- "balance": {
-  "comp": 21
- },
- "look": {
-  "skin": "#e0ae80",
-  "hair": "#2a1d16",
-  "hairStyle": "headscarf",
-  "scarf": "#7c3aed",
-  "top": "#e8963a",
-  "bottom": "#3b4a6b",
-  "outfit": "casual",
-  "eyes": "#3a2414",
-  "brow": {
-   "c": "#2a1d16",
-   "t": 1.1,
-   "a": 0.9
-  },
-  "mouth": "grin",
-  "lashes": true,
-  "blush": "#e58a7a",
-  "nose": 0.95,
-  "face": {
-   "w": 0.97,
-   "h": 1.08
-  },
-  "torso": {
-   "kind": "shirt",
-   "c1": "#e8963a",
-   "c2": "#fff0d6"
-  },
-  "prop": "none",
-  "trim": "#f6d27a",
-  "mouthW": 1.35
- }
 }

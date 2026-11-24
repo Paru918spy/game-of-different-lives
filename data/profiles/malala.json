@@ -167,17 +167,17 @@
   },
   "look": {
     "skin": "#cf9f78",
-    "hair": "#1c1612",
-    "hairStyle": "headscarf",
-    "scarf": "#fbf3e4",
+    "hair": "#2a1d16",
+    "hairStyle": "panel",
+    "scarf": "#ffffff",
     "top": "#e8ecef",
     "bottom": "#4a6fa5",
     "outfit": "casual",
     "eyes": "#2a1810",
     "brow": {
       "c": "#1c1612",
-      "t": 1.0,
-      "a": 0.9
+      "t": 1.4,
+      "a": 0.7
     },
     "mouth": "neutral",
     "lashes": true,
@@ -194,8 +194,13 @@
       "c2": "#d9c7a0"
     },
     "prop": "book",
-    "trim": "#e8d9a8",
+    "trim": null,
     "eyeOpen": 1.1,
-    "shawl": true
+    "shawl": true,
+    "hairPanel": {
+      "type": "drape",
+      "c": "#f7f2e8",
+      "trim": "#d8bf7a"
+    }
   }
 }

@@ -198,6 +198,12 @@
       "stripe": "#d4af37",
       "number": "7"
     },
-    "prop": "none"
+    "prop": "none",
+    "hp": {
+      "y": 3.3,
+      "px": 0,
+      "d": 0.1,
+      "t": 1.6
+    }
   }
 }

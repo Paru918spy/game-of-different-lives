@@ -1,203 +1,206 @@
 {
- "id": "heumann",
- "intro": "You are Judy, a wheelchair user from Brooklyn who grew up in the 1950s, when schools could simply say no. Steps and locked doors are everywhere, but so are the rules, forms and crowds of people that you will learn to use better than most.",
- "zones": {
-  "stairs": {
-   "fx": "block",
-   "ev": "e2",
-   "why": "Steps and transport: buses, buildings and planes were built without wheelchair access."
+  "id": "heumann",
+  "intro": "You are Judy, a wheelchair user from Brooklyn who grew up in the 1950s, when schools could simply say no. Steps and locked doors are everywhere, but so are the rules, forms and crowds of people that you will learn to use better than most.",
+  "zones": {
+    "stairs": {
+      "fx": "block",
+      "ev": "e2",
+      "why": "Steps and transport: buses, buildings and planes were built without wheelchair access."
+    },
+    "ladder": {
+      "fx": "slow",
+      "ev": "e1",
+      "why": "School: she was refused entry as 'a fire hazard' and taught at home for years."
+    },
+    "office": {
+      "fx": "slow",
+      "ev": "e3",
+      "why": "Licences and rules: New York refused her teaching licence until she sued."
+    },
+    "bridge": {
+      "fx": "fast",
+      "ev": "e5",
+      "why": "Allies: other disabled activists, even the Black Panthers, stood with her in 1977."
+    }
   },
-  "ladder": {
-   "fx": "slow",
-   "ev": "e1",
-   "why": "School: she was refused entry as 'a fire hazard' and taught at home for years."
+  "advantage": {
+    "type": "bestof2",
+    "uses": 2,
+    "title": "Second push",
+    "text": "Judy kept going: she sued over her teaching licence in 1970 and led the 1977 sit-in. Roll two dice and take the higher one.",
+    "ev": "e5"
   },
-  "office": {
-   "fx": "slow",
-   "ev": "e3",
-   "why": "Licences and rules: New York refused her teaching licence until she sued."
+  "life": [
+    {
+      "k": "info",
+      "title": "Brooklyn, 1947",
+      "text": "Judy is born on 18 December 1947 to German-Jewish parents who had escaped the Nazis. At 18 months she gets polio and begins to use a wheelchair. She grows up in Brooklyn, New York."
+    },
+    {
+      "k": "barrier",
+      "title": "\"A fire hazard\"",
+      "text": "In 1953 her local school refuses to let her attend kindergarten: a wheelchair, it says, is a fire hazard. Her mother Ilse fights the decision, but for years Judy only gets a few hours of home teaching.",
+      "move": -3
+    },
+    {
+      "k": "boost",
+      "title": "Camp Jened",
+      "text": "At a summer camp for disabled teenagers in the Catskills, Judy sees a place where disability is normal and decisions are shared. Friendships from camp later grow into activism, and the film Crip Camp tells that story.",
+      "move": 1
+    },
+    {
+      "k": "quiz",
+      "title": "The teaching licence",
+      "text": "In 1970 New York City refuses Judy a teaching licence because she cannot walk. She takes the city to court.",
+      "move": 1,
+      "q": {
+        "q": "What happened when Judy challenged the city's refusal?",
+        "a": [
+          "She won and became the first wheelchair user to teach in New York City schools",
+          "The court agreed with the city and she gave up teaching",
+          "The city offered her only a desk job without students"
+        ],
+        "x": "Judy won her case in 1970. The news made her widely known, and she taught in New York City public schools."
+      }
+    },
+    {
+      "k": "info",
+      "title": "Disabled in Action",
+      "text": "In 1970 Judy helps found Disabled in Action, a group led by disabled people. Later she moves to Berkeley, California, a centre of the independent living movement, where disabled people run their own services."
+    },
+    {
+      "k": "barrier",
+      "title": "A law on paper only",
+      "text": "Section 504 of the Rehabilitation Act (1973) bans discrimination by programmes that get government money. But the government keeps delaying the rules that would make it real, and nothing changes in schools or buildings.",
+      "move": -3
+    },
+    {
+      "k": "quiz",
+      "title": "April 1977",
+      "text": "Activists across the US demand that the 504 rules be signed. In San Francisco about 150 people occupy a federal building, with no ramps, beds or medicine ready for them.",
+      "move": 1,
+      "q": {
+        "q": "How long did the San Francisco sit-in last?",
+        "a": [
+          "26 days",
+          "3 days",
+          "About 6 months"
+        ],
+        "x": "The sit-in lasted 26 days, the longest occupation of a US federal building at the time. Food came from groups such as the Black Panthers, and a delegation went to Washington."
+      }
+    },
+    {
+      "k": "boost",
+      "title": "Section 504 is signed",
+      "text": "The 504 regulations are signed. They become the first national civil rights protection for disabled people in the US and the base for the Americans with Disabilities Act of 1990.",
+      "move": 1
+    },
+    {
+      "k": "boost",
+      "title": "Inside government",
+      "text": "In 1993 Judy becomes Assistant Secretary in the US Department of Education, responsible for special education and rehabilitation. Later she advises the World Bank and the State Department on disability rights worldwide.",
+      "move": 1
+    },
+    {
+      "k": "barrier",
+      "title": "Still not accessible",
+      "text": "Even as a senior official Judy meets inaccessible planes, buildings and meeting rooms. She keeps saying that barriers come from choices society makes, not from a person's body.",
+      "move": -2
+    },
+    {
+      "k": "info",
+      "title": "Telling the story",
+      "text": "Her memoir Being Heumann and the film Crip Camp, both from 2020, bring the movement to a wide public. She is still travelling and speaking when she is in her seventies."
+    },
+    {
+      "k": "info",
+      "title": "2023: nothing about us without us",
+      "text": "Judy Heumann dies on 4 March 2023, aged 75. Her principle lives on: disabled people must lead decisions that affect their lives. Many rules that make schools and transport more open began with her movement."
+    }
+  ],
+  "sources": [
+    "js/characters/group2.js (heumann)",
+    "Judith Heumann with Kristen Joiner, Being Heumann (2020)",
+    "Crip Camp (2020)",
+    "docs/characters.md",
+    "Judith Heumann (born Dec 1947): school refusal at about age five, no school until nine (womenshistory.org, Britannica; checked)"
+  ],
+  "flags": [
+    "Crip Camp is about Camp Jened; Judy appears in it. Exact count of 'about 150' occupants and the first wheelchair-using NYC teacher claim are from the single-player data and widely reported; a human may want to confirm."
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "y": "about 1952",
+      "ev": "Her Brooklyn school principal refused to let her in because a wheelchair was 'a fire hazard'; she had home lessons for years.",
+      "src": 1
+    },
+    {
+      "id": "e2",
+      "y": "1950s to 1970s",
+      "ev": "Steps, buses without lifts and inaccessible buildings and planes limited where she could go, and strangers often had to carry her.",
+      "src": 1
+    },
+    {
+      "id": "e3",
+      "y": "1970",
+      "ev": "New York's Board of Education refused her a teaching licence; she sued and became the first wheelchair user to teach there.",
+      "src": 1
+    },
+    {
+      "id": "e4",
+      "y": "1960s",
+      "ev": "At Camp Jened in the Catskills she met other disabled teenagers and found a community.",
+      "src": 2
+    },
+    {
+      "id": "e5",
+      "y": "1977",
+      "ev": "She led the sit-in in San Francisco (about 25 days) that forced the government to sign the Section 504 rules; Black Panthers brought food.",
+      "src": 1
+    }
+  ],
+  "balance": {
+    "comp": 24
   },
-  "bridge": {
-   "fx": "fast",
-   "ev": "e5",
-   "why": "Allies: other disabled activists, even the Black Panthers, stood with her in 1977."
+  "look": {
+    "skin": "#c99571",
+    "hair": "#6b4630",
+    "hairStyle": "panel",
+    "top": "#c0262d",
+    "bottom": "#33384a",
+    "outfit": "wheelchair",
+    "eyes": "#3a2414",
+    "brow": {
+      "c": "#2a2420",
+      "t": 1.1,
+      "a": 0.8
+    },
+    "mouth": "grin",
+    "lipstick": "#b0405a",
+    "lashes": true,
+    "wrinkles": 0.4,
+    "nose": 1.0,
+    "mouthW": 1.75,
+    "glasses": {
+      "type": "rect",
+      "c": "#5a1f33",
+      "t": 0.3
+    },
+    "earrings": "#d4af37",
+    "face": {
+      "w": 1.04,
+      "h": 1.06
+    },
+    "torso": {
+      "kind": "blazer",
+      "c1": "#c0262d",
+      "c2": "#1f1f24",
+      "c3": "#d4af37"
+    },
+    "prop": "none",
+    "hairPanel": {
+      "type": "longwave"
+    }
   }
- },
- "advantage": {
-  "type": "bestof2",
-  "uses": 2,
-  "title": "Second push",
-  "text": "Judy kept going: she sued over her teaching licence in 1970 and led the 1977 sit-in. Roll two dice and take the higher one.",
-  "ev": "e5"
- },
- "life": [
-  {
-   "k": "info",
-   "title": "Brooklyn, 1947",
-   "text": "Judy is born on 18 December 1947 to German-Jewish parents who had escaped the Nazis. At 18 months she gets polio and begins to use a wheelchair. She grows up in Brooklyn, New York."
-  },
-  {
-   "k": "barrier",
-   "title": "\"A fire hazard\"",
-   "text": "In 1953 her local school refuses to let her attend kindergarten: a wheelchair, it says, is a fire hazard. Her mother Ilse fights the decision, but for years Judy only gets a few hours of home teaching.",
-   "move": -3
-  },
-  {
-   "k": "boost",
-   "title": "Camp Jened",
-   "text": "At a summer camp for disabled teenagers in the Catskills, Judy sees a place where disability is normal and decisions are shared. Friendships from camp later grow into activism, and the film Crip Camp tells that story.",
-   "move": 1
-  },
-  {
-   "k": "quiz",
-   "title": "The teaching licence",
-   "text": "In 1970 New York City refuses Judy a teaching licence because she cannot walk. She takes the city to court.",
-   "move": 1,
-   "q": {
-    "q": "What happened when Judy challenged the city's refusal?",
-    "a": [
-     "She won and became the first wheelchair user to teach in New York City schools",
-     "The court agreed with the city and she gave up teaching",
-     "The city offered her only a desk job without students"
-    ],
-    "x": "Judy won her case in 1970. The news made her widely known, and she taught in New York City public schools."
-   }
-  },
-  {
-   "k": "info",
-   "title": "Disabled in Action",
-   "text": "In 1970 Judy helps found Disabled in Action, a group led by disabled people. Later she moves to Berkeley, California, a centre of the independent living movement, where disabled people run their own services."
-  },
-  {
-   "k": "barrier",
-   "title": "A law on paper only",
-   "text": "Section 504 of the Rehabilitation Act (1973) bans discrimination by programmes that get government money. But the government keeps delaying the rules that would make it real, and nothing changes in schools or buildings.",
-   "move": -3
-  },
-  {
-   "k": "quiz",
-   "title": "April 1977",
-   "text": "Activists across the US demand that the 504 rules be signed. In San Francisco about 150 people occupy a federal building, with no ramps, beds or medicine ready for them.",
-   "move": 1,
-   "q": {
-    "q": "How long did the San Francisco sit-in last?",
-    "a": [
-     "26 days",
-     "3 days",
-     "About 6 months"
-    ],
-    "x": "The sit-in lasted 26 days, the longest occupation of a US federal building at the time. Food came from groups such as the Black Panthers, and a delegation went to Washington."
-   }
-  },
-  {
-   "k": "boost",
-   "title": "Section 504 is signed",
-   "text": "The 504 regulations are signed. They become the first national civil rights protection for disabled people in the US and the base for the Americans with Disabilities Act of 1990.",
-   "move": 1
-  },
-  {
-   "k": "boost",
-   "title": "Inside government",
-   "text": "In 1993 Judy becomes Assistant Secretary in the US Department of Education, responsible for special education and rehabilitation. Later she advises the World Bank and the State Department on disability rights worldwide.",
-   "move": 1
-  },
-  {
-   "k": "barrier",
-   "title": "Still not accessible",
-   "text": "Even as a senior official Judy meets inaccessible planes, buildings and meeting rooms. She keeps saying that barriers come from choices society makes, not from a person's body.",
-   "move": -2
-  },
-  {
-   "k": "info",
-   "title": "Telling the story",
-   "text": "Her memoir Being Heumann and the film Crip Camp, both from 2020, bring the movement to a wide public. She is still travelling and speaking when she is in her seventies."
-  },
-  {
-   "k": "info",
-   "title": "2023: nothing about us without us",
-   "text": "Judy Heumann dies on 4 March 2023, aged 75. Her principle lives on: disabled people must lead decisions that affect their lives. Many rules that make schools and transport more open began with her movement."
-  }
- ],
- "sources": [
-  "js/characters/group2.js (heumann)",
-  "Judith Heumann with Kristen Joiner, Being Heumann (2020)",
-  "Crip Camp (2020)",
-  "docs/characters.md",
-  "Judith Heumann (born Dec 1947): school refusal at about age five, no school until nine (womenshistory.org, Britannica; checked)"
- ],
- "flags": [
-  "Crip Camp is about Camp Jened; Judy appears in it. Exact count of 'about 150' occupants and the first wheelchair-using NYC teacher claim are from the single-player data and widely reported; a human may want to confirm."
- ],
- "evidence": [
-  {
-   "id": "e1",
-   "y": "about 1952",
-   "ev": "Her Brooklyn school principal refused to let her in because a wheelchair was 'a fire hazard'; she had home lessons for years.",
-   "src": 1
-  },
-  {
-   "id": "e2",
-   "y": "1950s to 1970s",
-   "ev": "Steps, buses without lifts and inaccessible buildings and planes limited where she could go, and strangers often had to carry her.",
-   "src": 1
-  },
-  {
-   "id": "e3",
-   "y": "1970",
-   "ev": "New York's Board of Education refused her a teaching licence; she sued and became the first wheelchair user to teach there.",
-   "src": 1
-  },
-  {
-   "id": "e4",
-   "y": "1960s",
-   "ev": "At Camp Jened in the Catskills she met other disabled teenagers and found a community.",
-   "src": 2
-  },
-  {
-   "id": "e5",
-   "y": "1977",
-   "ev": "She led the sit-in in San Francisco (about 25 days) that forced the government to sign the Section 504 rules; Black Panthers brought food.",
-   "src": 1
-  }
- ],
- "balance": {
-  "comp": 24
- },
- "look": {
-  "skin": "#c99571",
-  "hair": "#6b4630",
-  "hairStyle": "wavy",
-  "top": "#c0262d",
-  "bottom": "#33384a",
-  "outfit": "wheelchair",
-  "eyes": "#3a2414",
-  "brow": {
-   "c": "#2a2420",
-   "t": 1.1,
-   "a": 0.8
-  },
-  "mouth": "grin",
-  "lipstick": "#b0405a",
-  "lashes": true,
-  "wrinkles": 0.4,
-  "nose": 1.0,
-  "mouthW": 1.75,
-  "glasses": {
-   "type": "rect",
-   "c": "#5a1f33",
-   "t": 0.3
-  },
-  "earrings": "#d4af37",
-  "face": {
-   "w": 1.04,
-   "h": 1.06
-  },
-  "torso": {
-   "kind": "blazer",
-   "c1": "#c0262d",
-   "c2": "#1f1f24",
-   "c3": "#d4af37"
-  },
-  "prop": "none"
- }
 }

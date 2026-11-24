@@ -1,211 +1,216 @@
 {
- "id": "grandin",
- "intro": "You are Temple, an autistic girl in 1950s America who thinks in pictures and is hurt by sudden noise. Teachers and doctors expect little. Animals, machines and a few people who listen show you where you can do real work.",
- "zones": {
-  "office": {
-   "fx": "slow",
-   "ev": "e1",
-   "why": "Medical authority: doctors advised an institution, and others decided about her."
+  "id": "grandin",
+  "intro": "You are Temple, an autistic girl in 1950s America who thinks in pictures and is hurt by sudden noise. Teachers and doctors expect little. Animals, machines and a few people who listen show you where you can do real work.",
+  "zones": {
+    "office": {
+      "fx": "slow",
+      "ev": "e1",
+      "why": "Medical authority: doctors advised an institution, and others decided about her."
+    },
+    "tunnel": {
+      "fx": "slow",
+      "ev": "e2",
+      "why": "Noise and teasing: sudden sounds hurt, and many classmates stayed away or mocked her."
+    },
+    "market": {
+      "fx": "slow",
+      "ev": "e4",
+      "why": "Workplace: the cattle industry was a closed men's world for a woman who is also autistic."
+    },
+    "ladder": {
+      "fx": "fast",
+      "ev": "e3",
+      "why": "A teacher who saw her talent: Mr Carlock channelled her fixations into school projects."
+    },
+    "bridge": {
+      "fx": "fast",
+      "ev": "e5",
+      "why": "Mother, aunt and mentors gave her chances and patient time."
+    }
   },
-  "tunnel": {
-   "fx": "slow",
-   "ev": "e2",
-   "why": "Noise and teasing: sudden sounds hurt, and many classmates stayed away or mocked her."
+  "advantage": {
+    "type": "hint",
+    "uses": 3,
+    "title": "Picture it",
+    "text": "Temple pictures a problem in detail, like a film, and spots what does not fit. Remove one wrong answer before you decide.",
+    "ev": "e6"
   },
-  "market": {
-   "fx": "slow",
-   "ev": "e4",
-   "why": "Workplace: the cattle industry was a closed men's world for a woman who is also autistic."
+  "life": [
+    {
+      "k": "info",
+      "title": "Boston, 1947",
+      "text": "Temple is born on 29 August 1947. As a toddler she does not speak, is easily overwhelmed by sound and touch, and avoids eye contact. At this time autism is poorly understood."
+    },
+    {
+      "k": "barrier",
+      "title": "Institution advised",
+      "text": "Doctors tell her parents that she has brain damage and that an institution is the best place for her, as was common then. Her mother Eustacia refuses and looks for other options.",
+      "move": -1
+    },
+    {
+      "k": "boost",
+      "title": "Speech therapy",
+      "text": "With a speech therapist, daily practice and a mother who insists on manners and new experiences, Temple begins to speak at almost four.",
+      "move": 1
+    },
+    {
+      "k": "barrier",
+      "title": "Teased at school",
+      "text": "Classmates call her \"weird\" and mock her habit of repeating herself. School is loud, with crowds and unspoken rules nobody explains, and she often has no one to sit with.",
+      "move": -1
+    },
+    {
+      "k": "boost",
+      "title": "Mr. Carlock",
+      "text": "Her science teacher notices her curiosity and gives her projects that fit her visual thinking. For the first time at school, someone builds on what she is good at.",
+      "move": 2
+    },
+    {
+      "k": "quiz",
+      "title": "The squeeze machine",
+      "text": "On her aunt's ranch in Arizona, Temple sees cattle stand calmly in a squeeze chute. At 18 she builds a machine to try it on herself.",
+      "move": 1,
+      "q": {
+        "q": "What does Temple's squeeze machine give the person using it?",
+        "a": [
+          "Firm, steady pressure that calms the body",
+          "Bright light to focus attention",
+          "Loud music to cover other noise"
+        ],
+        "x": "Deep pressure helps calm her body. Researchers later studied this idea, and many autistic people say pressure or weighted items help them."
+      }
+    },
+    {
+      "k": "info",
+      "title": "Degrees in animal science",
+      "text": "Temple studies psychology (BA 1970), animal science (MS 1975) and later earns a PhD (1989). Her field is how cattle and other animals perceive and move through spaces."
+    },
+    {
+      "k": "barrier",
+      "title": "A woman in the cattle yard",
+      "text": "In the 1970s the livestock industry is mostly men who do not welcome a young woman who talks about how cows feel. She is mocked, kept out of sites and has to prove herself again and again.",
+      "move": -1
+    },
+    {
+      "k": "quiz",
+      "title": "Curved chutes",
+      "text": "A rancher shrugs off her ideas. So she draws and builds handling systems and walks through them herself.",
+      "move": 1,
+      "q": {
+        "q": "What were Temple's curved cattle chutes based on?",
+        "a": [
+          "How animals see and move, so that they stay calmer",
+          "The cheapest way to build fences",
+          "Rules from older handling manuals"
+        ],
+        "x": "Her designs reduce stress and balking. Facilities in North America have used designs influenced by her work."
+      }
+    },
+    {
+      "k": "boost",
+      "title": "Thinking in Pictures",
+      "text": "Her books Emergence: Labeled Autistic (1986) and Thinking in Pictures (1995) explain her mind. She says clearly that autistic people think in many different ways, and that her way is not the only one.",
+      "move": 2
+    },
+    {
+      "k": "info",
+      "title": "Seen by millions",
+      "text": "The 2010 HBO film Temple Grandin, a dramatised version of her story, and a place on Time's list of influential people bring her message to a wide audience: autistic people need understanding and fitting support."
+    },
+    {
+      "k": "info",
+      "title": "Different, not less",
+      "text": "Temple teaches at Colorado State University and speaks about neurodiversity and better schooling. Her message: the world needs many kinds of minds, and each autistic person needs different support."
+    }
+  ],
+  "sources": [
+    "js/characters/group2.js (grandin)",
+    "Temple Grandin, Thinking in Pictures (1995), Emergence: Labeled Autistic (1986)",
+    "docs/characters.md"
+  ],
+  "flags": [
+    "Exact age for the squeeze machine (18) and the mid-century 'institution' advice come from the single-player data."
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "y": "1950",
+      "ev": "Without speech at three, she was seen by doctors who advised an institution; her mother refused and arranged speech therapy.",
+      "src": 1
+    },
+    {
+      "id": "e2",
+      "y": "childhood and school",
+      "ev": "Sudden sounds such as school bells hurt her; she was teased at school and called names for how she spoke.",
+      "src": 1
+    },
+    {
+      "id": "e3",
+      "y": "1960s",
+      "ev": "At Hampshire Country School her science teacher Mr Carlock turned her fixations into projects, which led to college.",
+      "src": 1
+    },
+    {
+      "id": "e4",
+      "y": "1970s",
+      "ev": "She entered the male-dominated livestock industry and was kept out of some feedlot meetings and harassed by cowboys.",
+      "src": 1
+    },
+    {
+      "id": "e5",
+      "y": "1960s",
+      "ev": "Her aunt's ranch in Arizona, her mother and later mentors gave her room to find her path.",
+      "src": 1
+    },
+    {
+      "id": "e6",
+      "y": "1970s",
+      "ev": "She designed curved cattle chutes by picturing animals' view; her squeeze machine came from the same insight.",
+      "src": 1
+    }
+  ],
+  "balance": {
+    "comp": 18
   },
-  "ladder": {
-   "fx": "fast",
-   "ev": "e3",
-   "why": "A teacher who saw her talent: Mr Carlock channelled her fixations into school projects."
-  },
-  "bridge": {
-   "fx": "fast",
-   "ev": "e5",
-   "why": "Mother, aunt and mentors gave her chances and patient time."
+  "look": {
+    "skin": "#e4c3a0",
+    "hair": "#8a7f6a",
+    "hairStyle": "panel",
+    "top": "#c0392b",
+    "bottom": "#2b3f66",
+    "outfit": "western",
+    "eyes": "#7a6a48",
+    "brow": {
+      "c": "#5a4630",
+      "t": 1.1,
+      "a": 0.5
+    },
+    "mouth": "neutral",
+    "wrinkles": 0.5,
+    "nose": 1.05,
+    "mouthW": 1.15,
+    "blush": "#d68a7a",
+    "face": {
+      "w": 1.02,
+      "h": 1.1
+    },
+    "torso": {
+      "kind": "western",
+      "c1": "#b02a1f",
+      "c2": "#f5f5f5",
+      "c3": "#111111"
+    },
+    "prop": "none",
+    "hp": {
+      "y": 2.9,
+      "px": 1.0,
+      "d": 0.6,
+      "t": 0.8
+    },
+    "hairPanel": {
+      "type": "crop",
+      "vol": 0.7,
+      "messy": true
+    }
   }
- },
- "advantage": {
-  "type": "hint",
-  "uses": 3,
-  "title": "Picture it",
-  "text": "Temple pictures a problem in detail, like a film, and spots what does not fit. Remove one wrong answer before you decide.",
-  "ev": "e6"
- },
- "life": [
-  {
-   "k": "info",
-   "title": "Boston, 1947",
-   "text": "Temple is born on 29 August 1947. As a toddler she does not speak, is easily overwhelmed by sound and touch, and avoids eye contact. At this time autism is poorly understood."
-  },
-  {
-   "k": "barrier",
-   "title": "Institution advised",
-   "text": "Doctors tell her parents that she has brain damage and that an institution is the best place for her, as was common then. Her mother Eustacia refuses and looks for other options.",
-   "move": -1
-  },
-  {
-   "k": "boost",
-   "title": "Speech therapy",
-   "text": "With a speech therapist, daily practice and a mother who insists on manners and new experiences, Temple begins to speak at almost four.",
-   "move": 1
-  },
-  {
-   "k": "barrier",
-   "title": "Teased at school",
-   "text": "Classmates call her \"weird\" and mock her habit of repeating herself. School is loud, with crowds and unspoken rules nobody explains, and she often has no one to sit with.",
-   "move": -1
-  },
-  {
-   "k": "boost",
-   "title": "Mr. Carlock",
-   "text": "Her science teacher notices her curiosity and gives her projects that fit her visual thinking. For the first time at school, someone builds on what she is good at.",
-   "move": 2
-  },
-  {
-   "k": "quiz",
-   "title": "The squeeze machine",
-   "text": "On her aunt's ranch in Arizona, Temple sees cattle stand calmly in a squeeze chute. At 18 she builds a machine to try it on herself.",
-   "move": 1,
-   "q": {
-    "q": "What does Temple's squeeze machine give the person using it?",
-    "a": [
-     "Firm, steady pressure that calms the body",
-     "Bright light to focus attention",
-     "Loud music to cover other noise"
-    ],
-    "x": "Deep pressure helps calm her body. Researchers later studied this idea, and many autistic people say pressure or weighted items help them."
-   }
-  },
-  {
-   "k": "info",
-   "title": "Degrees in animal science",
-   "text": "Temple studies psychology (BA 1970), animal science (MS 1975) and later earns a PhD (1989). Her field is how cattle and other animals perceive and move through spaces."
-  },
-  {
-   "k": "barrier",
-   "title": "A woman in the cattle yard",
-   "text": "In the 1970s the livestock industry is mostly men who do not welcome a young woman who talks about how cows feel. She is mocked, kept out of sites and has to prove herself again and again.",
-   "move": -1
-  },
-  {
-   "k": "quiz",
-   "title": "Curved chutes",
-   "text": "A rancher shrugs off her ideas. So she draws and builds handling systems and walks through them herself.",
-   "move": 1,
-   "q": {
-    "q": "What were Temple's curved cattle chutes based on?",
-    "a": [
-     "How animals see and move, so that they stay calmer",
-     "The cheapest way to build fences",
-     "Rules from older handling manuals"
-    ],
-    "x": "Her designs reduce stress and balking. Facilities in North America have used designs influenced by her work."
-   }
-  },
-  {
-   "k": "boost",
-   "title": "Thinking in Pictures",
-   "text": "Her books Emergence: Labeled Autistic (1986) and Thinking in Pictures (1995) explain her mind. She says clearly that autistic people think in many different ways, and that her way is not the only one.",
-   "move": 2
-  },
-  {
-   "k": "info",
-   "title": "Seen by millions",
-   "text": "The 2010 HBO film Temple Grandin, a dramatised version of her story, and a place on Time's list of influential people bring her message to a wide audience: autistic people need understanding and fitting support."
-  },
-  {
-   "k": "info",
-   "title": "Different, not less",
-   "text": "Temple teaches at Colorado State University and speaks about neurodiversity and better schooling. Her message: the world needs many kinds of minds, and each autistic person needs different support."
-  }
- ],
- "sources": [
-  "js/characters/group2.js (grandin)",
-  "Temple Grandin, Thinking in Pictures (1995), Emergence: Labeled Autistic (1986)",
-  "docs/characters.md"
- ],
- "flags": [
-  "Exact age for the squeeze machine (18) and the mid-century 'institution' advice come from the single-player data."
- ],
- "evidence": [
-  {
-   "id": "e1",
-   "y": "1950",
-   "ev": "Without speech at three, she was seen by doctors who advised an institution; her mother refused and arranged speech therapy.",
-   "src": 1
-  },
-  {
-   "id": "e2",
-   "y": "childhood and school",
-   "ev": "Sudden sounds such as school bells hurt her; she was teased at school and called names for how she spoke.",
-   "src": 1
-  },
-  {
-   "id": "e3",
-   "y": "1960s",
-   "ev": "At Hampshire Country School her science teacher Mr Carlock turned her fixations into projects, which led to college.",
-   "src": 1
-  },
-  {
-   "id": "e4",
-   "y": "1970s",
-   "ev": "She entered the male-dominated livestock industry and was kept out of some feedlot meetings and harassed by cowboys.",
-   "src": 1
-  },
-  {
-   "id": "e5",
-   "y": "1960s",
-   "ev": "Her aunt's ranch in Arizona, her mother and later mentors gave her room to find her path.",
-   "src": 1
-  },
-  {
-   "id": "e6",
-   "y": "1970s",
-   "ev": "She designed curved cattle chutes by picturing animals' view; her squeeze machine came from the same insight.",
-   "src": 1
-  }
- ],
- "balance": {
-  "comp": 18
- },
- "look": {
-  "skin": "#e4c3a0",
-  "hair": "#80725c",
-  "hairStyle": "wavy",
-  "top": "#c0392b",
-  "bottom": "#2b3f66",
-  "outfit": "western",
-  "eyes": "#7a6a48",
-  "brow": {
-   "c": "#5a4630",
-   "t": 1.1,
-   "a": 0.5
-  },
-  "mouth": "smile",
-  "wrinkles": 0.5,
-  "nose": 1.05,
-  "mouthW": 1.15,
-  "blush": "#d68a7a",
-  "face": {
-   "w": 1.02,
-   "h": 1.1
-  },
-  "torso": {
-   "kind": "western",
-   "c1": "#b02a1f",
-   "c2": "#f5f5f5",
-   "c3": "#111111"
-  },
-  "prop": "none",
-  "hp": {
-   "y": 2.9,
-   "px": 1.0,
-   "d": 0.6,
-   "t": 0.8
-  }
- }
 }
