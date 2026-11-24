@@ -158,7 +158,7 @@
   "comp": 26
  },
  "look": {
-  "skin": "#8a5a3c",
+  "skin": "#8f6040",
   "hair": "#1a1a1a",
   "hairStyle": "short",
   "top": "#1b1b22",
@@ -191,6 +191,12 @@
    "c2": "#f4f4f4",
    "c3": "#5a1a1a"
   },
-  "prop": "mic"
+  "prop": "mic",
+  "hp": {
+   "y": 2.8,
+   "px": -1.6,
+   "d": 0.3,
+   "t": 1.3
+  }
  }
 }

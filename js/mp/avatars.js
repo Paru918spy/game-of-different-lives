@@ -16,6 +16,12 @@
     const line = (pts, w, col, a) => { g.strokeStyle = col; g.globalAlpha = a == null ? 1 : a; g.lineWidth = w * S; g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(X(p[0]), Y(p[1])) : g.moveTo(X(p[0]), Y(p[1]))); g.stroke(); g.globalAlpha = 1; };
     const curve = (a, b, c2, w, col, al) => { g.strokeStyle = col; g.globalAlpha = al == null ? 1 : al; g.lineWidth = w * S; g.beginPath(); g.moveTo(X(a[0]), Y(a[1])); g.quadraticCurveTo(X(b[0]), Y(b[1]), X(c2[0]), Y(c2[1])); g.stroke(); g.globalAlpha = 1; };
     const ell = (x, y, rx, ry, col, al) => { g.fillStyle = col; g.globalAlpha = al == null ? 1 : al; g.beginPath(); g.ellipse(X(x), Y(y), rx * S, ry * S, 0, 0, 7); g.fill(); g.globalAlpha = 1; };
+
+    /* painted hairline: hair colour over the forehead with a part and strand lines (L.hp = { y: hairline height, px: part x, d: depth on the heavier side, t: temple height }) */
+    if (L.hp) { const h = L.hp, hy = h.y || 2.7, px = h.px || 0, d = h.d || .5, tm = h.t == null ? 1.0 : h.t; g.fillStyle = L.hair; g.beginPath(); g.moveTo(X(-4.6), Y(tm - .6)); g.lineTo(X(-4.5), Y(5.2)); g.lineTo(X(4.5), Y(5.2)); g.lineTo(X(4.6), Y(tm - .6)); g.quadraticCurveTo(X(3.7), Y(tm + .3), X(3.2), Y(hy - .3));
+      g.quadraticCurveTo(X(1.8), Y(hy + (px > 0 ? -d : .3)), X(px), Y(hy + .15)); g.quadraticCurveTo(X(-1.8), Y(hy + (px < 0 ? -d : .3)), X(-3.2), Y(hy - .3)); g.quadraticCurveTo(X(-3.7), Y(tm + .3), X(-4.6), Y(tm - .6)); g.fill();
+      g.strokeStyle = mix(L.hair, "#000000", .35); g.lineWidth = .07 * S; g.globalAlpha = .55; for (let i = -7; i <= 7; i++) { g.beginPath(); g.moveTo(X(px), Y(hy + .1)); g.quadraticCurveTo(X(px + i * .35), Y(hy + 1.2), X(i * .62), Y(5.0)); g.stroke(); } g.globalAlpha = 1;
+      g.strokeStyle = mix(L.skin, "#000000", .1); g.lineWidth = .1 * S; g.globalAlpha = .6; g.beginPath(); g.moveTo(X(px), Y(hy + .1)); g.lineTo(X(px), Y(hy + 1.4)); g.stroke(); g.globalAlpha = 1; }
     /* blush and cheek shading */
     if (L.blush) [-1, 1].forEach(s => ell(s * 2.6, -.9, 1.2, .8, L.blush, .35));
     [-1, 1].forEach(s => ell(s * 3.7, -.4, .9, 2.2, dark, .12));

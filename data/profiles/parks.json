@@ -166,7 +166,7 @@
   "comp": 26
  },
  "look": {
-  "skin": "#7d5c46",
+  "skin": "#8a6850",
   "hair": "#1a1512",
   "hairStyle": "roll",
   "top": "#8a7d6a",
@@ -193,6 +193,12 @@
    "c3": "#5a4a3a"
   },
   "prop": "bag",
-  "lashes": true
+  "lashes": true,
+  "hp": {
+   "y": 2.7,
+   "px": 0.2,
+   "d": 0.5,
+   "t": 0.5
+  }
  }
 }
