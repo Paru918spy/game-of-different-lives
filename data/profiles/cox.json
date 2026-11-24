@@ -164,7 +164,7 @@
   },
   "look": {
     "skin": "#a97a56",
-    "hair": "#e0b567",
+    "hair": "#f0c460",
     "hairStyle": "panel",
     "top": "#c8c8d2",
     "bottom": "#c8c8d2",
@@ -189,7 +189,7 @@
     },
     "torso": {
       "kind": "dress",
-      "c1": "#c9ced8",
+      "c1": "#d4d9e2",
       "sparkle": "#ffffff"
     },
     "prop": "none",

@@ -167,13 +167,13 @@
     "eyes": "#1c120c",
     "brow": {
       "c": "#121010",
-      "t": 1.1,
-      "a": 0
+      "t": 0.9,
+      "a": 0.1
     },
-    "mouth": "grin",
+    "mouth": "smile",
     "wrinkles": 0.2,
     "nose": 1.05,
-    "mouthW": 1.0,
+    "mouthW": 0.9,
     "beard": [
       {
         "style": "mustache",
