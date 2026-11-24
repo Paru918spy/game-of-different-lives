@@ -1,213 +1,213 @@
 {
- "id": "turing",
- "intro": "You are Alan Turing, a mathematician with a stubborn habit of asking what can be computed at all. Content note: this life ends with persecution under an unjust law and an early death; the text stays factual and non-graphic.",
- "zones": {
-  "office": {
-   "fx": "slow",
-   "ev": "e1",
-   "why": "Law: a 1952 conviction for being gay ended his security clearance and his career."
+  "id": "turing",
+  "intro": "You are Alan Turing, a mathematician with a stubborn habit of asking what can be computed at all. Content note: this life ends with persecution under an unjust law and an early death; the text stays factual and non-graphic.",
+  "zones": {
+    "office": {
+      "fx": "slow",
+      "ev": "e1",
+      "why": "Law: a 1952 conviction for being gay ended his security clearance and his career."
+    },
+    "tunnel": {
+      "fx": "slow",
+      "ev": "e3",
+      "why": "Secrecy: the Official Secrets Act forced him to stay silent about his work."
+    },
+    "ladder": {
+      "fx": "slow",
+      "ev": "e4",
+      "why": "School: Sherborne wanted Latin, not mathematics."
+    },
+    "quiet": {
+      "fx": "fast",
+      "ev": "e5",
+      "why": "Study and thought: Cambridge gave him time to work out what computing means."
+    },
+    "sprint": {
+      "fx": "fast",
+      "ev": "e6",
+      "why": "Running: he ran a marathon in 2h46 and trained with a club."
+    }
   },
-  "tunnel": {
-   "fx": "slow",
-   "ev": "e3",
-   "why": "Secrecy: the Official Secrets Act forced him to stay silent about his work."
+  "advantage": {
+    "type": "hint",
+    "uses": 2,
+    "title": "Cutting to the core",
+    "text": "His 1936 paper reduced a huge question to a precise one. Twice, one wrong answer is removed before you choose.",
+    "ev": "e5"
   },
-  "ladder": {
-   "fx": "slow",
-   "ev": "e4",
-   "why": "School: Sherborne wanted Latin, not mathematics."
+  "life": [
+    {
+      "k": "info",
+      "title": "London, 1912",
+      "text": "Alan is born on 23 June 1912. His parents work for the British administration in India, so he grows up with foster families in England and then at boarding school."
+    },
+    {
+      "k": "barrier",
+      "title": "A school that wanted Latin",
+      "move": -1,
+      "text": "At Sherborne School teachers care about Latin, sport and neat handwriting. Alan cares about science and numbers, and is criticised for his untidy work and for not fitting the school's idea of a good pupil."
+    },
+    {
+      "k": "info",
+      "title": "Christopher",
+      "text": "Alan's close friend Christopher Morcom shares his love of science. Christopher dies of an illness at 18. Alan is devastated and keeps pursuing science, partly in his friend's memory."
+    },
+    {
+      "k": "boost",
+      "title": "King's College, Cambridge",
+      "move": 2,
+      "text": "Alan studies mathematics at Cambridge and is elected a fellow of King's College at 22, an honour for young researchers. There, people value how he thinks."
+    },
+    {
+      "k": "quiz",
+      "title": "The paper of 1936",
+      "move": 2,
+      "text": "In 1936 Alan publishes a paper that describes an imaginary machine able to carry out any calculation, given the right instructions. It lays the theoretical groundwork for every computer today.",
+      "q": {
+        "q": "What is the idea from his 1936 paper called?",
+        "a": [
+          "The Turing machine",
+          "The Enigma machine",
+          "The Bombe"
+        ],
+        "x": "The universal Turing machine is a theoretical model of computation. Enigma was the German cipher machine, and the Bombe was a code-breaking machine built later."
+      }
+    },
+    {
+      "k": "boost",
+      "title": "Bletchley Park",
+      "move": 2,
+      "text": "In 1939 Alan joins the secret codebreakers at Bletchley Park. He helps design the Bombe to attack the German Enigma cipher, and leads the team working on German naval messages, which protect Atlantic convoys."
+    },
+    {
+      "k": "barrier",
+      "title": "A hero nobody could name",
+      "move": -1,
+      "text": "The Official Secrets Act keeps thousands of codebreakers silent for decades. Alan gets only a modest honour, an OBE in 1946, and the public does not learn what he did until long after."
+    },
+    {
+      "k": "boost",
+      "title": "Running to think",
+      "move": 1,
+      "text": "After the war Alan runs for the Walton Athletic Club and sometimes runs to meetings. His marathon times are close to Olympic level, and running gives him a way to clear his head."
+    },
+    {
+      "k": "quiz",
+      "title": "Can machines think?",
+      "move": 2,
+      "text": "At the University of Manchester he works on some of the first stored-program computers. In 1950 he asks \"Can machines think?\" and proposes a test with a human judge.",
+      "q": {
+        "q": "What do we call his 1950 \"imitation game\" today?",
+        "a": [
+          "The Turing Test",
+          "The Bletchley Test",
+          "The Morcom Test"
+        ],
+        "x": "The Turing Test asks whether a human judge can tell a machine from a person by conversation alone. It is still discussed in AI research."
+      }
+    },
+    {
+      "k": "barrier",
+      "title": "Convicted in 1952",
+      "move": -1,
+      "text": "Sex between men is a crime in Britain. After a burglary report, police learn of Alan's relationship with a man and he is convicted of \"gross indecency\". Instead of prison he must accept hormone treatment for a year."
+    },
+    {
+      "k": "barrier",
+      "title": "Clearance withdrawn",
+      "move": -2,
+      "text": "The conviction ends his security clearance, so he can no longer advise the government on codes. Officials treat him as a risk. He keeps working on mathematics and on how living things grow patterns, increasingly isolated."
+    },
+    {
+      "k": "info",
+      "title": "What came after",
+      "text": "Alan dies on 7 June 1954, aged 41. Decades later Britain apologised in 2009, pardoned him in 2013 and in 2017 pardoned thousands of other men. Since 2021 he is on the Bank of England £50 note."
+    }
+  ],
+  "sources": [
+    "js/characters/group3.js tiles for Alan Turing",
+    "Bletchley Park Trust; Andrew Hodges, Alan Turing: The Enigma",
+    "UK Government apology (2009), royal pardon (2013), Policing and Crime Act 2017 (the Turing law)"
+  ],
+  "flags": [
+    "Please check: Turing's marathon time and the 1948 Olympic trial claim (he ran about 2h46 in 1947 and was considered for the 1948 Olympic team before an injury).",
+    "Please check: wording that he ran to meetings (documented by biographers) and the OBE year 1946.",
+    "Cause of death is deliberately not described; the 1954 inquest verdict is not mentioned. Review whether this level of detail suits age 12."
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "y": "1952",
+      "ev": "He was convicted of 'gross indecency' under a law that made gay sex a crime; he accepted hormone treatment instead of prison.",
+      "src": 2
+    },
+    {
+      "id": "e2",
+      "y": "1952",
+      "ev": "His security clearance was withdrawn, so he lost his work for the secret service.",
+      "src": 1
+    },
+    {
+      "id": "e3",
+      "y": "1939 to 1945",
+      "ev": "His wartime codebreaking at Bletchley Park was covered by the Official Secrets Act, so he could not tell anyone.",
+      "src": 1
+    },
+    {
+      "id": "e4",
+      "y": "1926",
+      "ev": "At Sherborne School the headmaster wanted classics and Latin; he preferred science.",
+      "src": 1
+    },
+    {
+      "id": "e5",
+      "y": "1935 to 1936",
+      "ev": "He was elected fellow of King's College, Cambridge, and wrote 'On Computable Numbers' in 1936.",
+      "src": 1
+    },
+    {
+      "id": "e6",
+      "y": "1947 to 1948",
+      "ev": "He ran a marathon in 2 hours 46 minutes and trained with Walton Athletic Club.",
+      "src": 1
+    }
+  ],
+  "balance": {
+    "comp": 24
   },
-  "quiet": {
-   "fx": "fast",
-   "ev": "e5",
-   "why": "Study and thought: Cambridge gave him time to work out what computing means."
-  },
-  "sprint": {
-   "fx": "fast",
-   "ev": "e6",
-   "why": "Running: he ran a marathon in 2h46 and trained with a club."
+  "look": {
+    "skin": "#ead2bc",
+    "hair": "#2a2220",
+    "hairStyle": "quiff",
+    "top": "#3d4047",
+    "bottom": "#3a3a44",
+    "outfit": "suit",
+    "eyes": "#4a3a2a",
+    "brow": {
+      "c": "#2a2220",
+      "t": 0.9,
+      "a": 0.1
+    },
+    "mouth": "serious",
+    "wrinkles": 0.25,
+    "nose": 1.05,
+    "mouthW": 1.1,
+    "face": {
+      "w": 1.0,
+      "h": 1.14
+    },
+    "torso": {
+      "kind": "suit",
+      "c1": "#8a7d68",
+      "c2": "#e9e6df",
+      "c3": "#1a1a1a"
+    },
+    "prop": "none",
+    "hp": {
+      "y": 2.5,
+      "px": 1.3,
+      "d": 0.7,
+      "t": 0.6
+    }
   }
- },
- "advantage": {
-  "type": "hint",
-  "uses": 2,
-  "title": "Cutting to the core",
-  "text": "His 1936 paper reduced a huge question to a precise one. Twice, one wrong answer is removed before you choose.",
-  "ev": "e5"
- },
- "life": [
-  {
-   "k": "info",
-   "title": "London, 1912",
-   "text": "Alan is born on 23 June 1912. His parents work for the British administration in India, so he grows up with foster families in England and then at boarding school."
-  },
-  {
-   "k": "barrier",
-   "title": "A school that wanted Latin",
-   "move": -1,
-   "text": "At Sherborne School teachers care about Latin, sport and neat handwriting. Alan cares about science and numbers, and is criticised for his untidy work and for not fitting the school's idea of a good pupil."
-  },
-  {
-   "k": "info",
-   "title": "Christopher",
-   "text": "Alan's close friend Christopher Morcom shares his love of science. Christopher dies of an illness at 18. Alan is devastated and keeps pursuing science, partly in his friend's memory."
-  },
-  {
-   "k": "boost",
-   "title": "King's College, Cambridge",
-   "move": 2,
-   "text": "Alan studies mathematics at Cambridge and is elected a fellow of King's College at 22, an honour for young researchers. There, people value how he thinks."
-  },
-  {
-   "k": "quiz",
-   "title": "The paper of 1936",
-   "move": 2,
-   "text": "In 1936 Alan publishes a paper that describes an imaginary machine able to carry out any calculation, given the right instructions. It lays the theoretical groundwork for every computer today.",
-   "q": {
-    "q": "What is the idea from his 1936 paper called?",
-    "a": [
-     "The Turing machine",
-     "The Enigma machine",
-     "The Bombe"
-    ],
-    "x": "The universal Turing machine is a theoretical model of computation. Enigma was the German cipher machine, and the Bombe was a code-breaking machine built later."
-   }
-  },
-  {
-   "k": "boost",
-   "title": "Bletchley Park",
-   "move": 2,
-   "text": "In 1939 Alan joins the secret codebreakers at Bletchley Park. He helps design the Bombe to attack the German Enigma cipher, and leads the team working on German naval messages, which protect Atlantic convoys."
-  },
-  {
-   "k": "barrier",
-   "title": "A hero nobody could name",
-   "move": -1,
-   "text": "The Official Secrets Act keeps thousands of codebreakers silent for decades. Alan gets only a modest honour, an OBE in 1946, and the public does not learn what he did until long after."
-  },
-  {
-   "k": "boost",
-   "title": "Running to think",
-   "move": 1,
-   "text": "After the war Alan runs for the Walton Athletic Club and sometimes runs to meetings. His marathon times are close to Olympic level, and running gives him a way to clear his head."
-  },
-  {
-   "k": "quiz",
-   "title": "Can machines think?",
-   "move": 2,
-   "text": "At the University of Manchester he works on some of the first stored-program computers. In 1950 he asks \"Can machines think?\" and proposes a test with a human judge.",
-   "q": {
-    "q": "What do we call his 1950 \"imitation game\" today?",
-    "a": [
-     "The Turing Test",
-     "The Bletchley Test",
-     "The Morcom Test"
-    ],
-    "x": "The Turing Test asks whether a human judge can tell a machine from a person by conversation alone. It is still discussed in AI research."
-   }
-  },
-  {
-   "k": "barrier",
-   "title": "Convicted in 1952",
-   "move": -1,
-   "text": "Sex between men is a crime in Britain. After a burglary report, police learn of Alan's relationship with a man and he is convicted of \"gross indecency\". Instead of prison he must accept hormone treatment for a year."
-  },
-  {
-   "k": "barrier",
-   "title": "Clearance withdrawn",
-   "move": -2,
-   "text": "The conviction ends his security clearance, so he can no longer advise the government on codes. Officials treat him as a risk. He keeps working on mathematics and on how living things grow patterns, increasingly isolated."
-  },
-  {
-   "k": "info",
-   "title": "What came after",
-   "text": "Alan dies on 7 June 1954, aged 41. Decades later Britain apologised in 2009, pardoned him in 2013 and in 2017 pardoned thousands of other men. Since 2021 he is on the Bank of England £50 note."
-  }
- ],
- "sources": [
-  "js/characters/group3.js tiles for Alan Turing",
-  "Bletchley Park Trust; Andrew Hodges, Alan Turing: The Enigma",
-  "UK Government apology (2009), royal pardon (2013), Policing and Crime Act 2017 (the Turing law)"
- ],
- "flags": [
-  "Please check: Turing's marathon time and the 1948 Olympic trial claim (he ran about 2h46 in 1947 and was considered for the 1948 Olympic team before an injury).",
-  "Please check: wording that he ran to meetings (documented by biographers) and the OBE year 1946.",
-  "Cause of death is deliberately not described; the 1954 inquest verdict is not mentioned. Review whether this level of detail suits age 12."
- ],
- "evidence": [
-  {
-   "id": "e1",
-   "y": "1952",
-   "ev": "He was convicted of 'gross indecency' under a law that made gay sex a crime; he accepted hormone treatment instead of prison.",
-   "src": 2
-  },
-  {
-   "id": "e2",
-   "y": "1952",
-   "ev": "His security clearance was withdrawn, so he lost his work for the secret service.",
-   "src": 1
-  },
-  {
-   "id": "e3",
-   "y": "1939 to 1945",
-   "ev": "His wartime codebreaking at Bletchley Park was covered by the Official Secrets Act, so he could not tell anyone.",
-   "src": 1
-  },
-  {
-   "id": "e4",
-   "y": "1926",
-   "ev": "At Sherborne School the headmaster wanted classics and Latin; he preferred science.",
-   "src": 1
-  },
-  {
-   "id": "e5",
-   "y": "1935 to 1936",
-   "ev": "He was elected fellow of King's College, Cambridge, and wrote 'On Computable Numbers' in 1936.",
-   "src": 1
-  },
-  {
-   "id": "e6",
-   "y": "1947 to 1948",
-   "ev": "He ran a marathon in 2 hours 46 minutes and trained with Walton Athletic Club.",
-   "src": 1
-  }
- ],
- "balance": {
-  "comp": 24
- },
- "look": {
-  "skin": "#ead2bc",
-  "hair": "#2a2220",
-  "hairStyle": "sidepart",
-  "top": "#3d4047",
-  "bottom": "#3a3a44",
-  "outfit": "suit",
-  "eyes": "#4a3a2a",
-  "brow": {
-   "c": "#2a2220",
-   "t": 0.9,
-   "a": 0.1
-  },
-  "mouth": "serious",
-  "wrinkles": 0.25,
-  "nose": 1.05,
-  "mouthW": 1.1,
-  "face": {
-   "w": 1.0,
-   "h": 1.14
-  },
-  "torso": {
-   "kind": "suit",
-   "c1": "#6b6660",
-   "c2": "#f2f2f2",
-   "c3": "#1a1a1a"
-  },
-  "prop": "none",
-  "hp": {
-   "y": 2.5,
-   "px": 1.3,
-   "d": 0.7,
-   "t": 0.6
-  }
- }
 }
