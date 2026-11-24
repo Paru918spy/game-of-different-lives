@@ -298,7 +298,7 @@
   window.addEventListener("keydown", e => { if (e.code === "Space" && !e.repeat && $("modal").hidden) { e.preventDefault(); if (S && !$("screen-game").hidden) spin(); else if (!$("screen-home").hidden) spinLife(); } });
   buildLogo(); initWheel();
   /* preload event photos once the home screen is idle so cards open instantly */
-  setTimeout(() => { try { Object.values(GOL.events || {}).forEach(o => Object.values(o).forEach(e => { const im = new Image(); im.decoding = "async"; im.src = e.file; })); } catch (e) {} }, 2500);
+  if (!/[?&]join=/.test(location.search)) setTimeout(() => { try { Object.values(GOL.events || {}).forEach(o => Object.values(o).forEach(e => { const im = new Image(); im.decoding = "async"; im.src = e.file; })); } catch (e) {} }, 2500);
   /* FPS overlay: press F (or open index.html?fps) */
   (function () { let el = null, id = 0; const show = on => { if (!on) { el && el.remove(); el = null; clearInterval(id); return; } el = document.createElement("div"); el.style.cssText = "position:fixed;left:8px;bottom:8px;z-index:200;background:#000c;color:#9f9;font:12px/1.4 monospace;padding:6px 8px;border-radius:6px;pointer-events:none;white-space:pre"; document.body.appendChild(el); id = setInterval(() => { const P = board && board.perf; if (P && P.fps != null) el.textContent = `${P.fps} fps  frame ${P.avg} ms (worst ${P.worstS})\nslow frames/s ${P.slowS}\ndraw calls ${P.calls}  tris ${P.tris}\ngeometries ${P.geo}  textures ${P.tex}`; }, 500); };
     window.addEventListener("keydown", e => { if (e.key === "f" || e.key === "F") show(!el); }); if (/[?&]fps/.test(location.search)) show(true); })();
