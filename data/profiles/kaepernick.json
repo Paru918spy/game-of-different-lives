@@ -176,19 +176,14 @@
   "mouthW": 1.55,
   "beard": [
    {
-    "style": "stubble",
+    "style": "short",
     "c": "#141210",
-    "a": 1
+    "a": 0.95
    },
    {
     "style": "mustache",
     "c": "#141210",
-    "a": 0.85
-   },
-   {
-    "style": "goatee",
-    "c": "#141210",
-    "a": 0.7
+    "a": 0.9
    }
   ],
   "face": {

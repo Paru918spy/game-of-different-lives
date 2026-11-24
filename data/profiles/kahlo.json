@@ -165,7 +165,7 @@
   "comp": 15
  },
  "look": {
-  "skin": "#c8976f",
+  "skin": "#c79a76",
   "hair": "#17120e",
   "hairStyle": "centerbraid",
   "top": "#b3262e",
@@ -174,12 +174,12 @@
   "eyes": "#2a1810",
   "brow": {
    "c": "#17120e",
-   "t": 1.9,
-   "a": 0.2,
-   "y": -0.15
+   "t": 1.4,
+   "a": 0.3,
+   "y": -0.1
   },
-  "mouth": "neutral",
-  "lipstick": "#a1252f",
+  "mouth": "serious",
+  "lipstick": "#a33a3a",
   "wrinkles": 0.1,
   "nose": 1.0,
   "mouthW": 1.1,

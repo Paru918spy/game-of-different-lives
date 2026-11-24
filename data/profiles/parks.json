@@ -167,21 +167,21 @@
  },
  "look": {
   "skin": "#7d5c46",
-  "hair": "#251f1b",
-  "hairStyle": "updo",
+  "hair": "#1a1512",
+  "hairStyle": "lowbun",
   "top": "#8a7d6a",
   "bottom": "#3a3a44",
   "outfit": "coat",
   "eyes": "#2a1810",
   "brow": {
-   "c": "#251f1b",
-   "t": 1.0,
-   "a": 0.7
+   "c": "#1a1512",
+   "t": 0.8,
+   "a": 0.5
   },
   "mouth": "smile",
   "wrinkles": 0.2,
   "nose": 1.0,
-  "mouthW": 1.1,
+  "mouthW": 1.2,
   "face": {
    "w": 1.0,
    "h": 1.08
@@ -192,6 +192,7 @@
    "c2": "#f0ece4",
    "c3": "#5a4a3a"
   },
-  "prop": "bag"
+  "prop": "bag",
+  "lashes": true
  }
 }

@@ -164,7 +164,7 @@
  },
  "look": {
   "skin": "#e6cdb6",
-  "hair": "#5c4630",
+  "hair": "#6a5238",
   "hairStyle": "thin",
   "top": "#5b5e66",
   "bottom": "#2f3440",
@@ -178,11 +178,11 @@
   "mouth": "smirk",
   "wrinkles": 0.35,
   "nose": 0.95,
-  "mouthW": 1.1,
+  "mouthW": 1.7,
   "glasses": {
    "type": "rect",
-   "c": "#222222",
-   "t": 0.2
+   "c": "#3a3a3e",
+   "t": 0.13
   },
   "face": {
    "w": 0.92,
@@ -190,7 +190,7 @@
   },
   "torso": {
    "kind": "suit",
-   "c1": "#5b5e66",
+   "c1": "#6b655d",
    "c2": "#e8e8e8",
    "c3": "#2a2f3a"
   },

@@ -165,7 +165,7 @@
   "comp": 18
  },
  "look": {
-  "skin": "#6b4329",
+  "skin": "#6d4a35",
   "hair": "#161616",
   "hairStyle": "braidcap",
   "top": "#111111",
@@ -203,9 +203,9 @@
   },
   "torso": {
    "kind": "pattern",
-   "c1": "#111111",
+   "c1": "#161616",
    "c2": "#17d6b0",
-   "c3": "#ff4f9a"
+   "c3": "#ffd23f"
   },
   "prop": "none"
  }

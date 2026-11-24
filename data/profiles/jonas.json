@@ -174,7 +174,7 @@
  "look": {
   "skin": "#e6b890",
   "hair": "#cfd4da",
-  "hairStyle": "short",
+  "hairStyle": "sidepart",
   "top": "#0d9488",
   "bottom": "#2f3440",
   "outfit": "casual",
@@ -189,9 +189,9 @@
   "nose": 1.05,
   "beard": [
    {
-    "style": "stubble",
-    "c": "#9aa0a8",
-    "a": 0.9
+    "style": "short",
+    "c": "#c9ced4",
+    "a": 0.95
    }
   ],
   "glasses": {
@@ -204,9 +204,10 @@
    "h": 1.08
   },
   "torso": {
-   "kind": "shirt",
+   "kind": "suit",
    "c1": "#0d9488",
-   "c2": "#e8fffb"
+   "c2": "#ffffff",
+   "c3": "#0b5f58"
   },
   "prop": "none"
  }

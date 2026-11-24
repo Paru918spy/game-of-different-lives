@@ -165,7 +165,7 @@
   "comp": 26
  },
  "look": {
-  "skin": "#7b5236",
+  "skin": "#8a5a3a",
   "hair": "#151210",
   "hairStyle": "afrocrown",
   "top": "#e0509a",
@@ -174,8 +174,8 @@
   "eyes": "#2a1810",
   "brow": {
    "c": "#151210",
-   "t": 1.0,
-   "a": 1.2
+   "t": 0.8,
+   "a": 1.4
   },
   "mouth": "grin",
   "lipstick": "#cc2a4a",
@@ -192,6 +192,7 @@
   "torso": {
    "kind": "dress",
    "c1": "#e0509a",
+   "beads": "#2f6fd6",
    "sparkle": "#ffe27a"
   },
   "prop": "none"

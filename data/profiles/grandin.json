@@ -174,8 +174,8 @@
  },
  "look": {
   "skin": "#e4c3a0",
-  "hair": "#6b5238",
-  "hairStyle": "curly",
+  "hair": "#80725c",
+  "hairStyle": "wavy",
   "top": "#c0392b",
   "bottom": "#2b3f66",
   "outfit": "western",
@@ -186,7 +186,7 @@
    "a": 0.5
   },
   "mouth": "neutral",
-  "wrinkles": 0.35,
+  "wrinkles": 0.5,
   "nose": 1.05,
   "mouthW": 1.15,
   "blush": "#d68a7a",

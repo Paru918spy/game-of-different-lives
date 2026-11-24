@@ -166,8 +166,8 @@
   "eyes": "#4a3a2a",
   "brow": {
    "c": "#6a2a4a",
-   "t": 0.9,
-   "a": 0.7
+   "t": 0.7,
+   "a": 0.1
   },
   "mouth": "smile",
   "blush": "#ee9a88",
@@ -181,6 +181,7 @@
    "c1": "#e11d48",
    "c2": "#ffe4e6"
   },
-  "prop": "none"
+  "prop": "none",
+  "mouthW": 1.4
  }
 }

@@ -164,9 +164,9 @@
   "comp": 24
  },
  "look": {
-  "skin": "#c8987a",
-  "hair": "#2a2420",
-  "hairStyle": "short",
+  "skin": "#c99571",
+  "hair": "#6b4630",
+  "hairStyle": "wavy",
   "top": "#c0262d",
   "bottom": "#33384a",
   "outfit": "wheelchair",
@@ -181,11 +181,11 @@
   "lashes": true,
   "wrinkles": 0.4,
   "nose": 1.0,
-  "mouthW": 1.45,
+  "mouthW": 1.6,
   "glasses": {
    "type": "rect",
-   "c": "#1c1c20",
-   "t": 0.24
+   "c": "#5a1f33",
+   "t": 0.3
   },
   "earrings": "#d4af37",
   "face": {

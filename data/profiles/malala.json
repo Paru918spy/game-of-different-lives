@@ -166,18 +166,18 @@
   "comp": 17
  },
  "look": {
-  "skin": "#dcae8c",
-  "hair": "#2a1d16",
+  "skin": "#cf9f78",
+  "hair": "#1c1612",
   "hairStyle": "headscarf",
-  "scarf": "#e6edf2",
-  "top": "#b3556f",
+  "scarf": "#efe6d6",
+  "top": "#7a3a5a",
   "bottom": "#4a6fa5",
   "outfit": "casual",
   "eyes": "#2a1810",
   "brow": {
    "c": "#2a1d16",
-   "t": 1.4,
-   "a": 0.9
+   "t": 1.0,
+   "a": 1.0
   },
   "mouth": "neutral",
   "lashes": true,
@@ -190,9 +190,11 @@
   },
   "torso": {
    "kind": "shirt",
-   "c1": "#b3556f",
-   "c2": "#f3d9e2"
+   "c1": "#7a3a5a",
+   "c2": "#e9c6d4"
   },
-  "prop": "book"
+  "prop": "book",
+  "trim": "#e8d9a8",
+  "eyeOpen": 1.1
  }
 }

@@ -166,14 +166,14 @@
   "comp": 17
  },
  "look": {
-  "skin": "#efd7c2",
-  "hair": "#47372d",
-  "hairStyle": "updo",
+  "skin": "#efdcc8",
+  "hair": "#5a4030",
+  "hairStyle": "lowbun",
   "top": "#f3efe6",
   "bottom": "#4a5a7a",
   "outfit": "dress",
   "eyes": "#8a9aa8",
-  "eyeOpen": 0.55,
+  "eyeOpen": 0.2,
   "brow": {
    "c": "#47372d",
    "t": 0.8,
