@@ -169,7 +169,7 @@
     "skin": "#cf9f78",
     "hair": "#1c1612",
     "hairStyle": "headscarf",
-    "scarf": "#fbf3e4",
+    "scarf": "#ffffff",
     "top": "#e8ecef",
     "bottom": "#4a6fa5",
     "outfit": "casual",
@@ -194,7 +194,7 @@
       "c2": "#d9c7a0"
     },
     "prop": "book",
-    "trim": "#e8d9a8",
+    "trim": null,
     "eyeOpen": 1.1,
     "shawl": true
   }
