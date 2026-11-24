@@ -173,12 +173,39 @@
   "comp": 18
  },
  "look": {
-  "skin": "#f0cfa8",
-  "hair": "#8a6b3c",
-  "hairStyle": "short",
-  "top": "#a63a3a",
+  "skin": "#e4c3a0",
+  "hair": "#80725c",
+  "hairStyle": "wavy",
+  "top": "#c0392b",
   "bottom": "#2b3f66",
   "outfit": "western",
-  "prop": "none"
+  "eyes": "#7a6a48",
+  "brow": {
+   "c": "#5a4630",
+   "t": 1.1,
+   "a": 0.5
+  },
+  "mouth": "smile",
+  "wrinkles": 0.5,
+  "nose": 1.05,
+  "mouthW": 1.15,
+  "blush": "#d68a7a",
+  "face": {
+   "w": 1.02,
+   "h": 1.1
+  },
+  "torso": {
+   "kind": "western",
+   "c1": "#b02a1f",
+   "c2": "#f5f5f5",
+   "c3": "#111111"
+  },
+  "prop": "none",
+  "hp": {
+   "y": 2.9,
+   "px": 1.0,
+   "d": 0.6,
+   "t": 0.8
+  }
  }
 }

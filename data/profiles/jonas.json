@@ -172,12 +172,49 @@
   "comp": 27
  },
  "look": {
-  "skin": "#e8c7a0",
-  "hair": "#9a9a9a",
-  "hairStyle": "short",
-  "top": "#3f6fb0",
+  "skin": "#e6b890",
+  "hair": "#cfd4da",
+  "hairStyle": "sidepart",
+  "top": "#0d9488",
   "bottom": "#2f3440",
-  "outfit": "shirt-tie",
-  "prop": "none"
+  "outfit": "casual",
+  "eyes": "#5a6a7a",
+  "brow": {
+   "c": "#aab0b8",
+   "t": 1.0,
+   "a": 0.5
+  },
+  "mouth": "grin",
+  "wrinkles": 0.45,
+  "nose": 1.05,
+  "beard": [
+   {
+    "style": "short",
+    "c": "#e6e8ec",
+    "a": 1
+   }
+  ],
+  "glasses": {
+   "type": "round",
+   "c": "#222222",
+   "t": 0.2
+  },
+  "face": {
+   "w": 1.02,
+   "h": 1.08
+  },
+  "torso": {
+   "kind": "suit",
+   "c1": "#0d9488",
+   "c2": "#ffffff",
+   "c3": "#0b5f58"
+  },
+  "prop": "none",
+  "hp": {
+   "y": 3.2,
+   "px": 1.4,
+   "d": 0.3,
+   "t": 1.4
+  }
  }
 }

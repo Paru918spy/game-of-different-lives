@@ -176,12 +176,38 @@
   "comp": 24
  },
  "look": {
-  "skin": "#f0d2b0",
-  "hair": "#2a2018",
-  "hairStyle": "short",
-  "top": "#555a66",
+  "skin": "#ead2bc",
+  "hair": "#2a2220",
+  "hairStyle": "sidepart",
+  "top": "#3d4047",
   "bottom": "#3a3a44",
   "outfit": "suit",
-  "prop": "none"
+  "eyes": "#4a3a2a",
+  "brow": {
+   "c": "#2a2220",
+   "t": 0.9,
+   "a": 0.1
+  },
+  "mouth": "serious",
+  "wrinkles": 0.25,
+  "nose": 1.05,
+  "mouthW": 1.1,
+  "face": {
+   "w": 1.0,
+   "h": 1.14
+  },
+  "torso": {
+   "kind": "suit",
+   "c1": "#6b6660",
+   "c2": "#f2f2f2",
+   "c3": "#1a1a1a"
+  },
+  "prop": "none",
+  "hp": {
+   "y": 2.5,
+   "px": 1.3,
+   "d": 0.7,
+   "t": 0.6
+  }
  }
 }

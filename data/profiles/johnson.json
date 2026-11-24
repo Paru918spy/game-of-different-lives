@@ -165,12 +165,36 @@
   "comp": 26
  },
  "look": {
-  "skin": "#6b4a33",
-  "hair": "#1a1410",
-  "hairStyle": "flowers",
+  "skin": "#8a5a3a",
+  "hair": "#151210",
+  "hairStyle": "afrocrown",
   "top": "#e0509a",
   "bottom": "#7a4acf",
   "outfit": "dress",
+  "eyes": "#2a1810",
+  "brow": {
+   "c": "#151210",
+   "t": 0.8,
+   "a": 1.4
+  },
+  "mouth": "grin",
+  "lipstick": "#cc2a4a",
+  "lashes": true,
+  "shadow": "#ff7a3d",
+  "blush": "#e0607a",
+  "nose": 1.05,
+  "mouthW": 1.7,
+  "earrings": "#ffd23f",
+  "face": {
+   "w": 1.02,
+   "h": 1.08
+  },
+  "torso": {
+   "kind": "dress",
+   "c1": "#e0509a",
+   "beads": "#2f6fd6",
+   "sparkle": "#ffe27a"
+  },
   "prop": "none"
  }
 }

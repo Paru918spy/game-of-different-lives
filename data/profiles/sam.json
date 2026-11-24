@@ -157,12 +157,31 @@
   "comp": 20
  },
  "look": {
-  "skin": "#e8c7a0",
-  "hair": "#6b4acf",
+  "skin": "#e8bd96",
+  "hair": "#8b3a62",
   "hairStyle": "short",
-  "top": "#3aa39a",
+  "top": "#e11d48",
   "bottom": "#33384a",
   "outfit": "hoodie",
-  "prop": "none"
+  "eyes": "#4a3a2a",
+  "brow": {
+   "c": "#6a2a4a",
+   "t": 0.7,
+   "a": 0.1
+  },
+  "mouth": "grin",
+  "blush": "#ee9a88",
+  "nose": 0.9,
+  "face": {
+   "w": 0.98,
+   "h": 1.08
+  },
+  "torso": {
+   "kind": "hoodie",
+   "c1": "#e11d48",
+   "c2": "#ffe4e6"
+  },
+  "prop": "none",
+  "mouthW": 1.4
  }
 }
