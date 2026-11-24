@@ -340,12 +340,13 @@
       /* torso: back and sleeves in the body colour, painted front patch */
       const torso = add(new THREE.CylinderGeometry(4.6, 5.2, 11, 28), top, 0, 6.1, 0); torso.scale.z = .72;
       const tf = add(new THREE.CylinderGeometry(4.64, 5.24, 11, 28, 1, true, -1.2, 2.4), new THREE.MeshStandardMaterial({ map: tex(A.paintTorso(Object.assign({ top: look.top }, T))), roughness: .7 }), 0, 6.1, 0); tf.scale.z = .72;
-      add(new THREE.CylinderGeometry(1.7, 2, 2.2, 14), skin, 0, 12.2, .3); add(new THREE.SphereGeometry(5, 20, 10, 0, Math.PI * 2, 0, Math.PI / 2), top, 0, 11.4, 0).scale.set(1.0, .38, .74);
+      { const sl = add(new THREE.CylinderGeometry(2.7, 5.15, 3.6, 32), top, 0, 13.2, 0); sl.scale.z = .74; sl.userData.noOutline = true; const nk = add(new THREE.CylinderGeometry(1.95, 2.35, 5.2, 18), skin, 0, 15.4, .5); nk.scale.z = .95; const cl = add(new THREE.TorusGeometry(2.55, .62, 10, 28), mt(T.c2 && T.kind !== "jersey" && T.kind !== "western" ? T.c2 : look.top), 0, 14.1, .4); cl.rotation.x = Math.PI / 2 - .12; cl.scale.set(1, 1.0, 1); }
       /* head: skin ellipsoid + painted face patch (front) */
-      const F = look.face || {}, HY = 18.2, head = new THREE.Group(); head.position.set(0, HY, .5); head.scale.set((F.w || 1) * 1.22, (F.h || 1.1) * 1.2, 1.08); body.add(head);
-      head.add(new THREE.Mesh(new THREE.SphereGeometry(4.4, 36, 28), skin));
+      const F = look.face || {}, HY = 19.7, head = new THREE.Group(); head.position.set(0, HY, .5); head.scale.set((F.w || 1) * 1.06, (F.h || 1.1) * 1.04, 1.0); body.add(head);
+      const eggify = (geo, R0) => { const ps = geo.attributes.position, nr = .2 * (1 - ((look.jaw && look.jaw.sq) || .3) * .5); for (let i = 0; i < ps.count; i++) { const y = ps.getY(i), t = Math.max(0, -y / R0), k = 1 - nr * Math.pow(t, 1.5); ps.setX(i, ps.getX(i) * k); ps.setZ(i, ps.getZ(i) * (1 - nr * .7 * Math.pow(t, 1.5))); if (y < 0) ps.setY(i, y * 1.08); else ps.setY(i, y * 1.0); } ps.needsUpdate = true; geo.computeVertexNormals(); };
+      const hg = new THREE.SphereGeometry(4.4, 36, 28); eggify(hg, 4.4); head.add(new THREE.Mesh(hg, skin));
       const R = 4.46, fg = new THREE.SphereGeometry(R, 56, 40, Math.PI / 2 - 1.05, 2.1, .38, 2.45), pos = fg.attributes.position, uv = fg.attributes.uv;
-      for (let i = 0; i < pos.count; i++) uv.setXY(i, pos.getX(i) / (2 * R) + .5, pos.getY(i) / (2 * R) + .5);
+      for (let i = 0; i < pos.count; i++) uv.setXY(i, pos.getX(i) / (2 * R) + .5, pos.getY(i) / (2 * R) + .5); eggify(fg, R);
       { const fm = new THREE.Mesh(fg, (() => { const ft = tex(A.paintFace(look)); return new THREE.MeshStandardMaterial({ map: ft, emissiveMap: ft, emissive: 0xffffff, emissiveIntensity: .32, roughness: .75 }); })()); fm.userData.noOutline = true; head.add(fm); }
       [-1, 1].forEach(s => { const e = new THREE.Mesh(new THREE.SphereGeometry(1, 12, 10), skin); e.position.set(s * 4.35, -.2, .2); e.scale.set(.55, 1.1, .8); head.add(e); if (look.earrings) { const r = new THREE.Mesh(new THREE.SphereGeometry(.55, 8, 6), mt(look.earrings, { metalness: .8, roughness: .3 })); r.position.set(s * 4.5, -1.7, .3); head.add(r); } });
       /* hair (children of head so it follows its shape) */
@@ -394,7 +395,7 @@
       [-1, 1].forEach(s => { beamLocal(body, [s * 2.7, 1.9, 0], [s * 2.7, 1.9, 9.5], 3.4, bot); beamLocal(body, [s * 2.7, 1.9, 9.5], [s * 2.7, -6.5, 10], 3, shin); add(new THREE.BoxGeometry(3.4, 1.6, 5), mt(cloth === "football" ? 0xf2f2f2 : 0x2a2420), s * 2.7, -7.2, 11.4); });
       if (cloth === "dress" || cloth === "coat") add(new THREE.CylinderGeometry(4.6, 8.4, 9, 24, 1, true), cloth === "dress" ? top : bot, 0, 2.6, 2.8).scale.set(1, 1, 1.35);
       /* arms */
-      [-1, 1].forEach(s => { beamLocal(body, [s * 5.8, 10.8, 0], [s * 5.4, 6, 8], 2.9, top); beamLocal(body, [s * 5.4, 6, 8], [s * 3.6, 8.6, 15], 2.5, top); add(new THREE.SphereGeometry(2.2, 12, 10), skin, s * 3.6, 8.9, 15.8).scale.set(1, .8, 1.15); });
+      [-1, 1].forEach(s => { beamLocal(body, [s * 5.1, 11.0, 0], [s * 5.4, 6, 8], 2.9, top); beamLocal(body, [s * 5.4, 6, 8], [s * 3.6, 8.6, 15], 2.5, top); add(new THREE.SphereGeometry(2.2, 12, 10), skin, s * 3.6, 8.9, 15.8).scale.set(1, .8, 1.15); });
       if (cloth === "wheelchair") { [-1, 1].forEach(s => { const w = new THREE.Mesh(new THREE.TorusGeometry(9.5, .9, 8, 32), mt(0x2a2a2a)); w.position.set(s * 10.4, 5.5, -.5); w.rotation.y = Math.PI / 2; chair.add(w); const hr = new THREE.Mesh(new THREE.TorusGeometry(7.6, .35, 6, 28), mt(0xbfbfbf)); hr.position.set(s * 11.5, 5.5, -.5); hr.rotation.y = Math.PI / 2; chair.add(hr); add(new THREE.BoxGeometry(1, 1, 18), mt(0x8a8f99), s * 8.6, 1.6, 0, chair); }); }
       if (look.prop === "football") add(new THREE.SphereGeometry(3.2, 14, 10), mt(0x8b4a1c), 6.5, 10, 16.5).scale.set(1, .8, 1.35);
       if (look.prop === "book" || look.prop === "score") add(new THREE.BoxGeometry(6, 1.2, 8), mt(look.prop === "score" ? 0xf4efe0 : 0x2c5ea8), -6.5, 8, 16.5);
@@ -414,7 +415,7 @@
       root.remove(s.g); const f = avatarFigure(hex, look); f.position.set(s.x, FLOOR + 27, s.z); f.rotation.y = s.face; f.userData.marker.visible = vis;
       f.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } }); root.add(f); s.g = f;
     }
-    function beamLocal(parent, a, b, w, material) { const m = new THREE.Mesh(new THREE.CylinderGeometry(w / 2, w / 2, Math.hypot(b[0] - a[0], b[1] - a[1], b[2] - a[2]), 8), material); m.position.set((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2); m.rotation.x = Math.PI / 2; parent.add(m); return m; }
+    function beamLocal(parent, a, b, w, material) { [a, b].forEach(q => { const j = new THREE.Mesh(new THREE.SphereGeometry(w / 2, 14, 10), material); j.position.set(q[0], q[1], q[2]); parent.add(j); }); const m = new THREE.Mesh(new THREE.CylinderGeometry(w / 2, w / 2, Math.hypot(b[0] - a[0], b[1] - a[1], b[2] - a[2]), 16), material); m.position.set((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2); m.rotation.x = Math.PI / 2; parent.add(m); return m; }
     function seatLabel(text, sub, color) {
       const c = document.createElement("canvas"); c.width = 640; c.height = 200; const g = c.getContext("2d");
       g.fillStyle = "rgba(255,253,246,.96)"; rr(g, 10, 10, 620, 180, 60); g.fill(); g.lineWidth = 10; g.strokeStyle = color; g.stroke(); g.textAlign = "center"; g.textBaseline = "middle"; g.fillStyle = "#3a2410";
@@ -522,7 +523,7 @@
       const cp = Math.cos(c.pitch), sp = Math.sin(c.pitch);
       camera.position.set(c.tx + Math.sin(c.yaw) * cp * c.dist, sp * c.dist, c.tz + Math.cos(c.yaw) * cp * c.dist);
       camera.lookAt(c.tx, 0.2, c.tz);
-      if (S.peekSeat != null && S.seats[S.peekSeat]) { const st = S.seats[S.peekSeat]; camera.position.set(st.x + Math.sin(st.face) * 70 + 6, FLOOR + 96, st.z + Math.cos(st.face) * 76); camera.lookAt(st.x, FLOOR + 58, st.z); }
+      if (S.peekSeat != null && S.seats[S.peekSeat]) { const st = S.seats[S.peekSeat]; camera.position.set(st.x + Math.sin(st.face) * 70 + 6, FLOOR + 96, st.z + Math.cos(st.face) * 76); camera.lookAt(st.x, FLOOR + 60, st.z); }
       S.curShift = lerp(S.curShift || 0, S.shift || 0, k);
       const W = canvas.clientWidth || 1, H = canvas.clientHeight || 1;
       if (Math.abs(S.curShift) > .5) camera.setViewOffset(W, H, S.curShift, 0, W, H); else if (camera.view && camera.view.enabled) camera.clearViewOffset();

@@ -28,6 +28,10 @@ Press **Play** and choose:
 - **Setbacks** ↩️ (red arrows): fail a barrier twice and the real-life consequences throw you back to an earlier space. Every life has its own bridges and setbacks, taken from that person's story.
 - At the end you see the real story, your stats (turns lost, setbacks, bridges crossed and which barriers your bridges skipped), questions to reflect on, and sources.
 
+## Game manual
+
+`manual.html` is the illustrated manual (English and German, with a sketch of the board drawn from the real board data). PDFs: `manual/`. Rebuild with `node tools/build-manual.js && sh tools/build-manual-pdf.sh` (needs Chrome).
+
 ## Project layout
 
 ```

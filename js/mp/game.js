@@ -36,7 +36,7 @@
     roll: () => tone([1200 + Math.random() * 400], .03, "square", .02), bridge: () => tone([392, 523, 659, 784, 988], .12, "triangle"), win: () => tone([523, 523, 659, 784, 659, 784, 1046], .16, "triangle", .09), turn: () => tone([660], .09, "sine", .04) };
 
   /* ---------- navigation ---------- */
-  function show(id) { SCREENS.forEach(s => $(s).hidden = s !== id); document.body.classList.toggle("ingame", id === "screen-mp"); window.scrollTo(0, 0); }
+  function show(id) { SCREENS.forEach(s => $(s).hidden = s !== id); try { const w = GOL.debug && GOL.debug.wheel; if (w && id !== "screen-home") w.stop(); } catch (e) { }   /* the hidden 3D wheel must not keep rendering (phones!) */ document.body.classList.toggle("ingame", id === "screen-mp"); window.scrollTo(0, 0); }
   const goSingle = $("playNow").onclick;                       // original handler from game.js: opens the wheel
   const goMode = e => { if (e && e.preventDefault) e.preventDefault(); leave(); show("screen-mode"); };
   $("playNow").onclick = $("playNow2").onclick = $("playNow3").onclick = $("tPlay").onclick = goMode;
@@ -323,7 +323,7 @@
 
   /* =====================  ONLINE  ===================== */
   const lobbyHTML = (list, you) => list.map((p, i) => `<div class="lb">${pawnChip(i)}<b>${esc(p.name)}</b>${p.host ? "<em>host</em>" : ""}${i === you ? "<em class=\"me\">you</em>" : ""}</div>`).join("") || "<p class=\"mp-small\">Nobody yet</p>";
-  function resetLobby() { lobby = []; $("hostForm").hidden = false; $("hostRoom").hidden = true; $("joinForm").hidden = false; $("joinRoom").hidden = true; ["hostErr", "joinErr"].forEach(i => $(i).hidden = true); $("hostCreate").disabled = false; $("joinGo").disabled = false; }
+  function resetLobby() { lobby = []; $("hostForm").hidden = false; $("hostRoom").hidden = true; $("joinForm").hidden = false; $("joinRoom").hidden = true; ["hostErr", "joinErr"].forEach(i => $(i).hidden = true); $("hostCreate").disabled = false; $("joinGo").disabled = false; progress(""); }
   function netErr(which, msg) {
     const el = $(which + "Err"); if (net) { net.close(); net = null; } resetLobby(); el.textContent = msg; el.hidden = false;
     if (G || V) { /* game is running: show on end overlay instead */ }
@@ -377,11 +377,13 @@
   $("hostGo").onclick = () => { if (lobby.length >= 2) hostStart(); };
 
   /* --- guest --- */
+  const progress = t => { const el = $("joinProgress"); el.textContent = t; el.hidden = !t; };
   $("joinGo").onclick = () => {
     const code = $("joinCode").value.trim(); if (code.length < 5) { netErr("join", "Please type the 5-letter code from the host."); return; }
-    $("joinGo").disabled = true; $("joinErr").hidden = true; const name = $("joinName").value.trim() || "Player";
+    $("joinGo").disabled = true; $("joinErr").hidden = true; progress("Connecting…"); const name = $("joinName").value.trim() || "Player";
     net = MP.Net.join(code, {
-      onOpen: () => { net.send({ t: "hello", name }); $("joinForm").hidden = true; $("joinRoom").hidden = false; },
+      onStatus: progress,
+      onOpen: () => { net.send({ t: "hello", name }); $("joinForm").hidden = true; $("joinRoom").hidden = false; progress(""); },
       onError: e => netErr("join", e.message),
       onClose: () => {
         if (!V) { netErr("join", "The host closed the game."); return; }
@@ -390,7 +392,7 @@
       onMessage: m => {
         if (m.t === "lobby") { me = m.you; $("joinLobby").innerHTML = lobbyHTML(m.players, m.you); }
         else if (m.t === "full") netErr("join", m.why);
-        else if (m.t === "start") { mode = "guest"; G = null; prepare(); mount(m.snap); }
+        else if (m.t === "start") { mode = "guest"; G = null; progress("The game is starting…"); requestAnimationFrame(() => setTimeout(() => { try { prepare(); mount(m.snap); } catch (err) { netErr("join", "The board could not be started on this device: " + err.message); } progress(""); }, 30)); }
         else if (m.t === "upd" && V) enqueue(m.ev, m.snap);
       }
     });

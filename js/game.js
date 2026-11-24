@@ -119,11 +119,11 @@
         <div class="real"><h4>${u.realTitle}</h4><p>${esc(t.reveal)}</p></div><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-choice");
       return;
     }
-    if (replay) { await modal(`${fig}<div class="body">${header(t, i)}<h2>${esc(t.title)}</h2>${ill(t)}<p>${esc(t.text)}</p>${t.reveal ? `<div class="real"><h4>${u.realTitle}</h4><p>${esc(t.reveal)}</p></div>` : ""}<button class="big" data-done="1">${u.close}</button></div>`, "c-" + t.type); return; }
+    if (replay) { await modal(`${fig}<div class="body">${header(t, i)}<h2>${esc(t.title)}</h2>${ill(t)}<p>${esc(t.text)}</p>${t.reveal ? `<div class="real"><h4>${u.realTitle}</h4><p>${esc(t.reveal)}</p></div>` : ""}${t.gate ? GOL.barrierPanel(S.base, t, esc, u) : ""}<button class="big" data-done="1">${u.close}</button></div>`, "c-" + t.type); return; }
     apply(t.effects); (SND[t.type] || SND.step)();
     if (t.type === "win" || t.type === "finish") board.celebrate(i);
     let extra = "";
-    if (t.gate) extra = `<div class="gate"><b>${u.gateTitle}</b><br>${esc(u.gateText(3, t.gate.label))}</div>`;
+    if (t.gate) extra = GOL.barrierPanel(S.base, t, esc, u);
     await modal(`${fig}<div class="body">${header(t, i)}<h2>${esc(t.title)}</h2>${ill(t)}<p>${esc(t.text)}</p>${chips(t.effects)}${extra}<button class="big" data-done="1">${u.gotIt}</button></div>`, "c-" + t.type);
   }
 
@@ -153,7 +153,17 @@
   }
   function refreshBridges() { S.ch.bridges.forEach((b, k) => board.setBridge(k, S.used.has(k) ? "used" : (S.support > 0 ? "open" : "closed"))); }
   function buildLegend() {
-    $("legend").innerHTML = ["start", "win", "barrier", "choice"].map(k => `<span><i class="lg lg-${k}"></i>${TYPE_LABEL[k]}</span>`).join("") + `<span><i class="lg lg-bridge"></i>Bridge</span><span><i class="lg lg-back"></i>Setback</span>`;
+    const rows = [["lg-start", "Start", "Where this life begins"], ["lg-win", "Milestone", "A win. It can add Hope and Support"], ["lg-barrier", "Barrier", "Blocks the way. Spin a 3 to pass"], ["lg-choice", "Decision", "You choose, then see what really happened"], ["lg-bridge", "Bridge", "Uses 1 Support to skip ahead"], ["lg-back", "Setback", "Pushes you back along the red path"]];
+    let open = innerWidth > 900; try { const v = localStorage.getItem("gol-legend"); if (v) open = v === "1"; } catch (e) {}
+    const el = $("legend");
+    el.innerHTML = `<button type="button" class="lgtoggle" aria-expanded="${open}" aria-controls="lgbody"><span>🗺️ Legend</span><i aria-hidden="true">${open ? "▾" : "▸"}</i></button>
+      <div id="lgbody" class="lgbody" ${open ? "" : "hidden"}>${rows.map(r => `<div class="lgrow"><i class="lg ${r[0]}"></i><b>${r[1]}</b><small>${r[2]}</small></div>`).join("")}
+      <div class="lgrow"><i class="lg lg-hope"></i><b>Hope</b><small>Your mood. Setbacks lower it</small></div>
+      <div class="lgrow"><i class="lg lg-sup"></i><b>Support</b><small>Helpers who open bridges</small></div></div>`;
+    el.querySelector(".lgtoggle").onclick = e => {
+      const b = e.currentTarget, body = $("lgbody"), show = body.hidden; body.hidden = !show; b.setAttribute("aria-expanded", show); b.querySelector("i").textContent = show ? "▾" : "▸";
+      try { localStorage.setItem("gol-legend", show ? "1" : "0"); } catch (x) {}
+    };
     $("hint").textContent = ui().hint;
   }
 
@@ -190,7 +200,7 @@
         const k = S.ch.setbacks.findIndex(s => s.at === S.pos && !S.done.has(s.at));
         if (S.fails >= 2 && k >= 0) { await setback(k, r, bonus, need); S.busy = false; board.busy = false; renderHud(); return; }
         await modal(`<div class="body"><h2>${u.gateTitle}</h2>${diceHtml(r, need, false)}<p><b>${u.gateFail}</b></p>
-          <p class="muted">${u.withoutBarrier}</p>${chips({ hope: -1 })}<button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier");
+          <p class="muted">${u.withoutBarrier}</p>${GOL.barrierPanel(S.base, t, esc, u)}${chips({ hope: -1 })}<button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier");
         S.busy = false; board.busy = false; renderHud(); return;
       }
     }
@@ -199,7 +209,7 @@
       const t = S.ch.tiles[S.pos], first = !S.seen.has(S.pos);
       if (first) { S.seen.add(S.pos); board.markVisited(S.pos); await showTile(t, S.pos); }
       if (t.type === "finish") { S.busy = false; return end(); }
-      if (t.gate && !S.passed.has(S.pos)) { S.blocked = true; if (first) S.barriers++; else await modal(`<div class="body"><h2>${u.gateTitle}</h2><p>${esc(u.gateText(3, t.gate.label))}</p><button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier"); break; }
+      if (t.gate && !S.passed.has(S.pos)) { S.blocked = true; if (first) S.barriers++; else await modal(`<div class="body">${GOL.barrierPanel(S.base, t, esc, u)}<button class="big" data-done="1">${u.gotIt}</button></div>`, "c-barrier"); break; }
       const bk = S.ch.bridges.findIndex((b, k) => b.from === S.pos && !S.used.has(k));
       if (bk >= 0) { const crossed = await offerBridge(bk); if (crossed) { if (S.pos === S.ch.tiles.length - 1) { S.busy = false; return end(); } const nt = S.ch.tiles[S.pos]; if (nt.gate && !S.passed.has(S.pos)) { S.blocked = true; S.barriers++; break; } } }
     }
@@ -298,7 +308,7 @@
   window.addEventListener("keydown", e => { if (e.code === "Space" && !e.repeat && $("modal").hidden) { e.preventDefault(); if (S && !$("screen-game").hidden) spin(); else if (!$("screen-home").hidden) spinLife(); } });
   buildLogo(); initWheel();
   /* preload event photos once the home screen is idle so cards open instantly */
-  setTimeout(() => { try { Object.values(GOL.events || {}).forEach(o => Object.values(o).forEach(e => { const im = new Image(); im.decoding = "async"; im.src = e.file; })); } catch (e) {} }, 2500);
+  if (!/[?&]join=/.test(location.search)) setTimeout(() => { try { Object.values(GOL.events || {}).forEach(o => Object.values(o).forEach(e => { const im = new Image(); im.decoding = "async"; im.src = e.file; })); } catch (e) {} }, 2500);
   /* FPS overlay: press F (or open index.html?fps) */
   (function () { let el = null, id = 0; const show = on => { if (!on) { el && el.remove(); el = null; clearInterval(id); return; } el = document.createElement("div"); el.style.cssText = "position:fixed;left:8px;bottom:8px;z-index:200;background:#000c;color:#9f9;font:12px/1.4 monospace;padding:6px 8px;border-radius:6px;pointer-events:none;white-space:pre"; document.body.appendChild(el); id = setInterval(() => { const P = board && board.perf; if (P && P.fps != null) el.textContent = `${P.fps} fps  frame ${P.avg} ms (worst ${P.worstS})\nslow frames/s ${P.slowS}\ndraw calls ${P.calls}  tris ${P.tris}\ngeometries ${P.geo}  textures ${P.tex}`; }, 500); };
     window.addEventListener("keydown", e => { if (e.key === "f" || e.key === "F") show(!el); }); if (/[?&]fps/.test(location.search)) show(true); })();
