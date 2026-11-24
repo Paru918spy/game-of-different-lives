@@ -112,6 +112,11 @@
       fillClip(() => { g.moveTo(hx(-5.5), hy(-1.5)); g.bezierCurveTo(hx(-7.2), hy(3), hx(-4), hy(5.6), hx(0), hy(5.5)); g.bezierCurveTo(hx(4), hy(5.6), hx(7.2), hy(3), hx(5.5), hy(-1.5)); g.lineTo(hx(4.8), hy(-3.2)); g.lineTo(hx(-4.8), hy(-3.2)); g.closePath(); },
         () => { for (let k = -6; k <= 6; k += .8) wavy(k, 6.5, -3, .35, k % 2 ? lt : dk, 8); });
       g.fillStyle = base; g.beginPath(); g.arc(hx(0), hy(4.2), 2.6 * U, 0, 7); g.fill(); g.strokeStyle = dk; g.lineWidth = 3; g.stroke(); g.strokeStyle = lt; g.lineWidth = 2.2; for (let i = 0; i < 5; i++) { g.beginPath(); g.arc(hx(0), hy(4.2), (.6 + i * .45) * U, 3.4 + i, 5.6 + i); g.stroke(); }
+    } else if (ty === "crop") {
+      const v = H.vol || 0, n = 28;
+      fillClip(() => { for (let i = 0; i <= n; i++) { const a = Math.PI * i / n, r = 5.2 + v + (H.messy ? Math.sin(i * 1.7) * .5 + Math.sin(i * .6) * .3 : Math.sin(i * 1.3) * .12); g.lineTo(hx(Math.cos(a) * r * 1.02), hy(.4 + Math.sin(a) * r)); } g.lineTo(hx(-5.4 - v * .6), hy(-2.6)); g.lineTo(hx(-4.4), hy(-2.6)); g.lineTo(hx(4.4), hy(-2.6)); g.lineTo(hx(5.4 + v * .6), hy(-2.6)); g.closePath(); },
+        () => { for (let i = 0; i < 46; i++) { const a = Math.PI * i / 45; g.strokeStyle = i % 2 ? lt : dk; g.lineWidth = 2; g.beginPath(); g.moveTo(hx(Math.cos(a) * 3.6), hy(.4 + Math.sin(a) * 3.6)); g.quadraticCurveTo(hx(Math.cos(a + .12) * 5), hy(.4 + Math.sin(a + .12) * 5), hx(Math.cos(a + (H.messy ? .35 : .05)) * (6.4 + v)), hy(.4 + Math.sin(a) * (6.4 + v))); g.stroke(); } });
+      if (H.flowers) { H.flowers.forEach((c, i) => { const a = Math.PI * (.12 + .76 * i / (H.flowers.length - 1)); g.fillStyle = c; g.beginPath(); g.arc(hx(Math.cos(a) * 5.4), hy(.4 + Math.sin(a) * 5.6), .95 * U, 0, 7); g.fill(); g.fillStyle = "#ffd23f"; g.beginPath(); g.arc(hx(Math.cos(a) * 5.4), hy(.4 + Math.sin(a) * 5.6), .35 * U, 0, 7); g.fill(); }); }
     } else if (ty === "drape") {
       const sc = H.c || "#ffffff";
       g.save(); g.beginPath(); g.moveTo(hx(-5.4), hy(1)); g.bezierCurveTo(hx(-7.2), hy(8.6), hx(7.2), hy(8.6), hx(5.4), hy(1)); g.bezierCurveTo(hx(6.2), hy(-4), hx(8.6), hy(-8), hx(9.6), hy(-14)); g.lineTo(hx(-9.6), hy(-14)); g.bezierCurveTo(hx(-8.6), hy(-8), hx(-6.2), hy(-4), hx(-5.4), hy(1)); g.closePath();

@@ -175,7 +175,7 @@
     "hair": "#7c3aed",
     "hairStyle": "panel",
     "scarf": "#7c3aed",
-    "top": "#e8963a",
+    "top": "#f59e0b",
     "bottom": "#3b4a6b",
     "outfit": "casual",
     "eyes": "#3a2414",
@@ -184,7 +184,7 @@
       "t": 1.1,
       "a": 0.9
     },
-    "mouth": "grin",
+    "mouth": "smile",
     "lashes": true,
     "blush": "#e58a7a",
     "nose": 0.95,
@@ -194,8 +194,8 @@
     },
     "torso": {
       "kind": "shirt",
-      "c1": "#e8963a",
-      "c2": "#e8963a"
+      "c1": "#f59e0b",
+      "c2": "#f59e0b"
     },
     "prop": "none",
     "mouthW": 1.35,

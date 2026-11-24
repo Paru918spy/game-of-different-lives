@@ -167,7 +167,7 @@
   },
   "look": {
     "skin": "#cf9f78",
-    "hair": "#f7f2e8",
+    "hair": "#2a1d16",
     "hairStyle": "panel",
     "scarf": "#ffffff",
     "top": "#e8ecef",
@@ -176,8 +176,8 @@
     "eyes": "#2a1810",
     "brow": {
       "c": "#1c1612",
-      "t": 1.0,
-      "a": 0.9
+      "t": 1.4,
+      "a": 0.7
     },
     "mouth": "neutral",
     "lashes": true,

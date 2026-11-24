@@ -174,8 +174,8 @@
   },
   "look": {
     "skin": "#e4c3a0",
-    "hair": "#80725c",
-    "hairStyle": "curlgray",
+    "hair": "#8a7f6a",
+    "hairStyle": "panel",
     "top": "#c0392b",
     "bottom": "#2b3f66",
     "outfit": "western",
@@ -206,6 +206,11 @@
       "px": 1.0,
       "d": 0.6,
       "t": 0.8
+    },
+    "hairPanel": {
+      "type": "crop",
+      "vol": 0.7,
+      "messy": true
     }
   }
 }
