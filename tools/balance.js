@@ -22,8 +22,7 @@ function play(P, figs, seed) {
       if (c.opts) {
         if (!right && adv === "skip" && p.left > 0 && !c.gate) { E.dispatch(S, { t: "skipq" }); continue; }
         if (adv === "hint" && p.left > 0 && c.opts.length === 3 && !c.hinted) { E.dispatch(S, { t: "hint" }); continue; }
-        const i = c.opts.findIndex(o => o.ok === right && !o.gone); E.dispatch(S, { t: "answer", i: i < 0 ? c.opts.findIndex(o => !o.gone) : i });
-      } else if (c.kind === "task") { if (!right && adv === "skip" && p.left > 0 && !c.all) E.dispatch(S, { t: "skipq" }); else E.dispatch(S, { t: "task", done: right }); }
+        const i = c.opts.findIndex(o => o.ok === right && !o.gone); E.dispatch(S, { t: "answer", i: i < 0 ? c.opts.findIndex(o => !o.gone) : i }); }
       else E.dispatch(S, { t: "next" }); }
     else if (S.phase === "feedback") E.dispatch(S, { t: "next", shield: !S.card.result.ok && adv === "shield" && p.left > 0 });
     else if (S.phase === "roll") E.dispatch(S, { t: "roll", best: adv === "bestof2" && p.left > 0, lift: adv === "lift" && p.left > 0 });

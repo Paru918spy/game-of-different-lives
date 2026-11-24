@@ -80,19 +80,17 @@ const fieldInfo = {
   en: {
     life: ["Life station", "A moment from the life of your figure (numbered 1 to 12). You stop here once. Story stops on the road work the same way, without a question."],
     quiz: ["Quiz", "One question card. Four kinds: Who am I?, Life & Barriers, True or False?, Words Matter. Right: stay. Wrong: back to your last safe field."],
-    task: ["Action", "A small real-life action to try. Honour system, and you may skip it."],
     gate: ["Hurdle", "You have to stop and answer. Right: go on with the rest of your roll. Wrong: you stay, the rest of the roll is lost."],
     luck: ["Luck", "Tailwind (2 or 3 fields forward), setback (2 or 3 back) or roll again. The card tells you what happened."]
   },
   de: {
     life: ["Lebensstation", "Ein Moment aus dem Leben deiner Figur (nummeriert 1 bis 12). Hier hältst du einmal an. Geschichten-Stopps auf der Straße funktionieren genauso, ohne Frage."],
     quiz: ["Quiz", "Eine Fragekarte. Vier Arten: Wer bin ich?, Leben & Barrieren, Wahr oder falsch?, Worte zählen. Richtig: du bleibst. Falsch: zurück zum letzten sicheren Feld."],
-    task: ["Aktion", "Eine kleine Aktion zum Ausprobieren. Ehrensache, überspringen ist erlaubt."],
     gate: ["Hürde", "Du musst anhalten und antworten. Richtig: mit dem Rest des Wurfs weiter. Falsch: du bleibst stehen, der Rest des Wurfs verfällt."],
     luck: ["Glück", "Rückenwind (2 oder 3 Felder vor), Rückschlag (2 oder 3 zurück) oder nochmal würfeln. Die Karte sagt dir, was passiert ist."]
   }
 };
-const fieldOrder = ["quiz", "task", "life", "gate", "luck"], GRP = E.GROUPS;
+const fieldOrder = ["quiz", "life", "gate", "luck"], GRP = E.GROUPS;
 const zoneOrder = ["stairs", "ladder", "rope", "bridge", "ramp", "market", "tunnel", "office", "sprint", "quiet"];
 
 const LANGS = {
@@ -105,7 +103,7 @@ const LANGS = {
     nav: { play: "Play", back: "← Back to the game", pdf: "Download PDF", other: "Deutsch", otherHref: "manual.html?lang=de" },
     h1: "The idea", idea: [
       "You do not play yourself. A <b>wheel of lives</b> decides who you become: one of 21 people, most of them real, who met barriers, prejudice or doubt and found their way anyway.",
-      "On the board you feel what that means. Some roads are open to you, some are closed. Questions, small actions and story stops show what these lives were really like.",
+      "On the board you feel what that means. Some roads are open to you, some are closed. Questions and story stops show what these lives were really like.",
       "The goal is not only to win the race. It is to <b>understand</b>: Equal dignity. Equal chances."],
     needT: "What you need", need: ["A phone, tablet or computer with a browser. No install, no account.", "2 to 6 players. One device for everybody, or one device each.", "About 30 to 45 minutes (a 2-player game is 12 to 15 rounds)."],
     startT: "Start in three ways", modes: [
@@ -119,12 +117,11 @@ const LANGS = {
     turnT: "Your turn", turn: [
       ["Roll", "Roll the die and walk exactly that many fields. Every field is one step, on every route."],
       ["Choose at forks", "At a fork pick one of three routes. Routes that are closed for your figure are greyed out and tell you why."],
-      ["Read the card", "The field where you stop decides what happens: a question, an action, a push forward or back."],
+      ["Read the card", "The field where you stop decides what happens: a question, a story, a push forward or back."],
       ["Right or wrong", "Right answer: you stay. Wrong answer: back to your last safe field (start of your turn or last stop). Then it is the next player's turn."]],
     specialT: "Good to know", special: [
       ["⚡ DOUBLE card", "About one card in five is a double card. Answer right and you walk the same number of fields again."],
       ["🚧 Hurdles and life stations", "They stop you once. Hurdles only let you pass with a right answer. A life station moves you forward or back, tells a story, or asks a bonus question."],
-      ["🎯 Action cards", "Try the small action, then roll. It is an honour system. You can skip it, and nobody has to take part against their will."],
       ["🏁 Winning", "The first pawn that reaches the finish wins. You do not need an exact roll."]],
     figT: "Your figure and its strength", figLead: "At the start every player spins the wheel and becomes a different figure. Open the 📖 button in the game to see your routes, strength and life stations.",
     fx: [["⛔ Closed", "You cannot choose this route, and the game tells you why."]],
@@ -143,7 +140,7 @@ const LANGS = {
     nav: { play: "Spielen", back: "← Zurück zum Spiel", pdf: "PDF herunterladen", other: "English", otherHref: "manual.html?lang=en" },
     h1: "Die Idee", idea: [
       "Du spielst nicht dich selbst. Ein <b>Lebensrad</b> entscheidet, wer du wirst: eine von 21 Personen, die meisten echt, die auf Barrieren, Vorurteile oder Zweifel gestoßen sind und trotzdem ihren Weg gefunden haben.",
-      "Auf dem Brett spürst du, was das bedeutet. Manche Wege sind für dich offen, manche langsamer, manche versperrt. Fragen, kleine Aktionen und Geschichten-Stopps zeigen, wie diese Leben wirklich waren.",
+      "Auf dem Brett spürst du, was das bedeutet. Manche Wege sind für dich offen, manche langsamer, manche versperrt. Fragen und Geschichten-Stopps zeigen, wie diese Leben wirklich waren.",
       "Das Ziel ist nicht nur, das Rennen zu gewinnen. Es geht ums <b>Verstehen</b>: gleiche Würde, gleiche Chancen."],
     needT: "Was du brauchst", need: ["Handy, Tablet oder Computer mit Browser. Keine Installation, kein Konto.", "2 bis 6 Spieler. Ein Gerät für alle oder jede Person ein eigenes.", "Etwa 30 bis 45 Minuten (ein Spiel zu zweit dauert 12 bis 15 Runden)."],
     startT: "Drei Wege zu starten", modes: [
@@ -157,12 +154,11 @@ const LANGS = {
     turnT: "Dein Zug", turn: [
       ["Würfeln", "Würfle und gehe genau so viele Felder. Jedes Feld ist ein Schritt, auf jedem Weg."],
       ["An Gabeln wählen", "An einer Gabel suchst du einen von drei Wegen aus. Für deine Figur gesperrte Wege sind grau und erklären, warum."],
-      ["Karte lesen", "Das Feld, auf dem du stehen bleibst, entscheidet: eine Frage, eine Aktion, ein Schub vor oder zurück."],
+      ["Karte lesen", "Das Feld, auf dem du stehen bleibst, entscheidet: eine Frage, eine Geschichte, ein Schub vor oder zurück."],
       ["Richtig oder falsch", "Richtige Antwort: du bleibst stehen. Falsche Antwort: zurück zum letzten sicheren Feld (Zugbeginn oder letzter Halt). Dann ist die nächste Person dran."]],
     specialT: "Gut zu wissen", special: [
       ["⚡ DOUBLE-Karte", "Etwa jede fünfte Karte ist eine Double-Karte. Antwortest du richtig, gehst du noch einmal so viele Felder."],
       ["🚧 Hürden und Lebensstationen", "Sie halten dich einmal an. Hürden lassen dich nur mit richtiger Antwort weiter. Eine Lebensstation schiebt dich vor oder zurück, erzählt eine Geschichte oder stellt eine Bonusfrage."],
-      ["🎯 Aktionskarten", "Probiere die kleine Aktion aus und würfle dann. Es gilt das Ehrenwort. Du darfst überspringen, niemand muss gegen den eigenen Willen mitmachen."],
       ["🏁 Gewinnen", "Wer als Erste oder Erster das Ziel erreicht, gewinnt. Du brauchst keine genaue Augenzahl."]],
     figT: "Deine Figur und ihre Stärke", figLead: "Zu Beginn dreht jeder das Rad und wird zu einer anderen Figur. Mit dem 📖-Knopf im Spiel siehst du deine Wege, deine Stärke und deine Lebensstationen.",
     fx: [["⛔ Versperrt", "Du kannst diesen Weg nicht wählen, das Spiel sagt dir warum."]],

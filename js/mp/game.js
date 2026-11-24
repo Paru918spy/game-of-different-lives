@@ -14,7 +14,7 @@
   const SCREENS = ["screen-about", "screen-home", "screen-topic", "screen-game", "screen-end", "screen-mode", "screen-mpsetup", "screen-mp"];
   const chars = () => GOL.characters.filter(c => !c.fictional);
   const char = id => GOL.characters.find(c => c.id === id);
-  const ICON = { who: "?", fact: "?", tf: "?", words: "?", task: "★", story: "☺", fwd: "🍀", back: "🍀", again: "🍀", gate: "🚧", life: "☺" };
+  const ICON = { who: "?", fact: "?", tf: "?", words: "?", story: "☺", fwd: "🍀", back: "🍀", again: "🍀", gate: "🚧", life: "☺" };
   const ZN = () => MP.Board.ZONES, PR = () => MP.Profiles;
   const prof = p => p && p.char && PR()[p.char];
   const ADVICON = { hint: "💡", shield: "🛡", bestof2: "🎲", lift: "🚀", skip: "🎟" };
@@ -151,14 +151,13 @@
     }).join("");
   }
   function buildLegend() {
-    $("mpLegend").innerHTML = ["quiz", "task", "life", "gate", "luck"].map(k => `<span><i style="background:${E.GROUPS[k].color}"></i>${E.GROUPS[k].label}</span>`).join("");
+    $("mpLegend").innerHTML = ["quiz", "life", "gate", "luck"].map(k => `<span><i style="background:${E.GROUPS[k].color}"></i>${E.GROUPS[k].label}</span>`).join("");
   }
   const chip = p => `<span class="who-chip" style="--c:${E.COLORS[p.color].hex}"><span class="pdot"></span>${esc(p.name)}</span>`;
   const waitNote = p => `<p class="mp-wait">⏳ ${esc(p.name)} is playing. Watch the board!</p>`;
 
   function portrait(id) { const c = char(id); if (!c) return ""; return `<figure class="mp-port"><div class="pic">${GOL.portrait(c)}</div><figcaption><b>${esc(c.name)}</b><small>${esc(c.years)} · ${esc(c.focus)}</small></figcaption></figure>`; }
 
-  let timerId = 0;
   const nextLabel = (c, res) => c.kind === "life" ? (res.ok && c.move ? `Continue (+${c.move})` : "Continue") : c.gate ? (res.ok ? "Go on!" : "Stay here") : res.ok ? (c.double ? "⚡ Move ahead again!" : "Stay here · Next player") : "↩ Back to my last safe field";
   function renderCard() {
     const c = V.card, p = V.players[V.turn], cat = E.CATEGORY[c.kind], fb = V.phase === "feedback", res = c.result, my = mine();
@@ -179,11 +178,6 @@
       body = `<div class="mp-story"><div class="pic">${GOL.portrait(ch)}</div><div><h2>${esc(c.q)}</h2><p class="yrs">${esc(c.years)} · ${esc(c.focus)}</p><p class="tag">${esc(c.tagline)}</p></div></div>
         ${c.win ? `<div class="mp-note ok"><b>⭐ ${esc(c.win.title)}</b><p>${esc(c.win.text)}</p></div>` : ""}${c.barrier ? `<div class="mp-note warn"><b>🚧 ${esc(c.barrier.title)}</b><p>${esc(c.barrier.text)}</p></div>` : ""}
         <p class="mp-small">Story stop: no question. You can stay on this field!</p>${primary("mpNext", "Next player")}`;
-    } else if (c.kind === "task") {
-      const who = c.all ? "👥 Everyone joins in" : "🙋 " + esc(p.name) + " does it";
-      body = `<div class="mp-task"><div class="tic">${c.icon}</div><h2>${esc(c.q)}</h2><span class="mp-who">${who}</span><p>${esc(c.d)}</p>${c.sec && !fb ? `<button class="mp-timer" id="mpTimer" data-s="${c.sec}">⏱ Start ${c.sec}s timer</button>` : ""}</div>` + (fb
-        ? `<div class="mp-result ${res.ok ? "ok" : "no"}">${res.ok ? "Great, you did it!" : "No problem. Maybe next time."}${res.ok && c.r ? `<span>💭 Talk about it: ${esc(c.r)}</span>` : ""}</div>${res.ok && c.p ? portrait(c.p) : ""}${primary("mpNext", nextLabel(c, res))}`
-        : (my ? `<p class="mp-small">Do it for real. The others decide if it counts. A good try is enough!</p><div class="mp-btns"><button class="big mp-primary" id="mpDone">We did it ✔</button><button class="mp-skip" id="mpSkip">Skip (go back)</button></div>${pf && pf.advantage.type === "skip" && p.left > 0 && !c.all ? `<button class="mp-adv" id="mpSkipQ">🎟 ${esc(pf.advantage.title)} (${p.left} left): count this as done</button>` : ""}` : waitNote(p)));
     } else {
       const opts = c.opts.map((o, i) => { let cls = "mp-opt"; if (o.gone) cls += " gone"; else if (fb) { if (o.ok) cls += " right"; else if (res.i === i) cls += " wrong"; else cls += " dim"; }
         return `<button class="${cls}" data-i="${i}" ${fb || !my || o.gone ? "disabled" : ""}><span class="k">${i + 1}</span>${esc(o.text)}</button>`; }).join("");
@@ -208,13 +202,6 @@
     const sk = $("mpSkipQ"); if (sk) sk.onclick = () => submit({ t: "skipq" });
     const hb = $("mpHint"); if (hb) hb.onclick = () => submit({ t: "hint" });
     const sb = $("mpShield"); if (sb) sb.onclick = () => submit({ t: "next", shield: true });
-    clearInterval(timerId); const tm = $("mpTimer");
-    if (tm) tm.onclick = () => {
-      let left = +tm.dataset.s; tm.disabled = true; tm.textContent = "⏱ " + left + "s";
-      timerId = setInterval(() => { left--; const t = $("mpTimer"); if (!t) return clearInterval(timerId); if (left <= 0) { clearInterval(timerId); t.textContent = "⏰ Time is up!"; t.classList.add("up"); } else t.textContent = "⏱ " + left + "s"; }, 1000);
-    };
-    const d = $("mpDone"); if (d) d.onclick = () => submit({ t: "task", done: true });
-    const s = $("mpSkip"); if (s) s.onclick = () => submit({ t: "task", done: false });
   }
 
   /* ---------- die ---------- */
@@ -347,7 +334,7 @@
           showHostLobby(); sendLobby();
         } else if (m.t === "act" && G && G.phase !== "over") {
           const pid = lobby.findIndex(p => p.peer === peer);
-          if (pid >= 0 && pid === G.turn && m.a && ["answer", "task", "next", "roll", "choose", "spin", "hint", "skipq"].includes(m.a.t)) commit(m.a);
+          if (pid >= 0 && pid === G.turn && m.a && ["answer", "next", "roll", "choose", "spin", "hint", "skipq"].includes(m.a.t)) commit(m.a);
         }
       },
       onLeave: peer => {

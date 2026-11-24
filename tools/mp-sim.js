@@ -29,7 +29,6 @@ console.log("effective shortest way per figure:", Object.entries(eff).map(([k, v
 Q.who.concat(Q.fact, Q.tf).forEach(q => { if (q.p !== null && !chars.find(c => c.id === q.p)) fail("unknown person " + q.p); });
 Q.fact.concat(Q.words).forEach(q => { if (q.a.length !== 3 || new Set(q.a).size !== 3) fail("bad answers: " + q.q); });
 Q.tf.forEach(q => { if (typeof q.v !== "boolean" || !q.s || !q.x) fail("bad true/false: " + q.s); });
-Q.tasks.forEach(t => { if (!t.t || !t.d || !t.icon || !t.r) fail("bad action card: " + t.t); });
 console.log("questions:", Object.fromEntries(Object.entries(Q).map(([k, v]) => [k, v.length])));
 
 let smart = false;
@@ -41,7 +40,7 @@ function game(n, seed, acc, stat) {
     if (S.phase === "wheel") E.dispatch(S, { t: "spin" });
     else if (S.phase === "card") { const c = S.card, p = S.players[S.turn];
       if (c.opts) { const want = Math.random() < acc, i = c.opts.findIndex(o => o.ok === want && !o.gone); E.dispatch(S, { t: "answer", i: i < 0 ? c.opts.findIndex(o => !o.gone) : i }); }
-      else if (c.kind === "task") E.dispatch(S, { t: "task", done: Math.random() < acc }); else E.dispatch(S, { t: "next" }); }
+      else E.dispatch(S, { t: "next" }); }
     else if (S.phase === "feedback") { const p = S.players[S.turn]; const sh = !S.card.result.ok && Math.random() < .5; E.dispatch(S, { t: "next", shield: sh }); }
     else if (S.phase === "roll") E.dispatch(S, { t: "roll", best: Math.random() < .5 });
     else if (S.phase === "fork") { if (!S.fork.allowed.length) fail("fork without allowed route");
