@@ -78,21 +78,21 @@ const zoneInfo = {
 };
 const fieldInfo = {
   en: {
-    who: ["Who am I?", "Three clues, one person. Guess who it is."], fact: ["Life & Barriers", "A question about a real life story."], tf: ["True or False?", "Is the statement true? Everyday facts and myths."],
-    words: ["Words Matter", "Which words and behaviour are respectful?"], task: ["Action!", "A small real-life action to try. Honour system, and you may skip it."],
-    story: ["Story Stop", "Meet a person. No question, you can simply stay."], fwd: ["Tailwind", "Move 2 or 3 fields forward."], back: ["Setback", "Move 2 or 3 fields back."],
-    again: ["Roll again", "Roll the die once more."], gate: ["Checkpoint", "You have to stop and answer. Right: go on with the rest of your roll. Wrong: you stay, the rest of the roll is lost."],
-    life: ["Life station", "A moment from the life of your figure (numbered 1 to 12). You stop here once."]
+    life: ["Life station", "A moment from the life of your figure (numbered 1 to 12). You stop here once. Story stops on the road work the same way, without a question."],
+    quiz: ["Quiz", "One question card. Four kinds: Who am I?, Life & Barriers, True or False?, Words Matter. Right: stay. Wrong: back to your last safe field."],
+    task: ["Action", "A small real-life action to try. Honour system, and you may skip it."],
+    gate: ["Hurdle", "You have to stop and answer. Right: go on with the rest of your roll. Wrong: you stay, the rest of the roll is lost."],
+    luck: ["Luck", "Tailwind (2 or 3 fields forward), setback (2 or 3 back) or roll again. The card tells you what happened."]
   },
   de: {
-    who: ["Wer bin ich?", "Drei Hinweise, eine Person. Errate, wer es ist."], fact: ["Leben & Barrieren", "Eine Frage zu einer echten Lebensgeschichte."], tf: ["Wahr oder falsch?", "Stimmt die Aussage? Alltagswissen und Mythen."],
-    words: ["Worte zählen", "Welche Worte und welches Verhalten sind respektvoll?"], task: ["Aktion!", "Eine kleine Aktion zum Ausprobieren. Ehrensache, überspringen ist erlaubt."],
-    story: ["Geschichten-Stopp", "Du triffst eine Person. Keine Frage, du darfst einfach bleiben."], fwd: ["Rückenwind", "2 oder 3 Felder vorwärts."], back: ["Rückschlag", "2 oder 3 Felder zurück."],
-    again: ["Nochmal würfeln", "Würfle noch einmal."], gate: ["Kontrollpunkt", "Du musst anhalten und antworten. Richtig: mit dem Rest des Wurfs weiter. Falsch: du bleibst stehen, der Rest des Wurfs verfällt."],
-    life: ["Lebensstation", "Ein Moment aus dem Leben deiner Figur (nummeriert 1 bis 12). Hier hältst du einmal an."]
+    life: ["Lebensstation", "Ein Moment aus dem Leben deiner Figur (nummeriert 1 bis 12). Hier hältst du einmal an. Geschichten-Stopps auf der Straße funktionieren genauso, ohne Frage."],
+    quiz: ["Quiz", "Eine Fragekarte. Vier Arten: Wer bin ich?, Leben & Barrieren, Wahr oder falsch?, Worte zählen. Richtig: du bleibst. Falsch: zurück zum letzten sicheren Feld."],
+    task: ["Aktion", "Eine kleine Aktion zum Ausprobieren. Ehrensache, überspringen ist erlaubt."],
+    gate: ["Hürde", "Du musst anhalten und antworten. Richtig: mit dem Rest des Wurfs weiter. Falsch: du bleibst stehen, der Rest des Wurfs verfällt."],
+    luck: ["Glück", "Rückenwind (2 oder 3 Felder vor), Rückschlag (2 oder 3 zurück) oder nochmal würfeln. Die Karte sagt dir, was passiert ist."]
   }
 };
-const fieldOrder = ["life", "who", "fact", "tf", "words", "task", "story", "fwd", "back", "again", "gate"];
+const fieldOrder = ["quiz", "task", "life", "gate", "luck"], GRP = E.GROUPS;
 const zoneOrder = ["stairs", "ladder", "rope", "bridge", "ramp", "market", "tunnel", "office", "sprint", "quiet"];
 
 const LANGS = {
@@ -105,7 +105,7 @@ const LANGS = {
     nav: { play: "Play", back: "← Back to the game", pdf: "Download PDF", other: "Deutsch", otherHref: "manual.html?lang=de" },
     h1: "The idea", idea: [
       "You do not play yourself. A <b>wheel of lives</b> decides who you become: one of 21 people, most of them real, who met barriers, prejudice or doubt and found their way anyway.",
-      "On the board you feel what that means. Some roads are open to you, some are slower, some are closed. Questions, small actions and story stops show what these lives were really like.",
+      "On the board you feel what that means. Some roads are open to you, some are closed. Questions, small actions and story stops show what these lives were really like.",
       "The goal is not only to win the race. It is to <b>understand</b>: Equal dignity. Equal chances."],
     needT: "What you need", need: ["A phone, tablet or computer with a browser. No install, no account.", "2 to 6 players. One device for everybody, or one device each.", "About 30 to 45 minutes (a 2-player game is 12 to 15 rounds)."],
     startT: "Start in three ways", modes: [
@@ -114,22 +114,22 @@ const LANGS = {
       ["🔑", "Join with code", "Friends open the page, choose <b>Join with code</b>, type the code and wait in the lobby. The host starts the game."]],
     qrNote: "Scan to open the game", soloT: "Alone? Choose Single Player: you spin the wheel and walk through one life in detail.",
     boardT: "The board at a glance", boardLead: "A big loop of <b>101 fields</b>. Everyone starts at the same place and runs for the finish in the middle. Six times the road splits: you choose one of three routes.",
-    callouts: [["Same road for all", "The main road and its fields are the same for everybody."], ["Forks", "Six forks with three routes each. Short cuts are quicker but have more checkpoints and setbacks."], ["Life stations", "The 12 gold numbers tell your figure's story and move you."], ["Your figure matters", "Some routes are slow, fast or closed for you, because of what your real person experienced."]],
+    callouts: [["Same road for all", "The main road and its fields are the same for everybody."], ["Forks", "Six forks with three routes each. Short cuts are quicker but have more hurdles and setbacks."], ["Life stations", "The 12 gold numbers tell your figure's story and move you."], ["Your figure matters", "Some routes are slow, fast or closed for you, because of what your real person experienced."]],
     legendRoutes: "Routes at a fork (letters on the board)", legendFields: "Fields (colours on the board)", fieldsT: "What the fields do",
     turnT: "Your turn", turn: [
-      ["Roll", "Roll the die and walk that many fields. Slow routes cost more than one step per field, fast routes less."],
+      ["Roll", "Roll the die and walk exactly that many fields. Every field is one step, on every route."],
       ["Choose at forks", "At a fork pick one of three routes. Routes that are closed for your figure are greyed out and tell you why."],
       ["Read the card", "The field where you stop decides what happens: a question, an action, a push forward or back."],
       ["Right or wrong", "Right answer: you stay. Wrong answer: back to your last safe field (start of your turn or last stop). Then it is the next player's turn."]],
     specialT: "Good to know", special: [
       ["⚡ DOUBLE card", "About one card in five is a double card. Answer right and you walk the same number of fields again."],
-      ["🚧 Checkpoints and life stations", "They stop you once. Checkpoints only let you pass with a right answer. A life station moves you forward or back, tells a story, or asks a bonus question."],
+      ["🚧 Hurdles and life stations", "They stop you once. Hurdles only let you pass with a right answer. A life station moves you forward or back, tells a story, or asks a bonus question."],
       ["🎯 Action cards", "Try the small action, then roll. It is an honour system. You can skip it, and nobody has to take part against their will."],
       ["🏁 Winning", "The first pawn that reaches the finish wins. You do not need an exact roll."]],
     figT: "Your figure and its strength", figLead: "At the start every player spins the wheel and becomes a different figure. Open the 📖 button in the game to see your routes, strength and life stations.",
-    fx: [["🐢 Slow", "A field on this route counts more than one step."], ["🐇 Fast", "A field counts less than one step."], ["⛔ Closed", "You cannot choose this route, and the game tells you why."]],
+    fx: [["⛔ Closed", "You cannot choose this route, and the game tells you why."]],
     strT: "One strength card (2 or 3 uses)", str: [["💡", "Hint", "Removes a wrong answer."], ["🛡️", "Shield", "A wrong answer does not send you back."], ["🎲", "Second chance", "Roll two dice, keep the higher one."], ["🚀", "Lift", "Add 2 to your roll."], ["🎟️", "Free pass", "Count one question as right."]],
-    fair: "Everything that slows or speeds you comes from a documented event in the life of your figure. Balance steps that only keep the game fair are marked as “game balance”, they are not part of the story.",
+    fair: "Everything that closes a route or sets you back comes from a documented event in the life of your figure. There are no hidden bonus steps: you walk exactly what you roll.",
     talkT: "Talk about it", talk: ["After the game: Which barrier surprised you? Which bridge helped most?", "Which words did you not know were hurtful? What would you do differently tomorrow?", "Every life page names its sources. Real photos come from Wikimedia Commons with credit."],
     singleT: "Single Player in short", single: ["Spin the wheel: you get one life. You do not choose.", "Roll the spinner (1, 2 or 3 fields). Every field tells a piece of the real story.", "Barrier fields stop you: you need a 3 to pass. A miss costs a turn and Hope.", "Bridges are shortcuts that cost 1 Support. Two failed barriers can throw you back (setback).", "At the end you see the real story, your stats and questions to reflect on."],
     footer: "A school project on diversity, tolerance and inclusion · Play: paru918spy.github.io/game-of-different-lives", pg: "Page"
@@ -152,22 +152,22 @@ const LANGS = {
       ["🔑", "Mit Code beitreten", "Freunde öffnen die Seite, wählen <b>Join with code</b>, geben den Code ein und warten in der Lobby. Der Host startet das Spiel."]],
     qrNote: "Scannen und Spiel öffnen", soloT: "Allein? Wähle Single Player: Du drehst das Rad und gehst ein Leben im Detail durch.",
     boardT: "Das Spielbrett im Überblick", boardLead: "Eine große Runde aus <b>101 Feldern</b>. Alle starten am selben Ort und laufen zum Ziel in der Mitte. Sechsmal teilt sich der Weg: Du wählst einen von drei Wegen.",
-    callouts: [["Gleiche Straße für alle", "Die Hauptstraße und ihre Felder sind für alle gleich."], ["Gabeln", "Sechs Gabeln mit je drei Wegen. Abkürzungen sind schneller, haben aber mehr Kontrollpunkte und Rückschläge."], ["Lebensstationen", "Die 12 goldenen Zahlen erzählen die Geschichte deiner Figur und bewegen dich."], ["Deine Figur zählt", "Manche Wege sind für dich langsam, schnell oder versperrt, weil deine echte Person das so erlebt hat."]],
+    callouts: [["Gleiche Straße für alle", "Die Hauptstraße und ihre Felder sind für alle gleich."], ["Gabeln", "Sechs Gabeln mit je drei Wegen. Abkürzungen sind schneller, haben aber mehr Hürden und Rückschläge."], ["Lebensstationen", "Die 12 goldenen Zahlen erzählen die Geschichte deiner Figur und bewegen dich."], ["Deine Figur zählt", "Manche Wege sind für dich langsam, schnell oder versperrt, weil deine echte Person das so erlebt hat."]],
     legendRoutes: "Wege an einer Gabel (Buchstaben auf dem Brett)", legendFields: "Felder (Farben auf dem Brett)", fieldsT: "Was die Felder bewirken",
     turnT: "Dein Zug", turn: [
-      ["Würfeln", "Würfle und gehe so viele Felder. Langsame Wege kosten pro Feld mehr als einen Schritt, schnelle weniger."],
+      ["Würfeln", "Würfle und gehe genau so viele Felder. Jedes Feld ist ein Schritt, auf jedem Weg."],
       ["An Gabeln wählen", "An einer Gabel suchst du einen von drei Wegen aus. Für deine Figur gesperrte Wege sind grau und erklären, warum."],
       ["Karte lesen", "Das Feld, auf dem du stehen bleibst, entscheidet: eine Frage, eine Aktion, ein Schub vor oder zurück."],
       ["Richtig oder falsch", "Richtige Antwort: du bleibst stehen. Falsche Antwort: zurück zum letzten sicheren Feld (Zugbeginn oder letzter Halt). Dann ist die nächste Person dran."]],
     specialT: "Gut zu wissen", special: [
       ["⚡ DOUBLE-Karte", "Etwa jede fünfte Karte ist eine Double-Karte. Antwortest du richtig, gehst du noch einmal so viele Felder."],
-      ["🚧 Kontrollpunkte und Lebensstationen", "Sie halten dich einmal an. Kontrollpunkte lassen dich nur mit richtiger Antwort weiter. Eine Lebensstation schiebt dich vor oder zurück, erzählt eine Geschichte oder stellt eine Bonusfrage."],
+      ["🚧 Hürden und Lebensstationen", "Sie halten dich einmal an. Hürden lassen dich nur mit richtiger Antwort weiter. Eine Lebensstation schiebt dich vor oder zurück, erzählt eine Geschichte oder stellt eine Bonusfrage."],
       ["🎯 Aktionskarten", "Probiere die kleine Aktion aus und würfle dann. Es gilt das Ehrenwort. Du darfst überspringen, niemand muss gegen den eigenen Willen mitmachen."],
       ["🏁 Gewinnen", "Wer als Erste oder Erster das Ziel erreicht, gewinnt. Du brauchst keine genaue Augenzahl."]],
     figT: "Deine Figur und ihre Stärke", figLead: "Zu Beginn dreht jeder das Rad und wird zu einer anderen Figur. Mit dem 📖-Knopf im Spiel siehst du deine Wege, deine Stärke und deine Lebensstationen.",
-    fx: [["🐢 Langsam", "Ein Feld auf diesem Weg zählt mehr als einen Schritt."], ["🐇 Schnell", "Ein Feld zählt weniger als einen Schritt."], ["⛔ Versperrt", "Du kannst diesen Weg nicht wählen, das Spiel sagt dir warum."]],
+    fx: [["⛔ Versperrt", "Du kannst diesen Weg nicht wählen, das Spiel sagt dir warum."]],
     strT: "Eine Stärkekarte (2 oder 3 Einsätze)", str: [["💡", "Hinweis", "Streicht eine falsche Antwort."], ["🛡️", "Schutzschild", "Eine falsche Antwort schickt dich nicht zurück."], ["🎲", "Zweite Chance", "Würfle zwei Würfel, die höhere Zahl zählt."], ["🚀", "Schub", "Addiere 2 zu deinem Wurf."], ["🎟️", "Freifahrtschein", "Eine Frage zählt als richtig."]],
-    fair: "Alles, was dich bremst oder beschleunigt, geht auf ein belegtes Ereignis im Leben deiner Figur zurück. Schritte, die nur das Spiel fair halten, sind als „Spielbalance“ gekennzeichnet und gehören nicht zur Geschichte.",
+    fair: "Alles, was einen Weg versperrt oder dich zurückwirft, geht auf ein belegtes Ereignis im Leben deiner Figur zurück. Es gibt keine versteckten Bonusschritte: Du gehst genau, was du würfelst.",
     talkT: "Redet darüber", talk: ["Nach dem Spiel: Welche Barriere hat dich überrascht? Welche Brücke hat am meisten geholfen?", "Welche Worte waren dir als verletzend nicht bewusst? Was machst du morgen anders?", "Jede Lebensseite nennt ihre Quellen. Echte Fotos stammen von Wikimedia Commons mit Namensnennung."],
     singleT: "Single Player in Kürze", single: ["Dreh das Rad: Du bekommst ein Leben. Du wählst nicht selbst.", "Drehe den Spinner (1, 2 oder 3 Felder). Jedes Feld erzählt ein Stück der echten Geschichte.", "Barrierefelder halten dich auf: Zum Passieren brauchst du eine 3. Ein Fehlversuch kostet einen Zug und Hoffnung (Hope).", "Brücken sind Abkürzungen und kosten 1 Unterstützung (Support). Zwei gescheiterte Barrieren können dich zurückwerfen (Rückschlag).", "Am Ende siehst du die echte Geschichte, deine Werte und Fragen zum Nachdenken."],
     footer: "Ein Schulprojekt zu Vielfalt, Toleranz und Inklusion · Spielen: paru918spy.github.io/game-of-different-lives", pg: "Seite"
@@ -182,8 +182,8 @@ const chip = (c, d) => `<i class="chip" style="background:${c};border-color:${d}
 function doc(L, code) {
   const zi = zoneInfo[code], fi = fieldInfo[code];
   const zonesHtml = zoneOrder.map(z => `<li><span class="pill" style="background:${ZONES[z].color}">${LETTER[z]}</span><div><b>${zi[z][0]}</b><small>${zi[z][1]}</small></div></li>`).join("");
-  const fieldsHtml = fieldOrder.map(k => `<li><span class="dot" style="background:${CAT[k].color};border-color:${CAT[k].dark}">${k === "life" ? "1–12" : ""}</span><div><b>${fi[k][0]}</b><small>${fi[k][1]}</small></div></li>`).join("");
-  const legendFieldsShort = fieldOrder.map(k => `<span class="lg"><i style="background:${CAT[k].color};border-color:${CAT[k].dark}"></i>${fi[k][0]}</span>`).join("");
+  const fieldsHtml = fieldOrder.map(k => `<li><span class="dot" style="background:${GRP[k].color};border-color:${GRP[k].dark}">${k === "life" ? "1–12" : ""}</span><div><b>${fi[k][0]}</b><small>${fi[k][1]}</small></div></li>`).join("");
+  const legendFieldsShort = fieldOrder.map(k => `<span class="lg"><i style="background:${GRP[k].color};border-color:${GRP[k].dark}"></i>${fi[k][0]}</span>`).join("");
   return `
 <div class="doc" lang="${L.htmlLang}" data-doc="${code}">
 <section class="page cover"><div class="cvtop"><span class="tagpill">${L.tag}</span></div>

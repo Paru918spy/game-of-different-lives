@@ -6,7 +6,7 @@
      card      the pawn stopped: question / action / story / checkpoint / life station / ... of that field
      feedback  right or wrong with explanation. Right: stay. Wrong: back to the last safe field (turn start or last stop).
      over      somebody reached the finish
-   Walking: every field costs 1 step. A figure's zone effects change that (slow 1.5, fast 0.75, block = route cannot be chosen).
+   Walking: every field costs exactly 1 step, so you move as many fields as you rolled. A route that is closed for a figure cannot be chosen.
    Life stations and checkpoints stop the pawn once per player, the rest of the roll is kept.                                        */
 (function (root) {
   const MP = root.MP = root.MP || {};
@@ -15,21 +15,31 @@
     { name: "Green", hex: "#06c28f", dark: "#038a65" }, { name: "Yellow", hex: "#f6b93b", dark: "#b97b0a" },
     { name: "Purple", hex: "#7b5cd6", dark: "#523a9e" }, { name: "Orange", hex: "#ff8a3d", dark: "#c25a12" }
   ];
+  /* Five field types for the player. Several internal kinds share one group (same colour, one legend entry), so the rules and balance stay as they were. */
+  const GROUPS = {
+    quiz: { label: "Quiz", color: "#1e9be9", dark: "#0b63a8", icon: "❓", hint: "Answer a question about people and respect" },
+    task: { label: "Action", color: "#ef476f", dark: "#b02a4d", icon: "🎬", hint: "Try it for real, then roll" },
+    life: { label: "Life station", color: "#e0a82e", dark: "#9a6d0a", icon: "📖", hint: "A moment from a life story" },
+    gate: { label: "Hurdle", color: "#4f5d95", dark: "#2f3a66", icon: "🚧", hint: "Answer right to go on" },
+    luck: { label: "Luck", color: "#ff8a3d", dark: "#c25a12", icon: "🍀", hint: "A bit of luck, good or bad" }
+  };
+  const GROUP_OF = { who: "quiz", fact: "quiz", tf: "quiz", words: "quiz", task: "task", story: "life", life: "life", gate: "gate", fwd: "luck", back: "luck", again: "luck" };
   const CATEGORY = {
-    who: { label: "Who am I?", color: "#1e9be9", dark: "#0b63a8", hint: "Guess the person from the clue" },
-    fact: { label: "Life & Barriers", color: "#ff8a3d", dark: "#c25a12", hint: "A question about a life story" },
-    tf: { label: "True or False?", color: "#06c28f", dark: "#038a65", hint: "Is the statement true?" },
-    words: { label: "Words Matter", color: "#7b5cd6", dark: "#523a9e", hint: "Respectful words and behaviour" },
-    task: { label: "Action!", color: "#ef476f", dark: "#b02a4d", hint: "Try it for real, then roll" },
-    story: { label: "Story Stop", color: "#0fb5a0", dark: "#077567", hint: "Meet a person. No question, you can stay!" },
-    fwd: { label: "Tailwind", color: "#7bc043", dark: "#4d8a22", hint: "Move extra fields forward" },
-    back: { label: "Setback", color: "#d9534f", dark: "#8f2724", hint: "Move back" },
-    again: { label: "Roll again", color: "#f6b93b", dark: "#b97b0a", hint: "Roll once more" },
-    gate: { label: "Checkpoint", color: "#4f5d95", dark: "#2f3a66", hint: "Answer right to go on" },
-    life: { label: "Life station", color: "#e0a82e", dark: "#9a6d0a", hint: "A moment of your own life story" },
+    who: { label: "Who am I?", hint: "Guess the person from the clue" },
+    fact: { label: "Life & Barriers", hint: "A question about a life story" },
+    tf: { label: "True or False?", hint: "Is the statement true?" },
+    words: { label: "Words Matter", hint: "Respectful words and behaviour" },
+    task: { label: "Action!", hint: "Try it for real, then roll" },
+    story: { label: "Story Stop", hint: "Meet a person. No question, you can stay!" },
+    fwd: { label: "Tailwind", hint: "Move extra fields forward" },
+    back: { label: "Setback", hint: "Move back" },
+    again: { label: "Roll again", hint: "Roll once more" },
+    gate: { label: "Hurdle", hint: "Answer right to go on" },
+    life: { label: "Life station", hint: "A moment of your own life story" },
     start: { label: "Start", color: "#fff6e0", dark: "#c9a66b", hint: "" },
     finish: { label: "Finish", color: "#fff6e0", dark: "#c9a66b", hint: "" }
   };
+  Object.keys(GROUP_OF).forEach(k => { const g = GROUPS[GROUP_OF[k]]; CATEGORY[k].group = GROUP_OF[k]; CATEGORY[k].color = g.color; CATEGORY[k].dark = g.dark; });
   const FLAVOR = {
     fwd: { sprint: "Strong tailwind on the track!", market: "A stall owner shows you a quick way through.", bridge: "The bridge is empty, you hurry across.", ramp: "Smooth ground: you pick up speed.", quiet: "You find a good rhythm in the calm.", _: "A friendly neighbour gives you a lift!" },
     back: { stairs: "You slip on a wet step.", ladder: "A rung is missing. You climb back down.", rope: "The bridge sways and you step back.", _: "Roadworks! You have to turn back." }
@@ -184,7 +194,7 @@
     if (S.phase === "over") return ev;
     if (S.phase === "wheel") {
       if (a.t !== "spin" && a.t !== "skip") return ev;
-      const id = S.pool.shift(), pr = MP.Profiles[id]; p.char = id; p.left = pr.advantage.uses; p.comp = (pr.balance && pr.balance.comp) || 0;
+      const id = S.pool.shift(), pr = MP.Profiles[id]; p.char = id; p.left = pr.advantage.uses;
       ev.push({ e: "assign", p: p.id, char: id, order: S.players.map(q => q.char) });
       if (S.turn < S.players.length - 1) { S.turn++; ev.push({ e: "wheelTurn", p: S.turn }); }
       else { S.turn = 0; S.phase = "roll"; S.anchor = { len: 0 }; ev.push({ e: "turn", p: 0 }); }
@@ -228,9 +238,7 @@
       if (a.best && p.left > 0 && prof(p).advantage.type === "bestof2") { d2 = 1 + Math.floor(rnd(S) * 6); p.left--; p.used++; }
       S.dice = d2 ? Math.max(d, d2) : d; S.bonus = false;
       let liftUsed = false; if (a.lift && p.left > 0 && prof(p).advantage.type === "lift") { S.dice += 2; p.left--; p.used++; liftUsed = true; }
-      /* game balance (not part of the story): each point of "comp" adds one step, applied automatically, at most 3 per roll */
-      const cu = Math.max(0, Math.min(3, p.comp)); if (cu) { S.dice += cu; p.comp -= cu; }
-      ev.push({ e: "roll", p: p.id, v: S.dice, d1: d, d2, lift: liftUsed, comp: cu });
+      ev.push({ e: "roll", p: p.id, v: S.dice, d1: d, d2, lift: liftUsed });
       walk(S, S.dice, ev);
     } else if (S.phase === "fork" && a.t === "choose" && S.fork.allowed.includes(a.node)) {
       const n = S.fork.remaining; S.phase = "roll"; S.fork = null;
@@ -239,6 +247,6 @@
     return ev;
   }
 
-  MP.Engine = { create, attach, snapshot, dispatch, COLORS, CATEGORY };
+  MP.Engine = { create, attach, snapshot, dispatch, COLORS, CATEGORY, GROUPS, GROUP_OF };
   if (typeof module !== "undefined") module.exports = MP.Engine;
 })(typeof window !== "undefined" ? window : global);

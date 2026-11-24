@@ -20,15 +20,10 @@
     g.fillStyle = "#fff"; g.strokeStyle = "rgba(0,0,0,.28)"; g.textAlign = "center"; g.textBaseline = "middle"; g.lineJoin = "round"; g.lineCap = "round";
     const txt = (s, size, dy) => { g.font = `900 ${size}px "Arial Rounded MT Bold",Arial,sans-serif`; g.lineWidth = 14; g.strokeText(s, 128, 132 + (dy || 0)); g.fillText(s, 128, 132 + (dy || 0)); };
     const dark = "rgba(0,0,0,.28)";
-    if (type === "who") txt("?", 150);
-    else if (type === "fact") txt("i", 150, 4);
-    else if (type === "tf") { txt("T/F", 92); }
-    else if (type === "words") txt("Aa", 100);
+    if (type === "who" || type === "fact" || type === "tf" || type === "words") txt("?", 150);
     else if (type === "task") { star(g, 128, 130, 78, 34); }
-    else if (type === "story") { heart(g, 128, 128, 74); }
-    else if (type === "fwd") { g.strokeStyle = "#fff"; g.lineWidth = 26; [70, 128].forEach(x => { g.beginPath(); g.moveTo(x, 70); g.lineTo(x + 54, 130); g.lineTo(x, 190); g.stroke(); }); }
-    else if (type === "back") { g.strokeStyle = "#fff"; g.lineWidth = 26; [186, 128].forEach(x => { g.beginPath(); g.moveTo(x, 70); g.lineTo(x - 54, 130); g.lineTo(x, 190); g.stroke(); }); }
-    else if (type === "again") { g.strokeStyle = "#fff"; g.lineWidth = 24; g.beginPath(); g.arc(128, 132, 58, -Math.PI * .1, Math.PI * 1.55); g.stroke(); g.fillStyle = "#fff"; g.beginPath(); g.moveTo(178, 60); g.lineTo(190, 118); g.lineTo(136, 96); g.closePath(); g.fill(); }
+    else if (type === "fwd" || type === "back" || type === "again") { g.fillStyle = "#fff"; [[128, 84], [128, 172], [84, 128], [172, 128]].forEach(q => { g.beginPath(); g.arc(q[0], q[1], 34, 0, 7); g.fill(); }); }
+    else if (type === "story") { g.fillStyle = "#fff"; g.beginPath(); g.arc(128, 84, 30, 0, 7); g.fill(); g.beginPath(); g.moveTo(66, 190); g.quadraticCurveTo(66, 118, 128, 118); g.quadraticCurveTo(190, 118, 190, 190); g.closePath(); g.fill(); }
     else if (type === "gate") { g.fillStyle = "#fff"; for (let k = 0; k < 4; k++) g.fillRect(58 + k * 40, 70, 22, 120); g.fillStyle = col; g.fillRect(50, 120, 156, 22); g.fillStyle = "#fff"; g.fillRect(50, 122, 156, 8); }
     else if (type === "life") { g.fillStyle = "#fff"; g.beginPath(); g.arc(128, 84, 30, 0, 7); g.fill(); g.beginPath(); g.moveTo(66, 190); g.quadraticCurveTo(66, 118, 128, 118); g.quadraticCurveTo(190, 118, 190, 190); g.closePath(); g.fill(); }
     else if (type === "start") { g.fillStyle = "#06c28f"; g.beginPath(); g.arc(128, 128, 96, 0, 7); g.fill(); txt("GO", 96); }

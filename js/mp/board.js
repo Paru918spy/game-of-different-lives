@@ -148,7 +148,7 @@
 
   /* Cost of a node in "steps" for a figure: zone effects from its profile. fast = .75, slow = 1.5, normal = 1. */
   const COST = { fast: .75, slow: 1.5 };
-  function cost(node, zfx) { const f = node.zone && zfx && zfx[node.zone]; return f && f.fx && COST[f.fx] || 1; }
+  function cost() { return 1; }   // every field is exactly one step
   const blocked = (zone, zfx) => !!(zone && zfx && zfx[zone] && zfx[zone].fx === "block");
 
   /* Shortest / longest number of fields from a node to the finish (for UI and tests). zfx = effects of a figure (optional) */

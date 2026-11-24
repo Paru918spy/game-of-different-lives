@@ -6,19 +6,16 @@ Single Player (the original game) walks through **one life in depth**. Multiplay
 
 - 2 to 6 players sit around a table in the colour of their pawn. At the start **everybody spins the wheel of lives** and becomes one of the 21 figures (nobody gets the same one).
 - The board has **101 fields**: a main road with **12 life stations** and **6 forks**. Each fork offers three routes of different kinds: stairs, tree ladders, rope bridge, stone bridge, long ramp, busy market, dark tunnel, town hall, race track, quiet lane. Short cuts are shorter but have more checkpoints and setbacks.
-- **Figures differ.** Every figure has a few routes that are *slow* (a field costs 2 steps), *fast* (a field costs half a step) or *closed*, and one **strength card** with 2 or 3 uses: 💡 *hint* (remove a wrong answer), 🛡 *shield* (a wrong answer does not send you back), 🎲 *second chance* (roll two dice, keep the higher), 🚀 *lift* (add 2 to your roll), 🎟 *free pass* (count a question as right). Everything is in `docs/figures/<id>.md`.
+- **Figures differ.** Every figure has a few routes that are *closed* (every field you walk is exactly one step, no matter the route), and one **strength card** with 2 or 3 uses: 💡 *hint* (remove a wrong answer), 🛡 *shield* (a wrong answer does not send you back), 🎲 *second chance* (roll two dice, keep the higher), 🚀 *lift* (add 2 to your roll), 🎟 *free pass* (count a question as right). Everything is in `docs/figures/<id>.md`.
 - **Fields** (colour of the tile):
 
 | Field | What happens |
 | --- | --- |
-| Who am I? / Life & Barriers / True or False? / Words Matter | Question card. Right: stay. Wrong: back to the last safe field (turn start or last stop) |
-| Action! | A real-life action, honour system |
-| Story Stop | Meet a person, no question |
-| » Tailwind | move 2 or 3 extra fields |
-| « Setback | move 2 or 3 fields back |
-| ↻ Roll again | roll once more |
-| Checkpoint | You must stop and answer. Right: go on with the rest of your roll. Wrong: stay, the rest of the roll is lost |
-| Life station 1 to 12 | You must stop once. Your figure's story: barrier (back 1 to 3), boost (forward 1 to 3), story, or a question for a bonus |
+| ❓ Quiz (Who am I? / Life & Barriers / True or False? / Words Matter) | Question card. Right: stay. Wrong: back to the last safe field (turn start or last stop) |
+| 🎬 Action | A real-life action, honour system |
+| 📖 Life station 1 to 12 (and story stops) | You must stop once. Your figure's story: barrier (back 1 to 3), boost (forward 1 to 3), story, or a question for a bonus. Story stops only tell about a person |
+| 🚧 Hurdle | You must stop and answer. Right: go on with the rest of your roll. Wrong: stay, the rest of the roll is lost |
+| 🍀 Luck (tailwind / setback / roll again) | Move 2 or 3 fields forward, 2 or 3 back, or roll once more |
 
 - **Your turn:** roll, walk, choose a route at forks (routes closed for your figure are greyed out and explain why), then the card of the field you landed on.
 - About one question card in five is a random **⚡ DOUBLE** card: right answer = walk the same number again.
@@ -84,5 +81,5 @@ Recommended path: ship the built-in version, watch whether classes hit connectio
 ## Realism, balance and figures at the table (v3)
 
 - Every slowdown or speed-up on the board comes from a documented event of the drawn person (see `docs/figures/<id>.md`, section "Documented events"). The zone legend is fixed for all figures.
-- Fairness is a separate, openly named rule: "Game balance" steps (⚖). They are not part of the story.
+- There are no hidden bonus steps. You walk exactly what you roll.
 - Each player sits at the table as the person they drew (outfit, hair, accessories such as the wheelchair or the football helmet), once the wheel has chosen.
