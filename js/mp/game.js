@@ -14,7 +14,7 @@
   const SCREENS = ["screen-about", "screen-home", "screen-topic", "screen-game", "screen-end", "screen-mode", "screen-mpsetup", "screen-mp"];
   const chars = () => GOL.characters.filter(c => !c.fictional);
   const char = id => GOL.characters.find(c => c.id === id);
-  const ICON = { who: "?", fact: "i", tf: "✓✗", words: "Aa", task: "★", story: "♥", fwd: "»", back: "«", again: "↻", gate: "!", life: "★" };
+  const ICON = { who: "?", fact: "?", tf: "?", words: "?", task: "★", story: "☺", fwd: "🍀", back: "🍀", again: "🍀", gate: "🚧", life: "☺" };
   const ZN = () => MP.Board.ZONES, PR = () => MP.Profiles;
   const prof = p => p && p.char && PR()[p.char];
   const ADVICON = { hint: "💡", shield: "🛡", bestof2: "🎲", lift: "🚀", skip: "🎟" };
@@ -122,7 +122,7 @@
       else if (e.e === "fx") { SND[e.kind === "back" ? "wrong" : "bridge"](); banner(`${e.kind === "fwd" ? "» " + esc(e.text) + ` Move ${e.n} more!` : e.kind === "back" ? "« " + esc(e.text) + ` Back ${e.n}.` : "↻ " + esc(e.text)}`, 1700); await sleep(1000); }
       else if (e.e === "life") { if (e.move) { e.move > 0 ? SND.bridge() : SND.wrong(); banner(e.move > 0 ? `★ Boost! ${e.move} more field${e.move > 1 ? "s" : ""}` : `🚧 Barrier! Back ${-e.move} field${e.move < -1 ? "s" : ""}`, 1500); await sleep(800); } }
       else if (e.e === "adv") { SND.right(); banner(e.type === "hint" ? "💡 Hint: one wrong answer is gone" : e.type === "skip" ? "🎟 Free pass: counted as right!" : "🛡 Shield: you stay!", 1300); renderPlayers(); }
-      else if (e.e === "gateFail") { SND.wrong(); banner("⛔ The checkpoint stays closed. The rest of your roll is lost.", 1700); await sleep(700); }
+      else if (e.e === "gateFail") { SND.wrong(); banner("⛔ The hurdle stays closed. The rest of your roll is lost.", 1700); await sleep(700); }
       else if (e.e === "double") { SND.bridge(); banner(`⚡ DOUBLE! Move ${e.n} more field${e.n > 1 ? "s" : ""}`, 1500); await sleep(900); }
       else if (e.e === "turn") { scene.setActive(e.p); SND.turn(); renderPlayers(); banner(turnText(V.players[e.p]), 1500); await sleep(650); }
       else if (e.e === "win") { SND.win(); renderPlayers(); await scene.celebrate(e.p); showEnd(); }
@@ -151,7 +151,7 @@
     }).join("");
   }
   function buildLegend() {
-    $("mpLegend").innerHTML = ["who", "fact", "tf", "words", "task", "story", "fwd", "back", "again", "gate", "life"].map(k => `<span><i style="background:${E.CATEGORY[k].color}"></i>${E.CATEGORY[k].label}</span>`).join("");
+    $("mpLegend").innerHTML = ["quiz", "task", "life", "gate", "luck"].map(k => `<span><i style="background:${E.GROUPS[k].color}"></i>${E.GROUPS[k].label}</span>`).join("");
   }
   const chip = p => `<span class="who-chip" style="--c:${E.COLORS[p.color].hex}"><span class="pdot"></span>${esc(p.name)}</span>`;
   const waitNote = p => `<p class="mp-wait">⏳ ${esc(p.name)} is playing. Watch the board!</p>`;
@@ -187,7 +187,7 @@
     } else {
       const opts = c.opts.map((o, i) => { let cls = "mp-opt"; if (o.gone) cls += " gone"; else if (fb) { if (o.ok) cls += " right"; else if (res.i === i) cls += " wrong"; else cls += " dim"; }
         return `<button class="${cls}" data-i="${i}" ${fb || !my || o.gone ? "disabled" : ""}><span class="k">${i + 1}</span>${esc(o.text)}</button>`; }).join("");
-      body = (c.gate ? `<div class="mp-note warn"><b>⛔ Checkpoint</b><p>Answer right to pass. Wrong: you stay here and the rest of your roll is lost.</p></div>` : "") + (c.kind === "who" ? `<p class="mp-clue">“${esc(c.clue)}”</p><p class="mp-q">Who am I?</p>` : `<p class="mp-q">${esc(c.q)}</p>`) + `<div class="mp-opts ${c.kind === "tf" ? "two" : ""}">${opts}</div>`;
+      body = (c.gate ? `<div class="mp-note warn"><b>⛔ Hurdle</b><p>Answer right to pass. Wrong: you stay here and the rest of your roll is lost.</p></div>` : "") + (c.kind === "who" ? `<p class="mp-clue">“${esc(c.clue)}”</p><p class="mp-q">Who am I?</p>` : `<p class="mp-q">${esc(c.q)}</p>`) + `<div class="mp-opts ${c.kind === "tf" ? "two" : ""}">${opts}</div>`;
       if (!fb && my && pf && pf.advantage.type === "skip" && p.left > 0 && !c.gate) body += `<button class="mp-adv" id="mpSkipQ">🎟 ${esc(pf.advantage.title)} (${p.left} left): count this as answered right</button>`;
       if (!fb && my && pf && pf.advantage.type === "hint" && p.left > 0 && c.opts.length === 3 && !c.hinted) body += `<button class="mp-adv" id="mpHint">💡 Use my hint (${p.left} left): remove one wrong answer</button>`;
       if (!fb && !my) body += waitNote(p);
@@ -201,7 +201,7 @@
     const w = $("mpCardWrap"), card = $("mpCard");
     card.className = "mp-card k-" + c.kind + (fb ? " fb" : ""); card.style.setProperty("--c", cat.color); card.style.setProperty("--d", cat.dark);
     const dbBadge = c.double && !fb ? `<div class="mp-double">⚡ DOUBLE card! Answer right (or do it) and you move ahead again by the same number of steps. Wrong: you go back.</div>` : "";
-    card.innerHTML = dbBadge + `<div class="mp-chead"><span class="ci">${ICON[c.kind] || ""}</span><div><b>${cat.label}</b><small>${esc(cat.hint)}</small></div>${chip(p)}</div><div class="mp-cbody">${body}</div>`;
+    card.innerHTML = dbBadge + `<div class="mp-chead"><span class="ci">${ICON[c.kind] || ""}</span><div><b>${E.GROUPS[cat.group].label}</b><small>${cat.label === E.GROUPS[cat.group].label ? esc(cat.hint) : esc(cat.label + " · " + cat.hint)}</small></div>${chip(p)}</div><div class="mp-cbody">${body}</div>`;
     w.hidden = false; const cb = card.querySelector(".mp-cbody"); if (cb) cb.scrollTop = 0; scene.setShift(window.innerWidth >= 1000 ? window.innerWidth * .2 : 0);
     card.querySelectorAll(".mp-opt").forEach(b => b.onclick = () => submit({ t: "answer", i: +b.dataset.i }));
     const n = $("mpNext"); if (n) n.onclick = () => submit({ t: "next" });
@@ -231,7 +231,7 @@
     d.innerHTML = `<div class="dk-t">${chip(p)} <span class="dk-m">rolls…</span></div>${dieHTML(6)}`; d.hidden = false;
     const die = $("mpDie"); die.classList.add("tumble");
     for (let i = 0; i < 9; i++) { die.innerHTML = pips(1 + Math.floor(Math.random() * 6)); SND.roll(); await sleep(85 + i * 12); }
-    die.classList.remove("tumble"); die.innerHTML = pips(e.v); die.classList.add("land"); SND.right(); d.querySelector(".dk-m").textContent = e.comp ? `${e.d2 ? "Best die " + Math.max(e.d1, e.d2) : e.d1}${e.lift ? " + 2" : ""} + ${e.comp} game balance = ${e.v}!` : e.lift ? `${e.d1} + 2 = ${e.v}!` : e.d2 ? `${e.d1} and ${e.d2}: you keep ${e.v}!` : `${e.v} step${e.v > 1 ? "s" : ""}!`;
+    die.classList.remove("tumble"); die.innerHTML = pips(e.v); die.classList.add("land"); SND.right(); d.querySelector(".dk-m").textContent = e.lift ? `${e.d1} + 2 = ${e.v}!` : e.d2 ? `${e.d1} and ${e.d2}: you keep ${e.v}!` : `${e.v} step${e.v > 1 ? "s" : ""}!`;
     await sleep(450);
   }
 
@@ -239,7 +239,7 @@
   function renderFork() {
     const p = V.players[V.turn], f = V.fork, el = $("mpFork"), my = mine(), pf = prof(p), Z = ZN();
     const opts = f.options.map(id => { const n = board.nodes[id], z = Z[n.zone] || { icon: "➜", label: "Keep going", hint: "" }, fx = pf && pf.zones[n.zone], ok = f.allowed.includes(id), len = board.chains[n.chain] ? board.chains[n.chain].ids.length : 0;
-      const tag = fx ? { fast: "⚡ fast for you", slow: "🐢 slow for you", block: "⛔ closed for you" }[fx.fx] : "";
+      const tag = fx && fx.fx === "block" ? "⛔ closed for you" : "";
       return `<button class="fk th-${n.zone} ${fx ? "fx-" + fx.fx : ""}" data-id="${id}" ${my && ok ? "" : "disabled"}><span class="fi">${z.icon}</span><b>${z.label}</b><small>${len} fields · ${z.hint}</small>${tag ? `<em>${tag}</em><small class="why">${esc(fx.why)}</small>` : ""}</button>`; }).join("");
     el.innerHTML = `<div class="fk-t">${chip(p)} <span>${my ? "Choose your way!" : "is choosing a way…"} ${Math.ceil(f.remaining)} step${f.remaining > 1 ? "s" : ""} to go.${my ? " You can also click a glowing field." : ""}</span></div><div class="fk-b">${opts}</div>`; el.hidden = false;
     scene.mode("follow"); scene.focus(p.pos); setFollowBtn(true);
@@ -268,7 +268,7 @@
     SND.roll(); await wheel.spin(wheelOrder.findIndex(x => x.id === e.char), FAST ? 300 : 4200); SND.win();
     const pf = PR()[e.char], rev = $("mpWheelRev"); rev.style.setProperty("--c", c.avatar.color);
     rev.innerHTML = `<div class="reveal2" style="--c:${c.avatar.color}"><div class="avatar big-av">${GOL.portrait(c)}</div><div class="rtxt"><small class="kick">${esc(pl.name)} becomes</small><h2>${esc(c.name)}</h2><small>${esc(c.years)} · ${esc(c.focus)}</small>${c.fictional ? `<span class="tag">Fictional character</span>` : ""}
-      <p>${esc(pf.intro)}</p>${zoneChips(pf)}<p class="advline">${ADVICON[pf.advantage.type]} <b>${esc(pf.advantage.title)}</b> · ${pf.advantage.uses}×: ${esc(pf.advantage.text)}</p>${(pf.balance || {}).comp ? `<p class="advline">⚖ <b>Game balance</b> · ${pf.balance.comp} extra steps (a game rule, not part of the story, so every figure has the same chance to win)</p>` : ""}${c.note ? `<p class="muted"><b>${esc(c.note)}</b></p>` : ""}<button class="big gold" id="mpRevOk">Let’s go!</button></div></div>`;
+      <p>${esc(pf.intro)}</p>${zoneChips(pf)}<p class="advline">${ADVICON[pf.advantage.type]} <b>${esc(pf.advantage.title)}</b> · ${pf.advantage.uses}×: ${esc(pf.advantage.text)}</p>${c.note ? `<p class="muted"><b>${esc(c.note)}</b></p>` : ""}<button class="big gold" id="mpRevOk">Let’s go!</button></div></div>`;
     rev.hidden = false; w.classList.add("rev"); scene.setLabel(e.p, pl.name, shortName(c)); scene.setFigure(e.p, pf.look);
     await new Promise(res => { const t = setTimeout(res, FAST ? 200 : 9000); $("mpRevOk").onclick = () => { clearTimeout(t); res(); }; });
     rev.hidden = true; w.classList.remove("rev"); if (e.order.filter(Boolean).length === V.players.length) w.hidden = true;
@@ -277,7 +277,7 @@
   function evLine(pf, id) { const e = (pf.evidence || []).find(x => x.id === id); return e ? `<small class="evl">Documented (${esc(e.y)}): ${esc(e.ev)} <i>Source: ${esc(pf.sources[e.src])}</i></small>` : ""; }
   function zoneChips(pf) {
     const Z = ZN(), t = { fast: "⚡", slow: "🐢", block: "⛔" };
-    return `<div class="zchips">${Object.keys(pf.zones).map(z => `<span class="zc fx-${pf.zones[z].fx}" title="${esc(pf.zones[z].why)}">${t[pf.zones[z].fx]} ${Z[z].icon} ${Z[z].label}</span>`).join("")}</div>`;
+    return `<div class="zchips">${Object.keys(pf.zones).filter(z => pf.zones[z].fx === "block").map(z => `<span class="zc fx-${pf.zones[z].fx}" title="${esc(pf.zones[z].why)}">${t[pf.zones[z].fx]} ${Z[z].icon} ${Z[z].label}</span>`).join("")}</div>`;
   }
   /* "My figure" panel: routes, strength, the 12 life stations and which ones are done */
   function showFigure() {
@@ -285,8 +285,8 @@
     const K = { barrier: "🚧", boost: "⭐", info: "📖", quiz: "❓" }, Z = ZN(), fxw = { fast: "fast", slow: "slow", block: "closed" };
     const I = $("mpInfo"); I.hidden = false;
     I.innerHTML = `<div class="mp-infocard" style="--c:${c.avatar.color}"><button class="mp-x" id="mpInfoX" aria-label="Close">✕</button><div class="reveal2" style="box-shadow:none;border:0;padding:0"><div class="avatar big-av">${GOL.portrait(c)}</div><div class="rtxt"><small class="kick">${esc(p.name)} plays</small><h2>${esc(c.name)}</h2><small>${esc(c.years)} · ${esc(c.focus)}</small><p>${esc(pf.intro)}</p></div></div>
-      <h3>Routes that are different for you</h3><ul class="zl">${Object.keys(pf.zones).map(z => `<li class="fx-${pf.zones[z].fx}"><b>${Z[z].icon} ${Z[z].label} (${esc(Z[z].domain)}): ${fxw[pf.zones[z].fx]}.</b> ${esc(pf.zones[z].why)}${evLine(pf, pf.zones[z].ev)}</li>`).join("")}</ul>
-      <h3>Your strength</h3><p>${ADVICON[pf.advantage.type]} <b>${esc(pf.advantage.title)}</b> · ${p.left} of ${pf.advantage.uses} left. ${esc(pf.advantage.text)}</p>${p.comp !== undefined && (pf.balance || {}).comp ? `<h3>Game balance</h3><p>⚖ ${p.comp} of ${pf.balance.comp} balance steps left. <small>This is a rule of the game, not a statement about the person: all figures should have the same chance to win, so the balance steps are added to your rolls automatically (up to 3 per roll) until they are used up.</small></p>` : ""}
+      <h3>Routes that are different for you</h3><ul class="zl">${Object.keys(pf.zones).filter(z => pf.zones[z].fx === "block").length ? "" : "<li>No route is closed for you.</li>"}${Object.keys(pf.zones).filter(z => pf.zones[z].fx === "block").map(z => `<li class="fx-${pf.zones[z].fx}"><b>${Z[z].icon} ${Z[z].label} (${esc(Z[z].domain)}): ${fxw[pf.zones[z].fx]}.</b> ${esc(pf.zones[z].why)}${evLine(pf, pf.zones[z].ev)}</li>`).join("")}</ul>
+      <h3>Your strength</h3><p>${ADVICON[pf.advantage.type]} <b>${esc(pf.advantage.title)}</b> · ${p.left} of ${pf.advantage.uses} left. ${esc(pf.advantage.text)}</p>
       <h3>Your 12 life stations</h3><ol class="ll">${pf.life.map((t, i) => { const done = p.seen && Object.keys(p.seen).some(id => board.nodes[id] && board.nodes[id].life === i + 1); return `<li class="${done ? "done" : ""}">${done ? `${K[t.k]} <b>${esc(t.title)}</b>` : `<span>Station ${i + 1}: not reached yet</span>`}</li>`; }).join("")}</ol></div>`;
     $("mpInfoX").onclick = () => I.hidden = true;
   }
