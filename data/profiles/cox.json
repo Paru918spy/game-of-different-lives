@@ -1,197 +1,197 @@
 {
- "id": "cox",
- "intro": "You are Laverne Cox: a dancer first, then an actor, producer and advocate. Playing this life means moving between stages where you are celebrated and rooms where gatekeepers and strangers decide who you are allowed to be.",
- "zones": {
-  "rope": {
-   "fx": "slow",
-   "ev": "e1",
-   "why": "Safety: harassment and violence against trans women, which she has described."
+  "id": "cox",
+  "intro": "You are Laverne Cox: a dancer first, then an actor, producer and advocate. Playing this life means moving between stages where you are celebrated and rooms where gatekeepers and strangers decide who you are allowed to be.",
+  "zones": {
+    "rope": {
+      "fx": "slow",
+      "ev": "e1",
+      "why": "Safety: harassment and violence against trans women, which she has described."
+    },
+    "market": {
+      "fx": "slow",
+      "ev": "e3",
+      "why": "Casting: for years there were almost no roles for trans actresses."
+    },
+    "ladder": {
+      "fx": "fast",
+      "ev": "e2",
+      "why": "Arts school and college: dance training opened a way into New York."
+    },
+    "bridge": {
+      "fx": "fast",
+      "ev": "e4",
+      "why": "Her mother, twin brother and community held her up after rejection."
+    }
   },
-  "market": {
-   "fx": "slow",
-   "ev": "e3",
-   "why": "Casting: for years there were almost no roles for trans actresses."
+  "advantage": {
+    "type": "lift",
+    "uses": 2,
+    "title": "Chosen family",
+    "text": "Laverne has described how her mother, friends and community lifted her after rejection and insults. After rolling, add 2 to your result.",
+    "ev": "e4"
   },
-  "ladder": {
-   "fx": "fast",
-   "ev": "e2",
-   "why": "Arts school and college: dance training opened a way into New York."
+  "life": [
+    {
+      "k": "info",
+      "title": "Mobile, Alabama, 1972",
+      "text": "Laverne is born on 29 May 1972 and raised by her mother, Gloria, together with her twin brother. She loves to dance and perform, and knows from early on that she is a girl."
+    },
+    {
+      "k": "barrier",
+      "title": "Told to fit a role",
+      "move": -3,
+      "text": "Classmates and some adults bully Laverne for not acting the way they expect a boy to act. She learns to hide, and has spoken openly about how hard this was for her mental health."
+    },
+    {
+      "k": "boost",
+      "title": "Dance and a home in the arts",
+      "move": 1,
+      "text": "Her mother backs her. Laverne attends the Alabama School of Fine Arts, where she studies dance and finds a place where creative kids are taken seriously."
+    },
+    {
+      "k": "quiz",
+      "title": "Studying in New York",
+      "move": 2,
+      "text": "Laverne studies at Indiana University and then graduates from Marymount Manhattan College in New York. In her twenties she transitions and builds a community.",
+      "q": {
+        "q": "Which art form did Laverne study at school and at college?",
+        "a": [
+          "Dance",
+          "Architecture",
+          "Journalism"
+        ],
+        "x": "Laverne trained as a dancer at the Alabama School of Fine Arts and graduated in dance from Marymount Manhattan College."
+      }
+    },
+    {
+      "k": "barrier",
+      "title": "No roles, many closed doors",
+      "move": -3,
+      "text": "In the 1990s and 2000s there are almost no parts for openly trans actors. Casting people reject her, money is tight, and some employers treat her as a risk or a joke."
+    },
+    {
+      "k": "info",
+      "title": "Television and teaching",
+      "text": "In 2008 she appears on the reality show I Want to Work for Diddy and then produces and hosts TransAmerican Love Story. She starts using television to explain trans lives to people who have never met a trans person."
+    },
+    {
+      "k": "boost",
+      "title": "Sophia Burset",
+      "move": 1,
+      "text": "In 2013 she plays Sophia Burset in Orange Is the New Black, a trans woman played by a trans actress. The Netflix series is a worldwide success and brings many more people to her work."
+    },
+    {
+      "k": "quiz",
+      "title": "A first for acting",
+      "move": 2,
+      "text": "In 2014 Time puts Laverne on its cover for the story \"The Transgender Tipping Point\". The same year her work for Orange Is the New Black earns an Emmy nomination.",
+      "q": {
+        "q": "What was historic about Laverne's 2014 Emmy nomination?",
+        "a": [
+          "First openly trans person nominated for an acting Emmy",
+          "First time a Netflix show was nominated",
+          "First Emmy won by a dancer"
+        ],
+        "x": "She was the first openly transgender person nominated for an acting Emmy. She also became the first openly trans person on the cover of Time."
+      }
+    },
+    {
+      "k": "barrier",
+      "title": "Fame is not safety",
+      "move": -2,
+      "text": "Even as a star, Laverne is misgendered, threatened online and drawn into public debates about her identity. She points out that many trans women, especially Black trans women, face this with no platform and no protection."
+    },
+    {
+      "k": "boost",
+      "title": "Disclosure",
+      "move": 1,
+      "text": "She uses her platform on purpose. In 2020 she is an executive producer of the documentary Disclosure, in which trans people look at how film and television have portrayed them for a century."
+    },
+    {
+      "k": "info",
+      "title": "A lead on network television",
+      "text": "In 2017 she stars in the CBS legal drama Doubt, the first openly trans actor in a leading series role on US network television. She keeps working in film, theatre and production."
+    },
+    {
+      "k": "info",
+      "title": "Telling your own story",
+      "text": "Laverne keeps acting and speaking out. A theme in her work is that trans people should tell their own stories, on screen and behind the camera, instead of having others tell them."
+    }
+  ],
+  "sources": [
+    "js/characters/group3.js tiles for Laverne Cox (Mobile, Alabama School of Fine Arts, Marymount Manhattan, Orange Is the New Black, Time cover 2014, Emmy nomination, Doubt 2017, Disclosure 2020)",
+    "TIME cover story \"The Transgender Tipping Point\" (29 May 2014)",
+    "Netflix documentary Disclosure (2020)"
+  ],
+  "flags": [
+    "Please check: the Doubt (CBS, 2017) claim \"first openly trans actor in a leading series role on US network TV\" as phrased in the single-player data.",
+    "Please check: the Indiana University detail and the graduation wording for Marymount Manhattan."
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "y": "childhood and adult life",
+      "ev": "Laverne Cox has told TIME and other outlets that she was bullied as a child and harassed on the street as an adult; violence against trans women is a real risk.",
+      "src": 1
+    },
+    {
+      "id": "e2",
+      "y": "1980s to 1990s",
+      "ev": "She trained in dance at the Alabama School of Fine Arts, then studied in New York (Marymount Manhattan College).",
+      "src": 0
+    },
+    {
+      "id": "e3",
+      "y": "1990s to 2012",
+      "ev": "For many years there were few roles written for trans women; she kept auditioning and working other jobs until Orange Is the New Black (2013).",
+      "src": 1
+    },
+    {
+      "id": "e4",
+      "y": "1970s onwards",
+      "ev": "Her mother and her twin brother raised and backed her; friends and the trans community lifted her after insults.",
+      "src": 1
+    },
+    {
+      "id": "e5",
+      "y": "2020",
+      "ev": "The documentary Disclosure, which she produced and appears in, collects trans voices about how media shaped their lives.",
+      "src": 2
+    }
+  ],
+  "balance": {
+    "comp": 20
   },
-  "bridge": {
-   "fx": "fast",
-   "ev": "e4",
-   "why": "Her mother, twin brother and community held her up after rejection."
+  "look": {
+    "skin": "#a97a56",
+    "hair": "#d9ad62",
+    "hairStyle": "wavy",
+    "top": "#c8c8d2",
+    "bottom": "#c8c8d2",
+    "outfit": "dress",
+    "eyes": "#3a2414",
+    "brow": {
+      "c": "#6a4a2a",
+      "t": 0.65,
+      "a": 1.3
+    },
+    "mouth": "grin",
+    "lipstick": "#c0305a",
+    "lashes": true,
+    "shadow": "#d9a066",
+    "blush": "#d9806a",
+    "nose": 0.95,
+    "mouthW": 1.55,
+    "earrings": "#d4af37",
+    "face": {
+      "w": 0.98,
+      "h": 1.12
+    },
+    "torso": {
+      "kind": "dress",
+      "c1": "#9aa3b5",
+      "sparkle": "#ffe9a8"
+    },
+    "prop": "none"
   }
- },
- "advantage": {
-  "type": "lift",
-  "uses": 2,
-  "title": "Chosen family",
-  "text": "Laverne has described how her mother, friends and community lifted her after rejection and insults. After rolling, add 2 to your result.",
-  "ev": "e4"
- },
- "life": [
-  {
-   "k": "info",
-   "title": "Mobile, Alabama, 1972",
-   "text": "Laverne is born on 29 May 1972 and raised by her mother, Gloria, together with her twin brother. She loves to dance and perform, and knows from early on that she is a girl."
-  },
-  {
-   "k": "barrier",
-   "title": "Told to fit a role",
-   "move": -3,
-   "text": "Classmates and some adults bully Laverne for not acting the way they expect a boy to act. She learns to hide, and has spoken openly about how hard this was for her mental health."
-  },
-  {
-   "k": "boost",
-   "title": "Dance and a home in the arts",
-   "move": 1,
-   "text": "Her mother backs her. Laverne attends the Alabama School of Fine Arts, where she studies dance and finds a place where creative kids are taken seriously."
-  },
-  {
-   "k": "quiz",
-   "title": "Studying in New York",
-   "move": 2,
-   "text": "Laverne studies at Indiana University and then graduates from Marymount Manhattan College in New York. In her twenties she transitions and builds a community.",
-   "q": {
-    "q": "Which art form did Laverne study at school and at college?",
-    "a": [
-     "Dance",
-     "Architecture",
-     "Journalism"
-    ],
-    "x": "Laverne trained as a dancer at the Alabama School of Fine Arts and graduated in dance from Marymount Manhattan College."
-   }
-  },
-  {
-   "k": "barrier",
-   "title": "No roles, many closed doors",
-   "move": -3,
-   "text": "In the 1990s and 2000s there are almost no parts for openly trans actors. Casting people reject her, money is tight, and some employers treat her as a risk or a joke."
-  },
-  {
-   "k": "info",
-   "title": "Television and teaching",
-   "text": "In 2008 she appears on the reality show I Want to Work for Diddy and then produces and hosts TransAmerican Love Story. She starts using television to explain trans lives to people who have never met a trans person."
-  },
-  {
-   "k": "boost",
-   "title": "Sophia Burset",
-   "move": 1,
-   "text": "In 2013 she plays Sophia Burset in Orange Is the New Black, a trans woman played by a trans actress. The Netflix series is a worldwide success and brings many more people to her work."
-  },
-  {
-   "k": "quiz",
-   "title": "A first for acting",
-   "move": 2,
-   "text": "In 2014 Time puts Laverne on its cover for the story \"The Transgender Tipping Point\". The same year her work for Orange Is the New Black earns an Emmy nomination.",
-   "q": {
-    "q": "What was historic about Laverne's 2014 Emmy nomination?",
-    "a": [
-     "First openly trans person nominated for an acting Emmy",
-     "First time a Netflix show was nominated",
-     "First Emmy won by a dancer"
-    ],
-    "x": "She was the first openly transgender person nominated for an acting Emmy. She also became the first openly trans person on the cover of Time."
-   }
-  },
-  {
-   "k": "barrier",
-   "title": "Fame is not safety",
-   "move": -2,
-   "text": "Even as a star, Laverne is misgendered, threatened online and drawn into public debates about her identity. She points out that many trans women, especially Black trans women, face this with no platform and no protection."
-  },
-  {
-   "k": "boost",
-   "title": "Disclosure",
-   "move": 1,
-   "text": "She uses her platform on purpose. In 2020 she is an executive producer of the documentary Disclosure, in which trans people look at how film and television have portrayed them for a century."
-  },
-  {
-   "k": "info",
-   "title": "A lead on network television",
-   "text": "In 2017 she stars in the CBS legal drama Doubt, the first openly trans actor in a leading series role on US network television. She keeps working in film, theatre and production."
-  },
-  {
-   "k": "info",
-   "title": "Telling your own story",
-   "text": "Laverne keeps acting and speaking out. A theme in her work is that trans people should tell their own stories, on screen and behind the camera, instead of having others tell them."
-  }
- ],
- "sources": [
-  "js/characters/group3.js tiles for Laverne Cox (Mobile, Alabama School of Fine Arts, Marymount Manhattan, Orange Is the New Black, Time cover 2014, Emmy nomination, Doubt 2017, Disclosure 2020)",
-  "TIME cover story \"The Transgender Tipping Point\" (29 May 2014)",
-  "Netflix documentary Disclosure (2020)"
- ],
- "flags": [
-  "Please check: the Doubt (CBS, 2017) claim \"first openly trans actor in a leading series role on US network TV\" as phrased in the single-player data.",
-  "Please check: the Indiana University detail and the graduation wording for Marymount Manhattan."
- ],
- "evidence": [
-  {
-   "id": "e1",
-   "y": "childhood and adult life",
-   "ev": "Laverne Cox has told TIME and other outlets that she was bullied as a child and harassed on the street as an adult; violence against trans women is a real risk.",
-   "src": 1
-  },
-  {
-   "id": "e2",
-   "y": "1980s to 1990s",
-   "ev": "She trained in dance at the Alabama School of Fine Arts, then studied in New York (Marymount Manhattan College).",
-   "src": 0
-  },
-  {
-   "id": "e3",
-   "y": "1990s to 2012",
-   "ev": "For many years there were few roles written for trans women; she kept auditioning and working other jobs until Orange Is the New Black (2013).",
-   "src": 1
-  },
-  {
-   "id": "e4",
-   "y": "1970s onwards",
-   "ev": "Her mother and her twin brother raised and backed her; friends and the trans community lifted her after insults.",
-   "src": 1
-  },
-  {
-   "id": "e5",
-   "y": "2020",
-   "ev": "The documentary Disclosure, which she produced and appears in, collects trans voices about how media shaped their lives.",
-   "src": 2
-  }
- ],
- "balance": {
-  "comp": 20
- },
- "look": {
-  "skin": "#a97a56",
-  "hair": "#d9ad62",
-  "hairStyle": "wavylong",
-  "top": "#c8c8d2",
-  "bottom": "#c8c8d2",
-  "outfit": "dress",
-  "eyes": "#3a2414",
-  "brow": {
-   "c": "#6a4a2a",
-   "t": 0.65,
-   "a": 1.3
-  },
-  "mouth": "grin",
-  "lipstick": "#c0305a",
-  "lashes": true,
-  "shadow": "#d9a066",
-  "blush": "#d9806a",
-  "nose": 0.95,
-  "mouthW": 1.55,
-  "earrings": "#d4af37",
-  "face": {
-   "w": 0.98,
-   "h": 1.12
-  },
-  "torso": {
-   "kind": "dress",
-   "c1": "#b4bac7",
-   "sparkle": "#ffffff"
-  },
-  "prop": "none"
- }
 }

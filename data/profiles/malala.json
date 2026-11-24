@@ -1,201 +1,201 @@
 {
- "id": "malala",
- "intro": "You play a student whose right to go to school is taken by decree, then defended by family, teachers and strangers on the other side of the world. Rules and checkpoints slow you down, and the people who stand with you speed you up.",
- "zones": {
-  "ladder": {
-   "fx": "block",
-   "ev": "e1",
-   "why": "School: the Taliban closed the way to school for girls in Swat."
+  "id": "malala",
+  "intro": "You play a student whose right to go to school is taken by decree, then defended by family, teachers and strangers on the other side of the world. Rules and checkpoints slow you down, and the people who stand with you speed you up.",
+  "zones": {
+    "ladder": {
+      "fx": "block",
+      "ev": "e1",
+      "why": "School: the Taliban closed the way to school for girls in Swat."
+    },
+    "rope": {
+      "fx": "slow",
+      "ev": "e3",
+      "why": "Safety: she was shot for speaking up about education."
+    },
+    "bridge": {
+      "fx": "fast",
+      "ev": "e4",
+      "why": "Family and teachers: her father's school and her classmates stood with her."
+    },
+    "market": {
+      "fx": "fast",
+      "ev": "e5",
+      "why": "Platform: the BBC diary, the UN and the Nobel Prize gave her a worldwide audience."
+    }
   },
-  "rope": {
-   "fx": "slow",
-   "ev": "e3",
-   "why": "Safety: she was shot for speaking up about education."
+  "advantage": {
+    "type": "shield",
+    "uses": 2,
+    "title": "Stay in school",
+    "text": "Malala was knocked back, but her family, school and supporters kept her learning. A wrong answer does not send you back.",
+    "ev": "e4"
   },
-  "bridge": {
-   "fx": "fast",
-   "ev": "e4",
-   "why": "Family and teachers: her father's school and her classmates stood with her."
+  "life": [
+    {
+      "k": "info",
+      "title": "Mingora, 1997",
+      "text": "Malala is born on 12 July 1997 in Mingora, in the Swat Valley, Pakistan. Her father, Ziauddin, runs a school, and in her family a daughter's education matters as much as a son's. She loves reading and speaking up in class."
+    },
+    {
+      "k": "boost",
+      "title": "A family that backs her",
+      "text": "In many families in the region girls are expected to leave school early. Malala's parents insist she and her brothers study the same. Debating and public speaking in her father's school give her confidence.",
+      "move": 1
+    },
+    {
+      "k": "barrier",
+      "title": "Girls banned from school",
+      "text": "From 2007 the Pakistani Taliban take control in parts of Swat. They ban music and television and destroy schools. In January 2009 they announce that girls may no longer attend school. Malala is eleven.",
+      "move": -1
+    },
+    {
+      "k": "info",
+      "title": "A diary under another name",
+      "text": "Malala writes a diary for BBC Urdu about life under the Taliban. To protect her, it appears under a false name. She describes fear, closed classrooms and how much she wants to learn. Her identity becomes known later."
+    },
+    {
+      "k": "quiz",
+      "title": "The pen name",
+      "text": "Malala's blog for BBC Urdu was published under a name to keep her safe.",
+      "q": {
+        "q": "What pen name did Malala use for her BBC Urdu diary?",
+        "a": [
+          "Gul Makai",
+          "Nur Jahan",
+          "Zeba Khan"
+        ],
+        "x": "Gul Makai means \"cornflower\" in Pashto. A BBC reporter chose it to protect her identity."
+      },
+      "move": 1
+    },
+    {
+      "k": "boost",
+      "title": "A national youth prize",
+      "text": "After the army pushes the Taliban back, Malala keeps campaigning. In 2011 she receives Pakistan's first National Youth Peace Prize, and she and her father speak up for schools that were destroyed.",
+      "move": 1
+    },
+    {
+      "k": "barrier",
+      "title": "9 October 2012",
+      "text": "A gunman boards Malala's school bus and shoots her because she speaks for girls' education. She is 15. She is flown to Birmingham, UK, for surgery and long recovery. Her friends on the bus are also hurt. Content note: violence.",
+      "move": -1
+    },
+    {
+      "k": "boost",
+      "title": "A voice at the United Nations",
+      "text": "Messages arrive from all over the world. Malala recovers, goes back to school in England and, on her 16th birthday in July 2013, speaks at the United Nations. With her father she starts the Malala Fund for girls' schooling.",
+      "move": 2
+    },
+    {
+      "k": "quiz",
+      "title": "Youngest laureate",
+      "text": "In 2014 Malala shares the Nobel Peace Prize with Kailash Satyarthi, an Indian child-rights campaigner.",
+      "q": {
+        "q": "How old was Malala when she won the Nobel Peace Prize?",
+        "a": [
+          "17",
+          "21",
+          "14"
+        ],
+        "x": "She was 17 in 2014, the youngest Nobel laureate ever."
+      },
+      "move": 1
+    },
+    {
+      "k": "barrier",
+      "title": "Lies and threats online",
+      "text": "Some online accounts claim without evidence that she is a foreign agent or that the attack was staged. She keeps getting threats. Fame means being judged by people who have never met her.",
+      "move": -1
+    },
+    {
+      "k": "boost",
+      "title": "Home again, and Oxford",
+      "text": "In 2018 Malala visits Pakistan again for the first time since the attack. In 2020 she graduates from Oxford University in philosophy, politics and economics.",
+      "move": 1
+    },
+    {
+      "k": "info",
+      "title": "A pen, a book, a teacher",
+      "text": "Malala's fund supports local educators and girls' schooling in countries such as Pakistan, Afghanistan and Nigeria. She says millions of girls are still out of school. Her message: one child, one teacher, one book and one pen can change the world."
+    }
+  ],
+  "sources": [
+    "js/characters/group2.js tiles for malala (Taliban in Swat, blog, attack 2012, UN 2013, Nobel 2014, Oxford 2020)",
+    "Malala Yousafzai with Christina Lamb, I Am Malala (2013)",
+    "nobelprize.org: Malala Yousafzai",
+    "Malala Fund (malala.org)"
+  ],
+  "flags": [
+    "Station 6: name of the 2011 award (National Youth Peace Prize, Pakistan) taken from the single-player data; official title may be National Peace Award for Youth.",
+    "Malala Fund focus countries (Pakistan, Afghanistan, Nigeria) listed from memory; check current fund pages.",
+    "Gul Makai meaning given as cornflower; this is a Pashto folk heroine name, check wording."
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "y": "2009",
+      "ev": "In January 2009 the Taliban in Swat ordered that girls must stop going to school.",
+      "src": 1
+    },
+    {
+      "id": "e2",
+      "y": "2009",
+      "ev": "She wrote a BBC Urdu diary under the name Gul Makai about life under the ban.",
+      "src": 1
+    },
+    {
+      "id": "e3",
+      "y": "2012",
+      "ev": "On 9 October 2012 a gunman shot her on her school bus; she was treated in Birmingham, UK.",
+      "src": 2
+    },
+    {
+      "id": "e4",
+      "y": "1997 onwards",
+      "ev": "Her father Ziauddin ran the school and backed her; teachers, classmates and strangers around the world stood with her.",
+      "src": 1
+    },
+    {
+      "id": "e5",
+      "y": "2013 to 2014",
+      "ev": "She spoke at the United Nations in July 2013 and won the Nobel Peace Prize in 2014, aged 17.",
+      "src": 2
+    }
+  ],
+  "balance": {
+    "comp": 17
   },
-  "market": {
-   "fx": "fast",
-   "ev": "e5",
-   "why": "Platform: the BBC diary, the UN and the Nobel Prize gave her a worldwide audience."
+  "look": {
+    "skin": "#cf9f78",
+    "hair": "#1c1612",
+    "hairStyle": "headscarf",
+    "scarf": "#fbf3e4",
+    "top": "#e8ecef",
+    "bottom": "#4a6fa5",
+    "outfit": "casual",
+    "eyes": "#2a1810",
+    "brow": {
+      "c": "#1c1612",
+      "t": 1.0,
+      "a": 0.9
+    },
+    "mouth": "neutral",
+    "lashes": true,
+    "blush": "#e59a88",
+    "nose": 0.95,
+    "mouthW": 1.1,
+    "face": {
+      "w": 0.96,
+      "h": 1.08
+    },
+    "torso": {
+      "kind": "shirt",
+      "c1": "#f6ecd8",
+      "c2": "#d9c7a0"
+    },
+    "prop": "book",
+    "trim": "#e8d9a8",
+    "eyeOpen": 1.1,
+    "shawl": true
   }
- },
- "advantage": {
-  "type": "shield",
-  "uses": 2,
-  "title": "Stay in school",
-  "text": "Malala was knocked back, but her family, school and supporters kept her learning. A wrong answer does not send you back.",
-  "ev": "e4"
- },
- "life": [
-  {
-   "k": "info",
-   "title": "Mingora, 1997",
-   "text": "Malala is born on 12 July 1997 in Mingora, in the Swat Valley, Pakistan. Her father, Ziauddin, runs a school, and in her family a daughter's education matters as much as a son's. She loves reading and speaking up in class."
-  },
-  {
-   "k": "boost",
-   "title": "A family that backs her",
-   "text": "In many families in the region girls are expected to leave school early. Malala's parents insist she and her brothers study the same. Debating and public speaking in her father's school give her confidence.",
-   "move": 1
-  },
-  {
-   "k": "barrier",
-   "title": "Girls banned from school",
-   "text": "From 2007 the Pakistani Taliban take control in parts of Swat. They ban music and television and destroy schools. In January 2009 they announce that girls may no longer attend school. Malala is eleven.",
-   "move": -1
-  },
-  {
-   "k": "info",
-   "title": "A diary under another name",
-   "text": "Malala writes a diary for BBC Urdu about life under the Taliban. To protect her, it appears under a false name. She describes fear, closed classrooms and how much she wants to learn. Her identity becomes known later."
-  },
-  {
-   "k": "quiz",
-   "title": "The pen name",
-   "text": "Malala's blog for BBC Urdu was published under a name to keep her safe.",
-   "q": {
-    "q": "What pen name did Malala use for her BBC Urdu diary?",
-    "a": [
-     "Gul Makai",
-     "Nur Jahan",
-     "Zeba Khan"
-    ],
-    "x": "Gul Makai means \"cornflower\" in Pashto. A BBC reporter chose it to protect her identity."
-   },
-   "move": 1
-  },
-  {
-   "k": "boost",
-   "title": "A national youth prize",
-   "text": "After the army pushes the Taliban back, Malala keeps campaigning. In 2011 she receives Pakistan's first National Youth Peace Prize, and she and her father speak up for schools that were destroyed.",
-   "move": 1
-  },
-  {
-   "k": "barrier",
-   "title": "9 October 2012",
-   "text": "A gunman boards Malala's school bus and shoots her because she speaks for girls' education. She is 15. She is flown to Birmingham, UK, for surgery and long recovery. Her friends on the bus are also hurt. Content note: violence.",
-   "move": -1
-  },
-  {
-   "k": "boost",
-   "title": "A voice at the United Nations",
-   "text": "Messages arrive from all over the world. Malala recovers, goes back to school in England and, on her 16th birthday in July 2013, speaks at the United Nations. With her father she starts the Malala Fund for girls' schooling.",
-   "move": 2
-  },
-  {
-   "k": "quiz",
-   "title": "Youngest laureate",
-   "text": "In 2014 Malala shares the Nobel Peace Prize with Kailash Satyarthi, an Indian child-rights campaigner.",
-   "q": {
-    "q": "How old was Malala when she won the Nobel Peace Prize?",
-    "a": [
-     "17",
-     "21",
-     "14"
-    ],
-    "x": "She was 17 in 2014, the youngest Nobel laureate ever."
-   },
-   "move": 1
-  },
-  {
-   "k": "barrier",
-   "title": "Lies and threats online",
-   "text": "Some online accounts claim without evidence that she is a foreign agent or that the attack was staged. She keeps getting threats. Fame means being judged by people who have never met her.",
-   "move": -1
-  },
-  {
-   "k": "boost",
-   "title": "Home again, and Oxford",
-   "text": "In 2018 Malala visits Pakistan again for the first time since the attack. In 2020 she graduates from Oxford University in philosophy, politics and economics.",
-   "move": 1
-  },
-  {
-   "k": "info",
-   "title": "A pen, a book, a teacher",
-   "text": "Malala's fund supports local educators and girls' schooling in countries such as Pakistan, Afghanistan and Nigeria. She says millions of girls are still out of school. Her message: one child, one teacher, one book and one pen can change the world."
-  }
- ],
- "sources": [
-  "js/characters/group2.js tiles for malala (Taliban in Swat, blog, attack 2012, UN 2013, Nobel 2014, Oxford 2020)",
-  "Malala Yousafzai with Christina Lamb, I Am Malala (2013)",
-  "nobelprize.org: Malala Yousafzai",
-  "Malala Fund (malala.org)"
- ],
- "flags": [
-  "Station 6: name of the 2011 award (National Youth Peace Prize, Pakistan) taken from the single-player data; official title may be National Peace Award for Youth.",
-  "Malala Fund focus countries (Pakistan, Afghanistan, Nigeria) listed from memory; check current fund pages.",
-  "Gul Makai meaning given as cornflower; this is a Pashto folk heroine name, check wording."
- ],
- "evidence": [
-  {
-   "id": "e1",
-   "y": "2009",
-   "ev": "In January 2009 the Taliban in Swat ordered that girls must stop going to school.",
-   "src": 1
-  },
-  {
-   "id": "e2",
-   "y": "2009",
-   "ev": "She wrote a BBC Urdu diary under the name Gul Makai about life under the ban.",
-   "src": 1
-  },
-  {
-   "id": "e3",
-   "y": "2012",
-   "ev": "On 9 October 2012 a gunman shot her on her school bus; she was treated in Birmingham, UK.",
-   "src": 2
-  },
-  {
-   "id": "e4",
-   "y": "1997 onwards",
-   "ev": "Her father Ziauddin ran the school and backed her; teachers, classmates and strangers around the world stood with her.",
-   "src": 1
-  },
-  {
-   "id": "e5",
-   "y": "2013 to 2014",
-   "ev": "She spoke at the United Nations in July 2013 and won the Nobel Peace Prize in 2014, aged 17.",
-   "src": 2
-  }
- ],
- "balance": {
-  "comp": 17
- },
- "look": {
-  "skin": "#cf9f78",
-  "hair": "#1c1612",
-  "hairStyle": "headscarf",
-  "scarf": "#efe6d6",
-  "top": "#e8ecef",
-  "bottom": "#4a6fa5",
-  "outfit": "casual",
-  "eyes": "#2a1810",
-  "brow": {
-   "c": "#1c1612",
-   "t": 1.0,
-   "a": 0.5
-  },
-  "mouth": "neutral",
-  "lashes": true,
-  "blush": "#e59a88",
-  "nose": 0.95,
-  "mouthW": 1.1,
-  "face": {
-   "w": 0.96,
-   "h": 1.08
-  },
-  "torso": {
-   "kind": "shirt",
-   "c1": "#e8ecef",
-   "c2": "#b8c2c8"
-  },
-  "prop": "book",
-  "trim": "#e8d9a8",
-  "eyeOpen": 1.1,
-  "shawl": true
- }
 }
