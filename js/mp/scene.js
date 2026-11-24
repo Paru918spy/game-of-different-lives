@@ -340,7 +340,7 @@
       /* torso: back and sleeves in the body colour, painted front patch */
       const torso = add(new THREE.CylinderGeometry(4.6, 5.2, 11, 28), top, 0, 6.1, 0); torso.scale.z = .72;
       const tf = add(new THREE.CylinderGeometry(4.64, 5.24, 11, 28, 1, true, -1.2, 2.4), new THREE.MeshStandardMaterial({ map: tex(A.paintTorso(Object.assign({ top: look.top }, T))), roughness: .7 }), 0, 6.1, 0); tf.scale.z = .72;
-      { const sl = add(new THREE.CylinderGeometry(2.7, 5.15, 3.6, 32), top, 0, 13.2, 0); sl.scale.z = .74; sl.userData.noOutline = true; const nk = add(new THREE.CylinderGeometry(1.95, 2.35, 5.2, 18), skin, 0, 15.4, .5); nk.scale.z = .95; }
+      { const sl = add(new THREE.CylinderGeometry(2.7, 5.15, 3.6, 32), top, 0, 13.2, 0); sl.scale.z = .74; sl.userData.noOutline = true; const nk = add(new THREE.CylinderGeometry(1.95, 2.35, 5.2, 18), skin, 0, 15.4, .5); nk.scale.z = .95; const cl = add(new THREE.TorusGeometry(2.55, .62, 10, 28), mt(T.c2 && T.kind !== "jersey" && T.kind !== "western" ? T.c2 : look.top), 0, 14.1, .4); cl.rotation.x = Math.PI / 2 - .12; cl.scale.set(1, 1.0, 1); }
       /* head: skin ellipsoid + painted face patch (front) */
       const F = look.face || {}, HY = 19.7, head = new THREE.Group(); head.position.set(0, HY, .5); head.scale.set((F.w || 1) * 1.06, (F.h || 1.1) * 1.04, 1.0); body.add(head);
       const eggify = (geo, R0) => { const ps = geo.attributes.position, nr = .2 * (1 - ((look.jaw && look.jaw.sq) || .3) * .5); for (let i = 0; i < ps.count; i++) { const y = ps.getY(i), t = Math.max(0, -y / R0), k = 1 - nr * Math.pow(t, 1.5); ps.setX(i, ps.getX(i) * k); ps.setZ(i, ps.getZ(i) * (1 - nr * .7 * Math.pow(t, 1.5))); if (y < 0) ps.setY(i, y * 1.08); else ps.setY(i, y * 1.0); } ps.needsUpdate = true; geo.computeVertexNormals(); };
@@ -395,7 +395,7 @@
       [-1, 1].forEach(s => { beamLocal(body, [s * 2.7, 1.9, 0], [s * 2.7, 1.9, 9.5], 3.4, bot); beamLocal(body, [s * 2.7, 1.9, 9.5], [s * 2.7, -6.5, 10], 3, shin); add(new THREE.BoxGeometry(3.4, 1.6, 5), mt(cloth === "football" ? 0xf2f2f2 : 0x2a2420), s * 2.7, -7.2, 11.4); });
       if (cloth === "dress" || cloth === "coat") add(new THREE.CylinderGeometry(4.6, 8.4, 9, 24, 1, true), cloth === "dress" ? top : bot, 0, 2.6, 2.8).scale.set(1, 1, 1.35);
       /* arms */
-      [-1, 1].forEach(s => { beamLocal(body, [s * 5.8, 10.8, 0], [s * 5.4, 6, 8], 2.9, top); beamLocal(body, [s * 5.4, 6, 8], [s * 3.6, 8.6, 15], 2.5, top); add(new THREE.SphereGeometry(2.2, 12, 10), skin, s * 3.6, 8.9, 15.8).scale.set(1, .8, 1.15); });
+      [-1, 1].forEach(s => { beamLocal(body, [s * 5.1, 11.0, 0], [s * 5.4, 6, 8], 2.9, top); beamLocal(body, [s * 5.4, 6, 8], [s * 3.6, 8.6, 15], 2.5, top); add(new THREE.SphereGeometry(2.2, 12, 10), skin, s * 3.6, 8.9, 15.8).scale.set(1, .8, 1.15); });
       if (cloth === "wheelchair") { [-1, 1].forEach(s => { const w = new THREE.Mesh(new THREE.TorusGeometry(9.5, .9, 8, 32), mt(0x2a2a2a)); w.position.set(s * 10.4, 5.5, -.5); w.rotation.y = Math.PI / 2; chair.add(w); const hr = new THREE.Mesh(new THREE.TorusGeometry(7.6, .35, 6, 28), mt(0xbfbfbf)); hr.position.set(s * 11.5, 5.5, -.5); hr.rotation.y = Math.PI / 2; chair.add(hr); add(new THREE.BoxGeometry(1, 1, 18), mt(0x8a8f99), s * 8.6, 1.6, 0, chair); }); }
       if (look.prop === "football") add(new THREE.SphereGeometry(3.2, 14, 10), mt(0x8b4a1c), 6.5, 10, 16.5).scale.set(1, .8, 1.35);
       if (look.prop === "book" || look.prop === "score") add(new THREE.BoxGeometry(6, 1.2, 8), mt(look.prop === "score" ? 0xf4efe0 : 0x2c5ea8), -6.5, 8, 16.5);
