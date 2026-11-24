@@ -167,7 +167,7 @@
   "look": {
     "skin": "#6d4a35",
     "hair": "#161616",
-    "hairStyle": "braidcap",
+    "hairStyle": "short",
     "top": "#111111",
     "bottom": "#111111",
     "outfit": "casual",
@@ -212,6 +212,13 @@
       "sq": 0.3,
       "cheek": 0.5
     },
-    "age": 0.5
+    "age": 0.5,
+    "hairSpec": {
+      "vol": 0.5,
+      "hl": 0.62,
+      "hlSide": 0.3,
+      "back": -0.6,
+      "noise": 0.05
+    }
   }
 }

@@ -205,6 +205,14 @@
       "hollow": 0.6,
       "chin": 0.3
     },
-    "age": 0.4
+    "age": 0.4,
+    "hairSpec": {
+      "vol": 0.38,
+      "hl": 0.58,
+      "hlSide": 0.25,
+      "back": -0.15,
+      "part": 0.1,
+      "sweep": 0.12
+    }
   }
 }
