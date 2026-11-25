@@ -199,6 +199,8 @@
       "sq": 0.1,
       "cheek": 0.4
     },
-    "age": 0.15
+    "age": 0.15,
+    "hairSpecStyle": "softupdo",
+    "eyeOpen": 0.6
   }
 }

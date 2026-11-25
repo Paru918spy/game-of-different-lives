@@ -206,6 +206,17 @@
       "sq": 0.25,
       "cheek": 0.6
     },
-    "age": 0.5
+    "age": 0.5,
+    "hairSpec": {
+      "vol": 0.6,
+      "hl": 0.55,
+      "hlSide": 0,
+      "back": -1,
+      "hang": 5.2,
+      "flare": 0.6,
+      "wave": 0.45,
+      "part": -0.2,
+      "sweep": 0.1
+    }
   }
 }

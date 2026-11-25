@@ -207,6 +207,7 @@
     "age": 0.4,
     "hairPanel": {
       "type": "updo"
-    }
+    },
+    "hairSpecStyle": "bunsmall"
   }
 }

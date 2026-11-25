@@ -176,8 +176,8 @@
     "eyes": "#2a1810",
     "brow": {
       "c": "#1c1612",
-      "t": 1.4,
-      "a": 0.7
+      "t": 1.0,
+      "a": 0.5
     },
     "mouth": "neutral",
     "lashes": true,
@@ -199,7 +199,7 @@
     "shawl": true,
     "hairPanel": {
       "type": "drape",
-      "c": "#f4efe4",
+      "c": "#ece6d6",
       "trim": "#d8bf7a"
     },
     "jaw": {
@@ -207,6 +207,10 @@
       "cheek": 0.5
     },
     "wing": true,
-    "eyeTilt": 0.08
+    "eyeTilt": 0.08,
+    "hairSpec": {
+      "hang": 13.5,
+      "flare": 1.3
+    }
   }
 }
