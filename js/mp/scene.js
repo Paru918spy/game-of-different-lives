@@ -333,8 +333,11 @@
       [[-7, -7], [7, -7], [-7, 7], [7, 7]].forEach(l => { const c = new THREE.Mesh(new THREE.CylinderGeometry(.9, .9, 24, 8), wood); c.position.set(l[0], -12.8, l[1]); chair.add(c); });
       g.add(chair);
       /* torso: back and sleeves in the body colour, painted front patch */
-      const torso = add(new THREE.CylinderGeometry(4.6, 5.2, 11, 28), top, 0, 6.1, 0); torso.scale.z = .72;
-      const tf = add(new THREE.CylinderGeometry(4.64, 5.24, 11, 28, 1, true, -1.2, 2.4), new THREE.MeshStandardMaterial({ map: tex(A.paintTorso(Object.assign({ top: look.top }, T))), roughness: .7 }), 0, 6.1, 0); tf.scale.z = .72;
+      const shapeT = geo => { const q = geo.attributes.position; for (let i = 0; i < q.count; i++) { const y = q.getY(i), f = 1 + .07 * Math.exp(-Math.pow((y - 2.6) / 2.6, 2)) - .05 * Math.exp(-Math.pow((y + 3.6) / 2, 2)); q.setX(i, q.getX(i) * f + .06 * Math.sin(y * 2.7 + q.getZ(i))); q.setZ(i, q.getZ(i) * f); } q.needsUpdate = true; geo.computeVertexNormals(); return geo; };
+      const torso = add(shapeT(new THREE.CylinderGeometry(4.6, 5.2, 11, 28, 8)), top, 0, 6.1, 0); torso.scale.z = .72;
+      const tf = add(shapeT(new THREE.CylinderGeometry(4.64, 5.24, 11, 28, 8, true, -1.2, 2.4)), new THREE.MeshStandardMaterial({ map: tex(A.paintTorso(Object.assign({ top: look.top }, T))), roughness: .7 }), 0, 6.1, 0); tf.scale.z = .72;
+      if (["suit", "blazer", "coat", "cravat"].includes(T.kind)) { const lm = mt(A.mix(look.top, "#000000", .3)); [-1, 1].forEach(sx => { const lp = add(new THREE.BoxGeometry(1.5, 5.6, .45), lm, sx * 2.1, 9.1, 3.62); lp.rotation.z = -sx * .3; lp.rotation.x = -.12; lp.userData.noOutline = true; }); }
+      if (T.kind === "hoodie") { const hd = add(new THREE.TorusGeometry(2.9, 1.0, 10, 24), mt(A.mix(look.top, "#000000", .12)), 0, 12.6, -1.4); hd.rotation.x = Math.PI / 2 - .5; hd.scale.set(1.1, 1, .8); }
       { const sl = add(new THREE.CylinderGeometry(2.7, 5.15, 3.6, 32), top, 0, 13.2, 0); sl.scale.z = .74; sl.userData.noOutline = true; const nk = add(new THREE.CylinderGeometry(1.95, 2.35, 5.2, 18), skin, 0, 15.4, .5); nk.scale.z = .95; const cl = add(new THREE.TorusGeometry(2.55, .62, 10, 28), mt(T.c2 && T.kind !== "jersey" && T.kind !== "western" ? T.c2 : look.top), 0, 14.1, .4); cl.rotation.x = Math.PI / 2 - .12; cl.scale.set(1, 1.0, 1); }
       /* head: skin ellipsoid + painted face patch (front) */
       const hspec = MP.Hair && MP.Hair.specFor(look), useShell = !!hspec && !["turban", "helmet", "centerbraid", "braidcap", "beanie"].includes(look.hairStyle), faceLook = useShell ? Object.assign({}, look, { hp: null }) : look;
