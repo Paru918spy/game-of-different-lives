@@ -170,15 +170,15 @@
       "t": 0.9,
       "a": 0.1
     },
-    "mouth": "smile",
+    "mouth": "speak",
     "wrinkles": 0.2,
     "nose": 1.05,
     "mouthW": 0.9,
     "beard": [
       {
-        "style": "mustache",
+        "style": "pencil",
         "c": "#121010",
-        "a": 0.45
+        "a": 0.95
       }
     ],
     "face": {
@@ -220,6 +220,9 @@
       "len": 1.02,
       "jaw": 0.12,
       "cheek": 0.12
+    },
+    "noseShape": {
+      "w": 1.3
     }
   }
 }

@@ -176,7 +176,8 @@
       "c": "#17120e",
       "t": 1.4,
       "a": 1.6,
-      "y": -0.05
+      "y": -0.05,
+      "joined": true
     },
     "mouth": "neutral",
     "lipstick": "#b3202f",

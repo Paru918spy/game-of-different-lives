@@ -191,7 +191,7 @@
       "a": -0.8,
       "y": -0.2
     },
-    "mouth": "serious",
+    "mouth": "neutral",
     "wrinkles": 0.8,
     "nose": 1.2,
     "mouthW": 1.0,
@@ -235,6 +235,7 @@
       "len": 0.98,
       "jaw": 0.1,
       "brow": 0.12
-    }
+    },
+    "eyeShape": "hooded"
   }
 }

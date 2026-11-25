@@ -209,6 +209,7 @@
     "hairSpec": {
       "noise": 0.15,
       "freq": 14
-    }
+    },
+    "eyeShape": "closed"
   }
 }

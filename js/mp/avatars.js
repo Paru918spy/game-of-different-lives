@@ -42,15 +42,20 @@
     /* sunglasses or eyes */
     const gl = L.glasses, sun = gl && gl.type === "sun";
     const ey = L.eyeY == null ? .5 : L.eyeY, ew = L.eyeW || 1;
-    if (!sun) [-1, 1].forEach(s => {
+    const es = L.eyeShape;
+    if (!sun && es === "closed") [-1, 1].forEach(s => { const x = s * 1.7; curve([x - 1.0, ey + .15], [x, ey - .45], [x + 1.0, ey + .15], .17, "#1a1210", .95); for (let i = 0; i < 4; i++) line([[x - .6 + i * .4, ey - .22 - (i % 3 ? .08 : 0)], [x - .65 + i * .42, ey - .5]], .06, "#1a1210", .8); curve([x - 1.0, ey + .5], [x, ey + .95], [x + 1.0, ey + .5], .07, dark, .55); });
+    if (!sun && es !== "closed") [-1, 1].forEach(s => {
       const x = s * 1.7; if (L.shadow) ell(x, ey + .35, 1.15 * ew, .75, L.shadow, .45);
       g.save(); g.beginPath(); g.ellipse(X(x), Y(ey), 1.0 * ew * S, .52 * (L.eyeOpen || 1) * S, 0, 0, 7); g.clip();
       g.fillStyle = "#f6f2ec"; g.fillRect(0, 0, 512, 512); ell(x + s * -.05, ey, .46 * ew, .46, L.eyes || "#3a2a1a"); ell(x - s * .05, ey, .22, .22, "#0a0a0a"); ell(x + .15, ey + .18, .1, .1, "#ffffff", .9); g.restore();
       { const tl = (L.eyeTilt || 0); line([[x - s * 1.0 * ew, ey + .05], [x - s * .4 * ew, ey + .5 * (L.eyeOpen || 1)], [x + s * .5 * ew, ey + .55 * (L.eyeOpen || 1)], [x + s * 1.0 * ew, ey + .1 + tl]], .16, "#1a1210", .95); if (L.wing) line([[x + s * 1.0 * ew, ey + .1 + tl], [x + s * 1.4 * ew, ey + .3 + tl]], .1, "#1a1210"); }
       if (L.lashes) line([[x + s * 1.0 * ew, ey + .1], [x + s * 1.3 * ew, ey + .35]], .12, "#1a1210");
       curve([x - 1.0 * ew, ey - .1], [x, ey - .62 * (L.eyeOpen || 1)], [x + 1.0 * ew, ey - .1], .07, dark, .6);
+      if (es === "hooded") { g.fillStyle = mix(skin, "#000000", .12); g.beginPath(); g.moveTo(X(x - 1.1 * ew), Y(ey + .1)); g.quadraticCurveTo(X(x), Y(ey + .55), X(x + 1.1 * ew), Y(ey + .25)); g.quadraticCurveTo(X(x), Y(ey + 1.0), X(x - 1.1 * ew), Y(ey + .1)); g.fill(); line([[x - 1.0 * ew, ey + .12], [x, ey + .5], [x + 1.05 * ew, ey + .27]], .13, "#1a1210", .9); }
+      if (es === "almond") { g.fillStyle = skin; g.beginPath(); g.moveTo(X(x - 1.1 * ew), Y(ey - .1)); g.quadraticCurveTo(X(x), Y(ey - .2), X(x + 1.1 * ew), Y(ey + .2)); g.lineTo(X(x + 1.1 * ew), Y(ey - .7)); g.lineTo(X(x - 1.1 * ew), Y(ey - .7)); g.fill(); line([[x - 1.0 * ew, ey - .08], [x, ey - .2], [x + 1.0 * ew, ey + .15]], .08, dark, .7); }
     });
     const bw = L.brow || { c: L.hair, t: 1, a: 1 };
+    if (bw.joined) curve([-.9, ey + .95 + (bw.y || 0)], [0, ey + .82 + (bw.y || 0)], [.9, ey + .95 + (bw.y || 0)], (.13 * (bw.t || 1) + .05) * 1.6, bw.c || L.hair, .9);
     [-1, 1].forEach(s => { const bt = .13 * (bw.t || 1) + .05, y0 = ey + 1.0 + (bw.y || 0); curve([s * .75, y0 - .05], [s * 1.8, y0 + .35 * (bw.a == null ? 1 : bw.a)], [s * 2.8, y0 - .15], bt * 2.1, bw.c || L.hair, .95); });
     /* mouth */
     const my = -1.95, mw = (L.mouthW || 1.25) * 1.2, lips = L.lips || mix(skin, "#a0403a", .45), mt = L.mouth || "smile";
@@ -58,6 +63,8 @@
       g.fillStyle = "#fbfaf5"; g.beginPath(); g.moveTo(X(-mw * .85), Y(my + .15)); g.quadraticCurveTo(X(0), Y(my - 1.5), X(mw * .88), Y(my + .15)); g.quadraticCurveTo(X(0), Y(my + .5), X(-mw * .88), Y(my + .15)); g.fill();
       curve([-mw, my + .2], [0, my - 1.35], [mw, my + .2], .14, lips, .9); }
     else if (mt === "smile") { curve([-mw * 1.1, my + .3], [0, my - 1.1], [mw * 1.1, my + .3], .3, lips); curve([-mw * .8, my + .08], [0, my + .15], [mw * .8, my + .08], .08, dark, .6); }
+    else if (mt === "speak") { g.fillStyle = "#3a1414"; g.beginPath(); g.ellipse(X(0), Y(my - .25), mw * .55 * S, .55 * S, 0, 0, 7); g.fill(); g.fillStyle = "#f4efe6"; g.fillRect(X(-mw * .4), Y(my + .2), mw * .8 * S, .22 * S); curve([-mw * .62, my - .1], [0, my + .45], [mw * .62, my - .1], .2, lips, .95); curve([-mw * .55, my - .45], [0, my - .95], [mw * .55, my - .45], .24, lips, .95); }
+    else if (mt === "gentle") { curve([-mw * .85, my + .12], [0, my - .55], [mw * .85, my + .12], .26, lips); curve([-mw * .85, my + .12], [-mw * 1.0, my + .3], [-mw * 1.05, my + .45], .08, dark, .5); curve([mw * .85, my + .12], [mw * 1.0, my + .3], [mw * 1.05, my + .45], .08, dark, .5); }
     else if (mt === "smirk") { curve([-mw, my], [0, my - .3], [mw, my + .3], .24, lips); }
     else { curve([-mw, my], [0, my - .12], [mw, my], .26, lips); curve([-mw * .8, my + .05], [0, my + .12], [mw * .8, my + .05], .06, dark, .5); }
     if (L.lipstick) { curve([-mw, my + .1], [0, my - .35], [mw, my + .1], .38, L.lipstick, .9); }
@@ -65,6 +72,7 @@
     [].concat(L.beard || []).forEach(bd => { const bc = bd.c; g.fillStyle = bc; g.globalAlpha = bd.a == null ? 1 : bd.a;
       if (bd.style === "stubble") { g.globalAlpha = .38; for (let i = 0; i < 1400; i++) { const x = (Math.random() * 2 - 1) * 3.6, y = -4.3 + Math.random() * 3.6; if (Math.hypot(x / 3.7, (y + 2.2) / 2.5) < 1 && y < -0.7) { g.fillRect(X(x), Y(y), 2, 2); } } g.globalAlpha = 1; }
       else if (bd.style === "short") { g.beginPath(); g.moveTo(X(-4.3), Y(-.4)); g.quadraticCurveTo(X(-4.2), Y(-4.2), X(0), Y(-4.9)); g.quadraticCurveTo(X(4.2), Y(-4.2), X(4.3), Y(-.4)); g.quadraticCurveTo(X(3.2), Y(-1.3), X(2.0), Y(-1.5)); g.quadraticCurveTo(X(0), Y(-1.15), X(-2.0), Y(-1.5)); g.quadraticCurveTo(X(-3.2), Y(-1.3), X(-4.3), Y(-.4)); g.fill(); g.globalAlpha = 1; g.fillStyle = L.lips || "#7a3a35"; curve([-mw * .8, my], [0, my - .2], [mw * .8, my], .26, "#7a3a35", .9); }
+      else if (bd.style === "pencil") { curve([-1.7, -1.55], [0, -1.15], [1.7, -1.55], .3, bc, bd.a == null ? 1 : bd.a); }
       else if (bd.style === "mustache") { g.beginPath(); g.moveTo(X(0), Y(-1.2)); g.quadraticCurveTo(X(-1.6), Y(-1.0), X(-2.0), Y(-1.9)); g.quadraticCurveTo(X(-1.0), Y(-1.5), X(0), Y(-1.65)); g.quadraticCurveTo(X(1.0), Y(-1.5), X(2.0), Y(-1.9)); g.quadraticCurveTo(X(1.6), Y(-1.0), X(0), Y(-1.2)); g.fill(); }
       else if (bd.style === "full") { g.beginPath(); g.moveTo(X(-4.4), Y(.2)); g.quadraticCurveTo(X(-4.6), Y(-4.6), X(0), Y(-5.4)); g.quadraticCurveTo(X(4.6), Y(-4.6), X(4.4), Y(.2)); g.quadraticCurveTo(X(3.4), Y(-1.3), X(2.0), Y(-1.5)); g.quadraticCurveTo(X(0), Y(-1.2), X(-2.0), Y(-1.5)); g.quadraticCurveTo(X(-3.4), Y(-1.3), X(-4.4), Y(.2)); g.fill();
         g.fillStyle = lips; curve([-mw * .8, my], [0, my - .2], [mw * .8, my], .24, "#7a3a35", .9); g.globalAlpha = .2; g.fillStyle = "#ffffff"; for (let i = 0; i < 160; i++) { g.fillStyle = i % 3 ? "#ffffff" : "#b8b6b0"; g.globalAlpha = .3; g.fillRect(X(-3.6 + Math.random() * 7.2), Y(-2.0 - Math.random() * 2.8), 2, 22 + Math.random() * 20); } g.globalAlpha = 1; }

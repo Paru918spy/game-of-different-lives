@@ -233,6 +233,7 @@
       "jaw": 0.12,
       "chin": 0.08,
       "brow": 0.1
-    }
+    },
+    "eyeShape": "hooded"
   }
 }

@@ -421,6 +421,11 @@
       const R = 4.46, fg = new THREE.SphereGeometry(R, 56, 40, Math.PI / 2 - 1.05, 2.1, .38, 2.45), pos = fg.attributes.position, uv = fg.attributes.uv;
       for (let i = 0; i < pos.count; i++) uv.setXY(i, pos.getX(i) / (2 * R) + .5, pos.getY(i) / (2 * R) + .5); eggify(fg, R);
       { const fm = new THREE.Mesh(fg, (() => { const ft = tex(A.paintFace(faceLook)); return new THREE.MeshStandardMaterial({ map: ft, emissiveMap: ft, emissive: 0xffffff, emissiveIntensity: .32, roughness: .75 }); })()); fm.userData.noOutline = true; head.add(fm); }
+      /* sculpted nose so the head is modelled, not a painted ball */
+      if (!look.noNose) { const nz = look.nose || 1, NZ = look.noseShape || {}, at = (x, y, z) => headShape(x, y, z, 4.4);
+        const fsk = new THREE.MeshStandardMaterial({ color: look.skin, emissive: look.skin, emissiveIntensity: .3, roughness: .75 }), np = at(0, -.35, 4.25), nm = new THREE.Mesh(new THREE.SphereGeometry(1, 20, 14), fsk); nm.position.set(np[0], np[1], np[2] - .1); nm.scale.set(.42 * nz * (NZ.w || 1), .95 * (NZ.l || 1), .5 * nz * (NZ.p || 1)); nm.rotation.x = -.18; nm.userData.noOutline = true; head.add(nm);
+        [-1, 1].forEach(s => { const wp = at(s * .48 * nz * (NZ.w || 1), -.85, 4.15), w = new THREE.Mesh(new THREE.SphereGeometry(.3 * nz * (NZ.w || 1), 12, 8), fsk); w.position.set(wp[0], wp[1], wp[2] - .12); w.userData.noOutline = true; head.add(w);
+        }); }
       [-1, 1].forEach(s => { const e = new THREE.Mesh(new THREE.SphereGeometry(1, 12, 10), skin); e.position.set(s * 4.35, -.2, .2); e.scale.set(.55, 1.1, .8); head.add(e); if (look.earrings) { const r = new THREE.Mesh(new THREE.SphereGeometry(.55, 8, 6), mt(look.earrings, { metalness: .8, roughness: .3 })); r.position.set(s * 4.5, -1.7, .3); head.add(r); } });
       /* hair (children of head so it follows its shape) */
       const hadd = (geo, m, x, y, z, rx) => { const o = new THREE.Mesh(geo, m || hairM); o.userData.noOutline = true; o.position.set(x, y, z); if (rx) o.rotation.x = rx; head.add(o); return o; };

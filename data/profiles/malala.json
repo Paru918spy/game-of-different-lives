@@ -199,7 +199,7 @@
     "shawl": true,
     "hairPanel": {
       "type": "drape",
-      "c": "#efe3c8",
+      "c": "#fbf8f0",
       "trim": "#d8bf7a"
     },
     "jaw": {
@@ -213,11 +213,20 @@
       "flare": 1.3,
       "noise": 0.12,
       "freq": 9,
-      "wave": 0.35
+      "wave": 0.35,
+      "hl": 0.74,
+      "hlSide": -0.05
     },
     "head": {
       "len": 1.04,
       "chin": 0.1
+    },
+    "eyeShape": "almond",
+    "hp": {
+      "y": 2.35,
+      "px": -0.5,
+      "d": 0.25,
+      "t": 1.6
     }
   }
 }
