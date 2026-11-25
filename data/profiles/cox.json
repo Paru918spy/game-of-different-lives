@@ -163,10 +163,10 @@
     "comp": 20
   },
   "look": {
-    "skin": "#a97a56",
+    "skin": "#9a6a48",
     "hair": "#f0c460",
     "hairStyle": "panel",
-    "top": "#c8c8d2",
+    "top": "#a8aebb",
     "bottom": "#c8c8d2",
     "outfit": "dress",
     "eyes": "#3a2414",
@@ -188,9 +188,8 @@
       "h": 1.12
     },
     "torso": {
-      "kind": "dress",
-      "c1": "#9aa3b5",
-      "sparkle": "#ffffff"
+      "kind": "bodice",
+      "c1": "#b8bdc8"
     },
     "prop": "none",
     "hp": {

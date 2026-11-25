@@ -168,7 +168,7 @@
     "skin": "#c79a76",
     "hair": "#17120e",
     "hairStyle": "panel",
-    "top": "#b3262e",
+    "top": "#5a4a40",
     "bottom": "#1f8a5b",
     "outfit": "dress",
     "eyes": "#2a1810",
@@ -196,10 +196,10 @@
       "h": 1.12
     },
     "torso": {
-      "kind": "tehuana",
-      "c1": "#b3262e",
-      "c2": "#1f8a5b",
-      "c3": "#ffd23f"
+      "kind": "rebozo",
+      "c1": "#5a4a40",
+      "c2": "#f4ead8",
+      "c3": "#d4af37"
     },
     "prop": "flowers",
     "hp": {

@@ -179,7 +179,7 @@
     "skin": "#ead2bc",
     "hair": "#2a2220",
     "hairStyle": "panel",
-    "top": "#3d4047",
+    "top": "#7a6a55",
     "bottom": "#3a3a44",
     "outfit": "suit",
     "eyes": "#4a3a2a",
@@ -197,10 +197,11 @@
       "h": 1.14
     },
     "torso": {
-      "kind": "suit",
-      "c1": "#8a7d68",
-      "c2": "#e9e6df",
-      "c3": "#14141a"
+      "kind": "tweed",
+      "c1": "#7a6a55",
+      "c2": "#f1f1ee",
+      "c3": "#2a2a3a",
+      "stripes": true
     },
     "prop": "none",
     "hp": {
