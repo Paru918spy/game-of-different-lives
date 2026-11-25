@@ -189,7 +189,7 @@
     },
     "torso": {
       "kind": "dress",
-      "c1": "#d4d9e2",
+      "c1": "#9aa3b5",
       "sparkle": "#ffffff"
     },
     "prop": "none",
@@ -209,6 +209,17 @@
       "chin": 0.3
     },
     "wing": true,
-    "eyeTilt": 0.12
+    "eyeTilt": 0.12,
+    "hairSpec": {
+      "vol": 0.6,
+      "hl": 0.55,
+      "hlSide": 0,
+      "back": -1,
+      "hang": 10,
+      "flare": 0.6,
+      "wave": 0.5,
+      "part": -0.2,
+      "sweep": 0.12
+    }
   }
 }

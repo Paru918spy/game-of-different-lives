@@ -210,15 +210,13 @@
     },
     "lashes": true,
     "hairPanel": {
-      "type": "crop",
+      "type": "updo",
       "vol": 0.3,
       "flowers": [
         "#e8445a",
         "#ff8a3d",
         "#ffd23f",
-        "#e8445a",
-        "#58d68d",
-        "#ff4f9a"
+        "#e8445a"
       ]
     },
     "jaw": {
@@ -226,6 +224,7 @@
       "cheek": 0.6
     },
     "wing": true,
-    "eyeTilt": 0.1
+    "eyeTilt": 0.1,
+    "hairSpecStyle": "roll"
   }
 }
