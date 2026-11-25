@@ -158,7 +158,7 @@
     "comp": 26
   },
   "look": {
-    "skin": "#9a6a46",
+    "skin": "#a06b45",
     "hair": "#1a1a1a",
     "hairStyle": "panel",
     "top": "#1b1b22",
@@ -208,18 +208,18 @@
     },
     "age": 0.3,
     "hairSpec": {
-      "vol": 0.24,
-      "hl": 0.6,
-      "hlSide": 0.3,
+      "vol": 0.22,
+      "hl": 0.68,
+      "hlSide": 0.34,
       "back": -0.1,
-      "part": -0.15,
-      "sweep": 0.05,
+      "part": -0.1,
+      "sweep": 0.06,
       "noise": 0.04
     },
     "head": {
-      "len": 1.0,
+      "len": 1.02,
       "jaw": 0.12,
-      "cheek": 0.1
+      "cheek": 0.12
     }
   }
 }

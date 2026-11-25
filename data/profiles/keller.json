@@ -201,10 +201,14 @@
     },
     "age": 0.15,
     "hairSpecStyle": "softupdo",
-    "eyeOpen": 0.6,
+    "eyeOpen": 0.45,
     "head": {
       "len": 1.05,
       "chin": 0.1
+    },
+    "hairSpec": {
+      "noise": 0.15,
+      "freq": 14
     }
   }
 }

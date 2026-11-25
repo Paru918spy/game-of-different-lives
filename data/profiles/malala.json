@@ -175,9 +175,9 @@
     "outfit": "casual",
     "eyes": "#2a1810",
     "brow": {
-      "c": "#1c1612",
-      "t": 1.0,
-      "a": 0.5
+      "c": "#120e0c",
+      "t": 1.3,
+      "a": 0.4
     },
     "mouth": "neutral",
     "lashes": true,
@@ -199,7 +199,7 @@
     "shawl": true,
     "hairPanel": {
       "type": "drape",
-      "c": "#ffffff",
+      "c": "#efe3c8",
       "trim": "#d8bf7a"
     },
     "jaw": {
@@ -210,7 +210,10 @@
     "eyeTilt": 0.08,
     "hairSpec": {
       "hang": 13.5,
-      "flare": 1.3
+      "flare": 1.3,
+      "noise": 0.12,
+      "freq": 9,
+      "wave": 0.35
     },
     "head": {
       "len": 1.04,
