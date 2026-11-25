@@ -206,13 +206,7 @@
     "lashes": true,
     "hairPanel": {
       "type": "updo",
-      "vol": 0.3,
-      "flowers": [
-        "#e8445a",
-        "#ff8a3d",
-        "#ffd23f",
-        "#e8445a"
-      ]
+      "vol": 0.3
     },
     "jaw": {
       "sq": 0.1,

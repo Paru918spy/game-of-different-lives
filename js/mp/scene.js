@@ -417,16 +417,16 @@
         return [x * w, yy, z * (1 - eggNr * .7 * Math.pow(t, 1.5)) * (1 + (HD.deep || 0))]; };
       const eggMap = (x, y, z) => headShape(x, y, z, 4.4);
       const eggify = (geo, R0) => { const ps = geo.attributes.position; for (let i = 0; i < ps.count; i++) { const q = headShape(ps.getX(i), ps.getY(i), ps.getZ(i), R0); ps.setXYZ(i, q[0], q[1], q[2]); } ps.needsUpdate = true; geo.computeVertexNormals(); };
-      const hg = new THREE.SphereGeometry(4.4, 36, 28); eggify(hg, 4.4); head.add(new THREE.Mesh(hg, skin));
+      const headSkin = new THREE.MeshStandardMaterial({ color: look.skin, emissive: look.skin, emissiveIntensity: .3, roughness: .75 }); const hg = new THREE.SphereGeometry(4.4, 48, 36); eggify(hg, 4.4); head.add(new THREE.Mesh(hg, headSkin));
       const R = 4.46, fg = new THREE.SphereGeometry(R, 56, 40, Math.PI / 2 - 1.05, 2.1, .38, 2.45), pos = fg.attributes.position, uv = fg.attributes.uv;
       for (let i = 0; i < pos.count; i++) uv.setXY(i, pos.getX(i) / (2 * R) + .5, pos.getY(i) / (2 * R) + .5); eggify(fg, R);
       { const fm = new THREE.Mesh(fg, (() => { const ft = tex(A.paintFace(faceLook)); return new THREE.MeshStandardMaterial({ map: ft, emissiveMap: ft, emissive: 0xffffff, emissiveIntensity: .32, roughness: .75 }); })()); fm.userData.noOutline = true; head.add(fm); }
       /* sculpted nose so the head is modelled, not a painted ball */
       if (!look.noNose) { const nz = look.nose || 1, NZ = look.noseShape || {}, at = (x, y, z) => headShape(x, y, z, 4.4);
-        const fsk = new THREE.MeshStandardMaterial({ color: look.skin, emissive: look.skin, emissiveIntensity: .3, roughness: .75 }), np = at(0, -.35, 4.25), nm = new THREE.Mesh(new THREE.SphereGeometry(1, 20, 14), fsk); nm.position.set(np[0], np[1], np[2] - .1); nm.scale.set(.42 * nz * (NZ.w || 1), .95 * (NZ.l || 1), .5 * nz * (NZ.p || 1)); nm.rotation.x = -.18; nm.userData.noOutline = true; head.add(nm);
+        const fsk = headSkin, np = at(0, -.35, 4.25), nm = new THREE.Mesh(new THREE.SphereGeometry(1, 20, 14), fsk); nm.position.set(np[0], np[1], np[2] - .1); nm.scale.set(.42 * nz * (NZ.w || 1), .95 * (NZ.l || 1), .5 * nz * (NZ.p || 1)); nm.rotation.x = -.18; nm.userData.noOutline = true; head.add(nm);
         [-1, 1].forEach(s => { const wp = at(s * .48 * nz * (NZ.w || 1), -.85, 4.15), w = new THREE.Mesh(new THREE.SphereGeometry(.3 * nz * (NZ.w || 1), 12, 8), fsk); w.position.set(wp[0], wp[1], wp[2] - .12); w.userData.noOutline = true; head.add(w);
         }); }
-      [-1, 1].forEach(s => { const e = new THREE.Mesh(new THREE.SphereGeometry(1, 12, 10), skin); e.position.set(s * 4.35, -.2, .2); e.scale.set(.55, 1.1, .8); head.add(e); if (look.earrings) { const r = new THREE.Mesh(new THREE.SphereGeometry(.55, 8, 6), mt(look.earrings, { metalness: .8, roughness: .3 })); r.position.set(s * 4.5, -1.7, .3); head.add(r); } });
+      [-1, 1].forEach(s => { const e = new THREE.Mesh(new THREE.SphereGeometry(1, 12, 10), headSkin); e.position.set(s * 4.35, -.2, .2); e.scale.set(.55, 1.1, .8); head.add(e); if (look.earrings) { const r = new THREE.Mesh(new THREE.SphereGeometry(.55, 8, 6), mt(look.earrings, { metalness: .8, roughness: .3 })); r.position.set(s * 4.5, -1.7, .3); head.add(r); } });
       /* hair (children of head so it follows its shape) */
       const hadd = (geo, m, x, y, z, rx) => { const o = new THREE.Mesh(geo, m || hairM); o.userData.noOutline = true; o.position.set(x, y, z); if (rx) o.rotation.x = rx; head.add(o); return o; };
       const cap = (r, tilt, th, m) => hadd(new THREE.SphereGeometry(r, 32, 20, 0, Math.PI * 2, 0, look.hp ? 1.3 : (th || 1.5)), m, 0, .15, -.2, look.hp ? -.82 : (tilt == null ? -.35 : tilt));

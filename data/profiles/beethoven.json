@@ -179,7 +179,7 @@
   },
   "look": {
     "skin": "#e2c3a3",
-    "hair": "#8b8b88",
+    "hair": "#6e6a64",
     "hairStyle": "panel",
     "top": "#1f2a44",
     "bottom": "#3a3a44",
@@ -237,6 +237,6 @@
       "brow": 0.12
     },
     "eyeShape": "hooded",
-    "collar": "#f4f1ea"
+    "collar": "#c8202a"
   }
 }

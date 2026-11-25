@@ -210,13 +210,13 @@
     "wing": true,
     "eyeTilt": 0.12,
     "hairSpec": {
-      "vol": 0.6,
+      "vol": 0.75,
       "hl": 0.55,
       "hlSide": 0,
       "back": -1,
-      "hang": 10,
-      "flare": 0.6,
-      "wave": 0.5,
+      "hang": 11,
+      "flare": 0.95,
+      "wave": 0.7,
       "part": -0.2,
       "sweep": 0.12
     },

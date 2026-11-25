@@ -158,7 +158,7 @@
     "comp": 26
   },
   "look": {
-    "skin": "#a06b45",
+    "skin": "#8a5a3c",
     "hair": "#1a1a1a",
     "hairStyle": "panel",
     "top": "#1b1b22",
@@ -208,14 +208,12 @@
     },
     "age": 0.3,
     "hairSpec": {
-      "vol": 0.22,
-      "hl": 0.68,
-      "hlSide": 0.34,
+      "vol": 0.2,
+      "hl": 0.58,
+      "hlSide": 0.32,
       "back": -0.1,
-      "part": -0.1,
-      "sweep": 0.06,
-      "noise": 0.12,
-      "freq": 30
+      "noise": 0.05,
+      "freq": 20
     },
     "head": {
       "len": 1.02,

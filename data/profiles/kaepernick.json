@@ -209,6 +209,10 @@
       "sq": 0.45,
       "cheek": 0.5,
       "chin": 0.5
+    },
+    "hairSpec": {
+      "noise": 0.05,
+      "freq": 24
     }
   }
 }

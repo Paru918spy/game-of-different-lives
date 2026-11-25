@@ -172,7 +172,7 @@
     "comp": 19
   },
   "look": {
-    "skin": "#5c3d2b",
+    "skin": "#7a5038",
     "hair": "#e2e0da",
     "hairStyle": "panel",
     "top": "#6b3a1a",
@@ -185,7 +185,7 @@
       "a": 0.6
     },
     "mouth": "gentle",
-    "wrinkles": 0.75,
+    "wrinkles": 0.25,
     "nose": 1.2,
     "mouthW": 1.8,
     "face": {
@@ -216,11 +216,11 @@
     },
     "age": 0.85,
     "hairSpec": {
-      "vol": 0.2,
+      "vol": 0.18,
       "hl": 0.56,
       "hlSide": 0.3,
       "back": -0.2,
-      "noise": 0.15,
+      "noise": 0.1,
       "freq": 26
     },
     "head": {
@@ -231,6 +231,6 @@
     "noseShape": {
       "w": 1.3
     },
-    "lips": "#9a5a48"
+    "lips": "#5e3428"
   }
 }

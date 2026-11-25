@@ -175,9 +175,9 @@
     "outfit": "casual",
     "eyes": "#2a1810",
     "brow": {
-      "c": "#120e0c",
-      "t": 1.3,
-      "a": 0.4
+      "c": "#1c1612",
+      "t": 0.85,
+      "a": 0.7
     },
     "mouth": "neutral",
     "lashes": true,
