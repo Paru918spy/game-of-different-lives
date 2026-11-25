@@ -182,8 +182,8 @@
       }
     ],
     "face": {
-      "w": 1.12,
-      "h": 1.08
+      "w": 1.08,
+      "h": 1.1
     },
     "torso": {
       "kind": "suit",
@@ -209,16 +209,17 @@
     "age": 0.3,
     "hairSpec": {
       "vol": 0.2,
-      "hl": 0.58,
-      "hlSide": 0.32,
+      "hl": 0.62,
+      "hlSide": 0.42,
       "back": -0.1,
       "noise": 0.05,
-      "freq": 20
+      "freq": 20,
+      "sides": 0.6
     },
     "head": {
-      "len": 1.02,
-      "jaw": 0.08,
-      "cheek": 0.08
+      "len": 1.06,
+      "jaw": 0.06,
+      "cheek": 0.06
     },
     "noseShape": {
       "w": 1.3

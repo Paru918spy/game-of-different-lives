@@ -217,7 +217,8 @@
       "hl": 0.66,
       "hlSide": -0.05,
       "fringe": "#2a1d16",
-      "fringeW": 0.8
+      "fringeW": 0.8,
+      "trim": "#d8bf7a"
     },
     "head": {
       "len": 1.04,
