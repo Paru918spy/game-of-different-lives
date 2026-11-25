@@ -208,9 +208,9 @@
     },
     "age": 0.3,
     "hairSpec": {
-      "vol": 0.26,
-      "hl": 0.48,
-      "hlSide": 0.34,
+      "vol": 0.24,
+      "hl": 0.6,
+      "hlSide": 0.3,
       "back": -0.1,
       "part": -0.15,
       "sweep": 0.05,

@@ -204,7 +204,7 @@
       "kind": "cravat",
       "c1": "#1f2a44",
       "c2": "#f4f1ea",
-      "c3": "#a3222a"
+      "c3": "#c8202a"
     },
     "prop": "score",
     "hp": {
@@ -223,7 +223,7 @@
     "age": 0.6,
     "eyeTilt": -0.08,
     "hairSpec": {
-      "vol": 1.25,
+      "vol": 1.4,
       "hl": 0.6,
       "hlSide": -0.05,
       "back": -0.5,

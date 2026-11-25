@@ -166,7 +166,7 @@
     "comp": 17
   },
   "look": {
-    "skin": "#cf9f78",
+    "skin": "#c99468",
     "hair": "#2a1d16",
     "hairStyle": "panel",
     "scarf": "#ffffff",
@@ -199,7 +199,7 @@
     "shawl": true,
     "hairPanel": {
       "type": "drape",
-      "c": "#ece6d6",
+      "c": "#ffffff",
       "trim": "#d8bf7a"
     },
     "jaw": {
