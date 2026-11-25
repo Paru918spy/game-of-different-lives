@@ -211,6 +211,10 @@
     "hairSpec": {
       "hang": 13.5,
       "flare": 1.3
+    },
+    "head": {
+      "len": 1.04,
+      "chin": 0.1
     }
   }
 }

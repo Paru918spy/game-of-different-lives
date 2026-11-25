@@ -409,8 +409,14 @@
       /* head: skin ellipsoid + painted face patch (front) */
       const hspec = MP.Hair && MP.Hair.specFor(look), useShell = !!hspec && !["turban", "helmet", "centerbraid", "braidcap", "beanie"].includes(look.hairStyle), faceLook = useShell ? Object.assign({}, look, { hp: null }) : look;
       const F = look.face || {}, HY = 19.7, head = new THREE.Group(); head.position.set(0, HY, .5); head.scale.set((F.w || 1) * 1.06, (F.h || 1.1) * 1.04, 1.0); body.add(head);
-      const eggNr = .2 * (1 - ((look.jaw && look.jaw.sq) || .3) * .5), eggMap = (x, y, z) => { const t = Math.max(0, -y / 4.4), k = 1 - eggNr * Math.pow(t, 1.5); return [x * k, y < 0 ? y * 1.08 : y, z * (1 - eggNr * .7 * Math.pow(t, 1.5))]; };
-      const eggify = (geo, R0) => { const ps = geo.attributes.position, nr = .2 * (1 - ((look.jaw && look.jaw.sq) || .3) * .5); for (let i = 0; i < ps.count; i++) { const y = ps.getY(i), t = Math.max(0, -y / R0), k = 1 - nr * Math.pow(t, 1.5); ps.setX(i, ps.getX(i) * k); ps.setZ(i, ps.getZ(i) * (1 - nr * .7 * Math.pow(t, 1.5))); if (y < 0) ps.setY(i, y * 1.08); else ps.setY(i, y * 1.0); } ps.needsUpdate = true; geo.computeVertexNormals(); };
+      const HD = look.head || {}, eggNr = .2 * (1 - ((look.jaw && look.jaw.sq) || .3) * .5);
+      /* one head shape for skin, face patch and hair shell: egg taper + per-person length, jaw width, pointed chin, cheek fullness */
+      const headShape = (x, y, z, R0) => { const t = Math.max(0, -y / R0), k = 1 - eggNr * Math.pow(t, 1.5), yn = y / R0;
+        let w = k * (1 + (HD.jaw || 0) * Math.pow(t, 1.2) - (HD.chin || 0) * Math.pow(t, 2.5) + (HD.cheek || 0) * Math.exp(-Math.pow((yn + .3) / .35, 2)) + (HD.brow || 0) * Math.exp(-Math.pow((yn - .45) / .3, 2)));
+        const yy = (y < 0 ? y * 1.08 : y) * (HD.len || 1);
+        return [x * w, yy, z * (1 - eggNr * .7 * Math.pow(t, 1.5)) * (1 + (HD.deep || 0))]; };
+      const eggMap = (x, y, z) => headShape(x, y, z, 4.4);
+      const eggify = (geo, R0) => { const ps = geo.attributes.position; for (let i = 0; i < ps.count; i++) { const q = headShape(ps.getX(i), ps.getY(i), ps.getZ(i), R0); ps.setXYZ(i, q[0], q[1], q[2]); } ps.needsUpdate = true; geo.computeVertexNormals(); };
       const hg = new THREE.SphereGeometry(4.4, 36, 28); eggify(hg, 4.4); head.add(new THREE.Mesh(hg, skin));
       const R = 4.46, fg = new THREE.SphereGeometry(R, 56, 40, Math.PI / 2 - 1.05, 2.1, .38, 2.45), pos = fg.attributes.position, uv = fg.attributes.uv;
       for (let i = 0; i < pos.count; i++) uv.setXY(i, pos.getX(i) / (2 * R) + .5, pos.getY(i) / (2 * R) + .5); eggify(fg, R);

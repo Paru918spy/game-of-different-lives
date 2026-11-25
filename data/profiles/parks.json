@@ -208,6 +208,10 @@
     "hairPanel": {
       "type": "updo"
     },
-    "hairSpecStyle": "bunsmall"
+    "hairSpecStyle": "bunsmall",
+    "head": {
+      "len": 1.05,
+      "chin": 0.08
+    }
   }
 }
