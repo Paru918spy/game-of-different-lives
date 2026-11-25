@@ -163,7 +163,7 @@
     "comp": 20
   },
   "look": {
-    "skin": "#b8855f",
+    "skin": "#a06e4c",
     "hair": "#f0c460",
     "hairStyle": "panel",
     "top": "#a8aebb",
@@ -224,6 +224,7 @@
       "len": 1.06,
       "chin": 0.08,
       "cheek": 0.06
-    }
+    },
+    "collar": "#c8ccd6"
   }
 }

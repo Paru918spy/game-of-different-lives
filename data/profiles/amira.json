@@ -207,6 +207,13 @@
       "sq": 0.1,
       "cheek": 0.3
     },
-    "eyeTilt": 0.05
+    "eyeTilt": 0.05,
+    "hairSpec": {
+      "hl": 0.5,
+      "hlSide": -0.3,
+      "hang": 7,
+      "flare": 0.5,
+      "wave": 0.05
+    }
   }
 }

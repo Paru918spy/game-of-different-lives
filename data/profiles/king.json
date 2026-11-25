@@ -168,7 +168,7 @@
     "brow": {
       "c": "#121010",
       "t": 0.9,
-      "a": 0.1
+      "a": 0.5
     },
     "mouth": "speak",
     "wrinkles": 0.2,
@@ -176,13 +176,13 @@
     "mouthW": 0.9,
     "beard": [
       {
-        "style": "pencil",
+        "style": "mustache",
         "c": "#121010",
-        "a": 0.95
+        "a": 0.8
       }
     ],
     "face": {
-      "w": 1.16,
+      "w": 1.12,
       "h": 1.08
     },
     "torso": {
@@ -214,12 +214,13 @@
       "back": -0.1,
       "part": -0.1,
       "sweep": 0.06,
-      "noise": 0.04
+      "noise": 0.12,
+      "freq": 30
     },
     "head": {
       "len": 1.02,
-      "jaw": 0.12,
-      "cheek": 0.12
+      "jaw": 0.08,
+      "cheek": 0.08
     },
     "noseShape": {
       "w": 1.3

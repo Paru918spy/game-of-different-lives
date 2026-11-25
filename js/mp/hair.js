@@ -47,7 +47,7 @@
 
   /* egg shape shared with the head (scene.js passes its mapping in) */
   function build(THREE, sp, color, eggFn) {
-    const geo = new THREE.SphereGeometry(1, 96, 64), ps = geo.attributes.position, n = ps.count, cols = new Float32Array(n * 3), c0 = new THREE.Color(color);
+    const geo = new THREE.SphereGeometry(1, 96, 64), ps = geo.attributes.position, n = ps.count, cols = new Float32Array(n * 3), c0 = new THREE.Color(color), cf = sp.fringe ? new THREE.Color(sp.fringe) : null;
     const base = 4.4;
     for (let i = 0; i < n; i++) {
       const dx = ps.getX(i), dy = ps.getY(i), dz = ps.getZ(i), ax = Math.abs(dx);
@@ -78,6 +78,7 @@
       }
       ps.setXYZ(i, px, py, pz);
       const shade = (.72 + .28 * sm(0, .7, m)) * (1 + .16 * nz * (sp.noise ? 1 : .4)) * (1 + .1 * dy * (dz < 0 ? 1 : 0.3));
+      if (cf && dz > .25 && m < (sp.fringeW || .7)) { cols[i * 3] = cf.r; cols[i * 3 + 1] = cf.g; cols[i * 3 + 2] = cf.b; continue; }
       cols[i * 3] = c0.r * shade; cols[i * 3 + 1] = c0.g * shade; cols[i * 3 + 2] = c0.b * shade;
     }
     geo.setAttribute("color", new THREE.BufferAttribute(cols, 3));

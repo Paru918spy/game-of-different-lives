@@ -220,6 +220,7 @@
     },
     "wing": true,
     "eyeTilt": 0.1,
-    "hairSpecStyle": "roll"
+    "hairSpecStyle": "roll",
+    "collar": "#5a4a40"
   }
 }

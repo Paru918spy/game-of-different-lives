@@ -236,6 +236,7 @@
       "jaw": 0.1,
       "brow": 0.12
     },
-    "eyeShape": "hooded"
+    "eyeShape": "hooded",
+    "collar": "#f4f1ea"
   }
 }

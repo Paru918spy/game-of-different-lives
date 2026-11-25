@@ -214,8 +214,10 @@
       "noise": 0.12,
       "freq": 9,
       "wave": 0.35,
-      "hl": 0.74,
-      "hlSide": -0.05
+      "hl": 0.66,
+      "hlSide": -0.05,
+      "fringe": "#2a1d16",
+      "fringeW": 0.8
     },
     "head": {
       "len": 1.04,
