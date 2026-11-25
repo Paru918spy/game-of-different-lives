@@ -208,9 +208,7 @@
       "t": 0.8
     },
     "hairPanel": {
-      "type": "crop",
-      "vol": 0.9,
-      "messy": true
+      "type": "crop"
     },
     "jaw": {
       "sq": 0.4,
@@ -218,15 +216,14 @@
     },
     "age": 0.8,
     "hairSpec": {
-      "vol": 0.4,
-      "hl": 0.52,
-      "hlSide": 0.1,
-      "back": -1,
-      "noise": 0.3,
-      "freq": 16,
-      "hang": 2.6,
-      "flare": 0.35,
-      "wave": 0.35
+      "vol": 0.42,
+      "hl": 0.5,
+      "hlSide": 0.12,
+      "back": -0.3,
+      "noise": 0.5,
+      "freq": 15,
+      "part": -0.2,
+      "sweep": 0.1
     }
   }
 }

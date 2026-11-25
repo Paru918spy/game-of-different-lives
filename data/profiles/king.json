@@ -208,13 +208,13 @@
     },
     "age": 0.3,
     "hairSpec": {
-      "vol": 0.45,
-      "hl": 0.56,
-      "hlSide": 0.3,
-      "back": -0.15,
+      "vol": 0.3,
+      "hl": 0.5,
+      "hlSide": 0.32,
+      "back": -0.1,
       "part": -0.2,
-      "sweep": 0.1,
-      "noise": 0.1
+      "sweep": 0.06,
+      "noise": 0.05
     }
   }
 }

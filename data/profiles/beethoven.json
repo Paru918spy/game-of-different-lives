@@ -221,6 +221,15 @@
       "hollow": 0.5
     },
     "age": 0.6,
-    "eyeTilt": -0.08
+    "eyeTilt": -0.08,
+    "hairSpec": {
+      "vol": 1.25,
+      "hl": 0.6,
+      "hlSide": -0.05,
+      "back": -0.5,
+      "noise": 0.5,
+      "freq": 11,
+      "up": 1.0
+    }
   }
 }
