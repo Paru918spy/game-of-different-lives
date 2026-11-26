@@ -64,6 +64,9 @@
       if (sp.sides) t *= 1 - sp.sides * sb * sm(-.2, .5, -dy + .3);
       if (sp.up) t += sp.up * sm(.35, 1, dy) * m * (1 + .6 * nz);
       if (sp.quiff) t += sp.quiff * sm(.1, 1, dy) * sm(-.1, .9, dz) * sm(-.9, .1, dx - (sp.part || 0)) * m;
+      /* combed strands: fine grooves running from the parting/crown down, so short hair reads as hair and not a smooth helmet */
+      const gs = sp.cloth || sp.round ? 0 : (sp.groove == null ? .09 : sp.groove), sa = Math.atan2(dx - (sp.part || 0) * .6, dz + .15) * (dy > .2 ? 1 : 1), gv = .5 + .5 * Math.sin(sa * 46 + dy * 9 + nz * 1.5);
+      t += gs * gv * m;
       let off = m > .002 ? Math.max(.03, t) : -.12;
       let px, py, pz;
       if (sp.hang && dy < .18 && !faceZone && m > .002) {
@@ -78,7 +81,7 @@
         if (eggFn) { const q = eggFn(px, py, pz); px = q[0]; py = q[1]; pz = q[2]; }
       }
       ps.setXYZ(i, px, py, pz);
-      const shade = (.72 + .28 * sm(0, .7, m)) * (1 + .16 * nz * (sp.noise ? 1 : .4)) * (1 + .1 * dy * (dz < 0 ? 1 : 0.3));
+      const shade = (1 + (gs ? (gv - .5) * .28 : 0)) * (.72 + .28 * sm(0, .7, m)) * (1 + .16 * nz * (sp.noise ? 1 : .4)) * (1 + .1 * dy * (dz < 0 ? 1 : 0.3));
       if (cf && dz > .4 && m < (sp.fringeW || .7)) { cols[i * 3] = cf.r; cols[i * 3 + 1] = cf.g; cols[i * 3 + 2] = cf.b; continue; }
       if (ct && m < .97 && m > .002) { cols[i * 3] = ct.r; cols[i * 3 + 1] = ct.g; cols[i * 3 + 2] = ct.b; continue; }
       cols[i * 3] = c0.r * shade; cols[i * 3 + 1] = c0.g * shade; cols[i * 3 + 2] = c0.b * shade;
