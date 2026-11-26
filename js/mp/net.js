@@ -58,12 +58,15 @@
         else if (!H.closed && !opened) cb.onError(new Error(friendly(e)));       // after the room is open, single failed guests must not kill the lobby
       });
       peer.on("connection", conn => {
-        conn.on("open", () => { H.conns[conn.peer] = conn; });
-        conn.on("data", m => { if (m && typeof m === "object") { if (m.t === "ping") { try { conn.send({ t: "pong" }); } catch (e) { } return; } cb.onMessage(conn.peer, m, conn); } });
+        conn.on("open", () => { conn.seen = Date.now(); H.conns[conn.peer] = conn; });
+        conn.on("data", m => { conn.seen = Date.now(); if (m && typeof m === "object") { if (m.t === "ping") { try { conn.send({ t: "pong" }); } catch (e) { } return; } cb.onMessage(conn.peer, m, conn); } });
         conn.on("close", () => { if (H.conns[conn.peer] === conn) { delete H.conns[conn.peer]; cb.onLeave && cb.onLeave(conn.peer); } });
         conn.on("error", () => { });
       });
     }
+    /* A closed tab or a phone that lost its signal often never fires "close" (WebRTC can take minutes to notice). Guests ping every 15 s,
+       so a guest silent for 100 s (browsers slow timers in background tabs) counts as gone and the game goes on without them. */
+    ping = setInterval(() => { const now = Date.now(); Object.values(H.conns).forEach(c => { if (c.seen && now - c.seen > 100000) { delete H.conns[c.peer]; try { c.close(); } catch (e) { } cb.onLeave && cb.onLeave(c.peer); } }); }, 5000);
     H.sendTo = (peerId, msg) => { const c = H.conns[peerId]; if (c && c.open) c.send(msg); };
     H.broadcast = msg => Object.values(H.conns).forEach(c => c.open && c.send(msg));
     H.close = () => { H.closed = true; clearInterval(ping); Object.values(H.conns).forEach(c => { try { c.send({ t: "bye" }); c.close(); } catch (e) { } }); try { peer && peer.destroy(); } catch (e) { } };
