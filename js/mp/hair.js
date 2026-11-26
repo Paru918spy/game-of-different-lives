@@ -60,6 +60,8 @@
       const faceZone = dz > .12 && ax < .66 + (sp.hang ? 0 : 0);
       if (sp.hang) { if (faceZone) m = Math.min(m, sm(fl - .09, fl + .09, dy)); else m = 1; }
       let t = (sp.vol || .5) * m * (1 + (sp.noise || 0) * nz * 1.4);
+      /* hair grows out of the scalp: thin at the front hairline instead of a blunt fringe edge */
+      if (!sp.hang && !sp.round && !sp.cloth && sp.taper !== 0) t *= 1 - (1 - sm(lim - .05, lim + (sp.taper || .45), dy)) * sm(.05, .55, dz) * .85;
       if (sp.round) t *= 1 + .1 * sm(.2, 1, dy);
       if (sp.sides) t *= 1 - sp.sides * sb * sm(-.2, .5, -dy + .3);
       if (sp.up) t += sp.up * sm(.35, 1, dy) * m * (1 + .6 * nz);

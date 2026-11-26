@@ -220,14 +220,15 @@
     "age": 0.2,
     "hairSpec": {
       "vol": 0.5,
-      "hl": 0.66,
+      "hl": 0.7,
       "hlSide": 0.42,
       "back": -0.2,
       "quiff": 0.7,
       "part": -0.6,
       "sweep": 0.04,
       "noise": 0.06,
-      "sides": 0.6
+      "sides": 0.6,
+      "taper": 0.6
     },
     "head": {
       "len": 1.1,
