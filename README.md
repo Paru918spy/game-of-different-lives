@@ -1,4 +1,4 @@
-# Game of Different Lives (MVP prototype)
+# Lebenswege – Game of Lives (MVP prototype)
 
 A board game in the spirit of "Spiel des Lebens" where you walk through the real life stories of people who faced barriers, prejudice and doubt. 21 lives are playable: 17 real people and 4 clearly labelled fictional characters.
 

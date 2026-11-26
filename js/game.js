@@ -1,4 +1,4 @@
-/* Game of Different Lives: game flow. A wheel of fortune assigns a life; a 3D board tells it. */
+/* Lebenswege – Game of Lives: game flow. A wheel of fortune assigns a life; a 3D board tells it. */
 (function () {
   "use strict";
   const $ = id => document.getElementById(id);
@@ -30,8 +30,8 @@
   const shortName = c => c.fictional ? c.name : c.name.replace(/ Jr\.$/, "").split(" ").slice(-1)[0];
   function showAbout(on) { $("screen-about").hidden = !on; $("screen-home").hidden = on; if (!on && wheel) { wheel.resize(); wheel.start(); } window.scrollTo(0, 0); }
   function buildLogo() {
-    const words = ["Game", "of", "Different", "Lives"], cols = ["#ef476f", "#ffa62b", "#ffd23f", "#06c28f", "#1e9be9", "#7b5cd6", "#ff7bac"]; let k = 0;
-    document.querySelectorAll(".abrand").forEach(el => { let j = 0; el.innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[j++ % 7]};--d:${(j % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" "); el.setAttribute("aria-label", "Game of Different Lives"); });
+    const words = ["Lebenswege", "–", "Game", "of", "Lives"], cols = ["#ef476f", "#ffa62b", "#ffd23f", "#06c28f", "#1e9be9", "#7b5cd6", "#ff7bac"]; let k = 0;
+    document.querySelectorAll(".abrand").forEach(el => { let j = 0; el.innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[j++ % 7]};--d:${(j % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" "); el.setAttribute("aria-label", "Lebenswege – Game of Lives"); });
     $("logo").innerHTML = words.map(w => `<span class="w">${[...w].map(ch => `<b style="--c:${cols[k++ % 7]};--d:${(k % 5) * -.3}s">${ch}</b>`).join("")}</span>`).join(" ");
     $("lead").textContent = ui().lead;
     $("note").textContent = ui().note;

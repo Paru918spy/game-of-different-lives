@@ -97,7 +97,7 @@ const LANGS = {
   en: {
     k: "en", htmlLang: "en", boardAlt: "Sketch of the game board with start, six forks with three routes each, twelve life stations and the finish",
     fork: "Fork", start: "START", finish: "FINISH", go: "go",
-    tag: "Game manual", title: "Game of Different Lives", sub: "Walk in someone else's shoes. Cross barriers. Find bridges.",
+    tag: "Game manual", title: "Lebenswege – Game of Lives", sub: "Walk in someone else's shoes. Cross barriers. Find bridges.",
     chips: ["2 to 6 players", "21 lives", "101 fields", "1 goal: fairness"],
     coverNote: "Real people, real stories. Fictional characters are always marked.",
     nav: { play: "Play", back: "← Back to the game", pdf: "Download PDF", other: "Deutsch", otherHref: "manual.html?lang=de" },
@@ -134,7 +134,7 @@ const LANGS = {
   de: {
     k: "de", htmlLang: "de", boardAlt: "Skizze des Spielbretts mit Start, sechs Weggabelungen mit je drei Wegen, zwölf Lebensstationen und dem Ziel",
     fork: "Gabel", start: "START", finish: "ZIEL", go: "los",
-    tag: "Spielanleitung", title: "Game of Different Lives", sub: "Geh in fremden Schuhen. Überwinde Barrieren. Finde Brücken.",
+    tag: "Spielanleitung", title: "Lebenswege – Game of Lives", sub: "Geh in fremden Schuhen. Überwinde Barrieren. Finde Brücken.",
     chips: ["2 bis 6 Spieler", "21 Leben", "101 Felder", "1 Ziel: Fairness"],
     coverNote: "Echte Menschen, echte Geschichten. Erfundene Figuren sind immer gekennzeichnet.",
     nav: { play: "Spielen", back: "← Zurück zum Spiel", pdf: "PDF herunterladen", other: "English", otherHref: "manual.html?lang=en" },
@@ -234,14 +234,14 @@ const html = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Game manual · Game of Different Lives</title>
-<meta name="description" content="Illustrated manual for Game of Different Lives: idea, start, board sketch, fields and rules. English and German.">
+<title>Game manual · Lebenswege – Game of Lives</title>
+<meta name="description" content="Illustrated manual for Lebenswege – Game of Lives: idea, start, board sketch, fields and rules. English and German.">
 <style>
 ${css}
 </style>
 </head>
 <body>
-<header class="mbar"><a class="brand" href="index.html">Game of Different Lives</a>
+<header class="mbar"><a class="brand" href="index.html">Lebenswege – Game of Lives</a>
   <nav><a id="otherLang" href="manual.html?lang=de">Deutsch</a><a id="pdfLink" class="btn ghost" href="manual/Game-of-Different-Lives-Manual-EN.pdf" download>Download PDF</a><a id="backLink" class="btn" href="index.html">← Back to the game</a></nav></header>
 <main>
 ${doc(LANGS.en, "en")}
@@ -252,8 +252,8 @@ ${doc(LANGS.de, "de")}
   var q = /[?&]lang=(en|de)/.exec(location.search), lang = q ? q[1] : "";
   if (!lang) { try { lang = localStorage.getItem("gol-lang") || ""; } catch (e) {} }
   if (!lang) lang = /^de/i.test(navigator.language || "") ? "de" : "en";
-  var T = { en: { other: "Deutsch", otherHref: "manual.html?lang=de", pdf: "Download PDF", pdfHref: "manual/Game-of-Different-Lives-Manual-EN.pdf", back: "← Back to the game", title: "Game manual · Game of Different Lives" },
-            de: { other: "English", otherHref: "manual.html?lang=en", pdf: "PDF herunterladen", pdfHref: "manual/Game-of-Different-Lives-Spielanleitung-DE.pdf", back: "← Zurück zum Spiel", title: "Spielanleitung · Game of Different Lives" } };
+  var T = { en: { other: "Deutsch", otherHref: "manual.html?lang=de", pdf: "Download PDF", pdfHref: "manual/Game-of-Different-Lives-Manual-EN.pdf", back: "← Back to the game", title: "Game manual · Lebenswege – Game of Lives" },
+            de: { other: "English", otherHref: "manual.html?lang=en", pdf: "PDF herunterladen", pdfHref: "manual/Game-of-Different-Lives-Spielanleitung-DE.pdf", back: "← Zurück zum Spiel", title: "Spielanleitung · Lebenswege – Game of Lives" } };
   var t = T[lang]; document.documentElement.lang = lang; document.body.setAttribute("data-lang", lang); document.title = t.title;
   var o = document.getElementById("otherLang"); o.textContent = t.other; o.href = t.otherHref;
   var p = document.getElementById("pdfLink"); p.textContent = t.pdf; p.href = t.pdfHref;

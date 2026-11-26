@@ -1,7 +1,7 @@
 /* UI strings (English only). */
 window.GOL = window.GOL || { characters: [] };
 GOL.ui = {
-    title: "Game of Different Lives",
+    title: "Lebenswege – Game of Lives",
     lead: "Walk through the real life stories of people who faced barriers, prejudice and doubt, and who made history anyway. Spin the wheel of fortune and live a life you did not choose.",
     soonTitle: "Coming soon",
     note: "Details are based on public biographies; scenes marked “Illustrative” are not about one specific person.",

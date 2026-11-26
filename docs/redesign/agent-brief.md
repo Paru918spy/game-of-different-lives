@@ -1,4 +1,4 @@
-You write figure profiles for the multiplayer redesign of the school game "Game of Different Lives" (about diversity, disability, discrimination; audience from 12 years). Work in the repository at /home/user/repo.
+You write figure profiles for the multiplayer redesign of the school game "Lebenswege – Game of Lives" (about diversity, disability, discrimination; audience from 12 years). Work in the repository at /home/user/repo.
 
 1. Read `docs/redesign/profile-spec.md` completely. It is the contract.
 2. For each of your figures read its single-player data (the `id` is in `js/characters/*.js`; use `grep -n 'id: "<id>"' js/characters/*.js`, hawking and parks have their own files) and `docs/characters.md`. Base facts on that data and on widely documented public facts you are sure about.
