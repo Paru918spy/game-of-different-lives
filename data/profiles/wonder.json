@@ -214,12 +214,11 @@
     },
     "age": 0.5,
     "hairSpec": {
-      "vol": 0.35,
-      "hl": 0.66,
-      "hlSide": 0.34,
-      "back": -0.35,
-      "noise": 0.04,
-      "cloth": 1
+      "vol": 0.5,
+      "hl": 0.62,
+      "hlSide": 0.3,
+      "back": -0.6,
+      "noise": 0.05
     }
   }
 }
