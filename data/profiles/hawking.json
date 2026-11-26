@@ -166,7 +166,7 @@
     "skin": "#e6cdb6",
     "hair": "#6a5238",
     "hairStyle": "thin",
-    "top": "#5b5e66",
+    "top": "#6b6a68",
     "bottom": "#2f3440",
     "outfit": "wheelchair",
     "eyes": "#5a4a38",
@@ -175,7 +175,7 @@
       "t": 0.7,
       "a": 0.8
     },
-    "mouth": "grin",
+    "mouth": "smirk",
     "wrinkles": 0.35,
     "nose": 0.95,
     "mouthW": 1.7,
@@ -189,9 +189,10 @@
       "h": 1.12
     },
     "torso": {
-      "kind": "shirt",
-      "c1": "#9a8d78",
-      "c2": "#f1ede4"
+      "kind": "tweed",
+      "c1": "#6b6a68",
+      "c2": "#e8e8e8",
+      "c3": "#2a3a5a"
     },
     "prop": "none",
     "hp": {
@@ -205,6 +206,14 @@
       "hollow": 0.6,
       "chin": 0.3
     },
-    "age": 0.4
+    "age": 0.4,
+    "hairSpec": {
+      "vol": 0.38,
+      "hl": 0.58,
+      "hlSide": 0.25,
+      "back": -0.15,
+      "part": 0.1,
+      "sweep": 0.12
+    }
   }
 }

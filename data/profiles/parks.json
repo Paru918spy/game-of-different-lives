@@ -178,7 +178,7 @@
       "t": 0.8,
       "a": 0.5
     },
-    "mouth": "grin",
+    "mouth": "gentle",
     "wrinkles": 0.2,
     "nose": 1.0,
     "mouthW": 1.3,
@@ -207,6 +207,12 @@
     "age": 0.4,
     "hairPanel": {
       "type": "updo"
-    }
+    },
+    "hairSpecStyle": "bunsmall",
+    "head": {
+      "len": 1.05,
+      "chin": 0.08
+    },
+    "collar": "#f0ece4"
   }
 }

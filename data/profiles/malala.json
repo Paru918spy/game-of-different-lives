@@ -166,7 +166,7 @@
     "comp": 17
   },
   "look": {
-    "skin": "#cf9f78",
+    "skin": "#c99468",
     "hair": "#2a1d16",
     "hairStyle": "panel",
     "scarf": "#ffffff",
@@ -176,7 +176,7 @@
     "eyes": "#2a1810",
     "brow": {
       "c": "#1c1612",
-      "t": 1.4,
+      "t": 0.85,
       "a": 0.7
     },
     "mouth": "neutral",
@@ -199,7 +199,7 @@
     "shawl": true,
     "hairPanel": {
       "type": "drape",
-      "c": "#f7f2e8",
+      "c": "#fbf8f0",
       "trim": "#d8bf7a"
     },
     "jaw": {
@@ -207,6 +207,29 @@
       "cheek": 0.5
     },
     "wing": true,
-    "eyeTilt": 0.08
+    "eyeTilt": 0.08,
+    "hairSpec": {
+      "hang": 13.5,
+      "flare": 1.3,
+      "noise": 0.12,
+      "freq": 9,
+      "wave": 0.35,
+      "hl": 0.66,
+      "hlSide": -0.05,
+      "fringe": "#2a1d16",
+      "fringeW": 0.8,
+      "trim": "#d8bf7a"
+    },
+    "head": {
+      "len": 1.04,
+      "chin": 0.1
+    },
+    "eyeShape": "almond",
+    "hp": {
+      "y": 2.35,
+      "px": -0.5,
+      "d": 0.25,
+      "t": 1.6
+    }
   }
 }

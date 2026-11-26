@@ -174,7 +174,7 @@
   },
   "look": {
     "skin": "#e4c3a0",
-    "hair": "#8a7f6a",
+    "hair": "#8a8070",
     "hairStyle": "panel",
     "top": "#c0392b",
     "bottom": "#2b3f66",
@@ -208,13 +208,22 @@
       "t": 0.8
     },
     "hairPanel": {
-      "type": "crop",
-      "vol": 0.9
+      "type": "crop"
     },
     "jaw": {
       "sq": 0.4,
       "hollow": 0.4
     },
-    "age": 0.8
+    "age": 0.8,
+    "hairSpec": {
+      "vol": 0.5,
+      "hl": 0.5,
+      "hlSide": 0.12,
+      "back": -0.3,
+      "noise": 0.6,
+      "freq": 15,
+      "part": -0.2,
+      "sweep": 0.1
+    }
   }
 }

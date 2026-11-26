@@ -199,6 +199,17 @@
       "sq": 0.1,
       "cheek": 0.4
     },
-    "age": 0.15
+    "age": 0.15,
+    "hairSpecStyle": "bunwave",
+    "eyeOpen": 0.45,
+    "head": {
+      "len": 1.05,
+      "chin": 0.1
+    },
+    "hairSpec": {
+      "noise": 0.15,
+      "freq": 14
+    },
+    "eyeShape": "closed"
   }
 }
